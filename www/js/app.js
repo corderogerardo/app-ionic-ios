@@ -24,10 +24,39 @@ angular.module('axpress', ['ionic'])
 })
 .config(function($stateProvider,$urlRouterProvider){
 	$stateProvider
-	.state('welcome',{
+	.state('app',{
 		url:'/',
-		templateUrl:'templates/welcome/welcome.html',
+		views: {
+			'mainContent': {
+				templateUrl: 'templates/welcome/welcome.html',
+				/*controller:'',
+				resolve:{
+				}/*end resolve*/
+			}
+		}
 		/*controller:'WelcomeController'*/
+	})
+	.state('login',{
+		url:'/login',
+		views: {
+			'mainContent': {
+				templateUrl: 'templates/login/login.html',
+				/*controller:'',
+				resolve:{
+				}/*end resolve*/
+			}
+		}
+	})
+	.state('register',{
+		url:'/register',
+		views: {
+			'mainContent': {
+				templateUrl: 'templates/register/register.html',
+				/*controller:'',
+				resolve:{
+				}/*end resolve*/
+			}
+		}
 	})
 	;
 	$urlRouterProvider.otherwise('/');

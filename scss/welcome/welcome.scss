@@ -40,18 +40,52 @@
 	justify-content: space-between;
 	width:100%;
 }
-.welcome-login{
+.welcome-login-button{
 	border:2px solid $energized;
 	border-radius: 5px;
+	color:black;
 	display:flex;
 	width: 49%;
 	height:80px;
+	text-decoration: none;
+}
+.welcome-login-button:hover{
+	border-radius: 5px;
+	background-color:$energized;
+	color:black;
+	.welcome-login-icon{
+		background-color:black;
+		color:$energized;
+	}
+}
+.welcome-login{
+	border-radius: 5px;
+	display:flex;
+	width: 100%;
+	height:80px;
+}
+.welcome-register-button{
+	border:2px solid $balanced;
+	border-radius: 5px;
+	color:black;
+	display:flex;
+	width: 49%;
+	height:80px;
+	text-decoration: none;
+}
+.welcome-register-button:hover{
+	border-radius: 5px;
+	background-color:$balanced;
+	color:black;
+	.welcome-register-icon{
+		background-color:black;
+		color:$balanced;
+	}
 }
 .welcome-register{
-	border:2px solid $balanced;
 	display:flex;
 	border-radius: 5px;
-	width: 49%;
+	width: 100%;
 	height:80px;
 }
 .welcome-login,
