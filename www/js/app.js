@@ -22,3 +22,13 @@ angular.module('axpress', ['ionic'])
 		}
 	});
 })
+.config(function($stateProvider,$urlRouterProvider){
+	$stateProvider
+	.state('welcome',{
+		url:'/',
+		templateUrl:'templates/welcome/welcome.html',
+		/*controller:'WelcomeController'*/
+	})
+	;
+	$urlRouterProvider.otherwise('/');
+});

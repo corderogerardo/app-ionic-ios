@@ -1,0 +1,98 @@
+.welcome-container{
+	height: 100%;
+}
+.welcome-welcome{
+	align-items: center;
+	display:flex;
+	height: 80%;
+	flex-direction: column;
+	justify-content: center;
+	width:100%;
+}
+.welcome-rows{
+	display:flex;
+	margin: 10% 0;
+}
+.welcome-cols{
+	display:flex;
+	justify-content: center;
+}
+.points-welcome{
+	border-radius: 50%;
+	background: $energized;
+	display:flex;
+	justify-content: center;
+	margin:0px 8px;
+	height:15px;
+	width: 15px;
+}
+.actived{
+	border-radius: 50%;
+	background: $balanced;
+	height:15px;
+	width: 15px;
+}
+.welcome-buttons{
+	align-items:space-between;
+	display:flex;
+	height: 17%;
+	flex-direction: row;
+	justify-content: space-between;
+	width:100%;
+}
+.welcome-login{
+	border:2px solid $energized;
+	border-radius: 5px;
+	display:flex;
+	width: 49%;
+	height:80px;
+}
+.welcome-register{
+	border:2px solid $balanced;
+	display:flex;
+	border-radius: 5px;
+	width: 49%;
+	height:80px;
+}
+.welcome-login,
+.welcome-register,
+p{
+	align-items: center;
+	display:flex;
+	margin:5px 0px;
+	font-size: 15px;
+	flex-direction: column;
+	justify-content: center;
+}
+.welcome-login,
+.welcome-register,
+i{
+
+	font-size: 25px;
+}
+.welcome-login-icon{
+	align-items: center;
+	border-radius:50%;
+	background-color:$energized;
+	color:white;
+	display:flex;
+	justify-content: center;
+	width:30px;
+	height:30px;
+}
+.welcome-register-icon{
+	align-items: center;
+	border-radius:50%;
+	background-color:$balanced;
+	color:white;
+	display:flex;
+	justify-content: center;
+	width:30px;
+	height:30px;
+}
+.welcome-botton-line{
+	border:0;
+	height: 4%;
+	width:100%;
+	background-color: $balanced;
+}
