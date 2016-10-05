@@ -10310,3 +10310,55 @@ i {
   justify-content: center;
   height: 100%;
   width: 85%; }
+
+.select-send-type {
+  align-items: center;
+  display: flex;
+  height: 30%;
+  justify-content: center;
+  padding-top: 15%; }
+
+.select-send-type span {
+  align-items: center;
+  color: #33cd5f;
+  display: flex;
+  justify-content: center;
+  font-size: 18px;
+  height: 50%;
+  text-align: center;
+  width: 100%; }
+
+.select-send-type a {
+  color: #886aea;
+  margin: 0 5px; }
+
+.main-menu {
+  align-items: flex-start;
+  background-image: url("../img/image.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  width: 100%;
+  height: 70%; }
+
+.main-menu-options {
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.8);
+  height: 40%;
+  display: flex;
+  color: #33cd5f;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  text-decoration: none;
+  width: 45%; }
+  .main-menu-options img {
+    width: 40%;
+    height: 35%;
+    margin-bottom: 10%; }
+
+.main-menu-options:hover {
+  background-color: white; }
