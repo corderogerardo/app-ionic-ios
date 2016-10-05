@@ -10310,3 +10310,43 @@ i {
   justify-content: center;
   height: 100%;
   width: 85%; }
+
+.select-send-type {
+  align-items: center;
+  border-bottom: 1px solid rgba(211, 211, 211, 0.2);
+  display: flex;
+  justify-content: center;
+  padding-top: 15%;
+  height: 20%; }
+
+.select-send-type p {
+  align-items: center;
+  color: #33cd5f;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  font-size: 17px;
+  width: 80%; }
+
+.select-send-type span {
+  color: #886aea;
+  margin: 0 5px; }
+
+.main-menu {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 85%; }
+
+.main-menu-options {
+  align-items: center;
+  border-bottom: 1px solid rgba(211, 211, 211, 0.2);
+  height: 30%;
+  display: flex;
+  color: #33cd5f;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  text-decoration: none;
+  width: 80%; }

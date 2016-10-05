@@ -58,6 +58,17 @@ angular.module('axpress', ['ionic'])
 			}
 		}
 	})
+	.state('menu',{
+		url:'/menu',
+		views: {
+			'mainContent': {
+				templateUrl: 'templates/menu/menu.html',
+				/*controller:'',
+				resolve:{
+				}/*end resolve*/
+			}
+		}
+	})
 	;
 	$urlRouterProvider.otherwise('/');
 });
