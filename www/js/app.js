@@ -69,6 +69,50 @@ angular.module('axpress', ['ionic'])
 			}
 		}
 	})
+	.state('documentsorigin',{
+		url:'/documentsorigin',
+		views: {
+			'mainContent': {
+				templateUrl: 'templates/maps/documents/documentOrigin.html',
+				/*controller:'',
+				resolve:{
+				}/*end resolve*/
+			}
+		}
+	})
+	.state('documentsdetailorigin',{
+		url:'/documentsdetailorigin',
+		views: {
+			'mainContent': {
+				templateUrl: 'templates/maps/documents/documentDetailOrigin.html',
+				/*controller:'',
+				resolve:{
+				}/*end resolve*/
+			}
+		}
+	})
+	.state('documentsdestiny',{
+		url:'/documentsdestiny',
+		views: {
+			'mainContent': {
+				templateUrl: 'templates/maps/documents/documentDestiny.html',
+				/*controller:'',
+				resolve:{
+				}/*end resolve*/
+			}
+		}
+	})
+	.state('documentsdetaildestiny',{
+		url:'/documentsdetaildestiny',
+		views: {
+			'mainContent': {
+				templateUrl: 'templates/maps/documents/documentDetailDestiny.html',
+				/*controller:'',
+				resolve:{
+				}/*end resolve*/
+			}
+		}
+	})
 	;
 	$urlRouterProvider.otherwise('/');
 });
