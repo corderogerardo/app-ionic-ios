@@ -113,6 +113,17 @@ angular.module('axpress', ['ionic'])
 			}
 		}
 	})
+	.state('sendtype',{
+		url:'/sendtype',
+		views: {
+			'mainContent': {
+				templateUrl: 'templates/sendtype/sendtype.html',
+				/*controller:'',
+				resolve:{
+				}/*end resolve*/
+			}
+		}
+	})
 	;
 	$urlRouterProvider.otherwise('/');
 });
