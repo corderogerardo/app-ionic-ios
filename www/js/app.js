@@ -113,11 +113,22 @@ angular.module('axpress', ['ionic'])
 			}
 		}
 	})
-	.state('sendtype',{
-		url:'/sendtype',
+	.state('sendtypedocuments',{
+		url:'/sendtypedocuments',
 		views: {
 			'mainContent': {
-				templateUrl: 'templates/sendtype/sendtype.html',
+				templateUrl: 'templates/sendtype/documents/sendtype.html',
+				/*controller:'',
+				resolve:{
+				}/*end resolve*/
+			}
+		}
+	})
+	.state('caracteristicsdocuments',{
+		url:'/caracteristicsdocuments',
+		views: {
+			'mainContent': {
+				templateUrl: 'templates/caracteristics/documents/caracteristics.html',
 				/*controller:'',
 				resolve:{
 				}/*end resolve*/
