@@ -135,6 +135,17 @@ angular.module('axpress', ['ionic'])
 			}
 		}
 	})
+	.state('documentsimagephoto',{
+		url:'/documentsimagephoto',
+		views: {
+			'mainContent': {
+				templateUrl: 'templates/imagephoto/documents/imagephoto.html',
+				/*controller:'',
+				resolve:{
+				}/*end resolve*/
+			}
+		}
+	})
 	;
 	$urlRouterProvider.otherwise('/');
 });
