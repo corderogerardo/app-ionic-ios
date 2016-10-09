@@ -22,6 +22,21 @@ angular.module('axpress', ['ionic'])
 		}
 	});
 })
+.controller('ShipementTracking', function($scope) {})
+
+// Drag up for the menu
+.directive('dragUp', function($ionicGesture) {
+	return {
+		restrict: 'A',
+		link: function($scope, $element, $attr) {
+			$ionicGesture.on('touch', function(e) {
+				e.gesture.stopDetect();
+				e.gesture.preventDefault();
+				$element.parent().toggleClass('slide-in-up');
+			}, $element);
+		}
+	}
+})
 .config(function($stateProvider,$urlRouterProvider){
 	$stateProvider
 	.state('app',{
@@ -162,6 +177,17 @@ angular.module('axpress', ['ionic'])
 		views: {
 			'mainContent': {
 				templateUrl: 'templates/paymentmethods/paymentmethods.html',
+				/*controller:'',
+				resolve:{
+				}/*end resolve*/
+			}
+		}
+	})
+	.state('shipmenttracking',{
+		url:'/shipmenttracking',
+		views: {
+			'mainContent': {
+				templateUrl: 'templates/shipmenttracking/shipmenttracking.html',
 				/*controller:'',
 				resolve:{
 				}/*end resolve*/

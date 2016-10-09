@@ -10836,3 +10836,143 @@ i {
   justify-content: center;
   text-decoration: none;
   width: 80%; }
+
+.main-container-shipementtracking {
+  border-bottom: 20px solid #33cd5f;
+  background-image: url("../img/maps.png");
+  background-size: cover;
+  justify-content: center;
+  height: 100%;
+  display: flex; }
+
+.shipementtracking-gps-button {
+  width: 15%;
+  position: absolute;
+  height: 9%;
+  bottom: 15%;
+  left: 5%; }
+
+.shipementtracking-gps-button-traditional {
+  align-items: center;
+  display: flex;
+  color: white;
+  border-radius: 50%;
+  text-decoration: none;
+  justify-content: center;
+  background-color: #ffc900;
+  width: 100%;
+  height: 100%; }
+
+.shipementtracking-button {
+  width: 100%;
+  position: absolute;
+  height: 10%;
+  bottom: 0px; }
+
+.shipementtracking-button-traditional {
+  align-items: center;
+  display: flex;
+  color: white;
+  text-decoration: none;
+  justify-content: center;
+  background-color: #33cd5f;
+  width: 100%;
+  height: 50px; }
+
+#menu {
+  -webkit-transition: all 0.5s linear;
+  -moz-transition: all 0.5s linear;
+  -o-transition: all 0.5s linear;
+  transition: all 0.5s linear;
+  position: fixed;
+  z-index: 99;
+  bottom: -200px;
+  /* Height of the .navbar_content */
+  width: 100%; }
+
+#menu.slide-in-up {
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -o-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  bottom: 3%; }
+
+#menu .navbar_top {
+  position: relative;
+  display: block;
+  width: 100%;
+  min-height: 40px;
+  margin: 0;
+  padding: 1px 12px 0 12px;
+  background-color: #33cd5f;
+  text-align: center;
+  line-height: 40px;
+  bottom: 15%;
+  color: #fff; }
+
+#menu .navbar_content {
+  height: 200px;
+  width: 100%;
+  line-height: 50px; }
+
+.deliverboy-info {
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around; }
+
+.deliverboy-photo {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 40%; }
+  .deliverboy-photo i {
+    font-size: 72px; }
+
+.deliverboy-data {
+  display: flex;
+  flex-direction: column;
+  width: 60%; }
+
+.deliverboy-data-text {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 70%;
+  color: #33cd5f;
+  font-size: 16px;
+  font-weight: bold;
+  white-space: nowrap;
+  width: 100%; }
+  .deliverboy-data-text p {
+    white-space: nowrap; }
+
+.deliverboy-data-buttons {
+  display: flex;
+  flex-direction: row; }
+
+.deliverboy-data-buttons {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  height: 30%; }
+
+.deliverboy-chat {
+  border: none;
+  background-color: #ffc900;
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  height: 65%;
+  width: 48%; }
+
+.deliverboy-call {
+  border: none;
+  background-color: #33cd5f;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  height: 65%;
+  width: 48%; }
