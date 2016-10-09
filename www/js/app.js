@@ -146,6 +146,17 @@ angular.module('axpress', ['ionic'])
 			}
 		}
 	})
+	.state('sentresumedocument',{
+		url:'/sentresumedocument',
+		views: {
+			'mainContent': {
+				templateUrl: 'templates/sentresume/sentresume.html',
+				/*controller:'',
+				resolve:{
+				}/*end resolve*/
+			}
+		}
+	})
 	;
 	$urlRouterProvider.otherwise('/');
 });
