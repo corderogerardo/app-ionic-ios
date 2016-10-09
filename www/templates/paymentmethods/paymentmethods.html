@@ -1,0 +1,29 @@
+<div class="bar bar-header bar-balanced">
+	 <h1 class="title">MEDIOS DE PAGO</h1>
+</div>
+<ion-view view-title="SendType">
+	<ion-content scroll="false" >
+
+	<section class="main-container">
+		<section class="send-type-todo">
+			<div>
+				<span>Elige un <a>medio de pago</a></span>
+			</div>
+		</section>
+		<section class="send-type-icon">
+			<img src="../img/payments.jpg" alt="">
+		</section>
+		<section class="send-type-options">
+			<ion-radio class="send-type-options-radio" ng-model="choice" ng-value="rightnow">Tarjeta de Crédito</ion-radio>
+			<ion-radio class="send-type-options-radio" ng-model="choice" ng-value="eighthorus">Contra-Entrega (Efectivo)</ion-radio>
+			<ion-radio class="send-type-options-radio" ng-model="choice" ng-value="twentyhours">Contra-Recogida (Efectivo)</ion-radio>
+		</section>
+		<section class="sendtype-button">
+			<a class="sendtype-button-traditional" href="#/caracteristicsdocuments" title="">CONTINUAR</a>
+		</section>
+
+
+	</section>
+
+	</ion-content>
+</ion-view>

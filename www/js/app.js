@@ -157,6 +157,17 @@ angular.module('axpress', ['ionic'])
 			}
 		}
 	})
+	.state('paymentmethods',{
+		url:'/paymentmethods',
+		views: {
+			'mainContent': {
+				templateUrl: 'templates/paymentmethods/paymentmethods.html',
+				/*controller:'',
+				resolve:{
+				}/*end resolve*/
+			}
+		}
+	})
 	;
 	$urlRouterProvider.otherwise('/');
 });
