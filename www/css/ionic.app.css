@@ -11069,3 +11069,18 @@ i {
     color: #11c1f3;
     font-size: 18px;
     text-decoration: none; }
+
+.shipment-main-title {
+  color: #33cd5f;
+  display: flex;
+  justify-content: center;
+  padding-top: 15%;
+  width: 100%; }
+
+.shipment-vote-title {
+  border-bottom: 2px solid #33cd5f;
+  color: #ffc900;
+  margin-top: 20%;
+  width: 90%; }
+  .shipment-vote-title p {
+    font-size: 22px; }

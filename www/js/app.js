@@ -205,6 +205,17 @@ angular.module('axpress', ['ionic'])
 			}
 		}
 	})
+	.state('shipmentverification',{
+		url:'/shipmentverification',
+		views: {
+			'mainContent': {
+				templateUrl: 'templates/shipmentverification/shipmentverification.html',
+				/*controller:'',
+				resolve:{
+				}/*end resolve*/
+			}
+		}
+	})
 	;
 	$urlRouterProvider.otherwise('/');
 });
