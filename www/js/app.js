@@ -194,6 +194,17 @@ angular.module('axpress', ['ionic'])
 			}
 		}
 	})
+	.state('chat',{
+		url:'/chat',
+		views: {
+			'mainContent': {
+				templateUrl: 'templates/chat/chat.html',
+				/*controller:'',
+				resolve:{
+				}/*end resolve*/
+			}
+		}
+	})
 	;
 	$urlRouterProvider.otherwise('/');
 });

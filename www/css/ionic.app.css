@@ -10960,19 +10960,112 @@ i {
   height: 30%; }
 
 .deliverboy-chat {
+  align-items: center;
   border: none;
   background-color: #ffc900;
+  border-radius: 5px;
+  display: flex;
+  cursor: pointer;
   font-size: 18px;
+  flex-direction: row;
+  justify-content: center;
   font-weight: bold;
   color: white;
   height: 65%;
+  text-decoration: none;
   width: 48%; }
 
 .deliverboy-call {
+  align-items: center;
   border: none;
   background-color: #33cd5f;
+  border-radius: 5px;
   color: white;
+  display: flex;
+  cursor: pointer;
+  flex-direction: row;
+  justify-content: center;
   font-size: 18px;
   font-weight: bold;
   height: 65%;
+  text-decoration: none;
   width: 48%; }
+
+.chat-container {
+  height: 90%;
+  width: 100%;
+  padding-top: 15%; }
+
+.chat-destinatary {
+  align-items: center;
+  background-color: lightgray;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  left: 5%;
+  position: relative;
+  width: 60%; }
+
+.chat-sender {
+  align-items: center;
+  background-color: #33cd5f;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  right: -35%;
+  position: relative;
+  width: 60%; }
+
+.chat-from {
+  border-bottom: 1px solid white;
+  padding: 2%;
+  width: 90%; }
+
+.chat-message-hour {
+  display: flex;
+  padding: 2%;
+  width: 90%; }
+
+.chat-message {
+  width: 75%; }
+
+.chat-hour {
+  width: 25%; }
+
+.chat-container-input {
+  background-color: rgba(211, 211, 211, 0.3);
+  height: 10%;
+  display: flex;
+  flex-direction: row; }
+
+.chat-camera {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  width: 20%; }
+  .chat-camera a {
+    font-size: 40px;
+    color: #11c1f3;
+    text-decoration: none; }
+
+.chat-input {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  width: 60%; }
+  .chat-input input {
+    border-radius: 10px; }
+
+.chat-button {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  width: 20%; }
+  .chat-button a {
+    color: #11c1f3;
+    font-size: 18px;
+    text-decoration: none; }

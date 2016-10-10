@@ -123,20 +123,34 @@
 	height:30%;
 }
 .deliverboy-chat{
+	align-items: center;
 	border:none;
 	background-color:$energized;
+	border-radius:5px;
+	display:flex;
+	cursor: pointer;
 	font-size:18px;
+	flex-direction: row;
+	justify-content: center;
 	font-weight: bold;
 	color:white;
 	height:65%;
+	text-decoration:none;
 	width:48%;
 }
 .deliverboy-call{
+	align-items: center;
 	border:none;
 	background-color:$balanced;
+	border-radius:5px;
 	color:white;
+	display:flex;
+	cursor: pointer;
+	flex-direction: row;
+	justify-content: center;
 	font-size:18px;
 	font-weight: bold;
 	height:65%;
+	text-decoration:none;
 	width:48%;
 }
