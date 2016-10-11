@@ -249,6 +249,17 @@ angular.module('axpress', ['ionic'])
 			}
 		}
 	})
+	.state('errandsdestiny',{
+		url:'/errandsdestiny',
+		views: {
+			'mainContent': {
+				templateUrl: 'templates/maps/errands/errandsDestiny.html',
+				/*controller:'',
+				resolve:{
+				}/*end resolve*/
+			}
+		}
+	})
 	;
 	$urlRouterProvider.otherwise('/');
 });

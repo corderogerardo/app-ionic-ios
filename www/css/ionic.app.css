@@ -10448,6 +10448,68 @@ i {
   width: 100%;
   height: 50px; }
 
+.errands-destinatary-input {
+  bottom: 70px;
+  height: 20%;
+  position: fixed;
+  width: 80%; }
+
+.input-destinataryname {
+  display: flex;
+  flex-direction: row;
+  border: 1px solid #065599;
+  border-radius: 20px 0px 0px 0px;
+  height: 40%; }
+
+.input-destinataryname i {
+  align-items: center;
+  display: flex;
+  color: white;
+  justify-content: center;
+  background-color: #065599;
+  width: 15%;
+  border-radius: 20px 0px 0px 0px; }
+
+.input-destinataryname label {
+  align-items: center;
+  display: flex;
+  color: white;
+  justify-content: center;
+  background-color: white;
+  width: 90%; }
+
+.input-destinataryphone {
+  display: flex;
+  flex-direction: row;
+  border: 1px solid #065599;
+  height: 40%; }
+
+.input-destinataryphone i {
+  align-items: center;
+  display: flex;
+  color: white;
+  justify-content: center;
+  background-color: #065599;
+  width: 15%; }
+
+.input-destinataryphone label {
+  align-items: center;
+  display: flex;
+  color: white;
+  justify-content: center;
+  background-color: white;
+  width: 90%; }
+
+.pickuphere-button-container {
+  bottom: 30px;
+  display: flex;
+  height: 8%;
+  justify-content: space-around;
+  position: absolute;
+  width: 90%; }
+  .pickuphere-button-container a {
+    width: 48%; }
+
 .send-type-todo {
   align-items: center;
   display: flex;
