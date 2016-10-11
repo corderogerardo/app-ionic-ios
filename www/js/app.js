@@ -260,6 +260,28 @@ angular.module('axpress', ['ionic'])
 			}
 		}
 	})
+	.state('errandsresume',{
+		url:'/errandsresume',
+		views: {
+			'mainContent': {
+				templateUrl: 'templates/sentresume/errandsresume.html',
+				/*controller:'',
+				resolve:{
+				}/*end resolve*/
+			}
+		}
+	})
+	.state('errandsstops',{
+		url:'/errandsstops',
+		views: {
+			'mainContent': {
+				templateUrl: 'templates/sentresume/errandsstops.html',
+				/*controller:'',
+				resolve:{
+				}/*end resolve*/
+			}
+		}
+	})
 	;
 	$urlRouterProvider.otherwise('/');
 });
