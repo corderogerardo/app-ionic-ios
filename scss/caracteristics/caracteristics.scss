@@ -194,3 +194,32 @@
 		visibility: hidden;
 	}
 }
+.errands-caracteristics-input{
+	align-items: center;
+	display:flex;
+	flex-direction: row;
+	justify-content: center;
+	width:100%;
+	height:20%;
+	input{
+		border:1px solid blue;
+		height:90%;
+		text-align: center;
+		width:80%;
+	}
+}
+.errands-caracteristics{
+
+	align-items: center;
+	display:flex;
+	flex-direction: column;
+	justify-content: center;
+	margin-top:10%;
+	width:100%;
+	p{
+		color:$balanced;
+		text-align:center;
+		margin-bottom:10%;
+		width:55%;
+	}
+}

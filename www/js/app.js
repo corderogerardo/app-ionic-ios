@@ -238,6 +238,17 @@ angular.module('axpress', ['ionic'])
 			}
 		}
 	})
+	.state('caracteristicserrands',{
+		url:'/caracteristicserrands',
+		views: {
+			'mainContent': {
+				templateUrl: 'templates/caracteristics/errands/caracteristicserrands.html',
+				/*controller:'',
+				resolve:{
+				}/*end resolve*/
+			}
+		}
+	})
 	;
 	$urlRouterProvider.otherwise('/');
 });
