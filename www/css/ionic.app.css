@@ -10685,6 +10685,33 @@ i {
   text-decoration: none;
   width: 100%; }
 
+.caracteristics-inputs-mesurements {
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-bottom: 2%;
+  height: 100%;
+  width: 85%; }
+  .caracteristics-inputs-mesurements input {
+    border: 1px solid #33cd5f;
+    width: 48%;
+    padding: 2%;
+    height: 100%; }
+
+.mesurements-options {
+  display: flex;
+  flex-direction: row;
+  width: 48%; }
+
+.mesurements-options-radio {
+  border: 1px solid #33cd5f;
+  cursor: none; }
+  .mesurements-options-radio .mesurements-options-radio:after {
+    cursor: none; }
+  .mesurements-options-radio .radio-icon:after {
+    background-color: #33cd5f;
+    visibility: hidden; }
+
 .imagephoto-title {
   align-items: center;
   display: flex;

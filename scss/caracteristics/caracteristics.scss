@@ -164,3 +164,33 @@
 	text-decoration: none;
 	width:100%;
 }
+.caracteristics-inputs-mesurements{
+	display: inline-flex;
+	flex-direction: row;
+	justify-content: space-around;
+	margin-bottom: 2%;
+	height:100%;
+	width:85%;
+	input{
+		border:1px solid $balanced;
+		width:48%;
+		padding: 2%;
+		height:100%;
+	}
+}
+.mesurements-options{
+	display: flex;
+	flex-direction: row;
+	width:48%;
+}
+.mesurements-options-radio{
+	border:1px solid $balanced;
+	cursor: none;
+	.mesurements-options-radio:after{
+	cursor: none;
+}
+	.radio-icon:after{
+		background-color:$balanced;
+		visibility: hidden;
+	}
+}

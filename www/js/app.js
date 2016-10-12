@@ -216,6 +216,28 @@ angular.module('axpress', ['ionic'])
 			}
 		}
 	})
+	.state('account',{
+		url:'/account',
+		views: {
+			'mainContent': {
+				templateUrl: 'templates/account/account.html',
+				/*controller:'',
+				resolve:{
+				}/*end resolve*/
+			}
+		}
+	})
+	.state('caracteristicspackages',{
+		url:'/caracteristicspackages',
+		views: {
+			'mainContent': {
+				templateUrl: 'templates/caracteristics/packages/caracteristicspackages.html',
+				/*controller:'',
+				resolve:{
+				}/*end resolve*/
+			}
+		}
+	})
 	;
 	$urlRouterProvider.otherwise('/');
 });
