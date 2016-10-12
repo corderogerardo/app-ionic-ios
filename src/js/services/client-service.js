@@ -1,5 +1,6 @@
 angular.module('axpress')
-.factory('Client', ['$rootScope', 'constants', '$q', '$http', 'Service', function($rootScope, constants, $q, $http, Service){
+.factory('Client', ['$rootScope', 'constants', '$q', '$http', '$timeout', 'Service', 'Facebook',
+function($rootScope, constants, $q, $http, $timeout, Service, Facebook){
     var service = new Service('/client');
     service.user = {
         isLoged: false
@@ -22,45 +23,10 @@ angular.module('axpress')
         return service.post('/register', data);
     };
 
-    /**
-     * Starts the process of loggin in a user using
-     * the Facebook SDK
-     */
+    
     service.loginWithFacebook = function () {
-        if (typeof FB != 'undefined') {
-            FB.login(function (response) {
-                if (response.authResponse) {
-                    console.log(response);
-                    service.facebookGetUserInfo();
-                } else {
-                    console.log("User cancelled login or did not authorize.");
-                }
-            }, {scope: 'email,public_profile'});
-        }
-    };
-
-    /**
-     * --NOT IN USE--
-     * Subscribes to the 'authResponseChange' event of Facebook API
-     * and performs actions based on if the user has correctly logged in
-     */
-    service.watchAuthenticationStatusChange = function () {
-
-        FB.Event.subscribe('auth.authResponseChange', function (res) {
-            if (res.status === 'connected') {
-                /*
-                    The user is logged in,
-                    we can retrieve personal info
-                */
-                service.facebookGetUserInfo();
-
-                //should use res.authResponse
-                console.log(res.authResponse);
-            } else if (response.status === 'not_authorized') {
-                //User has not given access to data
-            } else {
-                //User is not logged in to the app
-            }
+        Facebook.login().then(function () {
+            service.facebookGetUserInfo('email,name');
         });
     };
 
@@ -68,23 +34,23 @@ angular.module('axpress')
      * We test the API access to fetch user basic info
      * such as userFacebookID, email and name
      */
-    service.facebookGetUserInfo = function () {
-        FB.api('/me', {fields: 'email,name'}, function (res) {
-            $rootScope.$apply(function () {
-                $rootScope.user = service.user = res;
+    service.facebookGetUserInfo = function (fields) {
+        Facebook.getUserInfo(fields).then(function (response) {
+            $timeout(function(){
+                $rootScope.user = service.user = response;
                 console.log($rootScope.user);
-            });
+            }, 0);
         });
     };
 
     /**
-     * Logouts the user from facebook
+     * Logouts user from Facebook, cleaning session.
      */
     service.facebookLogout = function () {
-        FB.logout(function (response) {
-            $rootScope.$apply(function () {
+        Facebook.logout().then(function () {
+            $timeout(function() {
                 $rootScope.user = service.user = {};
-            });
+            }, 0);
         });
     };
 
