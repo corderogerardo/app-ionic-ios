@@ -8,7 +8,7 @@ angular.module('axpress', [
     'ngResource'
 ])
 
-.run(['$ionicPlatform', function($ionicPlatform) {
+.run(['$ionicPlatform', '$rootScope', '$window', 'constants', function($ionicPlatform, $rootScope, $window, constants) {
     $ionicPlatform.ready(function() {
         if (window.cordova && window.cordova.plugins.Keyboard) {
             // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
@@ -24,6 +24,37 @@ angular.module('axpress', [
             StatusBar.styleDefault();
         }
     });
+
+    $rootScope.user = {};
+
+    /**
+     * This method gets called when Facebook SDK loads
+     */
+    $window.fbAsyncInit = function () {
+        FB.init({
+            appId      : constants.fbAppId,
+            cookie     : true,  // enable cookies to allow the server to access the session
+            xfbml      : true,  // parse social plugins on this page
+            version    : 'v2.6',
+
+        });
+        $rootScope.facebookLoaded = true;
+    };    
+
+    /**
+     * Loads facebook sdk.
+     *
+     * @param      {Object}  d       Windows.Document object
+     */
+    function loadFacebookSDK (d, s, id) {
+       var js, fjs = d.getElementsByTagName(s)[0];
+           if (d.getElementById(id)) return;
+           js = d.createElement(s); js.id = id;
+           js.src = "//connect.facebook.net/en_US/sdk.js";
+           fjs.parentNode.insertBefore(js, fjs);
+    }
+    //Automatically run function anonimously
+    (loadFacebookSDK(document, 'script', 'facebook-jssdk'));
 }])
 
 .config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {

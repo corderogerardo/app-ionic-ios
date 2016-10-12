@@ -1,5 +1,6 @@
 angular.module('axpress')
-.controller('loginController', ['$scope', 'Client', function($scope, Client){
+.controller('loginController', ['$scope', '$rootScope', 'Client', function($scope, $rootScope, Client){
+
     $scope.login = function () {
         Client.login('reinaldo122@gmail.com','123123')
         .then(function (data) {
@@ -9,4 +10,12 @@ angular.module('axpress')
             console.log(error);
         });
     };
+
+    $scope.loginWithFacebook = function () {
+        Client.loginWithFacebook();
+    };
+
+    $scope.facebookAvailable = $rootScope.facebookLoaded;
+
+    
 }]);
