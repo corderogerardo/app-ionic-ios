@@ -1,22 +1,22 @@
 angular.module('axpress')
-.factory('Client', ['constants', '$q', '$http', function(constants, $q, $http){
-    var api = constants.apiBaseUrl + '/client';
-    var service = {};
+.factory('Client', ['constants', '$q', '$http', 'Service', function(constants, $q, $http, Service){
+    var service = new Service('/client');
 
     service.login = function (username, password) {
-        var deferred = $q.defer();
         var data = {
             email: username,
-            pass: password,
-            key: constants.key,
-            platform: constants.platform
+            pass: password
         };
-        $http.post(api + '/login', data, {})
-        .then(function (data) {
-            deferred.resolve(data);
-        }, function (error) {
-            deferred.reject(error);
-        });
+        return service.post('/login', data);
+    };
+
+    service.register = function (name, pass, email) {
+        var data = {
+            email: email,
+            pass: pass,
+            name: name
+        };
+        return service.post('/register', data);
     };
 
     return service;

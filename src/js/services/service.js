@@ -1,35 +1,4 @@
 angular.module('axpress')
-.factory('Client', ['constants', '$q', '$http', 'Service', function(constants, $q, $http, Service){
-    var service = new Service('/client');
-
-    service.login = function (username, password) {
-        var data = {
-            email: username,
-            pass: password
-        };
-        return service.post('/login', data);
-    };
-
-    service.register = function (name, pass, email) {
-        var data = {
-            email: email,
-            pass: pass,
-            name: name
-        };
-        return service.post('/register', data);
-    };
-
-    return service;
-}]);;
-
-angular.module('axpress')
-.constant('constants', {
-    apiBaseUrl: 'http://52.43.247.174/api_devel',
-    key: '21569d3e6977ae51178544f5dcdd508652799af3.IVadPml3rlEXhUT13N1QhlJ5mvM=',
-    platform: 'iOS Hybrid'
-});;
-
-angular.module('axpress')
 .factory('Service', ['$http', 'constants', '$q', function($http, constants, $q){
 
     /**
