@@ -69,19 +69,61 @@ angular.module('axpress')
     platform: 'iOS Hybrid',
     
     //Facebook App ID
-    fbAppId: '320049998373400'
+    fbAppId: '320049998373400',
+
+    //Google App ID
+    googleOAuthClientID: '96059222512-4vm97bgjdolu5i0fe0sg8tl35e85gjdm.apps.googleusercontent.com'
 });;
 
 angular.module('axpress')
-.factory('Facebook', ['$rootScope', '$q', 'Service', function($rootScope, $q, Service){
+.factory('Facebook', ['$rootScope', '$q', 'Service', '$window', 'constants', function($rootScope, $q, Service, $window, constants){
     var service = new Service();
     service.scope = 'email,public_profile';
+
+    //Public methods
+    service.loadFacebookSDK = loadFacebookSDK;
+    service.login = login;
+    service.getUserInfo = getUserInfo;
+    service.logout = logout;
+    service.registerFacebookAsyncInit = registerFacebookAsyncInit;
+
+    return service;
+
+    function registerFacebookAsyncInit () {
+        /**
+         * This method gets called when Facebook SDK loads
+         */
+        $window.fbAsyncInit = function () {
+            FB.init({
+                appId      : constants.fbAppId,
+                cookie     : true,  // enable cookies to allow the server to access the session
+                xfbml      : true,  // parse social plugins on this page
+                version    : 'v2.6',
+
+            });
+            $rootScope.facebookLoaded = true;
+        };
+    }
+
+    /**
+     * Loads facebook sdk.
+     *
+     * @param      {Object}  d       Windows.Document object
+     */
+    function loadFacebookSDK (d, s, id) {
+        registerFacebookAsyncInit();
+        var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/en_US/sdk.js";
+            fjs.parentNode.insertBefore(js, fjs);
+    }
 
     /**
      * Starts the process of loggin in a user using
      * the Facebook SDK
      */
-    service.login = function () {
+    function login () {
         if (typeof FB != 'undefined') {
             var deferred = $q.defer();
             FB.login(function (response) {
@@ -93,7 +135,7 @@ angular.module('axpress')
             }, {scope: service.scope});
             return deferred.promise;
         }
-    };
+    }
 
     /**
      * Gets user information from Facebook profile
@@ -103,7 +145,7 @@ angular.module('axpress')
      * @return     {Promise}  The promise that will resolve the
      *                            user information
      */
-    service.getUserInfo = function (fields) {
+    function getUserInfo (fields) {
         var deferred = $q.defer();
         FB.api('/me', {fields: fields}, function (response) {
             if (!response || response.error) {
@@ -113,20 +155,18 @@ angular.module('axpress')
             }
         });
         return deferred.promise;
-    };
+    }
 
     /**
      * Removes the facebook session
      */
-    service.logout = function () {
+    function logout () {
         var deferred = $q.defer();
         FB.logout(function (response) {
             deferred.resolve(response);
         });
         return deferred.promise;
-    };
-
-    return service;
+    }
 }]);;
 
 angular.module('axpress')
