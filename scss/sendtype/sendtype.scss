@@ -1,0 +1,64 @@
+.send-type-todo{
+	align-items: center;
+	display:flex;
+	height: 20%;
+	justify-content: center;
+	padding-top: 15%;
+}
+.send-type-todo div{
+	align-items: center;
+	display:flex;
+	justify-content: center;
+	text-align: center;
+	width:70%;
+}
+.send-type-todo span{
+	color:$balanced;
+	font-size: 18px;
+	height:50%;
+	width: 100%;
+}
+.send-type-todo a{
+	color:$royal;
+	margin: 0 5px;
+}
+.send-type-icon{
+	align-items: center;
+	display:flex;
+	flex-direction: column;
+	justify-content: center;
+	height: 30%;
+}
+.send-type-icon img{
+	color:$balanced;
+	height:60%;
+	width: 40%;
+}
+.send-type-options{
+	align-items: center;
+	display:flex;
+	flex-direction: column;
+	height: 30%;
+}
+.send-type-options-radio{
+	border:none;
+	width:80%;
+	height: 30%;
+}
+.sendtype-button{
+	bottom: 50px;
+	display: flex;
+	justify-content: center;
+	position:absolute;
+	width:100%;
+}
+.sendtype-button-traditional{
+	align-items: center;
+	display:flex;
+	color:white;
+	text-decoration: none;
+	justify-content: center;
+	background-color:$balanced;
+	width:80%;
+	height:50px;
+}

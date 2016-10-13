@@ -1,0 +1,94 @@
+.main-container-maps{
+	border-bottom: 20px solid $balanced;
+	background-image: url("../img/maps.png");
+	background-size: cover;
+	justify-content: center;
+	height: 100%;
+	display:flex;
+}
+.input-direction{
+	display:flex;
+	margin-top: 15%;
+	height:10%;
+	flex-direction: row;
+	border:1px solid $balanced;
+	border-radius: 20px 0px 20px 0px;
+	width:80%;
+	position: absolute;
+}
+.input-direction i{
+	align-items: center;
+	display:flex;
+	color:white;
+	justify-content: center;
+	background-color:$balanced;
+	width:20%;
+	border-radius: 20px 0px 0px 0px;
+}
+.input-direction label{
+	align-items: center;
+	display:flex;
+	color:white;
+	justify-content: center;
+	background-color:white;
+	width:80%;
+	border-radius: 0px 0px 20px 0px;
+}
+.pickuphere-button{
+	width:80%;
+	position:absolute;
+	bottom: 50px;
+}
+.pickuphere-button-traditional{
+	align-items: center;
+	display:flex;
+	color:white;
+	text-decoration: none;
+	justify-content: center;
+	background-color:$balanced;
+	width:100%;
+	height:50px;
+}
+.input-direction-confirm{
+	display:flex;
+	margin-top: 15%;
+	height:10%;
+	flex-direction: row;
+	border:1px solid $energized;
+	border-radius: 20px 0px 20px 0px;
+	width:80%;
+	position: absolute;
+}
+.input-direction-confirm i{
+	align-items: center;
+	display:flex;
+	color:white;
+	justify-content: center;
+	background-color:$energized;
+	width:20%;
+	border-radius: 20px 0px 0px 0px;
+}
+.input-direction-confirm label{
+	align-items: center;
+	display:flex;
+	color:white;
+	justify-content: center;
+	background-color:white;
+	width:80%;
+	border-radius: 0px 0px 20px 0px;
+}
+.confirm-button{
+	width:80%;
+	position:absolute;
+	bottom: 50px;
+}
+.confirm-button-traditional{
+	align-items: center;
+	display:flex;
+	color:white;
+	text-decoration: none;
+	justify-content: center;
+	background-color:$energized;
+	width:100%;
+	height:50px;
+}

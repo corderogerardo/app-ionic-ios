@@ -1,0 +1,16 @@
+.shipment-main-title{
+	color:$balanced;
+	display: flex;
+	justify-content: center;
+	padding-top: 15%;
+	width:100%;
+}
+.shipment-vote-title{
+	border-bottom: 2px solid $balanced;
+	color:$energized;
+	margin-top: 20%;
+	width: 90%;
+	p{
+		font-size: 22px;
+	}
+}
