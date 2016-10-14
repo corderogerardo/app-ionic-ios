@@ -3,6 +3,7 @@
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
+	margin-top:5%;
 	height:70%;
 	width:100%;
 }
@@ -18,7 +19,6 @@
 	height:40%;
 	flex-direction: row;
 	border:1px solid $balanced;
-	border-radius: 20px 0px 0px 0px;
 }
 .register-input-username i{
 	align-items: center;
@@ -27,7 +27,6 @@
 	justify-content: center;
 	background-color:$balanced;
 	width:40px;
-	border-radius: 20px 0px 0px 0px;
 }
 .register-input-username label{
 	align-items: center;
@@ -36,6 +35,9 @@
 	justify-content: center;
 	background-color:white;
 	width:70%;
+	input{
+		background-color:white;
+	}
 }
 .register-input-password{
 	display:flex;
@@ -58,6 +60,9 @@
 	justify-content: center;
 	background-color:white;
 	width:70%;
+	input{
+		background-color:white;
+	}
 }
 .register-input-mail{
 	display:flex;
@@ -80,6 +85,9 @@
 	justify-content: center;
 	background-color:white;
 	width:70%;
+	input{
+		background-color:white;
+	}
 }
 .register-input-phone{
 	height:40%;
@@ -87,14 +95,12 @@
 	flex-direction: row;
 	color:white;
 	border:1px solid $balanced;
-	border-radius: 0px 0px 20px 0px;
 }
 .register-input-phone i{
 	align-items: center;
 	display:flex;
 	justify-content: center;
 	background-color:$balanced;
-	border-top: 1px solid white;
 	width:40px;
 }
 .register-input-phone label{
@@ -104,6 +110,10 @@
 	justify-content: center;
 	background-color:white;
 	width:70%;
+	input{
+		background-color:white;
+		width:90%;
+	}
 }
 .register-button{
 	display:inline-flex;
