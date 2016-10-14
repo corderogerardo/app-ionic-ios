@@ -260,6 +260,17 @@ angular.module('axpress', [
 			}
 		}
 	})
+	.state('history',{
+		url:'/history',
+		views: {
+			'mainContent': {
+				templateUrl: 'templates/history/history.html',
+				controller:'HistoryController',
+				/*resolve:{
+				}/*end resolve*/
+			}
+		}
+	})
 	.state('errandsstops',{
 		url:'/errandsstops',
 		views: {
@@ -267,7 +278,7 @@ angular.module('axpress', [
 				templateUrl: 'templates/sentresume/errandsstops.html',
 				/*controller:'',
 				resolve:{
-				}/*end resolve*/
+				} //end resolve*/
 			}
 		}
 	})
