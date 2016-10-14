@@ -15,6 +15,15 @@ angular.module('axpress')
         Client.loginWithFacebook();
     };
 
+    $scope.loginWithGoogle = function () {
+        Client.loginWithGoogle();
+    };
+
+    $scope.successfullySignedGoogle = function (googleUser) {
+        console.log("Loged in with google");
+        console.log(googleUser);
+    };
+
     $scope.facebookAvailable = $rootScope.facebookLoaded;
 
     

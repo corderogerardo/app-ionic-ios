@@ -8,7 +8,7 @@ angular.module('axpress', [
     'ngResource'
 ])
 
-.run(['$ionicPlatform', '$rootScope', 'Facebook', function($ionicPlatform, $rootScope, Facebook) {
+.run(['$ionicPlatform', '$rootScope', 'Facebook', 'Google', function($ionicPlatform, $rootScope, Facebook, Google) {
     $ionicPlatform.ready(function() {
         if (window.cordova && window.cordova.plugins.Keyboard) {
             // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
@@ -28,6 +28,7 @@ angular.module('axpress', [
     $rootScope.user = {};
 
     Facebook.loadFacebookSDK(document, 'script', 'facebook-jssdk');
+    Google.loadGoogleSDK(document, 'script', 'google-jssdk');
 
 }])
 

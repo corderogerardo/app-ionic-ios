@@ -1,6 +1,7 @@
 angular.module('axpress')
-.factory('Client', ['$rootScope', 'constants', '$q', '$http', '$timeout', 'Service', 'Facebook',
-function($rootScope, constants, $q, $http, $timeout, Service, Facebook){
+.factory('Client', ['$rootScope', 'constants', '$q', '$http', '$timeout', 'Service', 'Facebook', 'Google',
+function($rootScope, constants, $q, $http, $timeout, Service, Facebook, Google){
+
     var service = new Service('/client');
     service.user = {
         isLoged: false
@@ -54,6 +55,10 @@ function($rootScope, constants, $q, $http, $timeout, Service, Facebook){
         });
     };
 
+    service.loginWithGoogle = function () {
+        Google.login();
+    };
+
     return service;
 }]);;
 
@@ -63,7 +68,7 @@ angular.module('axpress')
     apiBaseUrl: 'http://52.43.247.174/api_devel',
 
     //App specific client token/key
-    key: '21569d3e6977ae51178544f5dcdd508652799af3.IVadPml3rlEXhUT13N1QhlJ5mvM=',
+    key: '1fc0f5604616c93deac481b33989f10e',
 
     //String to identify the App on the Admin Console
     platform: 'iOS Hybrid',
@@ -170,7 +175,56 @@ angular.module('axpress')
 }]);;
 
 angular.module('axpress')
+.factory('Google', ['$rootScope', '$window', 'Service', 'constants', function($rootScope, $window, Service, constants){
+    var service = new Service();
+    var GoogleAuth = undefined;
+
+    service.loadGoogleSDK = loadGoogleSDK;
+    service.login = login;
+
+    $window.onLoadGoogle = function () {
+        gapi.load('auth2', function () {
+            GoogleAuth = gapi.auth2.init({
+                client_id:constants.googleOAuthClientID,
+                scope: 'profile email'
+            });
+        });
+    };
+
+    return service;
+
+    function loadGoogleSDK (d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id; js.async = true; js.defer = true;
+            js.src = "//apis.google.com/js/platform.js?onload=onLoadGoogle";
+            fjs.parentNode.insertBefore(js, fjs);
+    }
+
+    function login (options) {
+        options = options || {
+            scope: 'profile email'
+        };
+        GoogleAuth.signIn(options).then(function (user) {
+            console.log("sign in resolved...");
+            console.log(user);
+        }, function (error) {
+            console.log("signIn error...");
+            console.log(error);
+        });
+    }
+
+
+}]);;
+
+angular.module('axpress')
 .factory('Service', ['$http', 'constants', '$q', function($http, constants, $q){
+
+    var baseOptions = {
+        headers: {
+            'Content-Type' : 'application/json'
+        }
+    };
 
     /**
      * Class to be instantiated as a base service with common configurations
@@ -208,7 +262,7 @@ angular.module('axpress')
             data.platform = this.platform;
 
             var deferred = $q.defer();
-            $http.post(this.urlBase() + path, data, options || {})
+            $http.post(this.urlBase() + path, data, options || baseOptions)
             .then(function (data) {
                 deferred.resolve(data);
             }, function (error) {

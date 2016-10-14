@@ -1,6 +1,7 @@
 angular.module('axpress')
-.factory('Client', ['$rootScope', 'constants', '$q', '$http', '$timeout', 'Service', 'Facebook',
-function($rootScope, constants, $q, $http, $timeout, Service, Facebook){
+.factory('Client', ['$rootScope', 'constants', '$q', '$http', '$timeout', 'Service', 'Facebook', 'Google',
+function($rootScope, constants, $q, $http, $timeout, Service, Facebook, Google){
+
     var service = new Service('/client');
     service.user = {
         isLoged: false
@@ -52,6 +53,10 @@ function($rootScope, constants, $q, $http, $timeout, Service, Facebook){
                 $rootScope.user = service.user = {};
             }, 0);
         });
+    };
+
+    service.loginWithGoogle = function () {
+        Google.login();
     };
 
     return service;
