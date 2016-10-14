@@ -1,0 +1,31 @@
+@mixin circle($width,$color){
+	width: $width;
+	height: $width;
+	background-color: $color;
+	border-radius: $width/2;
+	background-clip: padding-top;
+}
+@mixin triangle($width, $dir,$color){
+	@if $dir == up{
+		width:0;height:0;
+		border-left: $width/2 solid transparent;
+		border-right: $width/2 solid transparent;
+		border-bottom: $width/2 solid $color;
+	}@else if $dir == down{
+		border-left: $width/2 solid transparent;
+		border-right: $width/2 solid transparent;
+		border-top: $width/2 solid $color;
+	}@else if $dir == right {
+		border-top: $width/2 solid transparent;
+		border-bottom: $width/2 solid transparent;
+		border-left: $width/2 solid $color;
+	}@else if $dir == left {
+		border-top: $width/2 solid transparent;
+		border-bottom: $width/2 solid transparent;
+		border-right: $width/2 solid $color;
+	}
+}
+/* shapes Use mode:
+ * .class {@include circle(200px,black);display:block}
+	.class {@include triangle(100px, right, red);display:block}
+ */

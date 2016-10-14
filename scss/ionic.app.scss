@@ -20,6 +20,11 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 
 // Include all of Ionic
 @import "www/lib/ionic/scss/ionic";
+@import "base/globals";
+@import "base/buttons";
+@import "base/mixins/animate";
+@import "base/mixins/shapes";
+@import "base/mixins/vargba";
 @import "welcome/welcome";
 @import "login/login";
 @import "register/register";
@@ -34,5 +39,7 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 @import "chat/chat";
 @import "shipmentverification/shipmentverification";
 @import "history/history";
+
+
 
 

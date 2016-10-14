@@ -1,0 +1,60 @@
+.container-button{
+	display:inline-flex;
+	justify-content: space-around;
+	flex-direction: column;
+	font-size: 2vh;
+	width:80%;
+	margin-top: 3%;
+	height:30%;
+}
+.button-noicon{
+	align-items: center;
+	display:flex;
+	color:white;
+	text-decoration: none;
+	justify-content: center;
+	background-color:$balanced;
+	width:100%;
+	height:30%;
+}
+.two-buttons-container-column{
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	height:30%;
+	width:100%;
+}
+.button-icon{
+	background-color:$positive;
+	display:flex;
+	flex-direction: row;
+	height:25%;
+	font-size: 2vh;
+	margin-bottom: 4%;
+	width:80%;
+	text-decoration:none;
+	i{
+	align-items: center;
+	display:flex;
+	color:white;
+	justify-content: center;
+	width:15%;
+	height:100%;
+	}
+	label{
+	align-items: center;
+	color:white;
+	cursor: pointer;
+	display:flex;
+	justify-content: center;
+	height:100%;
+	width:85%;
+	}
+}
+.gplus{
+	background-color:red;
+	i{
+		color:white;
+	}
+}

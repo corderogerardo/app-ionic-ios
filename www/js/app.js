@@ -5,7 +5,9 @@
 // the 2nd parameter is an array of 'requires'
 angular.module('axpress', [
 		'ionic',
-		'ngResource'
+		'ngResource',
+		'ngCordova',
+		'LocalStorageModule'
 ])
 
 .run(['$ionicPlatform', function($ionicPlatform) {

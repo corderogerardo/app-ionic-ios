@@ -1,0 +1,44 @@
+*{
+	box-sizing: border-box;
+}
+input,
+textarea,
+select,
+button{
+	font-weight: 200;
+	padding-top: 0px;
+	outline: none;
+}
+input,
+textarea{
+	box-sizing: border-box;
+}
+/* Generalized inputs */
+.inputs-container{
+	display:flex;
+	height:20%;
+	flex-direction: row;
+	border:1px solid $balanced;
+	i{
+		align-items: center;
+		display:flex;
+		color:white;
+		justify-content: center;
+		background-color:$balanced;
+		width:15%;
+	}
+	label{
+	align-items: center;
+	display:flex;
+	color:white;
+	justify-content: center;
+	background-color:white;
+	width:85%;
+	input{
+		background-color:white;
+		width:100%;
+		padding:5%;
+		height:100%;
+		}
+	}
+}
