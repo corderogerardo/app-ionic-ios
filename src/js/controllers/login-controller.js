@@ -12,11 +12,15 @@ angular.module('axpress')
     };
 
     $scope.loginWithFacebook = function () {
-        Client.loginWithFacebook();
+        Client.loginWithFacebook().then(function (response) {
+            $scope.facebook = response;
+        });
     };
 
     $scope.loginWithGoogle = function () {
-        Client.loginWithGoogle();
+        Client.loginWithGoogle().then(function (response) {
+            $scope.google = response;
+        });
     };
 
     $scope.successfullySignedGoogle = function (googleUser) {

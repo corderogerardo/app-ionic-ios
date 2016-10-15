@@ -26,9 +26,14 @@ function($rootScope, constants, $q, $http, $timeout, Service, Facebook, Google){
 
     
     service.loginWithFacebook = function () {
-        Facebook.login().then(function () {
-            service.facebookGetUserInfo('email,name');
+        var deferred = $q.defer();
+        Facebook.login().then(function (response) {
+            deferred.resolve(response);
+            //service.facebookGetUserInfo('email,name');
+        }, function (error) {
+            deferred.reject(error);
         });
+        return deferred.promise;
     };
 
     /**
@@ -56,7 +61,13 @@ function($rootScope, constants, $q, $http, $timeout, Service, Facebook, Google){
     };
 
     service.loginWithGoogle = function () {
-        Google.login();
+        var deferred = $q.defer();
+        Google.login().then(function (response) {
+            deferred.resolve(response);
+        }, function (error) {
+            deferred.reject(error);
+        });
+        return deferred.promise;
     };
 
     return service;

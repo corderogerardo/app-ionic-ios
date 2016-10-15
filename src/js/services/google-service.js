@@ -1,19 +1,10 @@
 angular.module('axpress')
-.factory('Google', ['$rootScope', '$window', 'Service', 'constants', function($rootScope, $window, Service, constants){
+.factory('Google', ['$rootScope', '$window', '$cordovaOauth', '$q', 'Service', 'constants', 
+function($rootScope, $window, $cordovaOauth, $q, Service, constants){
     var service = new Service();
-    var GoogleAuth = undefined;
+    service.scope = ['profile', 'email'];
 
-    service.loadGoogleSDK = loadGoogleSDK;
     service.login = login;
-
-    $window.onLoadGoogle = function () {
-        gapi.load('auth2', function () {
-            GoogleAuth = gapi.auth2.init({
-                client_id:constants.googleOAuthClientID,
-                scope: 'profile email'
-            });
-        });
-    };
 
     return service;
 
@@ -25,17 +16,17 @@ angular.module('axpress')
             fjs.parentNode.insertBefore(js, fjs);
     }
 
-    function login (options) {
-        options = options || {
-            scope: 'profile email'
-        };
-        GoogleAuth.signIn(options).then(function (user) {
-            console.log("sign in resolved...");
-            console.log(user);
-        }, function (error) {
-            console.log("signIn error...");
-            console.log(error);
-        });
+    function login () {
+        var deferred = $q.defer();
+        document.addEventListener("deviceready", function () {
+            $cordovaOauth.google(constants.googleOAuthClientID, service.scope).then(function (user) {
+                deferred.resolve(user);
+            }, function (error) {
+                deferred.reject(error);
+            });
+        }, false);
+        
+        return deferred.promise;
     }
 
 

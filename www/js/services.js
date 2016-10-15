@@ -26,9 +26,14 @@ function($rootScope, constants, $q, $http, $timeout, Service, Facebook, Google){
 
     
     service.loginWithFacebook = function () {
-        Facebook.login().then(function () {
-            service.facebookGetUserInfo('email,name');
+        var deferred = $q.defer();
+        Facebook.login().then(function (response) {
+            deferred.resolve(response);
+            //service.facebookGetUserInfo('email,name');
+        }, function (error) {
+            deferred.reject(error);
         });
+        return deferred.promise;
     };
 
     /**
@@ -56,7 +61,13 @@ function($rootScope, constants, $q, $http, $timeout, Service, Facebook, Google){
     };
 
     service.loginWithGoogle = function () {
-        Google.login();
+        var deferred = $q.defer();
+        Google.login().then(function (response) {
+            deferred.resolve(response);
+        }, function (error) {
+            deferred.reject(error);
+        });
+        return deferred.promise;
     };
 
     return service;
@@ -81,69 +92,37 @@ angular.module('axpress')
 });;
 
 angular.module('axpress')
-.factory('Facebook', ['$rootScope', '$q', 'Service', '$window', 'constants', function($rootScope, $q, Service, $window, constants){
+.factory('Facebook', ['$rootScope', '$q', 'Service', '$window', '$cordovaOauth', 'constants',
+function($rootScope, $q, Service, $window, $cordovaOauth, constants){
     var service = new Service();
-    service.scope = 'email,public_profile';
+    service.scope = ['email','public_profile'];
 
     //Public methods
-    service.loadFacebookSDK = loadFacebookSDK;
     service.login = login;
-    service.getUserInfo = getUserInfo;
-    service.logout = logout;
-    service.registerFacebookAsyncInit = registerFacebookAsyncInit;
 
     return service;
 
-    function registerFacebookAsyncInit () {
-        /**
-         * This method gets called when Facebook SDK loads
-         */
-        $window.fbAsyncInit = function () {
-            FB.init({
-                appId      : constants.fbAppId,
-                cookie     : true,  // enable cookies to allow the server to access the session
-                xfbml      : true,  // parse social plugins on this page
-                version    : 'v2.6',
-
-            });
-            $rootScope.facebookLoaded = true;
-        };
-    }
-
     /**
-     * Loads facebook sdk.
-     *
-     * @param      {Object}  d       Windows.Document object
-     */
-    function loadFacebookSDK (d, s, id) {
-        registerFacebookAsyncInit();
-        var js, fjs = d.getElementsByTagName(s)[0];
-            if (d.getElementById(id)) return;
-            js = d.createElement(s); js.id = id;
-            js.src = "//connect.facebook.net/en_US/sdk.js";
-            fjs.parentNode.insertBefore(js, fjs);
-    }
-
-    /**
-     * Starts the process of loggin in a user using
-     * the Facebook SDK
+     * Starts the process of loggin in a user using Cordova oAuth
      */
     function login () {
-        if (typeof FB != 'undefined') {
-            var deferred = $q.defer();
-            FB.login(function (response) {
+        var deferred = $q.defer();
+        document.addEventListener("deviceready", function () {
+            $cordovaOauth.facebook(constants.fbAppId, service.scope).then(function (response) {
                 if (response.authResponse) {
                     deferred.resolve(response);
                 } else {
                     deferred.reject(response);
                 }
-            }, {scope: service.scope});
-            return deferred.promise;
-        }
+            }, function (error) {
+                deferred.reject(error);
+            });
+        }, false);
+        return deferred.promise;
     }
 
     /**
-     * Gets user information from Facebook profile
+     * Gets user information from Facebook profile using Js SDK
      *
      * @param      {String}  fields  The fields we want to fetch
      *                               from user profile
@@ -163,7 +142,7 @@ angular.module('axpress')
     }
 
     /**
-     * Removes the facebook session
+     * Removes the facebook session using Js SDK
      */
     function logout () {
         var deferred = $q.defer();
@@ -175,21 +154,12 @@ angular.module('axpress')
 }]);;
 
 angular.module('axpress')
-.factory('Google', ['$rootScope', '$window', 'Service', 'constants', function($rootScope, $window, Service, constants){
+.factory('Google', ['$rootScope', '$window', '$cordovaOauth', '$q', 'Service', 'constants', 
+function($rootScope, $window, $cordovaOauth, $q, Service, constants){
     var service = new Service();
-    var GoogleAuth = undefined;
+    service.scope = ['profile', 'email'];
 
-    service.loadGoogleSDK = loadGoogleSDK;
     service.login = login;
-
-    $window.onLoadGoogle = function () {
-        gapi.load('auth2', function () {
-            GoogleAuth = gapi.auth2.init({
-                client_id:constants.googleOAuthClientID,
-                scope: 'profile email'
-            });
-        });
-    };
 
     return service;
 
@@ -201,17 +171,17 @@ angular.module('axpress')
             fjs.parentNode.insertBefore(js, fjs);
     }
 
-    function login (options) {
-        options = options || {
-            scope: 'profile email'
-        };
-        GoogleAuth.signIn(options).then(function (user) {
-            console.log("sign in resolved...");
-            console.log(user);
-        }, function (error) {
-            console.log("signIn error...");
-            console.log(error);
-        });
+    function login () {
+        var deferred = $q.defer();
+        document.addEventListener("deviceready", function () {
+            $cordovaOauth.google(constants.googleOAuthClientID, service.scope).then(function (user) {
+                deferred.resolve(user);
+            }, function (error) {
+                deferred.reject(error);
+            });
+        }, false);
+        
+        return deferred.promise;
     }
 
 
@@ -219,12 +189,6 @@ angular.module('axpress')
 
 angular.module('axpress')
 .factory('Service', ['$http', 'constants', '$q', function($http, constants, $q){
-
-    var baseOptions = {
-        headers: {
-            'Content-Type' : 'application/json'
-        }
-    };
 
     /**
      * Class to be instantiated as a base service with common configurations
@@ -262,7 +226,7 @@ angular.module('axpress')
             data.platform = this.platform;
 
             var deferred = $q.defer();
-            $http.post(this.urlBase() + path, data, options || baseOptions)
+            $http.post(this.urlBase() + path, data, options || {})
             .then(function (data) {
                 deferred.resolve(data);
             }, function (error) {

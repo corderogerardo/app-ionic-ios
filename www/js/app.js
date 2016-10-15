@@ -5,7 +5,9 @@
 // the 2nd parameter is an array of 'requires'
 angular.module('axpress', [
     'ionic',
-    'ngResource'
+    'ngResource',
+    'ngCordova',
+    'ngCordovaOauth'
 ])
 
 .run(['$ionicPlatform', '$rootScope', 'Facebook', 'Google', function($ionicPlatform, $rootScope, Facebook, Google) {
@@ -26,9 +28,6 @@ angular.module('axpress', [
     });
 
     $rootScope.user = {};
-
-    Facebook.loadFacebookSDK(document, 'script', 'facebook-jssdk');
-    Google.loadGoogleSDK(document, 'script', 'google-jssdk');
 
 }])
 
