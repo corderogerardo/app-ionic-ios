@@ -4,8 +4,7 @@
 	flex-direction: column;
 	font-size: 2vh;
 	width:80%;
-	margin-top: 3%;
-	height:30%;
+	height:10%;
 }
 .button-noicon{
 	align-items: center;
@@ -13,9 +12,10 @@
 	color:white;
 	text-decoration: none;
 	justify-content: center;
+	font-size: 2vh;
 	background-color:$balanced;
 	width:100%;
-	height:30%;
+	height:100%;
 }
 .two-buttons-container-column{
 	align-items: center;
@@ -26,18 +26,22 @@
 	width:100%;
 }
 .button-icon{
+	align-items: center;
 	background-color:$positive;
 	display:flex;
+	color:white;
 	flex-direction: row;
-	height:25%;
+	justify-content: center;
+	height:100%;
 	font-size: 2vh;
 	margin-bottom: 4%;
-	width:80%;
+	width:100%;
 	text-decoration:none;
 	i{
 	align-items: center;
 	display:flex;
 	color:white;
+	font-size: 3vh;
 	justify-content: center;
 	width:15%;
 	height:100%;
@@ -47,9 +51,16 @@
 	color:white;
 	cursor: pointer;
 	display:flex;
+	font-size: 2.5vh;
 	justify-content: center;
 	height:100%;
 	width:85%;
+	}
+}
+.facebook{
+	background-color:$balanced;
+	i{
+		color:white;
 	}
 }
 .gplus{
@@ -57,4 +68,7 @@
 	i{
 		color:white;
 	}
+}
+.bgorange{
+	background-color:$energized;
 }

@@ -2,59 +2,68 @@
 	align-items: center;
 	display: flex;
 	flex-direction: column;
-	justify-content: space-around;
-	height: 70%;
-	padding-top: 15%;
+	justify-content: center;
+	height: 55%;
 }
 .sentresume-content{
-	border-bottom: 3px solid $balanced;
 	display:flex;
+	border-bottom: 3px solid $balanced;
 	flex-direction: row;
-	height:20%;
+	height:40%;
 	width: 80%;
 }
 .data-origin{
 	align-items: flex-start;
 	display:flex;
 	flex-direction: column;
-	padding-bottom: 3%;
+	margin:0;
 	width:80%;
-}
-.data-origin b{
-	margin-bottom: 3%;
+	b{
+		font-size:2vh;
+	}
+	p{
+		margin-top: 0;
+		margin-bottom:0;
+		font-size:2vh;
+	}
 }
 .data-button-edit{
 	align-items: center;
 	display:flex;
 	flex-direction: column;
+	width:20%;
+	height:100%;
 	text-decoration: none;
-}
-.data-button-edit i{
-	align-items: center;
-	color:white;
-	border-radius: 50%;
-	background-color: $balanced;
-	display:flex;
-	flex-direction: row;
-	justify-content: center;
-	height:80%;
-	width:50px;
-}
-.data-button-edit p{
-	color:$energized;
-	width:100%;
+	i{
+		align-items: center;
+		color:white;
+		font-size:5vh;
+		border-radius: 50%;
+		background-color: $balanced;
+		display:flex;
+		width: 80%;
+		height:50px;
+		flex-direction: row;
+		justify-content: center;
+		text-align: center;
+	}
+	p{
+		color:$energized;
+		width:100%;
+		margin:0;
+	}
 }
 .sentresume-content-noborder{
 	display:flex;
 	flex-direction: row;
-	height:20%;
+	height:40%;
 	width: 80%;
 }
 .sentresume-cost{
 	align-items: center;
 	color:$balanced;
 	display:flex;
-	font-size: 18px;
+	font-size: 4vh;
 	flex-direction: column;
 	justify-content: center;
 	height:20%;
@@ -66,34 +75,13 @@
 	flex-direction: column;
 	height:10%;
 }
-.sentresume-button a{
-	align-items: center;
-	background-color:$balanced;
-	color:white;
-	display:flex;
-	height:60%;
-	justify-content: center;
-	text-decoration: none;
-	width:80%;
-}
 .errandsresume-button{
 	align-items: center;
 	display:flex;
 	justify-content:center;
 	flex-direction: column;
-	height:6%;
-	position:absolute;
-	left: 5%;
-	bottom: 30px;
-	width:90%;
-}
-.errandsresume-button a{
-	align-items: center;
-	background-color:$balanced;
-	color:white;
-	display:flex;
-	height:100%;
-	justify-content: center;
-	text-decoration: none;
+	height:8%;
+	margin-right:auto;
+	margin-left:auto;
 	width:80%;
 }

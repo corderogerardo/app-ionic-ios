@@ -3,82 +3,32 @@
 	background-size: cover;
 	justify-content: center;
 	height: 100%;
-	padding-top: 15%;
+	padding-top: 20%;
 	display:flex;
 }
 .input-direction{
 	display:flex;
-	height:8%;
+	height:10%;
 	flex-direction: row;
-	border:1px solid $balanced;
 	width:80%;
 }
-.input-direction i{
-	align-items: center;
-	display:flex;
-	color:white;
-	justify-content: center;
-	background-color:$balanced;
-	width:20%;
-}
-.input-direction label{
-	align-items: center;
-	display:flex;
-	color:white;
-	justify-content: center;
-	background-color:white;
-	width:80%;
-	input{
-		background-color:white;
-	}
-}
+
 .pickuphere-button{
 	width:80%;
 	position:absolute;
 	left: 10%;
+	height:8%;
 	bottom: 50px;
-}
-.pickuphere-button-traditional{
-	align-items: center;
-	display:flex;
-	color:white;
-	text-decoration: none;
-	justify-content: center;
-	background-color:$balanced;
-	width:100%;
-	height:50px;
-}
-.input-direction-confirm{
-	display:flex;
-	height:10%;
-	flex-direction: row;
-	border:1px solid $energized;
-	width:80%;
-}
-.input-direction-confirm i{
-	align-items: center;
-	display:flex;
-	color:white;
-	justify-content: center;
-	background-color:$energized;
-	width:20%;
-}
-.input-direction-confirm label{
-	align-items: center;
-	display:flex;
-	color:white;
-	justify-content: center;
-	background-color:white;
-	width:80%;
-	input{
-		background-color:white;
-	}
 }
 .confirm-button{
 	width:80%;
 	position:absolute;
-	left:10%;
+	left: 10%;
+	height:8%;
 	bottom: 50px;
+	a{
+		background-color:$energized;
+	}
 }
 .confirm-button-traditional{
 	align-items: center;
@@ -91,64 +41,14 @@
 	height:50px;
 }
 .errands-destinatary-input{
-	bottom:70px;
-	height:20%;
+	bottom:120px;
+	height:8%;
 	position:absolute;
 	left:10%;
 	width:80%;
 }
-.input-destinataryname{
-	display:flex;
-	flex-direction: row;
-	border:1px solid $balanced;
-	height:40%;
-}
-.input-destinataryname i{
-	align-items: center;
-	display:flex;
-	color:white;
-	justify-content: center;
-	background-color:$balanced;
-	width:15%;
-}
-.input-destinataryname label{
-	align-items: center;
-	display:flex;
-	color:white;
-	justify-content: center;
-	background-color:white;
-	width:90%;
-	input{
-		background-color:white;
-	}
-}
-.input-destinataryphone{
-	display:flex;
-	flex-direction: row;
-	border:1px solid $balanced;
-	height:40%;
-}
-.input-destinataryphone i{
-	align-items: center;
-	display:flex;
-	color:white;
-	justify-content: center;
-	background-color:$balanced;
-	width:15%;
-}
-.input-destinataryphone label{
-	align-items: center;
-	display:flex;
-	color:white;
-	justify-content: center;
-	background-color:white;
-	width:90%;
-	input{
-		background-color:white;
-	}
-}
 .pickuphere-button-container{
-	bottom: 30px;
+	bottom: 10px;
 	display:flex;
 	height:8%;
 	justify-content: space-around;
@@ -158,4 +58,8 @@
 	a{
 		width:48%;
 	}
+}
+.inputs-maps{
+	height:10%;
+	width:80%;
 }

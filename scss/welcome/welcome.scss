@@ -35,61 +35,59 @@
 	width: 15px;
 }
 .welcome-buttons{
-	align-items:space-between;
+	align-items:center;
 	display:flex;
 	height: 20%;
-	flex-direction: row;
-	justify-content: space-between;
+	flex-direction: column;
+	justify-content: space-around;
 	width:100%;
 }
-.welcome-login-button{
+.welcome-button{
+	align-items: center;
 	border:2px solid $energized;
-	border-radius: 5px;
 	color:$dark;
 	display:flex;
-	width: 49%;
-	height:80px;
+	flex-direction: row;
+	font-size:2vh;
+	justify-content: center;
+	width: 80%;
+	height:40%;
 	text-decoration: none;
-}
-.welcome-login-button:hover{
-	border-radius: 5px;
+	i{
+		align-items: center;
+		font-size:4vh;
+		display:flex;
+		color:$energized;
+		justify-content: center;
+		border-radius:50%;
+		margin-right: 5%;
+	}
+	&:hover{
 	background-color:$energized;
 	color:$stable;
-	.welcome-login-icon{
-		align-items: center;
-		background-color:$stable;
-		color:$energized;
+	i{
+		color:white;
+	}
 	}
 }
-.welcome-login{
-	border-radius: 5px;
-	display:flex;
-	width: 100%;
-	height:80px;
-}
-.welcome-register-button{
+.button-blue{
 	border:2px solid $balanced;
-	border-radius: 5px;
-	color:$dark;
-	display:flex;
-	width: 49%;
-	height:80px;
-	text-decoration: none;
-}
-.welcome-register-button:hover{
-	border-radius: 5px;
+	i{
+		align-items: center;
+		font-size:4vh;
+		display:flex;
+		color:$balanced;
+		justify-content: center;
+		border-radius:50%;
+		margin-right: 5%;
+	}
+	&:hover{
 	background-color:$balanced;
 	color:$stable;
-	.welcome-register-icon{
-		background-color:$stable;
-		color:$balanced;
+	i{
+		color:white;
 	}
-}
-.welcome-register{
-	display:flex;
-	border-radius: 5px;
-	width: 100%;
-	height:80px;
+	}
 }
 .welcome-login,
 .welcome-register,
@@ -97,39 +95,7 @@ p{
 	align-items: center;
 	display:flex;
 	margin:5px 0px;
-	font-size: 15px;
+	font-size: 2vh;
 	flex-direction: column;
 	justify-content: center;
-}
-.welcome-login,
-.welcome-register,
-i{
-
-	font-size: 25px;
-}
-.welcome-login-icon{
-	align-items: center;
-	border-radius:50%;
-	background-color:$energized;
-	color:white;
-	display:flex;
-	justify-content: center;
-	width:30px;
-	height:30px;
-}
-.welcome-register-icon{
-	align-items: center;
-	border-radius:50%;
-	background-color:$balanced;
-	color:white;
-	display:flex;
-	justify-content: center;
-	width:30px;
-	height:30px;
-}
-.welcome-botton-line{
-	border:0;
-	height: 4%;
-	width:100%;
-	background-color: $balanced;
 }

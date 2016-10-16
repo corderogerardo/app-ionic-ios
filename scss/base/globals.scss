@@ -16,9 +16,9 @@ textarea{
 /* Generalized inputs */
 .inputs-container{
 	display:flex;
-	height:20%;
+	height:100%;
 	flex-direction: row;
-	border:1px solid $balanced;
+	width:100%;
 	i{
 		align-items: center;
 		display:flex;
@@ -34,11 +34,37 @@ textarea{
 	justify-content: center;
 	background-color:white;
 	width:85%;
-	input{
-		background-color:white;
-		width:100%;
-		padding:5%;
-		height:70%;
+		input{
+			background-color:white;
+			font-size: 2vh;
+			height:70%;
+			padding:5%;
+			width:100%;
 		}
 	}
+}
+.white-space{
+	margin-top:5%;
+}
+.border-blue{
+	border:1px solid $balanced;
+	i{
+		background-color:$balanced;
+	}
+}
+.border-orange{
+	border:1px solid $energized;
+	i{
+		background-color:$energized;
+	}
+}
+.space{
+	height:15%;
+}
+.center-button{
+	margin-left: auto;
+	margin-right: auto;
+	margin-top:5%;
+	height:10%;
+	width:80%;
 }

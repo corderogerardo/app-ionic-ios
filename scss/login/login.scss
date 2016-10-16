@@ -1,4 +1,4 @@
-.login-container-tradictional{
+.login-form{
 	align-items: center;
 	display: flex;
 	flex-direction: column;
@@ -6,144 +6,46 @@
 	height:60%;
 	width:100%;
 }
-.login-traditional-input{
+.inputs-wrapper{
 	display: inline-flex;
 	flex-direction: column;
 	justify-content: center;
-	height:40%;
+	height:30%;
 	width:80%;
 }
-.input-username{
-	display:flex;
-	height:30%;
-	flex-direction: row;
-	border:1px solid $balanced;
-}
-.input-username i{
-	align-items: center;
-	display:flex;
-	color:white;
+.button-wrapper{
+	display: inline-flex;
+	flex-direction: column;
 	justify-content: center;
-	background-color:$balanced;
-	width:40px;
-}
-.input-username label{
-	align-items: center;
-	display:flex;
-	color:white;
-	justify-content: center;
-	background-color:white;
-	width:70%;
-}
-.input-password{
-	height:30%;
-	display:flex;
-	flex-direction: row;
-	color:white;
-	border:1px solid $balanced;
-}
-.input-password i{
-	align-items: center;
-	display:flex;
-	justify-content: center;
-	background-color:$balanced;
-	width:40px;
-}
-.input-password label{
-	align-items: center;
-	display:flex;
-	color:white;
-	justify-content: center;
-	background-color:white;
-	width:70%;
+	height:20%;
+	width:80%;
 }
 .login-button{
 	display:inline-flex;
 	justify-content: center;
 	flex-direction: column;
-	width:80%;
-	height:40%;
-}
-.login-button-tradictional{
-	align-items: center;
-	display:flex;
-	color:white;
-	text-decoration: none;
-	justify-content: center;
-	background-color:$balanced;
 	width:100%;
-	height:30%;
+	margin-top:5%;
+	height:100%;
 }
 .login-forgot-pass{
 	align-items: center;
 	display:flex;
 	color:$balanced;
-	font-size: 16px;
+	font-size: 3vh;
+	margin-top: 2%;
 	text-decoration: none;
 	justify-content: center;
 	width:100%;
-	height:40%;
+	height:30%;
 }
 .login-container-social{
 	align-items: center;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	height:40%;
+	height:30%;
 	width:100%;
-}
-.login-facebook-container{
-	background-color:$positive;
-	display:flex;
-	flex-direction: row;
-	margin-bottom: 4%;
-	height:20%;
-	width:80%;
-	text-decoration:none;
-}
-.login-facebook-container i{
-	align-items: center;
-	display:flex;
-	background-color:rgba(white,.5);
-	justify-content: center;
-	width:15%;
-	height:100%;
-}
-.login-facebook-container label{
-	align-items: center;
-	color:white;
-	cursor: pointer;
-	display:flex;
-	justify-content: center;
-	height:100%;
-	width:85%;
-}
-.login-googlep-container{
-	background-color:$assertive;
-	display:flex;
-	flex-direction: row;
-	height:20%;
-	margin-bottom: 10%;
-	text-decoration:none;
-	width:80%;
-}
-.login-googlep-container i{
-	align-items: center;
-	display:flex;
-	color:$assertive;
-	background-color:rgba(white,.5);
-	justify-content: center;
-	width:15%;
-	height:100%;
-}
-.login-googlep-container label{
-	align-items: center;
-	color:white;
-	cursor: pointer;
-	display:flex;
-	justify-content: center;
-	height:100%;
-	width:85%;
 }
 .login-new-container{
 	display:flex;

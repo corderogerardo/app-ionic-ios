@@ -1,14 +1,11 @@
-input{
-	background-color:white;
-}
 .caracteristics-title{
 	align-items: center;
 	color:$balanced;
 	display: flex;
-	font-size: 17px;
+	font-size: 3vh;
 	flex-direction: column;
 	justify-content: center;
-	margin-top:15%;
+	text-align:center;
 	height:10%;
 	width:100%;
 }
@@ -18,102 +15,15 @@ input{
 	flex-direction: column;
 	justify-content: center;
 	width:100%;
+	height:30%;
 }
 .caracteristics-inputs{
 	display: inline-flex;
 	flex-direction: column;
 	justify-content: center;
 	width:80%;
+	height:100%;
 }
-.caracteristics-input-email{
-	display:flex;
-	flex-direction: row;
-	border:1px solid $balanced;
-}
-.caracteristics-input-email i{
-	align-items: center;
-	display:flex;
-	color:white;
-	justify-content: center;
-	background-color:$balanced;
-	width:18%;
-}
-.caracteristics-input-email label{
-	align-items: center;
-	display:flex;
-	color:white;
-	justify-content: center;
-	background-color:white;
-	width:70%;
-}
-.caracteristics-input-username{
-	display:flex;
-	flex-direction: row;
-	border:1px solid $balanced;
-}
-.caracteristics-input-username i{
-	align-items: center;
-	display:flex;
-	color:white;
-	justify-content: center;
-	border-top: 1px solid white;
-	background-color:$balanced;
-	width:18%;
-}
-.caracteristics-input-username label{
-	align-items: center;
-	display:flex;
-	color:white;
-	justify-content: center;
-	background-color:white;
-	width:70%;
-}
-.caracteristics-input-phone{
-	display:flex;
-	flex-direction: row;
-	border:1px solid $balanced;
-}
-.caracteristics-input-phone i{
-	align-items: center;
-	display:flex;
-	color:white;
-	justify-content: center;
-	border-top: 1px solid white;
-	background-color:$balanced;
-	width:18%;
-}
-.caracteristics-input-phone label{
-	align-items: center;
-	display:flex;
-	color:white;
-	justify-content: center;
-	background-color:white;
-	width:70%;
-}
-.caracteristics-input-documentid{
-	height:40%;
-	display:flex;
-	flex-direction: row;
-	color:white;
-	border:1px solid $balanced;
-}
-.caracteristics-input-documentid i{
-	align-items: center;
-	display:flex;
-	justify-content: center;
-	background-color:$balanced;
-	border-top: 1px solid white;
-	width:18%;
-}
-.caracteristics-input-documentid label{
-	align-items: center;
-	display:flex;
-	color:white;
-	justify-content: center;
-	background-color:white;
-	width:70%;
-}
-
 .caracteristics-documents{
 	align-items: center;
 	display: flex;
@@ -124,36 +34,25 @@ input{
 	width:100%;
 }
 .caracteristics-documents-title{
+	font-size:3vh;
 	color:$balanced;
 }
 .input-caracteristics{
 	align-items: center;
 	display:flex;
-	flex-direction: row;
+	flex-direction: column;
 	justify-content: center;
-	border:1px solid $balanced;
+	height:80%;
 	width:80%;
-}
-.input-caracteristics label{
-	display:flex;
-	color:white;
-	background-color:white;
-	width:90%;
 }
 .caracteristics-button{
 	align-items: center;
 	display:flex;
 	justify-content: center;
-	width:100%;
-}
-.caracteristics-button-traditional{
-	align-items: center;
-	background-color:$balanced;
-	display:flex;
-	color:white;
-	justify-content: center;
-	height:40px;
-	text-decoration: none;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top:5%;
+	height:8%;
 	width:80%;
 }
 .caracteristics-inputs-mesurements{
@@ -201,7 +100,6 @@ input{
 	}
 }
 .errands-caracteristics{
-
 	align-items: center;
 	display:flex;
 	flex-direction: column;
@@ -212,6 +110,7 @@ input{
 		color:$balanced;
 		text-align:center;
 		margin-bottom:10%;
-		width:55%;
+		font-size:2vh;
+		width:60%;
 	}
 }

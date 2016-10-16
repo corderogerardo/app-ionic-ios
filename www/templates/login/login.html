@@ -1,37 +1,39 @@
 <div class="bar bar-header bar-balanced">
-	 <h1 class="title">INICIAR SESIÓN</h1>
+	 <h3 class="title">INICIAR SESIÓN</h3>
 </div>
 <ion-view view-title="Login">
 	<ion-content scroll="false" >
 
-		<section class="login-container-tradictional">
-		<div class="login-traditional-input">
-			<div class="input-username">
+		<section class="login-form">
+		<div class="inputs-wrapper">
+			<div class="inputs-container border-blue">
 				<i class="ion-person"></i>
 				<label class="">
 					<input type="text" placeholder="Nombre de Usuario">
 				</label>
 			</div>
-			<div class="input-password">
+			<div class="inputs-container border-blue">
 				<i class="ion-locked"></i>
 				<label class="">
 					<input type="password" placeholder="Contraseña">
 				</label>
 			</div>
 		</div>
-		<div class="login-button">
-		<a class="login-button-tradictional" ng-click="login()" title="">INGRESAR</a>
-		<a class="login-forgot-pass" href="" title="">¿Olvidaste tu Contraseña?</a>
+		<div class="button-wrapper">
+			<div class="login-button">
+				<a class="button-noicon" ng-click="login()" title="">INGRESAR</a>
+				<a class="login-forgot-pass" href="" title="">¿Olvidaste tu Contraseña?</a>
+			</div>
 		</div>
 		</section>
 		<section class="login-container-social">
-			<a href="#/menu" class="login-facebook-container">
+			<a href="#/menu" class="button-icon facebook">
 				<i class="ion-social-facebook"></i>
 				<label>
 				Ingresa con facebook
 				</label>
 			</a>
-			<a href="#/menu" class="login-googlep-container">
+			<a href="#/menu" class="button-icon gplus">
 				<i class="ion-social-googleplus"></i>
 				<label>
 				Ingresa con google
@@ -44,8 +46,5 @@
 				</label>
 			</a>
 		</section>
-
-
-
 	</ion-content>
 </ion-view>
