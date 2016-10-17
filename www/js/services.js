@@ -12,7 +12,7 @@ function($rootScope, constants, $q, $http, $timeout, Service, Facebook, Google){
             email: username,
             pass: password
         };
-        return service.post('/login', data);
+        return service.apiPost('/login', data);
     };
 
     service.register = function (name, pass, email) {
@@ -21,7 +21,7 @@ function($rootScope, constants, $q, $http, $timeout, Service, Facebook, Google){
             pass: pass,
             name: name
         };
-        return service.post('/register', data);
+        return service.apiPost('/register', data);
     };
 
     
@@ -29,7 +29,6 @@ function($rootScope, constants, $q, $http, $timeout, Service, Facebook, Google){
         var deferred = $q.defer();
         Facebook.login().then(function (response) {
             deferred.resolve(response);
-            //service.facebookGetUserInfo('email,name');
         }, function (error) {
             deferred.reject(error);
         });
@@ -37,27 +36,29 @@ function($rootScope, constants, $q, $http, $timeout, Service, Facebook, Google){
     };
 
     /**
-     * We test the API access to fetch user basic info
-     * such as userFacebookID, email and name
+     * Fetchs user basic info such as userFacebookID, email and name
      */
-    service.facebookGetUserInfo = function (fields) {
-        Facebook.getUserInfo(fields).then(function (response) {
+    service.facebookGetUserInfo = function () {
+        var deferred = $q.defer();
+        Facebook.getUserInfo().then(function (response) {
             $timeout(function(){
-                $rootScope.user = service.user = response;
-                console.log($rootScope.user);
+                $rootScope.user = service.user = response.data;
             }, 0);
+            deferred.resolve(response.data);
+        }, function (error) {
+            //Clean user's facebook credentials
+            Facebook.logout();
+            deferred.reject(error);
         });
+        return deferred.promise;
     };
 
     /**
      * Logouts user from Facebook, cleaning session.
      */
     service.facebookLogout = function () {
-        Facebook.logout().then(function () {
-            $timeout(function() {
-                $rootScope.user = service.user = {};
-            }, 0);
-        });
+        Facebook.logout();
+        $rootScope.user = service.user = {};
     };
 
     service.loginWithGoogle = function () {
@@ -65,6 +66,18 @@ function($rootScope, constants, $q, $http, $timeout, Service, Facebook, Google){
         Google.login().then(function (response) {
             deferred.resolve(response);
         }, function (error) {
+            deferred.reject(error);
+        });
+        return deferred.promise;
+    };
+
+    service.googleGetUserInfo = function () {
+        var deferred = $q.defer();
+        Google.getProfile().then(function (response) {
+            deferred.resolve(response);
+        }, function (error) {
+            //Clean user's facebook credentials
+            Google.logout();
             deferred.reject(error);
         });
         return deferred.promise;
@@ -99,6 +112,8 @@ function($rootScope, $q, Service, $window, $cordovaOauth, constants){
 
     //Public methods
     service.login = login;
+    service.getUserInfo = getUserInfo;
+    service.logout = logout;
 
     return service;
 
@@ -108,36 +123,44 @@ function($rootScope, $q, Service, $window, $cordovaOauth, constants){
     function login () {
         var deferred = $q.defer();
         document.addEventListener("deviceready", function () {
-            $cordovaOauth.facebook(constants.fbAppId, service.scope).then(function (response) {
-                if (response.authResponse) {
+            if (service.access_token || localStorage.getItem('facebookAccessToken')) {
+                deferred.resolve(true);
+            } else {
+                $cordovaOauth.facebook(constants.fbAppId, service.scope, {redirect_uri: "http://localhost/callback"}).then(function (response) {
+                    service.access_token = response.access_token;
+                    localStorage.setItem('facebookAccessToken', response.access_token);
                     deferred.resolve(response);
-                } else {
-                    deferred.reject(response);
-                }
-            }, function (error) {
-                deferred.reject(error);
-            });
+                }, function (error) {
+                    deferred.reject(error);
+                });
+            }
         }, false);
         return deferred.promise;
     }
 
     /**
      * Gets user information from Facebook profile using Js SDK
-     *
-     * @param      {String}  fields  The fields we want to fetch
-     *                               from user profile
+     * 
      * @return     {Promise}  The promise that will resolve the
      *                            user information
      */
-    function getUserInfo (fields) {
+    function getUserInfo () {
         var deferred = $q.defer();
-        FB.api('/me', {fields: fields}, function (response) {
-            if (!response || response.error) {
-                deferred.reject(response);
-            } else {
+        var access_token = service.access_token || localStorage.getItem('facebookAccessToken');
+        if (!access_token) {
+            deferred.reject();
+        } else {
+            service.get("https://graph.facebook.com/v2.8/me",{params:{
+                access_token: access_token,
+                fields: "id,name,email",
+                format: 'json'
+            }}).then(function (response) {
                 deferred.resolve(response);
-            }
-        });
+            }, function (error) {
+                deferred.reject(error);
+            });
+        }
+        
         return deferred.promise;
     }
 
@@ -145,11 +168,8 @@ function($rootScope, $q, Service, $window, $cordovaOauth, constants){
      * Removes the facebook session using Js SDK
      */
     function logout () {
-        var deferred = $q.defer();
-        FB.logout(function (response) {
-            deferred.resolve(response);
-        });
-        return deferred.promise;
+        delete service.access_token;
+        localStorage.removeItem('facebookAccessToken');
     }
 }]);;
 
@@ -160,30 +180,49 @@ function($rootScope, $window, $cordovaOauth, $q, Service, constants){
     service.scope = ['profile', 'email'];
 
     service.login = login;
+    service.getProfile = getProfile;
+    service.logout = logout;
 
     return service;
-
-    function loadGoogleSDK (d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0];
-            if (d.getElementById(id)) return;
-            js = d.createElement(s); js.id = id; js.async = true; js.defer = true;
-            js.src = "//apis.google.com/js/platform.js?onload=onLoadGoogle";
-            fjs.parentNode.insertBefore(js, fjs);
-    }
 
     function login () {
         var deferred = $q.defer();
         document.addEventListener("deviceready", function () {
-            $cordovaOauth.google(constants.googleOAuthClientID, service.scope).then(function (user) {
-                deferred.resolve(user);
-            }, function (error) {
-                deferred.reject(error);
-            });
+            if (service.credentials || localStorage.getItem('googleCredentials')) {
+                deferred.resolve(true);
+            } else {
+                $cordovaOauth.google(constants.googleOAuthClientID, ["profile"]).then(function (response) {
+                    service.credentials = response;
+                    localStorage.setItem('googleCredentials', JSON.stringify(response));
+                    deferred.resolve(response);
+                }, function (error) {
+                    deferred.reject(error);
+                });
+            }
         }, false);
-        
         return deferred.promise;
     }
 
+    function getProfile () {
+        var deferred = $q.defer();
+        var credentials = service.credentials || localStorage.getItem('googleCredentials');
+        if (!credentials) {
+            deferred.reject();
+        } else {
+            credentials = JSON.parse(credentials);
+            service.get("https://www.googleapis.com/userinfo/v2/me", {params: {access_token: credentials.access_token}}).then(function (response) {
+                deferred.resolve(response);
+            }, function (error) {
+                deferred.reject(error);
+            });
+        }
+        return deferred.promise;
+    }
+
+    function logout () {
+        delete service.credentials;
+        localStorage.removeItem('googleCredentials');
+    }
 
 }]);;
 
@@ -213,21 +252,46 @@ angular.module('axpress')
         };
 
         /**
-         * Reusable function to make queries and consume service from the server
+         * Reusable function to make queries and consume service from a service
          *
          * @param      {String}  path     The path specific to the service
-         * @param      {Object}  data     The data to be sent using the service
+         * @param      {Object}  data     The data to be sent using the service (Optional)
          * @param      {Object}  options  The $http options for the service (Optional)
          * @return     {Promise}  Returns the $http promise to be resolved on success or error
          */
         this.post = function (path, data, options) {
             data = data || {};
+            options = options || {};
+            var deferred = $q.defer();
+            $http.post(path, data, options)
+            .then(function (data) {
+                deferred.resolve(data);
+            }, function (error) {
+                deferred.reject(error);
+            });
+            return deferred.promise;
+        };
+
+        /**
+         * Function that wraps Service.post to consume the backend api
+         *
+         * @param      {String}  path     The path specific to the api service (/client/login)
+         * @param      {Object}  data     The data to be sent using the service (Optional)
+         * @param      {Object}  options  The $http options for the service (Optional)
+         * @return     {Promise}  Returns the $http promise to be resolved on success or error
+         */
+        this.apiPost = function (path, data, options) {
+            data = data || {};
             data.key = this.key;
             data.platform = this.platform;
+            path = this.urlBase() + path;
 
+            return this.post(path, data, options);
+        };
+
+        this.get = function (path, options) {
             var deferred = $q.defer();
-            $http.post(this.urlBase() + path, data, options || {})
-            .then(function (data) {
+            $http.get(path, options || {}).then(function (data) {
                 deferred.resolve(data);
             }, function (error) {
                 deferred.reject(error);

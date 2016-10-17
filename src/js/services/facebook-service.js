@@ -6,6 +6,8 @@ function($rootScope, $q, Service, $window, $cordovaOauth, constants){
 
     //Public methods
     service.login = login;
+    service.getUserInfo = getUserInfo;
+    service.logout = logout;
 
     return service;
 
@@ -15,36 +17,44 @@ function($rootScope, $q, Service, $window, $cordovaOauth, constants){
     function login () {
         var deferred = $q.defer();
         document.addEventListener("deviceready", function () {
-            $cordovaOauth.facebook(constants.fbAppId, service.scope).then(function (response) {
-                if (response.authResponse) {
+            if (service.access_token || localStorage.getItem('facebookAccessToken')) {
+                deferred.resolve(true);
+            } else {
+                $cordovaOauth.facebook(constants.fbAppId, service.scope, {redirect_uri: "http://localhost/callback"}).then(function (response) {
+                    service.access_token = response.access_token;
+                    localStorage.setItem('facebookAccessToken', response.access_token);
                     deferred.resolve(response);
-                } else {
-                    deferred.reject(response);
-                }
-            }, function (error) {
-                deferred.reject(error);
-            });
+                }, function (error) {
+                    deferred.reject(error);
+                });
+            }
         }, false);
         return deferred.promise;
     }
 
     /**
      * Gets user information from Facebook profile using Js SDK
-     *
-     * @param      {String}  fields  The fields we want to fetch
-     *                               from user profile
+     * 
      * @return     {Promise}  The promise that will resolve the
      *                            user information
      */
-    function getUserInfo (fields) {
+    function getUserInfo () {
         var deferred = $q.defer();
-        FB.api('/me', {fields: fields}, function (response) {
-            if (!response || response.error) {
-                deferred.reject(response);
-            } else {
+        var access_token = service.access_token || localStorage.getItem('facebookAccessToken');
+        if (!access_token) {
+            deferred.reject();
+        } else {
+            service.get("https://graph.facebook.com/v2.8/me",{params:{
+                access_token: access_token,
+                fields: "id,name,email",
+                format: 'json'
+            }}).then(function (response) {
                 deferred.resolve(response);
-            }
-        });
+            }, function (error) {
+                deferred.reject(error);
+            });
+        }
+        
         return deferred.promise;
     }
 
@@ -52,10 +62,7 @@ function($rootScope, $q, Service, $window, $cordovaOauth, constants){
      * Removes the facebook session using Js SDK
      */
     function logout () {
-        var deferred = $q.defer();
-        FB.logout(function (response) {
-            deferred.resolve(response);
-        });
-        return deferred.promise;
+        delete service.access_token;
+        localStorage.removeItem('facebookAccessToken');
     }
 }]);

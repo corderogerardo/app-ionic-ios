@@ -12,7 +12,7 @@ function($rootScope, constants, $q, $http, $timeout, Service, Facebook, Google){
             email: username,
             pass: password
         };
-        return service.post('/login', data);
+        return service.apiPost('/login', data);
     };
 
     service.register = function (name, pass, email) {
@@ -21,7 +21,7 @@ function($rootScope, constants, $q, $http, $timeout, Service, Facebook, Google){
             pass: pass,
             name: name
         };
-        return service.post('/register', data);
+        return service.apiPost('/register', data);
     };
 
     
@@ -29,7 +29,6 @@ function($rootScope, constants, $q, $http, $timeout, Service, Facebook, Google){
         var deferred = $q.defer();
         Facebook.login().then(function (response) {
             deferred.resolve(response);
-            //service.facebookGetUserInfo('email,name');
         }, function (error) {
             deferred.reject(error);
         });
@@ -37,27 +36,29 @@ function($rootScope, constants, $q, $http, $timeout, Service, Facebook, Google){
     };
 
     /**
-     * We test the API access to fetch user basic info
-     * such as userFacebookID, email and name
+     * Fetchs user basic info such as userFacebookID, email and name
      */
-    service.facebookGetUserInfo = function (fields) {
-        Facebook.getUserInfo(fields).then(function (response) {
+    service.facebookGetUserInfo = function () {
+        var deferred = $q.defer();
+        Facebook.getUserInfo().then(function (response) {
             $timeout(function(){
-                $rootScope.user = service.user = response;
-                console.log($rootScope.user);
+                $rootScope.user = service.user = response.data;
             }, 0);
+            deferred.resolve(response.data);
+        }, function (error) {
+            //Clean user's facebook credentials
+            Facebook.logout();
+            deferred.reject(error);
         });
+        return deferred.promise;
     };
 
     /**
      * Logouts user from Facebook, cleaning session.
      */
     service.facebookLogout = function () {
-        Facebook.logout().then(function () {
-            $timeout(function() {
-                $rootScope.user = service.user = {};
-            }, 0);
-        });
+        Facebook.logout();
+        $rootScope.user = service.user = {};
     };
 
     service.loginWithGoogle = function () {
@@ -65,6 +66,18 @@ function($rootScope, constants, $q, $http, $timeout, Service, Facebook, Google){
         Google.login().then(function (response) {
             deferred.resolve(response);
         }, function (error) {
+            deferred.reject(error);
+        });
+        return deferred.promise;
+    };
+
+    service.googleGetUserInfo = function () {
+        var deferred = $q.defer();
+        Google.getProfile().then(function (response) {
+            deferred.resolve(response);
+        }, function (error) {
+            //Clean user's facebook credentials
+            Google.logout();
             deferred.reject(error);
         });
         return deferred.promise;
