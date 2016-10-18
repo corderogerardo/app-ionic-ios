@@ -73,7 +73,7 @@
 	display:flex;
 	justify-content:center;
 	flex-direction: column;
-	height:10%;
+	height:8%;
 }
 .errandsresume-button{
 	align-items: center;
@@ -81,6 +81,16 @@
 	justify-content:center;
 	flex-direction: column;
 	height:8%;
+	margin-right:auto;
+	margin-left:auto;
+	width:80%;
+}
+.errandsresumestops-button{
+	align-items: center;
+	display:flex;
+	justify-content:center;
+	flex-direction: column;
+	height:13%;
 	margin-right:auto;
 	margin-left:auto;
 	width:80%;

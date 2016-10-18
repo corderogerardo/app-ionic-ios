@@ -58,8 +58,8 @@ angular.module('axpress', [
 		views: {
 			'mainContent': {
 				templateUrl: 'templates/register/register.html',
-				/*controller:'',
-				resolve:{
+				controller:'RegisterController',
+				/*resolve:{
 				}/*end resolve*/
 			}
 		}
