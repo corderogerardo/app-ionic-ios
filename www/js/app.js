@@ -5,6 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 angular.module('axpress', [
     'ionic',
+    'ionic.cloud',
     'ngResource',
     'ngCordova',
     'ngCordovaOauth'
@@ -31,7 +32,7 @@ angular.module('axpress', [
 
 }])
 
-.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
+.config(['$stateProvider', '$urlRouterProvider', '$ionicCloudProvider', function($stateProvider, $urlRouterProvider, $ionicCloudProvider) {
     $stateProvider
         .state('app', {
             url: '/',
@@ -211,4 +212,11 @@ angular.module('axpress', [
             }
         });
     $urlRouterProvider.otherwise('/');
+
+    //Ionic Cloud Configurations
+    $ionicCloudProvider.init({
+        "core": {
+            "app_id": "d44d2f7c"
+        }
+    });
 }]);
