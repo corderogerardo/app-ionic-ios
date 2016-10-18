@@ -3,7 +3,7 @@
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
-angular.module('axpress', ['ionic'])
+angular.module('axpress', ['ionic', 'ionic.cloud'])
 
 .run(function($ionicPlatform) {
 	$ionicPlatform.ready(function() {
@@ -37,7 +37,7 @@ angular.module('axpress', ['ionic'])
 		}
 	}
 })
-.config(function($stateProvider,$urlRouterProvider){
+.config(function($stateProvider,$urlRouterProvider, $ionicCloudProvider){
 	$stateProvider
 	.state('app',{
 		url:'/',
@@ -218,4 +218,11 @@ angular.module('axpress', ['ionic'])
 	})
 	;
 	$urlRouterProvider.otherwise('/');
+
+	//Ionic Cloud Configurations
+	$ionicCloudProvider.init({
+		"core": {
+			"app_id": "d44d2f7c"
+		}
+	});
 });
