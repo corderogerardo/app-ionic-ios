@@ -20,4 +20,5 @@
         <param name="ios-package" onload="true" value="CDVStatusBar" />
     </feature>
     <plugin name="ionic-plugin-deploy" spec="~0.6.5" />
+    <plugin name="cordova-plugin-screen-orientation" spec="~1.4.2" />
 </widget>

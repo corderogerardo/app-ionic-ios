@@ -20,6 +20,9 @@ angular.module('axpress', ['ionic', 'ionic.cloud'])
 		if(window.StatusBar) {
 			StatusBar.styleDefault();
 		}
+
+        //Force Portrait mode
+        screen.lockOrientation('portrait');
 	});
 })
 .controller('ShipementTracking', function($scope) {})
