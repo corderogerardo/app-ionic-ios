@@ -9895,7 +9895,7 @@ textarea {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 30%;
+  height: 20%;
   width: 100%; }
 
 .button-icon {
@@ -10111,9 +10111,11 @@ p {
   align-items: center;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  height: 70%;
+  justify-content: flex-start;
+  height: 60%;
   width: 100%; }
+  .register-container-tradictional form {
+    border: 1px sold blue; }
 
 .register-traditional-input {
   display: inline-flex;

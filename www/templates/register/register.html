@@ -1,54 +1,48 @@
 <div class="bar bar-header bar-balanced">
-	 <h3 class="title">REGISTRARSE</h3>
+		 <h3 class="title">REGISTRARSE</h3>
 </div>
 <ion-view view-title="Register">
 	<ion-content scroll="false" >
 		<div class="space"></div>
-		<section>
 		<form class="register-container-tradictional" id="registerForm" name="registerForm" ng-submit="doRegister(registerForm)" accept-charset="utf-8" novalidate>
 
 		<div class="register-traditional-input">
 			<div class="inputs-container border-blue">
 				<i class="ion-person"></i>
 				<label class="">
-					<input type="text" name="name" ng-model="register.name" placeholder="Nombre de Usuario">
+					<input type="text" name="name" ng-model="users.name" placeholder="Nombre de Usuario">
 				</label>
 			</div>
 			<div class="inputs-container border-blue">
 				<i class="ion-locked"></i>
 				<label class="">
-					<input type="password" name="pass" ng-model="register.pass" placeholder="Contraseña">
+					<input type="password" name="pass" ng-model="users.pass" placeholder="Contraseña">
 				</label>
 			</div>
 			<div class="inputs-container border-blue">
 				<i class="ion-email"></i>
 				<label class="">
-					<input type="email" name="email" ng-model="register.email" placeholder="Correo Electrónico">
+					<input type="email" name="email" ng-model="users.email" placeholder="Correo Electrónico">
 				</label>
 			</div>
 			<div class="inputs-container border-blue">
 				<i class="ion-ios-telephone"></i>
 				<label class="">
-					<input type="tel" name="phone" ng-model="register.phone" placeholder="Teléfono">
+					<input type="tel" name="phone" ng-model="users.phone" placeholder="Teléfono">
 				</label>
 			</div>
 		</div>
-		<div class="padding">
+		<!-- <div class="padding">
 		<p ng-show="!registerForm.name.$pristine">* Nombre de usuario requerido.</p>
 		<p ng-show="!registerForm.pass.$pristine">* Contraseña requerida.</p>
 		<p ng-show="registerForm.email.$invalid && !registerForm.email.$pristine">* Email valido Requerido.</p>
 		<p ng-show="!registerForm.phone.$pristine">* Telefono de usuario requerido.</p>
-
-		</div>
+		</div> -->
 		<div class="container-button register-button white-space">
 		<button type="submit" class="button-noicon" href="" title="" ng-disabled="registerForm.$invalid">REGISTRARSE</button>
 		</div>
-		<div class="container-button">
-			<a class="register-term" href="" title="">Al registrarte, aceptas términos y condiciones de uso, la politica de privacidad y los terminos de uso de Axpress.</a>
-		</div>
+			<a class="register-term"  title="">Al registrarte, aceptas términos y condiciones de uso, la politica de privacidad y los terminos de uso de Axpress.</a>
 		</form>
-
-		</section>
 		<section class="two-buttons-container-column">
 			<a href="#" class="button-icon facebook">
 				<i class="ion-social-facebook"></i>
