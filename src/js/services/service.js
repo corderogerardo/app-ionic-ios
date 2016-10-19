@@ -36,8 +36,8 @@ angular.module('axpress')
             options = options || {};
             var deferred = $q.defer();
             $http.post(path, data, options)
-            .then(function (data) {
-                deferred.resolve(data);
+            .then(function (response) {
+                deferred.resolve(response.data);
             }, function (error) {
                 deferred.reject(error);
             });
@@ -63,8 +63,8 @@ angular.module('axpress')
 
         this.get = function (path, options) {
             var deferred = $q.defer();
-            $http.get(path, options || {}).then(function (data) {
-                deferred.resolve(data);
+            $http.get(path, options || {}).then(function (response) {
+                deferred.resolve(response.data);
             }, function (error) {
                 deferred.reject(error);
             });
