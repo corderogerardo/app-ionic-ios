@@ -8,6 +8,7 @@ angular.module('axpress', [
     'ionic.cloud',
     'ngResource',
     'ngCordova',
+    'ngCordovaOauth',
     'LocalStorageModule'
 ])
 
@@ -51,8 +52,8 @@ angular.module('axpress', [
             views: {
                 'mainContent': {
                     templateUrl: 'templates/login/login.html',
-                    /*controller:'',
-                    resolve:{
+                    controller:'LoginController',
+                    /*resolve:{
                     }/*end resolve*/
                 }
             }

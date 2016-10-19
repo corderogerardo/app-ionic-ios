@@ -24,21 +24,46 @@ angular.module('axpress')
         };
 
         /**
-         * Reusable function to make queries and consume service from the server
+         * Reusable function to make queries and consume service from a service
          *
          * @param      {String}  path     The path specific to the service
-         * @param      {Object}  data     The data to be sent using the service
+         * @param      {Object}  data     The data to be sent using the service (Optional)
          * @param      {Object}  options  The $http options for the service (Optional)
          * @return     {Promise}  Returns the $http promise to be resolved on success or error
          */
         this.post = function (path, data, options) {
             data = data || {};
+            options = options || {};
+            var deferred = $q.defer();
+            $http.post(path, data, options)
+            .then(function (data) {
+                deferred.resolve(data);
+            }, function (error) {
+                deferred.reject(error);
+            });
+            return deferred.promise;
+        };
+
+        /**
+         * Function that wraps Service.post to consume the backend api
+         *
+         * @param      {String}  path     The path specific to the api service (/client/login)
+         * @param      {Object}  data     The data to be sent using the service (Optional)
+         * @param      {Object}  options  The $http options for the service (Optional)
+         * @return     {Promise}  Returns the $http promise to be resolved on success or error
+         */
+        this.apiPost = function (path, data, options) {
+            data = data || {};
             data.key = this.key;
             data.platform = this.platform;
+            path = this.urlBase() + path;
 
+            return this.post(path, data, options);
+        };
+
+        this.get = function (path, options) {
             var deferred = $q.defer();
-            $http.post(this.urlBase() + path, data, options || {})
-            .then(function (data) {
+            $http.get(path, options || {}).then(function (data) {
                 deferred.resolve(data);
             }, function (error) {
                 deferred.reject(error);
