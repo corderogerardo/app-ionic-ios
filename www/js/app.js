@@ -37,257 +37,108 @@ angular.module('axpress', [
     $stateProvider
         .state('app', {
             url: '/',
-            views: {
-                'mainContent': {
-                    templateUrl: 'templates/welcome/welcome.html',
-                    /*controller:'',
-                    resolve:{
-                    }/*end resolve*/
-                }
-            }
-            /*controller:'WelcomeController'*/
+            templateUrl: 'templates/welcome/welcome.html'
         })
         .state('login', {
             url: '/login',
-            views: {
-                'mainContent': {
-                    templateUrl: 'templates/login/login.html',
-                    controller:'LoginController',
-                    /*resolve:{
-                    }/*end resolve*/
-                }
-            }
+            templateUrl: 'templates/login/login.html',
+            controller:'LoginController'
         })
         .state('register', {
             url: '/register',
-            views: {
-                'mainContent': {
-                    templateUrl: 'templates/register/register.html',
-                    controller: 'RegisterController',
-                    /*resolve:{
-                    }/*end resolve*/
-                }
-            }
+            templateUrl: 'templates/register/register.html',
+            controller: 'RegisterController'
         })
         .state('menu', {
             url: '/menu',
-            views: {
-                'mainContent': {
-                    templateUrl: 'templates/menu/menu.html',
-                    /*controller:'',
-                    resolve:{
-                    }/*end resolve*/
-                }
+            templateUrl: 'templates/menu/menu.html',
+            controller: 'MenuController'
+        })
+        .state('document', {
+            url: '/document',
+            abstract: true,
+            template: '<ui-view/>',
+            data: {
+                documento: {}
             }
         })
-        .state('documentsorigin', {
-            url: '/documentsorigin',
-            views: {
-                'mainContent': {
-                    templateUrl: 'templates/maps/documents/documentOrigin.html',
-                    /*controller:'',
-                    resolve:{
-                    }/*end resolve*/
-                }
-            }
+        .state('document.origin', {
+            url: '/origin',
+            templateUrl: 'templates/maps/documents/documentOrigin.html',
+            controller: 'DocumentOrigin'
         })
         .state('documentsdetailorigin', {
             url: '/documentsdetailorigin',
-            views: {
-                'mainContent': {
-                    templateUrl: 'templates/maps/documents/documentDetailOrigin.html',
-                    /*controller:'',
-                    resolve:{
-                    }/*end resolve*/
-                }
-            }
+            templateUrl: 'templates/maps/documents/documentDetailOrigin.html'
         })
         .state('documentsdestiny', {
             url: '/documentsdestiny',
-            views: {
-                'mainContent': {
-                    templateUrl: 'templates/maps/documents/documentDestiny.html',
-                    /*controller:'',
-                    resolve:{
-                    }/*end resolve*/
-                }
-            }
+            templateUrl: 'templates/maps/documents/documentDestiny.html'
         })
         .state('documentsdetaildestiny', {
             url: '/documentsdetaildestiny',
-            views: {
-                'mainContent': {
-                    templateUrl: 'templates/maps/documents/documentDetailDestiny.html',
-                    /*controller:'',
-                    resolve:{
-                    }/*end resolve*/
-                }
-            }
+            templateUrl: 'templates/maps/documents/documentDetailDestiny.html'
         })
         .state('sendtypedocuments', {
             url: '/sendtypedocuments',
-            views: {
-                'mainContent': {
-                    templateUrl: 'templates/sendtype/documents/sendtype.html',
-                    /*controller:'',
-                    resolve:{
-                    }/*end resolve*/
-                }
-            }
+            templateUrl: 'templates/sendtype/documents/sendtype.html'
         })
         .state('caracteristicsdocuments', {
             url: '/caracteristicsdocuments',
-            views: {
-                'mainContent': {
-                    templateUrl: 'templates/caracteristics/documents/caracteristics.html',
-                    /*controller:'',
-                    resolve:{
-                    }/*end resolve*/
-                }
-            }
+            templateUrl: 'templates/caracteristics/documents/caracteristics.html'
         })
         .state('documentsimagephoto', {
             url: '/documentsimagephoto',
-            views: {
-                'mainContent': {
-                    templateUrl: 'templates/imagephoto/documents/imagephoto.html',
-                    /*controller:'',
-                    resolve:{
-                    }/*end resolve*/
-                }
-            }
+            templateUrl: 'templates/imagephoto/documents/imagephoto.html'
         })
         .state('sentresumedocument', {
             url: '/sentresumedocument',
-            views: {
-                'mainContent': {
-                    templateUrl: 'templates/sentresume/sentresume.html',
-                    /*controller:'',
-                    resolve:{
-                    }/*end resolve*/
-                }
-            }
+            templateUrl: 'templates/sentresume/sentresume.html'
         })
         .state('paymentmethods', {
             url: '/paymentmethods',
-            views: {
-                'mainContent': {
-                    templateUrl: 'templates/paymentmethods/paymentmethods.html',
-                    /*controller:'',
-                    resolve:{
-                    }/*end resolve*/
-                }
-            }
+            templateUrl: 'templates/paymentmethods/paymentmethods.html'
         })
         .state('shipmenttracking', {
             url: '/shipmenttracking',
-            views: {
-                'mainContent': {
-                    templateUrl: 'templates/shipmenttracking/shipmenttracking.html',
-                    /*controller:'',
-                    resolve:{
-                    }/*end resolve*/
-                }
-            }
+            templateUrl: 'templates/shipmenttracking/shipmenttracking.html'
         })
         .state('chat', {
             url: '/chat',
-            views: {
-                'mainContent': {
-                    templateUrl: 'templates/chat/chat.html',
-                    /*controller:'',
-                    resolve:{
-                    }/*end resolve*/
-                }
-            }
+            templateUrl: 'templates/chat/chat.html'
         })
         .state('shipmentverification', {
             url: '/shipmentverification',
-            views: {
-                'mainContent': {
-                    templateUrl: 'templates/shipmentverification/shipmentverification.html',
-                    /*controller:'',
-                    resolve:{
-                    }/*end resolve*/
-                }
-            }
+            templateUrl: 'templates/shipmentverification/shipmentverification.html'
         })
         .state('account', {
             url: '/account',
-            views: {
-                'mainContent': {
-                    templateUrl: 'templates/account/account.html',
-                    /*controller:'',
-                    resolve:{
-                    }/*end resolve*/
-                }
-            }
+            templateUrl: 'templates/account/account.html'
         })
         .state('caracteristicspackages', {
             url: '/caracteristicspackages',
-            views: {
-                'mainContent': {
-                    templateUrl: 'templates/caracteristics/packages/caracteristicspackages.html',
-                    /*controller:'',
-                    resolve:{
-                    }/*end resolve*/
-                }
-            }
+            templateUrl: 'templates/caracteristics/packages/caracteristicspackages.html'
         })
         .state('caracteristicserrands', {
             url: '/caracteristicserrands',
-            views: {
-                'mainContent': {
-                    templateUrl: 'templates/caracteristics/errands/caracteristicserrands.html',
-                    /*controller:'',
-                    resolve:{
-                    }/*end resolve*/
-                }
-            }
+            templateUrl: 'templates/caracteristics/errands/caracteristicserrands.html'
         })
         .state('errandsdestiny', {
             url: '/errandsdestiny',
-            views: {
-                'mainContent': {
-                    templateUrl: 'templates/maps/errands/errandsDestiny.html',
-                    /*controller:'',
-                    resolve:{
-                    }/*end resolve*/
-                }
-            }
+            templateUrl: 'templates/maps/errands/errandsDestiny.html'
         })
         .state('errandsresume', {
             url: '/errandsresume',
-            views: {
-                'mainContent': {
-                    templateUrl: 'templates/sentresume/errandsresume.html',
-                    /*controller:'',
-                    resolve:{
-                    }/*end resolve*/
-                }
-            }
+            templateUrl: 'templates/sentresume/errandsresume.html'
         })
         .state('history', {
             url: '/history',
-            views: {
-                'mainContent': {
-                    templateUrl: 'templates/history/history.html',
-                    controller: 'HistoryController',
-                    /*resolve:{
-                    }/*end resolve*/
-                }
-            }
+            templateUrl: 'templates/history/history.html',
+            controller: 'HistoryController'
         })
         .state('errandsstops', {
             url: '/errandsstops',
-            views: {
-                'mainContent': {
-                    templateUrl: 'templates/sentresume/errandsstops.html',
-                    /*controller:'',
-                    resolve:{
-                    } //end resolve*/
-                }
-            }
+            templateUrl: 'templates/sentresume/errandsstops.html'
         });
     $urlRouterProvider.otherwise('/');
 

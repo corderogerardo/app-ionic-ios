@@ -1,3 +1,10 @@
+angular.module('axpress')
+.controller('DocumentOrigin', ['$scope', '$state', function($scope, $state){
+    
+    //Inherited data from parent, can be shared between children inyecting $state
+    var documento = $state.current.data.documento;
+}]);;
+
 /**
  * @summary HistoryController
  *
@@ -45,9 +52,9 @@ function($scope, $rootScope, Client, $ionicPopup){
         Client.login('reinaldo122@gmail.com','123123')
         .then(function (data) {
             console.log(data);
+            $ionicPopup.alert({title: 'goodResponse', template:JSON.stringify(data)});
         }, function (error) {
-            console.warn("error...");
-            console.log(error);
+            $ionicPopup.alert({title: 'badResponse', template:JSON.stringify(error)});
         });
     };
 
@@ -96,6 +103,11 @@ function($scope, $rootScope, Client, $ionicPopup){
     $scope.facebookAvailable = $rootScope.facebookLoaded;
 
     
+}]);;
+
+angular.module('axpress')
+.controller('MenuController', ['$scope', function($scope){
+    console.log("Menu Controller");
 }]);;
 
 /**

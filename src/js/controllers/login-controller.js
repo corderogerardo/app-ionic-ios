@@ -7,9 +7,9 @@ function($scope, $rootScope, Client, $ionicPopup){
         Client.login('reinaldo122@gmail.com','123123')
         .then(function (data) {
             console.log(data);
+            $ionicPopup.alert({title: 'goodResponse', template:JSON.stringify(data)});
         }, function (error) {
-            console.warn("error...");
-            console.log(error);
+            $ionicPopup.alert({title: 'badResponse', template:JSON.stringify(error)});
         });
     };
 
