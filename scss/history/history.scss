@@ -1,0 +1,44 @@
+.history-lists{
+	position: absolute;
+	height: 100%;
+	width:100%;
+}
+.item-avatar{
+	width: 100%;
+}
+.list .item.item-accordion {
+	height:230px;
+	transition: 0.09s all linear;
+}
+.list .item.item-accordion div{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	transition: 0.09s all linear;
+}
+.historial-data{
+	align-items: flex-start;
+}
+.historial-button{
+	align-items: center;
+	a{
+		background-color: $balanced;
+		border-radius: 3px;
+		color: $stable;
+		margin-left: 15%;
+		margin-top: 10%;
+		padding:5px;
+		text-decoration: none;
+	}
+}
+
+.list .item.item-accordion.ng-hide {
+	width: 100%;
+}
+
+.list .item.item-accordion.ng-hide-add,
+.list .item.item-accordion.ng-hide-remove {
+}
+
+.sub-item {
+}

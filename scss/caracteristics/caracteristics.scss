@@ -2,10 +2,11 @@
 	align-items: center;
 	color:$balanced;
 	display: flex;
-	font-size: 17px;
+	font-size: 3vh;
 	flex-direction: column;
-	justify-content: flex-end;
-	height:15%;
+	justify-content: center;
+	text-align:center;
+	height:10%;
 	width:100%;
 }
 .caracteristics-container{
@@ -13,154 +14,103 @@
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	height:40%;
 	width:100%;
+	height:30%;
 }
 .caracteristics-inputs{
 	display: inline-flex;
 	flex-direction: column;
 	justify-content: center;
-	height:90%;
 	width:80%;
+	height:100%;
 }
-.caracteristics-input-email{
-	display:flex;
-	height:40%;
-	flex-direction: row;
-	border:1px solid $balanced;
-	border-radius: 20px 0px 0px 0px;
-}
-.caracteristics-input-email i{
-	align-items: center;
-	display:flex;
-	color:white;
-	justify-content: center;
-	background-color:$balanced;
-	width:18%;
-	border-radius: 20px 0px 0px 0px;
-}
-.caracteristics-input-email label{
-	align-items: center;
-	display:flex;
-	color:white;
-	justify-content: center;
-	background-color:white;
-	width:70%;
-}
-.caracteristics-input-username{
-	display:flex;
-	height:40%;
-	flex-direction: row;
-	border:1px solid $balanced;
-}
-.caracteristics-input-username i{
-	align-items: center;
-	display:flex;
-	color:white;
-	justify-content: center;
-	border-top: 1px solid white;
-	background-color:$balanced;
-	width:18%;
-}
-.caracteristics-input-username label{
-	align-items: center;
-	display:flex;
-	color:white;
-	justify-content: center;
-	background-color:white;
-	width:70%;
-}
-.caracteristics-input-phone{
-	display:flex;
-	height:40%;
-	flex-direction: row;
-	border:1px solid $balanced;
-}
-.caracteristics-input-phone i{
-	align-items: center;
-	display:flex;
-	color:white;
-	justify-content: center;
-	border-top: 1px solid white;
-	background-color:$balanced;
-	width:18%;
-}
-.caracteristics-input-phone label{
-	align-items: center;
-	display:flex;
-	color:white;
-	justify-content: center;
-	background-color:white;
-	width:70%;
-}
-.caracteristics-input-documentid{
-	height:40%;
-	display:flex;
-	flex-direction: row;
-	color:white;
-	border:1px solid $balanced;
-	border-radius: 0px 0px 20px 0px;
-}
-.caracteristics-input-documentid i{
-	align-items: center;
-	display:flex;
-	justify-content: center;
-	background-color:$balanced;
-	border-top: 1px solid white;
-	width:18%;
-
-}
-.caracteristics-input-documentid label{
-	align-items: center;
-	display:flex;
-	color:white;
-	justify-content: center;
-	background-color:white;
-	width:70%;
-}
-
 .caracteristics-documents{
 	align-items: center;
 	display: flex;
 	flex-direction: column;
+	margin-top:10%;
 	justify-content: space-around;
-	height:40%;
-	margin-top: 5%;
+	height:20%;
 	width:100%;
 }
 .caracteristics-documents-title{
+	font-size:3vh;
 	color:$balanced;
 }
 .input-caracteristics{
 	align-items: center;
 	display:flex;
-	height:20%;
-	flex-direction: row;
+	flex-direction: column;
 	justify-content: center;
-	border:1px solid $balanced;
-	border-radius: 20px 0px 20px 0px;
+	height:80%;
 	width:80%;
-}
-.input-caracteristics label{
-	display:flex;
-	color:white;
-	background-color:white;
-	width:90%;
 }
 .caracteristics-button{
 	align-items: center;
 	display:flex;
 	justify-content: center;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top:5%;
+	height:8%;
 	width:80%;
-	height:20%;
 }
-.caracteristics-button-traditional{
-	align-items: center;
-	background-color:$balanced;
-	display:flex;
-	color:white;
-	justify-content: center;
+.caracteristics-inputs-mesurements{
+	display: inline-flex;
+	flex-direction: row;
+	justify-content: space-around;
+	margin-bottom: 2%;
 	height:100%;
-	text-decoration: none;
+	width:85%;
+	input{
+		border:1px solid $balanced;
+		width:48%;
+		padding: 2%;
+		height:100%;
+	}
+}
+.mesurements-options{
+	display: flex;
+	flex-direction: row;
+	width:48%;
+}
+.mesurements-options-radio{
+	border:1px solid $balanced;
+	cursor: none;
+	.mesurements-options-radio:after{
+	cursor: none;
+}
+	.radio-icon:after{
+		background-color:$balanced;
+		visibility: hidden;
+	}
+}
+.errands-caracteristics-input{
+	align-items: center;
+	display:flex;
+	flex-direction: row;
+	justify-content: center;
 	width:100%;
+	height:20%;
+	input{
+		border:1px solid blue;
+		height:90%;
+		text-align: center;
+		width:80%;
+	}
+}
+.errands-caracteristics{
+	align-items: center;
+	display:flex;
+	flex-direction: column;
+	justify-content: center;
+	margin-top:10%;
+	width:100%;
+	p{
+		color:$balanced;
+		text-align:center;
+		margin-bottom:10%;
+		font-size:2vh;
+		width:60%;
+	}
 }

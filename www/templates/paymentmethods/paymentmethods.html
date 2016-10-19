@@ -1,9 +1,11 @@
 <div class="bar bar-header bar-balanced">
 	 <h1 class="title">MEDIOS DE PAGO</h1>
 </div>
-<ion-view view-title="SendType">
+<ion-view view-title="PaymentMethod">
 	<ion-content scroll="false" >
-	<section class="main-container">
+	<div class="space">
+
+	</div>
 		<section class="send-type-todo">
 			<div>
 				<span>Elige un <a>medio de pago</a></span>
@@ -17,9 +19,8 @@
 			<ion-radio class="send-type-options-radio" ng-model="choice" ng-value="eighthorus">Contra-Entrega (Efectivo)</ion-radio>
 			<ion-radio class="send-type-options-radio" ng-model="choice" ng-value="twentyhours">Contra-Recogida (Efectivo)</ion-radio>
 		</section>
-		<section class="sendtype-button">
-			<a class="sendtype-button-traditional" href="#/shipmenttracking" title="">CONTINUAR</a>
+		<section class="center-button">
+			<a class="button-noicon" href="#/shipmenttracking" title="">CONTINUAR</a>
 		</section>
-	</section>
 	</ion-content>
 </ion-view>

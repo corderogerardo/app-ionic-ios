@@ -1,10 +1,10 @@
 <div class="bar bar-header bar-balanced">
-	 <h1 class="title">TIPO DE ENVÍO</h1>
+	 <h3 class="title">TIPO DE ENVÍO</h3>
 </div>
 <ion-view view-title="SendType">
 	<ion-content scroll="false" >
-
-	<section class="main-container">
+	<div class="space">
+	</div>
 		<section class="send-type-todo">
 			<div>
 				<span>Selecciona el <a> tipo de envío </a> que quieres realizar.</span>
@@ -18,12 +18,13 @@
 			<ion-radio class="send-type-options-radio" ng-model="choice" ng-value="eighthorus">Envío Menor a 8 horas.</ion-radio>
 			<ion-radio class="send-type-options-radio" ng-model="choice" ng-value="twentyhours">Envío 24 Horas.</ion-radio>
 		</section>
-		<section class="sendtype-button">
-			<a class="sendtype-button-traditional" href="#/caracteristicsdocuments" title="">CONTINUAR</a>
+		<section class="sendtype-button ">
+		<div class="container-button">
+			<a class="button-noicon" href="#/caracteristicsdocuments" title="">CONTINUAR</a>
+		</div>
 		</section>
 
 
-	</section>
 
 	</ion-content>
 </ion-view>
