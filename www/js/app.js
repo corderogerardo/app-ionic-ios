@@ -54,9 +54,18 @@ angular.module('axpress', [
             templateUrl: 'templates/menu/menu.html',
             controller: 'MenuController'
         })
-        .state('documentsorigin', {
-            url: '/documentsorigin',
-            templateUrl: 'templates/maps/documents/documentOrigin.html'
+        .state('document', {
+            url: '/document',
+            abstract: true,
+            template: '<ui-view/>',
+            data: {
+                documento: {}
+            }
+        })
+        .state('document.origin', {
+            url: '/origin',
+            templateUrl: 'templates/maps/documents/documentOrigin.html',
+            controller: 'DocumentOrigin'
         })
         .state('documentsdetailorigin', {
             url: '/documentsdetailorigin',
