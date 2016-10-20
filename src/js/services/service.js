@@ -1,5 +1,6 @@
 angular.module('axpress')
-.factory('Service', ['$http', 'constants', '$q', function($http, constants, $q){
+.factory('Service', ['$http', 'constants', '$q', '$httpParamSerializerJQLike',
+function($http, constants, $q, $httpParamSerializerJQLike){
 
     /**
      * Class to be instantiated as a base service with common configurations
@@ -54,10 +55,14 @@ angular.module('axpress')
          */
         this.apiPost = function (path, data, options) {
             data = data || {};
+            options = options || {};
             data.key = this.key;
             data.platform = this.platform;
+            options.headers = {
+                'Content-Type': 'application/x-www-form-urlencoded'
+            };
             path = this.urlBase() + path;
-
+            data = $httpParamSerializerJQLike(data);
             return this.post(path, data, options);
         };
 

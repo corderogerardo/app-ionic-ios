@@ -10,25 +10,19 @@
 			<div class="inputs-container border-blue">
 				<i class="ion-person"></i>
 				<label class="">
-					<input type="text" name="name" ng-model="users.name" placeholder="Nombre de Usuario">
+					<input type="text" name="name" ng-model="user.name" placeholder="Nombre" required>
 				</label>
 			</div>
 			<div class="inputs-container border-blue">
 				<i class="ion-locked"></i>
 				<label class="">
-					<input type="password" name="pass" ng-model="users.pass" placeholder="Contraseña">
+					<input type="password" name="pass" ng-model="user.pass" placeholder="Contraseña" required>
 				</label>
 			</div>
 			<div class="inputs-container border-blue">
 				<i class="ion-email"></i>
 				<label class="">
-					<input type="email" name="email" ng-model="users.email" placeholder="Correo Electrónico">
-				</label>
-			</div>
-			<div class="inputs-container border-blue">
-				<i class="ion-ios-telephone"></i>
-				<label class="">
-					<input type="tel" name="phone" ng-model="users.phone" placeholder="Teléfono">
+					<input type="email" name="email" ng-model="user.email" placeholder="Correo Electrónico" required>
 				</label>
 			</div>
 		</div>

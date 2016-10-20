@@ -1,6 +1,12 @@
 angular.module('axpress')
-.controller('LoginController', ['$scope', '$rootScope', 'Client', '$ionicPopup',
+.controller('AuthController', ['$scope', '$rootScope', 'Client', '$ionicPopup',
 function($scope, $rootScope, Client, $ionicPopup){
+    
+    $scope.user = {
+        name: "Reinaldo Diaz",
+        pass: "123456",
+        email: "reinaldo122@gmail.com"
+    };
 
     $scope.login = function () {
         //use $scope.user
@@ -55,7 +61,28 @@ function($scope, $rootScope, Client, $ionicPopup){
         });
     };
 
-    $scope.facebookAvailable = $rootScope.facebookLoaded;
+    $scope.doRegister = function(registerForm) {
+        if (registerForm.$valid) {
+            Client.register($scope.user.name, $scope.user.pass, $scope.user.email)
+                .then(function(data) {
 
+                    if (data.return && data.status == 200) {
+                        //Successfully registered
+                    } else if (data.return && data.status == 409) {
+                        $ionicPopup.alert({title: 'Usuario ya registrado', template:data.message});
+                    }
+                }, function(error) {
+                    console.war("error...");
+                    console.log(error);
+                });
+        }
+    };
+
+    $scope.recoverPassword = function () {
+        Client.forgotPassword($scope.user.email)
+            .then(function (response) {
+                $ionicPopup.alert({title: 'Recuperación de Contraseña', template:response.message});
+            });
+    };
     
 }]);

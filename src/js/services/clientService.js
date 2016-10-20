@@ -24,6 +24,13 @@ function($rootScope, constants, $q, $http, $timeout, Service, Facebook, Google){
         return service.apiPost('/register', data);
     };
 
+    service.forgotPassword = function (email) {
+        var data = {
+            email: email
+        };
+        return service.apiPost('/forgotpassword', data);
+    };
+
     
     service.loginWithFacebook = function () {
         var deferred = $q.defer();

@@ -24,6 +24,13 @@ function($rootScope, constants, $q, $http, $timeout, Service, Facebook, Google){
         return service.apiPost('/register', data);
     };
 
+    service.forgotPassword = function (email) {
+        var data = {
+            email: email
+        };
+        return service.apiPost('/forgotpassword', data);
+    };
+
     
     service.loginWithFacebook = function () {
         var deferred = $q.defer();
@@ -92,10 +99,10 @@ angular.module('axpress')
     apiBaseUrl: 'http://52.43.247.174/api_devel',
 
     //App specific client token/key
-    key: '1fc0f5604616c93deac481b33989f10e',
+    key: '21569d3e6977ae51178544f5dcdd508652799af3.IVadPml3rlEXhUT13N1QhlJ5mvM=',
 
     //String to identify the App on the Admin Console
-    platform: 'iOS Hybrid',
+    platform: 'iOS',
     
     //Facebook App ID
     fbAppId: '320049998373400',
@@ -227,7 +234,8 @@ function($rootScope, $window, $cordovaOauth, $q, Service, constants){
 }]);;
 
 angular.module('axpress')
-.factory('Service', ['$http', 'constants', '$q', function($http, constants, $q){
+.factory('Service', ['$http', 'constants', '$q', '$httpParamSerializerJQLike',
+function($http, constants, $q, $httpParamSerializerJQLike){
 
     /**
      * Class to be instantiated as a base service with common configurations
@@ -282,10 +290,14 @@ angular.module('axpress')
          */
         this.apiPost = function (path, data, options) {
             data = data || {};
+            options = options || {};
             data.key = this.key;
             data.platform = this.platform;
+            options.headers = {
+                'Content-Type': 'application/x-www-form-urlencoded'
+            };
             path = this.urlBase() + path;
-
+            data = $httpParamSerializerJQLike(data);
             return this.post(path, data, options);
         };
 

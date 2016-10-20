@@ -1,48 +1,12 @@
 angular.module('axpress')
-.controller('DocumentOrigin', ['$scope', '$state', function($scope, $state){
-    
-    //Inherited data from parent, can be shared between children inyecting $state
-    var documento = $state.current.data.documento;
-}]);;
-
-/**
- * @summary HistoryController
- *
- */
-angular.module('axpress')
-.controller('HistoryController', ['$scope', function($scope) {
-
-    $scope.groups = [{
-        "id": 1,
-        "name": "DOCUMENTOS",
-        "fecha": "30 - 09 - 2016",
-        "iconURL": "http://ionicframework.com/img/docs/venkman.jpg"
-    }, {
-        "id": 2,
-        "name": "PAQUETES",
-        "fecha": "30 - 09 - 2016",
-        "iconURL": "http://ionicframework.com/img/docs/barrett.jpg"
-    }];
-
-    $scope.toggleGroup = function(group) {
-        if ($scope.isGroupShown(group)) {
-            $scope.shownGroup = null;
-        } else {
-            $scope.shownGroup = group;
-        }
-        // $ionicScrollDelegate.resize();
-    };
-
-    $scope.isGroupShown = function(group) {
-        return $scope.shownGroup === group;
-    };
-    
-}]);
-;
-
-angular.module('axpress')
-.controller('LoginController', ['$scope', '$rootScope', 'Client', '$ionicPopup',
+.controller('AuthController', ['$scope', '$rootScope', 'Client', '$ionicPopup',
 function($scope, $rootScope, Client, $ionicPopup){
+    
+    $scope.user = {
+        name: "Reinaldo Diaz",
+        pass: "123456",
+        email: "reinaldo122@gmail.com"
+    };
 
     $scope.login = function () {
         //use $scope.user
@@ -97,42 +61,75 @@ function($scope, $rootScope, Client, $ionicPopup){
         });
     };
 
-    $scope.facebookAvailable = $rootScope.facebookLoaded;
-
-    
-}]);;
-
-angular.module('axpress')
-.controller('MenuController', ['$scope', function($scope){
-    console.log("Menu Controller");
-}]);;
-
-/**
- * @class RegisterController
-
- * @constructor register
-
- * @function doRegister
- *
- */
-angular.module('axpress')
-.controller('RegisterController', ['$scope', 'Client', function($scope, Client) {
-    $scope.users = {
-        name: "test",
-        pass: "12345",
-        email: "youremail@gmail.com",
-        phone: "56-555-5555",
-    };
     $scope.doRegister = function(registerForm) {
         if (registerForm.$valid) {
-            alert("Thanks user " + JSON.stringify($scope.users));
-            Client.register($scope.users.email, $scope.users.pass, $scope.users.name)
+            Client.register($scope.user.name, $scope.user.pass, $scope.user.email)
                 .then(function(data) {
-                    console.log(data);
+
+                    if (data.return && data.status == 200) {
+                        //Successfully registered
+                    } else if (data.return && data.status == 409) {
+                        $ionicPopup.alert({title: 'Usuario ya registrado', template:data.message});
+                    }
                 }, function(error) {
                     console.war("error...");
                     console.log(error);
                 });
         }
     };
+
+    $scope.recoverPassword = function () {
+        Client.forgotPassword($scope.user.email)
+            .then(function (response) {
+                $ionicPopup.alert({title: 'Recuperación de Contraseña', template:response.message});
+            });
+    };
+    
+}]);;
+
+angular.module('axpress')
+.controller('DocumentOrigin', ['$scope', '$state', function($scope, $state){
+    
+    //Inherited data from parent, can be shared between children inyecting $state
+    var documento = $state.current.data.documento;
+}]);;
+
+/**
+ * @summary HistoryController
+ *
+ */
+angular.module('axpress')
+.controller('HistoryController', ['$scope', function($scope) {
+
+    $scope.groups = [{
+        "id": 1,
+        "name": "DOCUMENTOS",
+        "fecha": "30 - 09 - 2016",
+        "iconURL": "http://ionicframework.com/img/docs/venkman.jpg"
+    }, {
+        "id": 2,
+        "name": "PAQUETES",
+        "fecha": "30 - 09 - 2016",
+        "iconURL": "http://ionicframework.com/img/docs/barrett.jpg"
+    }];
+
+    $scope.toggleGroup = function(group) {
+        if ($scope.isGroupShown(group)) {
+            $scope.shownGroup = null;
+        } else {
+            $scope.shownGroup = group;
+        }
+        // $ionicScrollDelegate.resize();
+    };
+
+    $scope.isGroupShown = function(group) {
+        return $scope.shownGroup === group;
+    };
+    
+}]);
+;
+
+angular.module('axpress')
+.controller('MenuController', ['$scope', function($scope){
+    console.log("Menu Controller");
 }]);
