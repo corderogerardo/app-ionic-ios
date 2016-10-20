@@ -7,7 +7,7 @@
  *
  */
 angular.module('axpress')
-.controller('RegisterController', ['$scope', 'Client', function($scope, Client) {
+.controller('RegisterController', ['$scope', 'Client','$ionicPopup', function($scope, Client,$ionicPopup) {
     $scope.users = {
         name: "test",
         pass: "12345",
@@ -16,13 +16,12 @@ angular.module('axpress')
     };
     $scope.doRegister = function(registerForm) {
         if (registerForm.$valid) {
-            alert("Thanks user " + JSON.stringify($scope.users));
+            $ionicPopup.alert({title:'goodResponse',template:"Registro test."});
             Client.register($scope.users.email, $scope.users.pass, $scope.users.name)
                 .then(function(data) {
-                    console.log(data);
+                    $ionicPopup.alert({title:'goodResponse',template:JSON.stringify(data)});
                 }, function(error) {
-                    console.war("error...");
-                    console.log(error);
+                    $ionicPopup.alert({title:'badResponse',template:JSON.stringify(error)})
                 });
         }
     };

@@ -10,25 +10,25 @@
 			<div class="inputs-container border-blue">
 				<i class="ion-person"></i>
 				<label class="">
-					<input type="text" name="name" ng-model="users.name" placeholder="Nombre de Usuario">
+					<input type="text" name="name" ng-model="users.name" placeholder="Nombre de Usuario" required>
 				</label>
 			</div>
 			<div class="inputs-container border-blue">
 				<i class="ion-locked"></i>
 				<label class="">
-					<input type="password" name="pass" ng-model="users.pass" placeholder="Contraseña">
+					<input type="password" name="pass" ng-model="users.pass" placeholder="Contraseña" required>
 				</label>
 			</div>
 			<div class="inputs-container border-blue">
 				<i class="ion-email"></i>
 				<label class="">
-					<input type="email" name="email" ng-model="users.email" placeholder="Correo Electrónico">
+					<input type="email" name="email" ng-model="users.email" placeholder="Correo Electrónico" required>
 				</label>
 			</div>
 			<div class="inputs-container border-blue">
 				<i class="ion-ios-telephone"></i>
 				<label class="">
-					<input type="tel" name="phone" ng-model="users.phone" placeholder="Teléfono">
+					<input type="tel" name="phone" ng-model="users.phone" placeholder="Teléfono" required>
 				</label>
 			</div>
 		</div>
@@ -37,9 +37,9 @@
 		<p ng-show="!registerForm.pass.$pristine">* Contraseña requerida.</p>
 		<p ng-show="registerForm.email.$invalid && !registerForm.email.$pristine">* Email valido Requerido.</p>
 		<p ng-show="!registerForm.phone.$pristine">* Telefono de usuario requerido.</p>
-		</div> -->
+		</div>-->
 		<div class="container-button register-button white-space">
-		<button type="submit" class="button-noicon" href="" title="" ng-disabled="registerForm.$invalid">REGISTRARSE</button>
+		<button type="submit" class="button-noicon" ng-disabled="registerForm.$invalid">REGISTRARSE</button>
 		</div>
 			<a class="register-term"  title="">Al registrarte, aceptas términos y condiciones de uso, la politica de privacidad y los terminos de uso de Axpress.</a>
 		</form>
