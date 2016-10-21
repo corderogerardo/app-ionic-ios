@@ -7,27 +7,16 @@
 		<section class="select-send-type">
 			<span>Elige el <a> tipo de envío </a> que vas a realizar.</span>
 		</section>
-		<section class="main-menu">
-			<a class="main-menu-options" ui-sref="document.origin" title="">
-			<img src="img/ionic.png" alt="">
-			DOCUMENTOS
+		<section class="main-menu" >
+			<a ng-repeat="menu in menuoptions" class="main-menu-options" title="{{menu.title}}">
+			<img src="img/ionic.png" alt="" ng-click="moveTo(menu.title)">
+			{{menu.title}}
 			</a>
-			<a class="main-menu-options" href="" title="">
-			<img src="img/ionic.png" alt="">
-			PAQUETES
-			</a>
-			<a class="main-menu-options" href="#/caracteristicserrands" title="">
-			<img src="img/ionic.png" alt="">
-			DILIGENCIAS
-			</a>
-			<a class="main-menu-options" href="#/account" title="">
+
+            <a class="main-menu-options" href="#/account" title="">
 			<img src="img/ionic.png" alt="">
 			MI CUENTA
 			</a>
-
 		</section>
-
-
-
 	</ion-content>
 </ion-view>

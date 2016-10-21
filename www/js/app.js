@@ -62,8 +62,8 @@ angular.module('axpress', [
                 documento: {}
             }
         })
-        .state('document.origin', {
-            url: '/origin',
+        .state('documentorigin', {
+            url: '/documentorigin',
             templateUrl: 'templates/maps/documents/documentOrigin.html',
             controller: 'DocumentOrigin'
         })
@@ -85,7 +85,8 @@ angular.module('axpress', [
         })
         .state('caracteristicsdocuments', {
             url: '/caracteristicsdocuments',
-            templateUrl: 'templates/caracteristics/documents/caracteristics.html'
+            templateUrl: 'templates/caracteristics/documents/caracteristics.html',
+            controller:'CaracteristicsController'
         })
         .state('documentsimagephoto', {
             url: '/documentsimagephoto',
@@ -101,7 +102,8 @@ angular.module('axpress', [
         })
         .state('shipmenttracking', {
             url: '/shipmenttracking',
-            templateUrl: 'templates/shipmenttracking/shipmenttracking.html'
+            templateUrl: 'templates/shipmenttracking/shipmenttracking.html',
+            controller:'ShipmentTrackingController'
         })
         .state('chat', {
             url: '/chat',

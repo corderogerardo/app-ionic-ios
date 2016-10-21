@@ -24,7 +24,7 @@ function($rootScope, constants, $q, $http, $timeout, Service, Facebook, Google){
         return service.apiPost('/register', data);
     };
 
-    
+
     service.loginWithFacebook = function () {
         var deferred = $q.defer();
         Facebook.login().then(function (response) {
@@ -83,8 +83,10 @@ function($rootScope, constants, $q, $http, $timeout, Service, Facebook, Google){
         return deferred.promise;
     };
 
+
     return service;
-}]);;
+}]);
+;
 
 angular.module('axpress')
 .constant('constants', {

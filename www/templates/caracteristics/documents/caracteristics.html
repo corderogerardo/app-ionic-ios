@@ -15,26 +15,26 @@
 			<div class="inputs-container border-blue">
 				<i class="ion-email"></i>
 				<label class="">
-					<input type="email" placeholder="Correo Electrónico">
+					<input type="email" name="email" ng-model="destinatary.email" placeholder="Correo Electrónico">
 				</label>
 			</div>
 			<div class="inputs-container border-blue">
 				<i class="ion-person"></i>
 				<label class="">
-					<input type="email" placeholder="Nombre de Usuario">
+					<input type="text"  name="username" ng-model="destinatary.username" placeholder="Nombre de Usuario">
 				</label>
 			</div>
 
 			<div class="inputs-container border-blue">
 				<i class="ion-ios-telephone"></i>
 				<label class="">
-					<input type="tel" placeholder="Teléfono">
+					<input type="tel" name="phone" ng-model="destinatary.phone"  placeholder="Teléfono">
 				</label>
 			</div>
 			<div class="inputs-container border-blue">
 				<i class="ion-document"></i>
 				<label class="">
-					<input type="text" placeholder="Cédula o NIT">
+					<input type="text" name="cinit" ng-model="destinatary.cinit" placeholder="Cédula o NIT">
 				</label>
 			</div>
 		</div>
@@ -46,18 +46,18 @@
 		<div class="input-caracteristics">
 			<div class="inputs-container border-blue">
 					<label class="">
-						<input type="text" placeholder="Valor Declarado...">
+						<input type="text" name="declaredvalue" ng-model="caracteristics.declaredvalue" placeholder="Valor Declarado...">
 					</label>
 			</div>
 			<div class="inputs-container border-blue">
 					<label class="">
-						<input type="text" placeholder="Breve descripción de tu envío">
+						<input type="text"  name="shortdescription" ng-model="caracteristics.shortdescription" placeholder="Breve descripción de tu envío">
 					</label>
 			</div>
 		</div>
 		</section>
 		<div class="container-button caracteristics-button">
-		<a class="button-noicon" href="#/documentsimagephoto" title="">CONTINUAR</a>
+		<a class="button-noicon" href="#/documentsimagephoto" ng-click="saveCaracteristics()" title="">CONTINUAR</a>
 		<!-- <a class="caracteristics-button-traditional" href="#/caracteristicspackages" title="">CONTINUAR</a> -->
 		</div>
 	</ion-content>
