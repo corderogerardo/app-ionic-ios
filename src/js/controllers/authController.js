@@ -1,31 +1,39 @@
 angular.module('axpress')
-.controller('AuthController', ['$scope', '$rootScope', 'Client', '$ionicPopup',
-function($scope, $rootScope, Client, $ionicPopup){
+.controller('AuthController', ['$scope', '$rootScope', 'Client', 'Logger', '$state',
+function($scope, $rootScope, Client, Logger, $state){
     
     $scope.user = {
         name: "Reinaldo Diaz",
-        pass: "123456",
+        password: "123456",
         email: "reinaldo122@gmail.com"
     };
 
     $scope.login = function () {
-        //use $scope.user
-        Client.login('reinaldo122@gmail.com','123123')
-        .then(function (data) {
-            console.log(data);
-            $ionicPopup.alert({title: 'goodResponse', template:JSON.stringify(data)});
+        Client.login($scope.user.email,$scope.user.password)
+        .then(function (response) {
+            console.log(response);
+            //User/Pass do not match
+            if (response.status == 409) {
+                Logger.alert('Usuario o Contraseña no coinciden', response.message);
+            }
+            //Login successfull
+            if (response.return && response.status == 200) {
+                $state.go('menu');
+            }
         }, function (error) {
-            $ionicPopup.alert({title: 'badResponse', template:JSON.stringify(error)});
+            Logger.alert('badResponse', JSON.stringify(error));
         });
     };
 
     function processFacebookLogin (details) {
         //TODO: Do something with user details
+        Logger.alert('facebook info', JSON.stringify(details));
     }
 
     $scope.loginWithFacebook = function () {
         Client.loginWithFacebook().then(function (response) {
             Client.facebookGetUserInfo().then(function (response) {
+                Logger.alert('success getting info', '');
                 processFacebookLogin(response);
             }, function (error) {
                 // If there's an error fetching user details, access token it's removed
@@ -42,7 +50,7 @@ function($scope, $rootScope, Client, $ionicPopup){
 
     function processGoogleLogin (details) {
         //TODO: Do something with user details
-        $ionicPopup.alert({title: 'gInfo', template:JSON.stringify(details)});
+        Logger.alert('gInfo', JSON.stringify(details));
     }
 
     $scope.loginWithGoogle = function () {
@@ -63,17 +71,15 @@ function($scope, $rootScope, Client, $ionicPopup){
 
     $scope.doRegister = function(registerForm) {
         if (registerForm.$valid) {
-            Client.register($scope.user.name, $scope.user.pass, $scope.user.email)
+            Client.register($scope.user.name, $scope.user.password, $scope.user.email)
                 .then(function(data) {
-
                     if (data.return && data.status == 200) {
-                        //Successfully registered
+                        $state.go('menu');
                     } else if (data.return && data.status == 409) {
-                        $ionicPopup.alert({title: 'Usuario ya registrado', template:data.message});
+                        Logger.alert('Usuario ya registrado', data.message);
                     }
                 }, function(error) {
-                    console.war("error...");
-                    console.log(error);
+                    Logger.error('Ha ocurrido un error inesperado, por favor verifique que la información ingresada es válida.');
                 });
         }
     };
@@ -81,8 +87,85 @@ function($scope, $rootScope, Client, $ionicPopup){
     $scope.recoverPassword = function () {
         Client.forgotPassword($scope.user.email)
             .then(function (response) {
-                $ionicPopup.alert({title: 'Recuperación de Contraseña', template:response.message});
+                Logger.alert('Recuperación de Contraseña', response.message);
+            }, function (error) {
+                Logger.error('Ha ocurrido un error, por favor intente luego.');
             });
     };
-    
+
+    function processFacebookRegister (userInfo) {
+        /*var data = {
+            email: userInfo.email,
+            pass: Client.socialPassword(userInfo.id),
+            name: userInfo.name,
+            facebook_id: userInfo.id
+        };*/
+        var data = {
+            "email":"reinaldo122@gmail.com",
+            "pass":"d178443f8cc43ea38c210bc8b9c91bb0",
+            "name":"Reinaldo Díaz Lugo",
+            "facebook_id":"10209895547121607"
+        };
+        console.log(JSON.stringify(data));
+        console.log("-----------");
+        Client.register(data)
+            .then(function (response) {
+                Logger.alert('REGISTRO', JSON.stringify(response));
+            }, function (error) {
+                console.error(JSON.stringify(error));
+            });
+    }
+
+    $scope.registerWithFacebook = function () {
+        processFacebookRegister();
+        /*Client.loginWithFacebook().then(function (response) {
+            Client.facebookGetUserInfo().then(function (response) {
+                processFacebookRegister(response);
+            }, function (error) {
+                // If there's an error fetching user details, access token it's removed
+                // and we have to login again
+                Client.loginWithFacebook().then(function (response) {
+                    Client.facebookGetUserInfo().then(function (response) {
+                        processFacebookRegister(response);
+                    });
+                });
+            });
+        });*/
+    };
+
+    function processGoogleRegister (userInfo) {
+        Client.register(userInfo.name, Client.socialPassword(userInfo.id), userInfo.email, userInfo.google_id)
+            .then(function (response) {
+                if (response.return && response.status == 200) {
+                    //We save globally accessible data
+                    $rootScope.user = response.data.user;
+                    $rootScope.menu = response.data.menu;
+                    $state.go('menu');
+                } else if (response.status == 409 && response.message!= '') {
+                    Logger.error(response.message);
+                }
+            }, function (error) {
+                if (error.message)
+                    Logger.error(error.message);
+                else
+                    Logger.error('');
+            });
+    }
+
+    $scope.registerWithGoogle = function () {
+        Client.loginWithGoogle().then(function (response) {
+            Client.googleGetUserInfo().then(function (response) {
+                processGoogleRegister(response);
+            }, function (error) {
+                // If there's an error fetching user details, credentials are removed
+                // and we have to login again
+                Client.loginWithGoogle().then(function (response) {
+                    Client.googleGetUserInfo().then(function (response) {
+                        processGoogleRegister(response);
+                    });
+                });
+            });
+        });
+    };
+
 }]);

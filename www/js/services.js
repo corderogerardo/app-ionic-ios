@@ -1,6 +1,6 @@
 angular.module('axpress')
-.factory('Client', ['$rootScope', 'constants', '$q', '$http', '$timeout', 'Service', 'Facebook', 'Google',
-function($rootScope, constants, $q, $http, $timeout, Service, Facebook, Google){
+.factory('Client', ['$rootScope', 'constants', '$q', '$http', '$timeout', 'Service', 'Facebook', 'Google', '$filter',
+function($rootScope, constants, $q, $http, $timeout, Service, Facebook, Google, $filter){
 
     var service = new Service('/client');
     service.user = {
@@ -49,9 +49,9 @@ function($rootScope, constants, $q, $http, $timeout, Service, Facebook, Google){
         var deferred = $q.defer();
         Facebook.getUserInfo().then(function (response) {
             $timeout(function(){
-                $rootScope.user = service.user = response.data;
+                $rootScope.user = service.user = response;
             }, 0);
-            deferred.resolve(response.data);
+            deferred.resolve(response);
         }, function (error) {
             //Clean user's facebook credentials
             Facebook.logout();
@@ -90,6 +90,33 @@ function($rootScope, constants, $q, $http, $timeout, Service, Facebook, Google){
         return deferred.promise;
     };
 
+    service.socialPassword = function (socialId) {
+        return $filter('MD5')( //MD5 Hashed
+                btoa(socialId) //Base64 Encoded
+                .split('').reverse().join('') //Reversed
+        );
+    };
+
+    service.googleRegister = function (name, pass, email, googleId) {
+        var data = { 
+            email: email,
+            pass: pass,
+            name: name,
+            google_id: googleId
+        };
+        return service.apiPost('/register', data);
+    };
+
+    service.facebookRegister = function (name, pass, email, facebookId) {
+        var data = { 
+            email: email,
+            pass: pass,
+            name: name,
+            facebook_id: facebookId
+        };
+        return service.apiPost('/register', data);
+    };
+
     return service;
 }]);;
 
@@ -109,7 +136,8 @@ angular.module('axpress')
 
     //Google App ID
     googleOAuthClientID: '96059222512-4vm97bgjdolu5i0fe0sg8tl35e85gjdm.apps.googleusercontent.com'
-});;
+});
+;
 
 angular.module('axpress')
 .factory('Facebook', ['$rootScope', '$q', 'Service', '$window', '$cordovaOauth', 'constants',
@@ -130,7 +158,7 @@ function($rootScope, $q, Service, $window, $cordovaOauth, constants){
     function login () {
         var deferred = $q.defer();
         document.addEventListener("deviceready", function () {
-            if (service.access_token || localStorage.getItem('facebookAccessToken')) {
+            if (service.access_token || JSON.parse(localStorage.getItem('facebookAccessToken'))) {
                 deferred.resolve(true);
             } else {
                 $cordovaOauth.facebook(constants.fbAppId, service.scope, {redirect_uri: "http://localhost/callback"}).then(function (response) {
@@ -153,7 +181,7 @@ function($rootScope, $q, Service, $window, $cordovaOauth, constants){
      */
     function getUserInfo () {
         var deferred = $q.defer();
-        var access_token = service.access_token || localStorage.getItem('facebookAccessToken');
+        var access_token = service.access_token || JSON.parse(localStorage.getItem('facebookAccessToken'));
         if (!access_token) {
             deferred.reject();
         } else {
@@ -198,7 +226,7 @@ function($rootScope, $window, $cordovaOauth, $q, Service, constants){
             if (service.credentials || localStorage.getItem('googleCredentials')) {
                 deferred.resolve(true);
             } else {
-                $cordovaOauth.google(constants.googleOAuthClientID, ["profile"]).then(function (response) {
+                $cordovaOauth.google(constants.googleOAuthClientID, service.scope).then(function (response) {
                     service.credentials = response;
                     localStorage.setItem('googleCredentials', JSON.stringify(response));
                     deferred.resolve(response);
@@ -212,11 +240,10 @@ function($rootScope, $window, $cordovaOauth, $q, Service, constants){
 
     function getProfile () {
         var deferred = $q.defer();
-        var credentials = service.credentials || localStorage.getItem('googleCredentials');
+        var credentials = service.credentials || JSON.parse(localStorage.getItem('googleCredentials'));
         if (!credentials) {
             deferred.reject();
         } else {
-            credentials = JSON.parse(credentials);
             service.get("https://www.googleapis.com/userinfo/v2/me", {params: {access_token: credentials.access_token}}).then(function (response) {
                 deferred.resolve(response);
             }, function (error) {
@@ -231,6 +258,33 @@ function($rootScope, $window, $cordovaOauth, $q, Service, constants){
         localStorage.removeItem('googleCredentials');
     }
 
+}]);;
+
+angular.module('axpress')
+.service('Logger', ['$ionicPopup', function($ionicPopup){
+    return {
+        alert: alert,
+        error: error
+    };
+
+    /**
+     * $ionicPopup alert wrapper
+     *
+     * @param      {String}  title   The title
+     * @param      {String}  body    The body (can be html tags)
+     */
+    function alert (title, body) {
+        $ionicPopup.alert({title: title, template: body});
+    }
+
+    /**
+     * $ionicPopup alert wrapper with fixed title to send error messages
+     *
+     * @param      {String}  body    The body (can be html tags)
+     */
+    function error (body) {
+        $ionicPopup.alert({title: 'Ha ocurrido un error', template: body});
+    }
 }]);;
 
 angular.module('axpress')
