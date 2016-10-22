@@ -107,6 +107,15 @@ function($rootScope, constants, $q, $http, $timeout, Service, Facebook, Google, 
         return service.apiPost('/register', data);
     };
 
+    service.googleLogin = function (email, pass, googleId) {
+        var data = {
+            email: email,
+            pass: pass,
+            google_id: googleId
+        };
+        return service.apiPost('/login', data);
+    };
+
     service.facebookRegister = function (name, pass, email, facebookId) {
         var data = { 
             email: email,
@@ -115,6 +124,15 @@ function($rootScope, constants, $q, $http, $timeout, Service, Facebook, Google, 
             facebook_id: facebookId
         };
         return service.apiPost('/register', data);
+    };
+
+    service.facebookLogin = function (email, pass, facebookId) {
+        var data = {
+            email: email,
+            pass: pass,
+            facebook_id: facebookId
+        };
+        return service.apiPost('/login', data);
     };
 
     return service;

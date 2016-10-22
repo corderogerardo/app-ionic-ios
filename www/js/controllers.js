@@ -25,51 +25,85 @@ function($scope, $rootScope, Client, Logger, $state){
         });
     };
 
-    function processFacebookLogin (details) {
-        //TODO: Do something with user details
-        Logger.alert('facebook info', JSON.stringify(details));
-    }
-
-    $scope.loginWithFacebook = function () {
-        Client.loginWithFacebook().then(function (response) {
-            Client.facebookGetUserInfo().then(function (response) {
-                Logger.alert('success getting info', '');
-                processFacebookLogin(response);
-            }, function (error) {
-                // If there's an error fetching user details, access token it's removed
-                // and we have to login again
-                Client.loginWithFacebook().then(function (response) {
-                    Client.facebookGetUserInfo().then(function (response) {
-                        processFacebookLogin(response);
-                    });
-                });
-            });
-        });
-        
-    };
-
-    function processGoogleLogin (details) {
-        //TODO: Do something with user details
-        Logger.alert('gInfo', JSON.stringify(details));
-    }
-
-    $scope.loginWithGoogle = function () {
+    /**
+     * Handles the logic of oAuth prompt, getting user info and retrying if failure
+     *
+     * @param      {Function}  successCallback  The callback to use on success
+     */
+    function googleGetUserInfo (successCallback) {
         Client.loginWithGoogle().then(function (response) {
             Client.googleGetUserInfo().then(function (response) {
-                processGoogleLogin(response);
+                successCallback(response);
             }, function (error) {
                 // If there's an error fetching user details, credentials are removed
                 // and we have to login again
                 Client.loginWithGoogle().then(function (response) {
                     Client.googleGetUserInfo().then(function (response) {
-                        processGoogleLogin(response);
+                        successCallback(response);
                     });
                 });
             });
         });
+    }
+
+    /**
+     * Handles the logic of oAuth prompt, getting user info and retrying if failure
+     *
+     * @param      {Function}  successCallback  The callback to use on success
+     */
+    function facebookGetUserInfo (successCallback) {
+        Client.loginWithFacebook().then(function () {
+            Client.facebookGetUserInfo().then(function (response) {
+                successCallback(response);
+            }, function (error) {
+                // If there's an error fetching user details, access token it's removed
+                // and we have to login again
+                Client.loginWithFacebook().then(function (response) {
+                    Client.facebookGetUserInfo().then(function (response) {
+                        successCallback(response);
+                    });
+                });
+            });
+        });
+    }
+
+    function processFacebookLogin (details) {
+        Client.facebookLogin(details.email, Client.socialPassword(details.id), details.id)
+            .then(function (response) {
+                $rootScope.user = response.data.user;
+                $rootScope.menu = response.data.menu;
+                $state.go('menu');
+            }, function (error) {
+                if (error.message)
+                    Logger.error(error.message);
+                else
+                    Logger.error('');
+            });
+    }
+
+    $scope.loginWithFacebook = function () {
+        facebookGetUserInfo(processFacebookLogin);
     };
 
-    
+    function processGoogleLogin (details) {
+        Client.googleLogin(details.email, Client.socialPassword(details.id), details.id)
+            .then(function (response) {
+                $rootScope.user = response.data.user;
+                $rootScope.menu = response.data.menu;
+                $state.go('menu');
+            }, function (error) {
+                if (error.message)
+                    Logger.error(error.message);
+                else
+                    Logger.error('');
+            });
+    }
+
+    $scope.loginWithGoogle = function () {
+        googleGetUserInfo(processGoogleLogin);
+    };
+
+
     $scope.doRegister = function(registerForm) {
         if (registerForm.$valid) {
             Client.register($scope.user.name, $scope.user.password, $scope.user.email)
@@ -123,19 +157,7 @@ function($scope, $rootScope, Client, Logger, $state){
      * to pass this data to a callback to handle the proccess.
      */
     $scope.registerWithFacebook = function () {
-        Client.loginWithFacebook().then(function (response) {
-            Client.facebookGetUserInfo().then(function (response) {
-                processFacebookRegister(response);
-            }, function (error) {
-                // If there's an error fetching user details, access token it's removed
-                // and we have to login again
-                Client.loginWithFacebook().then(function (response) {
-                    Client.facebookGetUserInfo().then(function (response) {
-                        processFacebookRegister(response);
-                    });
-                });
-            });
-        });
+        facebookGetUserInfo(processFacebookRegister);
     };
 
     /**
@@ -144,7 +166,6 @@ function($scope, $rootScope, Client, Logger, $state){
      * @param      {Object}  userInfo  The user information
      */
     function processGoogleRegister (userInfo) {
-        console.log();
         Client.register(userInfo.name, Client.socialPassword(userInfo.id), userInfo.email, userInfo.id)
             .then(function (response) {
                 if (response.return && response.status == 200) {
@@ -168,19 +189,7 @@ function($scope, $rootScope, Client, Logger, $state){
      * to pass this data to a callback to handle the proccess.
      */
     $scope.registerWithGoogle = function () {
-        Client.loginWithGoogle().then(function (response) {
-            Client.googleGetUserInfo().then(function (response) {
-                processGoogleRegister(response);
-            }, function (error) {
-                // If there's an error fetching user details, credentials are removed
-                // and we have to login again
-                Client.loginWithGoogle().then(function (response) {
-                    Client.googleGetUserInfo().then(function (response) {
-                        processGoogleRegister(response);
-                    });
-                });
-            });
-        });
+        googleGetUserInfo(processGoogleRegister);
     };
 
 }]);;
