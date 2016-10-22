@@ -4,12 +4,12 @@
 <ion-view view-title="SendType">
 	<ion-content scroll="false" >
 
-	<section class="main-container-maps">
+	<ui-gmap-google-map center='map.center' zoom='map.zoom' class="main-container-maps">
 		<div class="input-direction">
 			<div class="inputs-container border-blue">
 				<i class="ion-map"></i>
 				<label class="">
-					<input type="text" placeholder="Escribe la dirección aquí...">
+					<input type="text" ng-model="map" placeholder="Escribe la dirección aquí...">
 				</label>
 			</div>
 		</div>
@@ -18,7 +18,7 @@
 		</div>
 
 
-	</section>
+	</ui-gmap-google-map>
 
 	</ion-content>
 </ion-view>

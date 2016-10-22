@@ -6,5 +6,7 @@ platforms/
 plugins/
 /www/css/ionic.app.css
 /www/css/ionic.app.min.css
-/www/lib
-
+/www/lib/
+/www/js/controllers.js
+/www/js/directives.js
+/www/js/services.js

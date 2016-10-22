@@ -5,6 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 angular.module('axpress', [
     'ionic',
+    'uiGmapgoogle-maps',
     'ionic.cloud',
     'ngResource',
     'ngCordova',
@@ -65,7 +66,7 @@ angular.module('axpress', [
         .state('documentorigin', {
             url: '/documentorigin',
             templateUrl: 'templates/maps/documents/documentOrigin.html',
-            controller: 'DocumentOrigin'
+            controller: 'DocumentOriginController'
         })
         .state('documentsdetailorigin', {
             url: '/documentsdetailorigin',
@@ -90,7 +91,8 @@ angular.module('axpress', [
         })
         .state('documentsimagephoto', {
             url: '/documentsimagephoto',
-            templateUrl: 'templates/imagephoto/documents/imagephoto.html'
+            templateUrl: 'templates/imagephoto/documents/imagephoto.html',
+            controller:'ImagePhotoController'
         })
         .state('sentresumedocument', {
             url: '/sentresumedocument',

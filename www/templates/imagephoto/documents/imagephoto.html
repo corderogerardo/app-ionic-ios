@@ -11,13 +11,13 @@
 			</p>
 		</section>
 		<section class="imagephoto-container">
-			<button type="">
-				<i class="ion-camera"></i>
+			<button ng-click="takePicture()">
+				<img ng-src="{{imgSrc}}" width="100px" height="100px" class="ion-camera"></img>
 				<a href="" title="">TOMAR FOTOGRAFÍA</a>
 			</button>
 		</section>
 		<section class="container-button imagephoto-button">
-			<a class="button-icon" href="#/documentsimagephoto" title=""><i class="ion-image"></i> SELECCIONAR FOTOGRAFIA</a>
+			<a class="button-icon" title="SELECCIONAR FOTOGRAFIA" ng-click="selectPicture()"><i class="ion-image"></i> SELECCIONAR FOTOGRAFIA</a>
 		</section>
 		<section class="container-button imagephoto-button">
 			<a class="button-noicon" href="#/sentresumedocument" title="">CONTINUAR</a>
