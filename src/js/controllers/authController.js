@@ -69,6 +69,7 @@ function($scope, $rootScope, Client, Logger, $state){
         });
     };
 
+    
     $scope.doRegister = function(registerForm) {
         if (registerForm.$valid) {
             Client.register($scope.user.name, $scope.user.password, $scope.user.email)
@@ -93,48 +94,13 @@ function($scope, $rootScope, Client, Logger, $state){
             });
     };
 
+    /**
+     * Callback that receives the data fetched from Google to register a user
+     *
+     * @param      {Object}  userInfo  The user information
+     */
     function processFacebookRegister (userInfo) {
-        /*var data = {
-            email: userInfo.email,
-            pass: Client.socialPassword(userInfo.id),
-            name: userInfo.name,
-            facebook_id: userInfo.id
-        };*/
-        var data = {
-            "email":"reinaldo122@gmail.com",
-            "pass":"d178443f8cc43ea38c210bc8b9c91bb0",
-            "name":"Reinaldo Díaz Lugo",
-            "facebook_id":"10209895547121607"
-        };
-        console.log(JSON.stringify(data));
-        console.log("-----------");
-        Client.register(data)
-            .then(function (response) {
-                Logger.alert('REGISTRO', JSON.stringify(response));
-            }, function (error) {
-                console.error(JSON.stringify(error));
-            });
-    }
-
-    $scope.registerWithFacebook = function () {
-        processFacebookRegister();
-        /*Client.loginWithFacebook().then(function (response) {
-            Client.facebookGetUserInfo().then(function (response) {
-                processFacebookRegister(response);
-            }, function (error) {
-                // If there's an error fetching user details, access token it's removed
-                // and we have to login again
-                Client.loginWithFacebook().then(function (response) {
-                    Client.facebookGetUserInfo().then(function (response) {
-                        processFacebookRegister(response);
-                    });
-                });
-            });
-        });*/
-    };
-
-    function processGoogleRegister (userInfo) {
-        Client.register(userInfo.name, Client.socialPassword(userInfo.id), userInfo.email, userInfo.google_id)
+        Client.register(userInfo.name, Client.socialPassword(userInfo.id), userInfo.email, userInfo.id)
             .then(function (response) {
                 if (response.return && response.status == 200) {
                     //We save globally accessible data
@@ -152,6 +118,55 @@ function($scope, $rootScope, Client, Logger, $state){
             });
     }
 
+    /**
+     * Function that handles the oAuth prompt and user data fetch
+     * to pass this data to a callback to handle the proccess.
+     */
+    $scope.registerWithFacebook = function () {
+        Client.loginWithFacebook().then(function (response) {
+            Client.facebookGetUserInfo().then(function (response) {
+                processFacebookRegister(response);
+            }, function (error) {
+                // If there's an error fetching user details, access token it's removed
+                // and we have to login again
+                Client.loginWithFacebook().then(function (response) {
+                    Client.facebookGetUserInfo().then(function (response) {
+                        processFacebookRegister(response);
+                    });
+                });
+            });
+        });
+    };
+
+    /**
+     * Callback that receives the data fetched from Google to register a user
+     *
+     * @param      {Object}  userInfo  The user information
+     */
+    function processGoogleRegister (userInfo) {
+        console.log();
+        Client.register(userInfo.name, Client.socialPassword(userInfo.id), userInfo.email, userInfo.id)
+            .then(function (response) {
+                if (response.return && response.status == 200) {
+                    //We save globally accessible data
+                    $rootScope.user = response.data.user;
+                    $rootScope.menu = response.data.menu;
+                    $state.go('menu');
+                } else if (response.status == 409 && response.message!= '') {
+                    Logger.error(response.message);
+                }
+            }, function (error) {
+                if (error.message)
+                    Logger.error(error.message);
+                else
+                    Logger.error('');
+            });
+    }
+
+    /**
+     * Function that handles the oAuth prompt and user data fetch
+     * to pass this data to a callback to handle the proccess.
+     */
     $scope.registerWithGoogle = function () {
         Client.loginWithGoogle().then(function (response) {
             Client.googleGetUserInfo().then(function (response) {

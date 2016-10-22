@@ -17,7 +17,7 @@ function($rootScope, $q, Service, $window, $cordovaOauth, constants){
     function login () {
         var deferred = $q.defer();
         document.addEventListener("deviceready", function () {
-            if (service.access_token || JSON.parse(localStorage.getItem('facebookAccessToken'))) {
+            if (service.access_token || localStorage.getItem('facebookAccessToken')) {
                 deferred.resolve(true);
             } else {
                 $cordovaOauth.facebook(constants.fbAppId, service.scope, {redirect_uri: "http://localhost/callback"}).then(function (response) {
@@ -40,7 +40,7 @@ function($rootScope, $q, Service, $window, $cordovaOauth, constants){
      */
     function getUserInfo () {
         var deferred = $q.defer();
-        var access_token = service.access_token || JSON.parse(localStorage.getItem('facebookAccessToken'));
+        var access_token = service.access_token || localStorage.getItem('facebookAccessToken');
         if (!access_token) {
             deferred.reject();
         } else {
