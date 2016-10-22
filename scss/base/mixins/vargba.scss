@@ -1,0 +1,3 @@
+@mixin vargba($color,$opacity){
+	@rgba(red($color),green($color),blue($color),opacity);
+}
