@@ -37,12 +37,33 @@ angular.module('axpress')
 ;
 
 angular.module('axpress')
-.controller('DocumentOriginController', ['$scope', '$state','uiGmapGoogleMapApiProvider', function($scope, $state,uiGmapGoogleMapApiProvider){
+.controller('DocumentOriginController', ['$scope', '$cordovaDialogs', '$state', 'NgMap', function($scope,$cordovaDialogs, $state ,NgMap){
+    var vm = this;
+    NgMap.getMap().then(function (map) {
+        vm.map = map;
+    });
+    //Inherited data from parent, can be shared between children injecting $state
+   /* var documento = $state.current.data.documento;*/
 
-    //Inherited data from parent, can be shared between children inyecting $state
-    var documento = $state.current.data.documento;
+    vm.address = "";
+    vm.place="";
+    vm.types="['address']";
+    vm.placeChanged = function() {
+        vm.place = this.getPlace();
+        console.log('location', vm.place.geometry.location);
+        vm.map.setCenter(vm.place.geometry.location);
 
-    $scope.map = { center: { latitude: 45, longitude: -73 }, zoom: 8 };
+    };
+    vm.confirmOrigin = function(){
+        console.log("documentsdetailorigin");
+       /* $cordovaDialogs.confirm('Estas seguro?',confirmClosed,"Confirmation",["Si", "No"]);*/
+    };
+    function confirmClosed(buttonIndex) {
+        $cordovaDialogs.alert("Button selected: "+buttonIndex);
+
+    };
+
+
 }]);
 ;
 

@@ -9836,6 +9836,7 @@ textarea {
   .inputs-container label {
     align-items: center;
     display: flex;
+    height: 100% !important;
     color: white;
     justify-content: center;
     background-color: white;
@@ -9843,7 +9844,7 @@ textarea {
     .inputs-container label input {
       background-color: white;
       font-size: 2vh;
-      height: 70%;
+      height: 70% !important;
       padding: 5%;
       width: 100%; }
 
@@ -10192,18 +10193,28 @@ p {
     background-color: white; }
 
 .main-container-maps {
-  background-image: url("../img/maps.png");
-  background-size: cover;
-  justify-content: center;
   height: 100%;
-  padding-top: 25%;
   display: flex; }
 
 .input-direction {
   display: flex;
   height: 10%;
   flex-direction: row;
-  width: 80%; }
+  width: 80%;
+  position: absolute;
+  top: 25%;
+  left: 10%;
+  right: auto; }
+
+.maps-list-places {
+  display: flex;
+  border: 1px solid black;
+  width: 80%;
+  height: 10%;
+  top: 30%;
+  left: 0px;
+  position: absolute;
+  z-index: 1; }
 
 .pickuphere-button {
   width: 80%;

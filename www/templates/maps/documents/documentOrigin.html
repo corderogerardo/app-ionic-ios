@@ -4,21 +4,41 @@
 <ion-view view-title="SendType">
 	<ion-content scroll="false" >
 
-	<ui-gmap-google-map center='map.center' zoom='map.zoom' class="main-container-maps">
-		<div class="input-direction">
-			<div class="inputs-container border-blue">
-				<i class="ion-map"></i>
-				<label class="">
-					<input type="text" ng-model="map" placeholder="Escribe la dirección aquí...">
-				</label>
-			</div>
-		</div>
-		<div class="pickuphere-button">
-		<a class="button-noicon" href="#/documentsdetailorigin" title="">RECOGER AQUÍ</a>
-		</div>
+        <map center='{{vm.address || "Bogota"}}'
+             geo-fallback-center="[40.74, -74.18]"
+             zoom="11" class="main-container-maps">
+            <marker position="{{vm.address}}"
+                    title="Origen"
+                    centered="true"></marker>
+        </map>
+        <div class="input-direction">
+            <div class="inputs-container border-blue">
+                <i class="ion-map"></i>
+                <label>
+                    <input places-auto-complete size=80 class="map-input"
+                           type="text"
+                           ng-model="vm.address"
+                           component-restrictions="{country:'col'}"
+                           types="{{types}}"
+                           placeholder="Escribe la dirección aquí..."
+                           on-place-changed="vm.placeChanged()" />
 
+                </label>
+            </div>
+            <div class="maps-list-places" ng-show="vm.place">
+                Address = {{vm.place.formatted_address}} <br/>
+                Location: {{vm.place.geometry.location}}<br/>
+            </div>
+        </div>
 
-	</ui-gmap-google-map>
+        <div class="pickuphere-button">
+            <!--href="#/documentsdetailorigin"-->
+            <button class="button-noicon" ng-click="vm.confirmOrigin()" title="">RECOGER AQUÍ</button>
+        </div>
 
+       <!-- <div map-lazy-load="https://maps.google.com/maps/api/js"
+             map-lazy-load-params="{{googleMapsUrl}}">
+            <ng-map center="41,-87" zoom="3"></ng-map>
+        </div>-->
 	</ion-content>
 </ion-view>

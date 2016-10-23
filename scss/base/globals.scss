@@ -30,6 +30,7 @@ textarea{
 	label{
 	align-items: center;
 	display:flex;
+        height: 100% !important;;
 	color:white;
 	justify-content: center;
 	background-color:white;
@@ -37,7 +38,7 @@ textarea{
 		input{
 			background-color:white;
 			font-size: 2vh;
-			height:70%;
+			height:70% !important;
 			padding:5%;
 			width:100%;
 		}

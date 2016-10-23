@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 angular.module('axpress', [
     'ionic',
-    'uiGmapgoogle-maps',
+    'ngMap',
     'ionic.cloud',
     'ngResource',
     'ngCordova',

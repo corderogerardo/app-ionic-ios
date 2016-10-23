@@ -1,9 +1,5 @@
 .main-container-maps{
-	background-image: url("../img/maps.png");
-	background-size: cover;
-	justify-content: center;
 	height: 100%;
-	padding-top: 25%;
 	display:flex;
 }
 .input-direction{
@@ -11,8 +7,29 @@
 	height:10%;
 	flex-direction: row;
 	width:80%;
+    position: absolute;
+    top:25%;
+    left: 10%;
+    right: auto;
+    .inputs-container{
+        label{
+            input{
+                &:focus{
+                }
+            }
+        }
+    }
 }
-
+.maps-list-places{
+    display: flex;
+    border:1px solid black;
+    width: 80%;
+    height: 10%;
+    top: 30%;
+    left: 0px;
+    position: absolute;
+    z-index: 1;
+}
 .pickuphere-button{
 	width:80%;
 	position:absolute;
