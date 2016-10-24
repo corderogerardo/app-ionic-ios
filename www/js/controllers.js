@@ -11,7 +11,6 @@ function($scope, $rootScope, Client, Logger, $state){
     $scope.login = function () {
         Client.login($scope.user.email,$scope.user.password)
         .then(function (response) {
-            console.log(response);
             //User/Pass do not match
             if (response.status == 409) {
                 Logger.alert('Usuario o Contraseña no coinciden', response.message);
@@ -238,5 +237,4 @@ angular.module('axpress')
 
 angular.module('axpress')
 .controller('MenuController', ['$scope', function($scope){
-    console.log("Menu Controller");
 }]);

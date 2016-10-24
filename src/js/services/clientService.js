@@ -1,6 +1,6 @@
 angular.module('axpress')
-.factory('Client', ['$rootScope', 'constants', '$q', '$http', '$timeout', 'Service', 'Facebook', 'Google', '$filter',
-function($rootScope, constants, $q, $http, $timeout, Service, Facebook, Google, $filter){
+.factory('Client', ['$rootScope', '$q', '$http', '$timeout', 'Service', 'Facebook', 'Google', '$filter',
+function($rootScope, $q, $http, $timeout, Service, Facebook, Google, $filter){
 
     var service = new Service('/client');
     service.user = {
@@ -29,6 +29,19 @@ function($rootScope, constants, $q, $http, $timeout, Service, Facebook, Google, 
             email: email
         };
         return service.apiPost('/forgotpassword', data);
+    };
+
+    service.edit = function (clientId, email, name, password, movilPhone, localPhone, identify) {
+        var data = {
+            client_id: clientId,
+            email: email,
+            name: name,
+            pass: password,
+            movil_phone: movilPhone,
+            local_phone: localPhone,
+            identify: identify
+        };
+        return service.apiPost('/edit', data);
     };
 
     
