@@ -63,38 +63,38 @@ angular.module('axpress', [
                 documento: {}
             }
         })
-        .state('documentorigin', {
-            url: '/documentorigin',
+        .state('document.origin', {
+            url: '/origin',
             templateUrl: 'templates/maps/documents/documentOrigin.html',
             controller: 'DocumentOriginController'
         })
-        .state('documentsdetailorigin', {
-            url: '/documentsdetailorigin',
+        .state('document.detailorigin', {
+            url: '/detailorigin',
             templateUrl: 'templates/maps/documents/documentDetailOrigin.html'
         })
-        .state('documentsdestiny', {
-            url: '/documentsdestiny',
+        .state('document.destiny', {
+            url: '/destiny',
             templateUrl: 'templates/maps/documents/documentDestiny.html'
         })
-        .state('documentsdetaildestiny', {
-            url: '/documentsdetaildestiny',
+        .state('document.detaildestiny', {
+            url: '/detaildestiny',
             templateUrl: 'templates/maps/documents/documentDetailDestiny.html'
         })
-        .state('sendtypedocuments', {
-            url: '/sendtypedocuments',
+        .state('document.sendtype', {
+            url: '/sendtype',
             templateUrl: 'templates/sendtype/documents/sendtype.html'
         })
-        .state('caracteristicsdocuments', {
-            url: '/caracteristicsdocuments',
+        .state('document.caracteristics', {
+            url: '/caracteristics',
             templateUrl: 'templates/caracteristics/documents/caracteristics.html',
             controller:'CaracteristicsController'
         })
-        .state('documentsimagephoto', {
-            url: '/documentsimagephoto',
+        .state('document.imagephoto', {
+            url: '/imagephoto',
             templateUrl: 'templates/imagephoto/documents/imagephoto.html',
             controller:'ImagePhotoController'
         })
-        .state('sentresumedocument', {
+        .state('document.sentresume', {
             url: '/sentresumedocument',
             templateUrl: 'templates/sentresume/sentresume.html'
         })

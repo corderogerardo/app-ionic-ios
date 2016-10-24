@@ -207,7 +207,7 @@ function($scope, $rootScope, Client, $ionicPopup){
 }]);;
 
 angular.module('axpress')
-.controller('MenuController', ['$scope','$rootScope','$ionicPopup', function($scope,$rootScope,$ionicPopup){
+.controller('MenuController', ['$scope','$rootScope','$ionicPopup', '$state', function($scope,$rootScope,$ionicPopup, $state){
     console.log("Menu Controller");
 
     /**
@@ -350,9 +350,11 @@ angular.module('axpress')
 
     $scope.menuoptions = $rootScope.menuoptions;
 
+    var urlsPerServiceType = {1: 'document.origin', 2: 'package.origin'};
+
     $scope.moveTo = function(option){
-        $ionicPopup.alert({title: 'option', template:option});
-    }
+        $state.go(urlsPerServiceType[option]);
+    };
 
 
 }]);
