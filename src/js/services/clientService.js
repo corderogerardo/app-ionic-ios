@@ -1,6 +1,6 @@
 angular.module('axpress')
-.factory('Client', ['$rootScope', 'constants', '$q', '$http', '$timeout', 'Service', 'Facebook', 'Google',
-function($rootScope, constants, $q, $http, $timeout, Service, Facebook, Google){
+.factory('Client', ['$rootScope', '$q', '$http', '$timeout', 'Service', 'Facebook', 'Google', '$filter',
+function($rootScope, $q, $http, $timeout, Service, Facebook, Google, $filter){
 
     var service = new Service('/client');
     service.user = {
@@ -24,7 +24,27 @@ function($rootScope, constants, $q, $http, $timeout, Service, Facebook, Google){
         return service.apiPost('/register', data);
     };
 
+    service.forgotPassword = function (email) {
+        var data = {
+            email: email
+        };
+        return service.apiPost('/forgotpassword', data);
+    };
 
+    service.edit = function (clientId, email, name, password, movilPhone, localPhone, identify) {
+        var data = {
+            client_id: clientId,
+            email: email,
+            name: name,
+            pass: password,
+            movil_phone: movilPhone,
+            local_phone: localPhone,
+            identify: identify
+        };
+        return service.apiPost('/edit', data);
+    };
+
+    
     service.loginWithFacebook = function () {
         var deferred = $q.defer();
         Facebook.login().then(function (response) {
@@ -42,9 +62,9 @@ function($rootScope, constants, $q, $http, $timeout, Service, Facebook, Google){
         var deferred = $q.defer();
         Facebook.getUserInfo().then(function (response) {
             $timeout(function(){
-                $rootScope.user = service.user = response.data;
+                $rootScope.user = service.user = response;
             }, 0);
-            deferred.resolve(response.data);
+            deferred.resolve(response);
         }, function (error) {
             //Clean user's facebook credentials
             Facebook.logout();
@@ -83,6 +103,50 @@ function($rootScope, constants, $q, $http, $timeout, Service, Facebook, Google){
         return deferred.promise;
     };
 
+    service.socialPassword = function (socialId) {
+        return $filter('MD5')( //MD5 Hashed
+                btoa(socialId) //Base64 Encoded
+                .split('').reverse().join('') //Reversed
+        );
+    };
+
+    service.googleRegister = function (name, pass, email, googleId) {
+        var data = { 
+            email: email,
+            pass: pass,
+            name: name,
+            google_id: googleId
+        };
+        return service.apiPost('/register', data);
+    };
+
+    service.googleLogin = function (email, pass, googleId) {
+        var data = {
+            email: email,
+            pass: pass,
+            google_id: googleId
+        };
+        return service.apiPost('/login', data);
+    };
+
+    service.facebookRegister = function (name, pass, email, facebookId) {
+        var data = { 
+            email: email,
+            pass: pass,
+            name: name,
+            facebook_id: facebookId
+        };
+        return service.apiPost('/register', data);
+    };
+
+    service.facebookLogin = function (email, pass, facebookId) {
+        var data = {
+            email: email,
+            pass: pass,
+            facebook_id: facebookId
+        };
+        return service.apiPost('/login', data);
+    };
 
     return service;
 }]);

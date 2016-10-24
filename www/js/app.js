@@ -40,15 +40,23 @@ angular.module('axpress', [
             url: '/',
             templateUrl: 'templates/welcome/welcome.html'
         })
-        .state('login', {
-            url: '/login',
-            templateUrl: 'templates/login/login.html',
-            controller:'LoginController'
+        .state('auth', {
+            url: '/auth',
+            abstract: true,
+            template: '<ui-view/>',
+            controller:'AuthController'
         })
-        .state('register', {
+        .state('auth.login', {
+            url: '/login',
+            templateUrl: 'templates/auth/login.html'
+        })
+        .state('auth.register', {
             url: '/register',
-            templateUrl: 'templates/register/register.html',
-            controller: 'RegisterController'
+            templateUrl: 'templates/auth/register.html'
+        })
+        .state('auth.forgotpassword', {
+            url: '/forgotpassword',
+            templateUrl: 'templates/auth/forgotpassword.html'
         })
         .state('menu', {
             url: '/menu',

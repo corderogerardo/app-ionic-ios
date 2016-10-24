@@ -1,5 +1,5 @@
 <div class="bar bar-header bar-balanced">
-		 <h3 class="title">REGISTRARSE</h3>
+	<h3 class="title">REGISTRARSE</h3>
 </div>
 <ion-view view-title="Register">
 	<ion-content scroll="false" >
@@ -10,25 +10,19 @@
 			<div class="inputs-container border-blue">
 				<i class="ion-person"></i>
 				<label class="">
-					<input type="text" name="name" ng-model="users.name" placeholder="Nombre de Usuario">
+					<input type="text" name="name" ng-model="user.name" placeholder="Nombre" required>
 				</label>
 			</div>
 			<div class="inputs-container border-blue">
 				<i class="ion-locked"></i>
 				<label class="">
-					<input type="password" name="pass" ng-model="users.pass" placeholder="Contraseña">
+					<input type="password" name="pass" ng-model="user.password" placeholder="Contraseña" required>
 				</label>
 			</div>
 			<div class="inputs-container border-blue">
 				<i class="ion-email"></i>
 				<label class="">
-					<input type="email" name="email" ng-model="users.email" placeholder="Correo Electrónico">
-				</label>
-			</div>
-			<div class="inputs-container border-blue">
-				<i class="ion-ios-telephone"></i>
-				<label class="">
-					<input type="tel" name="phone" ng-model="users.phone" placeholder="Teléfono">
+					<input type="email" name="email" ng-model="user.email" placeholder="Correo Electrónico" required>
 				</label>
 			</div>
 		</div>
@@ -44,13 +38,13 @@
 			<a class="register-term"  title="">Al registrarte, aceptas términos y condiciones de uso, la politica de privacidad y los terminos de uso de Axpress.</a>
 		</form>
 		<section class="two-buttons-container-column">
-			<a href="#" class="button-icon facebook">
+			<a ng-click="registerWithFacebook()" class="button-icon facebook">
 				<i class="ion-social-facebook"></i>
 				<label>
 				Registrarse con facebook
 				</label>
 			</a>
-			<a href="#" class="button-icon gplus">
+			<a ng-click="registerWithGoogle()" class="button-icon gplus">
 				<i class="ion-social-googleplus"></i>
 				<label>
 				Registrarse con google
