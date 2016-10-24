@@ -17,6 +17,8 @@ function($scope, $rootScope, Client, Logger, $state){
             }
             //Login successfull
             if (response.return && response.status == 200) {
+                $rootScope.user = response.data.user;
+                $rootScope.menu = response.data.menu;
                 $state.go('menu');
             }
         }, function (error) {
