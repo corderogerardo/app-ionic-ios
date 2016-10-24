@@ -113,7 +113,8 @@ angular.module('axpress', [
         })
         .state('account', {
             url: '/account',
-            templateUrl: 'templates/account/account.html'
+            templateUrl: 'templates/account/account.html',
+            controller: 'AccountController',
         })
         .state('caracteristicspackages', {
             url: '/caracteristicspackages',

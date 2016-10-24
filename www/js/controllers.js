@@ -1,3 +1,32 @@
+/**
+ * Created by gerardo on 19/10/16.
+ */
+angular.module('axpress')
+.controller("AccountController",['$scope','$rootScope','$ionicPopup', 'Client', function($scope,$rootScope,$ionicPopup, Client){
+    $rootScope.user={
+        name: "Developer",
+        pass: "123456",
+        email: "developer@gmail.com",
+        phone: "55-555-5555",
+    };
+    $scope.user = $rootScope.user;
+
+    $scope.doAccountUpdate = function(accountForm){
+        if(accountForm.$valid){
+            Client.edit($scope.user)
+                .then(function(data){
+                    console.log(data);
+                    $ionicPopup.alert({title:'goodResponse',template:JSON.stringify(data)});
+                },function(error){
+                    $ionicPopup.alert({title:'badResponse',template:JSON.stringify(error)});
+                });
+
+        }
+    };
+
+}]);
+;
+
 angular.module('axpress')
 .controller('DocumentOrigin', ['$scope', '$state', function($scope, $state){
     
@@ -116,7 +145,7 @@ angular.module('axpress')
  *
  */
 angular.module('axpress')
-.controller('RegisterController', ['$scope', 'Client', function($scope, Client) {
+.controller('RegisterController', ['$scope', 'Client','$ionicPopup', function($scope, Client,$ionicPopup) {
     $scope.users = {
         name: "test",
         pass: "12345",
@@ -125,13 +154,12 @@ angular.module('axpress')
     };
     $scope.doRegister = function(registerForm) {
         if (registerForm.$valid) {
-            alert("Thanks user " + JSON.stringify($scope.users));
+            $ionicPopup.alert({title:'goodResponse',template:"Registro test."});
             Client.register($scope.users.email, $scope.users.pass, $scope.users.name)
                 .then(function(data) {
-                    console.log(data);
+                    $ionicPopup.alert({title:'goodResponse',template:JSON.stringify(data)});
                 }, function(error) {
-                    console.war("error...");
-                    console.log(error);
+                    $ionicPopup.alert({title:'badResponse',template:JSON.stringify(error)})
                 });
         }
     };
