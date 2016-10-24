@@ -11,26 +11,38 @@
 			<div class="inputs-container border-blue">
 				<i class="ion-person"></i>
 				<label class="">
-					<input type="text" name="name" ng-model="users.name" placeholder="Nombre de Usuario" required>
+					<input type="text" name="name" ng-model="user.name" placeholder="Nombre de Usuario" required>
 				</label>
 			</div>
 
 			<div class="inputs-container border-blue">
 				<i class="ion-email"></i>
 				<label class="">
-					<input type="email" name="email" ng-model="users.email" placeholder="Correo Electrónico" required>
+					<input type="email" name="email" ng-model="user.email" placeholder="Correo Electrónico" required>
 				</label>
 			</div>
 			<div class="inputs-container border-blue">
 				<i class="ion-ios-telephone"></i>
 				<label class="">
-					<input type="tel" name="phone" ng-model="users.phone" placeholder="Teléfono" required>
+					<input type="tel" name="phone" ng-model="user.phone" placeholder="Teléfono Móvil" >
+				</label>
+			</div>
+			<div class="inputs-container border-blue">
+				<i class="ion-ios-telephone"></i>
+				<label class="">
+					<input type="tel" name="phone" ng-model="user.localPhone" placeholder="Teléfono Fijo">
+				</label>
+			</div>
+			<div class="inputs-container border-blue">
+				<i class="ion-ios-person"></i>
+				<label class="">
+					<input type="tel" name="phone" ng-model="user.identify" placeholder="Identificación (N° Cedula o Pasaporte)">
 				</label>
 			</div>
 			<div class="inputs-container border-blue">
 				<i class="ion-locked"></i>
 				<label class="">
-					<input type="password" name="pass" ng-model="users.pass" placeholder="Contraseña" required>
+					<input type="password" name="pass" ng-model="user.pass" placeholder="Contraseña" required>
 				</label>
 			</div>
 		</div>

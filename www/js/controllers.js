@@ -2,24 +2,23 @@
  * Created by gerardo on 19/10/16.
  */
 angular.module('axpress')
-.controller("AccountController",['$scope','$rootScope','$ionicPopup',function($scope,$rootScope,$ionicPopup){
+.controller("AccountController",['$scope','$rootScope','$ionicPopup', 'Client', function($scope,$rootScope,$ionicPopup, Client){
     $rootScope.user={
         name: "Developer",
         pass: "123456",
         email: "developer@gmail.com",
         phone: "55-555-5555",
     };
-    $scope.users = $rootScope.user;
+    $scope.user = $rootScope.user;
 
     $scope.doAccountUpdate = function(accountForm){
         if(accountForm.$valid){
-            $ionicPopup.alert({title:'goodResponse',template:"Tu Cuenta Test."});
-            Client.updateUser($scope.users)
+            Client.edit($scope.user)
                 .then(function(data){
                     console.log(data);
                     $ionicPopup.alert({title:'goodResponse',template:JSON.stringify(data)});
                 },function(error){
-                    $ionicPopup.alert({title:'badResponse',template:JSON.stringify(error)})
+                    $ionicPopup.alert({title:'badResponse',template:JSON.stringify(error)});
                 });
 
         }
