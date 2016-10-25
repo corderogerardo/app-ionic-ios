@@ -10,6 +10,9 @@ function($rootScope, $window, $cordovaOauth, $q, Service, constants){
 
     return service;
 
+    /**
+     * Starts the process of loggin in a user using Cordova oAuth
+     */
     function login () {
         var deferred = $q.defer();
         document.addEventListener("deviceready", function () {
@@ -28,6 +31,12 @@ function($rootScope, $window, $cordovaOauth, $q, Service, constants){
         return deferred.promise;
     }
 
+    /**
+     * Gets user information from Google API
+     * 
+     * @return     {Promise}  The promise that will resolve the
+     *                            user information
+     */
     function getProfile () {
         var deferred = $q.defer();
         var credentials = service.credentials || JSON.parse(localStorage.getItem('googleCredentials'));
@@ -43,6 +52,9 @@ function($rootScope, $window, $cordovaOauth, $q, Service, constants){
         return deferred.promise;
     }
 
+    /**
+     * Removes the Google session data
+     */
     function logout () {
         delete service.credentials;
         localStorage.removeItem('googleCredentials');
