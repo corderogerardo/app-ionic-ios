@@ -40,15 +40,23 @@ angular.module('axpress', [
             url: '/',
             templateUrl: 'templates/welcome/welcome.html'
         })
-        .state('login', {
-            url: '/login',
-            templateUrl: 'templates/login/login.html',
-            controller:'LoginController'
+        .state('auth', {
+            url: '/auth',
+            abstract: true,
+            template: '<ui-view/>',
+            controller:'AuthController'
         })
-        .state('register', {
+        .state('auth.login', {
+            url: '/login',
+            templateUrl: 'templates/auth/login.html'
+        })
+        .state('auth.register', {
             url: '/register',
-            templateUrl: 'templates/register/register.html',
-            controller: 'RegisterController'
+            templateUrl: 'templates/auth/register.html'
+        })
+        .state('auth.forgotpassword', {
+            url: '/forgotpassword',
+            templateUrl: 'templates/auth/forgotpassword.html'
         })
         .state('menu', {
             url: '/menu',
@@ -67,36 +75,46 @@ angular.module('axpress', [
             url: '/mapsorigin',
             templateUrl: 'templates/maps/documents/mapsOrigin.html',
             controller: 'MapsOriginController'
+        .state('document.origin', {
+            url: '/origin',
+            templateUrl: 'templates/maps/documents/documentOrigin.html',
+            controller: 'DocumentOriginController'
         })
-        .state('documentsdetailorigin', {
-            url: '/documentsdetailorigin',
+        .state('document.detailorigin', {
+            url: '/detailorigin',
             templateUrl: 'templates/maps/documents/documentDetailOrigin.html'
         })
         .state('mapsdestiny', {
             url: '/mapsdestiny',
             templateUrl: 'templates/maps/documents/mapsDestiny.html',
             controller:'MapsDestinyController'
+        .state('document.destiny', {
+            url: '/destiny',
+            templateUrl: 'templates/maps/documents/documentDestiny.html'
         })
-        .state('documentsdetaildestiny', {
-            url: '/documentsdetaildestiny',
+        .state('document.detaildestiny', {
+            url: '/detaildestiny',
             templateUrl: 'templates/maps/documents/documentDetailDestiny.html'
         })
         .state('sendtypedocuments', {
             url: '/sendtypedocuments',
             templateUrl: 'templates/sendtype/documents/sendtype.html',
             controller:'SentTypeController'
+        .state('document.sendtype', {
+            url: '/sendtype',
+            templateUrl: 'templates/sendtype/documents/sendtype.html'
         })
-        .state('caracteristicsdocuments', {
-            url: '/caracteristicsdocuments',
+        .state('document.caracteristics', {
+            url: '/caracteristics',
             templateUrl: 'templates/caracteristics/documents/caracteristics.html',
             controller:'CaracteristicsController'
         })
-        .state('documentsimagephoto', {
-            url: '/documentsimagephoto',
+        .state('document.imagephoto', {
+            url: '/imagephoto',
             templateUrl: 'templates/imagephoto/documents/imagephoto.html',
             controller:'ImagePhotoController'
         })
-        .state('sentresumedocument', {
+        .state('document.sentresume', {
             url: '/sentresumedocument',
             templateUrl: 'templates/sentresume/sentresume.html',
             controller:'ErrandsResumeController'

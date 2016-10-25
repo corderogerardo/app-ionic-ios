@@ -1,6 +1,6 @@
 angular.module('axpress')
-.factory('Client', ['$rootScope', 'constants', '$q', '$http', '$timeout', 'Service', 'Facebook', 'Google',
-function($rootScope, constants, $q, $http, $timeout, Service, Facebook, Google){
+.factory('Client', ['$rootScope', '$q', '$http', '$timeout', 'Service', 'Facebook', 'Google', '$filter',
+function($rootScope, $q, $http, $timeout, Service, Facebook, Google, $filter){
 
     var service = new Service('/client');
     service.user = {
@@ -24,7 +24,27 @@ function($rootScope, constants, $q, $http, $timeout, Service, Facebook, Google){
         return service.apiPost('/register', data);
     };
 
+    service.forgotPassword = function (email) {
+        var data = {
+            email: email
+        };
+        return service.apiPost('/forgotpassword', data);
+    };
 
+    service.edit = function (clientId, email, name, password, movilPhone, localPhone, identify) {
+        var data = {
+            client_id: clientId,
+            email: email,
+            name: name,
+            pass: password,
+            movil_phone: movilPhone,
+            local_phone: localPhone,
+            identify: identify
+        };
+        return service.apiPost('/edit', data);
+    };
+
+    
     service.loginWithFacebook = function () {
         var deferred = $q.defer();
         Facebook.login().then(function (response) {
@@ -42,9 +62,9 @@ function($rootScope, constants, $q, $http, $timeout, Service, Facebook, Google){
         var deferred = $q.defer();
         Facebook.getUserInfo().then(function (response) {
             $timeout(function(){
-                $rootScope.user = service.user = response.data;
+                $rootScope.user = service.user = response;
             }, 0);
-            deferred.resolve(response.data);
+            deferred.resolve(response);
         }, function (error) {
             //Clean user's facebook credentials
             Facebook.logout();
@@ -83,6 +103,50 @@ function($rootScope, constants, $q, $http, $timeout, Service, Facebook, Google){
         return deferred.promise;
     };
 
+    service.socialPassword = function (socialId) {
+        return $filter('MD5')( //MD5 Hashed
+                btoa(socialId) //Base64 Encoded
+                .split('').reverse().join('') //Reversed
+        );
+    };
+
+    service.googleRegister = function (name, pass, email, googleId) {
+        var data = { 
+            email: email,
+            pass: pass,
+            name: name,
+            google_id: googleId
+        };
+        return service.apiPost('/register', data);
+    };
+
+    service.googleLogin = function (email, pass, googleId) {
+        var data = {
+            email: email,
+            pass: pass,
+            google_id: googleId
+        };
+        return service.apiPost('/login', data);
+    };
+
+    service.facebookRegister = function (name, pass, email, facebookId) {
+        var data = { 
+            email: email,
+            pass: pass,
+            name: name,
+            facebook_id: facebookId
+        };
+        return service.apiPost('/register', data);
+    };
+
+    service.facebookLogin = function (email, pass, facebookId) {
+        var data = {
+            email: email,
+            pass: pass,
+            facebook_id: facebookId
+        };
+        return service.apiPost('/login', data);
+    };
 
     return service;
 }]);
@@ -94,17 +158,18 @@ angular.module('axpress')
     apiBaseUrl: 'http://52.43.247.174/api_devel',
 
     //App specific client token/key
-    key: '1fc0f5604616c93deac481b33989f10e',
+    key: '21569d3e6977ae51178544f5dcdd508652799af3.IVadPml3rlEXhUT13N1QhlJ5mvM=',
 
     //String to identify the App on the Admin Console
-    platform: 'iOS Hybrid',
+    platform: 'iOS',
     
     //Facebook App ID
     fbAppId: '320049998373400',
 
     //Google App ID
     googleOAuthClientID: '96059222512-4vm97bgjdolu5i0fe0sg8tl35e85gjdm.apps.googleusercontent.com'
-});;
+});
+;
 
 angular.module('axpress')
 .factory('Facebook', ['$rootScope', '$q', 'Service', '$window', '$cordovaOauth', 'constants',
@@ -193,7 +258,7 @@ function($rootScope, $window, $cordovaOauth, $q, Service, constants){
             if (service.credentials || localStorage.getItem('googleCredentials')) {
                 deferred.resolve(true);
             } else {
-                $cordovaOauth.google(constants.googleOAuthClientID, ["profile"]).then(function (response) {
+                $cordovaOauth.google(constants.googleOAuthClientID, service.scope).then(function (response) {
                     service.credentials = response;
                     localStorage.setItem('googleCredentials', JSON.stringify(response));
                     deferred.resolve(response);
@@ -207,11 +272,10 @@ function($rootScope, $window, $cordovaOauth, $q, Service, constants){
 
     function getProfile () {
         var deferred = $q.defer();
-        var credentials = service.credentials || localStorage.getItem('googleCredentials');
+        var credentials = service.credentials || JSON.parse(localStorage.getItem('googleCredentials'));
         if (!credentials) {
             deferred.reject();
         } else {
-            credentials = JSON.parse(credentials);
             service.get("https://www.googleapis.com/userinfo/v2/me", {params: {access_token: credentials.access_token}}).then(function (response) {
                 deferred.resolve(response);
             }, function (error) {
@@ -229,7 +293,35 @@ function($rootScope, $window, $cordovaOauth, $q, Service, constants){
 }]);;
 
 angular.module('axpress')
-.factory('Service', ['$http', 'constants', '$q', function($http, constants, $q){
+.service('Logger', ['$ionicPopup', function($ionicPopup){
+    return {
+        alert: alert,
+        error: error
+    };
+
+    /**
+     * $ionicPopup alert wrapper
+     *
+     * @param      {String}  title   The title
+     * @param      {String}  body    The body (can be html tags)
+     */
+    function alert (title, body) {
+        $ionicPopup.alert({title: title, template: body});
+    }
+
+    /**
+     * $ionicPopup alert wrapper with fixed title to send error messages
+     *
+     * @param      {String}  body    The body (can be html tags)
+     */
+    function error (body) {
+        $ionicPopup.alert({title: 'Ha ocurrido un error', template: body});
+    }
+}]);;
+
+angular.module('axpress')
+.factory('Service', ['$http', 'constants', '$q', '$httpParamSerializerJQLike',
+function($http, constants, $q, $httpParamSerializerJQLike){
 
     /**
      * Class to be instantiated as a base service with common configurations
@@ -284,10 +376,14 @@ angular.module('axpress')
          */
         this.apiPost = function (path, data, options) {
             data = data || {};
+            options = options || {};
             data.key = this.key;
             data.platform = this.platform;
+            options.headers = {
+                'Content-Type': 'application/x-www-form-urlencoded'
+            };
             path = this.urlBase() + path;
-
+            data = $httpParamSerializerJQLike(data);
             return this.post(path, data, options);
         };
 
@@ -302,4 +398,125 @@ angular.module('axpress')
         };
     };
     return Service;
+}]);;
+
+angular.module('axpress')
+.factory('Shipping', ['$rootScope', '$q', 'Service', 
+function($rootScope, $q, Service){
+    var service = new Service('/shipping');
+
+    //Public functions
+    service.history = history;
+    service.register = register;
+    service.quotation = quotation;
+
+    return service;
+
+    /**
+     * Gets the client's history
+     *
+     * @param      {String}  clientId  The client identifier
+     * @return     {Promise}  promise A promise that will resolve the petition
+     */
+    function history (clientId) {
+        return service.apiPost('/history', {client_id: clientId});
+    }
+
+    /**
+     * { function_description }
+     *
+     * @param      {String}   descriptionText         The description text
+     * @param      {Integer}  numberPieces            The number pieces
+     * @param      {String}   distance                The distance
+     * @param      {String}   originClient            The origin client
+     * @param      {String}   originAddress           The origin address
+     * @param      {Double}   originLatitude          The origin latitude
+     * @param      {Double}   originLongitude         The origin longitude
+     * @param      {String}   destinyAddress          The destiny address
+     * @param      {Double}   destinyLatitude         The destiny latitude
+     * @param      {Double}   destinyLongitude        The destiny longitude
+     * @param      {Double}   amount                  The amount
+     * @param      {Double}   amountDeclared          The amount declared
+     * @param      {Integer}  typeServices            The service's type
+     * @param      {Integer}  pay                     The pay
+     * @param      {Double}   time                    The time
+     * @param      {Double}   width                   The width
+     * @param      {Double}   height                  The height
+     * @param      {Double}   longitude               The longitude
+     * @param      {Integer}  destinyClient           The destiny client
+     * @param      {String}   destinyName             The destiny name
+     * @param      {String}   picture                 The picture
+     * @param      {String}   contentPack             The content pack
+     * @param      {String}   cellphoneDestinyClient  The destiny client cellphone
+     * @param      {String}   emailDestinyClient      The destiny client email
+     * @param      {Integer}  bagId                   The bag identifier
+     * @param      {String}   originDetail            The origin detail
+     * @param      {String}   destinyDetail           The destiny detail
+     * @param      {String}   tip                     The tip
+     * @return     {Promise}  A promise object that will resolve the petition
+     */
+    function register (descriptionText, numberPieces, distance, originClient, originAddress,
+        originLatitude, originLongitude, destinyAddress, destinyLatitude, destinyLongitude,
+        amount, amountDeclared, typeServices, pay, time,
+        //Optional Parameters
+        width, height, longitude, destinyClient, destinyName, picture, contentPack,
+        cellphoneDestinyClient, emailDestinyClient, bagId, originDetail, destinyDetail, tip) {
+
+        //We pack params in an object
+        var data = {
+            description_text: descriptionText,
+            number_pieces: numberPieces,
+            distance: distance,
+            origin_client: originClient,
+            origin_address: originAddress,
+            origin_latitude: originLatitude,
+            origin_longitude: originLongitude,
+            destiny_address: destinyAddress,
+            destiny_latitude: destinyLatitude,
+            destiny_longitude: destinyLongitude,
+            amount: amount,
+            amountDeclared: amountDeclared,
+            type_services: typeServices,
+            pay: pay,
+            time: time,
+            //Optional Params
+            width: width,
+            height: height,
+            longitude: longitude,
+            destiny_client: destinyClient,
+            destiny_name: destinyName,
+            picture: picture,
+            content_pack: contentPack,
+            cellphone_destiny_client: cellphoneDestinyClient,
+            email_destiny_client: emailDestinyClient,
+            bag_id: bagId,
+            origin_detail: originDetail,
+            destiny_detail: destinyDetail,
+            tip: tip
+        };
+
+        return service.apiPost('/post', data);
+    }
+
+    /**
+     * { function_description }
+     *
+     * @param      {Double}  originLatitude    The origin latitude
+     * @param      {Double}  originLongitude   The origin longitude
+     * @param      {Double}  destinyLatitude   The destiny latitude
+     * @param      {Double}  destinyLongitude  The destiny longitude
+     * @param      {Integer}  typeServices     The service's type
+     * @return     {Promise}  A promise object that will resolve the petition
+     */
+    function quotation (originLatitude, originLongitude, destinyLatitude, destinyLongitude, typeServices) {
+        var data = {
+            origin_latitude: originLatitude,
+            origin_longitude: originLongitude,
+            destiny_latitude: destinyLatitude,
+            destiny_longitude: destinyLongitude,
+            type_services: typeServices
+        };
+        return service.apiPost('/quotation', data);
+    }
+
 }]);
