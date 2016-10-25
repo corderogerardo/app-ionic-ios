@@ -75,6 +75,7 @@ angular.module('axpress', [
             url: '/mapsorigin',
             templateUrl: 'templates/maps/documents/mapsOrigin.html',
             controller: 'MapsOriginController'
+        })
         .state('document.origin', {
             url: '/origin',
             templateUrl: 'templates/maps/documents/documentOrigin.html',
@@ -88,6 +89,7 @@ angular.module('axpress', [
             url: '/mapsdestiny',
             templateUrl: 'templates/maps/documents/mapsDestiny.html',
             controller:'MapsDestinyController'
+        })
         .state('document.destiny', {
             url: '/destiny',
             templateUrl: 'templates/maps/documents/documentDestiny.html'
@@ -100,6 +102,7 @@ angular.module('axpress', [
             url: '/sendtypedocuments',
             templateUrl: 'templates/sendtype/documents/sendtype.html',
             controller:'SentTypeController'
+        })
         .state('document.sendtype', {
             url: '/sendtype',
             templateUrl: 'templates/sendtype/documents/sendtype.html'
