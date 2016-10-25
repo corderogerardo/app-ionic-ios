@@ -2,9 +2,9 @@
  * Created by Gerardo Cordero on 20/10/2016.
  */
 angular.module('axpress')
-    .controller('CaracteristicsController', ['$scope','$rootScope','$ionicPopup', function($scope,$rootScope,$ionicPopup){
+    .controller('CaracteristicsController', ['$rootScope','$scope', '$cordovaDialogs', '$state','$ionicPopup', function($rootScope,$scope,$cordovaDialogs, $state, $ionicPopup) {
         console.log("Caracteristics Controller");
-
+       /* $scope.mapsTitle = $rootScope.mapsTitle.toString();*/
         $scope.destinatary ={
             email: "youremail@gmail.com",
             username: "test",
@@ -21,7 +21,14 @@ angular.module('axpress')
 
 
         $scope.saveCaracteristics = function () {
-            $ionicPopup.alert({title: 'Destinatary', template: JSON.stringify( $scope.data)});
+           /* $ionicPopup.alert({title: 'Destinatary', template: JSON.stringify( $scope.data)});*/
+           $rootScope.destinatary = $scope.destinatary;
+           $rootScope.caracteristics = $scope.caracteristics;
+            if($scope.mapsTitle === "Documentos"){
+                $state.go("documentsimagephoto");
+            }else{
+                $state.go("caracteristicspackages");
+            }
             /*Caracteristics Service*/
 
            /* Caracteristics.save($scope.data.destinatary,$scope.data.caracteristics)

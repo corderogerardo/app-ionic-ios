@@ -1,5 +1,5 @@
 angular.module('axpress')
-.controller('MenuController', ['$scope','$rootScope','$ionicPopup', function($scope,$rootScope,$ionicPopup){
+.controller('MenuController', ['$rootScope','$scope','$state','$ionicPopup', function($rootScope,$scope,$state,$ionicPopup){
     console.log("Menu Controller");
 
     /**
@@ -143,7 +143,18 @@ angular.module('axpress')
     $scope.menuoptions = $rootScope.menuoptions;
 
     $scope.moveTo = function(option){
-        $ionicPopup.alert({title: 'option', template:option});
+        $rootScope.mapsTitle = option;
+        if($scope.mapsTitle === "Documentos"){
+            $state.go('mapsorigin');
+        }
+        if($scope.mapsTitle === "Paquetes"){
+            $state.go('mapsorigin');
+        }
+        if($scope.mapsTitle === "Diligencias"){
+            $state.go('caracteristicserrands');
+        }
+        /*$ionicPopup.alert({title: 'option', template:$rootScope.mapsTitle});*/
+
     }
 
 

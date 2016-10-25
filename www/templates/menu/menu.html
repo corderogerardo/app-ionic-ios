@@ -10,7 +10,7 @@
 		<section class="main-menu" >
 			<a ng-repeat="menu in menuoptions" class="main-menu-options" title="{{menu.title}}">
 			<img src="img/ionic.png" alt="" ng-click="moveTo(menu.title)">
-			{{menu.title}}
+			{{ menu.title | uppercase }}
 			</a>
 
             <a class="main-menu-options" href="#/account" title="">

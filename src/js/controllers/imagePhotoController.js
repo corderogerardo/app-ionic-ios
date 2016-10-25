@@ -2,7 +2,7 @@
  * Created by gerardo on 21/10/16.
  */
 angular.module('axpress')
-.controller('ImagePhotoController',['$cordovaCamera','$scope','$ionicPopup',function($cordovaCamera,$scope,$ionicPopup){
+.controller('ImagePhotoController',['$rootScope','$scope', '$cordovaDialogs','$cordovaCamera', '$state', function($rootScope,$scope,$cordovaDialogs,$cordovaCamera, $state){
     $scope.takePicture = function(){
         $ionicPopup.alert({title: 'Clicked on take a picture', template:"Taking a picture"});
 
@@ -36,5 +36,8 @@ angular.module('axpress')
         },function (err) {
             $ionicPopup.alert({title: 'An error happen when selecting the picture.', template:err});
         })
+    };
+    $scope.confirmImagePhoto = function(){
+        $state.go("sentresumedocument");
     }
 }]);

@@ -2,9 +2,9 @@
  * Created by Gerardo Cordero on 20/10/2016.
  */
 angular.module('axpress')
-    .controller('CaracteristicsController', ['$scope','$rootScope','$ionicPopup', function($scope,$rootScope,$ionicPopup){
+    .controller('CaracteristicsController', ['$rootScope','$scope', '$cordovaDialogs', '$state','$ionicPopup', function($rootScope,$scope,$cordovaDialogs, $state, $ionicPopup) {
         console.log("Caracteristics Controller");
-
+       /* $scope.mapsTitle = $rootScope.mapsTitle.toString();*/
         $scope.destinatary ={
             email: "youremail@gmail.com",
             username: "test",
@@ -21,7 +21,14 @@ angular.module('axpress')
 
 
         $scope.saveCaracteristics = function () {
-            $ionicPopup.alert({title: 'Destinatary', template: JSON.stringify( $scope.data)});
+           /* $ionicPopup.alert({title: 'Destinatary', template: JSON.stringify( $scope.data)});*/
+           $rootScope.destinatary = $scope.destinatary;
+           $rootScope.caracteristics = $scope.caracteristics;
+            if($scope.mapsTitle === "Documentos"){
+                $state.go("documentsimagephoto");
+            }else{
+                $state.go("caracteristicspackages");
+            }
             /*Caracteristics Service*/
 
            /* Caracteristics.save($scope.data.destinatary,$scope.data.caracteristics)
@@ -36,35 +43,41 @@ angular.module('axpress')
 }]);
 ;
 
+/**
+ * Created by gerardo on 24/10/16.
+ */
 angular.module('axpress')
-.controller('DocumentOriginController', ['$scope', '$cordovaDialogs', '$state', 'NgMap', function($scope,$cordovaDialogs, $state ,NgMap){
-    var vm = this;
-    NgMap.getMap().then(function (map) {
-        vm.map = map;
-    });
-    //Inherited data from parent, can be shared between children injecting $state
-   /* var documento = $state.current.data.documento;*/
+    .controller('CaracteristicsErrandsController', ['$rootScope','$scope', '$cordovaDialogs', '$state','$ionicPopup', function($rootScope,$scope,$cordovaDialogs, $state, $ionicPopup) {
 
-    vm.address = "";
-    vm.place="";
-    vm.types="['address']";
-    vm.placeChanged = function() {
-        vm.place = this.getPlace();
-        console.log('location', vm.place.geometry.location);
-        vm.map.setCenter(vm.place.geometry.location);
+    }]);
+;
 
-    };
-    vm.confirmOrigin = function(){
-        console.log("documentsdetailorigin");
-       /* $cordovaDialogs.confirm('Estas seguro?',confirmClosed,"Confirmation",["Si", "No"]);*/
-    };
-    function confirmClosed(buttonIndex) {
-        $cordovaDialogs.alert("Button selected: "+buttonIndex);
-
-    };
-
+/**
+ * Created by gerardo on 24/10/16.
+ */
+angular.module('axpress')
+    .controller('CaracteristicsPackagesController', ['$rootScope','$scope', '$cordovaDialogs', '$state','$ionicPopup', function($rootScope,$scope,$cordovaDialogs, $state, $ionicPopup) {
 
 }]);
+;
+
+/**
+ * Created by gerardo on 24/10/16.
+ */
+angular.module('axpress')
+    .controller('ErrandsResumeController', ['$rootScope','$scope', '$cordovaDialogs', '$state', function($rootScope,$scope,$cordovaDialogs, $state){
+
+        $scope.titleMenu = $rootScope.mapsTitle;
+        $scope.originAddress = $rootScope.originAddress;
+        $scope.destinyAddress = $rootScope.originDestinyAddress;
+
+        $scope.destinataryResume = $rootScope.destinatary;
+        $scope.caracteristicsResume = $rootScope.caracteristics;
+
+        $scope.confirmResume = function(){
+            $state.go("paymentmethods")
+        }
+    }]);
 ;
 
 /**
@@ -106,7 +119,7 @@ angular.module('axpress')
  * Created by gerardo on 21/10/16.
  */
 angular.module('axpress')
-.controller('ImagePhotoController',['$cordovaCamera','$scope','$ionicPopup',function($cordovaCamera,$scope,$ionicPopup){
+.controller('ImagePhotoController',['$rootScope','$scope', '$cordovaDialogs','$cordovaCamera', '$state', function($rootScope,$scope,$cordovaDialogs,$cordovaCamera, $state){
     $scope.takePicture = function(){
         $ionicPopup.alert({title: 'Clicked on take a picture', template:"Taking a picture"});
 
@@ -140,6 +153,9 @@ angular.module('axpress')
         },function (err) {
             $ionicPopup.alert({title: 'An error happen when selecting the picture.', template:err});
         })
+    };
+    $scope.confirmImagePhoto = function(){
+        $state.go("sentresumedocument");
     }
 }]);
 ;
@@ -207,7 +223,85 @@ function($scope, $rootScope, Client, $ionicPopup){
 }]);;
 
 angular.module('axpress')
-.controller('MenuController', ['$scope','$rootScope','$ionicPopup', function($scope,$rootScope,$ionicPopup){
+    .controller('MapsDestinyController', ['$rootScope','$scope', '$cordovaDialogs', '$state', 'NgMap', function($rootScope,$scope,$cordovaDialogs, $state ,NgMap){
+
+        $scope.mapsTitle = $rootScope.mapsTitle.toString();
+        $scope.originAdd =  $rootScope.originLocation.toString().replace("(","").replace(")","");
+      /*  console.log("rootScope origin address: "+$rootScope.originAddress.toString());
+        console.log("scope "+$scope.originAdd.toString().replace("(","").replace(")",""));*/
+
+        NgMap.getMap().then(function (map) {
+            $scope.map = map;
+        });
+        //Inherited data from parent, can be shared between children injecting $state
+        /* var documento = $state.current.data.documento;*/
+
+        $scope.address = "";
+        $scope.place="";
+        $scope.types="['address']";
+        $scope.placeChanged = function() {
+            $scope.place = this.getPlace();
+            console.log('location', $scope.place.geometry.location);
+            $scope.map.setCenter($scope.place.geometry.location);
+
+        };
+        $scope.confirmDestiny = function(){
+            $rootScope.originDestinyAddress = $scope.place.formatted_address;
+            $rootScope.originDestinyLocation = $scope.place.geometry.location;
+            $state.go("sendtypedocuments");
+            /* $cordovaDialogs.confirm('Estas seguro?',confirmClosed,"Confirmation",["Si", "No"]);*/
+        };
+        /*function confirmClosed(buttonIndex) {
+
+            $cordovaDialogs.alert("Button selected: "+buttonIndex);
+
+        }*/
+
+
+    }]);
+;
+
+angular.module('axpress')
+.controller('MapsOriginController', ['$rootScope','$scope', '$cordovaDialogs', '$state','$ionicPopup', 'NgMap', function($rootScope,$scope,$cordovaDialogs, $state, $ionicPopup ,NgMap){
+
+    /*$scope.mapsTitle = JSON.stringify($rootScope.mapsTitle);*/
+    $scope.mapsTitle = $rootScope.mapsTitle.toString();
+    NgMap.getMap().then(function (map) {
+        $scope.map = map;
+    });
+    //Inherited data from parent, can be shared between children injecting $state
+   /* var documento = $state.current.data.documento;*/
+
+    $scope.address = "";
+    $scope.place="";
+    $scope.types="['address']";
+    $scope.placeChanged = function() {
+        $scope.place = this.getPlace();
+        console.log('location', $scope.place.geometry.location);
+        $scope.map.setCenter($scope.place.geometry.location);
+
+    };
+    $scope.confirmOrigin = function(){
+        /*console.log(JSON.stringify($scope.place.geometry.location));
+        console.log(JSON.stringify($scope.place.formatted_address));
+        $ionicPopup.alert({title: 'option', template:"Data from address: "+JSON.stringify($scope.place.formatted_address)});*/
+        $rootScope.originAddress = $scope.place.formatted_address;
+        $rootScope.originLocation= $scope.place.geometry.location;
+        $state.go("mapsdestiny");
+       /* $cordovaDialogs.confirm('Estas seguro?',confirmClosed,"Confirmation",["Si", "No"]);*/
+    };
+    function confirmClosed(buttonIndex) {
+
+        $cordovaDialogs.alert("Button selected: "+buttonIndex);
+
+    };
+
+
+}]);
+;
+
+angular.module('axpress')
+.controller('MenuController', ['$rootScope','$scope','$state','$ionicPopup', function($rootScope,$scope,$state,$ionicPopup){
     console.log("Menu Controller");
 
     /**
@@ -351,9 +445,35 @@ angular.module('axpress')
     $scope.menuoptions = $rootScope.menuoptions;
 
     $scope.moveTo = function(option){
-        $ionicPopup.alert({title: 'option', template:option});
+        $rootScope.mapsTitle = option;
+        if($scope.mapsTitle === "Documentos"){
+            $state.go('mapsorigin');
+        }
+        if($scope.mapsTitle === "Paquetes"){
+            $state.go('mapsorigin');
+        }
+        if($scope.mapsTitle === "Diligencias"){
+            $state.go('caracteristicserrands');
+        }
+        /*$ionicPopup.alert({title: 'option', template:$rootScope.mapsTitle});*/
+
     }
 
+
+}]);
+;
+
+/**
+ * Created by gerardo on 24/10/16.
+ */
+angular.module('axpress')
+    .controller('PaymentMethodsController', ['$rootScope','$scope', '$cordovaDialogs', '$state', function($rootScope, $scope, $cordovaDialogs, $state){
+
+
+
+    $scope.confirmPaymentMethod = function(){
+        $state.go("shipmenttracking");
+    };
 
 }]);
 ;
@@ -389,10 +509,33 @@ angular.module('axpress')
 }]);
 ;
 
+/**
+ * Created by gerardo on 24/10/16.
+ */
 angular.module('axpress')
-    .controller('ShipmentTrackingController', ['$scope', function($scope) {
-        $scope.shipment = {
+    .controller('SentTypeController', ['$rootScope','$scope', '$cordovaDialogs', '$state','$ionicPopup', 'NgMap', function($rootScope,$scope,$cordovaDialogs, $state, $ionicPopup ) {
 
-        };
 
+        $scope.confirmSentType = function(){
+            $state.go("caracteristicsdocuments");
+        }
+
+ }]);
+;
+
+angular.module('axpress')
+    .controller('ShipmentTrackingController',  ['$rootScope','$scope', '$cordovaDialogs', '$state', 'NgMap', function($rootScope,$scope,$cordovaDialogs, $state ,NgMap){
+        $scope.originAdd =  $rootScope.originLocation.toString().replace("(","").replace(")","");
+        $scope.destinyAdd =  $rootScope.originDestinyLocation.toString().replace("(","").replace(")","");
+
+        NgMap.getMap().then(function (map) {
+            $scope.map = map;
+        });
+
+        $scope.goToChat = function(){
+            $state.go("chat");
+        }
+        $scope.goToCall = function(){
+            console.log("Call phone number...");
+        }
     }]);

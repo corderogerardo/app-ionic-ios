@@ -10621,6 +10621,7 @@ p {
   transition: all 0.5s linear;
   position: fixed;
   z-index: 99;
+  left: 0px;
   bottom: -200px;
   /* Height of the .navbar_content */
   width: 100%; }
@@ -10630,7 +10631,7 @@ p {
   -moz-transform: translate3d(0, 0, 0);
   -o-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
-  bottom: 3%; }
+  bottom: 0%; }
 
 #menu .navbar_top {
   position: relative;
@@ -10648,7 +10649,7 @@ p {
 #menu .navbar_content {
   height: 200px;
   width: 100%;
-  line-height: 50px; }
+  line-height: 20px; }
 
 .deliverboy-info {
   background-color: white;

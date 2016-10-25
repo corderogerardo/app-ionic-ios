@@ -1,5 +1,5 @@
 <div class="bar bar-header bar-balanced">
-	 <h3 class="title">RESUMEN DEL ENVÍO</h3>
+	 <h3 class="title">RESUMEN DEL ENVÍO {{ titleMenu | uppercase }} </h3>
 </div>
 <ion-view view-title="Resumen del Envío">
 	<ion-content scroll="false" >
@@ -8,9 +8,8 @@
 		<section class="sentresume-data">
 			<section class="sentresume-content">
 				<div class="data-origin">
-					<b>ORIGEN DEL DOCUMENTO</b>
-					<p>Calle 123 # 12 - 55 Apto 201.</p>
-					<p>Bogotá, Colombia.</p>
+					<b>ORIGEN DEL {{ titleMenu | uppercase }} </b>
+					<p>{{ originAddress }}</p>
 				</div>
 				<a class="data-button-edit" href="" title="">
 					<i class="ion-edit"></i>
@@ -19,9 +18,8 @@
 			</section>
 			<section class="sentresume-content">
 				<div class="data-origin">
-					<b>DESTINO DEL DOCUMENTO</b>
-					<p>Calle 123 # 12 - 55 Apto 201.</p>
-					<p>Bogotá, Colombia.</p>
+					<b>DESTINO DEL {{ titleMenu | uppercase }}</b>
+                    <p>{{ destinyAddress }}</p>
 				</div>
 				<a class="data-button-edit" href="" title="">
 					<i class="ion-edit"></i>
@@ -31,8 +29,8 @@
 			<section class="sentresume-content-noborder">
 				<div class="data-origin">
 					<b>CARACTERÍSTICAS</b>
-					<p>Calle 123 # 12 - 55 Apto 201.</p>
-					<p>Bogotá, Colombia.</p>
+                    <p>{{ caracteristicsResume.shortdescription }}</p>
+                    <p>Valor Declarado: {{ caracteristicsResume.declaredvalue }}</p>
 				</div>
 				<a class="data-button-edit" href="" title="">
 					<i class="ion-edit"></i>
@@ -42,8 +40,7 @@
 			<section class="sentresume-content">
 				<div class="data-origin">
 					<b>DESTINATARIO</b>
-					<p>Calle 123 # 12 - 55 Apto 201.</p>
-					<p>Bogotá, Colombia.</p>
+					<p>Nombre: {{ destinataryResume.username }},<br> Email: {{destinataryResume.email}}, <br> Phone: {{destinataryResume.phone}} .</p>
 				</div>
 			</section>
 		</section>
@@ -56,7 +53,7 @@
 		<section class="sentresume-button">
 		<div class="container-button">
 
-			<a class="button-noicon" href="#/paymentmethods" title=""> CONFIRMAR TU ENVÍO</a>
+			<a class="button-noicon" ng-click="confirmResume()" title=""> CONFIRMAR TU ENVÍO</a>
 		</div>
 		</section>
 	</ion-content>

@@ -1,5 +1,5 @@
 <div class="bar bar-header bar-balanced">
-	 <h1 class="title">RESUMEN DE LA DILIGENCIA</h1>
+	 <h1 class="title">RESUMEN DE {{ titleMenu | uppercase }} </h1>
 </div>
 <ion-view view-title="Resumen del Envío">
 	<ion-content scroll="false" >
@@ -9,9 +9,8 @@
 		<section class="sentresume-data">
 			<section class="sentresume-content">
 				<div class="data-origin">
-					<b>ORIGEN DEL LA DILIGENCIA</b>
-					<p>Calle 123 # 12 - 55 Apto 201.</p>
-					<p>Bogotá, Colombia.</p>
+					<b>ORIGEN DE {{ titleMenu | uppercase }}</b>
+					<p>{{ originAddress }}</p>
 				</div>
 				<a class="data-button-edit" href="" title="">
 					<i class="ion-edit"></i>

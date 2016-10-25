@@ -63,18 +63,19 @@ angular.module('axpress', [
                 documento: {}
             }
         })
-        .state('documentorigin', {
-            url: '/documentorigin',
-            templateUrl: 'templates/maps/documents/documentOrigin.html',
-            controller: 'DocumentOriginController'
+        .state('mapsorigin', {
+            url: '/mapsorigin',
+            templateUrl: 'templates/maps/documents/mapsOrigin.html',
+            controller: 'MapsOriginController'
         })
         .state('documentsdetailorigin', {
             url: '/documentsdetailorigin',
             templateUrl: 'templates/maps/documents/documentDetailOrigin.html'
         })
-        .state('documentsdestiny', {
-            url: '/documentsdestiny',
-            templateUrl: 'templates/maps/documents/documentDestiny.html'
+        .state('mapsdestiny', {
+            url: '/mapsdestiny',
+            templateUrl: 'templates/maps/documents/mapsDestiny.html',
+            controller:'MapsDestinyController'
         })
         .state('documentsdetaildestiny', {
             url: '/documentsdetaildestiny',
@@ -82,7 +83,8 @@ angular.module('axpress', [
         })
         .state('sendtypedocuments', {
             url: '/sendtypedocuments',
-            templateUrl: 'templates/sendtype/documents/sendtype.html'
+            templateUrl: 'templates/sendtype/documents/sendtype.html',
+            controller:'SentTypeController'
         })
         .state('caracteristicsdocuments', {
             url: '/caracteristicsdocuments',
@@ -96,11 +98,13 @@ angular.module('axpress', [
         })
         .state('sentresumedocument', {
             url: '/sentresumedocument',
-            templateUrl: 'templates/sentresume/sentresume.html'
+            templateUrl: 'templates/sentresume/sentresume.html',
+            controller:'ErrandsResumeController'
         })
         .state('paymentmethods', {
             url: '/paymentmethods',
-            templateUrl: 'templates/paymentmethods/paymentmethods.html'
+            templateUrl: 'templates/paymentmethods/paymentmethods.html',
+            controller:'PaymentMethodsController'
         })
         .state('shipmenttracking', {
             url: '/shipmenttracking',
@@ -121,11 +125,13 @@ angular.module('axpress', [
         })
         .state('caracteristicspackages', {
             url: '/caracteristicspackages',
-            templateUrl: 'templates/caracteristics/packages/caracteristicspackages.html'
+            templateUrl: 'templates/caracteristics/packages/caracteristicspackages.html',
+            controller:'CaracteristicsPackagesController'
         })
         .state('caracteristicserrands', {
             url: '/caracteristicserrands',
-            templateUrl: 'templates/caracteristics/errands/caracteristicserrands.html'
+            templateUrl: 'templates/caracteristics/errands/caracteristicserrands.html',
+            controller:'CaracteristicsErrandsController'
         })
         .state('errandsdestiny', {
             url: '/errandsdestiny',
