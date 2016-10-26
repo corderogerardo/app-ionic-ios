@@ -13,7 +13,7 @@ angular.module('axpress', [
     'LocalStorageModule'
 ])
 
-.run(['$ionicPlatform', function($ionicPlatform) {
+.run(['$ionicPlatform', '$rootScope', '$state', function($ionicPlatform, $rootScope, $state) {
     $ionicPlatform.ready(function() {
         if (window.cordova && window.cordova.plugins.Keyboard) {
             // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
@@ -32,6 +32,12 @@ angular.module('axpress', [
         //Force Portrait mode
         screen.lockOrientation('portrait');
     });
+
+    if (localStorage.getItem('axpress.user') && localStorage.getItem('axpress.menu')) {
+        $rootScope.user = JSON.parse(localStorage.getItem('axpress.user'));
+        $rootScope.menu = JSON.parse(localStorage.getItem('axpress.menu'));
+        $state.go('menu');
+    }
 }])
 
 .config(['$stateProvider', '$urlRouterProvider', '$ionicCloudProvider', function($stateProvider, $urlRouterProvider, $ionicCloudProvider) {

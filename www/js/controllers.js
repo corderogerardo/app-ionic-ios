@@ -479,7 +479,7 @@ angular.module('axpress')
 .controller('MapsOriginController', ['$rootScope','$scope', '$cordovaDialogs', '$state','$ionicPopup', 'NgMap', function($rootScope,$scope,$cordovaDialogs, $state, $ionicPopup ,NgMap){
 
     /*$scope.mapsTitle = JSON.stringify($rootScope.mapsTitle);*/
-    $scope.mapsTitle = $rootScope.mapsTitle.toString();
+    $scope.mapsTitle = 'test';
     NgMap.getMap().then(function (map) {
         $scope.map = map;
     });

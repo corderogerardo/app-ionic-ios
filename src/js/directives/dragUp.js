@@ -1,5 +1,9 @@
 // Drag up for the menu
-function dragUp ($ionicGesture) {
+(function(){
+    angular.module('axpress')
+    .directive('dragUp', dragUp);
+
+    function dragUp ($ionicGesture) {
     return {
         restrict: 'A',
         link: function($scope, $element, $attr) {
@@ -11,6 +15,4 @@ function dragUp ($ionicGesture) {
         }
     };
 }
-
-angular.module('axpress')
-.directive('dragUp', dragUp);
+})();
