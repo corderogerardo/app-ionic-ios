@@ -1,4 +1,52 @@
 angular.module('axpress')
+.factory('Chat', ChatService);
+
+ChatService.$inject = ['$rootScope', '$q', 'Service'];
+
+function ChatService ($rootScope, $q, Service){
+    var service = new Service('/chat');
+
+    //Public Functions
+    service.post = post;
+    service.history = history;
+
+    return service;
+
+    /**
+     * { function_description }
+     *
+     * @param      {Integer}  shippingId  The shipping identifier
+     * @param      {Integer}  sentById    The ID of who's sending the message
+     * @param      {Integer}  sentByType  Type of who is sending the message (0 - Client, 1 - Courier)
+     * @param      {String}   message     The message
+     * @return     {Promise}  A promise to resolve results
+     */
+    function post (shippingId, sentById, sentByType, message) {
+        var data = {
+            shipping_id: shippingId,
+            sent_by_id: sentById,
+            sent_by_type: sentByType,
+            message: message
+        };
+
+        return service.apiPost('/post', data);
+    }
+
+    /**
+     * Gets the message history for a shipping
+     *
+     * @param      {String}   shippingId  The shipping identifier
+     * @return     {Promise}  A promise to resolve results
+     */
+    function history (shippingId) {
+        var data = {
+            shipping_id: shippingId
+        };
+        return service.apiPost('/history', data);
+    }
+};
+
+angular.module('axpress')
 .factory('Client', ['$rootScope', '$q', '$http', '$timeout', 'Service', 'Facebook', 'Google', '$filter',
 function($rootScope, $q, $http, $timeout, Service, Facebook, Google, $filter){
 
@@ -7,14 +55,29 @@ function($rootScope, $q, $http, $timeout, Service, Facebook, Google, $filter){
         isLoged: false
     };
 
-    service.login = function (username, password) {
+    /**
+     * Logins a user in the system using email and password
+     *
+     * @param      {String}  email  The user email
+     * @param      {String}  password  The user password
+     * @return     {Promise}  A promise to resolve server response
+     */
+    service.login = function (email, password) {
         var data = {
-            email: username,
+            email: email,
             pass: password
         };
         return service.apiPost('/login', data);
     };
 
+    /**
+     * Registers a user account in the system
+     *
+     * @param      {String}  name    The user name
+     * @param      {String}  pass    The user password
+     * @param      {String}  email   The user email
+     * @return     {Promise}  A promise to resolve server response
+     */
     service.register = function (name, pass, email) {
         var data = {
             email: email,
@@ -24,6 +87,12 @@ function($rootScope, $q, $http, $timeout, Service, Facebook, Google, $filter){
         return service.apiPost('/register', data);
     };
 
+    /**
+     * Resets a user password
+     *
+     * @param      {String}  email   The user email
+     * @return     {Promise}  A promise to resolve server response
+     */
     service.forgotPassword = function (email) {
         var data = {
             email: email
@@ -31,6 +100,18 @@ function($rootScope, $q, $http, $timeout, Service, Facebook, Google, $filter){
         return service.apiPost('/forgotpassword', data);
     };
 
+    /**
+     * Updates user data in the system
+     *
+     * @param      {String}  clientId    The user identifier
+     * @param      {String}  email       The user email
+     * @param      {String}  name        The user name
+     * @param      {String}  password    The user password
+     * @param      {String}  movilPhone  The user movil phone
+     * @param      {String}  localPhone  The user local phone
+     * @param      {String}  identify    The user national ID
+     * @return     {Promise}  A promise to resolve server response
+     */
     service.edit = function (clientId, email, name, password, movilPhone, localPhone, identify) {
         var data = {
             client_id: clientId,
@@ -44,7 +125,11 @@ function($rootScope, $q, $http, $timeout, Service, Facebook, Google, $filter){
         return service.apiPost('/edit', data);
     };
 
-    
+    /**
+     * Starts the login process with Facebook to obtain an Access Token
+     *
+     * @return     {Promise}  A promise to resolve server response
+     */
     service.loginWithFacebook = function () {
         var deferred = $q.defer();
         Facebook.login().then(function (response) {
@@ -57,6 +142,8 @@ function($rootScope, $q, $http, $timeout, Service, Facebook, Google, $filter){
 
     /**
      * Fetchs user basic info such as userFacebookID, email and name
+     *
+     * @return     {Promise}  A promise to resolve server response
      */
     service.facebookGetUserInfo = function () {
         var deferred = $q.defer();
@@ -81,6 +168,11 @@ function($rootScope, $q, $http, $timeout, Service, Facebook, Google, $filter){
         $rootScope.user = service.user = {};
     };
 
+    /**
+     * Starts the login process with Google to obtain an Access Token
+     *
+     * @return     {Promise}  A promise to resolve server response
+     */
     service.loginWithGoogle = function () {
         var deferred = $q.defer();
         Google.login().then(function (response) {
@@ -91,6 +183,11 @@ function($rootScope, $q, $http, $timeout, Service, Facebook, Google, $filter){
         return deferred.promise;
     };
 
+    /**
+     * Fetchs user basic info such as user ID, email and name
+     *
+     * @return     {Promise}  A promise to resolve server response
+     */
     service.googleGetUserInfo = function () {
         var deferred = $q.defer();
         Google.getProfile().then(function (response) {
@@ -103,6 +200,12 @@ function($rootScope, $q, $http, $timeout, Service, Facebook, Google, $filter){
         return deferred.promise;
     };
 
+    /**
+     * Creates a hash used to login user when using a social login
+     *
+     * @param      {String}  socialId  The user social ID (Google ID, Facebook ID, ...)
+     * @return     {String}  The hashed password that will be used to login 
+     */
     service.socialPassword = function (socialId) {
         return $filter('MD5')( //MD5 Hashed
                 btoa(socialId) //Base64 Encoded
@@ -110,6 +213,15 @@ function($rootScope, $q, $http, $timeout, Service, Facebook, Google, $filter){
         );
     };
 
+    /**
+     * Registers a user in the system using Google Login
+     *
+     * @param      {String}  name      The user name
+     * @param      {String}  pass      The user password
+     * @param      {String}  email     The user email
+     * @param      {String}  googleId  The user Google ID
+     * @return     {Promise}  A promise to resolve server response
+     */
     service.googleRegister = function (name, pass, email, googleId) {
         var data = { 
             email: email,
@@ -120,6 +232,14 @@ function($rootScope, $q, $http, $timeout, Service, Facebook, Google, $filter){
         return service.apiPost('/register', data);
     };
 
+    /**
+     * Logins a user in the system using Google Login
+     *
+     * @param      {String}  email     The user email
+     * @param      {String}  pass      The user password
+     * @param      {String}  googleId  The user Google ID
+     * @return     {Promise}  A promise to resolve server response
+     */
     service.googleLogin = function (email, pass, googleId) {
         var data = {
             email: email,
@@ -129,6 +249,15 @@ function($rootScope, $q, $http, $timeout, Service, Facebook, Google, $filter){
         return service.apiPost('/login', data);
     };
 
+    /**
+     * Registers a user in the system using Facebook Login
+     *
+     * @param      {String}  name        The user name
+     * @param      {String}  pass        The user password
+     * @param      {String}  email       The user email
+     * @param      {String}  facebookId  The user Facebook ID
+     * @return     {Promise}  A promise to resolve server response
+     */
     service.facebookRegister = function (name, pass, email, facebookId) {
         var data = { 
             email: email,
@@ -139,6 +268,14 @@ function($rootScope, $q, $http, $timeout, Service, Facebook, Google, $filter){
         return service.apiPost('/register', data);
     };
 
+    /**
+     * Logins a user in the system using Facebook Login
+     *
+     * @param      {String}  email       The user email
+     * @param      {String}  pass        The user password
+     * @param      {String}  facebookId  The user Facebook ID
+     * @return     {Promise}  A promise to resolve server response
+     */
     service.facebookLogin = function (email, pass, facebookId) {
         var data = {
             email: email,
@@ -170,6 +307,118 @@ angular.module('axpress')
     googleOAuthClientID: '96059222512-4vm97bgjdolu5i0fe0sg8tl35e85gjdm.apps.googleusercontent.com'
 });
 ;
+
+angular.module('axpress')
+.factory('DeliveryVerification', DeliveryVerificationService);
+
+DeliveryVerificationService.$inject = ['$rootScope', '$q', 'Service'];
+
+function DeliveryVerificationService ($rootScope, $q, Service){
+    var service = new Service('/deliveryverification');
+
+    //Public Functions
+    service.post = post;
+    service.history = history;
+
+    return service;
+
+    /**
+     * Registers a service rating
+     *
+     * @param      {Integer}   shippingId          The shipping identifier
+     * @param      {String}    logisticresourceId  The messenger identifier
+     * @param      {Integer}   status              The status
+     * @param      {String}    description         The description
+     * @return     {Promise}   A promise to resolve results
+     */
+    function post (shippingId, logisticresourceId, status, description) {
+        var data = {
+            shipping_id: shippingId,
+            logisticresource_id: logisticresourceId,
+            status: status,
+            description: description
+        };
+        return service.apiPost('/post', data);
+    }
+
+    /**
+     * Gets a messenger/courier message history
+     *
+     * @param      {String}  courierId  The courier identifier
+     * @return     {Promise}  A promise to resolve results
+     */
+    function history (courierId) {
+        var data = {
+            courier_id: courierId
+        };
+        return service.apiPost('/history', data);
+    }
+};
+
+angular.module('axpress')
+.factory('Diligence', DiligenceService);
+
+DiligenceService.$inject = ['$rootScope', '$q', 'Service'];
+
+function DiligenceService ($rootScope, $q, Service){
+    var service = new Service('/diligence');
+
+    //Public Functions
+    service.quotation = quotation;
+    service.post = post;
+
+    return service;
+
+    /**
+     * Gets the quotation for a diligence
+     *
+     * @param      {Integer}        typeServices  The service's type
+     * @param      {Boolean}        samepoint     Samepoint (true if roundtrip)
+     * @param      {Array[Double]}  diligences    The list of diligences
+     * @param      {Double}         latitude      The latitude
+     * @param      {Double}         longitude     The longitude
+     * @return     {Promise}         A promise to resolve results
+     */
+    function quotation (typeServices, samepoint, diligences, latitude, longitude) {
+        var data = {
+            type_services: typeServices,
+            samepoint: samepoint,
+            diligences: diligences,
+            latitude: latitude,
+            longitude: longitude
+        };
+        return service.apiPost('/quotation', data);
+    }
+
+    /**
+     * Register a service petition for a diligence
+     *
+     * @param      {String}         clientId         The client identifier
+     * @param      {Array[Double]}  diligences       The diligences array
+     * @param      {Integer}        typeServices     The service's type
+     * @param      {Boolean}        samepoint        Samepoint (true if roundtrip)
+     * @param      {String}         descriptionText  The description text
+     * @param      {Double}         time             The shipping time
+     * @param      {String}         distance         The distance
+     * @param      {Integer}        pay              Pay
+     * @param      {Double}         amount           The amount
+     * @return     {Promise}        A promise to resolve results
+     */
+    function post (clientId, diligences, typeServices, samepoint, descriptionText, time, distance, pay, amount) {
+        var data = {
+            client_id: clientId,
+            diligences: diligences,
+            type_services: typeServices,
+            samepoint: samepoint,
+            description_text: descriptionText,
+            time: time,
+            distance: distance,
+            pay: pay,
+            amount: amount
+        };
+        return service.apiPost('/post', data);
+    }
+};
 
 angular.module('axpress')
 .factory('Facebook', ['$rootScope', '$q', 'Service', '$window', '$cordovaOauth', 'constants',
@@ -206,7 +455,7 @@ function($rootScope, $q, Service, $window, $cordovaOauth, constants){
     }
 
     /**
-     * Gets user information from Facebook profile using Js SDK
+     * Gets user information from Facebook API
      * 
      * @return     {Promise}  The promise that will resolve the
      *                            user information
@@ -232,7 +481,7 @@ function($rootScope, $q, Service, $window, $cordovaOauth, constants){
     }
 
     /**
-     * Removes the facebook session using Js SDK
+     * Removes the Facebook session data
      */
     function logout () {
         delete service.access_token;
@@ -252,6 +501,9 @@ function($rootScope, $window, $cordovaOauth, $q, Service, constants){
 
     return service;
 
+    /**
+     * Starts the process of loggin in a user using Cordova oAuth
+     */
     function login () {
         var deferred = $q.defer();
         document.addEventListener("deviceready", function () {
@@ -270,6 +522,12 @@ function($rootScope, $window, $cordovaOauth, $q, Service, constants){
         return deferred.promise;
     }
 
+    /**
+     * Gets user information from Google API
+     * 
+     * @return     {Promise}  The promise that will resolve the
+     *                            user information
+     */
     function getProfile () {
         var deferred = $q.defer();
         var credentials = service.credentials || JSON.parse(localStorage.getItem('googleCredentials'));
@@ -285,6 +543,9 @@ function($rootScope, $window, $cordovaOauth, $q, Service, constants){
         return deferred.promise;
     }
 
+    /**
+     * Removes the Google session data
+     */
     function logout () {
         delete service.credentials;
         localStorage.removeItem('googleCredentials');
@@ -320,6 +581,102 @@ angular.module('axpress')
 }]);;
 
 angular.module('axpress')
+.factory('logisticResource', logisticResourceService);
+
+logisticResourceService.$inject = ['$rootScope', '$q', 'Service'];
+
+function logisticResourceService ($rootScope, $q, Service){
+    var service = new Service('/logisticresource');
+
+    //Public Functions
+    service.session = session;
+    service.updateLocation = updateLocation;
+    service.cancelService = cancelService;
+
+    return service;
+
+    /**
+     * Validates login
+     *
+     * @param      {String}   user      The user
+     * @param      {String}   password  The password
+     * @param      {String}   uuid      The uuid
+     * @return     {Promise}  A promise to resolve results
+     */
+    function session (user, password, uuid) {
+        var data = {
+            usr: user,
+            pass: password,
+            uuid: uuid
+        };
+        return service.apiPost('/session', data);
+    }
+
+    /**
+     * Updates courier/messenger location
+     *
+     * @param      {String}  logisticresourceId  The logisticresource identifier
+     * @param      {Double}  latitude            The latitude
+     * @param      {Double}  longitude           The longitude
+     * @return     {Promise}  A promise to resolve results
+     */
+    function updateLocation (logisticresourceId, latitude, longitude) {
+        var data = {
+            logisticresource_id: logisticresourceId,
+            latitude: latitude,
+            longitude: longitude
+        };
+        return service.apiPost('/updateLocation', data);
+    }
+
+    /**
+     * Cancels a service request
+     *
+     * @param      {String}  shippingId  The shipping identifier
+     * @return     {Promise}  A promise to resolve results
+     */
+    function cancelService (shippingId) {
+        var data = {
+            shipping_id: shippingId
+        };
+        return service.apiPost('/cancelService', data);
+    }
+};
+
+angular.module('axpress')
+.factory('Rating', RatingService);
+
+RatingService.$inject = ['$rootScope', '$q', 'Service'];
+
+function RatingService ($rootScope, $q, Service){
+    var service = new Service('/rating');
+
+    //Public Functions
+    service.post = post;
+
+    return service;
+
+    /**
+     * Registers a service rating
+     *
+     * @param      {Integer}   shippingId   The shipping identifier
+     * @param      {Integer}   rating       The rating
+     * @param      {String}    description  The description
+     * 
+     * @return     {Promise}  A promise to resolve results
+     */
+    function post (shippingId, rating, description) {
+        var data = {
+            shipping_id: shippingId,
+            rating: rating,
+            description: description
+        };
+
+        return service.apiPost('/post', data);
+    }
+};
+
+angular.module('axpress')
 .factory('Service', ['$http', 'constants', '$q', '$httpParamSerializerJQLike',
 function($http, constants, $q, $httpParamSerializerJQLike){
 
@@ -346,7 +703,7 @@ function($http, constants, $q, $httpParamSerializerJQLike){
         };
 
         /**
-         * Reusable function to make queries and consume service from a service
+         * Reusable function to make POST queries and consume POST services
          *
          * @param      {String}  path     The path specific to the service
          * @param      {Object}  data     The data to be sent using the service (Optional)
@@ -387,6 +744,15 @@ function($http, constants, $q, $httpParamSerializerJQLike){
             return this.post(path, data, options);
         };
 
+        /**
+         * Reusable function to make GET queries and consume GET services
+         *
+         * @param      {String}   path     The path specific to the service
+         * @param      {Object}   options  The $http options for the service
+         *                                 (Optional)
+         * @return     {Promise}  Returns the $http promise to be resolved on
+         *                        success or error
+         */
         this.get = function (path, options) {
             var deferred = $q.defer();
             $http.get(path, options || {}).then(function (response) {

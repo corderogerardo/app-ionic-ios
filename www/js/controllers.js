@@ -1,3 +1,32 @@
+/**
+ * Created by gerardo on 19/10/16.
+ */
+angular.module('axpress')
+.controller("AccountController",['$scope','$rootScope','$ionicPopup', 'Client', function($scope,$rootScope,$ionicPopup, Client){
+    $rootScope.user={
+        name: "Developer",
+        pass: "123456",
+        email: "developer@gmail.com",
+        phone: "55-555-5555",
+    };
+    $scope.user = $rootScope.user;
+
+    $scope.doAccountUpdate = function(accountForm){
+        if(accountForm.$valid){
+            Client.edit($scope.user)
+                .then(function(data){
+                    console.log(data);
+                    $ionicPopup.alert({title:'goodResponse',template:JSON.stringify(data)});
+                },function(error){
+                    $ionicPopup.alert({title:'badResponse',template:JSON.stringify(error)});
+                });
+
+        }
+    };
+
+}]);
+;
+
 angular.module('axpress')
 .controller('AuthController', ['$scope', '$rootScope', 'Client', 'Logger', '$state',
 function($scope, $rootScope, Client, Logger, $state){
@@ -8,6 +37,9 @@ function($scope, $rootScope, Client, Logger, $state){
         email: "reinaldo122@gmail.com"
     };
 
+    /**
+     * Logins a user in the system using the nomal user/password method
+     */
     $scope.login = function () {
         Client.login($scope.user.email,$scope.user.password)
         .then(function (response) {
@@ -68,6 +100,12 @@ function($scope, $rootScope, Client, Logger, $state){
         });
     }
 
+    /**
+     * Callback that processes the successfull response from Facebook API
+     * to login the user in the system
+     *
+     * @param      {Object}  details  The details given by Faceboook
+     */
     function processFacebookLogin (details) {
         Client.facebookLogin(details.email, Client.socialPassword(details.id), details.id)
             .then(function (response) {
@@ -82,10 +120,19 @@ function($scope, $rootScope, Client, Logger, $state){
             });
     }
 
+    /**
+     * Logins the user in the system using Facebook Login
+     */
     $scope.loginWithFacebook = function () {
         facebookGetUserInfo(processFacebookLogin);
     };
 
+    /**
+     * Callback that processes the successfull response from Google API
+     * to login the user in the system
+     *
+     * @param      {Object}  details  The details given by Google
+     */
     function processGoogleLogin (details) {
         Client.googleLogin(details.email, Client.socialPassword(details.id), details.id)
             .then(function (response) {
@@ -100,11 +147,19 @@ function($scope, $rootScope, Client, Logger, $state){
             });
     }
 
+    /**
+     * Logins the user in the system using Google Plus
+     */
     $scope.loginWithGoogle = function () {
         googleGetUserInfo(processGoogleLogin);
     };
 
 
+    /**
+     * Registers a user in the system
+     *
+     * @param      {Object}  registerForm  The user register form
+     */
     $scope.doRegister = function(registerForm) {
         if (registerForm.$valid) {
             Client.register($scope.user.name, $scope.user.password, $scope.user.email)
@@ -120,6 +175,9 @@ function($scope, $rootScope, Client, Logger, $state){
         }
     };
 
+    /**
+     * Recovers a user password
+     */
     $scope.recoverPassword = function () {
         Client.forgotPassword($scope.user.email)
             .then(function (response) {

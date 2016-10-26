@@ -33,7 +33,7 @@ function($rootScope, $q, Service, $window, $cordovaOauth, constants){
     }
 
     /**
-     * Gets user information from Facebook profile using Js SDK
+     * Gets user information from Facebook API
      * 
      * @return     {Promise}  The promise that will resolve the
      *                            user information
@@ -59,7 +59,7 @@ function($rootScope, $q, Service, $window, $cordovaOauth, constants){
     }
 
     /**
-     * Removes the facebook session using Js SDK
+     * Removes the Facebook session data
      */
     function logout () {
         delete service.access_token;
