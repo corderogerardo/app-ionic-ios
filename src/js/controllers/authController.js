@@ -1,32 +1,3 @@
-/**
- * Created by gerardo on 19/10/16.
- */
-angular.module('axpress')
-.controller("AccountController",['$scope','$rootScope','$ionicPopup', 'Client', function($scope,$rootScope,$ionicPopup, Client){
-    $rootScope.user={
-        name: "Developer",
-        pass: "123456",
-        email: "developer@gmail.com",
-        phone: "55-555-5555",
-    };
-    $scope.user = $rootScope.user;
-
-    $scope.doAccountUpdate = function(accountForm){
-        if(accountForm.$valid){
-            Client.edit($scope.user)
-                .then(function(data){
-                    console.log(data);
-                    $ionicPopup.alert({title:'goodResponse',template:JSON.stringify(data)});
-                },function(error){
-                    $ionicPopup.alert({title:'badResponse',template:JSON.stringify(error)});
-                });
-
-        }
-    };
-
-}]);
-;
-
 angular.module('axpress')
 .controller('AuthController', ['$scope', '$rootScope', 'Client', 'Logger', '$state',
 function($scope, $rootScope, Client, Logger, $state){
@@ -251,50 +222,4 @@ function($scope, $rootScope, Client, Logger, $state){
         googleGetUserInfo(processGoogleRegister);
     };
 
-}]);;
-
-angular.module('axpress')
-.controller('DocumentOrigin', ['$scope', '$state', function($scope, $state){
-    
-    //Inherited data from parent, can be shared between children inyecting $state
-    var documento = $state.current.data.documento;
-}]);;
-
-/**
- * @summary HistoryController
- *
- */
-angular.module('axpress')
-.controller('HistoryController', ['$scope', function($scope) {
-
-    $scope.groups = [{
-        "id": 1,
-        "name": "DOCUMENTOS",
-        "fecha": "30 - 09 - 2016",
-        "iconURL": "http://ionicframework.com/img/docs/venkman.jpg"
-    }, {
-        "id": 2,
-        "name": "PAQUETES",
-        "fecha": "30 - 09 - 2016",
-        "iconURL": "http://ionicframework.com/img/docs/barrett.jpg"
-    }];
-
-    $scope.toggleGroup = function(group) {
-        if ($scope.isGroupShown(group)) {
-            $scope.shownGroup = null;
-        } else {
-            $scope.shownGroup = group;
-        }
-        // $ionicScrollDelegate.resize();
-    };
-
-    $scope.isGroupShown = function(group) {
-        return $scope.shownGroup === group;
-    };
-    
-}]);
-;
-
-angular.module('axpress')
-.controller('MenuController', ['$scope', function($scope){
 }]);
