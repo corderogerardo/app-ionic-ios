@@ -1,12 +1,17 @@
 angular.module('axpress')
 .controller('AuthController', ['$scope', '$rootScope', 'Client', 'Logger', '$state',
 function($scope, $rootScope, Client, Logger, $state){
-    
-    $scope.user = {
-        name: "Reinaldo Diaz",
-        password: "123456",
-        email: "reinaldo122@gmail.com"
-    };
+
+    activate();
+
+    function activate () {
+        if (localStorage.getItem('axpress.user') && localStorage.getItem('axpress.menu')) {
+            $rootScope.user = JSON.parse(localStorage.getItem('axpress.user'));
+            $rootScope.menu = JSON.parse(localStorage.getItem('axpress.menu'));
+            $state.go('menu');
+        }
+    }
+
 
     /**
      * Logins a user in the system using the nomal user/password method
@@ -20,9 +25,7 @@ function($scope, $rootScope, Client, Logger, $state){
             }
             //Login successfull
             if (response.return && response.status == 200) {
-                $rootScope.user = response.data.user;
-                $rootScope.menu = response.data.menu;
-                $state.go('menu');
+                loginSuccessfull(response.data.user, response.data.menu);
             }
         }, function (error) {
             Logger.alert('badResponse', JSON.stringify(error));
@@ -80,9 +83,14 @@ function($scope, $rootScope, Client, Logger, $state){
     function processFacebookLogin (details) {
         Client.facebookLogin(details.email, Client.socialPassword(details.id), details.id)
             .then(function (response) {
-                $rootScope.user = response.data.user;
-                $rootScope.menu = response.data.menu;
-                $state.go('menu');
+                //User/Pass do not match
+                if (response.status == 409) {
+                    Logger.alert('Usuario o Contraseña no coinciden', response.message);
+                }
+                //Login successfull
+                if (response.return && response.status == 200) {
+                    loginSuccessfull(response.data.user, response.data.menu);
+                }
             }, function (error) {
                 if (error.message)
                     Logger.error(error.message);
@@ -107,9 +115,14 @@ function($scope, $rootScope, Client, Logger, $state){
     function processGoogleLogin (details) {
         Client.googleLogin(details.email, Client.socialPassword(details.id), details.id)
             .then(function (response) {
-                $rootScope.user = response.data.user;
-                $rootScope.menu = response.data.menu;
-                $state.go('menu');
+                //User/Pass do not match
+                if (response.status == 409) {
+                    Logger.alert('Usuario o Contraseña no coinciden', response.message);
+                }
+                //Login successfull
+                if (response.return && response.status == 200) {
+                    loginSuccessfull(response.data.user, response.data.menu);
+                }
             }, function (error) {
                 if (error.message)
                     Logger.error(error.message);
@@ -136,7 +149,7 @@ function($scope, $rootScope, Client, Logger, $state){
             Client.register($scope.user.name, $scope.user.password, $scope.user.email)
                 .then(function(data) {
                     if (data.return && data.status == 200) {
-                        $state.go('menu');
+                        loginSuccessfull(data.data.user, data.data.menu);
                     } else if (data.return && data.status == 409) {
                         Logger.alert('Usuario ya registrado', data.message);
                     }
@@ -167,10 +180,7 @@ function($scope, $rootScope, Client, Logger, $state){
         Client.register(userInfo.name, Client.socialPassword(userInfo.id), userInfo.email, userInfo.id)
             .then(function (response) {
                 if (response.return && response.status == 200) {
-                    //We save globally accessible data
-                    $rootScope.user = response.data.user;
-                    $rootScope.menu = response.data.menu;
-                    $state.go('menu');
+                    loginSuccessfull(response.data.user, response.data.menu);
                 } else if (response.status == 409 && response.message!= '') {
                     Logger.error(response.message);
                 }
@@ -199,10 +209,7 @@ function($scope, $rootScope, Client, Logger, $state){
         Client.register(userInfo.name, Client.socialPassword(userInfo.id), userInfo.email, userInfo.id)
             .then(function (response) {
                 if (response.return && response.status == 200) {
-                    //We save globally accessible data
-                    $rootScope.user = response.data.user;
-                    $rootScope.menu = response.data.menu;
-                    $state.go('menu');
+                    loginSuccessfull(response.data.user, response.data.menu);
                 } else if (response.status == 409 && response.message!= '') {
                     Logger.error(response.message);
                 }
@@ -221,5 +228,19 @@ function($scope, $rootScope, Client, Logger, $state){
     $scope.registerWithGoogle = function () {
         googleGetUserInfo(processGoogleRegister);
     };
+
+    /**
+     * Saves the data on $rootScope to use in the app
+     *
+     * @param      {<type>}  user    The user
+     * @param      {<type>}  menu    The menu
+     */
+    function loginSuccessfull (user, menu) {
+        $rootScope.user = user;
+        $rootScope.menu = menu;
+        localStorage.setItem('axpress.user', JSON.stringify(user));
+        localStorage.setItem('axpress.menu', JSON.stringify(menu));
+        $state.go('menu');
+    }
 
 }]);

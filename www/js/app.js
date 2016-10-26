@@ -38,7 +38,8 @@ angular.module('axpress', [
     $stateProvider
         .state('app', {
             url: '/',
-            templateUrl: 'templates/welcome/welcome.html'
+            templateUrl: 'templates/welcome/welcome.html',
+            controller: 'AuthController'
         })
         .state('auth', {
             url: '/auth',
