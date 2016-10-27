@@ -3,11 +3,12 @@
  */
 angular.module('axpress')
     .controller('PaymentMethodsController', ['$rootScope','$scope', '$cordovaDialogs', '$state', function($rootScope, $scope, $cordovaDialogs, $state){
-
+        $scope.choice = {name:''};
 
 
     $scope.confirmPaymentMethod = function(){
-        $state.go("shipmenttracking");
+        console.log($scope.choice.name);
+        $state.go("menu");
     };
 
 }]);

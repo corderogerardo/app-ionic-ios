@@ -127,9 +127,9 @@ angular.module('axpress', [
         .state('document.sentresume', {
             url: '/sentresumedocument',
             templateUrl: 'templates/sentresume/sentresume.html',
-            controller:'ErrandsResumeController'
+            controller:'ResumeController'
         })
-        .state('paymentmethods', {
+        .state('document.paymentmethods', {
             url: '/paymentmethods',
             templateUrl: 'templates/paymentmethods/paymentmethods.html',
             controller:'PaymentMethodsController'

@@ -15,12 +15,11 @@
 			<img src="../img/payments.jpg" alt="">
 		</section>
 		<section class="send-type-options">
-			<ion-radio class="send-type-options-radio" ng-model="choice" ng-value="rightnow">Tarjeta de Crédito</ion-radio>
-			<ion-radio class="send-type-options-radio" ng-model="choice" ng-value="eighthorus">Contra-Entrega (Efectivo)</ion-radio>
-			<ion-radio class="send-type-options-radio" ng-model="choice" ng-value="twentyhours">Contra-Recogida (Efectivo)</ion-radio>
+			<ion-radio class="send-type-options-radio" ng-model="choice.name" ng-value="'Contra-Entrega (Efectivo)'" value="'Contra-Entrega (Efectivo)'">Contra-Entrega (Efectivo)</ion-radio>
+			<ion-radio class="send-type-options-radio" ng-model="choice.name" ng-value="'Contra-Recogida (Efectivo)'" value="'Contra-Recogida (Efectivo)'">Contra-Recogida (Efectivo)</ion-radio>
 		</section>
 		<section class="center-button">
-			<a class="button-noicon" href="#/shipmenttracking" title="">CONTINUAR</a>
+			<a class="button-noicon" ng-click="confirmPaymentMethod()" title="">CONTINUAR</a>
 		</section>
 	</ion-content>
 </ion-view>

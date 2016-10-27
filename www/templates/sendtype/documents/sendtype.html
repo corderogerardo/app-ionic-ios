@@ -14,9 +14,11 @@
 			<img src="../img/delivering.jpg" alt="">
 		</section>
 		<section class="send-type-options">
-			<ion-radio class="send-type-options-radio" ng-model="choice" ng-value="rightnow">Envío Inmediato</ion-radio>
-			<ion-radio class="send-type-options-radio" ng-model="choice" ng-value="eighthorus">Envío Menor a 8 horas.</ion-radio>
-			<ion-radio class="send-type-options-radio" ng-model="choice" ng-value="twentyhours">Envío 24 Horas.</ion-radio>
+			<ion-radio ng-repeat="bag in bagservice" class="send-type-options-radio" ng-model="choice.name"
+                       ng-value="'{{bag.subtitle}}'" value="'{{bag.subtitle}}'">
+            {{bag.subtitle}}
+            </ion-radio>
+
 		</section>
 		<section class="sendtype-button ">
 		<div class="container-button">

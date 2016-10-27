@@ -4,7 +4,7 @@
 angular.module('axpress')
     .controller('CaracteristicsController', ['$rootScope','$scope', '$cordovaDialogs', '$state','$ionicPopup', function($rootScope,$scope,$cordovaDialogs, $state, $ionicPopup) {
         console.log("Caracteristics Controller");
-       /* $scope.mapsTitle = $rootScope.mapsTitle.toString();*/
+        $scope.mapsTitle = $rootScope.mapsTitle.toString();
         $scope.destinatary ={
             email: "youremail@gmail.com",
             username: "test",
@@ -25,8 +25,11 @@ angular.module('axpress')
            $rootScope.destinatary = $scope.destinatary;
            $rootScope.caracteristics = $scope.caracteristics;
             if($scope.mapsTitle === "Documentos"){
-                $state.go("documentsimagephoto");
-            }else{
+                console.log(" "+$scope.mapsTitle);
+                $state.go("document.imagephoto");
+            }
+            if($scope.mapsTitle === "Paquetes"){
+                console.log(" "+$scope.mapsTitle);
                 $state.go("caracteristicspackages");
             }
             /*Caracteristics Service*/
