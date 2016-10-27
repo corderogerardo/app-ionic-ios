@@ -17,7 +17,7 @@
             $state.current.data.doc.originAddress = $scope.place.formatted_address;
             $state.current.data.doc.originLatitude = $scope.place.geometry.location.lat();
             $state.current.data.doc.originLongitude = $scope.place.geometry.location.lng();
-            $state.go("mapsdestiny");
+            $state.go("document.destiny");
         };
 
         function initialize () {

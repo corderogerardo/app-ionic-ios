@@ -83,22 +83,10 @@ angular.module('axpress', [
             templateUrl: 'templates/documents/origin.html',
             controller: 'DocumentOriginController'
         })
-        .state('document.detailorigin', {
-            url: '/detailorigin',
-            templateUrl: 'templates/maps/documents/documentDetailOrigin.html'
-        })
-        .state('mapsdestiny', {
-            url: '/mapsdestiny',
-            templateUrl: 'templates/maps/documents/mapsDestiny.html',
-            controller:'MapsDestinyController'
-        })
         .state('document.destiny', {
             url: '/destiny',
-            templateUrl: 'templates/maps/documents/documentDestiny.html'
-        })
-        .state('document.detaildestiny', {
-            url: '/detaildestiny',
-            templateUrl: 'templates/maps/documents/documentDetailDestiny.html'
+            templateUrl: 'templates/documents/destiny.html',
+            controller: 'DocumentDestinyController'
         })
         .state('sendtypedocuments', {
             url: '/sendtypedocuments',
