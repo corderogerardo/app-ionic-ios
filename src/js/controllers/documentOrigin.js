@@ -17,20 +17,23 @@
             $scope.doc.originAddress = $scope.place.formatted_address;
             $scope.doc.originLatitude = $scope.place.geometry.location.lat();
             $scope.doc.originLongitude = $scope.place.geometry.location.lng();
+            $scope.extraData.originPlace = $scope.place;
             $state.go("document.destiny");
         };
 
         function setExistingAddress () {
             $scope.markers[0].position = ""+$scope.doc.originLatitude+","+$scope.doc.originLongitude;
             $scope.address = $scope.doc.originAddress;
+            $scope.place = $state.current.data.extraData.originPlace;
         }
 
         function initialize () {
             $scope.doc = $state.current.data.doc;
+            $scope.extraData = $state.current.data.extraData;
             $scope.markers = [{
                 title: 'Origen'
             }];
-            if ($scope.doc.originLatitude && $scope.doc.originLongitude)
+            if ($scope.extraData.originPlace)
                 setExistingAddress();
         }
     }

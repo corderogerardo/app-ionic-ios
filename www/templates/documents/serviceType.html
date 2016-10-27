@@ -14,8 +14,8 @@
             <img src="../img/delivering.jpg" alt="">
         </section>
         <section class="send-type-options">
-            <ion-radio ng-repeat="bag in bagservice" class="send-type-options-radio" ng-model="choice.id"
-                       ng-value="bag.shipping_bag_id" >
+            <ion-radio ng-repeat="bag in bagservice" class="send-type-options-radio" ng-model="choice.bag"
+                       ng-value="bag" >
             {{bag.subtitle}}
             </ion-radio>
 

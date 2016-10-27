@@ -362,16 +362,19 @@ angular.module('axpress')
             $scope.doc.destinyAddress = $scope.place.formatted_address;
             $scope.doc.destinyLatitude = $scope.place.geometry.location.lat();
             $scope.doc.destinyLongitude = $scope.place.geometry.location.lng();
+            $scope.extraData.destinyPlace = $scope.place;
             $state.go("document.servicetype");
         };
 
         function setExistingAddress () {
             $scope.markers[1].position = ""+$scope.doc.destinyLatitude+","+$scope.doc.destinyLongitude;
             $scope.address = $scope.doc.originAddress;
+            $scope.place = $state.current.data.extraData.destinyPlace;
         }
 
         function initialize () {
             $scope.doc = $state.current.data.doc;
+            $scope.extraData = $state.current.data.extraData;
             $scope.markers = [{
                 title: 'Origen',
                 position: [$scope.doc.originLatitude, $scope.doc.originLongitude]
@@ -406,20 +409,23 @@ angular.module('axpress')
             $scope.doc.originAddress = $scope.place.formatted_address;
             $scope.doc.originLatitude = $scope.place.geometry.location.lat();
             $scope.doc.originLongitude = $scope.place.geometry.location.lng();
+            $scope.extraData.originPlace = $scope.place;
             $state.go("document.destiny");
         };
 
         function setExistingAddress () {
             $scope.markers[0].position = ""+$scope.doc.originLatitude+","+$scope.doc.originLongitude;
             $scope.address = $scope.doc.originAddress;
+            $scope.place = $state.current.data.extraData.originPlace;
         }
 
         function initialize () {
             $scope.doc = $state.current.data.doc;
+            $scope.extraData = $state.current.data.extraData;
             $scope.markers = [{
                 title: 'Origen'
             }];
-            if ($scope.doc.originLatitude && $scope.doc.originLongitude)
+            if ($scope.extraData.originPlace)
                 setExistingAddress();
         }
     }
@@ -436,21 +442,23 @@ angular.module('axpress')
     function ServiceTypeController ($rootScope, $scope, $cordovaDialogs, $state, $ionicPopup) {
         initialize();
 
+        $scope.confirmServiceType = function(){
+            $scope.doc.typeServices = $state.params.serviceType;
+            $scope.doc.bagId = $scope.choice.bag.shipping_bag_id;
+            $scope.extraData.bag = $scope.choice.bag;
+            $state.go("document.c/aracteristics");
+        };
+
         function initialize () {
             $scope.choice = {};
             $scope.doc = $state.current.data.doc;
+            $scope.extraData = $state.current.data.extraData;
             $scope.menu.forEach(function(option){
                 if(option.type_service == $state.params.serviceType){
                     $scope.bagservice = option.bag_services;
                 }
             });
         }
-
-        $scope.confirmServiceType = function(){
-            $scope.doc.typeServices = $state.params.serviceType;
-            $scope.doc.bagId = $scope.choice.id;
-            $state.go("document.caracteristics");
-        };
     }
 })();
 ;

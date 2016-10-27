@@ -75,10 +75,11 @@ angular.module('axpress', [
             abstract: true,
             template: '<ui-view/>',
             data: {
-                doc: {}
+                doc: {},
+                extraData: {}
             },
             params: {
-                serviceType: null
+                serviceType: 1
             }
         })
         .state('document.origin', {
