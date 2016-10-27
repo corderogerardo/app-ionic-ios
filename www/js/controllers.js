@@ -343,6 +343,39 @@ angular.module('axpress')
 }]);
 ;
 
+(function () {
+    angular.module('axpress')
+    .controller('DocumentOriginController', DocumentOriginController);
+
+    DocumentOriginController.$inject = ['$rootScope', '$scope', '$cordovaDialogs', '$state', '$ionicPopup'];
+
+    function DocumentOriginController ($rootScope,$scope,$cordovaDialogs, $state, $ionicPopup){
+
+        initialize();
+
+        $scope.placeChanged = function() {
+            $scope.place = this.getPlace();
+            $scope.markers[0].position = $scope.place.geometry.location;
+        };
+
+        $scope.confirmOrigin = function(){
+            $state.current.data.doc.originAddress = $scope.place.formatted_address;
+            $state.current.data.doc.originLatitude = $scope.place.geometry.location.lat();
+            $state.current.data.doc.originLongitude = $scope.place.geometry.location.lng();
+            $state.go("mapsdestiny");
+        };
+
+        function initialize () {
+            console.log($state.current);
+            $scope.markers = [{
+                title: 'Origen'
+            }];
+        }
+    }
+
+})();
+;
+
 /**
  * @summary HistoryController
  *
@@ -462,37 +495,6 @@ angular.module('axpress')
     }]);
 ;
 
-(function () {
-    angular.module('axpress')
-    .controller('MapsOriginController', MapsOriginController);
-
-    MapsOriginController.$inject = ['$rootScope', '$scope', '$cordovaDialogs', '$state', '$ionicPopup'];
-
-    function MapsOriginController ($rootScope,$scope,$cordovaDialogs, $state, $ionicPopup){
-
-        initialize();
-
-        $scope.placeChanged = function() {
-            $scope.place = this.getPlace();
-            $scope.markers[0].position = $scope.place.geometry.location;
-        };
-
-        $scope.confirmOrigin = function(){
-            $rootScope.originAddress = $scope.place.formatted_address;
-            $rootScope.originLocation= $scope.place.geometry.location;
-            $state.go("mapsdestiny");
-        };
-
-        function initialize () {
-            $scope.markers = [{
-                title: 'Origen'
-            }];
-        }
-    }
-
-})();
-;
-
 angular.module('axpress')
 .controller('MenuController', ['$rootScope','$scope','$state','$ionicPopup', function($rootScope,$scope,$state,$ionicPopup){
     /*We are going to fill the bag_services data in MenuController following the option selected*/
@@ -502,17 +504,7 @@ angular.module('axpress')
     var urlsPerServiceType = {1: 'document.origin', 2: 'package.origin'};
 
     $scope.moveTo = function(option){
-        $rootScope.mapsTitle = option;
-        if($scope.mapsTitle === "Documentos") {
-            $state.go('mapsorigin');
-        }
-        if($scope.mapsTitle === "Paquetes") {
-            $state.go('mapsorigin');
-        }
-        if($scope.mapsTitle === "Diligencias") {
-            $state.go('caracteristicserrands');
-        }
-
+        $state.go(urlsPerServiceType[option]);
     };
 
 }]);

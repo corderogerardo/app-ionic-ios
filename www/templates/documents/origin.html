@@ -1,0 +1,23 @@
+<div class="bar bar-header bar-balanced">
+     <h3 class="title">ORIGEN DE DOCUMENTO</h3>
+</div>
+<ion-view view-title="SendType">
+    <ion-content scroll="false" >
+
+        <address-selection center="place" markers="markers"></address-selection>
+        
+        <div class="input-direction">
+            <div class="inputs-container border-blue">
+                <i class="ion-map"></i>
+                <label>
+                    <map-autocomplete-address on-place-changed="placeChanged"></map-autocomplete-address>
+                </label>
+            </div>
+        </div>
+
+        <div class="pickuphere-button">
+            <button class="button-noicon" ng-click="confirmOrigin()" title="">RECOGER AQUÍ</button>
+        </div>
+    </ion-content>
+</ion-view>
+

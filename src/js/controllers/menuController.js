@@ -7,17 +7,7 @@ angular.module('axpress')
     var urlsPerServiceType = {1: 'document.origin', 2: 'package.origin'};
 
     $scope.moveTo = function(option){
-        $rootScope.mapsTitle = option;
-        if($scope.mapsTitle === "Documentos") {
-            $state.go('mapsorigin');
-        }
-        if($scope.mapsTitle === "Paquetes") {
-            $state.go('mapsorigin');
-        }
-        if($scope.mapsTitle === "Diligencias") {
-            $state.go('caracteristicserrands');
-        }
-
+        $state.go(urlsPerServiceType[option]);
     };
 
 }]);

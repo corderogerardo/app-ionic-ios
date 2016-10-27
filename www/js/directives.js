@@ -15,7 +15,6 @@
                 activate();
 
                 function activate () {
-                    console.log($scope);
                     $scope.fallbackCenter = "[40.74, -74.18]";
                 }
             }
