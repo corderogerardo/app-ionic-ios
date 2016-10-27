@@ -1,0 +1,33 @@
+<div class="bar bar-header bar-balanced">
+     <h3 class="title">TIPO DE ENVÍO</h3>
+</div>
+<ion-view view-title="SendType">
+    <ion-content scroll="false" >
+    <div class="space">
+    </div>
+        <section class="send-type-todo">
+            <div>
+                <span>Selecciona el <a> tipo de envío </a> que quieres realizar.</span>
+            </div>
+        </section>
+        <section class="send-type-icon">
+            <img src="../img/delivering.jpg" alt="">
+        </section>
+        <section class="send-type-options">
+            <ion-radio ng-repeat="bag in bagservice" class="send-type-options-radio" ng-model="choice.id"
+                       ng-value="bag.shipping_bag_id" >
+            {{bag.subtitle}}
+            </ion-radio>
+
+        </section>
+        <section class="sendtype-button ">
+
+        <div class="container-button">
+            <a class="button-noicon" ng-click="confirmServiceType()" title="">CONTINUAR</a>
+        </div>
+        </section>
+
+
+
+    </ion-content>
+</ion-view>

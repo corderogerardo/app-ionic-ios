@@ -76,6 +76,9 @@ angular.module('axpress', [
             template: '<ui-view/>',
             data: {
                 doc: {}
+            },
+            params: {
+                serviceType: null
             }
         })
         .state('document.origin', {
@@ -88,14 +91,10 @@ angular.module('axpress', [
             templateUrl: 'templates/documents/destiny.html',
             controller: 'DocumentDestinyController'
         })
-        .state('sendtypedocuments', {
-            url: '/sendtypedocuments',
-            templateUrl: 'templates/sendtype/documents/sendtype.html',
-            controller:'SentTypeController'
-        })
-        .state('document.sendtype', {
-            url: '/sendtype',
-            templateUrl: 'templates/sendtype/documents/sendtype.html'
+        .state('document.servicetype', {
+            url: '/servicetype',
+            templateUrl: 'templates/documents/serviceType.html',
+            controller: 'ServiceTypeController'
         })
         .state('document.caracteristics', {
             url: '/caracteristics',

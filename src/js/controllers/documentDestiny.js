@@ -17,7 +17,7 @@
             $scope.doc.destinyAddress = $scope.place.formatted_address;
             $scope.doc.destinyLatitude = $scope.place.geometry.location.lat();
             $scope.doc.destinyLongitude = $scope.place.geometry.location.lng();
-            $state.go("document.sendtype");
+            $state.go("document.servicetype");
         };
 
         function setExistingAddress () {

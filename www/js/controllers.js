@@ -362,7 +362,7 @@ angular.module('axpress')
             $scope.doc.destinyAddress = $scope.place.formatted_address;
             $scope.doc.destinyLatitude = $scope.place.geometry.location.lat();
             $scope.doc.destinyLongitude = $scope.place.geometry.location.lng();
-            $state.go("document.sendtype");
+            $state.go("document.servicetype");
         };
 
         function setExistingAddress () {
@@ -424,6 +424,34 @@ angular.module('axpress')
         }
     }
 
+})();
+;
+
+(function () {
+    angular.module('axpress')
+    .controller('ServiceTypeController', ServiceTypeController);
+
+    ServiceTypeController.$inject = ['$rootScope', '$scope', '$cordovaDialogs', '$state', '$ionicPopup', 'NgMap'];
+
+    function ServiceTypeController ($rootScope, $scope, $cordovaDialogs, $state, $ionicPopup) {
+        initialize();
+
+        function initialize () {
+            $scope.choice = {};
+            $scope.doc = $state.current.data.doc;
+            $scope.menu.forEach(function(option){
+                if(option.type_service == $state.params.serviceType){
+                    $scope.bagservice = option.bag_services;
+                }
+            });
+        }
+
+        $scope.confirmServiceType = function(){
+            $scope.doc.typeServices = $state.params.serviceType;
+            $scope.doc.bagId = $scope.choice.id;
+            $state.go("document.caracteristics");
+        };
+    }
 })();
 ;
 
@@ -508,45 +536,6 @@ angular.module('axpress')
 ;
 
 angular.module('axpress')
-    .controller('MapsDestinyController', ['$rootScope','$scope', '$cordovaDialogs', '$state', 'NgMap', function($rootScope,$scope,$cordovaDialogs, $state ,NgMap){
-
-        $scope.mapsTitle = $rootScope.mapsTitle.toString();
-        $scope.originAdd =  $rootScope.originLocation.toString().replace("(","").replace(")","");
-      /*  console.log("rootScope origin address: "+$rootScope.originAddress.toString());
-        console.log("scope "+$scope.originAdd.toString().replace("(","").replace(")",""));*/
-
-        NgMap.getMap().then(function (map) {
-            $scope.map = map;
-        });
-        //Inherited data from parent, can be shared between children injecting $state
-        /* var documento = $state.current.data.documento;*/
-
-        $scope.address = "";
-        $scope.place="";
-        $scope.types="['address']";
-        $scope.placeChanged = function() {
-            $scope.place = this.getPlace();
-            console.log('location', $scope.place.geometry.location);
-            $scope.map.setCenter($scope.place.geometry.location);
-
-        };
-        $scope.confirmDestiny = function(){
-            $rootScope.originDestinyAddress = $scope.place.formatted_address;
-            $rootScope.originDestinyLocation = $scope.place.geometry.location;
-            $state.go("sendtypedocuments");
-            /* $cordovaDialogs.confirm('Estas seguro?',confirmClosed,"Confirmation",["Si", "No"]);*/
-        };
-        /*function confirmClosed(buttonIndex) {
-
-            $cordovaDialogs.alert("Button selected: "+buttonIndex);
-
-        }*/
-
-
-    }]);
-;
-
-angular.module('axpress')
 .controller('MenuController', ['$rootScope','$scope','$state','$ionicPopup', function($rootScope,$scope,$state,$ionicPopup){
     /*We are going to fill the bag_services data in MenuController following the option selected*/
 
@@ -555,7 +544,8 @@ angular.module('axpress')
     var urlsPerServiceType = {1: 'document.origin', 2: 'package.origin'};
 
     $scope.moveTo = function(option){
-        $state.go(urlsPerServiceType[option]);
+        $state.go(urlsPerServiceType[option], {serviceType: option});
+
     };
 
 }]);
@@ -594,38 +584,6 @@ angular.module('axpress')
             $state.go("document.paymentmethods")
         }
     }]);
-;
-
-/**
- * Created by gerardo on 24/10/16.
- */
-angular.module('axpress')
-    .controller('SentTypeController', ['$rootScope','$scope', '$cordovaDialogs', '$state','$ionicPopup', 'NgMap', function($rootScope,$scope,$cordovaDialogs, $state, $ionicPopup ) {
-
-        $scope.menu = $rootScope.menu;
-        $scope.bagservice = "";
-        $scope.bagservicedata ="";
-        $scope.choice = {name:''};
-
-        $scope.menu.forEach(function(option){
-           if(option.title === $rootScope.mapsTitle.toString()){
-               $scope.bagservice = option.bag_services;
-               $scope.bagservicedata = option.bag_services["0"];
-           }
-        });
-
-        console.log($scope.menu);
-        console.log($scope.bagservice+" "+$scope.bagservice.length);
-
-        $scope.confirmSentType = function(){
-            console.log($scope.choice.name);
-            console.log($scope.bagservicedata);
-            $rootScope.bagserviceselected = $scope.choice.name;
-            $rootScope.bagservicedata = $scope.bagservicedata;
-            $state.go("document.caracteristics");
-        }
-
- }]);
 ;
 
 angular.module('axpress')
