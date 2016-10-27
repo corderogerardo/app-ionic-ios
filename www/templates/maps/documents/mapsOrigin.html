@@ -1,16 +1,11 @@
 <div class="bar bar-header bar-balanced">
-	 <h3 class="title">ORIGEN DE {{ mapsTitle | uppercase }}</h3>
+	 <h3 class="title">ORIGEN DE DOCUMENTO</h3>
 </div>
 <ion-view view-title="SendType">
 	<ion-content scroll="false" >
 
-        <map center='{{address || "Bogota"}}'
-             geo-fallback-center="[40.74, -74.18]"
-             zoom="11" class="main-container-maps">
-            <marker position="{{place.geometry.location}}"
-                    title="Origen"
-                    centered="true"></marker>
-        </map>
+        <address-selection center="place" markers="markers"></address-selection>
+        
         <div class="input-direction">
             <div class="inputs-container border-blue">
                 <i class="ion-map"></i>

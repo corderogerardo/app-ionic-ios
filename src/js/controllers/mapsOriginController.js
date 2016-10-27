@@ -2,15 +2,15 @@
     angular.module('axpress')
     .controller('MapsOriginController', MapsOriginController);
 
-    MapsOriginController.$inject = ['$rootScope','$scope', '$cordovaDialogs', '$state','$ionicPopup', 'NgMap'];
+    MapsOriginController.$inject = ['$rootScope', '$scope', '$cordovaDialogs', '$state', '$ionicPopup'];
 
-    function MapsOriginController ($rootScope,$scope,$cordovaDialogs, $state, $ionicPopup ,NgMap){
+    function MapsOriginController ($rootScope,$scope,$cordovaDialogs, $state, $ionicPopup){
 
         initialize();
 
         $scope.placeChanged = function() {
             $scope.place = this.getPlace();
-            $scope.map.setCenter($scope.place.geometry.location);
+            $scope.markers[0].position = $scope.place.geometry.location;
         };
 
         $scope.confirmOrigin = function(){
@@ -20,13 +20,10 @@
         };
 
         function initialize () {
-            $scope.mapsTitle = 'test';
-            NgMap.getMap().then(function (map) {
-                $scope.map = map;
-            });
+            $scope.markers = [{
+                title: 'Origen'
+            }];
         }
-
-
     }
 
 })();
