@@ -76,7 +76,9 @@ angular.module('axpress', [
             template: '<ui-view/>',
             data: {
                 doc: {},
-                extraData: {}
+                extraData: {
+                    featuresNext: 'document.imagephoto'
+                }
             },
             params: {
                 serviceType: 1
@@ -97,10 +99,10 @@ angular.module('axpress', [
             templateUrl: 'templates/documents/serviceType.html',
             controller: 'ServiceTypeController'
         })
-        .state('document.caracteristics', {
-            url: '/caracteristics',
-            templateUrl: 'templates/caracteristics/documents/caracteristics.html',
-            controller:'CaracteristicsController'
+        .state('document.features', {
+            url: '/features',
+            templateUrl: 'templates/documents/features.html',
+            controller:'FeaturesController'
         })
         .state('document.imagephoto', {
             url: '/imagephoto',

@@ -278,54 +278,6 @@ function($scope, $rootScope, Client, Logger, $state){
 ;
 
 /**
- * Created by Gerardo Cordero on 20/10/2016.
- */
-angular.module('axpress')
-    .controller('CaracteristicsController', ['$rootScope','$scope', '$cordovaDialogs', '$state','$ionicPopup', function($rootScope,$scope,$cordovaDialogs, $state, $ionicPopup) {
-        console.log("Caracteristics Controller");
-        $scope.mapsTitle = $rootScope.mapsTitle.toString();
-        $scope.destinatary ={
-            email: "youremail@gmail.com",
-            username: "test",
-            phone: "56-555-5555",
-            cinit: "12345",
-        }
-        $scope.caracteristics = {
-            declaredvalue: "30000",
-            shortdescription: "Pequeña descripcion",
-        }
-        $scope.data ={};
-        $scope.data.destinatary =  $scope.destinatary;
-        $scope.data.caracteristics =  $scope.caracteristics;
-
-
-        $scope.saveCaracteristics = function () {
-           /* $ionicPopup.alert({title: 'Destinatary', template: JSON.stringify( $scope.data)});*/
-           $rootScope.destinatary = $scope.destinatary;
-           $rootScope.caracteristics = $scope.caracteristics;
-            if($scope.mapsTitle === "Documentos"){
-                console.log(" "+$scope.mapsTitle);
-                $state.go("document.imagephoto");
-            }
-            if($scope.mapsTitle === "Paquetes"){
-                console.log(" "+$scope.mapsTitle);
-                $state.go("caracteristicspackages");
-            }
-            /*Caracteristics Service*/
-
-           /* Caracteristics.save($scope.data.destinatary,$scope.data.caracteristics)
-                .then(function(data){
-                    console.log(data);
-                },function(error){
-                    console.log(error);
-                })*/
-
-        }
-
-}]);
-;
-
-/**
  * Created by gerardo on 24/10/16.
  */
 angular.module('axpress')
@@ -446,7 +398,7 @@ angular.module('axpress')
             $scope.doc.typeServices = $state.params.serviceType;
             $scope.doc.bagId = $scope.choice.bag.shipping_bag_id;
             $scope.extraData.bag = $scope.choice.bag;
-            $state.go("document.c/aracteristics");
+            $state.go("document.features");
         };
 
         function initialize () {
@@ -458,6 +410,35 @@ angular.module('axpress')
                     $scope.bagservice = option.bag_services;
                 }
             });
+        }
+    }
+})();
+;
+
+(function () {
+    angular.module('axpress')
+    .controller('FeaturesController', FeaturesController);
+
+    FeaturesController.$inject = ['$rootScope', '$scope', '$cordovaDialogs', '$state','$ionicPopup'];
+
+    function FeaturesController ($rootScope, $scope, $cordovaDialogs, $state, $ionicPopup) {
+        initialize();
+
+        $scope.saveCaracteristics = function () {
+            $state.go($scope.extraData.featuresNext);
+        };
+
+        function initialize () {
+            $scope.doc = $state.current.data.doc;
+            $scope.extraData = $state.current.data.extraData;
+
+            //Test Data
+            $scope.doc.emailDestinyClient = "youremail@gmail.com";
+            $scope.doc.cellphoneDestinyClient = "56-555-5555";
+            $scope.doc.destinyName = "Carlos Perez";
+            $scope.doc.destinyClient = "123456789";
+            $scope.doc.amountDeclared = 30000;
+            $scope.doc.descriptionText = "Pequeña descripcion";
         }
     }
 })();

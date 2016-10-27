@@ -11,7 +11,7 @@
             $scope.doc.typeServices = $state.params.serviceType;
             $scope.doc.bagId = $scope.choice.bag.shipping_bag_id;
             $scope.extraData.bag = $scope.choice.bag;
-            $state.go("document.c/aracteristics");
+            $state.go("document.features");
         };
 
         function initialize () {
