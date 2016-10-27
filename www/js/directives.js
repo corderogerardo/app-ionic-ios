@@ -51,7 +51,8 @@
         return {
             restrict: 'EA',
             scope: {
-                onPlaceChanged: "="
+                onPlaceChanged: "=",
+                address: "="
             },
             templateUrl: 'templates/directives/mapAutocompleteAddress.html',
             controller: function ($scope) {

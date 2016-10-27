@@ -355,20 +355,32 @@ angular.module('axpress')
 
         $scope.placeChanged = function() {
             $scope.place = this.getPlace();
-            $scope.markers[0].position = $scope.place.geometry.location;
+            $scope.markers[1].position = $scope.place.geometry.location;
         };
 
         $scope.confirmDestiny = function(){
-            $state.current.data.doc.destinyAddress = $scope.place.formatted_address;
-            $state.current.data.doc.destinyLatitude = $scope.place.geometry.location.lat();
-            $state.current.data.doc.destinyLongitude = $scope.place.geometry.location.lng();
+            $scope.doc.destinyAddress = $scope.place.formatted_address;
+            $scope.doc.destinyLatitude = $scope.place.geometry.location.lat();
+            $scope.doc.destinyLongitude = $scope.place.geometry.location.lng();
             $state.go("document.sendtype");
         };
 
+        function setExistingAddress () {
+            $scope.markers[1].position = ""+$scope.doc.destinyLatitude+","+$scope.doc.destinyLongitude;
+            $scope.address = $scope.doc.originAddress;
+        }
+
         function initialize () {
+            $scope.doc = $state.current.data.doc;
             $scope.markers = [{
+                title: 'Origen',
+                position: [$scope.doc.originLatitude, $scope.doc.originLongitude]
+            },{
                 title: 'Destino'
             }];
+
+            if ($scope.doc.destinyLatitude && $scope.doc.destinyLongitude)
+                setExistingAddress();
         }
     }
 
@@ -391,16 +403,24 @@ angular.module('axpress')
         };
 
         $scope.confirmOrigin = function(){
-            $state.current.data.doc.originAddress = $scope.place.formatted_address;
-            $state.current.data.doc.originLatitude = $scope.place.geometry.location.lat();
-            $state.current.data.doc.originLongitude = $scope.place.geometry.location.lng();
+            $scope.doc.originAddress = $scope.place.formatted_address;
+            $scope.doc.originLatitude = $scope.place.geometry.location.lat();
+            $scope.doc.originLongitude = $scope.place.geometry.location.lng();
             $state.go("document.destiny");
         };
 
+        function setExistingAddress () {
+            $scope.markers[0].position = ""+$scope.doc.originLatitude+","+$scope.doc.originLongitude;
+            $scope.address = $scope.doc.originAddress;
+        }
+
         function initialize () {
+            $scope.doc = $state.current.data.doc;
             $scope.markers = [{
                 title: 'Origen'
             }];
+            if ($scope.doc.originLatitude && $scope.doc.originLongitude)
+                setExistingAddress();
         }
     }
 

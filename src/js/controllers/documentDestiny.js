@@ -10,20 +10,32 @@
 
         $scope.placeChanged = function() {
             $scope.place = this.getPlace();
-            $scope.markers[0].position = $scope.place.geometry.location;
+            $scope.markers[1].position = $scope.place.geometry.location;
         };
 
         $scope.confirmDestiny = function(){
-            $state.current.data.doc.destinyAddress = $scope.place.formatted_address;
-            $state.current.data.doc.destinyLatitude = $scope.place.geometry.location.lat();
-            $state.current.data.doc.destinyLongitude = $scope.place.geometry.location.lng();
+            $scope.doc.destinyAddress = $scope.place.formatted_address;
+            $scope.doc.destinyLatitude = $scope.place.geometry.location.lat();
+            $scope.doc.destinyLongitude = $scope.place.geometry.location.lng();
             $state.go("document.sendtype");
         };
 
+        function setExistingAddress () {
+            $scope.markers[1].position = ""+$scope.doc.destinyLatitude+","+$scope.doc.destinyLongitude;
+            $scope.address = $scope.doc.originAddress;
+        }
+
         function initialize () {
+            $scope.doc = $state.current.data.doc;
             $scope.markers = [{
+                title: 'Origen',
+                position: [$scope.doc.originLatitude, $scope.doc.originLongitude]
+            },{
                 title: 'Destino'
             }];
+
+            if ($scope.doc.destinyLatitude && $scope.doc.destinyLongitude)
+                setExistingAddress();
         }
     }
 

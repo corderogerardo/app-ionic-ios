@@ -14,16 +14,24 @@
         };
 
         $scope.confirmOrigin = function(){
-            $state.current.data.doc.originAddress = $scope.place.formatted_address;
-            $state.current.data.doc.originLatitude = $scope.place.geometry.location.lat();
-            $state.current.data.doc.originLongitude = $scope.place.geometry.location.lng();
+            $scope.doc.originAddress = $scope.place.formatted_address;
+            $scope.doc.originLatitude = $scope.place.geometry.location.lat();
+            $scope.doc.originLongitude = $scope.place.geometry.location.lng();
             $state.go("document.destiny");
         };
 
+        function setExistingAddress () {
+            $scope.markers[0].position = ""+$scope.doc.originLatitude+","+$scope.doc.originLongitude;
+            $scope.address = $scope.doc.originAddress;
+        }
+
         function initialize () {
+            $scope.doc = $state.current.data.doc;
             $scope.markers = [{
                 title: 'Origen'
             }];
+            if ($scope.doc.originLatitude && $scope.doc.originLongitude)
+                setExistingAddress();
         }
     }
 
