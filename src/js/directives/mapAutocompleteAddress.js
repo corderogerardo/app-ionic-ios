@@ -1,8 +1,8 @@
 (function() {
     angular.module('axpress')
-    .directive('autocompleteAddress', autocompleteAddress);
+    .directive('mapAutocompleteAddress', mapAutocompleteAddress);
 
-    function autocompleteAddress() {
+    function mapAutocompleteAddress() {
         return {
             restrict: 'EA',
             scope: {

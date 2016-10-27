@@ -7,7 +7,7 @@
         <map center='{{address || "Bogota"}}'
              geo-fallback-center="[40.74, -74.18]"
              zoom="11" class="main-container-maps">
-            <marker position="{{address}}"
+            <marker position="{{place.geometry.location}}"
                     title="Origen"
                     centered="true"></marker>
         </map>
@@ -15,7 +15,7 @@
             <div class="inputs-container border-blue">
                 <i class="ion-map"></i>
                 <label>
-                    <autocomplete-address on-place-changed="placeChanged"></autocomplete-address>
+                    <map-autocomplete-address on-place-changed="placeChanged"></map-autocomplete-address>
                 </label>
             </div>
         </div>
