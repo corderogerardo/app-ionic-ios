@@ -31,11 +31,9 @@ angular.module('axpress')
 .controller('AuthController', ['$scope', '$rootScope', 'Client', 'Logger', '$state',
 function($scope, $rootScope, Client, Logger, $state){
 
-
     activate();
 
     function activate () {
-        processFacebookLogin({"id":"118882175249424","name":"Prueba Axpress","email":"axpressprueba1@gmail.com"});
         if (localStorage.getItem('axpress.user') && localStorage.getItem('axpress.menu')) {
             $rootScope.user = JSON.parse(localStorage.getItem('axpress.user'));
             $rootScope.menu = JSON.parse(localStorage.getItem('axpress.menu'));
@@ -434,11 +432,7 @@ angular.module('axpress')
             $scope.doc.typeServices = $state.params.serviceType;
             $scope.doc.bagId = $scope.choice.bag.shipping_bag_id;
             $scope.extraData.bag = $scope.choice.bag;
-<<<<<<< refs/remotes/origin/feature/t-93
             $state.go("document.features");
-=======
-            $state.go("document.caracteristics");
->>>>>>> Resume Controller
         };
 
         function initialize () {

@@ -1,0 +1,28 @@
+<div class="bar bar-header bar-balanced">
+     <h1 class="title">IMAGEN DEL DOCUMENTO</h1>
+</div>
+<ion-view view-title="Imagen del Documento">
+    <ion-content scroll="false" >
+    <div class="space">
+    </div>
+        <section class="imagephoto-title">
+            <p>
+                Agrega una imagen de tu envío
+            </p>
+        </section>
+        <section class="imagephoto-container">
+            <button ng-click="takePicture()">
+                <img ng-src="{{imgSrc}}" width="100px" height="100px" class="ion-camera"></img>
+                <a href="" title="">TOMAR FOTOGRAFÍA</a>
+            </button>
+        </section>
+        <section class="container-button imagephoto-button">
+            <a class="button-icon" title="SELECCIONAR FOTOGRAFIA" ng-click="selectPicture()"><i class="ion-image"></i> SELECCIONAR FOTOGRAFIA</a>
+        </section>
+        <section class="container-button imagephoto-button">
+            <a class="button-noicon" ng-click="confirmImagePhoto()" title="">CONTINUAR</a>
+        </section>
+
+
+    </ion-content>
+</ion-view>

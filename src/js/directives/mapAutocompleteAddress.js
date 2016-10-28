@@ -38,9 +38,6 @@
                         input.blur();
                     });
                 };
-            },
-            
-            link: function (scope, element, attributes) {
             }
         };
     }
