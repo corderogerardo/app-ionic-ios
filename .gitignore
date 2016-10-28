@@ -10,3 +10,4 @@ plugins/
 /www/js/controllers.js
 /www/js/directives.js
 /www/js/services.js
+/hooks/after_prepare/010_add_platform_class.js
