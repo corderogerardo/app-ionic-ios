@@ -6,44 +6,47 @@
         return {
             restric: 'E',
             scope: {
-                options: '='
+                options: '=',
+                successCallback: '=onPhotoTaken',
+                errorCallback: '=onError'
             },
-            controller: takePhotoController
+            controller: takePhotoController,
+            templateUrl: 'templates/directives/takePhoto.html'
         };
     }
 
-    takePhotoController.$inject = ['$scope', '$cordovaCamera', '$ionicPopup'];
+    takePhotoController.$inject = ['$scope', '$cordovaCamera'];
 
-    function takePhotoController ($scope, $cordovaCamera, $ionicPopup) {
+    function takePhotoController ($scope, $cordovaCamera) {
         activate();
 
         function activate () {
-            var tempOptions = {
-                quality:75,
-                destinationType:Camera.DestinationType.DATA_URL,
-                sourceType:Camera.PictureSourceType.CAMERA,
-                allowEdit:true,
-                encodingType:Camera.EncodingType.JPEG,
-                targetWidth:300,
-                targetHeight:300,
-                popoverOptions:CameraPopoverOptions,
-                saveToPhotoAlbum:false
-            };
+            document.addEventListener("deviceready", function () {
+                var tempOptions = {
+                    quality:75,
+                    destinationType:Camera.DestinationType.DATA_URL,
+                    sourceType:Camera.PictureSourceType.CAMERA,
+                    allowEdit:true,
+                    encodingType:Camera.EncodingType.JPEG,
+                    targetWidth:300,
+                    targetHeight:300,
+                    popoverOptions:CameraPopoverOptions,
+                    saveToPhotoAlbum:false
+                };
 
-            //Sets custom options over the default ones
-            $scope.options = Object.assign(tempOptions, $scope.options);
+                //Sets custom options over the default ones
+                $scope.options = Object.assign(tempOptions, $scope.options);
+            }, false);
         }
 
         $scope.takePhoto = function () {
-            $cordovaCamera.getPicture($scope.options).then(function(imageData){
-                //Success! Image data is here
-                // This dataImageBase is the Base64 Image.
-                $scope.dataImageBase = imageData;
-                console.log($scope.dataImageBase);
-                $scope.imgSrc = "data:image/jpeg;base64, "+imageData;
-            },function (err) {
-                $ionicPopup.alert({title: 'An error happen when taking the picture.', template:err});
-            });
+            $cordovaCamera.getPicture($scope.options)
+                .then(function(imageData){
+                    $scope.imageSrc = "data:image/jpeg;base64, " + imageData;
+                    $scope.successCallback(imageData);
+                }, function (err) {
+                    $scope.errorCallback(err);
+                });
         };
     }
 

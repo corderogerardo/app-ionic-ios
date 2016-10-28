@@ -77,7 +77,8 @@ angular.module('axpress', [
             data: {
                 doc: {},
                 extraData: {
-                    featuresNext: 'document.photo'
+                    featuresNext: 'document.photo',
+                    photoNext: 'document.resume'
                 }
             },
             params: {
@@ -107,7 +108,7 @@ angular.module('axpress', [
         .state('document.photo', {
             url: '/photo',
             templateUrl: 'templates/documents/photo.html',
-            controller:'ImagePhotoController'
+            controller:'PhotoController'
         })
         .state('document.sentresume', {
             url: '/sentresumedocument',
