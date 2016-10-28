@@ -4,11 +4,10 @@ angular.module('axpress')
 
     $scope.menuoptions = $rootScope.menu;
 
-    var urlsPerServiceType = {1: 'document.origin', 2: 'package.origin'};
+    var urlsPerServiceType = {43: 'document.origin', 44: 'package.origin', 45: 'diligence.origin'};
 
-    $scope.moveTo = function(option){
-        $state.go(urlsPerServiceType[option], {serviceType: option});
-
+    $scope.moveTo = function (option) {
+        $state.go(urlsPerServiceType[option.service_provider_id], {serviceType: option.service_provider_id});
     };
 
 }]);

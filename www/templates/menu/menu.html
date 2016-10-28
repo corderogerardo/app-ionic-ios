@@ -8,9 +8,9 @@
 			<span>Elige el <a> tipo de envío </a> que vas a realizar.</span>
 		</section>
 		<section class="main-menu" >
-			<a ng-repeat="menu in menuoptions" class="main-menu-options" title="{{menu.title}}" ng-click="moveTo(menu.type_service)">
+			<a ng-repeat="option in menuoptions" class="main-menu-options" title="{{option.title}}" ng-click="moveTo(option)">
 			<img src="img/ionic.png" alt="">
-			{{ menu.title | uppercase }}
+			{{ option.title | uppercase }}
 			</a>
 
             <a class="main-menu-options" href="#/account" title="">

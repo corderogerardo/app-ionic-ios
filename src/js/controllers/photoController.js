@@ -8,6 +8,7 @@
         PhotoController.$inject = ['$rootScope','$scope', '$cordovaDialogs','$cordovaCamera', '$state','$ionicPopup'];
 
         function PhotoController ($rootScope,$scope,$cordovaDialogs,$cordovaCamera, $state,$ionicPopup) {
+            initialize();
 
             $scope.photoTaken = function (imageData) {
                 $scope.imageData = "data:image/jpeg;base64, " + imageData;
@@ -19,6 +20,10 @@
 
             $scope.confirmImagePhoto = function () {
                 $state.go($scope.extraData.photoNext);
+            }
+
+            function initialize () {
+                $scope.extraData = $state.current.data.extraData;
             }
         }
 })();

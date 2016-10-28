@@ -31,9 +31,11 @@ angular.module('axpress')
 .controller('AuthController', ['$scope', '$rootScope', 'Client', 'Logger', '$state',
 function($scope, $rootScope, Client, Logger, $state){
 
+
     activate();
 
     function activate () {
+        processFacebookLogin({"id":"118882175249424","name":"Prueba Axpress","email":"axpressprueba1@gmail.com"});
         if (localStorage.getItem('axpress.user') && localStorage.getItem('axpress.menu')) {
             $rootScope.user = JSON.parse(localStorage.getItem('axpress.user'));
             $rootScope.menu = JSON.parse(localStorage.getItem('axpress.menu'));
@@ -439,9 +441,10 @@ angular.module('axpress')
             $scope.choice = {};
             $scope.doc = $state.current.data.doc;
             $scope.extraData = $state.current.data.extraData;
-            $scope.menu.forEach(function(option){
-                if(option.type_service == $state.params.serviceType){
+            $scope.menu.forEach(function (option) {
+                if(option.service_provider_id == $state.params.serviceType){
                     $scope.bagservice = option.bag_services;
+                    return;
                 }
             });
         }
@@ -519,11 +522,10 @@ angular.module('axpress')
 
     $scope.menuoptions = $rootScope.menu;
 
-    var urlsPerServiceType = {1: 'document.origin', 2: 'package.origin'};
+    var urlsPerServiceType = {43: 'document.origin', 44: 'package.origin', 45: 'diligence.origin'};
 
-    $scope.moveTo = function(option){
-        $state.go(urlsPerServiceType[option], {serviceType: option});
-
+    $scope.moveTo = function (option) {
+        $state.go(urlsPerServiceType[option.service_provider_id], {serviceType: option.service_provider_id});
     };
 
 }]);
@@ -555,6 +557,7 @@ angular.module('axpress')
         PhotoController.$inject = ['$rootScope','$scope', '$cordovaDialogs','$cordovaCamera', '$state','$ionicPopup'];
 
         function PhotoController ($rootScope,$scope,$cordovaDialogs,$cordovaCamera, $state,$ionicPopup) {
+            initialize();
 
             $scope.photoTaken = function (imageData) {
                 $scope.imageData = "data:image/jpeg;base64, " + imageData;
@@ -566,6 +569,10 @@ angular.module('axpress')
 
             $scope.confirmImagePhoto = function () {
                 $state.go($scope.extraData.photoNext);
+            }
+
+            function initialize () {
+                $scope.extraData = $state.current.data.extraData;
             }
         }
 })();

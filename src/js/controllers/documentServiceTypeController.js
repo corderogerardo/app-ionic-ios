@@ -18,9 +18,10 @@
             $scope.choice = {};
             $scope.doc = $state.current.data.doc;
             $scope.extraData = $state.current.data.extraData;
-            $scope.menu.forEach(function(option){
-                if(option.type_service == $state.params.serviceType){
+            $scope.menu.forEach(function (option) {
+                if(option.service_provider_id == $state.params.serviceType){
                     $scope.bagservice = option.bag_services;
+                    return;
                 }
             });
         }
