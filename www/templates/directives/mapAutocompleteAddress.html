@@ -4,4 +4,5 @@
 	component-restrictions="{{restrictions}}"
 	types="{{types}}"
 	placeholder="Escribe la dirección aquí..."
-	on-place-changed="onPlaceChanged()" />
+	on-place-changed="onPlaceChanged()"
+    ng-focus="disableTap($event)" />
