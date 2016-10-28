@@ -277,6 +277,42 @@ function($scope, $rootScope, Client, Logger, $state){
 }]);
 ;
 
+(function(){
+    angular.module('axpress')
+    .controller('CaracteristicsController',CaracteristicsController);
+
+    CaracteristicsController.$inject = ['$rootScope','$scope', '$cordovaDialogs', '$state','$ionicPopup'];
+
+    function CaracteristicsController($rootScope,$scope,$cordovaDialogs, $state, $ionicPopup) {
+        console.log("Caracteristics Controller");
+
+        initialize();
+
+        $scope.saveCaracteristics = function () {
+            /* $ionicPopup.alert({title: 'Destinatary', template: JSON.stringify( $scope.data)});*/
+            $scope.doc.destinatary = $scope.destinatary;
+            $scope.doc.caracteristics = $scope.caracteristics;
+            $state.go("document.imagephoto");
+        };
+        function initialize(){
+            $scope.destinatary = {
+                email: "",
+                username: "",
+                phone: "",
+                cinit: ""
+            };
+            $scope.caracteristics = {
+                declaredvalue: "",
+                shortdescription: ""
+            };
+            $scope.doc = $state.current.data.doc;
+            $scope.extraData = $state.current.data.extraData;
+        }
+    }
+
+})();
+;
+
 /**
  * Created by gerardo on 24/10/16.
  */
@@ -398,7 +434,11 @@ angular.module('axpress')
             $scope.doc.typeServices = $state.params.serviceType;
             $scope.doc.bagId = $scope.choice.bag.shipping_bag_id;
             $scope.extraData.bag = $scope.choice.bag;
+<<<<<<< refs/remotes/origin/feature/t-93
             $state.go("document.features");
+=======
+            $state.go("document.caracteristics");
+>>>>>>> Resume Controller
         };
 
         function initialize () {
@@ -482,8 +522,13 @@ angular.module('axpress')
 /**
  * Created by gerardo on 21/10/16.
  */
+(function(){
+
+
 angular.module('axpress')
-.controller('ImagePhotoController',['$rootScope','$scope', '$cordovaDialogs','$cordovaCamera', '$state','$ionicPopup', function($rootScope,$scope,$cordovaDialogs,$cordovaCamera, $state,$ionicPopup){
+.controller('ImagePhotoController',ImagePhotoController);
+    ImagePhotoController.$inject = ['$rootScope','$scope', '$cordovaDialogs','$cordovaCamera', '$state','$ionicPopup'];
+    function ImagePhotoController($rootScope,$scope,$cordovaDialogs,$cordovaCamera, $state,$ionicPopup){
     $scope.takePicture = function(){
         $ionicPopup.alert({title: 'Clicked on take a picture', template:"Taking a picture"});
 
@@ -500,6 +545,9 @@ angular.module('axpress')
         };
         $cordovaCamera.getPicture(options).then(function(imageData){
             //Success! Image data is here
+            // This dataImageBase is the Base64 Image.
+            $scope.dataImageBase = imageData;
+            console.log($scope.dataImageBase);
             $scope.imgSrc = "data:image/jpeg;base64, "+imageData;
         },function (err) {
             $ionicPopup.alert({title: 'An error happen when taking the picture.', template:err});
@@ -513,7 +561,10 @@ angular.module('axpress')
             sourceType:Camera.PictureSourceType.PHOTOLIBRARY
         };
         $cordovaCamera.getPicture(options).then(function (imgUri) {
-            $scope.imgSrc = imgUri;
+            // This dataImageBase is the Base64 Image.
+            $scope.dataImageUriBase = imgUri;
+            console.log($scope.dataImageUriBase);
+            $scope.imgSrc =  "data:image/jpeg;base64, "+imgUri;
         },function (err) {
             $ionicPopup.alert({title: 'An error happen when selecting the picture.', template:err});
         })
@@ -521,7 +572,8 @@ angular.module('axpress')
     $scope.confirmImagePhoto = function(){
         $state.go("document.sentresume");
     }
-}]);
+}
+})();
 ;
 
 angular.module('axpress')
@@ -560,17 +612,26 @@ angular.module('axpress')
  * Created by gerardo on 24/10/16.
  */
 angular.module('axpress')
-    .controller('ResumeController', ['$rootScope','$scope', '$cordovaDialogs', '$state', function($rootScope,$scope,$cordovaDialogs, $state){
+    .controller('ResumeController', ['$rootScope','$scope', '$cordovaDialogs', '$state','Shipping', function($rootScope,$scope,$cordovaDialogs, $state,Shipping){
 
-        $scope.titleMenu = $rootScope.mapsTitle;
-        $scope.originAddress = $rootScope.originAddress;
-        $scope.destinyAddress = $rootScope.originDestinyAddress;
+        initialize();
 
-        $scope.destinataryResume = $rootScope.destinatary;
-        $scope.caracteristicsResume = $rootScope.caracteristics;
+        $scope.originAddress = $scope.doc.originAddress;
+        $scope.destinyAddress = $scope.doc.destinyAddress;
+
+        $scope.destinataryResume = $scope.doc.destinatary;
+        $scope.caracteristicsResume = $scope.doc.caracteristics;
 
         $scope.confirmResume = function(){
+            console.log($scope.servicePrice);
+            $scope.doc.pay = $scope.servicePrice;
             $state.go("document.paymentmethods")
+        };
+
+        function initialize () {
+            $scope.doc = $state.current.data.doc;
+            $scope.extraData = $state.current.data.extraData;
+            $scope.servicePrice = Shipping.quotation($scope.doc.originLatitude,$scope.doc.originLongitude,$scope.doc.destinyLatitude,$scope.doc.destinyLongitude,$scope.doc.bagId);
         }
     }]);
 ;

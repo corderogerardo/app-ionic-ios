@@ -1,8 +1,13 @@
 /**
  * Created by gerardo on 21/10/16.
  */
+(function(){
+
+
 angular.module('axpress')
-.controller('ImagePhotoController',['$rootScope','$scope', '$cordovaDialogs','$cordovaCamera', '$state','$ionicPopup', function($rootScope,$scope,$cordovaDialogs,$cordovaCamera, $state,$ionicPopup){
+.controller('ImagePhotoController',ImagePhotoController);
+    ImagePhotoController.$inject = ['$rootScope','$scope', '$cordovaDialogs','$cordovaCamera', '$state','$ionicPopup'];
+    function ImagePhotoController($rootScope,$scope,$cordovaDialogs,$cordovaCamera, $state,$ionicPopup){
     $scope.takePicture = function(){
         $ionicPopup.alert({title: 'Clicked on take a picture', template:"Taking a picture"});
 
@@ -19,6 +24,9 @@ angular.module('axpress')
         };
         $cordovaCamera.getPicture(options).then(function(imageData){
             //Success! Image data is here
+            // This dataImageBase is the Base64 Image.
+            $scope.dataImageBase = imageData;
+            console.log($scope.dataImageBase);
             $scope.imgSrc = "data:image/jpeg;base64, "+imageData;
         },function (err) {
             $ionicPopup.alert({title: 'An error happen when taking the picture.', template:err});
@@ -32,7 +40,10 @@ angular.module('axpress')
             sourceType:Camera.PictureSourceType.PHOTOLIBRARY
         };
         $cordovaCamera.getPicture(options).then(function (imgUri) {
-            $scope.imgSrc = imgUri;
+            // This dataImageBase is the Base64 Image.
+            $scope.dataImageUriBase = imgUri;
+            console.log($scope.dataImageUriBase);
+            $scope.imgSrc =  "data:image/jpeg;base64, "+imgUri;
         },function (err) {
             $ionicPopup.alert({title: 'An error happen when selecting the picture.', template:err});
         })
@@ -40,4 +51,5 @@ angular.module('axpress')
     $scope.confirmImagePhoto = function(){
         $state.go("document.sentresume");
     }
-}]);
+}
+})();
