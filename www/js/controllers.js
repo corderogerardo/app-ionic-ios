@@ -469,13 +469,6 @@ angular.module('axpress')
             $scope.doc = $state.current.data.doc;
             $scope.extraData = $state.current.data.extraData;
 
-            //Test Data
-            $scope.doc.emailDestinyClient = "youremail@gmail.com";
-            $scope.doc.cellphoneDestinyClient = "56-555-5555";
-            $scope.doc.destinyName = "Carlos Perez";
-            $scope.doc.destinyClient = "123456789";
-            $scope.doc.amountDeclared = 30000;
-            $scope.doc.descriptionText = "Pequeña descripcion";
         }
     }
 })();
@@ -578,32 +571,46 @@ angular.module('axpress')
 })();
 ;
 
-/**
- * Created by gerardo on 24/10/16.
- */
+(function(){
 angular.module('axpress')
-    .controller('ResumeController', ['$rootScope','$scope', '$cordovaDialogs', '$state','Shipping', function($rootScope,$scope,$cordovaDialogs, $state,Shipping){
+    .controller('ResumeController',ResumeController);
+    ResumeController.$inject = ['$rootScope','$scope', '$cordovaDialogs', '$state','Shipping'];
+    function ResumeController($rootScope,$scope,$cordovaDialogs, $state,Shipping){
 
         initialize();
 
-        $scope.originAddress = $scope.doc.originAddress;
-        $scope.destinyAddress = $scope.doc.destinyAddress;
+        $scope.editOrigin = function(){
+            $scope.extraData.editOrigin = true;
 
-        $scope.destinataryResume = $scope.doc.destinatary;
-        $scope.caracteristicsResume = $scope.doc.caracteristics;
+            $state.go("document.origin");
+
+        };
+        $scope.editDestiny = function(){
+            $scope.extraData.editDestiny = true;
+
+            $state.go("document.destiny");
+
+        };
+        $scope.editFeatures = function(){
+            $scope.extraData.editFeatures = true;
+
+            $state.go("document.features");
+
+        };
 
         $scope.confirmResume = function(){
-            console.log($scope.servicePrice);
-            $scope.doc.pay = $scope.servicePrice;
+            /*console.log($scope.servicePrice);
+            $scope.doc.pay = $scope.servicePrice;*/
             $state.go("document.paymentmethods")
         };
 
         function initialize () {
             $scope.doc = $state.current.data.doc;
             $scope.extraData = $state.current.data.extraData;
-            $scope.servicePrice = Shipping.quotation($scope.doc.originLatitude,$scope.doc.originLongitude,$scope.doc.destinyLatitude,$scope.doc.destinyLongitude,$scope.doc.bagId);
+          /*  $scope.doc.quotation = Shipping.quotation($scope.doc.originLatitude,$scope.doc.originLongitude,$scope.doc.destinyLatitude,$scope.doc.destinyLongitude,$scope.doc.bagId,$scope.doc.bagId);*/
         }
-    }]);
+    }
+})();
 ;
 
 angular.module('axpress')

@@ -112,7 +112,7 @@ angular.module('axpress', [
         })
         .state('document.sentresume', {
             url: '/sentresumedocument',
-            templateUrl: 'templates/sentresume/sentresume.html',
+            templateUrl: 'templates/documents/resume.html',
             controller:'ResumeController'
         })
         .state('document.paymentmethods', {

@@ -1,0 +1,60 @@
+<div class="bar bar-header bar-balanced">
+    <h3 class="title">RESUMEN DEL ENVÍO </h3>
+</div>
+<ion-view view-title="Resumen del Envío">
+    <ion-content scroll="false" >
+        <div class="space">
+        </div>
+        <section class="sentresume-data">
+            <section class="sentresume-content">
+                <div class="data-origin">
+                    <b>ORIGEN DEL </b>
+                    <p>{{ doc.originAddress }}</p>
+                </div>
+                <a class="data-button-edit" ng-click="editOrigin()" title="">
+                    <i class="ion-edit"></i>
+                    <p>EDITAR</p>
+                </a>
+            </section>
+            <section class="sentresume-content">
+                <div class="data-origin">
+                    <b>DESTINO DEL </b>
+                    <p>{{ doc.destinyAddress }}</p>
+                </div>
+                <a class="data-button-edit" ng-click="editDestiny()" title="">
+                    <i class="ion-edit"></i>
+                    <p>EDITAR</p>
+                </a>
+            </section>
+            <section class="sentresume-content-noborder">
+                <div class="data-origin">
+                    <b>CARACTERÍSTICAS</b>
+                    <p>{{ doc.descriptionText }}</p>
+                    <p>Valor Declarado: {{ doc.amountDeclared }}</p>
+                </div>
+                <a class="data-button-edit" ng-click="editFeatures()" title="">
+                    <i class="ion-edit"></i>
+                    <p>EDITAR</p>
+                </a>
+            </section>
+            <section class="sentresume-content">
+                <div class="data-origin">
+                    <b>DESTINATARIO</b>
+                    <p>Nombre: {{ doc.destinyName }},<br> Email: {{ doc.emailDestinyClient }}, <br> Phone: {{ doc.cellphoneDestinyClient }} .</p>
+                </div>
+            </section>
+        </section>
+        <section class="sentresume-cost">
+
+            <p>COSTO DEL ENVÍO</p>
+           <!-- <b>{{servicePrice}}</b>-->
+
+        </section>
+        <section class="sentresume-button">
+            <div class="container-button">
+
+                <a class="button-noicon" ng-click="confirmResume()" title=""> CONFIRMAR TU ENVÍO</a>
+            </div>
+        </section>
+    </ion-content>
+</ion-view>
