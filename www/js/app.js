@@ -110,14 +110,14 @@ angular.module('axpress', [
             templateUrl: 'templates/documents/photo.html',
             controller:'PhotoController'
         })
-        .state('document.sentresume', {
-            url: '/sentresumedocument',
+        .state('document.resume', {
+            url: '/resume',
             templateUrl: 'templates/documents/resume.html',
             controller:'ResumeController'
         })
         .state('document.paymentmethods', {
             url: '/paymentmethods',
-            templateUrl: 'templates/paymentmethods/paymentmethods.html',
+            templateUrl: 'templates/documents/paymentMethods.html',
             controller:'PaymentMethodsController'
         })
         .state('shipmenttracking', {

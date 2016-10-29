@@ -8,7 +8,13 @@
         initialize();
 
         $scope.saveCaracteristics = function () {
-            $state.go($scope.extraData.featuresNext);
+            if($scope.extraData.editFeatures === true){
+                $scope.extraData.editFeatures = false;
+                $state.go("document.resume");
+
+            }else{
+                $state.go($scope.extraData.featuresNext);
+            }
         };
 
         function initialize () {

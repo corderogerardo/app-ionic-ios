@@ -18,7 +18,13 @@
             $scope.doc.originLatitude = $scope.place.geometry.location.lat();
             $scope.doc.originLongitude = $scope.place.geometry.location.lng();
             $scope.extraData.originPlace = $scope.place;
-            $state.go("document.destiny");
+            if($scope.extraData.editOrigin === true){
+                $scope.extraData.editOrigin = false;
+                $state.go("document.resume");
+
+            }else{
+                $state.go("document.destiny");
+            }
         };
 
         function setExistingAddress () {

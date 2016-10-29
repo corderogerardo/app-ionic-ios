@@ -74,7 +74,7 @@ function($rootScope, $q, Service){
             destiny_longitude: destinyLongitude,
             amount: amount,
             amountDeclared: amountDeclared,
-            type_services: typeServices,
+            type_service: typeServices,
             pay: pay,
             time: time,
             //Optional Params
@@ -103,17 +103,17 @@ function($rootScope, $q, Service){
      * @param      {Double}  originLongitude   The origin longitude
      * @param      {Double}  destinyLatitude   The destiny latitude
      * @param      {Double}  destinyLongitude  The destiny longitude
-     * @param      {Integer}  typeServices     The service's process(Documentos,Paquetes,Diligencias)
+     * @param      {Integer}  typeService     The service's process(Documentos,Paquetes,Diligencias)
      * @param      {Integer}  bagId     The service's type
      * @return     {Promise}  A promise object that will resolve the petition
      */
-    function quotation (originLatitude, originLongitude, destinyLatitude, destinyLongitude, typeServices,bagId) {
+    function quotation (originLatitude, originLongitude, destinyLatitude, destinyLongitude, typeService, bagId) {
         var data = {
             origin_latitude: originLatitude,
             origin_longitude: originLongitude,
             destiny_latitude: destinyLatitude,
             destiny_longitude: destinyLongitude,
-            type_services: typeServices,
+            type_service: typeService,
             bag_id:bagId
         };
         return service.apiPost('/quotation', data);

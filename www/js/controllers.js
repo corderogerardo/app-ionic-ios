@@ -351,7 +351,13 @@ angular.module('axpress')
             $scope.doc.destinyLatitude = $scope.place.geometry.location.lat();
             $scope.doc.destinyLongitude = $scope.place.geometry.location.lng();
             $scope.extraData.destinyPlace = $scope.place;
-            $state.go("document.servicetype");
+            if($scope.extraData.editDestiny === true){
+                $scope.extraData.editDestiny = false;
+                $state.go("document.resume");
+
+            }else{
+                $state.go("document.servicetype");
+            }
         };
 
         function setExistingAddress () {
@@ -398,7 +404,13 @@ angular.module('axpress')
             $scope.doc.originLatitude = $scope.place.geometry.location.lat();
             $scope.doc.originLongitude = $scope.place.geometry.location.lng();
             $scope.extraData.originPlace = $scope.place;
-            $state.go("document.destiny");
+            if($scope.extraData.editOrigin === true){
+                $scope.extraData.editOrigin = false;
+                $state.go("document.resume");
+
+            }else{
+                $state.go("document.destiny");
+            }
         };
 
         function setExistingAddress () {
@@ -462,7 +474,13 @@ angular.module('axpress')
         initialize();
 
         $scope.saveCaracteristics = function () {
-            $state.go($scope.extraData.featuresNext);
+            if($scope.extraData.editFeatures === true){
+                $scope.extraData.editFeatures = false;
+                $state.go("document.resume");
+
+            }else{
+                $state.go($scope.extraData.featuresNext);
+            }
         };
 
         function initialize () {
@@ -524,20 +542,36 @@ angular.module('axpress')
 }]);
 ;
 
-/**
- * Created by gerardo on 24/10/16.
- */
+(function(){
 angular.module('axpress')
-    .controller('PaymentMethodsController', ['$rootScope','$scope', '$cordovaDialogs', '$state', function($rootScope, $scope, $cordovaDialogs, $state){
-        $scope.choice = {name:''};
+    .controller('PaymentMethodsController',PaymentMethodsController);
+    PaymentMethodsController.$inject = ['$rootScope','$scope', '$cordovaDialogs', '$state','Logger','Shipping'];
+        function PaymentMethodsController($rootScope, $scope, $cordovaDialogs, $state,Logger,Shipping) {
+            initialize();
 
 
-    $scope.confirmPaymentMethod = function(){
-        console.log($scope.choice.name);
-        $state.go("menu");
-    };
 
-}]);
+            $scope.confirmPaymentMethod = function () {
+                console.log($scope.doc.paymentChoice.name);
+                Shipping.register($scope.doc.descriptionText,1,$scope.doc.quotation.kilometers_text,$rootScope.user.name,$scope.doc.originAddress,$scope.doc.originLatitude,$scope.doc.originLongitude,$scope.doc.destinyAddress,$scope.doc.destinyLatitude,$scope.doc.destinyLongitude,$scope.doc.quotation.price,$scope.doc.quotation.declaredvalue,$scope.doc.typeServices,$scope.doc.quotation.price,$scope.doc.quotation.time).then(function(response){
+                    console.log(response);
+                    $state.go("menu");
+                },function(error){
+                    console.log(error);
+                });
+            };
+
+            function initialize (){
+                $scope.doc = $state.current.data.doc;
+                $scope.extraData = $state.current.data.extraData;
+                $scope.doc.paymentChoice = {name: ''};
+                console.log($scope.doc);
+                console.log($scope.doc.paymentChoice);
+                console.log($scope.extraData);
+                console.log($rootScope.user);
+            }
+        }
+})();
 ;
 
 /**
@@ -574,8 +608,8 @@ angular.module('axpress')
 (function(){
 angular.module('axpress')
     .controller('ResumeController',ResumeController);
-    ResumeController.$inject = ['$rootScope','$scope', '$cordovaDialogs', '$state','Shipping'];
-    function ResumeController($rootScope,$scope,$cordovaDialogs, $state,Shipping){
+    ResumeController.$inject = ['$rootScope','$scope', '$cordovaDialogs', '$state','Logger','Shipping'];
+    function ResumeController($rootScope,$scope,$cordovaDialogs, $state,Logger,Shipping){
 
         initialize();
 
@@ -599,15 +633,27 @@ angular.module('axpress')
         };
 
         $scope.confirmResume = function(){
-            /*console.log($scope.servicePrice);
-            $scope.doc.pay = $scope.servicePrice;*/
             $state.go("document.paymentmethods")
         };
 
         function initialize () {
             $scope.doc = $state.current.data.doc;
             $scope.extraData = $state.current.data.extraData;
-          /*  $scope.doc.quotation = Shipping.quotation($scope.doc.originLatitude,$scope.doc.originLongitude,$scope.doc.destinyLatitude,$scope.doc.destinyLongitude,$scope.doc.bagId,$scope.doc.bagId);*/
+
+            Shipping.quotation($scope.doc.originLatitude,$scope.doc.originLongitude,$scope.doc.destinyLatitude,$scope.doc.destinyLongitude,$state.params.serviceType,$scope.doc.bagId)
+                .then(function(response){
+                    if (response.return && response.status == 200) {
+                        quotationSuccessful(response.data);
+                    }
+            }, function (error) {
+                if (error.message)
+                    Logger.error(error.message);
+                else
+                    Logger.error('');
+            });
+        }
+        function quotationSuccessful(response) {
+            $scope.doc.quotation = response;
         }
     }
 })();
