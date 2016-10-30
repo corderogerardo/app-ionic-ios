@@ -6,7 +6,7 @@
         return {
             restric: 'E',
             scope: {
-                options: '=',
+                options: '@',
                 successCallback: '=onPhotoSelected',
                 errorCallback: '=onError'
             },
@@ -15,16 +15,19 @@
         };
     }
 
-    selectPhotoController.$inject = ['$scope', '$cordovaCamera'];
+    selectPhotoController.$inject = ['$scope', '$cordovaImagePicker'];
 
-    function selectPhotoController ($scope, $cordovaCamera) {
+    function selectPhotoController ($scope, $cordovaImagePicker) {
         activate();
 
         function activate () {
+            $scope.options = {};
             document.addEventListener("deviceready", function () {
                 var tempOptions = {
-                    destinationType:Camera.DestinationType.FILE_URI,
-                    sourceType:Camera.PictureSourceType.PHOTOLIBRARY
+                    maximumImagesCount: 1,   // Max number of selected images
+                    width:              800,
+                    height:             800,
+                    quality:            100  // Higher is better
                 };
                 //Sets custom options over the default ones
                 $scope.options = Object.assign(tempOptions, $scope.options);
@@ -32,9 +35,9 @@
         }
 
         $scope.selectPhoto = function () {
-            $cordovaCamera.getPicture($scope.options)
-                .then(function (imgUri) {
-                    $scope.successCallback(imgUri);
+            $cordovaImagePicker.getPictures($scope.options)
+                .then(function (results) {
+                    $scope.successCallback(results);
                 }, function (err) {
                     $scope.errorCallback(err);
                 });

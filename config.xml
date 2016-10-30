@@ -22,4 +22,5 @@
     <plugin name="cordova-plugin-inappbrowser" spec="https://git-wip-us.apache.org/repos/asf/cordova-plugin-inappbrowser.git" />
     <plugin name="ionic-plugin-deploy" spec="~0.6.5" />
     <plugin name="cordova-plugin-screen-orientation" spec="~1.4.2" />
+    <plugin name="cordova-plugin-image-picker" spec="https://github.com/wymsee/cordova-imagePicker.git" />
 </widget>

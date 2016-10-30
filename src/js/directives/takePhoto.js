@@ -6,7 +6,7 @@
         return {
             restric: 'E',
             scope: {
-                options: '=',
+                options: '@',
                 successCallback: '=onPhotoTaken',
                 errorCallback: '=onError'
             },
@@ -23,15 +23,16 @@
         function activate () {
             document.addEventListener("deviceready", function () {
                 var tempOptions = {
-                    quality:75,
-                    destinationType:Camera.DestinationType.DATA_URL,
-                    sourceType:Camera.PictureSourceType.CAMERA,
-                    allowEdit:true,
-                    encodingType:Camera.EncodingType.JPEG,
-                    targetWidth:300,
-                    targetHeight:300,
-                    popoverOptions:CameraPopoverOptions,
-                    saveToPhotoAlbum:false
+                    quality:            100,
+                    destinationType:    Camera.DestinationType.DATA_URL,
+                    sourceType:         Camera.PictureSourceType.CAMERA,
+                    allowEdit:          true,
+                    encodingType:       Camera.EncodingType.JPEG,
+                    targetWidth:        800,
+                    targetHeight:       800,
+                    popoverOptions:     CameraPopoverOptions,
+                    saveToPhotoAlbum:   false,
+                    correctOrientation: true
                 };
 
                 //Sets custom options over the default ones
