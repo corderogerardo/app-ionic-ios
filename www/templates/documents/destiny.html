@@ -7,10 +7,16 @@
         <address-selection center="place" markers="markers"></address-selection>
         
         <div class="input-direction">
-            <div class="inputs-container border-blue">
-                <i class="ion-map"></i>
+            <div class="inputs-container">
+                <i class="icon-marker-gray"></i>
                 <label>
                     <map-autocomplete-address on-place-changed="placeChanged" address="address"></map-autocomplete-address>
+                </label>
+            </div>
+            <div class="inputs-container-last flag-maps">
+                <i class="icon-flag-gray"></i>
+                <label>
+                    <input ng-model="doc.destinyDetail" type="text" placeholder="Detalles de direccion">
                 </label>
             </div>
         </div>

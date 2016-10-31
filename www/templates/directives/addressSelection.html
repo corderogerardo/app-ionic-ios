@@ -1,6 +1,8 @@
 <map center='{{center.geometry.location || "Bogota"}}'
      geo-fallback-center="{{fallbackCenter}}"
-     zoom="11" class="main-container-maps">
+     zoom="11" class="main-container-maps"
+     zoom-control="false" map-type-control="false"
+     street-view-control="false" >
 
     <marker ng-repeat="marker in markers" position="{{marker.position}}"
             title="{{marker.title}}"></marker>
