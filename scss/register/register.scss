@@ -17,12 +17,11 @@
 	width:100%;
 }
 .register-button{
-    background-color: $grayb;
 	border:none;
 	height:12%;
 }
 .register-social-buttons{
-    width:90%;
+		width:90%;
 }
 .register-term{
 	align-items: center;
@@ -33,6 +32,10 @@
 	justify-content: center;
 	text-align: center;
 	width:100%;
-    padding: 0 5px;
+		padding: 0 5px;
 	margin-top:8%;
+}
+.text-center-button{
+	width:100%;
+	padding-left:33%;
 }

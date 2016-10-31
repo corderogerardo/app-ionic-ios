@@ -4,43 +4,43 @@
 	padding-top: 10%;
 }
 .welcome-image{
-    margin-top: 10%;
+		margin-top: 10%;
 	align-items: center;
 	display:flex;
 	height: 40%;
 	flex-direction: column;
 	justify-content: center;
 	width:100%;
-    img{
-        margin-top: 10%;
-        width: 95%;
-        height: 200px;
-        background-color: rgba($graybb,.7);
-    }
+		img{
+				margin-top: 10%;
+				width: 95%;
+				height: 200px;
+				background-color: rgba($graybb,.7);
+		}
 }
 .welcome-info{
-    align-items: center;
-    display:flex;
-    height: 20%;
-    flex-direction: column;
-    justify-content: center;
-    width:100%;
-    p{
-        font-size: 2.5vh;
-        color: $graybbb;
-    }
+		align-items: center;
+		display:flex;
+		height: 20%;
+		flex-direction: column;
+		justify-content: center;
+		width:100%;
+		p{
+				font-size: 2.5vh;
+				color: $graybbb;
+		}
 }
 .welcome-dots{
-    align-items: center;
-    display:flex;
-    height: 5%;
-    flex-direction: column;
-    justify-content: center;
-    width:100%;
+		align-items: center;
+		display:flex;
+		height: 5%;
+		flex-direction: column;
+		justify-content: center;
+		width:100%;
 }
 
 .welcome-cols{
-    width: 80%;
+		width: 80%;
 	display:flex;
 	justify-content: center;
 }
@@ -48,7 +48,7 @@
 	border-radius: 50%;
 	background: $graybbb;
 	display:flex;
-    margin:0 1%;
+		margin:0 1%;
 	justify-content: center;
 	height:10px;
 	width: 10px;
@@ -61,9 +61,9 @@
 }
 .welcome-buttons{
 	align-items:center;
-    display:flex;
+	display:flex;
 	height: 5%;
-    margin-top: 5%;
+	margin-top: 20px;
 	flex-direction: column;
 	justify-content: center;
 	width:100%;
