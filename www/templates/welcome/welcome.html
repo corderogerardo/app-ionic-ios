@@ -1,38 +1,39 @@
 <ion-view view-title="Welcome">
 	<ion-content scroll="false">
-			<section class="welcome-welcome">
-				<div class="row welcome-rows">
-					<div class="col welcome-cols">
-						<img class="" src="../img/ionic.png">
-					</div>
-				</div>
-				<div class="row welcome-rows">
-					<div class="col welcome-cols">
-						<p class="text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-						tempor incididunt ut labore et dolore magna aliqua.</p>
-					</div>
-				</div>
-				<div class="row welcome-rows">
-					<div class="col welcome-cols">
-						<div class="points-welcome actived"></div>
-						<div class="points-welcome"></div>
-						<div class="points-welcome"></div>
-					</div>
-				</div>
-			</section>
-			<section class="welcome-buttons">
-				<a class="welcome-button" ui-sref="auth.login" title="">
-						<i class="ion-log-in"></i>
-						<p>INICIAR SESIÓN</p>
-				</a>
-				<a class="welcome-button button-blue" ui-sref="auth.register" title="">
-					<i class="ion-ios-personadd"></i>
-					<p>REGISTRARSE</p>
-				</a>
-			</section>
+        <section class="welcome-image">
+            <div class="welcome-cols">
+                <img class="">
+            </div>
+        </section>
+        <section class="welcome-info">
+            <div class="welcome-cols">
+                <p class="text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+        </section>
+        <section class="welcome-dots">
+            <div class="row welcome-rows">
+                <div class="col welcome-cols">
+                    <div class="points-welcome actived"></div>
+                    <div class="points-welcome"></div>
+                    <div class="points-welcome"></div>
+                </div>
+            </div>
+        </section>
+        <section class="welcome-buttons">
+            <div  class="container-button">
+                <a class="welcome-button button-noicon" ui-sref="auth.login" title="">
+                    <p>INICIAR SESIÓN</p>
+                </a>
+            </div>
+        </section>
+        <section class="welcome-buttons">
+        <div  class="container-button">
+                <a class="welcome-button button-noicon" ui-sref="auth.register" title="">
+                    <p>REGISTRARSE</p>
+                </a>
+            </div>
 
-
-
-
+        </section>
 	</ion-content>
 </ion-view>

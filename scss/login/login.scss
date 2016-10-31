@@ -1,67 +1,90 @@
-.login-form{
-	align-items: center;
+.inputs-wrapper{
+    align-items: center;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	height:60%;
-	width:100%;
-}
-.inputs-wrapper{
-	display: inline-flex;
-	flex-direction: column;
-	justify-content: center;
 	height:30%;
-	width:80%;
+    margin-top: 20%;
+    padding-top: 8%;
+	width:100%;
 }
 .button-wrapper{
-	display: inline-flex;
+    align-items: center;
+    display: inline-flex;
 	flex-direction: column;
 	justify-content: center;
-	height:20%;
-	width:80%;
-}
-.login-button{
-	display:inline-flex;
-	justify-content: center;
-	flex-direction: column;
 	width:100%;
-	margin-top:5%;
-	height:100%;
+    margin-bottom: 10%;
+    height: 5%;
 }
 .login-forgot-pass{
 	align-items: center;
 	display:flex;
-	color:$balanced;
-	font-size: 3vh;
+	color:$graybbb;
+	font-size: 2.5vh;
+    font-weight:bold;
 	margin-top: 2%;
 	text-decoration: none;
 	justify-content: center;
 	width:100%;
-	height:30%;
+	height:10%;
 }
 .login-container-social{
 	align-items: center;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	height:30%;
+    margin-bottom: 3%;
+    height:5%;
 	width:100%;
 }
 .login-new-container{
-	display:flex;
-	flex-direction: row;
-	color:$balanced;
-	height:20%;
-	justify-content: center;
-	text-decoration:none;
-	width:80%;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height:15%;
+    width:100%;
+    a{
+        align-items: center;
+        display:flex;
+        flex-direction: row;
+        color:rgba($graybbb,.8);
+        font-size: 2.5vh;
+        height:10%;
+        justify-content: center;
+        text-decoration:none;
+        width:100%;
+        label{
+            display:flex;
+            flex-direction: row;
+            color:$graybbb;
+            font-size: 2.5vh;
+            font-weight: bold;
+            margin-left: 3%;
+            cursor: pointer;
+            justify-content: center;
+            text-decoration:none;
+        }
+    }
 }
-.login-new-container label{
-	display:flex;
-	flex-direction: row;
-	color:$energized;
-	cursor: pointer;
-	justify-content: center;
-	text-decoration:none;
-	margin-left: 2%;
+.login-form{
+    background-color: $grayb;
+    align-items: center;
+    display: flex;
+    margin-top: 60%;
+    flex-direction: column;
+    justify-content: flex-start;
+    height:25%;
+    width:100%;
+}
+.button-wrapper-forgot{
+    background-color: $grayb;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin-top: 20%;
+    justify-content: center;
+    height:20%;
+    width:100%;
 }

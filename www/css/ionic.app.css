@@ -9805,6 +9805,13 @@ a.button {
   -webkit-transition-duration: 0s;
   transition-duration: 0s; }
 
+@font-face {
+  font-family: 'Gautami';
+  src: url("font-axpress/gautami.ttf");
+  src: url("font-axpress/gautami.ttf");
+  font-stretch: normal;
+  font-style: normal; }
+
 * {
   box-sizing: border-box; }
 
@@ -9813,7 +9820,7 @@ textarea,
 select,
 button {
   font-weight: 200;
-  padding-top: 0px;
+  padding-top: 0;
   outline: none; }
 
 input,
@@ -9823,30 +9830,69 @@ textarea {
 /* Generalized inputs */
 .inputs-container {
   display: flex;
-  height: 100%;
+  min-height: 50px;
   flex-direction: row;
-  width: 100%; }
+  margin-bottom: 5px;
+  border-bottom: 1px solid rgba(117, 117, 117, 0.5);
+  width: 90%; }
   .inputs-container i {
     align-items: center;
     display: flex;
     color: white;
+    font-size: 2.5vh;
     justify-content: center;
-    background-color: #065599;
-    width: 15%; }
+    width: 20%;
+    border-right: 1px solid rgba(117, 117, 117, 0.5); }
   .inputs-container label {
     align-items: center;
     display: flex;
     height: 100% !important;
     color: white;
     justify-content: center;
-    background-color: white;
-    width: 85%; }
+    width: 80%; }
     .inputs-container label input {
-      background-color: white;
-      font-size: 2vh;
+      background-color: rgba(230, 231, 255, 0.01);
+      font-size: 2.5vh;
+      color: #757575;
+      font-weight: bold;
       height: 70% !important;
       padding: 5%;
       width: 100%; }
+      .inputs-container label input:focus {
+        color: #757575;
+        font-weight: bold; }
+
+.inputs-container-last {
+  display: flex;
+  min-height: 50px;
+  flex-direction: row;
+  width: 90%; }
+  .inputs-container-last i {
+    align-items: center;
+    display: flex;
+    color: white;
+    font-size: 2.5vh;
+    justify-content: center;
+    width: 20%;
+    border-right: 1px solid rgba(117, 117, 117, 0.5); }
+  .inputs-container-last label {
+    align-items: center;
+    display: flex;
+    height: 100% !important;
+    color: white;
+    justify-content: center;
+    width: 80%; }
+    .inputs-container-last label input {
+      background-color: rgba(230, 231, 255, 0.01);
+      font-size: 2.5vh;
+      color: #757575;
+      font-weight: bold;
+      height: 70% !important;
+      padding: 5%;
+      width: 100%; }
+      .inputs-container-last label input:focus {
+        color: #757575;
+        font-weight: bold; }
 
 .white-space {
   margin-top: 5%; }
@@ -9864,6 +9910,9 @@ textarea {
 .space {
   height: 15%; }
 
+.spacetwo {
+  height: 5%; }
+
 .center-button {
   margin-left: auto;
   margin-right: auto;
@@ -9871,44 +9920,122 @@ textarea {
   height: 10%;
   width: 80%; }
 
+.bar,
+.bar.bar-header,
+.bar-balanced {
+  background-color: #757575;
+  border: 0;
+  font-size: 3vh;
+  font-weight: bold;
+  width: 100%;
+  margin: 0;
+  padding: 0; }
+
+.icon-user {
+  background-image: url("../img/inputs/user.png");
+  background-size: 40%;
+  background-repeat: no-repeat;
+  background-position: center; }
+
+.icon-pass {
+  background-image: url("../img/inputs/password.png");
+  background-size: 40%;
+  background-repeat: no-repeat;
+  background-position: center; }
+
+.icon-email {
+  background-image: url("../img/inputs/mail.png");
+  background-size: 40%;
+  background-repeat: no-repeat;
+  background-position: center; }
+
+.icon-marker-gray {
+  background-image: url("../img/inputs/pin-direccion.png");
+  background-size: 40%;
+  background-repeat: no-repeat;
+  background-position: center; }
+
+.icon-marker-color {
+  background-image: url("../img/inputs/pin-direccion1.png");
+  background-size: 40%;
+  background-repeat: no-repeat;
+  background-position: center; }
+
+.icon-flag-gray {
+  background-image: url("../img/inputs/Flag-direccion.png");
+  background-size: 40%;
+  background-repeat: no-repeat;
+  background-position: center; }
+
+.icon-flag-color {
+  background-image: url("../img/inputs/Flag-direccion1.png");
+  background-size: 40%;
+  background-repeat: no-repeat;
+  background-position: center; }
+
+ion-content {
+  background-image: url("../img/backgrounds/fondo1.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center; }
+
 .container-button {
-  display: inline-flex;
-  justify-content: space-around;
+  align-items: center;
+  display: lex;
+  justify-content: center;
   flex-direction: column;
-  font-size: 2vh;
-  width: 80%;
-  height: 100%; }
+  cursor: pointer;
+  width: 92%;
+  height: 50px; }
 
 .button-noicon {
-  border: none;
   align-items: center;
   display: flex;
+  background-image: url("../img/buttons/boton1.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: right;
+  background-color: #e6e7ff;
+  border: none;
   color: white;
+  cursor: pointer;
   text-decoration: none;
   justify-content: center;
-  font-size: 2vh;
-  background-color: #065599;
+  font-size: 2.5vh;
+  font-weight: bold;
   width: 100%;
   height: 100%; }
+  .button-noicon:hover {
+    background-image: url("../img/buttons/boton2.png"); }
+  .button-noicon p {
+    display: flex;
+    flex-direction: row;
+    font-size: 2.5vh; }
+  .button-noicon a {
+    font-size: 2.5vh;
+    font-weight: bold; }
 
 .two-buttons-container-column {
   align-items: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 20%;
+  cursor: pointer;
+  margin-bottom: 5%;
+  height: 6%;
   width: 100%; }
 
 .button-icon {
+  border: none;
   align-items: center;
-  background-color: #387ef5;
   display: flex;
   color: white;
   flex-direction: row;
   justify-content: center;
+  text-align: center;
+  cursor: pointer;
   height: 100%;
   font-size: 2vh;
-  margin-bottom: 4%;
   width: 100%;
   text-decoration: none; }
   .button-icon i {
@@ -9927,7 +10054,8 @@ textarea {
     font-size: 2.5vh;
     justify-content: center;
     height: 100%;
-    width: 85%; }
+    width: 85%;
+    font-weight: bold; }
 
 .facebook {
   background-color: #065599; }
@@ -9951,183 +10079,190 @@ textarea {
   border-bottom: 20px solid #065599;
   padding-top: 10%; }
 
-.welcome-welcome {
+.welcome-image {
+  margin-top: 10%;
   align-items: center;
   display: flex;
-  height: 80%;
+  height: 40%;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%; }
+  .welcome-image img {
+    margin-top: 10%;
+    width: 95%;
+    height: 200px;
+    background-color: rgba(195, 195, 195, 0.7); }
+
+.welcome-info {
+  align-items: center;
+  display: flex;
+  height: 20%;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%; }
+  .welcome-info p {
+    font-size: 2.5vh;
+    color: #757575; }
+
+.welcome-dots {
+  align-items: center;
+  display: flex;
+  height: 5%;
   flex-direction: column;
   justify-content: center;
   width: 100%; }
 
-.welcome-rows {
-  display: flex;
-  margin: 10% 0; }
-
 .welcome-cols {
+  width: 80%;
   display: flex;
   justify-content: center; }
 
 .points-welcome {
   border-radius: 50%;
-  background: #065599;
+  background: #757575;
   display: flex;
+  margin: 0 1%;
   justify-content: center;
-  margin: 0px 8px;
-  height: 15px;
-  width: 15px; }
+  height: 10px;
+  width: 10px; }
 
 .actived {
   border-radius: 50%;
   background: #EA8528;
-  height: 15px;
-  width: 15px; }
+  height: 11px;
+  width: 11px; }
 
 .welcome-buttons {
   align-items: center;
   display: flex;
-  height: 20%;
+  height: 5%;
+  margin-top: 5%;
   flex-direction: column;
-  justify-content: space-around;
-  width: 100%; }
-
-.welcome-button {
-  align-items: center;
-  border: 2px solid #EA8528;
-  color: #444;
-  display: flex;
-  flex-direction: row;
-  font-size: 2vh;
   justify-content: center;
-  width: 80%;
-  height: 40%;
-  text-decoration: none; }
-  .welcome-button i {
-    align-items: center;
-    font-size: 4vh;
-    display: flex;
-    color: #EA8528;
-    justify-content: center;
-    border-radius: 50%;
-    margin-right: 5%; }
-  .welcome-button:hover {
-    background-color: #EA8528;
-    color: #f8f8f8; }
-    .welcome-button:hover i {
-      color: white; }
-
-.button-blue {
-  border: 2px solid #065599; }
-  .button-blue i {
-    align-items: center;
-    font-size: 4vh;
-    display: flex;
-    color: #065599;
-    justify-content: center;
-    border-radius: 50%;
-    margin-right: 5%; }
-  .button-blue:hover {
-    background-color: #065599;
-    color: #f8f8f8; }
-    .button-blue:hover i {
-      color: white; }
+  width: 100%; }
 
 .welcome-login,
 .welcome-register,
 p {
   align-items: center;
   display: flex;
-  margin: 5px 0px;
+  margin: 5px 0;
   font-size: 2vh;
   flex-direction: column;
   justify-content: center; }
 
-.login-form {
+.inputs-wrapper {
   align-items: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 60%;
+  height: 30%;
+  margin-top: 20%;
+  padding-top: 8%;
   width: 100%; }
 
-.inputs-wrapper {
-  display: inline-flex;
-  flex-direction: column;
-  justify-content: center;
-  height: 30%;
-  width: 80%; }
-
 .button-wrapper {
+  align-items: center;
   display: inline-flex;
   flex-direction: column;
   justify-content: center;
-  height: 20%;
-  width: 80%; }
-
-.login-button {
-  display: inline-flex;
-  justify-content: center;
-  flex-direction: column;
   width: 100%;
-  margin-top: 5%;
-  height: 100%; }
+  margin-bottom: 10%;
+  height: 5%; }
 
 .login-forgot-pass {
   align-items: center;
   display: flex;
-  color: #065599;
-  font-size: 3vh;
+  color: #757575;
+  font-size: 2.5vh;
+  font-weight: bold;
   margin-top: 2%;
   text-decoration: none;
   justify-content: center;
   width: 100%;
-  height: 30%; }
+  height: 10%; }
 
 .login-container-social {
   align-items: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 30%;
+  margin-bottom: 3%;
+  height: 5%;
   width: 100%; }
 
 .login-new-container {
+  align-items: center;
   display: flex;
-  flex-direction: row;
-  color: #065599;
-  height: 20%;
+  flex-direction: column;
   justify-content: center;
-  text-decoration: none;
-  width: 80%; }
+  height: 15%;
+  width: 100%; }
+  .login-new-container a {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    color: rgba(117, 117, 117, 0.8);
+    font-size: 2.5vh;
+    height: 10%;
+    justify-content: center;
+    text-decoration: none;
+    width: 100%; }
+    .login-new-container a label {
+      display: flex;
+      flex-direction: row;
+      color: #757575;
+      font-size: 2.5vh;
+      font-weight: bold;
+      margin-left: 3%;
+      cursor: pointer;
+      justify-content: center;
+      text-decoration: none; }
 
-.login-new-container label {
+.login-form {
+  background-color: #e6e7ff;
+  align-items: center;
   display: flex;
-  flex-direction: row;
-  color: #EA8528;
-  cursor: pointer;
+  margin-top: 60%;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: 25%;
+  width: 100%; }
+
+.button-wrapper-forgot {
+  background-color: #e6e7ff;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin-top: 20%;
   justify-content: center;
-  text-decoration: none;
-  margin-left: 2%; }
+  height: 20%;
+  width: 100%; }
 
 .register-container-tradictional {
   align-items: center;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  height: 60%;
+  justify-content: center;
+  height: 45%;
   width: 100%; }
   .register-container-tradictional form {
-    border: 1px sold blue; }
+    border: 1px solid blue; }
 
 .register-traditional-input {
-  display: inline-flex;
+  display: flex;
   flex-direction: column;
   justify-content: center;
   height: 50%;
-  width: 80%; }
+  width: 100%; }
 
 .register-button {
+  background-color: #e6e7ff;
   border: none;
-  height: 40px; }
+  height: 12%; }
+
+.register-social-buttons {
+  width: 90%; }
 
 .register-term {
   align-items: center;
@@ -10138,8 +10273,8 @@ p {
   justify-content: center;
   text-align: center;
   width: 100%;
-  margin-top: 5%;
-  margin-bottom: 5%; }
+  padding: 0 5px;
+  margin-top: 8%; }
 
 .select-send-type {
   align-items: center;
@@ -10197,14 +10332,37 @@ p {
   display: flex; }
 
 .input-direction {
+  align-items: center;
+  background-color: #e6e7ff;
   display: flex;
-  height: 10%;
-  flex-direction: row;
-  width: 80%;
+  height: 25%;
+  flex-direction: column;
+  width: 100%;
   position: absolute;
-  top: 25%;
-  left: 10%;
+  justify-content: center;
   right: auto; }
+
+.direction-marker input:focus .icon-marker-gray {
+  background-image: url("../img/inputs/pin-direccion1.png");
+  background-size: 40%;
+  background-repeat: no-repeat;
+  background-position: center; }
+
+@media screen and (max-height: 736px) {
+  .input-direction {
+    top: 6%; } }
+
+@media screen and (max-height: 667px) {
+  .input-direction {
+    top: 6%; } }
+
+@media screen and (max-height: 568px) {
+  .input-direction {
+    top: 7%; } }
+
+@media screen and (max-height: 480px) {
+  .input-direction {
+    top: 9%; } }
 
 .maps-list-places {
   display: flex;
@@ -10220,8 +10378,8 @@ p {
   width: 80%;
   position: absolute;
   left: 10%;
-  height: 8%;
-  bottom: 50px; }
+  height: 7%;
+  bottom: 3%; }
 
 .confirm-button {
   width: 80%;

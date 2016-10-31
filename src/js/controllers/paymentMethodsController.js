@@ -9,7 +9,8 @@ angular.module('axpress')
 
             $scope.confirmPaymentMethod = function () {
                 console.log($scope.doc.paymentChoice.name);
-                Shipping.register($scope.doc.descriptionText,1,$scope.doc.quotation.kilometers_text,$rootScope.user.name,$scope.doc.originAddress,$scope.doc.originLatitude,$scope.doc.originLongitude,$scope.doc.destinyAddress,$scope.doc.destinyLatitude,$scope.doc.destinyLongitude,$scope.doc.quotation.price,$scope.doc.quotation.declaredvalue,$scope.doc.typeServices,$scope.doc.quotation.price,$scope.doc.quotation.time).then(function(response){
+                console.log(typeof(new Date()));
+                Shipping.register($scope.doc.descriptionText,1,$scope.doc.quotation.kilometers_text,$rootScope.user.name,$scope.doc.originAddress,$scope.doc.originLatitude,$scope.doc.originLongitude,$scope.doc.destinyAddress,$scope.doc.destinyLatitude,$scope.doc.destinyLongitude,$scope.doc.quotation.price,$scope.doc.quotation.declaredvalue,$scope.doc.typeServices,0,new Date()).then(function(response){
                     console.log(response);
                     $state.go("menu");
                 },function(error){

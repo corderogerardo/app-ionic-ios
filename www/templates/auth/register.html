@@ -6,51 +6,51 @@
 		<div class="space"></div>
 		<form class="register-container-tradictional" id="registerForm" name="registerForm" ng-submit="doRegister(registerForm)" accept-charset="utf-8" novalidate>
 
-		<div class="register-traditional-input">
-			<div class="inputs-container border-blue">
-				<i class="ion-person"></i>
+			<div class="inputs-container">
+				<i class="icon-user"></i>
 				<label class="">
 					<input type="text" name="name" ng-model="user.name" placeholder="Nombre" required>
 				</label>
 			</div>
-			<div class="inputs-container border-blue">
-				<i class="ion-locked"></i>
+			<div class="inputs-container">
+				<i class="icon-pass"></i>
 				<label class="">
 					<input type="password" name="pass" ng-model="user.password" placeholder="Contraseña" required>
 				</label>
 			</div>
-			<div class="inputs-container border-blue">
-				<i class="ion-email"></i>
+			<div class="inputs-container">
+				<i class="icon-email"></i>
 				<label class="">
 					<input type="email" name="email" ng-model="user.email" placeholder="Correo Electrónico" required>
 				</label>
-			</div>
-		</div>
+		    </div>
 		<!-- <div class="padding">
 		<p ng-show="!registerForm.name.$pristine">* Nombre de usuario requerido.</p>
 		<p ng-show="!registerForm.pass.$pristine">* Contraseña requerida.</p>
 		<p ng-show="registerForm.email.$invalid && !registerForm.email.$pristine">* Email valido Requerido.</p>
 		<p ng-show="!registerForm.phone.$pristine">* Telefono de usuario requerido.</p>
 		</div> -->
-		<div class="container-button register-button white-space">
+		<div class="container-button register-button  white-space">
 		<button type="submit" class="button-noicon" href="" title="" ng-disabled="registerForm.$invalid">REGISTRARSE</button>
 		</div>
-			<a class="register-term"  title="">Al registrarte, aceptas términos y condiciones de uso, la politica de privacidad y los terminos de uso de Axpress.</a>
+
 		</form>
+        <div class="spacetwo"></div>
 		<section class="two-buttons-container-column">
-			<a ng-click="registerWithFacebook()" class="button-icon facebook">
-				<i class="ion-social-facebook"></i>
+			<a ng-click="registerWithFacebook()" class="button-icon facebook register-social-buttons">
 				<label>
 				Registrarse con facebook
 				</label>
 			</a>
-			<a ng-click="registerWithGoogle()" class="button-icon gplus">
-				<i class="ion-social-googleplus"></i>
+        </section>
+        <section class="two-buttons-container-column">
+        <a ng-click="registerWithGoogle()" class="button-icon gplus register-social-buttons">
 				<label>
 				Registrarse con google
 				</label>
 			</a>
 		</section>
+        <a class="register-term"  title="">Al registrarte, aceptas términos y condiciones de uso, la politica de privacidad y los terminos de uso de Axpress.</a>
 
 
 	</ion-content>

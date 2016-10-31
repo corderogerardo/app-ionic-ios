@@ -2,23 +2,27 @@
 	align-items: center;
 	display: flex;
 	flex-direction: column;
-	justify-content: flex-start;
-	height:60%;
+	justify-content: center;
+	height:45%;
 	width:100%;
 	form{
-		border:1px sold blue;
+		border:1px solid blue;
 	}
 }
 .register-traditional-input{
-	display: inline-flex;
+	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	height:50%;
-	width:80%;
+	width:100%;
 }
 .register-button{
+    background-color: $grayb;
 	border:none;
-	height:40px;
+	height:12%;
+}
+.register-social-buttons{
+    width:90%;
 }
 .register-term{
 	align-items: center;
@@ -29,6 +33,6 @@
 	justify-content: center;
 	text-align: center;
 	width:100%;
-	margin-top:5%;
-	margin-bottom:5%;
+    padding: 0 5px;
+	margin-top:8%;
 }
