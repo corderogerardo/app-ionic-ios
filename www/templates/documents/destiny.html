@@ -1,29 +1,29 @@
 <div class="bar bar-header bar-balanced">
-     <h3 class="title">DESTINO DEL DOCUMENTO</h3>
+		 <h3 class="title">DESTINO DEL DOCUMENTO</h3>
 </div>
 <ion-view view-title="SendType">
-    <ion-content scroll="false" >
+		<ion-content scroll="false" >
 
-        <address-selection center="place" markers="markers"></address-selection>
-        
-        <div class="input-direction">
-            <div class="inputs-container">
-                <i class="icon-marker-gray"></i>
-                <label>
-                    <map-autocomplete-address on-place-changed="placeChanged" address="address"></map-autocomplete-address>
-                </label>
-            </div>
-            <div class="inputs-container-last flag-maps">
-                <i class="icon-flag-gray"></i>
-                <label>
-                    <input ng-model="doc.destinyDetail" type="text" placeholder="Detalles de direccion">
-                </label>
-            </div>
-        </div>
+				<address-selection center="place" markers="markers"></address-selection>
 
-        <div class="pickuphere-button">
-            <button class="button-noicon" ng-click="confirmDestiny()" title="">ENTREGAR AQUÍ</button>
-        </div>
-    </ion-content>
+				<div class="input-direction">
+						<div class="inputs-container">
+								<i class="icon-marker-color2"></i>
+								<label>
+										<map-autocomplete-address on-place-changed="placeChanged" address="address"></map-autocomplete-address>
+								</label>
+						</div>
+						<div class="inputs-container-last flag-maps">
+								<i class="icon-flag-color2"></i>
+								<label>
+										<input ng-model="doc.destinyDetail" type="text" placeholder="Detalles de direccion">
+								</label>
+						</div>
+				</div>
+
+				<div class="pickuphere-button">
+						<a class="button-noicon" ng-click="confirmDestiny()" title="">ENTREGAR AQUÍ</a>
+				</div>
+		</ion-content>
 </ion-view>
 

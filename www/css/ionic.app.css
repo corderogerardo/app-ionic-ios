@@ -9841,14 +9841,14 @@ textarea {
     color: white;
     font-size: 2.5vh;
     justify-content: center;
-    width: 20%;
-    border-right: 1px solid rgba(117, 117, 117, 0.5); }
+    width: 20%; }
   .inputs-container label {
     align-items: center;
     display: flex;
     height: 100% !important;
     color: white;
     justify-content: center;
+    border-left: 1px solid rgba(117, 117, 117, 0.5);
     width: 80%; }
     .inputs-container label input {
       background-color: rgba(230, 231, 255, 0.01);
@@ -9873,14 +9873,14 @@ textarea {
     color: white;
     font-size: 2.5vh;
     justify-content: center;
-    width: 20%;
-    border-right: 1px solid rgba(117, 117, 117, 0.5); }
+    width: 20%; }
   .inputs-container-last label {
     align-items: center;
     display: flex;
     height: 100% !important;
     color: white;
     justify-content: center;
+    border-left: 1px solid rgba(117, 117, 117, 0.5);
     width: 80%; }
     .inputs-container-last label input {
       background-color: rgba(230, 231, 255, 0.01);
@@ -9893,6 +9893,9 @@ textarea {
       .inputs-container-last label input:focus {
         color: #757575;
         font-weight: bold; }
+
+.no-left-border {
+  border: none !important; }
 
 .white-space {
   margin-top: 5%; }
@@ -9949,6 +9952,18 @@ textarea {
   background-repeat: no-repeat;
   background-position: center; }
 
+.icon-phone {
+  background-image: url("../img/inputs/Phone.png");
+  background-size: 40%;
+  background-repeat: no-repeat;
+  background-position: center; }
+
+.icon-cinit {
+  background-image: url("../img/inputs/CajaText-Cedula.png");
+  background-size: 40%;
+  background-repeat: no-repeat;
+  background-position: center; }
+
 .icon-marker-gray {
   background-image: url("../img/inputs/pin-direccion.png");
   background-size: 40%;
@@ -9957,6 +9972,12 @@ textarea {
 
 .icon-marker-color {
   background-image: url("../img/inputs/pin-direccion1.png");
+  background-size: 40%;
+  background-repeat: no-repeat;
+  background-position: center; }
+
+.icon-marker-color2 {
+  background-image: url("../img/inputs/pin-direccion2.png");
   background-size: 40%;
   background-repeat: no-repeat;
   background-position: center; }
@@ -9973,29 +9994,38 @@ textarea {
   background-repeat: no-repeat;
   background-position: center; }
 
+.icon-flag-color2 {
+  background-image: url("../img/inputs/Flag-direccion2.png");
+  background-size: 40%;
+  background-repeat: no-repeat;
+  background-position: center; }
+
 ion-content {
   background-image: url("../img/backgrounds/fondo1.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center; }
 
+ion-radio {
+  background-color: none; }
+
 .container-button {
   align-items: center;
-  display: lex;
+  display: flex;
   justify-content: center;
   flex-direction: column;
   cursor: pointer;
   width: 92%;
-  height: 50px; }
+  height: 30px; }
 
 .button-noicon {
   align-items: center;
+  background-color: transparent;
   display: flex;
   background-image: url("../img/buttons/boton1.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: right;
-  background-color: #e6e7ff;
   border: none;
   color: white;
   cursor: pointer;
@@ -10070,6 +10100,13 @@ ion-content {
 .bgorange {
   background-color: #EA8528; }
 
+.button-bottom {
+  width: 100%;
+  position: absolute;
+  left: 5%;
+  height: 5%;
+  bottom: 3%; }
+
 /* shapes Use mode:
  * .class {@include circle(200px,black);display:block}
 	.class {@include triangle(100px, right, red);display:block}
@@ -10136,7 +10173,7 @@ ion-content {
   align-items: center;
   display: flex;
   height: 5%;
-  margin-top: 5%;
+  margin-top: 20px;
   flex-direction: column;
   justify-content: center;
   width: 100%; }
@@ -10225,16 +10262,15 @@ p {
   display: flex;
   margin-top: 60%;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: center;
   height: 25%;
   width: 100%; }
 
 .button-wrapper-forgot {
-  background-color: #e6e7ff;
   align-items: center;
   display: flex;
   flex-direction: column;
-  margin-top: 20%;
+  margin-top: 5%;
   justify-content: center;
   height: 20%;
   width: 100%; }
@@ -10257,7 +10293,6 @@ p {
   width: 100%; }
 
 .register-button {
-  background-color: #e6e7ff;
   border: none;
   height: 12%; }
 
@@ -10275,6 +10310,10 @@ p {
   width: 100%;
   padding: 0 5px;
   margin-top: 8%; }
+
+.text-center-button {
+  width: 100%;
+  padding-left: 33%; }
 
 .select-send-type {
   align-items: center;
@@ -10333,9 +10372,9 @@ p {
 
 .input-direction {
   align-items: center;
-  background-color: #e6e7ff;
+  background-color: #E6E6E6;
   display: flex;
-  height: 25%;
+  height: 20%;
   flex-direction: column;
   width: 100%;
   position: absolute;
@@ -10350,19 +10389,19 @@ p {
 
 @media screen and (max-height: 736px) {
   .input-direction {
-    top: 6%; } }
+    top: 5%; } }
 
 @media screen and (max-height: 667px) {
   .input-direction {
-    top: 6%; } }
+    top: 6.8%; } }
 
 @media screen and (max-height: 568px) {
   .input-direction {
-    top: 7%; } }
+    top: 11%; } }
 
 @media screen and (max-height: 480px) {
   .input-direction {
-    top: 9%; } }
+    top: 9.7%; } }
 
 .maps-list-places {
   display: flex;
@@ -10375,18 +10414,18 @@ p {
   z-index: 1; }
 
 .pickuphere-button {
-  width: 80%;
+  width: 90%;
   position: absolute;
-  left: 10%;
-  height: 7%;
+  left: 5%;
+  height: 5%;
   bottom: 3%; }
 
 .confirm-button {
-  width: 80%;
+  width: 90%;
   position: absolute;
-  left: 10%;
+  left: 5%;
   height: 8%;
-  bottom: 50px; }
+  bottom: 3%; }
   .confirm-button a {
     background-color: #EA8528; }
 
@@ -10432,22 +10471,20 @@ p {
     display: flex;
     justify-content: center;
     text-align: center;
-    width: 70%; }
+    width: 100%; }
   .send-type-todo span {
-    color: #065599;
-    font-size: 3vh;
+    color: #757575;
+    font-size: 2.5vh;
+    font-weight: bold;
     height: 50%;
     width: 100%; }
-    .send-type-todo span a {
-      color: #886aea;
-      margin: 0 5px; }
 
 .send-type-icon {
   align-items: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: auto; }
+  height: 30%; }
   .send-type-icon img {
     color: #065599;
     height: 60%;
@@ -10474,9 +10511,10 @@ p {
 
 .caracteristics-title {
   align-items: center;
-  color: #065599;
+  color: #757575;
   display: flex;
-  font-size: 3vh;
+  font-size: 2.5vh;
+  font-weight: bold;
   flex-direction: column;
   justify-content: center;
   text-align: center;
@@ -10487,15 +10525,17 @@ p {
   align-items: center;
   display: flex;
   flex-direction: column;
+  margin-top: 5%;
   justify-content: center;
   width: 100%;
   height: 30%; }
 
 .caracteristics-inputs {
-  display: inline-flex;
+  align-items: center;
+  display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 80%;
+  width: 100%;
   height: 100%; }
 
 .caracteristics-documents {
@@ -10504,23 +10544,29 @@ p {
   flex-direction: column;
   margin-top: 10%;
   justify-content: space-around;
-  height: 20%;
+  height: 30%;
   width: 100%; }
 
 .caracteristics-documents-title {
-  font-size: 3vh;
-  color: #065599; }
+  font-size: 2.5vh;
+  color: #757575;
+  font-weight: bold;
+  margin-bottom: 3%; }
 
 .input-caracteristics {
   align-items: center;
+  background-color: #E6E6E6;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 80%;
-  width: 80%; }
+  height: 100%;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  width: 100%; }
 
 .caracteristics-button {
   align-items: center;
+  background-color: #E6E6E6;
   display: flex;
   justify-content: center;
   margin-right: auto;
