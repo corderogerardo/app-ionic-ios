@@ -1,11 +1,11 @@
-(function () {
+(function() {
     angular.module('axpress')
-    .controller("AccountController", AccountController);
+        .controller("AccountController", AccountController);
 
-    AccountController.$inject = ['$scope','$rootScope','$ionicPopup', 'Client'];
+    AccountController.$inject = ['$scope', '$rootScope', '$ionicPopup', 'Client'];
 
-    function AccountController ($scope,$rootScope,$ionicPopup, Client) {
-        $rootScope.user={
+    function AccountController($scope, $rootScope, $ionicPopup, Client) {
+        $rootScope.user = {
             name: "Developer",
             pass: "123456",
             email: "developer@gmail.com",
@@ -13,17 +13,15 @@
         };
         $scope.user = $rootScope.user;
 
-        $scope.doAccountUpdate = function(accountForm){
-            if(accountForm.$valid){
+        $scope.doAccountUpdate = function(accountForm) {
+            if (accountForm.$valid) {
                 Client.edit($scope.user)
-                    .then(function(data){
+                    .then(function(data) {
                         console.log(data);
-                    },function(error){
-                    });
+                    }, function(error) {});
 
             }
         };
-
     }
 })();
 ;
@@ -279,24 +277,23 @@
 })();
 ;
 
-(function(){
+(function() {
     angular.module('axpress')
-    .controller('CaracteristicsController',CaracteristicsController);
+        .controller('CaracteristicsController', CaracteristicsController);
 
-    CaracteristicsController.$inject = ['$rootScope','$scope', '$cordovaDialogs', '$state','$ionicPopup'];
+    CaracteristicsController.$inject = ['$rootScope', '$scope', '$cordovaDialogs', '$state', '$ionicPopup'];
 
-    function CaracteristicsController($rootScope,$scope,$cordovaDialogs, $state, $ionicPopup) {
-        console.log("Caracteristics Controller");
+    function CaracteristicsController($rootScope, $scope, $cordovaDialogs, $state, $ionicPopup) {
+        activate();
 
-        initialize();
-
-        $scope.saveCaracteristics = function () {
+        $scope.saveCaracteristics = function() {
             /* $ionicPopup.alert({title: 'Destinatary', template: JSON.stringify( $scope.data)});*/
             $scope.doc.destinatary = $scope.destinatary;
             $scope.doc.caracteristics = $scope.caracteristics;
             $state.go("document.imagephoto");
         };
-        function initialize(){
+
+        function activate() {
             $scope.destinatary = {
                 email: "",
                 username: "",
@@ -333,48 +330,48 @@ angular.module('axpress')
 }]);
 ;
 
-(function () {
+(function() {
     angular.module('axpress')
-    .controller('DocumentDestinyController', DocumentDestinyController);
+        .controller('DocumentDestinyController', DocumentDestinyController);
 
     DocumentDestinyController.$inject = ['$rootScope', '$scope', '$cordovaDialogs', '$state', '$ionicPopup'];
 
-    function DocumentDestinyController ($rootScope,$scope,$cordovaDialogs, $state, $ionicPopup){
+    function DocumentDestinyController($rootScope, $scope, $cordovaDialogs, $state, $ionicPopup) {
 
-        initialize();
+        activate();
 
         $scope.placeChanged = function() {
             $scope.place = this.getPlace();
             $scope.markers[1].position = $scope.place.geometry.location;
         };
 
-        $scope.confirmDestiny = function(){
+        $scope.confirmDestiny = function() {
             $scope.doc.destinyAddress = $scope.place.formatted_address;
             $scope.doc.destinyLatitude = $scope.place.geometry.location.lat();
             $scope.doc.destinyLongitude = $scope.place.geometry.location.lng();
             $scope.extraData.destinyPlace = $scope.place;
-            if($scope.extraData.editDestiny === true){
+            if ($scope.extraData.editDestiny === true) {
                 $scope.extraData.editDestiny = false;
                 $state.go("document.resume");
 
-            }else{
+            } else {
                 $state.go("document.servicetype");
             }
         };
 
-        function setExistingAddress () {
-            $scope.markers[1].position = ""+$scope.doc.destinyLatitude+","+$scope.doc.destinyLongitude;
+        function setExistingAddress() {
+            $scope.markers[1].position = "" + $scope.doc.destinyLatitude + "," + $scope.doc.destinyLongitude;
             $scope.address = $scope.doc.originAddress;
             $scope.place = $state.current.data.extraData.destinyPlace;
         }
 
-        function initialize () {
+        function activate() {
             $scope.doc = $state.current.data.doc;
             $scope.extraData = $state.current.data.extraData;
             $scope.markers = [{
                 title: 'Origen',
                 position: [$scope.doc.originLatitude, $scope.doc.originLongitude]
-            },{
+            }, {
                 title: 'Destino'
             }];
 
@@ -386,42 +383,42 @@ angular.module('axpress')
 })();
 ;
 
-(function () {
+(function() {
     angular.module('axpress')
-    .controller('DocumentOriginController', DocumentOriginController);
+        .controller('DocumentOriginController', DocumentOriginController);
 
     DocumentOriginController.$inject = ['$rootScope', '$scope', '$cordovaDialogs', '$state', '$ionicPopup'];
 
-    function DocumentOriginController ($rootScope,$scope,$cordovaDialogs, $state, $ionicPopup){
+    function DocumentOriginController($rootScope, $scope, $cordovaDialogs, $state, $ionicPopup) {
 
-        initialize();
+        activate();
 
         $scope.placeChanged = function() {
             $scope.place = this.getPlace();
             $scope.markers[0].position = $scope.place.geometry.location;
         };
 
-        $scope.confirmOrigin = function(){
+        $scope.confirmOrigin = function() {
             $scope.doc.originAddress = $scope.place.formatted_address;
             $scope.doc.originLatitude = $scope.place.geometry.location.lat();
             $scope.doc.originLongitude = $scope.place.geometry.location.lng();
             $scope.extraData.originPlace = $scope.place;
-            if($scope.extraData.editOrigin === true){
+            if ($scope.extraData.editOrigin === true) {
                 $scope.extraData.editOrigin = false;
                 $state.go("document.resume");
 
-            }else{
+            } else {
                 $state.go("document.destiny");
             }
         };
 
-        function setExistingAddress () {
-            $scope.markers[0].position = ""+$scope.doc.originLatitude+","+$scope.doc.originLongitude;
+        function setExistingAddress() {
+            $scope.markers[0].position = "" + $scope.doc.originLatitude + "," + $scope.doc.originLongitude;
             $scope.address = $scope.doc.originAddress;
             $scope.place = $state.current.data.extraData.originPlace;
         }
 
-        function initialize () {
+        function activate() {
             $scope.doc = $state.current.data.doc;
             $scope.extraData = $state.current.data.extraData;
             $scope.markers = [{
@@ -435,34 +432,34 @@ angular.module('axpress')
 })();
 ;
 
-(function () {
+(function() {
     angular.module('axpress')
-    .controller('ServiceTypeController', ServiceTypeController);
+        .controller('ServiceTypeController', ServiceTypeController);
 
     ServiceTypeController.$inject = ['$rootScope', '$scope', '$cordovaDialogs', '$state'];
 
-    function ServiceTypeController ($rootScope, $scope, $cordovaDialogs, $state) {
-        initialize();
+    function ServiceTypeController($rootScope, $scope, $cordovaDialogs, $state) {
+        activate();
 
-        $scope.confirmServiceType = function(){
+        $scope.confirmServiceType = function() {
             $scope.doc.typeServices = $state.params.serviceType;
             $scope.doc.bagId = $scope.choice.bag.shipping_bag_id;
             $scope.extraData.bag = $scope.choice.bag;
-            if($scope.extraData.editFeatures === true){
+            if ($scope.extraData.editFeatures === true) {
                 $scope.extraData.editFeatures = false;
                 $state.go("document.resume");
 
-            }else{
+            } else {
                 $state.go("document.features");
             }
         };
 
-        function initialize () {
+        function activate() {
             $scope.choice = {};
             $scope.doc = $state.current.data.doc;
             $scope.extraData = $state.current.data.extraData;
-            $scope.menu.forEach(function (option) {
-                if(option.service_provider_id == $state.params.serviceType){
+            $scope.menu.forEach(function(option) {
+                if (option.service_provider_id == $state.params.serviceType) {
                     $scope.bagservice = option.bag_services;
                     return;
                 }
@@ -472,26 +469,26 @@ angular.module('axpress')
 })();
 ;
 
-(function () {
+(function() {
     angular.module('axpress')
-    .controller('FeaturesController', FeaturesController);
+        .controller('FeaturesController', FeaturesController);
 
     FeaturesController.$inject = ['$rootScope', '$scope', '$cordovaDialogs', '$state'];
 
-    function FeaturesController ($rootScope, $scope, $cordovaDialogs, $state) {
-        initialize();
+    function FeaturesController($rootScope, $scope, $cordovaDialogs, $state) {
+        activate();
 
-        $scope.saveCaracteristics = function () {
-            if($scope.extraData.editDestinatary === true){
+        $scope.saveCaracteristics = function() {
+            if ($scope.extraData.editDestinatary === true) {
                 $scope.extraData.editDestinatary = false;
                 $state.go("document.resume");
 
-            }else{
+            } else {
                 $state.go($scope.extraData.featuresNext);
             }
         };
 
-        function initialize () {
+        function activate() {
             $scope.doc = $state.current.data.doc;
             $scope.extraData = $state.current.data.extraData;
 
@@ -500,87 +497,86 @@ angular.module('axpress')
 })();
 ;
 
-/**
- * @summary HistoryController
- *
- */
-angular.module('axpress')
-.controller('HistoryController', ['$scope', function($scope) {
-
-    $scope.groups = [{
-        "id": 1,
-        "name": "DOCUMENTOS",
-        "fecha": "30 - 09 - 2016",
-        "iconURL": "http://ionicframework.com/img/docs/venkman.jpg"
-    }, {
-        "id": 2,
-        "name": "PAQUETES",
-        "fecha": "30 - 09 - 2016",
-        "iconURL": "http://ionicframework.com/img/docs/barrett.jpg"
-    }];
-
-    $scope.toggleGroup = function(group) {
-        if ($scope.isGroupShown(group)) {
-            $scope.shownGroup = null;
-        } else {
-            $scope.shownGroup = group;
-        }
-        // $ionicScrollDelegate.resize();
-    };
-
-    $scope.isGroupShown = function(group) {
-        return $scope.shownGroup === group;
-    };
-    
-}]);
-;
-
-(function () {
+(function() {
     angular.module('axpress')
-    .controller('MenuController', MenuController);
+        .controller('HistoryController', HistoryController);
 
-    MenuController.$inject = ['$rootScope', '$scope', '$state'];
+    HistoryController.$inject = ['$scope'];
 
-    function MenuController ($rootScope, $scope, $state){
-        /*We are going to fill the bag_services data in MenuController following the option selected*/
+    function HistoryController($scope) {
 
-        $scope.menuoptions = $rootScope.menu;
+        $scope.groups = [{
+            "id": 1,
+            "name": "DOCUMENTOS",
+            "fecha": "30 - 09 - 2016",
+            "iconURL": "http://ionicframework.com/img/docs/venkman.jpg"
+        }, {
+            "id": 2,
+            "name": "PAQUETES",
+            "fecha": "30 - 09 - 2016",
+            "iconURL": "http://ionicframework.com/img/docs/barrett.jpg"
+        }];
 
-        var urlsPerServiceType = {43: 'document.origin', 44: 'package.origin', 45: 'diligence.origin'};
+        $scope.toggleGroup = function(group) {
+            if ($scope.isGroupShown(group)) {
+                $scope.shownGroup = null;
+            } else {
+                $scope.shownGroup = group;
+            }
+            // $ionicScrollDelegate.resize();
+        };
 
-        $scope.moveTo = function (option) {
-            $state.go(urlsPerServiceType[option.service_provider_id], {serviceType: option.service_provider_id});
+        $scope.isGroupShown = function(group) {
+            return $scope.shownGroup === group;
         };
 
     }
 })();
 ;
 
-(function(){
+(function() {
     angular.module('axpress')
-    .controller('PaymentMethodsController', PaymentMethodsController);
+        .controller('MenuController', MenuController);
+
+    MenuController.$inject = ['$rootScope', '$scope', '$state'];
+
+    function MenuController($rootScope, $scope, $state) {
+        $scope.menuoptions = $rootScope.menu;
+
+        var urlsPerServiceType = { 43: 'document.origin', 44: 'package.origin', 45: 'diligence.origin' };
+
+        $scope.moveTo = function(option) {
+            $state.go(urlsPerServiceType[option.service_provider_id], { serviceType: option.service_provider_id });
+        };
+    }
+})();
+;
+
+(function() {
+    angular.module('axpress')
+        .controller('PaymentMethodsController', PaymentMethodsController);
 
     PaymentMethodsController.$inject = ['$rootScope', '$scope', '$cordovaDialogs', '$state', 'constants', 'Logger', 'Shipping'];
 
     function PaymentMethodsController($rootScope, $scope, $cordovaDialogs, $state, constants, Logger, Shipping) {
-        initialize();
+        activate();
 
-        $scope.confirmPaymentMethod = function () {
+        $scope.confirmPaymentMethod = function() {
             Shipping.registerDocument($scope.doc, $rootScope.user)
-                .then(function (response) {
+                .then(function(response) {
                     if (response.return && response.status == 200) {
                         successfullyRegisteredRequest();
                     }
-                }, function (error) {
+                }, function(error) {
                     console.error(error);
                 });
         };
 
-        function successfullyRegisteredRequest () {
+        function successfullyRegisteredRequest() {
             $state.go("menu");
         }
 
-        function initialize () {
+        function activate() {
             $scope.doc = $state.current.data.doc;
             $scope.extraData = $state.current.data.extraData;
             $scope.paymentMethods = constants.paymentMethods;
@@ -589,84 +585,81 @@ angular.module('axpress')
 })();
 ;
 
-/**
- * Created by gerardo on 21/10/16.
- */
-(function () {
+(function() {
     angular.module('axpress')
-    .controller('PhotoController', PhotoController);
+        .controller('PhotoController', PhotoController);
 
-    PhotoController.$inject = ['$rootScope','$scope', '$cordovaDialogs','$cordovaCamera', '$state','$ionicPopup'];
+    PhotoController.$inject = ['$rootScope', '$scope', '$cordovaDialogs', '$cordovaCamera', '$state', '$ionicPopup'];
 
-    function PhotoController ($rootScope,$scope,$cordovaDialogs,$cordovaCamera, $state,$ionicPopup) {
-        initialize();
+    function PhotoController($rootScope, $scope, $cordovaDialogs, $cordovaCamera, $state, $ionicPopup) {
+        activate();
 
-        $scope.photoTaken = function (imageData) {
+        $scope.photoTaken = function(imageData) {
             $scope.imageData = "data:image/jpeg;base64, " + imageData;
         };
 
-        $scope.photoSelected = function (results) {
+        $scope.photoSelected = function(results) {
             $scope.imageData = results[0];
         };
 
-        $scope.confirmImagePhoto = function () {
+        $scope.confirmImagePhoto = function() {
             $state.go($scope.extraData.photoNext);
         };
 
-        function initialize () {
+        function activate() {
             $scope.extraData = $state.current.data.extraData;
         }
     }
 })();
 ;
 
-(function(){
+(function() {
     angular.module('axpress')
-    .controller('ResumeController',ResumeController);
+        .controller('ResumeController', ResumeController);
 
-    ResumeController.$inject = ['$rootScope','$scope', '$cordovaDialogs', '$state','Logger','Shipping'];
+    ResumeController.$inject = ['$rootScope', '$scope', '$cordovaDialogs', '$state', 'Logger', 'Shipping'];
 
-    function ResumeController ($rootScope,$scope,$cordovaDialogs, $state,Logger,Shipping) {
+    function ResumeController($rootScope, $scope, $cordovaDialogs, $state, Logger, Shipping) {
 
-        initialize();
+        activate();
 
-        $scope.editOrigin = function(){
+        $scope.editOrigin = function() {
             $scope.extraData.editOrigin = true;
 
             $state.go("document.origin");
 
         };
-        $scope.editDestiny = function(){
+        $scope.editDestiny = function() {
             $scope.extraData.editDestiny = true;
 
             $state.go("document.destiny");
 
         };
-        $scope.editFeatures = function(){
+        $scope.editFeatures = function() {
             $scope.extraData.editFeatures = true;
 
             $state.go("document.servicetype");
 
         };
-        $scope.editDestinatary = function(){
+        $scope.editDestinatary = function() {
             $scope.extraData.editDestinatary = true;
 
             $state.go("document.features");
 
         };
 
-        $scope.confirmResume = function(){
+        $scope.confirmResume = function() {
             $state.go("document.paymentmethods");
         };
 
-        function requestQuotation () {
+        function requestQuotation() {
             Shipping.quotation($scope.doc.originLatitude, $scope.doc.originLongitude,
-                $scope.doc.destinyLatitude, $scope.doc.destinyLongitude, $state.params.serviceType, $scope.doc.bagId)
-                .then(function(response){
+                    $scope.doc.destinyLatitude, $scope.doc.destinyLongitude, $state.params.serviceType, $scope.doc.bagId)
+                .then(function(response) {
                     if (response.return && response.status == 200) {
                         quotationSuccessful(response.data);
                     }
-                }, function (error) {
+                }, function(error) {
                     if (error.message)
                         Logger.error(error.message);
                     else
@@ -681,7 +674,7 @@ angular.module('axpress')
 
         }
 
-        function initialize () {
+        function activate() {
             $scope.doc = $state.current.data.doc;
             $scope.extraData = $state.current.data.extraData;
             requestQuotation();
@@ -690,19 +683,26 @@ angular.module('axpress')
 })();
 ;
 
-angular.module('axpress')
-    .controller('ShipmentTrackingController',  ['$rootScope','$scope', '$cordovaDialogs', '$state', 'NgMap', function($rootScope,$scope,$cordovaDialogs, $state ,NgMap){
-        $scope.originAdd =  $rootScope.originLocation.toString().replace("(","").replace(")","");
-        $scope.destinyAdd =  $rootScope.originDestinyLocation.toString().replace("(","").replace(")","");
+(function() {
+    angular.module('axpress')
+        .controller('ShipmentTrackingController', ShipmentTrackingController);
 
-        NgMap.getMap().then(function (map) {
+    ShipmentTrackingController.$inject = ['$rootScope', '$scope', '$cordovaDialogs', '$state', 'NgMap'];
+
+    function ShipmentTrackingController($rootScope, $scope, $cordovaDialogs, $state, NgMap) {
+        $scope.originAdd = $rootScope.originLocation.toString().replace("(", "").replace(")", "");
+        $scope.destinyAdd = $rootScope.originDestinyLocation.toString().replace("(", "").replace(")", "");
+
+        NgMap.getMap().then(function(map) {
             $scope.map = map;
         });
 
-        $scope.goToChat = function(){
+        $scope.goToChat = function() {
             $state.go("chat");
-        }
-        $scope.goToCall = function(){
+        };
+
+        $scope.goToCall = function() {
             console.log("Call phone number...");
-        }
-    }]);
+        };
+    }
+})();

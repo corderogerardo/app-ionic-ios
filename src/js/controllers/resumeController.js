@@ -1,50 +1,50 @@
-(function(){
+(function() {
     angular.module('axpress')
-    .controller('ResumeController',ResumeController);
+        .controller('ResumeController', ResumeController);
 
-    ResumeController.$inject = ['$rootScope','$scope', '$cordovaDialogs', '$state','Logger','Shipping'];
+    ResumeController.$inject = ['$rootScope', '$scope', '$cordovaDialogs', '$state', 'Logger', 'Shipping'];
 
-    function ResumeController ($rootScope,$scope,$cordovaDialogs, $state,Logger,Shipping) {
+    function ResumeController($rootScope, $scope, $cordovaDialogs, $state, Logger, Shipping) {
 
-        initialize();
+        activate();
 
-        $scope.editOrigin = function(){
+        $scope.editOrigin = function() {
             $scope.extraData.editOrigin = true;
 
             $state.go("document.origin");
 
         };
-        $scope.editDestiny = function(){
+        $scope.editDestiny = function() {
             $scope.extraData.editDestiny = true;
 
             $state.go("document.destiny");
 
         };
-        $scope.editFeatures = function(){
+        $scope.editFeatures = function() {
             $scope.extraData.editFeatures = true;
 
             $state.go("document.servicetype");
 
         };
-        $scope.editDestinatary = function(){
+        $scope.editDestinatary = function() {
             $scope.extraData.editDestinatary = true;
 
             $state.go("document.features");
 
         };
 
-        $scope.confirmResume = function(){
+        $scope.confirmResume = function() {
             $state.go("document.paymentmethods");
         };
 
-        function requestQuotation () {
+        function requestQuotation() {
             Shipping.quotation($scope.doc.originLatitude, $scope.doc.originLongitude,
-                $scope.doc.destinyLatitude, $scope.doc.destinyLongitude, $state.params.serviceType, $scope.doc.bagId)
-                .then(function(response){
+                    $scope.doc.destinyLatitude, $scope.doc.destinyLongitude, $state.params.serviceType, $scope.doc.bagId)
+                .then(function(response) {
                     if (response.return && response.status == 200) {
                         quotationSuccessful(response.data);
                     }
-                }, function (error) {
+                }, function(error) {
                     if (error.message)
                         Logger.error(error.message);
                     else
@@ -59,7 +59,7 @@
 
         }
 
-        function initialize () {
+        function activate() {
             $scope.doc = $state.current.data.doc;
             $scope.extraData = $state.current.data.extraData;
             requestQuotation();

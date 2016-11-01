@@ -1,3 +1,7 @@
+/**
+ * @desc helps select an address by using Google Maps to display markers
+ * @example <address-selection center="centerObject" markers="arrayOfMarkers"></address-selection>
+ */
 (function() {
     angular.module('axpress')
     .directive('addressSelection', addressSelection);
@@ -43,9 +47,13 @@
 })();
 ;
 
+/**
+ * @desc helps select an address by using Google Maps autocomplete functionality
+ * @example <address-selection center="centerObject" markers="arrayOfMarkers"></address-selection>
+ */
 (function() {
     angular.module('axpress')
-    .directive('mapAutocompleteAddress', mapAutocompleteAddress);
+        .directive('mapAutocompleteAddress', mapAutocompleteAddress);
 
     function mapAutocompleteAddress() {
         return {
@@ -55,15 +63,20 @@
                 address: "="
             },
             templateUrl: 'templates/directives/mapAutocompleteAddress.html',
-            controller: function ($scope) {
+            controller: function($scope) {
                 activate();
 
-                function activate () {
+                function activate() {
                     $scope.restrictions = { country: 'col' };
                     $scope.types = "['address']";
                 }
 
-                $scope.disableTap = function (event) {
+                /**
+                 * Disables the tap allowing the use on mobile devices.
+                 *
+                 * @param      {Object}  event   The event
+                 */
+                $scope.disableTap = function(event) {
                     var input = event.target;
 
                     // Get the predictions element
@@ -79,7 +92,7 @@
                     container.attr('data-tap-disabled', 'true');
 
                     // Leave the input field if a prediction is chosen
-                    container.on('click', function(){
+                    container.on('click', function() {
                         input.blur();
                     });
                 };
@@ -89,6 +102,10 @@
 })();
 ;
 
+/**
+ * @desc helps select an image from the gallery using cordova libraries
+ * @example <select-photo onPhotoSelected="function" onError="function"></select-photo>
+ */
 (function () {
     angular.module('axpress')
     .directive('selectPhoto', selectPhoto);
@@ -137,6 +154,10 @@
 
 })();;
 
+/**
+ * @desc helps take a photo using cordova libraries
+ * @example <select-photo onPhotoSelected="function" onError="function"></select-photo>
+ */
 (function () {
     angular.module('axpress')
     .directive('takePhoto', takePhoto);

@@ -1,21 +1,20 @@
-(function(){
+(function() {
     angular.module('axpress')
-    .controller('CaracteristicsController',CaracteristicsController);
+        .controller('CaracteristicsController', CaracteristicsController);
 
-    CaracteristicsController.$inject = ['$rootScope','$scope', '$cordovaDialogs', '$state','$ionicPopup'];
+    CaracteristicsController.$inject = ['$rootScope', '$scope', '$cordovaDialogs', '$state', '$ionicPopup'];
 
-    function CaracteristicsController($rootScope,$scope,$cordovaDialogs, $state, $ionicPopup) {
-        console.log("Caracteristics Controller");
+    function CaracteristicsController($rootScope, $scope, $cordovaDialogs, $state, $ionicPopup) {
+        activate();
 
-        initialize();
-
-        $scope.saveCaracteristics = function () {
+        $scope.saveCaracteristics = function() {
             /* $ionicPopup.alert({title: 'Destinatary', template: JSON.stringify( $scope.data)});*/
             $scope.doc.destinatary = $scope.destinatary;
             $scope.doc.caracteristics = $scope.caracteristics;
             $state.go("document.imagephoto");
         };
-        function initialize(){
+
+        function activate() {
             $scope.destinatary = {
                 email: "",
                 username: "",

@@ -1,3 +1,7 @@
+/**
+ * @desc helps select an image from the gallery using cordova libraries
+ * @example <select-photo onPhotoSelected="function" onError="function"></select-photo>
+ */
 (function () {
     angular.module('axpress')
     .directive('selectPhoto', selectPhoto);

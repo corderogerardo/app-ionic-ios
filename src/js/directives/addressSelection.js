@@ -1,3 +1,7 @@
+/**
+ * @desc helps select an address by using Google Maps to display markers
+ * @example <address-selection center="centerObject" markers="arrayOfMarkers"></address-selection>
+ */
 (function() {
     angular.module('axpress')
     .directive('addressSelection', addressSelection);

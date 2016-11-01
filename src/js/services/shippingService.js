@@ -102,7 +102,7 @@
         }
 
         /**
-         * { function_description }
+         * Request a quoatation given some coordinates and a type of service and the bag id
          *
          * @param      {Double}  originLatitude    The origin latitude
          * @param      {Double}  originLongitude   The origin longitude
@@ -124,6 +124,13 @@
             return service.apiPost('/quotation', data);
         }
 
+        /**
+         * Wrapper of register function to simplify the register a document service request
+         *
+         * @param      {Object}   doc     The document
+         * @param      {Object}   user    The user
+         * @return     {Promise}  A promise object that will resolve the petition
+         */
         function registerDocument (doc, user) {
             return register (doc.descriptionText, 1, doc.distance, user.id, doc.originAddress, doc.originLatitude,
                 doc.originLongitude, doc.destinyAddress, doc.destinyLatitude, doc.destinyLongitude, doc.amount,

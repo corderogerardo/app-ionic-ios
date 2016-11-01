@@ -1,11 +1,11 @@
-(function () {
+(function() {
     angular.module('axpress')
-    .controller("AccountController", AccountController);
+        .controller("AccountController", AccountController);
 
-    AccountController.$inject = ['$scope','$rootScope','$ionicPopup', 'Client'];
+    AccountController.$inject = ['$scope', '$rootScope', '$ionicPopup', 'Client'];
 
-    function AccountController ($scope,$rootScope,$ionicPopup, Client) {
-        $rootScope.user={
+    function AccountController($scope, $rootScope, $ionicPopup, Client) {
+        $rootScope.user = {
             name: "Developer",
             pass: "123456",
             email: "developer@gmail.com",
@@ -13,16 +13,14 @@
         };
         $scope.user = $rootScope.user;
 
-        $scope.doAccountUpdate = function(accountForm){
-            if(accountForm.$valid){
+        $scope.doAccountUpdate = function(accountForm) {
+            if (accountForm.$valid) {
                 Client.edit($scope.user)
-                    .then(function(data){
+                    .then(function(data) {
                         console.log(data);
-                    },function(error){
-                    });
+                    }, function(error) {});
 
             }
         };
-
     }
 })();

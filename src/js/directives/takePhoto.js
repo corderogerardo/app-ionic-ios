@@ -1,3 +1,7 @@
+/**
+ * @desc helps take a photo using cordova libraries
+ * @example <select-photo onPhotoSelected="function" onError="function"></select-photo>
+ */
 (function () {
     angular.module('axpress')
     .directive('takePhoto', takePhoto);
