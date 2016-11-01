@@ -5,23 +5,31 @@
     AccountController.$inject = ['$scope', '$rootScope', '$ionicPopup', 'Client'];
 
     function AccountController($scope, $rootScope, $ionicPopup, Client) {
-        $rootScope.user = {
-            name: "Developer",
-            pass: "123456",
-            email: "developer@gmail.com",
-            phone: "55-555-5555",
-        };
-        $scope.user = $rootScope.user;
+        activate();
+
+        function activate() {
+            $scope.user = $rootScope.user;
+        }
 
         $scope.doAccountUpdate = function(accountForm) {
             if (accountForm.$valid) {
-                Client.edit($scope.user)
-                    .then(function(data) {
-                        console.log(data);
-                    }, function(error) {});
-
+                Client.edit($scope.user.id, $scope.user.email, $scope.user.name, $scope.user.pass, $scope.user.phone,
+                        $scope.user.localPhone, $scope.user.identify)
+                    .then(function(response) {
+                        if (response.return && response.status == 200)
+                            successfullyUpdatedAccount();
+                    }, function(error) {
+                        //Couldn update user data
+                    });
             }
         };
+
+        /**
+         * Receives the user updated data from the server
+         */
+        function successfullyUpdatedAccount () {
+            localStorage.setItem('axpress.user', JSON.stringify($scope.user));
+        }
     }
 })();
 ;
@@ -274,41 +282,6 @@
             $state.go('menu');
         }
     }
-})();
-;
-
-(function() {
-    angular.module('axpress')
-        .controller('CaracteristicsController', CaracteristicsController);
-
-    CaracteristicsController.$inject = ['$rootScope', '$scope', '$cordovaDialogs', '$state', '$ionicPopup'];
-
-    function CaracteristicsController($rootScope, $scope, $cordovaDialogs, $state, $ionicPopup) {
-        activate();
-
-        $scope.saveCaracteristics = function() {
-            /* $ionicPopup.alert({title: 'Destinatary', template: JSON.stringify( $scope.data)});*/
-            $scope.doc.destinatary = $scope.destinatary;
-            $scope.doc.caracteristics = $scope.caracteristics;
-            $state.go("document.imagephoto");
-        };
-
-        function activate() {
-            $scope.destinatary = {
-                email: "",
-                username: "",
-                phone: "",
-                cinit: ""
-            };
-            $scope.caracteristics = {
-                declaredvalue: "",
-                shortdescription: ""
-            };
-            $scope.doc = $state.current.data.doc;
-            $scope.extraData = $state.current.data.extraData;
-        }
-    }
-
 })();
 ;
 
