@@ -1,5 +1,6 @@
 angular.module('axpress')
-.factory('Service', ['$http', 'constants', '$q', function($http, constants, $q){
+.factory('Service', ['$http', 'constants', '$q', '$httpParamSerializerJQLike',
+function($http, constants, $q, $httpParamSerializerJQLike){
 
     /**
      * Class to be instantiated as a base service with common configurations
@@ -24,7 +25,7 @@ angular.module('axpress')
         };
 
         /**
-         * Reusable function to make queries and consume service from a service
+         * Reusable function to make POST queries and consume POST services
          *
          * @param      {String}  path     The path specific to the service
          * @param      {Object}  data     The data to be sent using the service (Optional)
@@ -54,13 +55,26 @@ angular.module('axpress')
          */
         this.apiPost = function (path, data, options) {
             data = data || {};
+            options = options || {};
             data.key = this.key;
             data.platform = this.platform;
+            options.headers = {
+                'Content-Type': 'application/x-www-form-urlencoded'
+            };
             path = this.urlBase() + path;
-
+            data = $httpParamSerializerJQLike(data);
             return this.post(path, data, options);
         };
 
+        /**
+         * Reusable function to make GET queries and consume GET services
+         *
+         * @param      {String}   path     The path specific to the service
+         * @param      {Object}   options  The $http options for the service
+         *                                 (Optional)
+         * @return     {Promise}  Returns the $http promise to be resolved on
+         *                        success or error
+         */
         this.get = function (path, options) {
             var deferred = $q.defer();
             $http.get(path, options || {}).then(function (response) {

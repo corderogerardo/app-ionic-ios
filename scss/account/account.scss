@@ -1,4 +1,18 @@
+.account-container{
+    align-items:center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
 .account-buttons{
 	height:10%;
 	width: 80%;
+}
+.button-bottom-account{
+    width:92%;
+    position:absolute;
+    left: 5%;
+    height:5%;
+    bottom: 3%;
 }

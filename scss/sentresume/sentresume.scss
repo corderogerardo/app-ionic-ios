@@ -7,17 +7,17 @@
 }
 .sentresume-content{
 	display:flex;
-	border-bottom: 3px solid $balanced;
+	border-bottom: 1px solid $graybbb;
 	flex-direction: row;
-	height:40%;
-	width: 80%;
+	height:55%;
+	width: 92%;
 }
 .data-origin{
 	align-items: flex-start;
 	display:flex;
 	flex-direction: column;
 	margin:0;
-	width:80%;
+	width:95%;
 	b{
 		font-size:2vh;
 	}
@@ -27,32 +27,6 @@
 		font-size:2vh;
 	}
 }
-.data-button-edit{
-	align-items: center;
-	display:flex;
-	flex-direction: column;
-	width:20%;
-	height:100%;
-	text-decoration: none;
-	i{
-		align-items: center;
-		color:white;
-		font-size:5vh;
-		border-radius: 50%;
-		background-color: $balanced;
-		display:flex;
-		width: 80%;
-		height:50px;
-		flex-direction: row;
-		justify-content: center;
-		text-align: center;
-	}
-	p{
-		color:$energized;
-		width:100%;
-		margin:0;
-	}
-}
 .sentresume-content-noborder{
 	display:flex;
 	flex-direction: row;
@@ -60,13 +34,16 @@
 	width: 80%;
 }
 .sentresume-cost{
+    background-color: $graybbbb;
 	align-items: center;
-	color:$balanced;
+	color:$graybbb;
 	display:flex;
 	font-size: 4vh;
-	flex-direction: column;
-	justify-content: center;
-	height:20%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+	flex-direction: row;
+	justify-content: space-around;
+	height:13%;
 }
 .sentresume-button{
 	align-items: center;

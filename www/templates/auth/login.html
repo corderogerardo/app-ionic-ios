@@ -1,0 +1,59 @@
+<div class="bar bar-header bar-balanced">
+	 <h3 class="title">INICIAR SESIÓN</h3>
+</div>
+<ion-view view-title="Login">
+	<ion-content scroll="false" >
+        <div class="inputs-wrapper">
+            <div class="inputs-container">
+                <i class="icon-user"></i>
+                <label class="">
+                    <input ng-model="user.email" type="email" placeholder="Correo Electrónico">
+                </label>
+            </div>
+            <div class="inputs-container ">
+                <i class="icon-pass"></i>
+                <label class="">
+                    <input ng-model="user.password" type="password" placeholder="Contraseña">
+                </label>
+            </div>
+        </div>
+		<div class="button-wrapper">
+			<div class="container-button">
+				<a class="button-noicon" ng-click="login()" title="">INICIAR SESIÓN</a>
+			</div>
+		</div>
+        <div class="button-wrapper">
+            <div class="container-button">
+                <a class="login-forgot-pass" ui-sref="auth.forgotpassword">¿Olvidaste tu Contraseña?</a>
+            </div>
+        </div>
+        <div class="spacetwo"></div>
+		<section class="login-container-social">
+            <div class="container-button">
+                <a class="button-icon facebook" ng-click="loginWithFacebook()">
+                    <label>
+                    Ingresa con facebook
+                    </label>
+                </a>
+            </div>
+        </section>
+        <section class="login-container-social">
+        <div class="container-button">
+            <a class="button-icon gplus" ng-click="loginWithGoogle()">
+                <label>
+                    Ingresa con google
+                </label>
+            </a>
+        </div>
+        </section>
+        <section class="login-new-container">
+            <a ui-sref="auth.register" class="">
+                ¿Eres Nuevo?
+                <label class="login-register">
+                    ¡Regístrate ahora!
+                </label>
+            </a>
+        </section>
+
+    </ion-content>
+</ion-view>

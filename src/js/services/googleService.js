@@ -10,13 +10,16 @@ function($rootScope, $window, $cordovaOauth, $q, Service, constants){
 
     return service;
 
+    /**
+     * Starts the process of loggin in a user using Cordova oAuth
+     */
     function login () {
         var deferred = $q.defer();
         document.addEventListener("deviceready", function () {
             if (service.credentials || localStorage.getItem('googleCredentials')) {
                 deferred.resolve(true);
             } else {
-                $cordovaOauth.google(constants.googleOAuthClientID, ["profile"]).then(function (response) {
+                $cordovaOauth.google(constants.googleOAuthClientID, service.scope).then(function (response) {
                     service.credentials = response;
                     localStorage.setItem('googleCredentials', JSON.stringify(response));
                     deferred.resolve(response);
@@ -28,13 +31,18 @@ function($rootScope, $window, $cordovaOauth, $q, Service, constants){
         return deferred.promise;
     }
 
+    /**
+     * Gets user information from Google API
+     * 
+     * @return     {Promise}  The promise that will resolve the
+     *                            user information
+     */
     function getProfile () {
         var deferred = $q.defer();
-        var credentials = service.credentials || localStorage.getItem('googleCredentials');
+        var credentials = service.credentials || JSON.parse(localStorage.getItem('googleCredentials'));
         if (!credentials) {
             deferred.reject();
         } else {
-            credentials = JSON.parse(credentials);
             service.get("https://www.googleapis.com/userinfo/v2/me", {params: {access_token: credentials.access_token}}).then(function (response) {
                 deferred.resolve(response);
             }, function (error) {
@@ -44,6 +52,9 @@ function($rootScope, $window, $cordovaOauth, $q, Service, constants){
         return deferred.promise;
     }
 
+    /**
+     * Removes the Google session data
+     */
     function logout () {
         delete service.credentials;
         localStorage.removeItem('googleCredentials');

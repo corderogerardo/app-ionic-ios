@@ -1,31 +1,75 @@
 .main-container-maps{
-	background-image: url("../img/maps.png");
-	background-size: cover;
-	justify-content: center;
 	height: 100%;
-	padding-top: 25%;
 	display:flex;
 }
 .input-direction{
+		align-items: center;
+		background-color: $graybbbb;
 	display:flex;
-	height:10%;
-	flex-direction: row;
-	width:80%;
+	height:20%;
+	flex-direction: column;
+	width:100%;
+		position: absolute;
+		justify-content: center;
+		right: auto;
+
+}
+.direction-marker{
+		input{
+				&:focus{
+						.icon-marker-gray{
+								background-image: url('../img/inputs/pin-direccion1.png');
+								background-size: 40%;
+								background-repeat: no-repeat;
+								background-position: center;
+						}
+				}
+		}
+}
+@media screen and (max-height: 736px){
+		.input-direction{
+				top:5%;
+		}
+}
+@media screen and (max-height: 667px){
+		.input-direction{
+				top:6.8%;
+		}
+}
+@media screen and (max-height: 568px){
+		.input-direction{
+				top:11%;
+		}
+}
+@media screen and (max-height: 480px){
+		.input-direction{
+				top:9.7%;
+		}
 }
 
+.maps-list-places{
+		display: flex;
+		border:1px solid black;
+		width: 80%;
+		height: 10%;
+		top: 30%;
+		left: 0px;
+		position: absolute;
+		z-index: 1;
+}
 .pickuphere-button{
-	width:80%;
+	width:90%;
 	position:absolute;
-	left: 10%;
-	height:8%;
-	bottom: 50px;
+	left: 5%;
+	height:5%;
+	bottom: 3%;
 }
 .confirm-button{
-	width:80%;
+	width:90%;
 	position:absolute;
-	left: 10%;
+	left: 5%;
 	height:8%;
-	bottom: 50px;
+	bottom: 3%;
 	a{
 		background-color:$energized;
 	}

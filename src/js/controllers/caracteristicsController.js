@@ -1,36 +1,34 @@
-/**
- * Created by Gerardo Cordero on 20/10/2016.
- */
-angular.module('axpress')
-    .controller('CaracteristicsController', ['$scope','$rootScope','$ionicPopup', function($scope,$rootScope,$ionicPopup){
+(function(){
+    angular.module('axpress')
+    .controller('CaracteristicsController',CaracteristicsController);
+
+    CaracteristicsController.$inject = ['$rootScope','$scope', '$cordovaDialogs', '$state','$ionicPopup'];
+
+    function CaracteristicsController($rootScope,$scope,$cordovaDialogs, $state, $ionicPopup) {
         console.log("Caracteristics Controller");
 
-        $scope.destinatary ={
-            email: "youremail@gmail.com",
-            username: "test",
-            phone: "56-555-5555",
-            cinit: "12345",
-        }
-        $scope.caracteristics = {
-            declaredvalue: "30000",
-            shortdescription: "Pequeña descripcion",
-        }
-        $scope.data ={};
-        $scope.data.destinatary =  $scope.destinatary;
-        $scope.data.caracteristics =  $scope.caracteristics;
-
+        initialize();
 
         $scope.saveCaracteristics = function () {
-            $ionicPopup.alert({title: 'Destinatary', template: JSON.stringify( $scope.data)});
-            /*Caracteristics Service*/
-
-           /* Caracteristics.save($scope.data.destinatary,$scope.data.caracteristics)
-                .then(function(data){
-                    console.log(data);
-                },function(error){
-                    console.log(error);
-                })*/
-
+            /* $ionicPopup.alert({title: 'Destinatary', template: JSON.stringify( $scope.data)});*/
+            $scope.doc.destinatary = $scope.destinatary;
+            $scope.doc.caracteristics = $scope.caracteristics;
+            $state.go("document.imagephoto");
+        };
+        function initialize(){
+            $scope.destinatary = {
+                email: "",
+                username: "",
+                phone: "",
+                cinit: ""
+            };
+            $scope.caracteristics = {
+                declaredvalue: "",
+                shortdescription: ""
+            };
+            $scope.doc = $state.current.data.doc;
+            $scope.extraData = $state.current.data.extraData;
         }
+    }
 
-}]);
+})();

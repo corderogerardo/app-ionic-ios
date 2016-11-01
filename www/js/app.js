@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 angular.module('axpress', [
     'ionic',
-    'uiGmapgoogle-maps',
+    'ngMap',
     'ionic.cloud',
     'ngResource',
     'ngCordova',
@@ -13,7 +13,7 @@ angular.module('axpress', [
     'LocalStorageModule'
 ])
 
-.run(['$ionicPlatform', function($ionicPlatform) {
+.run(['$ionicPlatform', '$rootScope', '$state', function($ionicPlatform, $rootScope, $state) {
     $ionicPlatform.ready(function() {
         if (window.cordova && window.cordova.plugins.Keyboard) {
             // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
@@ -32,23 +32,38 @@ angular.module('axpress', [
         //Force Portrait mode
         screen.lockOrientation('portrait');
     });
+
+    if (localStorage.getItem('axpress.user') && localStorage.getItem('axpress.menu')) {
+        $rootScope.user = JSON.parse(localStorage.getItem('axpress.user'));
+        $rootScope.menu = JSON.parse(localStorage.getItem('axpress.menu'));
+        $state.go('menu');
+    }
 }])
 
 .config(['$stateProvider', '$urlRouterProvider', '$ionicCloudProvider', function($stateProvider, $urlRouterProvider, $ionicCloudProvider) {
     $stateProvider
         .state('app', {
             url: '/',
-            templateUrl: 'templates/welcome/welcome.html'
+            templateUrl: 'templates/welcome/welcome.html',
+            controller: 'AuthController'
         })
-        .state('login', {
+        .state('auth', {
+            url: '/auth',
+            abstract: true,
+            template: '<ui-view/>',
+            controller:'AuthController'
+        })
+        .state('auth.login', {
             url: '/login',
-            templateUrl: 'templates/login/login.html',
-            controller:'LoginController'
+            templateUrl: 'templates/auth/login.html'
         })
-        .state('register', {
+        .state('auth.register', {
             url: '/register',
-            templateUrl: 'templates/register/register.html',
-            controller: 'RegisterController'
+            templateUrl: 'templates/auth/register.html'
+        })
+        .state('auth.forgotpassword', {
+            url: '/forgotpassword',
+            templateUrl: 'templates/auth/forgotpassword.html'
         })
         .state('menu', {
             url: '/menu',
@@ -60,47 +75,50 @@ angular.module('axpress', [
             abstract: true,
             template: '<ui-view/>',
             data: {
-                documento: {}
+                doc: {},
+                extraData: {
+                    featuresNext: 'document.photo',
+                    photoNext: 'document.resume'
+                }
+            },
+            params: {
+                serviceType: null
             }
         })
-        .state('documentorigin', {
-            url: '/documentorigin',
-            templateUrl: 'templates/maps/documents/documentOrigin.html',
+        .state('document.origin', {
+            url: '/origin',
+            templateUrl: 'templates/documents/origin.html',
             controller: 'DocumentOriginController'
         })
-        .state('documentsdetailorigin', {
-            url: '/documentsdetailorigin',
-            templateUrl: 'templates/maps/documents/documentDetailOrigin.html'
+        .state('document.destiny', {
+            url: '/destiny',
+            templateUrl: 'templates/documents/destiny.html',
+            controller: 'DocumentDestinyController'
         })
-        .state('documentsdestiny', {
-            url: '/documentsdestiny',
-            templateUrl: 'templates/maps/documents/documentDestiny.html'
+        .state('document.servicetype', {
+            url: '/servicetype',
+            templateUrl: 'templates/documents/serviceType.html',
+            controller: 'ServiceTypeController'
         })
-        .state('documentsdetaildestiny', {
-            url: '/documentsdetaildestiny',
-            templateUrl: 'templates/maps/documents/documentDetailDestiny.html'
+        .state('document.features', {
+            url: '/features',
+            templateUrl: 'templates/documents/features.html',
+            controller:'FeaturesController'
         })
-        .state('sendtypedocuments', {
-            url: '/sendtypedocuments',
-            templateUrl: 'templates/sendtype/documents/sendtype.html'
+        .state('document.photo', {
+            url: '/photo',
+            templateUrl: 'templates/documents/photo.html',
+            controller:'PhotoController'
         })
-        .state('caracteristicsdocuments', {
-            url: '/caracteristicsdocuments',
-            templateUrl: 'templates/caracteristics/documents/caracteristics.html',
-            controller:'CaracteristicsController'
+        .state('document.resume', {
+            url: '/resume',
+            templateUrl: 'templates/documents/resume.html',
+            controller:'ResumeController'
         })
-        .state('documentsimagephoto', {
-            url: '/documentsimagephoto',
-            templateUrl: 'templates/imagephoto/documents/imagephoto.html',
-            controller:'ImagePhotoController'
-        })
-        .state('sentresumedocument', {
-            url: '/sentresumedocument',
-            templateUrl: 'templates/sentresume/sentresume.html'
-        })
-        .state('paymentmethods', {
+        .state('document.paymentmethods', {
             url: '/paymentmethods',
-            templateUrl: 'templates/paymentmethods/paymentmethods.html'
+            templateUrl: 'templates/documents/paymentMethods.html',
+            controller:'PaymentMethodsController'
         })
         .state('shipmenttracking', {
             url: '/shipmenttracking',
@@ -117,15 +135,18 @@ angular.module('axpress', [
         })
         .state('account', {
             url: '/account',
-            templateUrl: 'templates/account/account.html'
+            templateUrl: 'templates/account/account.html',
+            controller: 'AccountController',
         })
         .state('caracteristicspackages', {
             url: '/caracteristicspackages',
-            templateUrl: 'templates/caracteristics/packages/caracteristicspackages.html'
+            templateUrl: 'templates/caracteristics/packages/caracteristicspackages.html',
+            controller:'CaracteristicsPackagesController'
         })
         .state('caracteristicserrands', {
             url: '/caracteristicserrands',
-            templateUrl: 'templates/caracteristics/errands/caracteristicserrands.html'
+            templateUrl: 'templates/caracteristics/errands/caracteristicserrands.html',
+            controller:'CaracteristicsErrandsController'
         })
         .state('errandsdestiny', {
             url: '/errandsdestiny',
