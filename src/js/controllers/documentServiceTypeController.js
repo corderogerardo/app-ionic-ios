@@ -2,9 +2,9 @@
     angular.module('axpress')
     .controller('ServiceTypeController', ServiceTypeController);
 
-    ServiceTypeController.$inject = ['$rootScope', '$scope', '$cordovaDialogs', '$state', '$ionicPopup', 'NgMap'];
+    ServiceTypeController.$inject = ['$rootScope', '$scope', '$cordovaDialogs', '$state'];
 
-    function ServiceTypeController ($rootScope, $scope, $cordovaDialogs, $state, $ionicPopup) {
+    function ServiceTypeController ($rootScope, $scope, $cordovaDialogs, $state) {
         initialize();
 
         $scope.confirmServiceType = function(){

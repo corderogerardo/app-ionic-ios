@@ -2,9 +2,9 @@
     angular.module('axpress')
     .controller('FeaturesController', FeaturesController);
 
-    FeaturesController.$inject = ['$rootScope', '$scope', '$cordovaDialogs', '$state','$ionicPopup'];
+    FeaturesController.$inject = ['$rootScope', '$scope', '$cordovaDialogs', '$state'];
 
-    function FeaturesController ($rootScope, $scope, $cordovaDialogs, $state, $ionicPopup) {
+    function FeaturesController ($rootScope, $scope, $cordovaDialogs, $state) {
         initialize();
 
         $scope.saveCaracteristics = function () {
