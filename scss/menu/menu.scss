@@ -1,12 +1,12 @@
 .select-send-type{
 	align-items: center;
 	display: flex;
-	height: 30%;
+	height: 15%;
 	justify-content: center;
 }
 .select-send-type span{
 	align-items: center;
-	color:$balanced;
+	color:$graybbb;
 	display:flex;
 	justify-content: center;
 	font-size: 3vh;
@@ -20,7 +20,6 @@
 }
 .main-menu{
 	align-items: flex-start;
-	background-image: url("../img/image.jpg");
 	background-size: cover;
 	background-position: center;
 	display:flex;
@@ -33,7 +32,7 @@
 .main-menu-options{
 	align-items: center;
 	background-color:rgba(white,.8);
-	height:40%;
+	height:43%;
 	display:flex;
 	color:$balanced;
 	font-size: 2vh;

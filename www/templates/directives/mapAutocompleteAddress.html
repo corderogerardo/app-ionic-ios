@@ -1,0 +1,8 @@
+<input places-auto-complete size=80 class="map-input"
+	type="text"
+	ng-model="address"
+	component-restrictions="{{restrictions}}"
+	types="{{types}}"
+	placeholder="Escribe la dirección aquí..."
+	on-place-changed="onPlaceChanged()"
+    ng-focus="disableTap($event)" />

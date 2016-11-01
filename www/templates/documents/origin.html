@@ -1,0 +1,30 @@
+<div class="bar bar-header bar-balanced">
+		 <h3 class="title">ORIGEN DEL DOCUMENTO</h3>
+</div>
+<ion-view view-title="SendType">
+		<ion-content scroll="false" >
+
+				<address-selection center="place" markers="markers"></address-selection>
+
+				<div class="space"></div>
+				<div class="input-direction">
+						<div class="inputs-container direction-marker">
+								<i class="icon-marker-color"></i>
+								<label>
+										<map-autocomplete-address on-place-changed="placeChanged" address="address"></map-autocomplete-address>
+								</label>
+						</div>
+						<div class="inputs-container-last flag-maps">
+								<i class="icon-flag-color"></i>
+								<label>
+										<input ng-model="doc.originDetail" type="text" placeholder="Detalles de direccion">
+								</label>
+						</div>
+				</div>
+
+				<div class="pickuphere-button">
+						<a class="button-noicon" ng-click="confirmOrigin()" title="">RECOGER AQUÍ</a>
+				</div>
+		</ion-content>
+</ion-view>
+

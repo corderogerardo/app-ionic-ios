@@ -3,9 +3,19 @@
 </div>
 <ion-view view-title="TrackingShipment">
 	<ion-content scroll="false" >
-	<section ng-controller="ShipementTracking" class="main-container-shipementtracking" >
+        <map center='{{address || "Bogota"}}'
+             geo-fallback-center="[40.74, -74.18]"
+             zoom="11" class="main-container-maps">
+            <marker position="{{ originAdd }}"
+                    title="Origen"
+            ></marker>
+            <marker position="{{ destinyAdd }}"
+                    title="Destino"
+                    centered="true"></marker>
+        </map>
+	<section class="main-container-shipementtracking" >
 	<div class="shipementtracking-gps-button">
-		<a class="shipementtracking-gps-button-traditional" href="#/shipementtrackinggps" title=""><i class="ion-map"></i> </a>
+		<a class="shipementtracking-gps-button-traditional" title=""><i class="ion-map"></i> </a>
 		</div>
 		<!-- Navigation -->
 			<nav class="nav navbar" id="menu">
@@ -21,8 +31,8 @@
 						<p>Teléfono: 316 344 56 78</p>
 						</div>
 						<div class="deliverboy-data-buttons">
-							<a class="deliverboy-chat" href="#/chat">CHAT</a>
-							<a class="deliverboy-call" href="">LLAMAR</a>
+							<a class="deliverboy-chat" ng-click="goToChat()">CHAT</a>
+							<a class="deliverboy-call" ng-click="goToCall()">LLAMAR</a>
 						</div>
 					</div>
 				</section>
