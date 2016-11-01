@@ -11,13 +11,11 @@
                 <span>Elige un medio de pago</span>
             </div>
         </section>
-        <section class="send-type-icon">
-            <img src="../img/payments.jpg" alt="">
-        </section>
-        <section class="send-type-options">
+
+        <section class="payments-options">
             <ion-radio ng-repeat="option in paymentMethods" class="send-type-options-radio" ng-model="doc.pay" ng-value="option.value">{{option.name}}</ion-radio>
         </section>
-        <section class="center-button">
+        <section class="button-bottom-payment">
             <a class="button-noicon" ng-click="confirmPaymentMethod()" title="">CONTINUAR</a>
         </section>
     </ion-content>

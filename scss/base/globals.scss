@@ -205,6 +205,30 @@ textarea{
 		background-repeat: no-repeat;
 		background-position: center;
 }
+.icon-camera-gray{
+    background-image: url('../img/inputs/Camara2.png');
+    background-size: 40%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.icon-camera-color{
+    background-image: url('../img/inputs/Camara1.png');
+    background-size: 40%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.icon-gallery-gray{
+    background-image: url('../img/inputs/Gallery1.png');
+    background-size: 40%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.icon-gallery-color{
+    background-image: url('../img/inputs/Gallery2.png');
+    background-size: 40%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
 ion-content{
 		background-image: url('../img/backgrounds/fondo1.png');
 		background-size: cover;

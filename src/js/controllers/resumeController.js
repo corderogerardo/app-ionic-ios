@@ -23,6 +23,12 @@
         $scope.editFeatures = function(){
             $scope.extraData.editFeatures = true;
 
+            $state.go("document.servicetype");
+
+        };
+        $scope.editDestinatary = function(){
+            $scope.extraData.editDestinatary = true;
+
             $state.go("document.features");
 
         };
@@ -32,7 +38,7 @@
         };
 
         function requestQuotation () {
-            Shipping.quotation($scope.doc.originLatitude, $scope.doc.originLongitude, 
+            Shipping.quotation($scope.doc.originLatitude, $scope.doc.originLongitude,
                 $scope.doc.destinyLatitude, $scope.doc.destinyLongitude, $state.params.serviceType, $scope.doc.bagId)
                 .then(function(response){
                     if (response.return && response.status == 200) {

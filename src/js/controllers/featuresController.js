@@ -8,8 +8,8 @@
         initialize();
 
         $scope.saveCaracteristics = function () {
-            if($scope.extraData.editFeatures === true){
-                $scope.extraData.editFeatures = false;
+            if($scope.extraData.editDestinatary === true){
+                $scope.extraData.editDestinatary = false;
                 $state.go("document.resume");
 
             }else{

@@ -6,47 +6,45 @@
 	<div class="space">
 
 	</div>
-        <form class="register-container-tradictional" id="accountForm" name="accountForm" ng-submit="doAccountUpdate(accountForm)" accept-charset="utf-8" novalidate>
-		<div class="register-traditional-input">
-			<div class="inputs-container border-blue">
-				<i class="ion-person"></i>
+        <form class="account-container" id="accountForm" name="accountForm" ng-submit="doAccountUpdate(accountForm)" accept-charset="utf-8" novalidate>
+			<div class="inputs-container">
+				<i class="icon-user"></i>
 				<label class="">
 					<input type="text" name="name" ng-model="user.name" placeholder="Nombre de Usuario" required>
 				</label>
 			</div>
 
-			<div class="inputs-container border-blue">
-				<i class="ion-email"></i>
+			<div class="inputs-container">
+				<i class="icon-email"></i>
 				<label class="">
 					<input type="email" name="email" ng-model="user.email" placeholder="Correo Electrónico" required>
 				</label>
 			</div>
-			<div class="inputs-container border-blue">
-				<i class="ion-ios-telephone"></i>
+			<div class="inputs-container">
+				<i class="icon-phone"></i>
 				<label class="">
 					<input type="tel" name="phone" ng-model="user.phone" placeholder="Teléfono Móvil" >
 				</label>
 			</div>
-			<div class="inputs-container border-blue">
-				<i class="ion-ios-telephone"></i>
+			<div class="inputs-container">
+				<i class="icon-phone"></i>
 				<label class="">
 					<input type="tel" name="phone" ng-model="user.localPhone" placeholder="Teléfono Fijo">
 				</label>
 			</div>
-			<div class="inputs-container border-blue">
-				<i class="ion-ios-person"></i>
+			<div class="inputs-container">
+				<i class="icon-cinit"></i>
 				<label class="">
 					<input type="tel" name="phone" ng-model="user.identify" placeholder="Identificación (N° Cedula o Pasaporte)">
 				</label>
 			</div>
-			<div class="inputs-container border-blue">
-				<i class="ion-locked"></i>
+			<div class="inputs-container">
+				<i class="icon-pass"></i>
 				<label class="">
 					<input type="password" name="pass" ng-model="user.pass" placeholder="Contraseña" required>
 				</label>
 			</div>
-		</div>
-		<div class="account-buttons white-space">
+		<div class="button-bottom-account">
 		<button type="submit" class="button-noicon" ng-disabled="accountForm.$invalid"  title="GUARDAR CAMBIOS">GUARDAR CAMBIOS</button>
 		</div>
     </form>

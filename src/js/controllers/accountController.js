@@ -16,9 +16,9 @@ angular.module('axpress')
             Client.edit($scope.user)
                 .then(function(data){
                     console.log(data);
-                    $ionicPopup.alert({title:'goodResponse',template:JSON.stringify(data)});
+                   /* $ionicPopup.alert({title:'Cambios guardados',template:"Exito."});*/
                 },function(error){
-                    $ionicPopup.alert({title:'badResponse',template:JSON.stringify(error)});
+                   /* $ionicPopup.alert({title:'badResponse',template:JSON.stringify(error)});*/
                 });
 
         }

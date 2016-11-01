@@ -5,17 +5,20 @@
     <ion-content scroll="false" >
     <div class="space">
     </div>
-        <section class="imagephoto-title">
-            <p>
-                Agrega una imagen de tu envío
-            </p>
-        </section>
-        <img ng-src="{{imageData}}" width="100px" height="100px" class="ion-camera"></img>
+
+        <img class="photo-image" ng-src="{{imageData}}" width="100%" height="250px" title="Agrega una imagen de tu envío"/>
+
+        <section class="container-button-row">
+
         <take-photo on-photo-taken="photoTaken"></take-photo>
+
         <select-photo on-photo-selected="photoSelected"></select-photo>
-        <section class="container-button imagephoto-button">
+        </section>
+        <div class="button-bottom">
+        <section class="container-button">
             <a class="button-noicon" ng-click="confirmImagePhoto()" title="">CONTINUAR</a>
         </section>
+        </div>
 
 
     </ion-content>

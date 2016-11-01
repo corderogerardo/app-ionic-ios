@@ -8,47 +8,48 @@
         <section class="sentresume-data">
             <section class="sentresume-content">
                 <div class="data-origin">
-                    <b>ORIGEN DEL DOCUMENTO</b>
+                    <b>Origen del documento</b>
                     <p>{{ doc.originAddress }}</p>
                     <p>{{ doc.originDetail }}</p>
                 </div>
-                <a class="data-button-edit" ng-click="editOrigin()" title="">
+                <a class="" ng-click="editOrigin()" title="">
                     <i class="ion-edit"></i>
-                    <p>EDITAR</p>
+
                 </a>
             </section>
             <section class="sentresume-content">
                 <div class="data-origin">
-                    <b>DESTINO DEL DOCUMENTO</b>
+                    <b>Destino del documento</b>
                     <p>{{ doc.destinyAddress }}</p>
                     <p>{{ doc.destinyDetail }}</p>
                 </div>
-                <a class="data-button-edit" ng-click="editDestiny()" title="">
+                <a class="" ng-click="editDestiny()" title="">
                     <i class="ion-edit"></i>
-                    <p>EDITAR</p>
-                </a>
-            </section>
-            <section class="sentresume-content-noborder">
-                <div class="data-origin">
-                    <b>CARACTERÍSTICAS</b>
-                    <p>{{ doc.descriptionText }}</p>
-                    <p>Valor Declarado: {{ doc.amountDeclared }}</p>
-                </div>
-                <a class="data-button-edit" ng-click="editFeatures()" title="">
-                    <i class="ion-edit"></i>
-                    <p>EDITAR</p>
                 </a>
             </section>
             <section class="sentresume-content">
                 <div class="data-origin">
-                    <b>DESTINATARIO</b>
-                    <p>Nombre: {{ doc.destinyName }},<br> Email: {{ doc.emailDestinyClient }}, <br> Phone: {{ doc.cellphoneDestinyClient }} .</p>
+                    <b>Características</b>
+                    <p>{{ doc.descriptionText }}</p>
+                    <p>Valor Declarado: {{ doc.amountDeclared }}</p>
                 </div>
+                <a class="" ng-click="editFeatures()" title="">
+                    <i class="ion-edit"></i>
+                </a>
+            </section>
+            <section class="sentresume-content">
+                <div class="data-origin">
+                    <b>Destinatario</b>
+                    <p>{{ doc.destinyName }}<br>{{ doc.emailDestinyClient }} <br> {{ doc.cellphoneDestinyClient }} .</p>
+                </div>
+                <a class="" ng-click="editDestinatary()" title="">
+                    <i class="ion-edit"></i>
+                </a>
             </section>
         </section>
         <section class="sentresume-cost">
 
-            <p>COSTO DEL ENVÍO</p>
+            Costo del envío:
             <b>{{ doc.amount || 0}} COT </b>
 
         </section>

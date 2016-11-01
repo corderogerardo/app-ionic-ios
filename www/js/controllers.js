@@ -16,9 +16,9 @@ angular.module('axpress')
             Client.edit($scope.user)
                 .then(function(data){
                     console.log(data);
-                    $ionicPopup.alert({title:'goodResponse',template:JSON.stringify(data)});
+                   /* $ionicPopup.alert({title:'Cambios guardados',template:"Exito."});*/
                 },function(error){
-                    $ionicPopup.alert({title:'badResponse',template:JSON.stringify(error)});
+                   /* $ionicPopup.alert({title:'badResponse',template:JSON.stringify(error)});*/
                 });
 
         }
@@ -35,7 +35,7 @@ function($scope, $rootScope, Client, Logger, $state){
 		activate();
 
 		function activate () {
-			/*processFacebookLogin({"id":"118882175249424","name":"Prueba Axpress","email":"axpressprueba1@gmail.com"});*/
+			processFacebookLogin({"id":"118882175249424","name":"Prueba Axpress","email":"axpressprueba1@gmail.com"});
 				if (localStorage.getItem('axpress.user') && localStorage.getItem('axpress.menu')) {
 						$rootScope.user = JSON.parse(localStorage.getItem('axpress.user'));
 						$rootScope.menu = JSON.parse(localStorage.getItem('axpress.menu'));
@@ -446,7 +446,13 @@ angular.module('axpress')
             $scope.doc.typeServices = $state.params.serviceType;
             $scope.doc.bagId = $scope.choice.bag.shipping_bag_id;
             $scope.extraData.bag = $scope.choice.bag;
-            $state.go("document.features");
+            if($scope.extraData.editFeatures === true){
+                $scope.extraData.editFeatures = false;
+                $state.go("document.resume");
+
+            }else{
+                $state.go("document.features");
+            }
         };
 
         function initialize () {
@@ -474,8 +480,8 @@ angular.module('axpress')
         initialize();
 
         $scope.saveCaracteristics = function () {
-            if($scope.extraData.editFeatures === true){
-                $scope.extraData.editFeatures = false;
+            if($scope.extraData.editDestinatary === true){
+                $scope.extraData.editDestinatary = false;
                 $state.go("document.resume");
 
             }else{
@@ -631,6 +637,12 @@ angular.module('axpress')
         $scope.editFeatures = function(){
             $scope.extraData.editFeatures = true;
 
+            $state.go("document.servicetype");
+
+        };
+        $scope.editDestinatary = function(){
+            $scope.extraData.editDestinatary = true;
+
             $state.go("document.features");
 
         };
@@ -640,7 +652,7 @@ angular.module('axpress')
         };
 
         function requestQuotation () {
-            Shipping.quotation($scope.doc.originLatitude, $scope.doc.originLongitude, 
+            Shipping.quotation($scope.doc.originLatitude, $scope.doc.originLongitude,
                 $scope.doc.destinyLatitude, $scope.doc.destinyLongitude, $state.params.serviceType, $scope.doc.bagId)
                 .then(function(response){
                     if (response.return && response.status == 200) {

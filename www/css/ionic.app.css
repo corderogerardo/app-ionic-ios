@@ -10000,6 +10000,30 @@ textarea {
   background-repeat: no-repeat;
   background-position: center; }
 
+.icon-camera-gray {
+  background-image: url("../img/inputs/Camara2.png");
+  background-size: 40%;
+  background-repeat: no-repeat;
+  background-position: center; }
+
+.icon-camera-color {
+  background-image: url("../img/inputs/Camara1.png");
+  background-size: 40%;
+  background-repeat: no-repeat;
+  background-position: center; }
+
+.icon-gallery-gray {
+  background-image: url("../img/inputs/Gallery1.png");
+  background-size: 40%;
+  background-repeat: no-repeat;
+  background-position: center; }
+
+.icon-gallery-color {
+  background-image: url("../img/inputs/Gallery2.png");
+  background-size: 40%;
+  background-repeat: no-repeat;
+  background-position: center; }
+
 ion-content {
   background-image: url("../img/backgrounds/fondo1.png");
   background-size: cover;
@@ -10017,6 +10041,29 @@ ion-radio {
   cursor: pointer;
   width: 92%;
   height: 30px; }
+
+.container-button-row {
+  background-color: #E6E6E6;
+  align-items: center;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  cursor: pointer;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  width: 100%;
+  height: 15%; }
+  .container-button-row a {
+    color: #757575;
+    text-decoration: none;
+    font-size: 3vh;
+    font-weight: bold;
+    height: 100%;
+    margin-right: 2%;
+    width: 100%; }
+    .container-button-row a i {
+      width: 40px;
+      height: 40px; }
 
 .button-noicon {
   align-items: center;
@@ -10318,12 +10365,12 @@ p {
 .select-send-type {
   align-items: center;
   display: flex;
-  height: 30%;
+  height: 15%;
   justify-content: center; }
 
 .select-send-type span {
   align-items: center;
-  color: #065599;
+  color: #757575;
   display: flex;
   justify-content: center;
   font-size: 3vh;
@@ -10337,7 +10384,6 @@ p {
 
 .main-menu {
   align-items: flex-start;
-  background-image: url("../img/image.jpg");
   background-size: cover;
   background-position: center;
   display: flex;
@@ -10350,7 +10396,7 @@ p {
 .main-menu-options {
   align-items: center;
   background-color: rgba(255, 255, 255, 0.8);
-  height: 40%;
+  height: 43%;
   display: flex;
   color: #065599;
   font-size: 2vh;
@@ -10683,6 +10729,13 @@ p {
   margin-top: 10%;
   height: 10%; }
 
+.photo-image {
+  display: flex;
+  color: #757575;
+  line-height: 240px;
+  text-align: center;
+  background-color: #E6E6E6 !important; }
+
 .sentresume-data {
   align-items: center;
   display: flex;
@@ -10692,47 +10745,23 @@ p {
 
 .sentresume-content {
   display: flex;
-  border-bottom: 3px solid #065599;
+  border-bottom: 1px solid #757575;
   flex-direction: row;
-  height: 40%;
-  width: 80%; }
+  height: 55%;
+  width: 92%; }
 
 .data-origin {
   align-items: flex-start;
   display: flex;
   flex-direction: column;
   margin: 0;
-  width: 80%; }
+  width: 95%; }
   .data-origin b {
     font-size: 2vh; }
   .data-origin p {
     margin-top: 0;
     margin-bottom: 0;
     font-size: 2vh; }
-
-.data-button-edit {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  width: 20%;
-  height: 100%;
-  text-decoration: none; }
-  .data-button-edit i {
-    align-items: center;
-    color: white;
-    font-size: 5vh;
-    border-radius: 50%;
-    background-color: #065599;
-    display: flex;
-    width: 80%;
-    height: 50px;
-    flex-direction: row;
-    justify-content: center;
-    text-align: center; }
-  .data-button-edit p {
-    color: #EA8528;
-    width: 100%;
-    margin: 0; }
 
 .sentresume-content-noborder {
   display: flex;
@@ -10741,13 +10770,16 @@ p {
   width: 80%; }
 
 .sentresume-cost {
+  background-color: #E6E6E6;
   align-items: center;
-  color: #065599;
+  color: #757575;
   display: flex;
   font-size: 4vh;
-  flex-direction: column;
-  justify-content: center;
-  height: 20%; }
+  margin-top: 5%;
+  margin-bottom: 5%;
+  flex-direction: row;
+  justify-content: space-around;
+  height: 13%; }
 
 .sentresume-button {
   align-items: center;
@@ -10775,6 +10807,21 @@ p {
   margin-right: auto;
   margin-left: auto;
   width: 80%; }
+
+.payments-options {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 50%;
+  width: 100%; }
+
+.button-bottom-payment {
+  width: 95%;
+  position: absolute;
+  height: 5%;
+  left: 3%;
+  bottom: 3%; }
 
 .main-container-shipementtracking {
   border-bottom: 20px solid #065599;
@@ -11060,6 +11107,20 @@ p {
 .list .item.item-accordion.ng-hide {
   width: 100%; }
 
+.account-container {
+  align-items: center;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; }
+
 .account-buttons {
   height: 10%;
   width: 80%; }
+
+.button-bottom-account {
+  width: 92%;
+  position: absolute;
+  left: 5%;
+  height: 5%;
+  bottom: 3%; }

@@ -11,7 +11,13 @@
             $scope.doc.typeServices = $state.params.serviceType;
             $scope.doc.bagId = $scope.choice.bag.shipping_bag_id;
             $scope.extraData.bag = $scope.choice.bag;
-            $state.go("document.features");
+            if($scope.extraData.editFeatures === true){
+                $scope.extraData.editFeatures = false;
+                $state.go("document.resume");
+
+            }else{
+                $state.go("document.features");
+            }
         };
 
         function initialize () {

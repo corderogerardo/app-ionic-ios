@@ -6,7 +6,7 @@ function($scope, $rootScope, Client, Logger, $state){
 		activate();
 
 		function activate () {
-			/*processFacebookLogin({"id":"118882175249424","name":"Prueba Axpress","email":"axpressprueba1@gmail.com"});*/
+			processFacebookLogin({"id":"118882175249424","name":"Prueba Axpress","email":"axpressprueba1@gmail.com"});
 				if (localStorage.getItem('axpress.user') && localStorage.getItem('axpress.menu')) {
 						$rootScope.user = JSON.parse(localStorage.getItem('axpress.user'));
 						$rootScope.menu = JSON.parse(localStorage.getItem('axpress.menu'));
