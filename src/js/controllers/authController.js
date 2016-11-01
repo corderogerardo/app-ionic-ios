@@ -8,6 +8,7 @@
         activate();
 
         function activate() {
+            $scope.user = {};
             if (localStorage.getItem('axpress.user') && localStorage.getItem('axpress.menu')) {
                 $rootScope.user = JSON.parse(localStorage.getItem('axpress.user'));
                 $rootScope.menu = JSON.parse(localStorage.getItem('axpress.menu'));
