@@ -542,35 +542,35 @@ angular.module('axpress')
 ;
 
 (function(){
-angular.module('axpress')
-    .controller('PaymentMethodsController',PaymentMethodsController);
-    PaymentMethodsController.$inject = ['$rootScope','$scope', '$cordovaDialogs', '$state','Logger','Shipping'];
-        function PaymentMethodsController($rootScope, $scope, $cordovaDialogs, $state,Logger,Shipping) {
-            initialize();
+    angular.module('axpress')
+    .controller('PaymentMethodsController', PaymentMethodsController);
 
+    PaymentMethodsController.$inject = ['$rootScope', '$scope', '$cordovaDialogs', '$state', 'constants', 'Logger', 'Shipping'];
 
+    function PaymentMethodsController($rootScope, $scope, $cordovaDialogs, $state, constants, Logger, Shipping) {
+        initialize();
 
-            $scope.confirmPaymentMethod = function () {
-                console.log($scope.doc.paymentChoice.name);
-                console.log(typeof(new Date()));
-                Shipping.register($scope.doc.descriptionText,1,$scope.doc.quotation.kilometers_text,$rootScope.user.name,$scope.doc.originAddress,$scope.doc.originLatitude,$scope.doc.originLongitude,$scope.doc.destinyAddress,$scope.doc.destinyLatitude,$scope.doc.destinyLongitude,$scope.doc.quotation.price,$scope.doc.quotation.declaredvalue,$scope.doc.typeServices,0,new Date()).then(function(response){
-                    console.log(response);
-                    $state.go("menu");
-                },function(error){
-                    console.log(error);
+        $scope.confirmPaymentMethod = function () {
+            Shipping.registerDocument($scope.doc, $rootScope.user)
+                .then(function (response) {
+                    if (response.return && response.status == 200) {
+                        successfullyRegisteredRequest();
+                    }
+                }, function (error) {
+                    console.error(error);
                 });
-            };
+        };
 
-            function initialize (){
-                $scope.doc = $state.current.data.doc;
-                $scope.extraData = $state.current.data.extraData;
-                $scope.doc.paymentChoice = {name: ''};
-                console.log($scope.doc);
-                console.log($scope.doc.paymentChoice);
-                console.log($scope.extraData);
-                console.log($rootScope.user);
-            }
+        function successfullyRegisteredRequest () {
+            $state.go("menu");
         }
+
+        function initialize () {
+            $scope.doc = $state.current.data.doc;
+            $scope.extraData = $state.current.data.extraData;
+            $scope.paymentMethods = constants.paymentMethods;
+        }
+    }
 })();
 ;
 
@@ -606,10 +606,12 @@ angular.module('axpress')
 ;
 
 (function(){
-angular.module('axpress')
+    angular.module('axpress')
     .controller('ResumeController',ResumeController);
+
     ResumeController.$inject = ['$rootScope','$scope', '$cordovaDialogs', '$state','Logger','Shipping'];
-    function ResumeController($rootScope,$scope,$cordovaDialogs, $state,Logger,Shipping){
+
+    function ResumeController ($rootScope,$scope,$cordovaDialogs, $state,Logger,Shipping) {
 
         initialize();
 
@@ -633,27 +635,35 @@ angular.module('axpress')
         };
 
         $scope.confirmResume = function(){
-            $state.go("document.paymentmethods")
+            $state.go("document.paymentmethods");
         };
 
-        function initialize () {
-            $scope.doc = $state.current.data.doc;
-            $scope.extraData = $state.current.data.extraData;
-
-            Shipping.quotation($scope.doc.originLatitude,$scope.doc.originLongitude,$scope.doc.destinyLatitude,$scope.doc.destinyLongitude,$state.params.serviceType,$scope.doc.bagId)
+        function requestQuotation () {
+            Shipping.quotation($scope.doc.originLatitude, $scope.doc.originLongitude, 
+                $scope.doc.destinyLatitude, $scope.doc.destinyLongitude, $state.params.serviceType, $scope.doc.bagId)
                 .then(function(response){
                     if (response.return && response.status == 200) {
                         quotationSuccessful(response.data);
                     }
-            }, function (error) {
-                if (error.message)
-                    Logger.error(error.message);
-                else
-                    Logger.error('');
-            });
+                }, function (error) {
+                    if (error.message)
+                        Logger.error(error.message);
+                    else
+                        Logger.error('');
+                });
         }
+
         function quotationSuccessful(response) {
-            $scope.doc.quotation = response;
+            $scope.extraData.quotation = response;
+            $scope.doc.amount = response.price;
+            $scope.doc.distance = response.meters;
+
+        }
+
+        function initialize () {
+            $scope.doc = $state.current.data.doc;
+            $scope.extraData = $state.current.data.extraData;
+            requestQuotation();
         }
     }
 })();

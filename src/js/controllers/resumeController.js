@@ -1,8 +1,10 @@
 (function(){
-angular.module('axpress')
+    angular.module('axpress')
     .controller('ResumeController',ResumeController);
+
     ResumeController.$inject = ['$rootScope','$scope', '$cordovaDialogs', '$state','Logger','Shipping'];
-    function ResumeController($rootScope,$scope,$cordovaDialogs, $state,Logger,Shipping){
+
+    function ResumeController ($rootScope,$scope,$cordovaDialogs, $state,Logger,Shipping) {
 
         initialize();
 
@@ -26,27 +28,35 @@ angular.module('axpress')
         };
 
         $scope.confirmResume = function(){
-            $state.go("document.paymentmethods")
+            $state.go("document.paymentmethods");
         };
 
-        function initialize () {
-            $scope.doc = $state.current.data.doc;
-            $scope.extraData = $state.current.data.extraData;
-
-            Shipping.quotation($scope.doc.originLatitude,$scope.doc.originLongitude,$scope.doc.destinyLatitude,$scope.doc.destinyLongitude,$state.params.serviceType,$scope.doc.bagId)
+        function requestQuotation () {
+            Shipping.quotation($scope.doc.originLatitude, $scope.doc.originLongitude, 
+                $scope.doc.destinyLatitude, $scope.doc.destinyLongitude, $state.params.serviceType, $scope.doc.bagId)
                 .then(function(response){
                     if (response.return && response.status == 200) {
                         quotationSuccessful(response.data);
                     }
-            }, function (error) {
-                if (error.message)
-                    Logger.error(error.message);
-                else
-                    Logger.error('');
-            });
+                }, function (error) {
+                    if (error.message)
+                        Logger.error(error.message);
+                    else
+                        Logger.error('');
+                });
         }
+
         function quotationSuccessful(response) {
-            $scope.doc.quotation = response;
+            $scope.extraData.quotation = response;
+            $scope.doc.amount = response.price;
+            $scope.doc.distance = response.meters;
+
+        }
+
+        function initialize () {
+            $scope.doc = $state.current.data.doc;
+            $scope.extraData = $state.current.data.extraData;
+            requestQuotation();
         }
     }
 })();

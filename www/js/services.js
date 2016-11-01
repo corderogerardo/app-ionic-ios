@@ -304,7 +304,14 @@ angular.module('axpress')
     fbAppId: '320049998373400',
 
     //Google App ID
-    googleOAuthClientID: '96059222512-4vm97bgjdolu5i0fe0sg8tl35e85gjdm.apps.googleusercontent.com'
+    googleOAuthClientID: '96059222512-4vm97bgjdolu5i0fe0sg8tl35e85gjdm.apps.googleusercontent.com',
+
+    //Payment Methods
+    paymentMethods: [
+        {name: 'Tarjeta de Crédito', value: 1},
+        {name: 'Contra-Recogida (Efectivo)', value: 2},
+        {name: 'Contra-Entrega (Efectivo)', value: 3},
+    ]
 });
 ;
 
@@ -775,6 +782,7 @@ function($rootScope, $q, Service){
     service.history = history;
     service.register = register;
     service.quotation = quotation;
+    service.registerDocument = registerDocument;
 
     return service;
 
@@ -789,7 +797,7 @@ function($rootScope, $q, Service){
     }
 
     /**
-     * { function_description }
+     * Registers a service petition
      *
      * @param      {String}   descriptionText         The description text
      * @param      {Integer}  numberPieces            The number pieces
@@ -806,16 +814,16 @@ function($rootScope, $q, Service){
      * @param      {Integer}  typeServices            The service's type
      * @param      {Integer}  pay                     The pay
      * @param      {Double}   time                    The time
+     * @param      {Integer}  bagId                   The bag identifier
+     * @param      {Integer}  destinyClient           The destiny client
+     * @param      {String}   destinyName             The destiny name
+     * @param      {String}   cellphoneDestinyClient  The destiny client cellphone
+     * @param      {String}   emailDestinyClient      The destiny client email
      * @param      {Double}   width                   The width
      * @param      {Double}   height                  The height
      * @param      {Double}   longitude               The longitude
-     * @param      {Integer}  destinyClient           The destiny client
-     * @param      {String}   destinyName             The destiny name
      * @param      {String}   picture                 The picture
      * @param      {String}   contentPack             The content pack
-     * @param      {String}   cellphoneDestinyClient  The destiny client cellphone
-     * @param      {String}   emailDestinyClient      The destiny client email
-     * @param      {Integer}  bagId                   The bag identifier
      * @param      {String}   originDetail            The origin detail
      * @param      {String}   destinyDetail           The destiny detail
      * @param      {String}   tip                     The tip
@@ -823,10 +831,10 @@ function($rootScope, $q, Service){
      */
     function register (descriptionText, numberPieces, distance, originClient, originAddress,
         originLatitude, originLongitude, destinyAddress, destinyLatitude, destinyLongitude,
-        amount, amountDeclared, typeServices, pay, time,
+        amount, amountDeclared, typeServices, pay, time, bagId, destinyClient, destinyName,
+        cellphoneDestinyClient, emailDestinyClient,
         //Optional Parameters
-        width, height, longitude, destinyClient, destinyName, picture, contentPack,
-        cellphoneDestinyClient, emailDestinyClient, bagId, originDetail, destinyDetail, tip) {
+        width, height, longitude, picture, contentPack, originDetail, destinyDetail, tip) {
 
         //We pack params in an object
         var data = {
@@ -841,21 +849,21 @@ function($rootScope, $q, Service){
             destiny_latitude: destinyLatitude,
             destiny_longitude: destinyLongitude,
             amount: amount,
-            amountDeclared: amountDeclared,
+            //amount_declared: amountDeclared,
             type_service: typeServices,
             pay: pay,
             time: time,
+            bag_id: bagId,
+            //destiny_client: destinyClient,
+            destiny_name: destinyName,
+            cellphone_destiny_client: cellphoneDestinyClient,
+            email_destiny_client: emailDestinyClient,
             //Optional Params
             width: width,
             height: height,
             longitude: longitude,
-            destiny_client: destinyClient,
-            destiny_name: destinyName,
             picture: picture,
             content_pack: contentPack,
-            cellphone_destiny_client: cellphoneDestinyClient,
-            email_destiny_client: emailDestinyClient,
-            bag_id: bagId,
             origin_detail: originDetail,
             destiny_detail: destinyDetail,
             tip: tip
@@ -885,6 +893,15 @@ function($rootScope, $q, Service){
             bag_id:bagId
         };
         return service.apiPost('/quotation', data);
+    }
+
+    function registerDocument (doc, user) {
+        return register (doc.descriptionText, 1, doc.distance, user.id, doc.originAddress, doc.originLatitude,
+            doc.originLongitude, doc.destinyAddress, doc.destinyLatitude, doc.destinyLongitude, doc.amount,
+            doc.amountDeclared, doc.typeServices, doc.pay, new Date().valueOf(), doc.bagId, doc.destinyClient,
+            doc.destinyName, doc.cellphoneDestinyClient, doc.emailDestinyClient, 
+            undefined, undefined, undefined, undefined, undefined,
+            doc.originDetail, doc.destinyDetail);
     }
 
 }]);

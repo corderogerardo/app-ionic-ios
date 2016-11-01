@@ -8,15 +8,14 @@
         </div>
         <section class="send-type-todo">
             <div>
-                <span>Elige un <a>medio de pago</a></span>
+                <span>Elige un medio de pago</span>
             </div>
         </section>
         <section class="send-type-icon">
             <img src="../img/payments.jpg" alt="">
         </section>
         <section class="send-type-options">
-            <ion-radio class="send-type-options-radio" ng-model="doc.paymentChoice.name" ng-value="'Contra-Entrega (Efectivo)'" value="'Contra-Entrega (Efectivo)'">Contra-Entrega (Efectivo)</ion-radio>
-            <ion-radio class="send-type-options-radio" ng-model="doc.paymentChoice.name" ng-value="'Contra-Recogida (Efectivo)'" value="'Contra-Recogida (Efectivo)'">Contra-Recogida (Efectivo)</ion-radio>
+            <ion-radio ng-repeat="option in paymentMethods" class="send-type-options-radio" ng-model="doc.pay" ng-value="option.value">{{option.name}}</ion-radio>
         </section>
         <section class="center-button">
             <a class="button-noicon" ng-click="confirmPaymentMethod()" title="">CONTINUAR</a>

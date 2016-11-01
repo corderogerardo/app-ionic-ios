@@ -13,5 +13,12 @@ angular.module('axpress')
     fbAppId: '320049998373400',
 
     //Google App ID
-    googleOAuthClientID: '96059222512-4vm97bgjdolu5i0fe0sg8tl35e85gjdm.apps.googleusercontent.com'
+    googleOAuthClientID: '96059222512-4vm97bgjdolu5i0fe0sg8tl35e85gjdm.apps.googleusercontent.com',
+
+    //Payment Methods
+    paymentMethods: [
+        {name: 'Tarjeta de Crédito', value: 1},
+        {name: 'Contra-Recogida (Efectivo)', value: 2},
+        {name: 'Contra-Entrega (Efectivo)', value: 3},
+    ]
 });

@@ -82,7 +82,7 @@ angular.module('axpress', [
                 }
             },
             params: {
-                serviceType: 43
+                serviceType: null
             }
         })
         .state('document.origin', {

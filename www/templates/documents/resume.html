@@ -8,8 +8,9 @@
         <section class="sentresume-data">
             <section class="sentresume-content">
                 <div class="data-origin">
-                    <b>ORIGEN DEL </b>
+                    <b>ORIGEN DEL DOCUMENTO</b>
                     <p>{{ doc.originAddress }}</p>
+                    <p>{{ doc.originDetail }}</p>
                 </div>
                 <a class="data-button-edit" ng-click="editOrigin()" title="">
                     <i class="ion-edit"></i>
@@ -18,8 +19,9 @@
             </section>
             <section class="sentresume-content">
                 <div class="data-origin">
-                    <b>DESTINO DEL </b>
+                    <b>DESTINO DEL DOCUMENTO</b>
                     <p>{{ doc.destinyAddress }}</p>
+                    <p>{{ doc.destinyDetail }}</p>
                 </div>
                 <a class="data-button-edit" ng-click="editDestiny()" title="">
                     <i class="ion-edit"></i>
@@ -47,7 +49,7 @@
         <section class="sentresume-cost">
 
             <p>COSTO DEL ENVÍO</p>
-            <b>{{ doc.quotation.price }} COT </b>
+            <b>{{ doc.amount || 0}} COT </b>
 
         </section>
         <section class="sentresume-button">
