@@ -28,7 +28,6 @@
         $scope.editDestinatary = function() {
             $scope.extraData.navigateTo = $scope.extraData.flow + '.resume';
             $state.go($scope.extraData.flow + '.receiver');
-
         };
 
         $scope.confirmResume = function() {
@@ -36,8 +35,8 @@
         };
 
         function requestQuotation() {
-            Shipping.quotation($scope.doc.originLatitude, $scope.doc.originLongitude,
-                    $scope.doc.destinyLatitude, $scope.doc.destinyLongitude, $state.params.serviceType, $scope.doc.bagId)
+            Shipping.quotation($scope.data.originLatitude, $scope.data.originLongitude,
+                    $scope.data.destinyLatitude, $scope.data.destinyLongitude, $state.params.serviceType, $scope.data.bagId)
                 .then(function(response) {
                     if (response.return && response.status == 200) {
                         quotationSuccessful(response.data);
@@ -52,15 +51,17 @@
 
         function quotationSuccessful(response) {
             $scope.extraData.quotation = response;
-            $scope.doc.amount = response.price;
-            $scope.doc.distance = response.meters;
+            $scope.data.amount = response.price;
+            $scope.data.distance = response.meters;
 
         }
 
         function activate() {
-            $scope.doc = $state.current.data.doc;
+            $scope.data = $state.current.data.data;
             $scope.extraData = $state.current.data.extraData;
             requestQuotation();
+            console.log($scope.data);
+            console.log($scope.extraData);
         }
     }
 })();

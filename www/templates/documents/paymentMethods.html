@@ -13,7 +13,7 @@
         </section>
 
         <section class="payments-options">
-            <ion-radio ng-repeat="option in paymentMethods" class="send-type-options-radio" ng-model="doc.pay" ng-value="option.value">{{option.name}}</ion-radio>
+            <ion-radio ng-repeat="option in paymentMethods" class="send-type-options-radio" ng-model="data.pay" ng-value="option.value">{{option.name}}</ion-radio>
         </section>
         <section class="button-bottom-payment">
             <a class="button-noicon" ng-click="confirmPaymentMethod()" title="">CONTINUAR</a>

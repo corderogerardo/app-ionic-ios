@@ -75,7 +75,7 @@ angular.module('axpress', [
             abstract: true,
             template: '<ui-view/>',
             data: {
-                doc: {},
+                data: {},
                 extraData: {
                     flow: 'document',
                     originNext: 'document.destiny',
@@ -92,12 +92,12 @@ angular.module('axpress', [
         .state('document.origin', {
             url: '/origin',
             templateUrl: 'templates/documents/origin.html',
-            controller: 'DocumentOriginController'
+            controller: 'OriginController'
         })
         .state('document.destiny', {
             url: '/destiny',
             templateUrl: 'templates/documents/destiny.html',
-            controller: 'DocumentDestinyController'
+            controller: 'DestinyController'
         })
         .state('document.features', {
             url: '/features',

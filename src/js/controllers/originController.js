@@ -1,6 +1,6 @@
 (function() {
     angular.module('axpress')
-        .controller('DocumentOriginController', DocumentOriginController);
+        .controller('OriginController', DocumentOriginController);
 
     DocumentOriginController.$inject = ['$rootScope', '$scope', '$cordovaDialogs', '$state', '$ionicPopup'];
 
@@ -13,9 +13,9 @@
         };
 
         $scope.confirmOrigin = function() {
-            $scope.doc.originAddress = $scope.place.formatted_address;
-            $scope.doc.originLatitude = $scope.place.geometry.location.lat();
-            $scope.doc.originLongitude = $scope.place.geometry.location.lng();
+            $scope.data.originAddress = $scope.place.formatted_address;
+            $scope.data.originLatitude = $scope.place.geometry.location.lat();
+            $scope.data.originLongitude = $scope.place.geometry.location.lng();
             $scope.extraData.originPlace = $scope.place;
             if ($scope.extraData.navigateTo) {
                 $state.go($scope.extraData.navigateTo);
@@ -26,13 +26,13 @@
         };
 
         function setExistingAddress() {
-            $scope.markers[0].position = "" + $scope.doc.originLatitude + "," + $scope.doc.originLongitude;
-            $scope.address = $scope.doc.originAddress;
+            $scope.markers[0].position = "" + $scope.data.originLatitude + "," + $scope.data.originLongitude;
+            $scope.address = $scope.data.originAddress;
             $scope.place = $state.current.data.extraData.originPlace;
         }
 
         function activate() {
-            $scope.doc = $state.current.data.doc;
+            $scope.data = $state.current.data.data;
             $scope.extraData = $state.current.data.extraData;
             $scope.markers = [{
                 title: 'Origen'

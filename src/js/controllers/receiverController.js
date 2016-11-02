@@ -17,7 +17,7 @@
         };
 
         function activate() {
-            $scope.doc = $state.current.data.doc;
+            $scope.data = $state.current.data.data;
             $scope.extraData = $state.current.data.extraData;
 
         }

@@ -8,9 +8,9 @@
         activate();
 
         $scope.confirmServiceType = function() {
-            $scope.doc.typeServices = $state.params.serviceType;
-            $scope.doc.bagId = $scope.choice.bag;
-            $scope.extraData.bag = $scope.choice.bag;
+            $scope.data.typeServices = $state.params.serviceType;
+            $scope.data.bagId = $scope.choice.bag;
+            $scope.extraData.bagId = $scope.choice.bag;
             if ($scope.extraData.navigateTo) {
                 $state.go($scope.extraData.navigateTo);
                 delete $scope.extraData.navigateTo;
@@ -27,7 +27,7 @@
 
         function activate() {
             $scope.choice = {};
-            $scope.doc = $state.current.data.doc;
+            $scope.data = $state.current.data.data;
             $scope.extraData = $state.current.data.extraData;
             $scope.menu.forEach(function(option) {
                 if (option.service_provider_id == $state.params.serviceType) {

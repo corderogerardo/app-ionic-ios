@@ -285,27 +285,9 @@
 })();
 ;
 
-/**
- * Created by gerardo on 24/10/16.
- */
-angular.module('axpress')
-    .controller('CaracteristicsErrandsController', ['$rootScope','$scope', '$cordovaDialogs', '$state','$ionicPopup', function($rootScope,$scope,$cordovaDialogs, $state, $ionicPopup) {
-
-    }]);
-;
-
-/**
- * Created by gerardo on 24/10/16.
- */
-angular.module('axpress')
-    .controller('CaracteristicsPackagesController', ['$rootScope','$scope', '$cordovaDialogs', '$state','$ionicPopup', function($rootScope,$scope,$cordovaDialogs, $state, $ionicPopup) {
-
-}]);
-;
-
 (function() {
     angular.module('axpress')
-        .controller('DocumentDestinyController', DocumentDestinyController);
+        .controller('DestinyController', DocumentDestinyController);
 
     DocumentDestinyController.$inject = ['$rootScope', '$scope', '$cordovaDialogs', '$state', '$ionicPopup'];
 
@@ -318,9 +300,9 @@ angular.module('axpress')
         };
 
         $scope.confirmDestiny = function() {
-            $scope.doc.destinyAddress = $scope.place.formatted_address;
-            $scope.doc.destinyLatitude = $scope.place.geometry.location.lat();
-            $scope.doc.destinyLongitude = $scope.place.geometry.location.lng();
+            $scope.data.destinyAddress = $scope.place.formatted_address;
+            $scope.data.destinyLatitude = $scope.place.geometry.location.lat();
+            $scope.data.destinyLongitude = $scope.place.geometry.location.lng();
             $scope.extraData.destinyPlace = $scope.place;
             if ($scope.extraData.navigateTo) {
                 $state.go($scope.extraData.navigateTo);
@@ -331,72 +313,26 @@ angular.module('axpress')
         };
 
         function setExistingAddress() {
-            $scope.markers[1].position = "" + $scope.doc.destinyLatitude + "," + $scope.doc.destinyLongitude;
-            $scope.address = $scope.doc.originAddress;
+            $scope.markers[1].position = "" + $scope.data.destinyLatitude + "," + $scope.data.destinyLongitude;
+            $scope.address = $scope.data.destinyAddress;
             $scope.place = $state.current.data.extraData.destinyPlace;
         }
 
         function activate() {
-            $scope.doc = $state.current.data.doc;
+            $scope.data = $state.current.data.data;
             $scope.extraData = $state.current.data.extraData;
             $scope.markers = [{
                 title: 'Origen',
-                position: [$scope.doc.originLatitude, $scope.doc.originLongitude]
+                position: [$scope.data.originLatitude, $scope.data.originLongitude]
             }, {
                 title: 'Destino'
             }];
 
-            if ($scope.doc.destinyLatitude && $scope.doc.destinyLongitude)
+            if ($scope.data.destinyLatitude && $scope.data.destinyLongitude)
                 setExistingAddress();
         }
     }
 
-})();
-;
-
-(function() {
-    angular.module('axpress')
-        .controller('DocumentOriginController', DocumentOriginController);
-
-    DocumentOriginController.$inject = ['$rootScope', '$scope', '$cordovaDialogs', '$state', '$ionicPopup'];
-
-    function DocumentOriginController($rootScope, $scope, $cordovaDialogs, $state, $ionicPopup) {
-        activate();
-
-        $scope.placeChanged = function() {
-            $scope.place = this.getPlace();
-            $scope.markers[0].position = $scope.place.geometry.location;
-        };
-
-        $scope.confirmOrigin = function() {
-            $scope.doc.originAddress = $scope.place.formatted_address;
-            $scope.doc.originLatitude = $scope.place.geometry.location.lat();
-            $scope.doc.originLongitude = $scope.place.geometry.location.lng();
-            $scope.extraData.originPlace = $scope.place;
-            if ($scope.extraData.navigateTo) {
-                $state.go($scope.extraData.navigateTo);
-                delete $scope.extraData.navigateTo;
-            } else {
-                $state.go($scope.extraData.originNext);
-            }
-        };
-
-        function setExistingAddress() {
-            $scope.markers[0].position = "" + $scope.doc.originLatitude + "," + $scope.doc.originLongitude;
-            $scope.address = $scope.doc.originAddress;
-            $scope.place = $state.current.data.extraData.originPlace;
-        }
-
-        function activate() {
-            $scope.doc = $state.current.data.doc;
-            $scope.extraData = $state.current.data.extraData;
-            $scope.markers = [{
-                title: 'Origen'
-            }];
-            if ($scope.extraData.originPlace)
-                setExistingAddress();
-        }
-    }
 })();
 ;
 
@@ -410,9 +346,9 @@ angular.module('axpress')
         activate();
 
         $scope.confirmServiceType = function() {
-            $scope.doc.typeServices = $state.params.serviceType;
-            $scope.doc.bagId = $scope.choice.bag;
-            $scope.extraData.bag = $scope.choice.bag;
+            $scope.data.typeServices = $state.params.serviceType;
+            $scope.data.bagId = $scope.choice.bag;
+            $scope.extraData.bagId = $scope.choice.bag;
             if ($scope.extraData.navigateTo) {
                 $state.go($scope.extraData.navigateTo);
                 delete $scope.extraData.navigateTo;
@@ -429,7 +365,7 @@ angular.module('axpress')
 
         function activate() {
             $scope.choice = {};
-            $scope.doc = $state.current.data.doc;
+            $scope.data = $state.current.data.data;
             $scope.extraData = $state.current.data.extraData;
             $scope.menu.forEach(function(option) {
                 if (option.service_provider_id == $state.params.serviceType) {
@@ -502,6 +438,52 @@ angular.module('axpress')
 
 (function() {
     angular.module('axpress')
+        .controller('OriginController', DocumentOriginController);
+
+    DocumentOriginController.$inject = ['$rootScope', '$scope', '$cordovaDialogs', '$state', '$ionicPopup'];
+
+    function DocumentOriginController($rootScope, $scope, $cordovaDialogs, $state, $ionicPopup) {
+        activate();
+
+        $scope.placeChanged = function() {
+            $scope.place = this.getPlace();
+            $scope.markers[0].position = $scope.place.geometry.location;
+        };
+
+        $scope.confirmOrigin = function() {
+            $scope.data.originAddress = $scope.place.formatted_address;
+            $scope.data.originLatitude = $scope.place.geometry.location.lat();
+            $scope.data.originLongitude = $scope.place.geometry.location.lng();
+            $scope.extraData.originPlace = $scope.place;
+            if ($scope.extraData.navigateTo) {
+                $state.go($scope.extraData.navigateTo);
+                delete $scope.extraData.navigateTo;
+            } else {
+                $state.go($scope.extraData.originNext);
+            }
+        };
+
+        function setExistingAddress() {
+            $scope.markers[0].position = "" + $scope.data.originLatitude + "," + $scope.data.originLongitude;
+            $scope.address = $scope.data.originAddress;
+            $scope.place = $state.current.data.extraData.originPlace;
+        }
+
+        function activate() {
+            $scope.data = $state.current.data.data;
+            $scope.extraData = $state.current.data.extraData;
+            $scope.markers = [{
+                title: 'Origen'
+            }];
+            if ($scope.extraData.originPlace)
+                setExistingAddress();
+        }
+    }
+})();
+;
+
+(function() {
+    angular.module('axpress')
         .controller('PaymentMethodsController', PaymentMethodsController);
 
     PaymentMethodsController.$inject = ['$rootScope', '$scope', '$cordovaDialogs', '$state', 'constants', 'Logger', 'Shipping'];
@@ -510,7 +492,7 @@ angular.module('axpress')
         activate();
 
         $scope.confirmPaymentMethod = function() {
-            Shipping.registerDocument($scope.doc, $rootScope.user)
+            Shipping.registerDocument($scope.data, $rootScope.user)
                 .then(function(response) {
                     if (response.return && response.status == 200) {
                         successfullyRegisteredRequest();
@@ -525,7 +507,7 @@ angular.module('axpress')
         }
 
         function activate() {
-            $scope.doc = $state.current.data.doc;
+            $scope.data = $state.current.data.data;
             $scope.extraData = $state.current.data.extraData;
             $scope.paymentMethods = constants.paymentMethods;
         }
@@ -580,7 +562,7 @@ angular.module('axpress')
         };
 
         function activate() {
-            $scope.doc = $state.current.data.doc;
+            $scope.data = $state.current.data.data;
             $scope.extraData = $state.current.data.extraData;
 
         }
@@ -618,7 +600,6 @@ angular.module('axpress')
         $scope.editDestinatary = function() {
             $scope.extraData.navigateTo = $scope.extraData.flow + '.resume';
             $state.go($scope.extraData.flow + '.receiver');
-
         };
 
         $scope.confirmResume = function() {
@@ -626,8 +607,8 @@ angular.module('axpress')
         };
 
         function requestQuotation() {
-            Shipping.quotation($scope.doc.originLatitude, $scope.doc.originLongitude,
-                    $scope.doc.destinyLatitude, $scope.doc.destinyLongitude, $state.params.serviceType, $scope.doc.bagId)
+            Shipping.quotation($scope.data.originLatitude, $scope.data.originLongitude,
+                    $scope.data.destinyLatitude, $scope.data.destinyLongitude, $state.params.serviceType, $scope.data.bagId)
                 .then(function(response) {
                     if (response.return && response.status == 200) {
                         quotationSuccessful(response.data);
@@ -642,17 +623,17 @@ angular.module('axpress')
 
         function quotationSuccessful(response) {
             $scope.extraData.quotation = response;
-            $scope.doc.amount = response.price;
-            $scope.doc.distance = response.meters;
+            $scope.data.amount = response.price;
+            $scope.data.distance = response.meters;
 
         }
 
         function activate() {
-            $scope.doc = $state.current.data.doc;
+            $scope.data = $state.current.data.data;
             $scope.extraData = $state.current.data.extraData;
-            console.log($scope.doc);
-            console.log($scope.extraData);
             requestQuotation();
+            console.log($scope.data);
+            console.log($scope.extraData);
         }
     }
 })();

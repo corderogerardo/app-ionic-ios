@@ -8,7 +8,7 @@
         activate();
 
         $scope.confirmPaymentMethod = function() {
-            Shipping.registerDocument($scope.doc, $rootScope.user)
+            Shipping.registerDocument($scope.data, $rootScope.user)
                 .then(function(response) {
                     if (response.return && response.status == 200) {
                         successfullyRegisteredRequest();
@@ -23,7 +23,7 @@
         }
 
         function activate() {
-            $scope.doc = $state.current.data.doc;
+            $scope.data = $state.current.data.data;
             $scope.extraData = $state.current.data.extraData;
             $scope.paymentMethods = constants.paymentMethods;
         }

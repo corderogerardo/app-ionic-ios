@@ -9,8 +9,8 @@
             <section class="sentresume-content">
                 <div class="data-origin">
                     <b>Origen del documento</b>
-                    <p>{{ doc.originAddress }}</p>
-                    <p>{{ doc.originDetail }}</p>
+                    <p>{{ data.originAddress }}</p>
+                    <p>{{ data.originDetail }}</p>
                 </div>
                 <a class="" ng-click="editOrigin()" title="">
                     <i class="ion-edit"></i>
@@ -20,8 +20,8 @@
             <section class="sentresume-content">
                 <div class="data-origin">
                     <b>Destino del documento</b>
-                    <p>{{ doc.destinyAddress }}</p>
-                    <p>{{ doc.destinyDetail }}</p>
+                    <p>{{ data.destinyAddress }}</p>
+                    <p>{{ data.destinyDetail }}</p>
                 </div>
                 <a class="" ng-click="editDestiny()" title="">
                     <i class="ion-edit"></i>
@@ -30,8 +30,8 @@
             <section class="sentresume-content">
                 <div class="data-origin">
                     <b>Características</b>
-                    <p>{{ doc.descriptionText }}</p>
-                    <p>Valor Declarado: {{ doc.amountDeclared }}</p>
+                    <p>{{ data.descriptionText }}</p>
+                    <p>Valor Declarado: {{ data.amountDeclared }}</p>
                 </div>
                 <a class="" ng-click="editFeatures()" title="">
                     <i class="ion-edit"></i>
@@ -40,7 +40,7 @@
             <section class="sentresume-content">
                 <div class="data-origin">
                     <b>Destinatario</b>
-                    <p>{{ doc.destinyName }}<br>{{ doc.emailDestinyClient }} <br> {{ doc.cellphoneDestinyClient }} .</p>
+                    <p>{{ data.destinyName }}<br>{{ data.emailDestinyClient }} <br> {{ data.cellphoneDestinyClient }} .</p>
                 </div>
                 <a class="" ng-click="editDestinatary()" title="">
                     <i class="ion-edit"></i>
@@ -50,7 +50,7 @@
         <section class="sentresume-cost">
 
             Costo del envío:
-            <b>{{ doc.amount || 0}} COT </b>
+            <b>{{ data.amount || 0}} COT </b>
 
         </section>
         <section class="sentresume-button">

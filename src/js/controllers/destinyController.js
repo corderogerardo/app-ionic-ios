@@ -1,6 +1,6 @@
 (function() {
     angular.module('axpress')
-        .controller('DocumentDestinyController', DocumentDestinyController);
+        .controller('DestinyController', DocumentDestinyController);
 
     DocumentDestinyController.$inject = ['$rootScope', '$scope', '$cordovaDialogs', '$state', '$ionicPopup'];
 
@@ -13,9 +13,9 @@
         };
 
         $scope.confirmDestiny = function() {
-            $scope.doc.destinyAddress = $scope.place.formatted_address;
-            $scope.doc.destinyLatitude = $scope.place.geometry.location.lat();
-            $scope.doc.destinyLongitude = $scope.place.geometry.location.lng();
+            $scope.data.destinyAddress = $scope.place.formatted_address;
+            $scope.data.destinyLatitude = $scope.place.geometry.location.lat();
+            $scope.data.destinyLongitude = $scope.place.geometry.location.lng();
             $scope.extraData.destinyPlace = $scope.place;
             if ($scope.extraData.navigateTo) {
                 $state.go($scope.extraData.navigateTo);
@@ -26,22 +26,22 @@
         };
 
         function setExistingAddress() {
-            $scope.markers[1].position = "" + $scope.doc.destinyLatitude + "," + $scope.doc.destinyLongitude;
-            $scope.address = $scope.doc.originAddress;
+            $scope.markers[1].position = "" + $scope.data.destinyLatitude + "," + $scope.data.destinyLongitude;
+            $scope.address = $scope.data.destinyAddress;
             $scope.place = $state.current.data.extraData.destinyPlace;
         }
 
         function activate() {
-            $scope.doc = $state.current.data.doc;
+            $scope.data = $state.current.data.data;
             $scope.extraData = $state.current.data.extraData;
             $scope.markers = [{
                 title: 'Origen',
-                position: [$scope.doc.originLatitude, $scope.doc.originLongitude]
+                position: [$scope.data.originLatitude, $scope.data.originLongitude]
             }, {
                 title: 'Destino'
             }];
 
-            if ($scope.doc.destinyLatitude && $scope.doc.destinyLongitude)
+            if ($scope.data.destinyLatitude && $scope.data.destinyLongitude)
                 setExistingAddress();
         }
     }
