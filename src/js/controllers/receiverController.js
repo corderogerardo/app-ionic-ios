@@ -1,0 +1,25 @@
+(function() {
+    angular.module('axpress')
+        .controller('ReceiverController', ReceiverController);
+
+    ReceiverController.$inject = ['$rootScope', '$scope', '$cordovaDialogs', '$state'];
+
+    function ReceiverController($rootScope, $scope, $cordovaDialogs, $state) {
+        activate();
+
+        $scope.saveCaracteristics = function() {
+            if ($scope.extraData.navigateTo) {
+                $state.go($scope.extraData.navigateTo);
+                delete $scope.extraData.navigateTo;
+            } else {
+                $state.go($scope.extraData.receiverNext);
+            }
+        };
+
+        function activate() {
+            $scope.doc = $state.current.data.doc;
+            $scope.extraData = $state.current.data.extraData;
+
+        }
+    }
+})();

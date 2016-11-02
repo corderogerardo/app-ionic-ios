@@ -9,27 +9,25 @@
         activate();
 
         $scope.editOrigin = function() {
-            $scope.extraData.editOrigin = true;
-
-            $state.go("document.origin");
-
+            $scope.extraData.navigateTo = $scope.extraData.flow + '.resume';
+            $state.go($scope.extraData.flow + '.origin');
         };
+
         $scope.editDestiny = function() {
-            $scope.extraData.editDestiny = true;
-
-            $state.go("document.destiny");
+            $scope.extraData.navigateTo = $scope.extraData.flow + '.resume';
+            $state.go($scope.extraData.flow + '.destiny');
 
         };
+
         $scope.editFeatures = function() {
-            $scope.extraData.editFeatures = true;
-
-            $state.go("document.servicetype");
+            $scope.extraData.navigateTo = $scope.extraData.flow + '.resume';
+            $state.go($scope.extraData.flow + '.features');
 
         };
-        $scope.editDestinatary = function() {
-            $scope.extraData.editDestinatary = true;
 
-            $state.go("document.features");
+        $scope.editDestinatary = function() {
+            $scope.extraData.navigateTo = $scope.extraData.flow + '.resume';
+            $state.go($scope.extraData.flow + '.receiver');
 
         };
 

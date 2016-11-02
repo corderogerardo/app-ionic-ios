@@ -1,0 +1,50 @@
+<div class="bar bar-header bar-balanced">
+	<h3 class="title">DESTINARIO</h3>
+</div>
+<ion-view view-title="Caracteristicas">
+	<ion-content scroll="false" >
+		<div class="space">
+		</div>
+		<section class="caracteristics-title">
+			<div>
+				Escribe los datos de quien recibirá el envío.
+			</div>
+		</section>
+		<section class="caracteristics-container">
+			<div class="caracteristics-inputs">
+				<div class="inputs-container">
+					<i class="icon-email"></i>
+					<label class="">
+						<input type="email" name="email" ng-model="doc.emailDestinyClient" placeholder="Correo Electrónico">
+					</label>
+				</div>
+				<div class="inputs-container">
+					<i class="icon-user"></i>
+					<label class="">
+						<input type="text"  name="username" ng-model="doc.destinyName" placeholder="Nombre de Usuario">
+					</label>
+				</div>
+
+				<div class="inputs-container">
+					<i class="icon-phone"></i>
+					<label class="">
+						<input type="tel" name="phone" ng-model="doc.cellphoneDestinyClient"  placeholder="Teléfono">
+					</label>
+				</div>
+				<div class="inputs-container">
+					<i class="icon-cinit"></i>
+					<label class="">
+						<input type="text" name="cinit" ng-model="doc.destinyClient" placeholder="Cédula o NIT">
+					</label>
+				</div>
+			</div>
+		</section>
+		<div class="button-bottom">
+
+			<div class="container-button">
+				<a class="button-noicon" ng-click="saveCaracteristics()" title="">CONTINUAR</a>
+			</div>
+		</div>
+		`
+	</ion-content>
+</ion-view>

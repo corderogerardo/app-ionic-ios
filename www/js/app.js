@@ -77,8 +77,12 @@ angular.module('axpress', [
             data: {
                 doc: {},
                 extraData: {
-                    featuresNext: 'document.photo',
-                    photoNext: 'document.resume'
+                    flow: 'document',
+                    originNext: 'document.destiny',
+                    destinyNext: 'document.features',
+                    featuresNext: 'document.receiver',
+                    receiverNext: 'document.photo',
+                    photoNext: 'document.resume',
                 }
             },
             params: {
@@ -95,15 +99,15 @@ angular.module('axpress', [
             templateUrl: 'templates/documents/destiny.html',
             controller: 'DocumentDestinyController'
         })
-        .state('document.servicetype', {
-            url: '/servicetype',
-            templateUrl: 'templates/documents/serviceType.html',
-            controller: 'ServiceTypeController'
-        })
         .state('document.features', {
             url: '/features',
             templateUrl: 'templates/documents/features.html',
-            controller:'FeaturesController'
+            controller: 'FeaturesController'
+        })
+        .state('document.receiver', {
+            url: '/receiver',
+            templateUrl: 'templates/documents/receiver.html',
+            controller:'ReceiverController'
         })
         .state('document.photo', {
             url: '/photo',

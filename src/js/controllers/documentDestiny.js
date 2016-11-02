@@ -5,7 +5,6 @@
     DocumentDestinyController.$inject = ['$rootScope', '$scope', '$cordovaDialogs', '$state', '$ionicPopup'];
 
     function DocumentDestinyController($rootScope, $scope, $cordovaDialogs, $state, $ionicPopup) {
-
         activate();
 
         $scope.placeChanged = function() {
@@ -18,12 +17,11 @@
             $scope.doc.destinyLatitude = $scope.place.geometry.location.lat();
             $scope.doc.destinyLongitude = $scope.place.geometry.location.lng();
             $scope.extraData.destinyPlace = $scope.place;
-            if ($scope.extraData.editDestiny === true) {
-                $scope.extraData.editDestiny = false;
-                $state.go("document.resume");
-
+            if ($scope.extraData.navigateTo) {
+                $state.go($scope.extraData.navigateTo);
+                delete $scope.extraData.navigateTo;
             } else {
-                $state.go("document.servicetype");
+                $state.go($scope.extraData.destinyNext);
             }
         };
 

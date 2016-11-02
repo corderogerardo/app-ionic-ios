@@ -310,7 +310,6 @@ angular.module('axpress')
     DocumentDestinyController.$inject = ['$rootScope', '$scope', '$cordovaDialogs', '$state', '$ionicPopup'];
 
     function DocumentDestinyController($rootScope, $scope, $cordovaDialogs, $state, $ionicPopup) {
-
         activate();
 
         $scope.placeChanged = function() {
@@ -323,12 +322,11 @@ angular.module('axpress')
             $scope.doc.destinyLatitude = $scope.place.geometry.location.lat();
             $scope.doc.destinyLongitude = $scope.place.geometry.location.lng();
             $scope.extraData.destinyPlace = $scope.place;
-            if ($scope.extraData.editDestiny === true) {
-                $scope.extraData.editDestiny = false;
-                $state.go("document.resume");
-
+            if ($scope.extraData.navigateTo) {
+                $state.go($scope.extraData.navigateTo);
+                delete $scope.extraData.navigateTo;
             } else {
-                $state.go("document.servicetype");
+                $state.go($scope.extraData.destinyNext);
             }
         };
 
@@ -363,7 +361,6 @@ angular.module('axpress')
     DocumentOriginController.$inject = ['$rootScope', '$scope', '$cordovaDialogs', '$state', '$ionicPopup'];
 
     function DocumentOriginController($rootScope, $scope, $cordovaDialogs, $state, $ionicPopup) {
-
         activate();
 
         $scope.placeChanged = function() {
@@ -376,12 +373,11 @@ angular.module('axpress')
             $scope.doc.originLatitude = $scope.place.geometry.location.lat();
             $scope.doc.originLongitude = $scope.place.geometry.location.lng();
             $scope.extraData.originPlace = $scope.place;
-            if ($scope.extraData.editOrigin === true) {
-                $scope.extraData.editOrigin = false;
-                $state.go("document.resume");
-
+            if ($scope.extraData.navigateTo) {
+                $state.go($scope.extraData.navigateTo);
+                delete $scope.extraData.navigateTo;
             } else {
-                $state.go("document.destiny");
+                $state.go($scope.extraData.originNext);
             }
         };
 
@@ -401,44 +397,6 @@ angular.module('axpress')
                 setExistingAddress();
         }
     }
-
-})();
-;
-
-(function() {
-    angular.module('axpress')
-        .controller('ServiceTypeController', ServiceTypeController);
-
-    ServiceTypeController.$inject = ['$rootScope', '$scope', '$cordovaDialogs', '$state'];
-
-    function ServiceTypeController($rootScope, $scope, $cordovaDialogs, $state) {
-        activate();
-
-        $scope.confirmServiceType = function() {
-            $scope.doc.typeServices = $state.params.serviceType;
-            $scope.doc.bagId = $scope.choice.bag.shipping_bag_id;
-            $scope.extraData.bag = $scope.choice.bag;
-            if ($scope.extraData.editFeatures === true) {
-                $scope.extraData.editFeatures = false;
-                $state.go("document.resume");
-
-            } else {
-                $state.go("document.features");
-            }
-        };
-
-        function activate() {
-            $scope.choice = {};
-            $scope.doc = $state.current.data.doc;
-            $scope.extraData = $state.current.data.extraData;
-            $scope.menu.forEach(function(option) {
-                if (option.service_provider_id == $state.params.serviceType) {
-                    $scope.bagservice = option.bag_services;
-                    return;
-                }
-            });
-        }
-    }
 })();
 ;
 
@@ -451,20 +409,37 @@ angular.module('axpress')
     function FeaturesController($rootScope, $scope, $cordovaDialogs, $state) {
         activate();
 
-        $scope.saveCaracteristics = function() {
-            if ($scope.extraData.editDestinatary === true) {
-                $scope.extraData.editDestinatary = false;
-                $state.go("document.resume");
-
+        $scope.confirmServiceType = function() {
+            $scope.doc.typeServices = $state.params.serviceType;
+            $scope.doc.bagId = $scope.choice.bag;
+            $scope.extraData.bag = $scope.choice.bag;
+            if ($scope.extraData.navigateTo) {
+                $state.go($scope.extraData.navigateTo);
+                delete $scope.extraData.navigateTo;
             } else {
                 $state.go($scope.extraData.featuresNext);
             }
         };
 
+        function setExistingChoice () {
+            $scope.choice = {
+                bag: $scope.extraData.bagId
+            };
+        }
+
         function activate() {
+            $scope.choice = {};
             $scope.doc = $state.current.data.doc;
             $scope.extraData = $state.current.data.extraData;
-
+            $scope.menu.forEach(function(option) {
+                if (option.service_provider_id == $state.params.serviceType) {
+                    $scope.bagservice = option.bag_services;
+                    return;
+                }
+            });
+            if ($scope.extraData.bagId) {
+                setExistingChoice();
+            }
         }
     }
 })();
@@ -588,6 +563,33 @@ angular.module('axpress')
 
 (function() {
     angular.module('axpress')
+        .controller('ReceiverController', ReceiverController);
+
+    ReceiverController.$inject = ['$rootScope', '$scope', '$cordovaDialogs', '$state'];
+
+    function ReceiverController($rootScope, $scope, $cordovaDialogs, $state) {
+        activate();
+
+        $scope.saveCaracteristics = function() {
+            if ($scope.extraData.navigateTo) {
+                $state.go($scope.extraData.navigateTo);
+                delete $scope.extraData.navigateTo;
+            } else {
+                $state.go($scope.extraData.receiverNext);
+            }
+        };
+
+        function activate() {
+            $scope.doc = $state.current.data.doc;
+            $scope.extraData = $state.current.data.extraData;
+
+        }
+    }
+})();
+;
+
+(function() {
+    angular.module('axpress')
         .controller('ResumeController', ResumeController);
 
     ResumeController.$inject = ['$rootScope', '$scope', '$cordovaDialogs', '$state', 'Logger', 'Shipping'];
@@ -597,27 +599,25 @@ angular.module('axpress')
         activate();
 
         $scope.editOrigin = function() {
-            $scope.extraData.editOrigin = true;
-
-            $state.go("document.origin");
-
+            $scope.extraData.navigateTo = $scope.extraData.flow + '.resume';
+            $state.go($scope.extraData.flow + '.origin');
         };
+
         $scope.editDestiny = function() {
-            $scope.extraData.editDestiny = true;
-
-            $state.go("document.destiny");
+            $scope.extraData.navigateTo = $scope.extraData.flow + '.resume';
+            $state.go($scope.extraData.flow + '.destiny');
 
         };
+
         $scope.editFeatures = function() {
-            $scope.extraData.editFeatures = true;
-
-            $state.go("document.servicetype");
+            $scope.extraData.navigateTo = $scope.extraData.flow + '.resume';
+            $state.go($scope.extraData.flow + '.features');
 
         };
-        $scope.editDestinatary = function() {
-            $scope.extraData.editDestinatary = true;
 
-            $state.go("document.features");
+        $scope.editDestinatary = function() {
+            $scope.extraData.navigateTo = $scope.extraData.flow + '.resume';
+            $state.go($scope.extraData.flow + '.receiver');
 
         };
 
@@ -650,6 +650,8 @@ angular.module('axpress')
         function activate() {
             $scope.doc = $state.current.data.doc;
             $scope.extraData = $state.current.data.extraData;
+            console.log($scope.doc);
+            console.log($scope.extraData);
             requestQuotation();
         }
     }

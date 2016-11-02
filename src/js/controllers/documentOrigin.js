@@ -5,7 +5,6 @@
     DocumentOriginController.$inject = ['$rootScope', '$scope', '$cordovaDialogs', '$state', '$ionicPopup'];
 
     function DocumentOriginController($rootScope, $scope, $cordovaDialogs, $state, $ionicPopup) {
-
         activate();
 
         $scope.placeChanged = function() {
@@ -18,12 +17,11 @@
             $scope.doc.originLatitude = $scope.place.geometry.location.lat();
             $scope.doc.originLongitude = $scope.place.geometry.location.lng();
             $scope.extraData.originPlace = $scope.place;
-            if ($scope.extraData.editOrigin === true) {
-                $scope.extraData.editOrigin = false;
-                $state.go("document.resume");
-
+            if ($scope.extraData.navigateTo) {
+                $state.go($scope.extraData.navigateTo);
+                delete $scope.extraData.navigateTo;
             } else {
-                $state.go("document.destiny");
+                $state.go($scope.extraData.originNext);
             }
         };
 
@@ -43,5 +41,4 @@
                 setExistingAddress();
         }
     }
-
 })();
