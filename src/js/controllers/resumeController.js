@@ -52,16 +52,13 @@
         function quotationSuccessful(response) {
             $scope.extraData.quotation = response;
             $scope.data.amount = response.price;
-            $scope.data.distance = response.meters;
-
+            $scope.data.distance = response.kilometers_text;
         }
 
         function activate() {
             $scope.data = $state.current.data.data;
             $scope.extraData = $state.current.data.extraData;
             requestQuotation();
-            console.log($scope.data);
-            console.log($scope.extraData);
         }
     }
 })();
