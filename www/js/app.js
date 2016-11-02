@@ -47,6 +47,28 @@ angular.module('axpress', [
             templateUrl: 'templates/welcome/welcome.html',
             controller: 'AuthController'
         })
+        .state('menu', {
+            url: '/menu',
+            templateUrl: 'templates/menu/menu.html',
+            controller: 'MenuController'
+        })
+        .state('account', {
+            url: '/account',
+            templateUrl: 'templates/account/account.html',
+            controller: 'AccountController',
+        })
+        .state('history', {
+            url: '/history',
+            templateUrl: 'templates/history/history.html',
+            controller: 'HistoryController'
+        })
+        .state('chat', {
+            url: '/chat',
+            templateUrl: 'templates/chat/chat.html'
+        })
+        /**
+         * Authentication Routes
+         */
         .state('auth', {
             url: '/auth',
             abstract: true,
@@ -65,11 +87,9 @@ angular.module('axpress', [
             url: '/forgotpassword',
             templateUrl: 'templates/auth/forgotpassword.html'
         })
-        .state('menu', {
-            url: '/menu',
-            templateUrl: 'templates/menu/menu.html',
-            controller: 'MenuController'
-        })
+        /**
+         * Document States
+         */
         .state('document', {
             url: '/document',
             abstract: true,
@@ -124,51 +144,138 @@ angular.module('axpress', [
             templateUrl: 'templates/documents/paymentMethods.html',
             controller:'PaymentMethodsController'
         })
+        /**
+         * Packages Routes
+         */
+        .state('package', {
+            url: '/package',
+            abstract: true,
+            template: '<ui-view/>',
+            data: {
+                data: {},
+                extraData: {
+                    flow: 'package',
+                    originNext: 'package.destiny',
+                    destinyNext: 'package.features',
+                    featuresNext: 'package.receiver',
+                    receiverNext: 'package.photo',
+                    photoNext: 'package.resume',
+                }
+            },
+            params: {
+                serviceType: null
+            }
+        })
+        .state('package.origin', {
+            url: '/origin',
+            templateUrl: 'templates/packages/origin.html',
+            controller: 'OriginController'
+        })
+        .state('package.destiny', {
+            url: '/destiny',
+            templateUrl: 'templates/packages/destiny.html',
+            controller: 'DestinyController'
+        })
+        .state('package.features', {
+            url: '/features',
+            templateUrl: 'templates/packages/features.html',
+            controller: 'FeaturesController'
+        })
+        .state('package.receiver', {
+            url: '/receiver',
+            templateUrl: 'templates/packages/receiver.html',
+            controller:'ReceiverController'
+        })
+        .state('package.photo', {
+            url: '/photo',
+            templateUrl: 'templates/packages/photo.html',
+            controller:'PhotoController'
+        })
+        .state('package.resume', {
+            url: '/resume',
+            templateUrl: 'templates/packages/resume.html',
+            controller:'ResumeController'
+        })
+        .state('package.paymentmethods', {
+            url: '/paymentmethods',
+            templateUrl: 'templates/packages/paymentMethods.html',
+            controller:'PaymentMethodsController'
+        })
+        /**
+         * Diligences Routes
+         */
+        .state('diligence', {
+            url: '/diligence',
+            abstract: true,
+            template: '<ui-view/>',
+            data: {
+                data: {},
+                extraData: {
+                    flow: 'diligence',
+                    originNext: 'diligence.destiny',
+                    destinyNext: 'diligence.features',
+                    featuresNext: 'diligence.receiver',
+                    receiverNext: 'diligence.photo',
+                    photoNext: 'diligence.resume',
+                }
+            },
+            params: {
+                serviceType: null
+            }
+        })
+        .state('diligence.origin', {
+            url: '/origin',
+            templateUrl: 'templates/diligences/origin.html',
+            controller: 'OriginController'
+        })
+        .state('diligence.destiny', {
+            url: '/destiny',
+            templateUrl: 'templates/diligences/destiny.html',
+            controller: 'DestinyController'
+        })
+        .state('diligence.stops', {
+            url: '/stops',
+            templateUrl: 'templates/diligences/stops.html',
+            controller: 'StopsController'
+        })
+        .state('diligence.features', {
+            url: '/features',
+            templateUrl: 'templates/diligences/features.html',
+            controller: 'FeaturesController'
+        })
+        .state('diligence.receiver', {
+            url: '/receiver',
+            templateUrl: 'templates/diligences/receiver.html',
+            controller:'ReceiverController'
+        })
+        .state('diligence.photo', {
+            url: '/photo',
+            templateUrl: 'templates/diligences/photo.html',
+            controller:'PhotoController'
+        })
+        .state('diligence.resume', {
+            url: '/resume',
+            templateUrl: 'templates/diligences/resume.html',
+            controller:'ResumeController'
+        })
+        .state('diligence.paymentmethods', {
+            url: '/paymentmethods',
+            templateUrl: 'templates/diligences/paymentMethods.html',
+            controller:'PaymentMethodsController'
+        })
+        /**
+         * Shipment States
+         */
         .state('shipmenttracking', {
             url: '/shipmenttracking',
             templateUrl: 'templates/shipmenttracking/shipmenttracking.html',
             controller:'ShipmentTrackingController'
         })
-        .state('chat', {
-            url: '/chat',
-            templateUrl: 'templates/chat/chat.html'
-        })
         .state('shipmentverification', {
             url: '/shipmentverification',
             templateUrl: 'templates/shipmentverification/shipmentverification.html'
-        })
-        .state('account', {
-            url: '/account',
-            templateUrl: 'templates/account/account.html',
-            controller: 'AccountController',
-        })
-        .state('caracteristicspackages', {
-            url: '/caracteristicspackages',
-            templateUrl: 'templates/caracteristics/packages/caracteristicspackages.html',
-            controller:'CaracteristicsPackagesController'
-        })
-        .state('caracteristicserrands', {
-            url: '/caracteristicserrands',
-            templateUrl: 'templates/caracteristics/errands/caracteristicserrands.html',
-            controller:'CaracteristicsErrandsController'
-        })
-        .state('errandsdestiny', {
-            url: '/errandsdestiny',
-            templateUrl: 'templates/maps/errands/errandsDestiny.html'
-        })
-        .state('errandsresume', {
-            url: '/errandsresume',
-            templateUrl: 'templates/sentresume/errandsresume.html'
-        })
-        .state('history', {
-            url: '/history',
-            templateUrl: 'templates/history/history.html',
-            controller: 'HistoryController'
-        })
-        .state('errandsstops', {
-            url: '/errandsstops',
-            templateUrl: 'templates/sentresume/errandsstops.html'
         });
+        
     $urlRouterProvider.otherwise('/');
 
     //Ionic Cloud Configurations
