@@ -319,6 +319,16 @@
                 { name: 'Tarjeta de Crédito', value: 1 },
                 { name: 'Contra-Recogida (Efectivo)', value: 2 },
                 { name: 'Contra-Entrega (Efectivo)', value: 3 },
+            ],
+
+            //Shipment Statuses
+            shipmentStatuses: [
+                { name: 'No Asignado', value: 10 },
+                { name: 'Asignado', value: 1 },
+                //Pending to be confirmed
+                { name: 'Recogido', value: 2 },
+                { name: 'Entregado', value: 3 },
+                { name: 'Cancelado', value: 4 }
             ]
         });
 })();

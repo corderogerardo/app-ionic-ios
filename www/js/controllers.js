@@ -385,21 +385,10 @@
     angular.module('axpress')
         .controller('HistoryController', HistoryController);
 
-    HistoryController.$inject = ['$scope'];
+    HistoryController.$inject = ['$rootScope', '$scope', 'history', 'constants'];
 
-    function HistoryController($scope) {
-
-        $scope.groups = [{
-            "id": 1,
-            "name": "DOCUMENTOS",
-            "fecha": "30 - 09 - 2016",
-            "iconURL": "http://ionicframework.com/img/docs/venkman.jpg"
-        }, {
-            "id": 2,
-            "name": "PAQUETES",
-            "fecha": "30 - 09 - 2016",
-            "iconURL": "http://ionicframework.com/img/docs/barrett.jpg"
-        }];
+    function HistoryController($rootScope, $scope, history, constants) {
+        activate();
 
         $scope.toggleGroup = function(group) {
             if ($scope.isGroupShown(group)) {
@@ -414,6 +403,22 @@
             return $scope.shownGroup === group;
         };
 
+        function findStatusText (status) {
+            return constants.shipmentStatuses.find(function (statusType) {
+                return status == statusType.value;
+            });
+        }
+
+        function activate () {
+            var tempHistory = history.data.remitent.concat(history.data.receptor);
+            tempHistory.forEach(function (item) {
+                if (item.currier) {
+                    item.currier.fullName = item.currier.name + ' ' + item.currier.last;
+                }
+                item.status = findStatusText(item.status);
+            });
+            $scope.history = tempHistory;
+        }
     }
 })();
 ;
@@ -624,16 +629,13 @@
         function quotationSuccessful(response) {
             $scope.extraData.quotation = response;
             $scope.data.amount = response.price;
-            $scope.data.distance = response.meters;
-
+            $scope.data.distance = response.kilometers_text;
         }
 
         function activate() {
             $scope.data = $state.current.data.data;
             $scope.extraData = $state.current.data.extraData;
             requestQuotation();
-            console.log($scope.data);
-            console.log($scope.extraData);
         }
     }
 })();

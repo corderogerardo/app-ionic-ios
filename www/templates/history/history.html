@@ -8,22 +8,26 @@
 		</div>
 
 		<ion-list class="history-lists">
-				<div ng-repeat="group in groups">
+				<div ng-repeat="item in history">
 
-					<ion-item class="item-avatar item-icon-right" ng-click="toggleGroup(group)" ng-class="{active: isGroupShown(group)}">
-						<img ng-src="{{group.iconURL}}">
-						<div class="text-center">{{group.name}}<br>FECHA: {{group.fecha}}</div>
-						<i class="icon" ng-class="isGroupShown(group) ? 'ion-ios-arrow-up' : 'ion-ios-arrow-down'"></i>
+					<ion-item class="item-avatar item-icon-right" ng-click="toggleGroup(item)" ng-class="{active: isGroupShown(item)}">
+						<img ng-src="{{item.iconURL}}">
+						<div class="text-center">
+							{{item.service}}<br>
+							Fecha: {{item.date}}<br>
+							{{item.status.name}}
+						</div>
+						<i class="icon" ng-class="isGroupShown(item) ? 'ion-ios-arrow-up' : 'ion-ios-arrow-down'"></i>
 					</ion-item>
 
-					<ion-item class="item-accordion item-icon-right" ng-click="toggleSubGroup(item)" ng-show="isGroupShown(group)">
+					<ion-item class="item-accordion item-icon-right" ng-click="toggleSubGroup(item)" ng-show="isGroupShown(item)">
 						<div class="item-text-center item-text-wrap">
 							<div class="historial-data">
-								<p>DISTANCIA: 22 KM</p>
-								<p>DESTINATARIO: Manuel Fernandez</p>
-								<p>MENSAJERO: Carla Ramos</p>
-								<p>VALOR: 1000$ USD</p>
-								<p>TIPO DE SOLICITUD: Documentos</p>
+								<p>DISTANCIA: {{item.distance/1000 | number:2}} KM</p>
+								<p>DESTINATARIO: {{item.addressee}}</p>
+								<p>MENSAJERO: {{item.currier.fullName || 'No Asignado'}}</p>
+								<p>VALOR: ${{item.amount}} COP</p>
+								<p>TIPO DE SOLICITUD: {{item.service}}</p>
 							</div>
 							<div class="historial-button">
 								<a href="" title="">VER RECORRIDO</a>

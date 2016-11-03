@@ -60,7 +60,12 @@ angular.module('axpress', [
         .state('history', {
             url: '/history',
             templateUrl: 'templates/history/history.html',
-            controller: 'HistoryController'
+            controller: 'HistoryController',
+            resolve: {
+                history: function (Shipping, $rootScope) {
+                    return Shipping.history($rootScope.user.id);
+                }
+            }
         })
         .state('chat', {
             url: '/chat',
