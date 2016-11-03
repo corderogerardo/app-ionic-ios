@@ -10,17 +10,19 @@
 		<ion-list class="history-lists">
 				<div ng-repeat="item in history">
 
-					<ion-item class="item-avatar item-icon-right" ng-click="toggleGroup(item)" ng-class="{active: isGroupShown(item)}">
-						<img ng-src="{{item.iconURL}}">
+					<ion-item class="item-avatar item-icon-right" ng-click="toggleShipping(item.shipping_id)" ng-class="{active: isShippingShown(item.shipping_id)}">
+						<img ng-src="{{itemTypesIcons[item.service]}}">
 						<div class="text-center">
 							{{item.service}}<br>
 							Fecha: {{item.date}}<br>
-							{{item.status.name}}
+							<span ng-class="{'unasigned': (item.status.value == 10),
+								'asigned': (item.status.value == 1), 'collected': (item.status.value == 2), 
+								'delivered': (item.status.value == 3), 'canceled': (item.status.value == 4)}">{{item.status.name}} &#9679;</span>
 						</div>
-						<i class="icon" ng-class="isGroupShown(item) ? 'ion-ios-arrow-up' : 'ion-ios-arrow-down'"></i>
+						<i class="icon" ng-class="isShippingShown(item.shipping_id) ? 'ion-ios-arrow-up' : 'ion-ios-arrow-down'"></i>
 					</ion-item>
 
-					<ion-item class="item-accordion item-icon-right" ng-click="toggleSubGroup(item)" ng-show="isGroupShown(item)">
+					<ion-item class="item-accordion item-icon-right" ng-click="toggleShipping(item.shipping_id)" ng-show="isShippingShown(item.shipping_id)">
 						<div class="item-text-center item-text-wrap">
 							<div class="historial-data">
 								<p>DISTANCIA: {{item.distance/1000 | number:2}} KM</p>
@@ -29,7 +31,7 @@
 								<p>VALOR: ${{item.amount}} COP</p>
 								<p>TIPO DE SOLICITUD: {{item.service}}</p>
 							</div>
-							<div class="historial-button">
+							<div class="historial-button" ng-if="item.status.value != 10 && item.status.value != 4">
 								<a href="" title="">VER RECORRIDO</a>
 							</div>
 						</div>

@@ -7,17 +7,20 @@
     function HistoryController($rootScope, $scope, history, constants) {
         activate();
 
-        $scope.toggleGroup = function(group) {
-            if ($scope.isGroupShown(group)) {
-                $scope.shownGroup = null;
-            } else {
-                $scope.shownGroup = group;
-            }
-            // $ionicScrollDelegate.resize();
+        var openShipping = null; //Locally save the id of the currently open shipping
+
+        $scope.itemTypesIcons = {
+            Documentos: 'img/documento.png',
+            Paquetes: 'img/paquete.png',
+            Diligencias: 'img/diligencia.png'
         };
 
-        $scope.isGroupShown = function(group) {
-            return $scope.shownGroup === group;
+        $scope.toggleShipping = function(shippingId) {
+            openShipping = (openShipping == shippingId ? null : shippingId);
+        };
+
+        $scope.isShippingShown = function(shippingId) {
+            return openShipping == shippingId;
         };
 
         function findStatusText (status) {
@@ -25,6 +28,10 @@
                 return status == statusType.value;
             });
         }
+
+        $scope.isStatus = function (statusValue, status) {
+            return statusValue == status.value;
+        };
 
         function activate () {
             var tempHistory = history.data.remitent.concat(history.data.receptor);
