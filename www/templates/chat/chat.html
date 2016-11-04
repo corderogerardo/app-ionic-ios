@@ -5,55 +5,16 @@
 	<ion-content scroll="false" >
 		<section class="main-container">
 			<div class="chat-container">
-				<div class="chat-destinatary">
-					<div class="chat-from">
+				<div ng-repeat="message in history" ng-class="{'message-courier': (message.rol == 0), 'message-client': (message.rol == 1)}">
+					<div class="chat-from" ng-if="message.rol == 0">
 					Axpress
 					</div>
-					<div class="chat-message-hour">
-						<div class="chat-message">
-						Buenos días.
-						</div>
-						<div class="chat-hour">
-						2:30pm
-						</div>
-
-					</div>
-				</div>
-				<div class="chat-sender">
-					<div class="chat-from">
-					Axpress
+					<div class="chat-from" ng-if="message.rol == 1">
+					Cliente
 					</div>
 					<div class="chat-message-hour">
 						<div class="chat-message">
-						Buenos días.
-						</div>
-						<div class="chat-hour">
-						2:30pm
-						</div>
-
-					</div>
-				</div>
-				<div class="chat-destinatary">
-					<div class="chat-from">
-					Axpress2
-					</div>
-					<div class="chat-message-hour">
-						<div class="chat-message">
-						Buenos días.
-						</div>
-						<div class="chat-hour">
-						2:30pm
-						</div>
-
-					</div>
-				</div>
-				<div class="chat-sender">
-					<div class="chat-from">
-					Axpress
-					</div>
-					<div class="chat-message-hour">
-						<div class="chat-message">
-						Buenos días.
+						{{message.conversacion}}
 						</div>
 						<div class="chat-hour">
 						2:30pm

@@ -8,9 +8,9 @@
         activate();
 
         function activate() {
-            console.log("activate");
-            $scope.chat = history;
-            console.log(history);
+            if (history.return && history.status == 200) {
+                $scope.history = history.data;
+            }
         }
     }
 })();
