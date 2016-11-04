@@ -63,8 +63,14 @@ angular.module('axpress', [
             controller: 'HistoryController'
         })
         .state('chat', {
-            url: '/chat',
-            templateUrl: 'templates/chat/chat.html'
+            url: '/chat/:shippingId',
+            templateUrl: 'templates/chat/chat.html',
+            controller: 'ChatController',
+            resolve: {
+                history: function (Chat, $stateParams) {
+                    return Chat.history($stateParams.shippingId);
+                }
+            }
         })
         /**
          * Authentication Routes
