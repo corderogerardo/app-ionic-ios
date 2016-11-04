@@ -2,14 +2,19 @@
     angular.module('axpress')
         .controller('DestinyController', DocumentDestinyController);
 
-    DocumentDestinyController.$inject = ['$rootScope', '$scope', '$cordovaDialogs', '$state', '$ionicPopup'];
+    DocumentDestinyController.$inject = ['$rootScope', '$scope', '$cordovaDialogs', '$state', '$ionicPopup','$cordovaGeolocation'];
 
-    function DocumentDestinyController($rootScope, $scope, $cordovaDialogs, $state, $ionicPopup) {
+    function DocumentDestinyController($rootScope, $scope, $cordovaDialogs, $state, $ionicPopup,$cordovaGeolocation) {
         activate();
 
         $scope.placeChanged = function() {
             $scope.place = this.getPlace();
             $scope.markers[1].position = $scope.place.geometry.location;
+        };
+        $scope.buttonState = false;
+        $scope.pickHere = function(){
+            $scope.buttonState = true;
+            $scope.markers[1].icon="{url: '../../img/inputs/pin-mapa-check2.png', scaledSize: [48,48]}"
         };
 
         $scope.confirmDestiny = function() {
@@ -32,18 +37,55 @@
         }
 
         function activate() {
+            $scope.focused=false;
+            $scope.focused2=false;
             $scope.data = $state.current.data.data;
             $scope.extraData = $state.current.data.extraData;
             $scope.markers = [{
                 title: 'Origen',
+                icon:"{url: '../../img/inputs/pin-mapa-check1.png', scaledSize: [48,48]}",
                 position: [$scope.data.originLatitude, $scope.data.originLongitude]
             }, {
-                title: 'Destino'
+                title: 'Destino',
+                icon:"{url: '../../img/inputs/pin-mapa2.png', scaledSize: [48,48]}"
             }];
 
             if ($scope.data.destinyLatitude && $scope.data.destinyLongitude)
                 setExistingAddress();
         }
+        /**
+         * For GPS Geolocation ngcordova geolocation
+         */
+        var posOptions = {timeout: 10000, enableHighAccuracy: false};
+        $scope.gpsHere = function(){
+            $cordovaGeolocation
+                .getCurrentPosition(posOptions)
+                .then(function (position) {
+                    $scope.gps.lat = position.coords.latitude;
+                    $scope.gps.lng = position.coords.longitude;
+                }, function(err) {
+                    // error
+                });
+        };
+        //another way
+        /*$scope.watchOptions = {
+         timeout : 3000,
+         enableHighAccuracy: false // may cause errors if true
+         };
+
+         $scope.watch = $cordovaGeolocation.watchPosition(watchOptions);
+         $scope.watch.then(
+         null,
+         function(err) {
+         // error
+         },
+         function(position) {
+         var lat  = position.coords.latitude
+         var long = position.coords.longitude
+         });
+
+
+         $scope.watch.clearWatch();*/
     }
 
 })();

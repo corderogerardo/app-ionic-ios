@@ -39,17 +39,19 @@ textarea{
 	label{
 			align-items: center;
 			display:flex;
-				height: 100% !important;;
+				height: 100% !important;
 			color:white;
 			justify-content: center;
-			border-left: 1px solid rgba($graybbb,0.5);
 			width:80%;
 		input{
-			background-color:rgba($grayb,0.01);
+            border-left: 1px solid rgba($graybbb,0.5);
+            background-color:rgba($grayb,0.01);
+            display: flex;
+            justify-content: center;
 			font-size: 2.5vh;
 						color:$graybbb;
 						font-weight: bold;
-						height:70% !important;
+						height:60% !important;
 			padding:5%;
 			width:100%;
 						&:focus{
@@ -60,13 +62,14 @@ textarea{
 		}
 	}
 }
+
 .inputs-container-last{
 		display:flex;
 		min-height:50px;
 		flex-direction: row;
 		width:90%;
 		i{
-				align-items: center;
+            align-items: center;
 				display:flex;
 				color:white;
 				font-size: 2.5vh;
@@ -74,19 +77,19 @@ textarea{
 				width:20%;
 		}
 		label{
-				align-items: center;
+            align-items: center;
 				display:flex;
-				height: 100% !important;;
 				color:white;
 				justify-content: center;
-				border-left: 1px solid rgba($graybbb,0.5);
 				width:80%;
 				input{
-						background-color:rgba($grayb,0.01);
+                        border-left: 1px solid rgba($graybbb,0.5);
+                        background-color:rgba($grayb,0.01);
 						font-size: 2.5vh;
+                    display: flex;
 						color:$graybbb;
 						font-weight: bold;
-						height:70% !important;
+						height:80% !important;
 						padding:5%;
 						width:100%;
 						&:focus{
@@ -204,6 +207,18 @@ textarea{
 		background-size: 40%;
 		background-repeat: no-repeat;
 		background-position: center;
+}
+.icon-location-color{
+    background-image: url('../img/inputs/Location1.png');
+    background-size: 50%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.icon-location-color2 {
+    background-image: url('../img/inputs/Location2.png');
+    background-size: 50%;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 .icon-camera-gray{
     background-image: url('../img/inputs/Camara2.png');

@@ -7,21 +7,27 @@
 		<form class="register-container-tradictional" id="registerForm" name="registerForm" ng-submit="doRegister(registerForm)" accept-charset="utf-8" novalidate>
 
 			<div class="inputs-container">
-				<i class="icon-user"></i>
+                <i ng-if="focusedRegisterName === true" class="icon-user"></i>
+                <i ng-if="focusedRegisterName === false" class="icon-flag-gray"></i>
 				<label class="">
-					<input type="text" name="name" ng-model="user.name" placeholder="Nombre" required>
+					<input type="text" name="name" ng-focus="focusedRegisterName = true"
+                           ng-blur="focusedRegisterName = false" ng-model="user.name" placeholder="Nombre" required>
 				</label>
 			</div>
 			<div class="inputs-container">
-				<i class="icon-pass"></i>
+                <i ng-if="focusedRegisterPass === true" class="icon-pass"></i>
+                <i ng-if="focusedRegisterPass === false" class="icon-flag-gray"></i>
 				<label class="">
-					<input type="password" name="pass" ng-model="user.password" placeholder="Contraseña" required>
+					<input type="password" name="pass" ng-focus="focusedRegisterPass = true"
+                           ng-blur="focusedRegisterPass = false" ng-model="user.password" placeholder="Contraseña" required>
 				</label>
 			</div>
 			<div class="inputs-container">
-				<i class="icon-email"></i>
+                <i ng-if="focusedRegisterEmail === true"  class="icon-email"></i>
+                <i ng-if="focusedRegisterEmail === false" class="icon-flag-gray"></i>
 				<label class="">
-					<input type="email" name="email" ng-model="user.email" placeholder="Correo Electrónico" required>
+					<input type="email" name="email" ng-focus="focusedRegisterEmail = true"
+                           ng-blur="focusedRegisterEmail = false" ng-model="user.email" placeholder="Correo Electrónico" required>
 				</label>
 				</div>
 		<!-- <div class="padding">

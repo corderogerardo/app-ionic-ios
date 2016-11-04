@@ -9848,14 +9848,16 @@ textarea {
     height: 100% !important;
     color: white;
     justify-content: center;
-    border-left: 1px solid rgba(117, 117, 117, 0.5);
     width: 80%; }
     .inputs-container label input {
+      border-left: 1px solid rgba(117, 117, 117, 0.5);
       background-color: rgba(230, 231, 255, 0.01);
+      display: flex;
+      justify-content: center;
       font-size: 2.5vh;
       color: #757575;
       font-weight: bold;
-      height: 70% !important;
+      height: 60% !important;
       padding: 5%;
       width: 100%; }
       .inputs-container label input:focus {
@@ -9877,17 +9879,17 @@ textarea {
   .inputs-container-last label {
     align-items: center;
     display: flex;
-    height: 100% !important;
     color: white;
     justify-content: center;
-    border-left: 1px solid rgba(117, 117, 117, 0.5);
     width: 80%; }
     .inputs-container-last label input {
+      border-left: 1px solid rgba(117, 117, 117, 0.5);
       background-color: rgba(230, 231, 255, 0.01);
       font-size: 2.5vh;
+      display: flex;
       color: #757575;
       font-weight: bold;
-      height: 70% !important;
+      height: 80% !important;
       padding: 5%;
       width: 100%; }
       .inputs-container-last label input:focus {
@@ -9997,6 +9999,18 @@ textarea {
 .icon-flag-color2 {
   background-image: url("../img/inputs/Flag-direccion2.png");
   background-size: 40%;
+  background-repeat: no-repeat;
+  background-position: center; }
+
+.icon-location-color {
+  background-image: url("../img/inputs/Location1.png");
+  background-size: 50%;
+  background-repeat: no-repeat;
+  background-position: center; }
+
+.icon-location-color2 {
+  background-image: url("../img/inputs/Location2.png");
+  background-size: 50%;
   background-repeat: no-repeat;
   background-position: center; }
 
@@ -10207,14 +10221,14 @@ ion-radio {
   display: flex;
   margin: 0 1%;
   justify-content: center;
-  height: 10px;
-  width: 10px; }
+  height: 8px;
+  width: 8px; }
 
 .actived {
   border-radius: 50%;
   background: #EA8528;
-  height: 11px;
-  width: 11px; }
+  height: 9px;
+  width: 9px; }
 
 .welcome-buttons {
   align-items: center;
@@ -10420,7 +10434,7 @@ p {
   align-items: center;
   background-color: #E6E6E6;
   display: flex;
-  height: 20%;
+  height: 25%;
   flex-direction: column;
   width: 100%;
   position: absolute;
@@ -10435,19 +10449,43 @@ p {
 
 @media screen and (max-height: 736px) {
   .input-direction {
-    top: 5%; } }
+    top: 5%; }
+  .gps-button {
+    width: 20%;
+    position: absolute;
+    right: 0%;
+    height: 20%;
+    top: 25%; } }
 
 @media screen and (max-height: 667px) {
   .input-direction {
-    top: 6.8%; } }
+    top: 6.8%; }
+  .gps-button {
+    width: 20%;
+    position: absolute;
+    right: 0%;
+    height: 20%;
+    top: 27%; } }
 
 @media screen and (max-height: 568px) {
   .input-direction {
-    top: 11%; } }
+    top: 11%; }
+  .gps-button {
+    width: 20%;
+    position: absolute;
+    right: 0%;
+    height: 20%;
+    top: 30%; } }
 
 @media screen and (max-height: 480px) {
   .input-direction {
-    top: 9.7%; } }
+    top: 9.7%; }
+  .gps-button {
+    width: 20%;
+    position: absolute;
+    right: 0%;
+    height: 20%;
+    top: 30%; } }
 
 .maps-list-places {
   display: flex;

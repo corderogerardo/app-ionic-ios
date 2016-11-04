@@ -17,6 +17,10 @@
         };
 
         function activate() {
+            $scope.focusedReceiverEmail = false;
+            $scope.focusedReceiverName = false;
+            $scope.focusedReceiverPhone = false;
+            $scope.focusedReceiverCI = false;
             $scope.data = $state.current.data.data;
             $scope.extraData = $state.current.data.extraData;
 

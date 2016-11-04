@@ -4,6 +4,6 @@
      zoom-control="false" map-type-control="false"
      street-view-control="false" >
 
-    <marker ng-repeat="marker in markers" position="{{marker.position}}"
-            title="{{marker.title}}"></marker>
+    <marker ng-repeat="marker in markers" icon="{{marker.icon}}" position="{{marker.position}}"
+            title="{{marker.title}}" class="marker-origin"></marker>
 </map>

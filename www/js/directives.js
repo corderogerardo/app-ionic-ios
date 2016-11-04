@@ -60,7 +60,7 @@
             restrict: 'EA',
             scope: {
                 onPlaceChanged: "=",
-                address: "="
+                address: "=",
             },
             templateUrl: 'templates/directives/mapAutocompleteAddress.html',
             controller: function($scope) {
@@ -78,7 +78,6 @@
                  */
                 $scope.disableTap = function(event) {
                     var input = event.target;
-
                     // Get the predictions element
                     var container = document.getElementsByClassName('pac-container');
                     container = angular.element(container);
@@ -93,6 +92,7 @@
 
                     // Leave the input field if a prediction is chosen
                     container.on('click', function() {
+                        $scope.focused = true;
                         input.blur();
                     });
                 };
