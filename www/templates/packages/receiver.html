@@ -1,0 +1,58 @@
+<div class="bar bar-header bar-balanced">
+	<h3 class="title">DESTINARIO</h3>
+</div>
+<ion-view view-title="Caracteristicas">
+	<ion-content scroll="false" >
+		<div class="space">
+		</div>
+		<section class="caracteristics-title">
+			<div>
+				Escribe los datos de quien recibirá el envío.
+			</div>
+		</section>
+		<section class="caracteristics-container">
+			<div class="caracteristics-inputs">
+				<div class="inputs-container">
+                    <i ng-if="focusedReceiverEmail === true" class="icon-email"></i>
+                    <i ng-if="focusedReceiverEmail === false" class="icon-flag-gray"></i>
+					<label class="">
+						<input type="email" name="email" ng-focus="focusedReceiverEmail = true"
+                               ng-blur="focusedReceiverEmail = false" ng-model="data.emailDestinyClient" placeholder="Correo Electrónico">
+					</label>
+				</div>
+				<div class="inputs-container">
+                    <i ng-if="focusedReceiverName === true" class="icon-user"></i>
+                    <i ng-if="focusedReceiverName === false" class="icon-flag-gray"></i>
+					<label class="">
+						<input type="text"  name="username" ng-focus="focusedReceiverName = true"
+                               ng-blur="focusedReceiverName = false" ng-model="data.destinyName" placeholder="Nombre de Usuario">
+					</label>
+				</div>
+
+				<div class="inputs-container">
+                    <i ng-if="focusedReceiverPhone === true" class="icon-phone"></i>
+                    <i ng-if="focusedReceiverPhone === false" class="icon-flag-gray"></i>
+					<label class="">
+						<input type="tel" name="phone" ng-focus="focusedReceiverPhone = true"
+                               ng-blur="focusedReceiverPhone = false" ng-model="data.cellphoneDestinyClient"  placeholder="Teléfono">
+					</label>
+				</div>
+				<div class="inputs-container">
+                    <i ng-if="focusedReceiverCI === true" class="icon-cinit"></i>
+                    <i ng-if="focusedReceiverCI === false" class="icon-flag-gray"></i>
+					<label class="">
+						<input type="text" name="cinit" ng-focus="focusedReceiverCI = true"
+                               ng-blur="focusedReceiverCI = false" ng-model="data.destinyClient" placeholder="Cédula o NIT">
+					</label>
+				</div>
+			</div>
+		</section>
+		<div class="button-bottom">
+
+			<div class="container-button">
+				<a class="button-noicon" ng-click="saveCaracteristics()" title="">CONTINUAR</a>
+			</div>
+		</div>
+		`
+	</ion-content>
+</ion-view>

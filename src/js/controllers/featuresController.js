@@ -18,6 +18,15 @@
                 $state.go($scope.extraData.featuresNext);
             }
         };
+        $scope.confirmPackage = function() {
+
+            if ($scope.extraData.navigateTo) {
+                $state.go($scope.extraData.navigateTo);
+                delete $scope.extraData.navigateTo;
+            } else {
+                $state.go($scope.extraData.packageNext);
+            }
+        };
 
         function setExistingChoice () {
             $scope.choice = {

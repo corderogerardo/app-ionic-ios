@@ -103,6 +103,7 @@ angular.module('axpress', [
                     featuresNext: 'document.receiver',
                     receiverNext: 'document.photo',
                     photoNext: 'document.resume',
+                    resumeNext: 'document.paymentmethods',
                 }
             },
             params: {
@@ -158,8 +159,10 @@ angular.module('axpress', [
                     originNext: 'package.destiny',
                     destinyNext: 'package.features',
                     featuresNext: 'package.receiver',
-                    receiverNext: 'package.photo',
+                    receiverNext: 'package.package',
+                    packageNext: 'package.photo',
                     photoNext: 'package.resume',
+                    resumeNext: 'package.paymentmethods',
                 }
             },
             params: {
@@ -185,6 +188,11 @@ angular.module('axpress', [
             url: '/receiver',
             templateUrl: 'templates/packages/receiver.html',
             controller:'ReceiverController'
+        })
+        .state('package.package', {
+            url: '/package',
+            templateUrl: 'templates/packages/package.html',
+            controller:'FeaturesController'
         })
         .state('package.photo', {
             url: '/photo',
@@ -212,6 +220,7 @@ angular.module('axpress', [
                 data: {},
                 extraData: {
                     flow: 'diligence',
+                    clientNext: 'diligence.origin',
                     originNext: 'diligence.destiny',
                     destinyNext: 'diligence.features',
                     featuresNext: 'diligence.receiver',
@@ -275,7 +284,7 @@ angular.module('axpress', [
             url: '/shipmentverification',
             templateUrl: 'templates/shipmentverification/shipmentverification.html'
         });
-        
+
     $urlRouterProvider.otherwise('/');
 
     //Ionic Cloud Configurations

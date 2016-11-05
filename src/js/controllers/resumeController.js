@@ -31,7 +31,7 @@
         };
 
         $scope.confirmResume = function() {
-            $state.go("document.paymentmethods");
+            $state.go($scope.extraData.resumeNext);
         };
 
         function requestQuotation() {
