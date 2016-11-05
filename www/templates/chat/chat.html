@@ -17,7 +17,7 @@
 						{{message.conversacion}}
 						</div>
 						<div class="chat-hour">
-						2:30pm
+						{{message.fecha_registro}}
 						</div>
 
 					</div>
@@ -29,11 +29,11 @@
 			</div>
 			<div class="chat-input">
 			<label class="item item-input">
-				<input type="text" placeholder="Mensaje">
+				<input ng-model="chat.message" type="text" placeholder="Mensaje">
 			</label>
 			</div>
 			<div class="chat-button">
-			<a href="#/shipmentverification" title="">Enviar</a>
+			<a ng-click="sendMessage()" title="">Enviar</a>
 			</div>
 
 			</div>

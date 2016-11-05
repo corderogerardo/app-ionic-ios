@@ -38,6 +38,9 @@ angular.module('axpress', [
         $rootScope.menu = JSON.parse(localStorage.getItem('axpress.menu'));
         $state.go('menu');
     }
+
+    //Configure moment
+    moment.locale('es');
 }])
 
 .config(['$stateProvider', '$urlRouterProvider', '$ionicCloudProvider', function($stateProvider, $urlRouterProvider, $ionicCloudProvider) {
