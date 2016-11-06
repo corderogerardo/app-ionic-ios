@@ -1,60 +1,62 @@
 <div class="bar bar-header bar-balanced">
-     <h1 class="title">RESUMEN DE {{ titleMenu | uppercase }} </h1>
+    <h3 class="title">RESUMEN DEL ENVÍO </h3>
 </div>
 <ion-view view-title="Resumen del Envío">
     <ion-content scroll="false" >
-    <div class="space">
-
-    </div>
+        <div class="space">
+        </div>
         <section class="sentresume-data">
             <section class="sentresume-content">
                 <div class="data-origin">
-                    <b>ORIGEN DE {{ titleMenu | uppercase }}</b>
-                    <p>{{ originAddress }}</p>
+                    <b>Origen de la diligencia</b>
+                    <p>{{ data.originAddress }}</p>
+                    <p>{{ data.originDetail }}</p>
                 </div>
-                <a class="data-button-edit" href="" title="">
+                <a class="" ng-click="editOrigin()" title="">
                     <i class="ion-edit"></i>
-                    <p>EDITAR</p>
                 </a>
             </section>
             <section class="sentresume-content">
                 <div class="data-origin">
-                    <b>PARADAS</b>
-                    <p>Calle 123 # 12 - 55 Apto 201.</p>
-                    <p>Bogotá, Colombia.</p>
+                    <b>Paradas de la diligencia</b>
+                    <p>{{ data.destinyAddress }}</p>
+                    <p>{{ data.destinyDetail }}</p>
                 </div>
-                <a class="data-button-edit" href="#/errandsstops" title="">
-                    <i>2</i>
-                    <p>VER</p>
-                </a>
-            </section>
-            <section class="sentresume-content-noborder">
-                <div class="data-origin">
-                    <b>CARACTERÍSTICAS</b>
-                    <p>Calle 123 # 12 - 55 Apto 201.</p>
-                    <p>Bogotá, Colombia.</p>
-                </div>
-                <a class="data-button-edit" href="" title="">
+                <a class="" ng-click="editDestiny()" title="">
                     <i class="ion-edit"></i>
-                    <p>EDITAR</p>
                 </a>
             </section>
             <section class="sentresume-content">
                 <div class="data-origin">
-                    <b>DESTINATARIO</b>
-                    <p>Calle 123 # 12 - 55 Apto 201.</p>
-                    <p>Bogotá, Colombia.</p>
+                    <b>Características</b>
+                    <p>{{ data.descriptionText }}</p>
+                    <p>Valor Declarado: {{ data.amountDeclared }}</p>
                 </div>
+                <a class="" ng-click="editFeatures()" title="">
+                    <i class="ion-edit"></i>
+                </a>
+            </section>
+            <section class="sentresume-content">
+                <div class="data-origin">
+                    <b>Destinatario</b>
+                    <p>{{ data.destinyName }}<br>{{ data.emailDestinyClient }} <br> {{ data.cellphoneDestinyClient }} .</p>
+                </div>
+                <a class="" ng-click="editDestinatary()" title="">
+                    <i class="ion-edit"></i>
+                </a>
             </section>
         </section>
         <section class="sentresume-cost">
 
-                <p>COSTO DEL ENVÍO</p>
-                <b>$ 22.000 COP</b>
+            Costo del envío:
+            <b>{{ data.amount || 0}} COT </b>
 
         </section>
-        <section class="container-button errandsresume-button">
-            <a class="button-noicon" href="#/paymentmethods" title=""> CONFIRMAR TU ENVÍO</a>
+        <section class="sentresume-button">
+            <div class="container-button">
+
+                <a class="button-noicon" ng-click="confirmResume()" title=""> CONFIRMAR TU ENVÍO</a>
+            </div>
         </section>
     </ion-content>
 </ion-view>

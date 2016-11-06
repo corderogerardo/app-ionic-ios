@@ -232,6 +232,11 @@ angular.module('axpress', [
                 serviceType: null
             }
         })
+        .state('diligence.clientfeatures', {
+            url: '/clientfeatures',
+            templateUrl: 'templates/diligences/clientfeature.html',
+            controller: 'FeaturesController'
+        })
         .state('diligence.origin', {
             url: '/origin',
             templateUrl: 'templates/diligences/origin.html',

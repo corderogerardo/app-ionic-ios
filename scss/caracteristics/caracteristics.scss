@@ -102,16 +102,21 @@
 }
 .errands-caracteristics-input{
 	align-items: center;
-	display:flex;
+    background-color:rgba($graybbbb,1);
+    display:flex;
 	flex-direction: row;
 	justify-content: center;
 	width:100%;
-	height:20%;
+	height:30%;
 	input{
-		border:1px solid blue;
-		height:90%;
-		text-align: center;
-		width:80%;
+        background-color:rgba($grayb,0.01);
+        border-top: 1px solid $graybb;
+        border-bottom: 1px solid $graybb;
+        color:$graybbb;
+        height:85%;
+        display: flex;
+        text-align: center;
+		width:95%;
 	}
 }
 .errands-caracteristics{
@@ -119,15 +124,26 @@
 	display:flex;
 	flex-direction: column;
 	justify-content: center;
-	margin-top:10%;
 	width:100%;
 	p{
-		color:$balanced;
+		color:$graybbb;
 		text-align:center;
 		margin-bottom:10%;
-		font-size:2vh;
-		width:60%;
+		font-size:2.5vh;
+        font-weight: bold;
+		width:80%;
 	}
+    ion-checkbox{
+        background-color:rgba($grayb,0.01);
+        height:90%;
+        color:$graybbb;
+        display: flex;
+        width:100%;
+    }
+}
+.client-features-button{
+    width: 90%;
+    height:100%;
 }
 .package-icon{
     align-items: center;

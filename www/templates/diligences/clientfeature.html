@@ -4,7 +4,6 @@
 <ion-view view-title="SendType">
     <ion-content scroll="false" >
     <div class="space">
-
     </div>
         <section class="send-type-todo">
             <div>
@@ -12,15 +11,18 @@
             </div>
         </section>
         <section class="errands-caracteristics-input">
-        <input type="text" name="" value="" placeholder="Breve descripcion de tu diligencia">
+        <input type="text" name="" value="" ng-model="data.clientdeligencedescription" placeholder="Breve descripcion de tu envio...">
         </section>
         <section class="errands-caracteristics">
         <p>Selecciona si tu envio termina en el punto de partida.</p>
-        <ion-checkbox id="goback" ng-model="isChecked">Ida y Vuelta</ion-checkbox>
+        <ion-checkbox id="goback" ng-model="data.goandback">Ida y Vuelta</ion-checkbox>
 
         </section>
-        <section class="center-button">
-            <a class="button-noicon" href="#/errandsdestiny" title="">CONTINUAR</a>
+
+        <section class="button-bottom">
+            <div class="client-features-button">
+                <a class="button-noicon" ng-click="confirmClientFeatures()" title="">CONTINUAR</a>
+            </div>
         </section>
     </ion-content>
 </ion-view>

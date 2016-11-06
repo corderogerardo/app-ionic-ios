@@ -27,6 +27,14 @@
                 $state.go($scope.extraData.packageNext);
             }
         };
+        $scope.confirmClientFeatures = function(){
+            if ($scope.extraData.navigateTo) {
+                $state.go($scope.extraData.navigateTo);
+                delete $scope.extraData.navigateTo;
+            } else {
+                $state.go($scope.extraData.clientNext);
+            }
+        };
 
         function setExistingChoice () {
             $scope.choice = {
