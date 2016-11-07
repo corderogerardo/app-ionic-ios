@@ -25,8 +25,8 @@
         function post(shippingId, sentById, sentByType, message) {
             var data = {
                 shipping_id: shippingId,
-                sent_by_id: sentById,
-                sent_by_type: sentByType,
+                sentby_id: sentById,
+                sentby_type: sentByType,
                 message: message
             };
 
