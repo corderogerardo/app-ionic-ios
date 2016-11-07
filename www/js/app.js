@@ -38,6 +38,9 @@ angular.module('axpress', [
         $rootScope.menu = JSON.parse(localStorage.getItem('axpress.menu'));
         $state.go('menu');
     }
+
+    //Configure moment
+    moment.locale('es');
 }])
 
 .config(['$stateProvider', '$urlRouterProvider', '$ionicCloudProvider', function($stateProvider, $urlRouterProvider, $ionicCloudProvider) {
@@ -68,8 +71,14 @@ angular.module('axpress', [
             }
         })
         .state('chat', {
-            url: '/chat',
-            templateUrl: 'templates/chat/chat.html'
+            url: '/chat/:shippingId',
+            templateUrl: 'templates/chat/chat.html',
+            controller: 'ChatController',
+            resolve: {
+                history: function (Chat, $stateParams) {
+                    return Chat.history($stateParams.shippingId);
+                }
+            }
         })
         /**
          * Authentication Routes

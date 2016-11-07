@@ -25,8 +25,8 @@
         function post(shippingId, sentById, sentByType, message) {
             var data = {
                 shipping_id: shippingId,
-                sent_by_id: sentById,
-                sent_by_type: sentByType,
+                sentby_id: sentById,
+                sentby_type: sentByType,
                 message: message
             };
 
@@ -772,7 +772,7 @@
              * @param      {Object}  options  The $http options for the service (Optional)
              * @return     {Promise}  Returns the $http promise to be resolved on success or error
              */
-            this.post = function(path, data, options) {
+            this.httpPost = function(path, data, options) {
                 data = data || {};
                 options = options || {};
                 var deferred = $q.defer();
@@ -786,7 +786,7 @@
             };
 
             /**
-             * Function that wraps Service.post to consume the backend api
+             * Function that wraps Service.httpPost to consume the backend api
              *
              * @param      {String}  path     The path specific to the api service (/client/login)
              * @param      {Object}  data     The data to be sent using the service (Optional)
@@ -803,7 +803,7 @@
                 };
                 path = this.urlBase() + path;
                 data = $httpParamSerializerJQLike(data);
-                return this.post(path, data, options);
+                return this.httpPost(path, data, options);
             };
 
             /**
