@@ -16,6 +16,9 @@
             //Google App ID
             googleOAuthClientID: '96059222512-4vm97bgjdolu5i0fe0sg8tl35e85gjdm.apps.googleusercontent.com',
 
+            //Push Sender ID
+            pushSenderID: '1068552996185',
+
             //Payment Methods
             paymentMethods: [
                 { name: 'Tarjeta de Crédito', value: 1 },
