@@ -16,6 +16,18 @@
             $scope.buttonState = true;
             $scope.markers[1].icon="{url: '../../img/inputs/pin-mapa-check2.png', scaledSize: [48,48]}"
         };
+        $scope.addNewDirection = function(){
+            $scope.markers.push({
+                title:"Another destiny",
+                position: [$scope.place.geometry.location.lat(),$scope.place.geometry.location.lng()],
+                icon: "{url: '../../img/inputs/pin-mapa-check2.png', scaledSize: [48,48]}"
+            });
+            $scope.place ="";
+            $scope.data.destinyDetail = [];
+            console.log("Markers cantidad "+$scope.markers.length);
+            console.log("Markers data "+JSON.stringify($scope.markers,null,2));
+            console.log("Marker posicion "+JSON.stringify($scope.place.geometry.location,null,2));
+        };
 
         $scope.confirmDestiny = function() {
             $scope.data.destinyAddress = $scope.place.formatted_address;
@@ -39,6 +51,8 @@
         function activate() {
             $scope.focused=false;
             $scope.focused2=false;
+            $scope.focusedphonedestinatary=false;
+            $scope.focusednamedestinatary=false;
             $scope.data = $state.current.data.data;
             $scope.extraData = $state.current.data.extraData;
             $scope.markers = [{

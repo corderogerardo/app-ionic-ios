@@ -23,13 +23,35 @@
 								</label>
 						</div>
 				</div>
+
             <i class="gps-button icon-location-color2" ng-click="gpsHere()" title=""></i>
+            <div class="errands-destinatary-input">
+                <div class="inputs-container">
+                    <i ng-if="focusednamedestinatary === true" class="icon-user"></i>
+                    <i ng-if="focusednamedestinatary === false" class="icon-user-gray"></i>
+                    <label>
+                        <input ng-model="data.destinyClient" ng-focus="focusednamedestinatary = true"
+                               ng-blur="focusednamedestinatary = false" ng-pristine="focusednamedestinatary = true" type="text" placeholder="Nombre del destinatario">
+                    </label>
+                </div>
+                <div class="inputs-container-last flag-maps">
+                    <i ng-if="focusedphonedestinatary === true " class="icon-phone"></i>
+                    <i ng-if="focusedphonedestinatary === false" class="icon-phone-gray"></i>
+                    <label>
+                        <input ng-model="data.cellphoneDestinyClient" ng-focus="focusedphonedestinatary = true"
+                               ng-blur="focusedphonedestinatary = false" type="text" placeholder="Teléfono">
+                    </label>
+                </div>
+            </div>
+            <div class="new-direction-button">
+                <a class="button-noicontwo" ng-click="addNewDirection()" title="">AGREGAR DIRECCION</a>
+            </div>
             <div ng-if="buttonState === false" class="pickuphere-button">
-                <a class="button-noicon" ng-click="pickHere()" title="">ENTREGAR AQUÍ</a>
+                <a class="button-noicontwo" ng-click="pickHere()" title="">ENTREGAR AQUÍ</a>
             </div>
             <div ng-if="buttonState === true" class="pickuphere-button">
-						<a class="button-noicon" ng-click="confirmDestiny()" title="">CONFIRMAR</a>
-				</div>
+				<a class="button-noicontwo" ng-click="confirmDestiny()" title="">CONFIRMAR</a>
+            </div>
 		</ion-content>
 </ion-view>
 

@@ -9937,31 +9937,61 @@ textarea {
   padding: 0; }
 
 .icon-user {
-  background-image: url("../img/inputs/user.png");
+  background-image: url("../img/inputs/User1.png");
+  background-size: 40%;
+  background-repeat: no-repeat;
+  background-position: center; }
+
+.icon-user-gray {
+  background-image: url("../img/inputs/User2.png");
   background-size: 40%;
   background-repeat: no-repeat;
   background-position: center; }
 
 .icon-pass {
-  background-image: url("../img/inputs/password.png");
+  background-image: url("../img/inputs/Password1.png");
+  background-size: 40%;
+  background-repeat: no-repeat;
+  background-position: center; }
+
+.icon-pass-gray {
+  background-image: url("../img/inputs/Password2.png");
   background-size: 40%;
   background-repeat: no-repeat;
   background-position: center; }
 
 .icon-email {
-  background-image: url("../img/inputs/mail.png");
+  background-image: url("../img/inputs/Mail1.png");
+  background-size: 40%;
+  background-repeat: no-repeat;
+  background-position: center; }
+
+.icon-email-gray {
+  background-image: url("../img/inputs/Mail2.png");
   background-size: 40%;
   background-repeat: no-repeat;
   background-position: center; }
 
 .icon-phone {
-  background-image: url("../img/inputs/Phone.png");
+  background-image: url("../img/inputs/Phone1.png");
+  background-size: 40%;
+  background-repeat: no-repeat;
+  background-position: center; }
+
+.icon-phone-gray {
+  background-image: url("../img/inputs/Phone2.png");
   background-size: 40%;
   background-repeat: no-repeat;
   background-position: center; }
 
 .icon-cinit {
-  background-image: url("../img/inputs/CajaText-Cedula.png");
+  background-image: url("../img/inputs/Cedula1.png");
+  background-size: 40%;
+  background-repeat: no-repeat;
+  background-position: center; }
+
+.icon-cinit-gray {
+  background-image: url("../img/inputs/Cedula2.png");
   background-size: 40%;
   background-repeat: no-repeat;
   background-position: center; }
@@ -10103,6 +10133,33 @@ ion-radio {
     flex-direction: row;
     font-size: 2.5vh; }
   .button-noicon a {
+    font-size: 2.5vh;
+    font-weight: bold; }
+
+.button-noicontwo {
+  align-items: center;
+  background-color: transparent;
+  display: flex;
+  background-image: url("../img/buttons/boton3.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: right;
+  border: none;
+  color: white;
+  cursor: pointer;
+  text-decoration: none;
+  justify-content: center;
+  font-size: 2.5vh;
+  font-weight: bold;
+  width: 100%;
+  height: 100%; }
+  .button-noicontwo:hover {
+    background-image: url("../img/buttons/boton2.png"); }
+  .button-noicontwo p {
+    display: flex;
+    flex-direction: row;
+    font-size: 2.5vh; }
+  .button-noicontwo a {
     font-size: 2.5vh;
     font-weight: bold; }
 
@@ -10497,6 +10554,13 @@ p {
   position: absolute;
   z-index: 1; }
 
+.new-direction-button {
+  width: 90%;
+  position: absolute;
+  left: 5%;
+  height: 5%;
+  bottom: 10%; }
+
 .pickuphere-button {
   width: 90%;
   position: absolute;
@@ -10524,11 +10588,11 @@ p {
   height: 50px; }
 
 .errands-destinatary-input {
-  bottom: 120px;
-  height: 8%;
+  bottom: 16%;
+  background-color: #E6E6E6;
   position: absolute;
-  left: 10%;
-  width: 80%; }
+  padding: 5px;
+  width: 100%; }
 
 .pickuphere-button-container {
   bottom: 10px;

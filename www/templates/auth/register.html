@@ -8,23 +8,23 @@
 
 			<div class="inputs-container">
                 <i ng-if="focusedRegisterName === true" class="icon-user"></i>
-                <i ng-if="focusedRegisterName === false" class="icon-flag-gray"></i>
+                <i ng-if="focusedRegisterName === false" class="icon-user-gray"></i>
 				<label class="">
-					<input type="text" name="name" ng-focus="focusedRegisterName = true"
+					<input type="text" name="name" ng-focus="focusedRegisterName = true" ng-change=""
                            ng-blur="focusedRegisterName = false" ng-model="user.name" placeholder="Nombre" required>
 				</label>
 			</div>
 			<div class="inputs-container">
-                <i ng-if="focusedRegisterPass === true" class="icon-pass"></i>
-                <i ng-if="focusedRegisterPass === false" class="icon-flag-gray"></i>
+                <i ng-if="focusedRegisterPass === true " class="icon-pass"></i>
+                <i ng-if="focusedRegisterPass === false " class="icon-pass-gray"></i>
 				<label class="">
-					<input type="password" name="pass" ng-focus="focusedRegisterPass = true"
+					<input type="password" name="pass" ng-focus="focusedRegisterPass = true "
                            ng-blur="focusedRegisterPass = false" ng-model="user.password" placeholder="Contraseña" required>
 				</label>
 			</div>
 			<div class="inputs-container">
-                <i ng-if="focusedRegisterEmail === true"  class="icon-email"></i>
-                <i ng-if="focusedRegisterEmail === false" class="icon-flag-gray"></i>
+                <i ng-if="focusedRegisterEmail === true "  class="icon-email"></i>
+                <i ng-if="focusedRegisterEmail === false " class="icon-email-gray"></i>
 				<label class="">
 					<input type="email" name="email" ng-focus="focusedRegisterEmail = true"
                            ng-blur="focusedRegisterEmail = false" ng-model="user.email" placeholder="Correo Electrónico" required>

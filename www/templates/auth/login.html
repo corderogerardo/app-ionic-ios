@@ -6,7 +6,7 @@
         <div class="inputs-wrapper">
             <div class="inputs-container">
                 <i ng-if="focusedLogin === true" class="icon-user"></i>
-                <i ng-if="focusedLogin === false" class="icon-flag-gray"></i>
+                <i ng-if="focusedLogin === false" class="icon-user-gray"></i>
                 <label class="">
                     <input ng-model="user.email" ng-focus="focusedLogin = true"
                            ng-blur="focusedLogin = false"  type="email" placeholder="Correo Electrónico">
@@ -14,7 +14,7 @@
             </div>
             <div class="inputs-container ">
                 <i ng-if="focusedLoginPass === true" class="icon-pass"></i>
-                <i ng-if="focusedLoginPass === false" class="icon-flag-gray"></i>
+                <i ng-if="focusedLoginPass === false" class="icon-pass-gray"></i>
                 <label class="">
                     <input ng-model="user.password" ng-focus="focusedLoginPass = true"
                            ng-blur="focusedLoginPass = false"  type="password" placeholder="Contraseña">

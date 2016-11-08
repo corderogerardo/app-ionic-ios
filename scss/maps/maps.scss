@@ -86,7 +86,13 @@
 		position: absolute;
 		z-index: 1;
 }
-
+.new-direction-button{
+    width:90%;
+    position:absolute;
+    left: 5%;
+    height:5%;
+    bottom: 10%;
+}
 .pickuphere-button{
 	width:90%;
 	position:absolute;
@@ -115,11 +121,11 @@
 	height:50px;
 }
 .errands-destinatary-input{
-	bottom:120px;
-	height:8%;
+	bottom:16%;
+    background-color: $graybbbb;
 	position:absolute;
-	left:10%;
-	width:80%;
+    padding: 5px;
+	width:100%;
 }
 .pickuphere-button-container{
 	bottom: 10px;
