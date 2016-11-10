@@ -22,11 +22,13 @@
                 position: [$scope.place.geometry.location.lat(),$scope.place.geometry.location.lng()],
                 icon: "{url: '../../img/inputs/pin-mapa-check2.png', scaledSize: [48,48]}"
             });
-            $scope.place ="";
-            $scope.data.destinyDetail = [];
-            console.log("Markers cantidad "+$scope.markers.length);
-            console.log("Markers data "+JSON.stringify($scope.markers,null,2));
-            console.log("Marker posicion "+JSON.stringify($scope.place.geometry.location,null,2));
+            $scope.data.destiniesData.push({destinyAddress:$scope.place.formatted_address,
+                destinyLatitude:$scope.place.geometry.location.lat(),
+                destinyLongitude:$scope.place.geometry.location.lng(),
+                destinyPlace: $scope.place
+            });
+            $scope.data.destinyDetail = '';
+            $scope.address = "\n";
         };
 
         $scope.confirmDestiny = function() {
@@ -53,8 +55,11 @@
             $scope.focused2=false;
             $scope.focusedphonedestinatary=false;
             $scope.focusednamedestinatary=false;
+            $scope.address="";
             $scope.data = $state.current.data.data;
             $scope.extraData = $state.current.data.extraData;
+            $scope.data.destiniesData = [];
+            $scope.data.destinyDetail = '';
             $scope.markers = [{
                 title: 'Origen',
                 icon:"{url: '../../img/inputs/pin-mapa-check1.png', scaledSize: [48,48]}",

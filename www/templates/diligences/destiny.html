@@ -11,7 +11,7 @@
                             <i ng-if="focused === true" class="icon-marker-color2"></i>
                             <i ng-if="focused === false" class="icon-marker-gray"></i>
 								<label>
-										<map-autocomplete-address on-place-changed="placeChanged" address="address"></map-autocomplete-address>
+										<map-autocomplete-address on-place-changed="placeChanged" address="{{address}}"></map-autocomplete-address >
 								</label>
 						</div>
 						<div class="inputs-container-last flag-maps">
@@ -30,7 +30,7 @@
                     <i ng-if="focusednamedestinatary === true" class="icon-user"></i>
                     <i ng-if="focusednamedestinatary === false" class="icon-user-gray"></i>
                     <label>
-                        <input ng-model="data.destinyClient" ng-focus="focusednamedestinatary = true"
+                        <input ng-model="data.destinyName" ng-focus="focusednamedestinatary = true"
                                ng-blur="focusednamedestinatary = false" ng-pristine="focusednamedestinatary = true" type="text" placeholder="Nombre del destinatario">
                     </label>
                 </div>

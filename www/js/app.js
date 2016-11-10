@@ -222,10 +222,8 @@ angular.module('axpress', [
                     flow: 'diligence',
                     clientNext: 'diligence.origin',
                     originNext: 'diligence.destiny',
-                    destinyNext: 'diligence.features',
-                    featuresNext: 'diligence.receiver',
-                    receiverNext: 'diligence.photo',
-                    photoNext: 'diligence.resume',
+                    destinyNext: 'diligence.resume',
+                    resumeNext:'diligence.paymentmethods'
                 }
             },
             params: {
@@ -251,21 +249,6 @@ angular.module('axpress', [
             url: '/stops',
             templateUrl: 'templates/diligences/stops.html',
             controller: 'StopsController'
-        })
-        .state('diligence.features', {
-            url: '/features',
-            templateUrl: 'templates/diligences/features.html',
-            controller: 'FeaturesController'
-        })
-        .state('diligence.receiver', {
-            url: '/receiver',
-            templateUrl: 'templates/diligences/receiver.html',
-            controller:'ReceiverController'
-        })
-        .state('diligence.photo', {
-            url: '/photo',
-            templateUrl: 'templates/diligences/photo.html',
-            controller:'PhotoController'
         })
         .state('diligence.resume', {
             url: '/resume',

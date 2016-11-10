@@ -11,12 +11,11 @@
             </div>
         </section>
         <section class="errands-caracteristics-input">
-        <input type="text" name="" value="" ng-model="data.clientdeligencedescription" placeholder="Breve descripcion de tu envio...">
+        <input type="text" name="" value="" ng-model="data.descriptionText" placeholder="Breve descripcion de tu envio...">
         </section>
         <section class="errands-caracteristics">
         <p>Selecciona si tu envio termina en el punto de partida.</p>
-        <ion-checkbox id="goback" ng-model="data.goandback">Ida y Vuelta</ion-checkbox>
-
+        <ion-checkbox id="goback" ng-model="data.samepoint" ng-checked="true">Ida y Vuelta</ion-checkbox>
         </section>
 
         <section class="button-bottom">

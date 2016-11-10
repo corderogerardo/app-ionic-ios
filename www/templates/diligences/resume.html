@@ -6,7 +6,7 @@
         <div class="space">
         </div>
         <section class="sentresume-data">
-            <section class="sentresume-content">
+            <section class="sentresume-content-top">
                 <div class="data-origin">
                     <b>Origen de la diligencia</b>
                     <p>{{ data.originAddress }}</p>
@@ -19,18 +19,22 @@
             <section class="sentresume-content">
                 <div class="data-origin">
                     <b>Paradas de la diligencia</b>
-                    <p>{{ data.destinyAddress }}</p>
-                    <p>{{ data.destinyDetail }}</p>
+                    <p ng-repeat="address in data.destiniesData">{{ address.destinyAddress }}</p>
+
                 </div>
+                <a class="stopsnumbers" title="">
+                    <i>{{data.destiniesData.length}}</i>
+                </a>
                 <a class="" ng-click="editDestiny()" title="">
-                    <i class="ion-edit"></i>
+                   <i class="ion-edit"></i>
                 </a>
             </section>
             <section class="sentresume-content">
                 <div class="data-origin">
                     <b>Características</b>
                     <p>{{ data.descriptionText }}</p>
-                    <p>Valor Declarado: {{ data.amountDeclared }}</p>
+                    <p>Ida y Vuelta: <span ng-if="data.samepoint">Si</span><span ng-if="!data.samepoint">No</span></p>
+
                 </div>
                 <a class="" ng-click="editFeatures()" title="">
                     <i class="ion-edit"></i>

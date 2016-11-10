@@ -316,11 +316,13 @@
                 position: [$scope.place.geometry.location.lat(),$scope.place.geometry.location.lng()],
                 icon: "{url: '../../img/inputs/pin-mapa-check2.png', scaledSize: [48,48]}"
             });
-            $scope.place ="";
-            $scope.data.destinyDetail = [];
-            console.log("Markers cantidad "+$scope.markers.length);
-            console.log("Markers data "+JSON.stringify($scope.markers,null,2));
-            console.log("Marker posicion "+JSON.stringify($scope.place.geometry.location,null,2));
+            $scope.data.destiniesData.push({destinyAddress:$scope.place.formatted_address,
+                destinyLatitude:$scope.place.geometry.location.lat(),
+                destinyLongitude:$scope.place.geometry.location.lng(),
+                destinyPlace: $scope.place
+            });
+            $scope.data.destinyDetail = '';
+            $scope.address = "\n";
         };
 
         $scope.confirmDestiny = function() {
@@ -347,8 +349,11 @@
             $scope.focused2=false;
             $scope.focusedphonedestinatary=false;
             $scope.focusednamedestinatary=false;
+            $scope.address="";
             $scope.data = $state.current.data.data;
             $scope.extraData = $state.current.data.extraData;
+            $scope.data.destiniesData = [];
+            $scope.data.destinyDetail = '';
             $scope.markers = [{
                 title: 'Origen',
                 icon:"{url: '../../img/inputs/pin-mapa-check1.png', scaledSize: [48,48]}",
@@ -703,9 +708,9 @@
     angular.module('axpress')
         .controller('ResumeController', ResumeController);
 
-    ResumeController.$inject = ['$rootScope', '$scope', '$cordovaDialogs', '$state', 'Logger', 'Shipping'];
+    ResumeController.$inject = ['$rootScope', '$scope', '$cordovaDialogs', '$state', 'Logger', 'Shipping','Diligence'];
 
-    function ResumeController($rootScope, $scope, $cordovaDialogs, $state, Logger, Shipping) {
+    function ResumeController($rootScope, $scope, $cordovaDialogs, $state, Logger, Shipping, Diligence) {
 
         activate();
 
@@ -756,11 +761,36 @@
             $scope.data.distance = response.meters;
 
         }
+        function requestQuotationDiligence() {
+            Diligence.quotation($state.params.serviceType,$scope.data.samepoint,$scope.data.destiniesData,$scope.data.originLatitude, $scope.data.originLongitude)
+                .then(function(response) {
+                    if (response.return && response.status == 200) {
+                        quotationDiligenceSuccessful(response.data);
+                    }
+                }, function(error) {
+                    if (error.message)
+                        Logger.error(error.message);
+                    else
+                        Logger.error('');
+                });
+        }
+
+        function quotationDiligenceSuccessful(response) {
+            $scope.extraData.quotation = response;
+            $scope.data.amount = response.price;
+            $scope.data.distance = response.meters;
+
+        }
 
         function activate() {
             $scope.data = $state.current.data.data;
             $scope.extraData = $state.current.data.extraData;
-            requestQuotation();
+            console.log("Service Type Selected "+$state.params.serviceType);
+            if($state.params.serviceType===45){
+                requestQuotationDiligence();
+            }else{
+                requestQuotation();
+            }
             console.log($scope.data);
             console.log($scope.extraData);
         }
