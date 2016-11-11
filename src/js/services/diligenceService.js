@@ -16,22 +16,24 @@
         /**
          * Gets the quotation for a diligence
          *
-         * @param      {Integer}        typeServices  The service's type
+         * @param      {Integer}        typeService  The service's type
          * @param      {Boolean}        samepoint     Samepoint (true if roundtrip)
-         * @param      {Array[Double]}  diligences    The list of diligences
+         * @param      {Array[Object]}  diligences    The list of diligences
          * @param      {Double}         latitude      The latitude
          * @param      {Double}         longitude     The longitude
          * @return     {Promise}         A promise to resolve results
          */
-        function quotation(typeServices, samepoint, diligences, latitude, longitude) {
+        function quotation(typeService, samepoint, diligences, latitude, longitude) {
             var data = {
-                type_services: typeServices,
-                samepoint: samepoint,
+                type_service: typeService,
+                samepoint: (samepoint ? true : false),
                 diligences: diligences,
                 latitude: latitude,
                 longitude: longitude
             };
-            return service.apiPost('/quotation', data);
+            data.key = service.key;
+            data.platform = service.platform;
+            return service.httpPost(service.urlBase() + '/quotation', data);
         }
 
         /**
@@ -39,7 +41,7 @@
          *
          * @param      {String}         clientId         The client identifier
          * @param      {Array[Double]}  diligences       The diligences array
-         * @param      {Integer}        typeServices     The service's type
+         * @param      {Integer}        typeService     The service's type
          * @param      {Boolean}        samepoint        Samepoint (true if roundtrip)
          * @param      {String}         descriptionText  The description text
          * @param      {Double}         time             The shipping time
@@ -48,11 +50,11 @@
          * @param      {Double}         amount           The amount
          * @return     {Promise}        A promise to resolve results
          */
-        function post(clientId, diligences, typeServices, samepoint, descriptionText, time, distance, pay, amount) {
+        function post(clientId, diligences, typeService, samepoint, descriptionText, time, distance, pay, amount) {
             var data = {
                 client_id: clientId,
                 diligences: diligences,
-                type_services: typeServices,
+                type_service: typeService,
                 samepoint: samepoint,
                 description_text: descriptionText,
                 time: time,
@@ -60,7 +62,9 @@
                 pay: pay,
                 amount: amount
             };
-            return service.apiPost('/post', data);
+            data.key = service.key;
+            data.platform = service.platform;
+            return service.apiPost(service.urlBase() + '/post', data);
         }
     }
 })();

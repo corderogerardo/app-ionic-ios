@@ -331,10 +331,20 @@
         };
 
         $scope.confirmDestiny = function() {
-            $scope.data.destinyAddress = $scope.place.formatted_address;
-            $scope.data.destinyLatitude = $scope.place.geometry.location.lat();
-            $scope.data.destinyLongitude = $scope.place.geometry.location.lng();
-            $scope.extraData.destinyPlace = $scope.place;
+            if ($state.params.serviceType == 45) {
+                $scope.data.destiniesData.push({
+                    phone:$scope.data.cellphoneDestinyClient,
+                    longitude:$scope.place.geometry.location.lng(),
+                    latitude:$scope.place.geometry.location.lat(),
+                    address:$scope.place.formatted_address,
+                    name:$scope.data.destinyName
+                });
+            } else {
+                $scope.data.destinyAddress = $scope.place.formatted_address;
+                $scope.data.destinyLatitude = $scope.place.geometry.location.lat();
+                $scope.data.destinyLongitude = $scope.place.geometry.location.lng();
+                $scope.extraData.destinyPlace = $scope.place;
+            }
             if ($scope.extraData.navigateTo) {
                 $state.go($scope.extraData.navigateTo);
                 delete $scope.extraData.navigateTo;
@@ -768,7 +778,7 @@
         }
         function requestQuotationDiligence() {
             console.log("Request deligence.quotation");
-            Diligence.quotation($state.params.serviceType,$scope.data.destiniesData,($scope.data.samepoint).toString(),$scope.data.originLatitude, $scope.data.originLongitude)
+            Diligence.quotation($state.params.serviceType,$scope.data.samepoint,$scope.data.destiniesData,$scope.data.originLatitude, $scope.data.originLongitude)
                 .then(function(response) {
                     console.log(response);
                     if (response.return && response.status == 200) {
