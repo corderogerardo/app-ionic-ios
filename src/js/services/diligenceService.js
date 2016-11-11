@@ -44,20 +44,19 @@
          * @param      {Integer}        typeService     The service's type
          * @param      {Boolean}        samepoint        Samepoint (true if roundtrip)
          * @param      {String}         descriptionText  The description text
-         * @param      {Double}         time             The shipping time
          * @param      {String}         distance         The distance
          * @param      {Integer}        pay              Pay
          * @param      {Double}         amount           The amount
          * @return     {Promise}        A promise to resolve results
          */
-        function post(clientId, diligences, typeService, samepoint, descriptionText, time, distance, pay, amount) {
+        function post(clientId, diligences, typeService, samepoint, descriptionText, distance, pay, amount) {
             var data = {
                 client_id: clientId,
                 diligences: diligences,
                 type_service: typeService,
                 samepoint: samepoint,
                 description_text: descriptionText,
-                time: time,
+                time: new Date().valueOf(),
                 distance: distance,
                 pay: pay,
                 amount: amount
