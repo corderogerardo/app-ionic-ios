@@ -56,8 +56,10 @@
 
         }
         function requestQuotationDiligence() {
-            Diligence.quotation($state.params.serviceType,$scope.data.samepoint,$scope.data.destiniesData,$scope.data.originLatitude, $scope.data.originLongitude)
+            console.log("Request deligence.quotation");
+            Diligence.quotation($state.params.serviceType,$scope.data.destiniesData,($scope.data.samepoint).toString(),$scope.data.originLatitude, $scope.data.originLongitude)
                 .then(function(response) {
+                    console.log(response);
                     if (response.return && response.status == 200) {
                         quotationDiligenceSuccessful(response.data);
                     }

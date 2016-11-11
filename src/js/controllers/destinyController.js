@@ -22,13 +22,18 @@
                 position: [$scope.place.geometry.location.lat(),$scope.place.geometry.location.lng()],
                 icon: "{url: '../../img/inputs/pin-mapa-check2.png', scaledSize: [48,48]}"
             });
-            $scope.data.destiniesData.push({destinyAddress:$scope.place.formatted_address,
-                destinyLatitude:$scope.place.geometry.location.lat(),
-                destinyLongitude:$scope.place.geometry.location.lng(),
-                destinyPlace: $scope.place
+
+            $scope.data.destiniesData.push({
+                phone:$scope.data.cellphoneDestinyClient,
+                longitude:$scope.place.geometry.location.lng(),
+                latitude:$scope.place.geometry.location.lat(),
+                address:$scope.place.formatted_address,
+                name:$scope.data.destinyName
             });
             $scope.data.destinyDetail = '';
             $scope.address = "\n";
+            $scope.data.cellphoneDestinyClient="";
+            $scope.data.destinyName ="";
         };
 
         $scope.confirmDestiny = function() {
