@@ -11,6 +11,24 @@
 
         return service;
 
+        function pushReceived (event, notification) {
+            console.log("-----------PUSH----------------");
+            console.log(JSON.stringify(event));
+            console.log(JSON.stringify(notification));
+        }
+
+        function listenForEvent () {
+            $rootScope.$on('$cordovaPushV5:notificationReceived', pushReceived);
+            $rootScope.$on('$cordovaPush:notificationReceived', pushReceived);
+            $rootScope.$on('$cordovaPushV5:errorOcurred', function(event, e){
+                console.log("PUSH error");
+            });
+
+            $rootScope.$on('pushNotificationReceived', function (event, notification) {
+                console.log("pushNotificationReceived");
+            });
+        }
+
         function initialize () {
             //Configure Push Notifications
             var pushOptions = {
@@ -23,8 +41,6 @@
                     sound: "true"
                 }
             };
-
-            console.log(localStorage.getItem('axpress.push.registrationID'));
 
             if (!localStorage.getItem('axpress.push.registrationID')) {
                 document.addEventListener("deviceready", function() {
@@ -41,6 +57,7 @@
                         });
                 }, false);
             }
+            listenForEvent();
         }
     }
 })();
