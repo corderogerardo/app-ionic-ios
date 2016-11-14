@@ -733,23 +733,34 @@
             $scope.extraData.navigateTo = $scope.extraData.flow + '.resume';
             $state.go($scope.extraData.flow + '.origin');
         };
-
-        $scope.editDestiny = function() {
-            $scope.extraData.navigateTo = $scope.extraData.flow + '.resume';
-            $state.go($scope.extraData.flow + '.destiny');
-
-        };
-
+        if($state.params.serviceType === 45){
+            $scope.editDestiny = function() {
+                $scope.extraData.navigateTo = $scope.extraData.flow + '.resume';
+                $state.go($scope.extraData.flow + '.stops');
+            };
+        }else{
+            $scope.editDestiny = function() {
+                $scope.extraData.navigateTo = $scope.extraData.flow + '.resume';
+                $state.go($scope.extraData.flow + '.destiny');
+            };
+        }
         $scope.editFeatures = function() {
             $scope.extraData.navigateTo = $scope.extraData.flow + '.resume';
             $state.go($scope.extraData.flow + '.features');
 
         };
+        if($state.params.serviceType === 45){
+            $scope.editDestinatary = function() {
+                $scope.extraData.navigateTo = $scope.extraData.flow + '.resume';
+                $state.go($scope.extraData.flow + '.stops');
+            };
+        }else{
+            $scope.editDestinatary = function() {
+                $scope.extraData.navigateTo = $scope.extraData.flow + '.resume';
+                $state.go($scope.extraData.flow + '.receiver');
+            };
+        }
 
-        $scope.editDestinatary = function() {
-            $scope.extraData.navigateTo = $scope.extraData.flow + '.resume';
-            $state.go($scope.extraData.flow + '.receiver');
-        };
 
         $scope.confirmResume = function() {
             $state.go($scope.extraData.resumeNext);
@@ -836,5 +847,34 @@
         $scope.goToCall = function() {
             console.log("Call phone number...");
         };
+    }
+})();
+;
+
+(function(){
+    angular.module('axpress')
+        .controller('StopsController', StopsController);
+    StopsController.$inject = ['$rootScope', '$scope', '$cordovaDialogs', '$state', 'Logger'];
+
+    function StopsController($rootScope,$scope,$cordovaDialogs,$state,Logger){
+        activate();
+        var valux = "";
+        $scope.editDestiny = function(valux){
+            console.log(valux);
+            $scope.extraData.arrayPositionDestiny = valux;
+            $scope.extraData.navigateTo = $scope.extraData.flow + '.stops';
+            $state.go($scope.extraData.flow + '.destiny');
+        };
+        $scope.goBack = function(){
+            $scope.extraData.navigateTo = $scope.extraData.flow + '.resume';
+        };
+
+        function activate() {
+            $scope.data = $state.current.data.data;
+            $scope.extraData = $state.current.data.extraData;
+            console.log("Service Type Selected "+$state.params.serviceType);
+            console.log($scope.data);
+            console.log($scope.extraData);
+        }
     }
 })();
