@@ -2,9 +2,9 @@
     angular.module('axpress')
         .controller('ResumeController', ResumeController);
 
-    ResumeController.$inject = ['$rootScope', '$scope', '$cordovaDialogs', '$state', 'Logger', 'Shipping','Diligence'];
+    ResumeController.$inject = ['$rootScope', '$scope', '$state', 'Logger', 'Shipping', 'Diligence'];
 
-    function ResumeController($rootScope, $scope, $cordovaDialogs, $state, Logger, Shipping, Diligence) {
+    function ResumeController($rootScope, $scope, $state, Logger, Shipping, Diligence) {
 
         activate();
 
@@ -12,32 +12,37 @@
             $scope.extraData.navigateTo = $scope.extraData.flow + '.resume';
             $state.go($scope.extraData.flow + '.origin');
         };
-            $scope.editDestiny = function() {
-                if($state.params.serviceType === 45){
-                    $scope.extraData.navigateTo = $scope.extraData.flow + '.resume';
-                    $state.go($scope.extraData.flow + '.stops');
-                 }else {
-                    $scope.extraData.navigateTo = $scope.extraData.flow + '.resume';
-                    $state.go($scope.extraData.flow + '.destiny');
-                }
-            };
+
+        $scope.editDestiny = function() {
+            if ($state.params.serviceType == 45) {
+                //Its a diligence
+                $scope.extraData.navigateTo = $scope.extraData.flow + '.resume';
+                $state.go($scope.extraData.flow + '.stops');
+            } else {
+                $scope.extraData.navigateTo = $scope.extraData.flow + '.resume';
+                $state.go($scope.extraData.flow + '.destiny');
+            }
+        };
 
         $scope.editFeatures = function() {
-            if($state.params.serviceType === 45){
+            if ($state.params.serviceType == 45) {
+                //Its a diligence
                 $scope.extraData.navigateTo = $scope.extraData.flow + '.resume';
                 $state.go($scope.extraData.flow + '.clientfeatures');
-            }else{
+            } else {
                 $scope.extraData.navigateTo = $scope.extraData.flow + '.resume';
                 $state.go($scope.extraData.flow + '.features');
             }
         };
+
         $scope.editDestinatary = function() {
-            if($state.params.serviceType === 45){
+            if ($state.params.serviceType == 45) {
+                //Its a diligence
                 $scope.extraData.navigateTo = $scope.extraData.flow + '.resume';
                 $state.go($scope.extraData.flow + '.stops');
-            }else{
-                 $scope.extraData.navigateTo = $scope.extraData.flow + '.resume';
-                 $state.go($scope.extraData.flow + '.receiver');
+            } else {
+                $scope.extraData.navigateTo = $scope.extraData.flow + '.resume';
+                $state.go($scope.extraData.flow + '.receiver');
             }
         };
 
@@ -67,11 +72,10 @@
             $scope.data.distance = response.meters;
 
         }
+
         function requestQuotationDiligence() {
-            console.log("Request deligence.quotation");
-            Diligence.quotation($state.params.serviceType,$scope.data.samepoint,$scope.data.destiniesData,$scope.data.originLatitude, $scope.data.originLongitude)
+            Diligence.quotation($state.params.serviceType, $scope.data.samepoint, $scope.data.destiniesData, $scope.data.originLatitude, $scope.data.originLongitude)
                 .then(function(response) {
-                    console.log(response);
                     if (response.return && response.status == 200) {
                         quotationDiligenceSuccessful(response.data);
                     }
@@ -93,14 +97,12 @@
         function activate() {
             $scope.data = $state.current.data.data;
             $scope.extraData = $state.current.data.extraData;
-            console.log("Service Type Selected "+$state.params.serviceType);
-            if($state.params.serviceType===45){
+            if ($state.params.serviceType == 45) {
+                //Its a diligence
                 requestQuotationDiligence();
-            }else{
+            } else {
                 requestQuotation();
             }
-            console.log($scope.data);
-            console.log($scope.extraData);
         }
     }
 })();

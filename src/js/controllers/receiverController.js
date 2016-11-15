@@ -2,9 +2,9 @@
     angular.module('axpress')
         .controller('ReceiverController', ReceiverController);
 
-    ReceiverController.$inject = ['$rootScope', '$scope', '$cordovaDialogs', '$state'];
+    ReceiverController.$inject = ['$rootScope', '$scope', '$state'];
 
-    function ReceiverController($rootScope, $scope, $cordovaDialogs, $state) {
+    function ReceiverController($rootScope, $scope, $state) {
         activate();
 
         $scope.saveCaracteristics = function() {

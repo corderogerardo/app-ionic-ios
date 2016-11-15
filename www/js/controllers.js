@@ -2,9 +2,9 @@
     angular.module('axpress')
         .controller("AccountController", AccountController);
 
-    AccountController.$inject = ['$scope', '$rootScope', '$ionicPopup', 'Client'];
+    AccountController.$inject = ['$scope', '$rootScope', 'Client'];
 
-    function AccountController($scope, $rootScope, $ionicPopup, Client) {
+    function AccountController($scope, $rootScope, Client) {
         activate();
 
         function activate() {
@@ -296,32 +296,34 @@
     angular.module('axpress')
         .controller('DestinyController', DocumentDestinyController);
 
-    DocumentDestinyController.$inject = ['$rootScope', '$scope', '$cordovaDialogs', '$state', '$ionicPopup','$cordovaGeolocation'];
+    DocumentDestinyController.$inject = ['$rootScope', '$scope', '$state', '$cordovaGeolocation'];
 
-    function DocumentDestinyController($rootScope, $scope, $cordovaDialogs, $state, $ionicPopup,$cordovaGeolocation) {
+    function DocumentDestinyController($rootScope, $scope, $state, $cordovaGeolocation) {
         activate();
 
         $scope.placeChanged = function() {
             $scope.place = this.getPlace();
             $scope.markers[1].position = $scope.place.geometry.location;
         };
-        $scope.pickHere = function(){
+
+        $scope.pickHere = function() {
             $scope.buttonState = true;
-            $scope.markers[1].icon="{url: '../../img/inputs/pin-mapa-check2.png', scaledSize: [48,48]}"
+            $scope.markers[1].icon = "{url: 'img/inputs/pin-mapa-check2.png', scaledSize: [48,48]}"
         };
-        $scope.addNewDirection = function(){
+
+        $scope.addNewDirection = function() {
             $scope.markers.push({
-                title:"Another destiny",
-                position: [$scope.place.geometry.location.lat(),$scope.place.geometry.location.lng()],
-                icon: "{url: '../../img/inputs/pin-mapa-check2.png', scaledSize: [48,48]}"
+                title: "Another destiny",
+                position: [$scope.place.geometry.location.lat(), $scope.place.geometry.location.lng()],
+                icon: "{url: 'img/inputs/pin-mapa-check2.png', scaledSize: [48,48]}"
             });
 
             $scope.data.destiniesData.push({
-                phone:$scope.data.cellphoneDestinyClient,
-                longitude:$scope.place.geometry.location.lng(),
-                latitude:$scope.place.geometry.location.lat(),
-                address:$scope.place.formatted_address,
-                name:$scope.data.destinyName
+                phone: $scope.data.cellphoneDestinyClient,
+                longitude: $scope.place.geometry.location.lng(),
+                latitude: $scope.place.geometry.location.lat(),
+                address: $scope.place.formatted_address,
+                name: $scope.data.destinyName
             });
             $scope.data.destinyDetail = '';
             $scope.address = "\n";
@@ -331,32 +333,32 @@
 
         $scope.confirmDestiny = function() {
             if ($state.params.serviceType == 45) {
-                if($scope.extraData.arrayPositionDestiny >=0){
+                if ($scope.extraData.arrayPositionDestiny >= 0) {
                     console.log("Estoy en editar");
-                    console.log("Data "+$scope.extraData.arrayPositionDestiny);
-                    console.log("DataDestinies "+$scope.data.destiniesData);
-                    $scope.data.destiniesData[$scope.extraData.arrayPositionDestiny].phone=$scope.data.cellphoneDestinyClient;
-                    $scope.data.destiniesData[$scope.extraData.arrayPositionDestiny].longitude=$scope.place.geometry.location.lng();
-                    $scope.data.destiniesData[$scope.extraData.arrayPositionDestiny].latitude=$scope.place.geometry.location.lat();
-                    $scope.data.destiniesData[$scope.extraData.arrayPositionDestiny].address=$scope.place.formatted_address;
-                    $scope.data.destiniesData[$scope.extraData.arrayPositionDestiny].name=$scope.data.destinyName;
+                    console.log("Data " + $scope.extraData.arrayPositionDestiny);
+                    console.log("DataDestinies " + $scope.data.destiniesData);
+                    $scope.data.destiniesData[$scope.extraData.arrayPositionDestiny].phone = $scope.data.cellphoneDestinyClient;
+                    $scope.data.destiniesData[$scope.extraData.arrayPositionDestiny].longitude = $scope.place.geometry.location.lng();
+                    $scope.data.destiniesData[$scope.extraData.arrayPositionDestiny].latitude = $scope.place.geometry.location.lat();
+                    $scope.data.destiniesData[$scope.extraData.arrayPositionDestiny].address = $scope.place.formatted_address;
+                    $scope.data.destiniesData[$scope.extraData.arrayPositionDestiny].name = $scope.data.destinyName;
                     $scope.data.destinyDetail = '';
                     $scope.address = "\n";
-                    $scope.data.cellphoneDestinyClient="";
-                    $scope.data.destinyName ="";
-                }else{
+                    $scope.data.cellphoneDestinyClient = "";
+                    $scope.data.destinyName = "";
+                } else {
                     console.log("Estoy en agregar");
                     $scope.data.destiniesData.push({
-                        phone:$scope.data.cellphoneDestinyClient,
-                        longitude:$scope.place.geometry.location.lng(),
-                        latitude:$scope.place.geometry.location.lat(),
-                        address:$scope.place.formatted_address,
-                        name:$scope.data.destinyName
+                        phone: $scope.data.cellphoneDestinyClient,
+                        longitude: $scope.place.geometry.location.lng(),
+                        latitude: $scope.place.geometry.location.lat(),
+                        address: $scope.place.formatted_address,
+                        name: $scope.data.destinyName
                     });
                     $scope.data.destinyDetail = '';
                     $scope.address = "\n";
-                    $scope.data.cellphoneDestinyClient="";
-                    $scope.data.destinyName ="";
+                    $scope.data.cellphoneDestinyClient = "";
+                    $scope.data.destinyName = "";
                 }
                 $scope.buttonState = false;
             } else {
@@ -366,8 +368,8 @@
                 $scope.extraData.destinyPlace = $scope.place;
                 $scope.data.destinyDetail = '';
                 $scope.address = "\n";
-                $scope.data.cellphoneDestinyClient="";
-                $scope.data.destinyName ="";
+                $scope.data.cellphoneDestinyClient = "";
+                $scope.data.destinyName = "";
                 $scope.buttonState = false;
 
             }
@@ -388,81 +390,64 @@
         function activate() {
             $scope.data = $state.current.data.data;
             $scope.extraData = $state.current.data.extraData;
-            if($scope.extraData.arrayPositionDestiny >=0){
-                $scope.focused=false;
-                $scope.focused2=false;
+            if ($scope.extraData.arrayPositionDestiny >= 0) {
+                $scope.focused = false;
+                $scope.focused2 = false;
                 $scope.buttonState = false;
-                $scope.focusedphonedestinatary=false;
-                $scope.focusednamedestinatary=false;
-                $scope.address=$scope.data.destiniesData[$scope.extraData.arrayPositionDestiny].address;
-                $scope.data.cellphoneDestinyClient=$scope.data.destiniesData[$scope.extraData.arrayPositionDestiny].phone;
-                $scope.data.destinyName =$scope.data.destiniesData[$scope.extraData.arrayPositionDestiny].name;
+                $scope.focusedphonedestinatary = false;
+                $scope.focusednamedestinatary = false;
+                $scope.address = $scope.data.destiniesData[$scope.extraData.arrayPositionDestiny].address;
+                $scope.data.cellphoneDestinyClient = $scope.data.destiniesData[$scope.extraData.arrayPositionDestiny].phone;
+                $scope.data.destinyName = $scope.data.destiniesData[$scope.extraData.arrayPositionDestiny].name;
                 $scope.markers = [{
                     title: 'Origen',
-                    icon:"{url: '../../img/inputs/pin-mapa-check1.png', scaledSize: [48,48]}",
+                    icon: "{url: 'img/inputs/pin-mapa-check1.png', scaledSize: [48,48]}",
                     position: [$scope.data.originLatitude, $scope.data.originLongitude]
                 }];
-                $scope.data.destiniesData.forEach(function(destiny){
+                $scope.data.destiniesData.forEach(function(destiny) {
                     $scope.markers.push({
                         title: 'Destino',
-                        icon:"{url: '../../img/inputs/pin-mapa2.png', scaledSize: [48,48]}",
+                        icon: "{url: 'img/inputs/pin-mapa2.png', scaledSize: [48,48]}",
                         position: [destiny.longitude, destiny.latitude]
                     })
                 })
-            }else{
-            $scope.focused=false;
-            $scope.focused2=false;
-            $scope.buttonState = false;
-            $scope.focusedphonedestinatary=false;
-            $scope.focusednamedestinatary=false;
-            $scope.address="";
-            $scope.data.destiniesData = [];
-            $scope.data.destinyDetail = '';
-            $scope.markers = [{
-                title: 'Origen',
-                icon:"{url: '../../img/inputs/pin-mapa-check1.png', scaledSize: [48,48]}",
-                position: [$scope.data.originLatitude, $scope.data.originLongitude]
-            }, {
-                title: 'Destino',
-                icon:"{url: '../../img/inputs/pin-mapa2.png', scaledSize: [48,48]}"
-            }];
+            } else {
+                $scope.focused = false;
+                $scope.focused2 = false;
+                $scope.buttonState = false;
+                $scope.focusedphonedestinatary = false;
+                $scope.focusednamedestinatary = false;
+                $scope.address = "";
+                $scope.data.destiniesData = [];
+                $scope.data.destinyDetail = '';
+                $scope.markers = [{
+                    title: 'Origen',
+                    icon: "{url: 'img/inputs/pin-mapa-check1.png', scaledSize: [48,48]}",
+                    position: [$scope.data.originLatitude, $scope.data.originLongitude]
+                }, {
+                    title: 'Destino',
+                    icon: "{url: 'img/inputs/pin-mapa2.png', scaledSize: [48,48]}"
+                }];
             }
             if ($scope.data.destinyLatitude && $scope.data.destinyLongitude)
                 setExistingAddress();
         }
+
         /**
          * For GPS Geolocation ngcordova geolocation
          */
-        var posOptions = {timeout: 10000, enableHighAccuracy: false};
-        $scope.gpsHere = function(){
+        var posOptions = { timeout: 10000, enableHighAccuracy: false };
+
+        $scope.gpsHere = function() {
             $cordovaGeolocation
                 .getCurrentPosition(posOptions)
-                .then(function (position) {
+                .then(function(position) {
                     $scope.gps.lat = position.coords.latitude;
                     $scope.gps.lng = position.coords.longitude;
                 }, function(err) {
                     // error
                 });
         };
-        //another way
-        /*$scope.watchOptions = {
-         timeout : 3000,
-         enableHighAccuracy: false // may cause errors if true
-         };
-
-         $scope.watch = $cordovaGeolocation.watchPosition(watchOptions);
-         $scope.watch.then(
-         null,
-         function(err) {
-         // error
-         },
-         function(position) {
-         var lat  = position.coords.latitude
-         var long = position.coords.longitude
-         });
-
-
-         $scope.watch.clearWatch();*/
     }
 
 })();
@@ -472,9 +457,9 @@
     angular.module('axpress')
         .controller('FeaturesController', FeaturesController);
 
-    FeaturesController.$inject = ['$rootScope', '$scope', '$cordovaDialogs', '$state'];
+    FeaturesController.$inject = ['$rootScope', '$scope', '$state'];
 
-    function FeaturesController($rootScope, $scope, $cordovaDialogs, $state) {
+    function FeaturesController($rootScope, $scope, $state) {
         activate();
 
         $scope.confirmServiceType = function() {
@@ -488,6 +473,7 @@
                 $state.go($scope.extraData.featuresNext);
             }
         };
+
         $scope.confirmPackage = function() {
 
             if ($scope.extraData.navigateTo) {
@@ -497,7 +483,8 @@
                 $state.go($scope.extraData.packageNext);
             }
         };
-        $scope.confirmClientFeatures = function(){
+
+        $scope.confirmClientFeatures = function() {
             if ($scope.extraData.navigateTo) {
                 $state.go($scope.extraData.navigateTo);
                 delete $scope.extraData.navigateTo;
@@ -506,7 +493,7 @@
             }
         };
 
-        function setExistingChoice () {
+        function setExistingChoice() {
             $scope.choice = {
                 bag: $scope.extraData.bagId
             };
@@ -589,19 +576,21 @@
     angular.module('axpress')
         .controller('OriginController', DocumentOriginController);
 
-    DocumentOriginController.$inject = ['$rootScope', '$scope', '$cordovaDialogs', '$state', '$ionicPopup','$cordovaGeolocation'];
+    DocumentOriginController.$inject = ['$rootScope', '$scope', '$state', '$cordovaGeolocation'];
 
-    function DocumentOriginController($rootScope, $scope, $cordovaDialogs, $state, $ionicPopup,$cordovaGeolocation) {
+    function DocumentOriginController($rootScope, $scope, $state, $cordovaGeolocation) {
         activate();
 
         $scope.placeChanged = function() {
             $scope.place = this.getPlace();
             $scope.markers[0].position = $scope.place.geometry.location;
         };
+
         $scope.buttonState = false;
-        $scope.pickHere = function(){
+
+        $scope.pickHere = function() {
             $scope.buttonState = true;
-            $scope.markers[0].icon="{url: '../../img/inputs/pin-mapa-check1.png', scaledSize: [48,48]}"
+            $scope.markers[0].icon = "{url: 'img/inputs/pin-mapa-check1.png', scaledSize: [48,48]}"
         };
 
         $scope.confirmOrigin = function() {
@@ -624,16 +613,16 @@
         }
 
         function activate() {
-            $scope.focused=false;
-            $scope.focused2=false;
+            $scope.focused = false;
+            $scope.focused2 = false;
             $scope.data = $state.current.data.data;
             $scope.extraData = $state.current.data.extraData;
-            $scope.customIconOrigin ={
+            $scope.customIconOrigin = {
 
             };
             $scope.markers = [{
                 title: 'Origen',
-                icon:"{url: '../../img/inputs/pin-mapa1.png', scaledSize: [48,48]}"
+                icon: "{url: 'img/inputs/pin-mapa1.png', scaledSize: [48,48]}"
             }];
             if ($scope.extraData.originPlace)
                 setExistingAddress();
@@ -642,36 +631,18 @@
         /**
          * For GPS Geolocation ngcordova geolocation
          */
-        var posOptions = {timeout: 10000, enableHighAccuracy: false};
-        $scope.gpsHere = function(){
+        var posOptions = { timeout: 10000, enableHighAccuracy: false };
+
+        $scope.gpsHere = function() {
             $cordovaGeolocation
                 .getCurrentPosition(posOptions)
-                .then(function (position) {
+                .then(function(position) {
                     $scope.gps.lat = position.coords.latitude;
                     $scope.gps.lng = position.coords.longitude;
                 }, function(err) {
                     // error
                 });
         };
-        //another way
-        /*$scope.watchOptions = {
-            timeout : 3000,
-            enableHighAccuracy: false // may cause errors if true
-        };
-
-        $scope.watch = $cordovaGeolocation.watchPosition(watchOptions);
-        $scope.watch.then(
-            null,
-            function(err) {
-                // error
-            },
-            function(position) {
-                var lat  = position.coords.latitude
-                var long = position.coords.longitude
-            });
-
-
-        $scope.watch.clearWatch();*/
     }
 })();
 ;
@@ -680,25 +651,25 @@
     angular.module('axpress')
         .controller('PaymentMethodsController', PaymentMethodsController);
 
-    PaymentMethodsController.$inject = ['$rootScope', '$scope', '$cordovaDialogs', '$state', 'constants', 'Logger', 'Shipping','Diligence'];
+    PaymentMethodsController.$inject = ['$rootScope', '$scope', '$state', 'constants', 'Logger', 'Shipping', 'Diligence'];
 
-    function PaymentMethodsController($rootScope, $scope, $cordovaDialogs, $state, constants, Logger, Shipping,Diligence) {
+    function PaymentMethodsController($rootScope, $scope, $state, constants, Logger, Shipping, Diligence) {
         activate();
 
         $scope.confirmPaymentMethod = function() {
-            if($state.params.serviceType === 45){
-                Diligence.post($scope.user.id, $scope.data.destiniesData,$state.params.serviceType,$scope.data.samepoint,$scope.data.descriptionText,$scope.data.distance,$scope.data.pay,$scope.data.amount).then(function(response){
+            if ($state.params.serviceType === 45) {
+                Diligence.post($scope.user.id, $scope.data.destiniesData, $state.params.serviceType, $scope.data.samepoint, $scope.data.descriptionText, $scope.data.distance, $scope.data.pay, $scope.data.amount).then(function(response) {
                     if (response.return && response.status == 200) {
                         console.log(response);
                         successfullyRegisteredRequest();
                     }
-                }, function(error){
+                }, function(error) {
                     if (error.message)
                         Logger.error(error.message);
                     else
                         Logger.error('');
                 });
-            }else{
+            } else {
                 Shipping.registerDocument($scope.data, $rootScope.user)
                     .then(function(response) {
                         if (response.return && response.status == 200) {
@@ -729,9 +700,9 @@
     angular.module('axpress')
         .controller('PhotoController', PhotoController);
 
-    PhotoController.$inject = ['$rootScope', '$scope', '$cordovaDialogs', '$cordovaCamera', '$state', '$ionicPopup'];
+    PhotoController.$inject = ['$rootScope', '$scope', '$state'];
 
-    function PhotoController($rootScope, $scope, $cordovaDialogs, $cordovaCamera, $state, $ionicPopup) {
+    function PhotoController($rootScope, $scope, $state) {
         activate();
 
         $scope.photoTaken = function(imageData) {
@@ -757,9 +728,9 @@
     angular.module('axpress')
         .controller('ReceiverController', ReceiverController);
 
-    ReceiverController.$inject = ['$rootScope', '$scope', '$cordovaDialogs', '$state'];
+    ReceiverController.$inject = ['$rootScope', '$scope', '$state'];
 
-    function ReceiverController($rootScope, $scope, $cordovaDialogs, $state) {
+    function ReceiverController($rootScope, $scope, $state) {
         activate();
 
         $scope.saveCaracteristics = function() {
@@ -788,9 +759,9 @@
     angular.module('axpress')
         .controller('ResumeController', ResumeController);
 
-    ResumeController.$inject = ['$rootScope', '$scope', '$cordovaDialogs', '$state', 'Logger', 'Shipping','Diligence'];
+    ResumeController.$inject = ['$rootScope', '$scope', '$state', 'Logger', 'Shipping', 'Diligence'];
 
-    function ResumeController($rootScope, $scope, $cordovaDialogs, $state, Logger, Shipping, Diligence) {
+    function ResumeController($rootScope, $scope, $state, Logger, Shipping, Diligence) {
 
         activate();
 
@@ -798,32 +769,37 @@
             $scope.extraData.navigateTo = $scope.extraData.flow + '.resume';
             $state.go($scope.extraData.flow + '.origin');
         };
-            $scope.editDestiny = function() {
-                if($state.params.serviceType === 45){
-                    $scope.extraData.navigateTo = $scope.extraData.flow + '.resume';
-                    $state.go($scope.extraData.flow + '.stops');
-                 }else {
-                    $scope.extraData.navigateTo = $scope.extraData.flow + '.resume';
-                    $state.go($scope.extraData.flow + '.destiny');
-                }
-            };
+
+        $scope.editDestiny = function() {
+            if ($state.params.serviceType == 45) {
+                //Its a diligence
+                $scope.extraData.navigateTo = $scope.extraData.flow + '.resume';
+                $state.go($scope.extraData.flow + '.stops');
+            } else {
+                $scope.extraData.navigateTo = $scope.extraData.flow + '.resume';
+                $state.go($scope.extraData.flow + '.destiny');
+            }
+        };
 
         $scope.editFeatures = function() {
-            if($state.params.serviceType === 45){
+            if ($state.params.serviceType == 45) {
+                //Its a diligence
                 $scope.extraData.navigateTo = $scope.extraData.flow + '.resume';
                 $state.go($scope.extraData.flow + '.clientfeatures');
-            }else{
+            } else {
                 $scope.extraData.navigateTo = $scope.extraData.flow + '.resume';
                 $state.go($scope.extraData.flow + '.features');
             }
         };
+
         $scope.editDestinatary = function() {
-            if($state.params.serviceType === 45){
+            if ($state.params.serviceType == 45) {
+                //Its a diligence
                 $scope.extraData.navigateTo = $scope.extraData.flow + '.resume';
                 $state.go($scope.extraData.flow + '.stops');
-            }else{
-                 $scope.extraData.navigateTo = $scope.extraData.flow + '.resume';
-                 $state.go($scope.extraData.flow + '.receiver');
+            } else {
+                $scope.extraData.navigateTo = $scope.extraData.flow + '.resume';
+                $state.go($scope.extraData.flow + '.receiver');
             }
         };
 
@@ -853,11 +829,10 @@
             $scope.data.distance = response.meters;
 
         }
+
         function requestQuotationDiligence() {
-            console.log("Request deligence.quotation");
-            Diligence.quotation($state.params.serviceType,$scope.data.samepoint,$scope.data.destiniesData,$scope.data.originLatitude, $scope.data.originLongitude)
+            Diligence.quotation($state.params.serviceType, $scope.data.samepoint, $scope.data.destiniesData, $scope.data.originLatitude, $scope.data.originLongitude)
                 .then(function(response) {
-                    console.log(response);
                     if (response.return && response.status == 200) {
                         quotationDiligenceSuccessful(response.data);
                     }
@@ -879,14 +854,12 @@
         function activate() {
             $scope.data = $state.current.data.data;
             $scope.extraData = $state.current.data.extraData;
-            console.log("Service Type Selected "+$state.params.serviceType);
-            if($state.params.serviceType===45){
+            if ($state.params.serviceType == 45) {
+                //Its a diligence
                 requestQuotationDiligence();
-            }else{
+            } else {
                 requestQuotation();
             }
-            console.log($scope.data);
-            console.log($scope.extraData);
         }
     }
 })();
@@ -896,9 +869,10 @@
     angular.module('axpress')
         .controller('ShipmentTrackingController', ShipmentTrackingController);
 
-    ShipmentTrackingController.$inject = ['$rootScope', '$scope', '$cordovaDialogs', '$state', 'NgMap'];
+    ShipmentTrackingController.$inject = ['$rootScope', '$scope', '$state', 'NgMap'];
 
-    function ShipmentTrackingController($rootScope, $scope, $cordovaDialogs, $state, NgMap) {
+    function ShipmentTrackingController($rootScope, $scope, $state, NgMap) {
+
         $scope.originAdd = $rootScope.originLocation.toString().replace("(", "").replace(")", "");
         $scope.destinyAdd = $rootScope.originDestinyLocation.toString().replace("(", "").replace(")", "");
 
@@ -917,31 +891,31 @@
 })();
 ;
 
-(function(){
+(function() {
     angular.module('axpress')
         .controller('StopsController', StopsController);
-    StopsController.$inject = ['$rootScope', '$scope', '$cordovaDialogs', '$state', 'Logger'];
+    StopsController.$inject = ['$rootScope', '$scope', '$state', 'Logger'];
 
-    function StopsController($rootScope,$scope,$cordovaDialogs,$state,Logger){
+    function StopsController($rootScope, $scope, $state, Logger) {
         activate();
+
         var valux = "";
-        $scope.editDestiny = function(valux){
+
+        $scope.editDestiny = function(valux) {
             console.log(valux);
             $scope.extraData.arrayPositionDestiny = valux;
             $scope.extraData.editing = true;
             $scope.extraData.navigateTo = $scope.extraData.flow + '.stops';
             $state.go($scope.extraData.flow + '.destiny');
         };
-        $scope.goBack = function(){
+
+        $scope.goBack = function() {
             $state.go($scope.extraData.flow + '.resume');
         };
 
         function activate() {
             $scope.data = $state.current.data.data;
             $scope.extraData = $state.current.data.extraData;
-            console.log("Service Type Selected "+$state.params.serviceType);
-            console.log($scope.data);
-            console.log($scope.extraData);
         }
     }
 })();

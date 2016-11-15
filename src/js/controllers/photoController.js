@@ -2,9 +2,9 @@
     angular.module('axpress')
         .controller('PhotoController', PhotoController);
 
-    PhotoController.$inject = ['$rootScope', '$scope', '$cordovaDialogs', '$cordovaCamera', '$state', '$ionicPopup'];
+    PhotoController.$inject = ['$rootScope', '$scope', '$state'];
 
-    function PhotoController($rootScope, $scope, $cordovaDialogs, $cordovaCamera, $state, $ionicPopup) {
+    function PhotoController($rootScope, $scope, $state) {
         activate();
 
         $scope.photoTaken = function(imageData) {

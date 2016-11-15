@@ -2,9 +2,9 @@
     angular.module('axpress')
         .controller('FeaturesController', FeaturesController);
 
-    FeaturesController.$inject = ['$rootScope', '$scope', '$cordovaDialogs', '$state'];
+    FeaturesController.$inject = ['$rootScope', '$scope', '$state'];
 
-    function FeaturesController($rootScope, $scope, $cordovaDialogs, $state) {
+    function FeaturesController($rootScope, $scope, $state) {
         activate();
 
         $scope.confirmServiceType = function() {
@@ -18,6 +18,7 @@
                 $state.go($scope.extraData.featuresNext);
             }
         };
+
         $scope.confirmPackage = function() {
 
             if ($scope.extraData.navigateTo) {
@@ -27,7 +28,8 @@
                 $state.go($scope.extraData.packageNext);
             }
         };
-        $scope.confirmClientFeatures = function(){
+
+        $scope.confirmClientFeatures = function() {
             if ($scope.extraData.navigateTo) {
                 $state.go($scope.extraData.navigateTo);
                 delete $scope.extraData.navigateTo;
@@ -36,7 +38,7 @@
             }
         };
 
-        function setExistingChoice () {
+        function setExistingChoice() {
             $scope.choice = {
                 bag: $scope.extraData.bagId
             };
