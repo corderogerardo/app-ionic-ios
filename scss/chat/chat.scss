@@ -3,7 +3,7 @@
 	width: 100%;
 	padding-top: 15%;
 }
-.chat-destinatary{
+.message-courier{
 	align-items: center;
 	background-color: lightgray;
 	border-radius: 5px;
@@ -14,7 +14,7 @@
 	position:relative;
 	width: 60%;
 }
-.chat-sender{
+.message-client{
 	align-items: center;
 	background-color: $balanced;
 	border-radius: 5px;

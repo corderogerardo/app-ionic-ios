@@ -11145,7 +11145,7 @@ p {
   width: 100%;
   padding-top: 15%; }
 
-.chat-destinatary {
+.message-courier {
   align-items: center;
   background-color: lightgray;
   border-radius: 5px;
@@ -11156,7 +11156,7 @@ p {
   position: relative;
   width: 60%; }
 
-.chat-sender {
+.message-client {
   align-items: center;
   background-color: #065599;
   border-radius: 5px;

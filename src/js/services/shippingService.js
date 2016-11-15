@@ -136,7 +136,7 @@
                 doc.originLongitude, doc.destinyAddress, doc.destinyLatitude, doc.destinyLongitude, doc.amount,
                 doc.amountDeclared, doc.typeServices, doc.pay, new Date().valueOf(), doc.bagId, doc.destinyClient,
                 doc.destinyName, doc.cellphoneDestinyClient, doc.emailDestinyClient, 
-                undefined, undefined, undefined, undefined, undefined,
+                undefined, undefined, undefined, doc.picture, undefined,
                 doc.originDetail, doc.destinyDetail);
         }
     }

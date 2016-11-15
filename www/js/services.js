@@ -25,8 +25,8 @@
         function post(shippingId, sentById, sentByType, message) {
             var data = {
                 shipping_id: shippingId,
-                sent_by_id: sentById,
-                sent_by_type: sentByType,
+                sentby_id: sentById,
+                sentby_type: sentByType,
                 message: message
             };
 
@@ -292,6 +292,43 @@
         };
 
         return service;
+    }
+})();
+;
+
+(function() {
+    angular.module('axpress')
+        .factory('CommonService', CommonService);
+
+    CommonService.$inject = ['$rootScope'];
+
+    function CommonService($rootScope) {
+        var service = {
+            encodeImageUri: encodeImageUri
+        };
+
+        return service;
+
+        /**
+         * Gets a base64 encoded image from a image uri,
+         * using a canvas node
+         *
+         * @param      {String}  imageUri  The image uri
+         * @return     {String}  Base64 encoded image
+         */
+        function encodeImageUri(imageUri) {
+            var c = document.createElement('canvas');
+            var ctx = c.getContext("2d");
+            var img = new Image();
+            img.onload = function() {
+                c.width = this.width;
+                c.height = this.height;
+                ctx.drawImage(img, 0, 0);
+            };
+            img.src = imageUri;
+            var dataURL = c.toDataURL("image/jpeg");
+            return dataURL;
+        }
     }
 })();
 ;
@@ -963,7 +1000,7 @@
                 doc.originLongitude, doc.destinyAddress, doc.destinyLatitude, doc.destinyLongitude, doc.amount,
                 doc.amountDeclared, doc.typeServices, doc.pay, new Date().valueOf(), doc.bagId, doc.destinyClient,
                 doc.destinyName, doc.cellphoneDestinyClient, doc.emailDestinyClient, 
-                undefined, undefined, undefined, undefined, undefined,
+                undefined, undefined, undefined, doc.picture, undefined,
                 doc.originDetail, doc.destinyDetail);
         }
     }
