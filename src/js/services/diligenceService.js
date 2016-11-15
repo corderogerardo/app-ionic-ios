@@ -63,7 +63,7 @@
             };
             data.key = service.key;
             data.platform = service.platform;
-            return service.apiPost(service.urlBase() + '/post', data);
+            return service.httpPost(service.urlBase() + '/post', data);
         }
     }
 })();

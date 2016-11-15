@@ -12,33 +12,34 @@
             $scope.extraData.navigateTo = $scope.extraData.flow + '.resume';
             $state.go($scope.extraData.flow + '.origin');
         };
-        if($state.params.serviceType === 45){
             $scope.editDestiny = function() {
-                $scope.extraData.navigateTo = $scope.extraData.flow + '.resume';
-                $state.go($scope.extraData.flow + '.stops');
+                if($state.params.serviceType === 45){
+                    $scope.extraData.navigateTo = $scope.extraData.flow + '.resume';
+                    $state.go($scope.extraData.flow + '.stops');
+                 }else {
+                    $scope.extraData.navigateTo = $scope.extraData.flow + '.resume';
+                    $state.go($scope.extraData.flow + '.destiny');
+                }
             };
-        }else{
-            $scope.editDestiny = function() {
-                $scope.extraData.navigateTo = $scope.extraData.flow + '.resume';
-                $state.go($scope.extraData.flow + '.destiny');
-            };
-        }
-        $scope.editFeatures = function() {
-            $scope.extraData.navigateTo = $scope.extraData.flow + '.resume';
-            $state.go($scope.extraData.flow + '.features');
 
+        $scope.editFeatures = function() {
+            if($state.params.serviceType === 45){
+                $scope.extraData.navigateTo = $scope.extraData.flow + '.resume';
+                $state.go($scope.extraData.flow + '.clientfeatures');
+            }else{
+                $scope.extraData.navigateTo = $scope.extraData.flow + '.resume';
+                $state.go($scope.extraData.flow + '.features');
+            }
         };
-        if($state.params.serviceType === 45){
-            $scope.editDestinatary = function() {
+        $scope.editDestinatary = function() {
+            if($state.params.serviceType === 45){
                 $scope.extraData.navigateTo = $scope.extraData.flow + '.resume';
                 $state.go($scope.extraData.flow + '.stops');
-            };
-        }else{
-            $scope.editDestinatary = function() {
-                $scope.extraData.navigateTo = $scope.extraData.flow + '.resume';
-                $state.go($scope.extraData.flow + '.receiver');
-            };
-        }
+            }else{
+                 $scope.extraData.navigateTo = $scope.extraData.flow + '.resume';
+                 $state.go($scope.extraData.flow + '.receiver');
+            }
+        };
 
 
         $scope.confirmResume = function() {
@@ -85,7 +86,7 @@
         function quotationDiligenceSuccessful(response) {
             $scope.extraData.quotation = response;
             $scope.data.amount = response.price;
-            $scope.data.distance = response.meters;
+            $scope.data.distance = response.km;
 
         }
 

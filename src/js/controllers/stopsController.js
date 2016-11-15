@@ -9,11 +9,12 @@
         $scope.editDestiny = function(valux){
             console.log(valux);
             $scope.extraData.arrayPositionDestiny = valux;
+            $scope.extraData.editing = true;
             $scope.extraData.navigateTo = $scope.extraData.flow + '.stops';
             $state.go($scope.extraData.flow + '.destiny');
         };
         $scope.goBack = function(){
-            $scope.extraData.navigateTo = $scope.extraData.flow + '.resume';
+            $state.go($scope.extraData.flow + '.resume');
         };
 
         function activate() {
