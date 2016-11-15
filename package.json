@@ -27,7 +27,8 @@
     "cordova-plugin-camera",
     "cordova-plugin-compat",
     "cordova-plugin-image-picker",
-    "cordova-plugin-inappbrowser"
+    "cordova-plugin-inappbrowser",
+    "com-badrit-base64",
   ],
   "cordovaPlatforms": []
 }
