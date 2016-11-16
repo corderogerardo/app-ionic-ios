@@ -26,6 +26,7 @@
         };
 
         function activate() {
+            $scope.imageData = "";
             $scope.data = $state.current.data.data;
             $scope.extraData = $state.current.data.extraData;
         }

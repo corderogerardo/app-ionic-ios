@@ -12,6 +12,7 @@
         service.register = register;
         service.quotation = quotation;
         service.registerDocument = registerDocument;
+        service.registerPackage = registerPackage;
 
         return service;
 
@@ -135,9 +136,18 @@
             return register (doc.descriptionText, 1, doc.distance, user.id, doc.originAddress, doc.originLatitude,
                 doc.originLongitude, doc.destinyAddress, doc.destinyLatitude, doc.destinyLongitude, doc.amount,
                 doc.amountDeclared, doc.typeServices, doc.pay, new Date().valueOf(), doc.bagId, doc.destinyClient,
-                doc.destinyName, doc.cellphoneDestinyClient, doc.emailDestinyClient, 
+                doc.destinyName, doc.cellphoneDestinyClient, doc.emailDestinyClient,
                 undefined, undefined, undefined, doc.picture, undefined,
                 doc.originDetail, doc.destinyDetail);
+        }
+
+        function registerPackage(pack, user) {
+            return register(pack.descriptionText, 1, pack.distance, user.id, pack.originAddress, pack.originLatitude,
+                pack.originLongitude, pack.destinyAddress, pack.destinyLatitude, pack.destinyLongitude, pack.amount,
+                pack.amountDeclared, pack.typeServices, pack.pay, new Date().valueOf(), pack.bagId, pack.destinyClient,
+                pack.destinyName, pack.cellphoneDestinyClient, pack.emailDestinyClient,
+                pack.width, pack.height, pack.longitude, pack.picture, undefined,
+                pack.originDetail, pack.destinyDetail);
         }
     }
 })();

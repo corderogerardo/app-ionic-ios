@@ -10,7 +10,7 @@
         $scope.confirmServiceType = function() {
             $scope.data.typeServices = $state.params.serviceType;
             $scope.data.bagId = $scope.choice.bag;
-            $scope.extraData.bagId = $scope.choice.bag;
+            $scope.data.bagId = $scope.choice.bag;
             if ($scope.extraData.navigateTo) {
                 $state.go($scope.extraData.navigateTo);
                 delete $scope.extraData.navigateTo;
@@ -40,7 +40,7 @@
 
         function setExistingChoice() {
             $scope.choice = {
-                bag: $scope.extraData.bagId
+                bag: $scope.data.bagId
             };
         }
 
@@ -54,7 +54,7 @@
                     return;
                 }
             });
-            if ($scope.extraData.bagId) {
+            if ($scope.data.bagId) {
                 setExistingChoice();
             }
         }

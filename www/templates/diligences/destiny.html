@@ -43,13 +43,13 @@
                     </label>
                 </div>
             </div>
-            <div class="new-direction-button" ng-if="extraData.editing===undefined">
+            <div class="new-direction-button" ng-if="data.editing===undefined">
                 <a class="button-noicontwo" ng-click="addNewDirection()" title="">AGREGAR DIRECCION</a>
             </div>
-            <div ng-if="buttonState === false && extraData.editing === undefined" class="pickuphere-button">
+            <div ng-if="buttonState === false && data.editing === undefined" class="pickuphere-button">
                 <a class="button-noicontwo" ng-click="pickHere()" title="">ENTREGAR AQUÍ</a>
             </div>
-            <div ng-if="buttonState === false && extraData.editing === true" class="pickuphere-button">
+            <div ng-if="buttonState === false && data.editing === true" class="pickuphere-button">
                 <a class="button-noicontwo" ng-click="confirmDestiny()" title="">EDIT</a>
             </div>
             <div ng-if="buttonState === true " class="pickuphere-button">

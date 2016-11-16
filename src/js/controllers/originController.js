@@ -23,7 +23,7 @@
             $scope.data.originAddress = $scope.place.formatted_address;
             $scope.data.originLatitude = $scope.place.geometry.location.lat();
             $scope.data.originLongitude = $scope.place.geometry.location.lng();
-            $scope.extraData.originPlace = $scope.place;
+            $scope.data.originPlace = $scope.place;
             if ($scope.extraData.navigateTo) {
                 $state.go($scope.extraData.navigateTo);
                 delete $scope.extraData.navigateTo;
@@ -35,7 +35,7 @@
         function setExistingAddress() {
             $scope.markers[0].position = "" + $scope.data.originLatitude + "," + $scope.data.originLongitude;
             $scope.address = $scope.data.originAddress;
-            $scope.place = $state.current.data.extraData.originPlace;
+            $scope.place = $state.current.data.data.originPlace;
         }
 
         function activate() {
@@ -50,7 +50,7 @@
                 title: 'Origen',
                 icon: "{url: 'img/inputs/pin-mapa1.png', scaledSize: [48,48]}"
             }];
-            if ($scope.extraData.originPlace)
+            if ($scope.data.originPlace)
                 setExistingAddress();
         }
 

@@ -67,9 +67,9 @@
         }
 
         function quotationSuccessful(response) {
-            $scope.extraData.quotation = response;
+            $scope.data.quotation = response;
             $scope.data.amount = response.price;
-            $scope.data.distance = response.meters;
+            $scope.data.distance = response.kilometers_text;
 
         }
 
@@ -88,7 +88,7 @@
         }
 
         function quotationDiligenceSuccessful(response) {
-            $scope.extraData.quotation = response;
+            $scope.data.quotation = response;
             $scope.data.amount = response.price;
             $scope.data.distance = response.km;
 

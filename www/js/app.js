@@ -58,7 +58,7 @@ angular.module('axpress', [
         .state('account', {
             url: '/account',
             templateUrl: 'templates/account/account.html',
-            controller: 'AccountController',
+            controller: 'AccountController'
         })
         .state('history', {
             url: '/history',
