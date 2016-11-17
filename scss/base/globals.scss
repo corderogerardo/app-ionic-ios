@@ -20,6 +20,9 @@ input,
 textarea{
 	box-sizing: border-box;
 }
+.row{
+    flex:0 1 100% !important;
+}
 /* Generalized inputs */
 .inputs-container{
 	display:flex;

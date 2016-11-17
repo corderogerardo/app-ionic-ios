@@ -1,140 +1,35 @@
-.container-button{
-	align-items: center;
-	display:flex;
-	justify-content: center;
-	flex-direction: column;
-	cursor: pointer;
-	width:92%;
-	height:30px;
-}
-.container-button-row{
-    background-color: $graybbbb;
-    align-items: center;
-    display:flex;
-    justify-content: space-around;
-    flex-direction: row;
-    cursor: pointer;
-    margin-top: 5%;
-    margin-bottom: 5%;
-    width:100%;
-    height:15%;
-    a{
-        color: $graybbb;
-        text-decoration: none;
-        font-size: 3vh;
-        font-weight: bold;
-        height:100%;
-        margin-right: 2%;
-        width: 100%;
-        i{
-            width: 40px;
-            height: 40px;
-        }
-    }
-}
-.button-noicon{
-	align-items: center;
-	background-color:transparent;
-	display:flex;
-		background-image: url('../img/buttons/boton1.png');
-		background-size: cover;
-		background-repeat: no-repeat;
-		background-position: right;
-		border: none;
-	color:white;
-		cursor: pointer;
-	text-decoration: none;
-	justify-content: center;
-		font-size: 2.5vh;
-		font-weight: bold;
-	width:100%;
-	height:100%;
-		&:hover{
-				background-image: url('../img/buttons/boton2.png');
-		}
-		p{
-				display: flex;
-				flex-direction: row;
-				font-size: 2.5vh;
-		}
-		a{
-				font-size: 2.5vh;
-				font-weight: bold;
-		}
-}
-.button-noicontwo{
-    align-items: center;
-    background-color:transparent;
-    display:flex;
-    background-image: url('../img/buttons/boton3.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: right;
-    border: none;
-    color:white;
-    cursor: pointer;
-    text-decoration: none;
+.button-default{
+    align-items:center;
+    background-color: rgba(white,.5);
+    display: flex;
     justify-content: center;
-    font-size: 2.5vh;
-    font-weight: bold;
-    width:100%;
-    height:100%;
-    &:hover{
-        background-image: url('../img/buttons/boton2.png');
+    flex-direction: row;
+    border-radius: 25px;
+    color:white;
+    font-size:24px;
+    margin-left: 5%;
+    min-width: 90%;
+    @media screen and (max-height: 854px){
+        height: 40%;
     }
-    p{
-        display: flex;
-        flex-direction: row;
-        font-size: 2.5vh;
+    @media screen and (max-height: 736px){
+        height: 37%;
     }
-    a{
-        font-size: 2.5vh;
-        font-weight: bold;
+    @media screen and (max-height: 667px){
+        height: 35%;
     }
-}
-.two-buttons-container-column{
-	align-items: center;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-		cursor: pointer;
-		margin-bottom: 5%;
-	height:6%;
-	width:100%;
-}
-.button-icon{
-		border:none;
-	align-items: center;
-	display:flex;
-	color:white;
-	flex-direction: row;
-	justify-content: center;
-		text-align: center;
-		cursor: pointer;
-		height:100%;
-	font-size: 2vh;
-	width:100%;
-	text-decoration:none;
-	i{
-	align-items: center;
-	display:flex;
-	color:white;
-	font-size: 3vh;
-	justify-content: center;
-	width:15%;
-	height:100%;
-	}
-	label{
-	align-items: center;
-	color:white;
-	cursor: pointer;
-	display:flex;
-	font-size: 2.5vh;
-	justify-content: center;
-				height: 100%;
-	width:85%;
-				font-weight: bold;
-		}
+    @media screen and (max-height: 568px){
+        height: 35%;
+    }
+    @media screen and (max-height: 480px){
+        height: 30%;
+    }
+    @media screen and (max-height: 320px){
+        min-height: 30px;
+        height: 35px;
+        margin-left: 5%;
+        min-width: 90%;
+    }
 }
 .facebook{
 	background-color:$balanced;
@@ -152,9 +47,28 @@
 	background-color:$energized;
 }
 .button-bottom{
-	width:100%;
 	position:absolute;
-	left: 5%;
-	height:5%;
-	bottom: 3%;
+	bottom: 11%;
+    @media screen and (max-height: 854px){
+        bottom: 8%;
+    }
+    @media screen and (max-height: 736px){
+        bottom: 9%;
+    }
+    @media screen and (max-height: 667px){
+        bottom: 10%;
+    }
+    @media screen and (max-height: 568px){
+        bottom: 11%;
+    }
+    @media screen and (max-height: 480px){
+        bottom: 13%;
+    }
+    @media screen and (max-height: 320px){
+        bottom: 16%;
+    }
+}
+.button-bottom-two{
+    position:absolute;
+    bottom: 1%;
 }
