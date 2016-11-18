@@ -14,7 +14,7 @@
 
         $scope.pickHere = function() {
             $scope.buttonState = true;
-            $scope.markers[0].icon = "{url: 'img/inputs/pin-mapa-check1.png', scaledSize: [48,48]}"
+            $scope.markers[0].icon = "{url: 'img/inputs/pin-mapa-check1.png', scaledSize: [48,48]}";
         };
 
         $scope.confirmOrigin = function() {

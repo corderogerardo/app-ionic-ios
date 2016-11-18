@@ -613,7 +613,7 @@
 
         $scope.pickHere = function() {
             $scope.buttonState = true;
-            $scope.markers[0].icon = "{url: 'img/inputs/pin-mapa-check1.png', scaledSize: [48,48]}"
+            $scope.markers[0].icon = "{url: 'img/inputs/pin-mapa-check1.png', scaledSize: [48,48]}";
         };
 
         $scope.confirmOrigin = function() {
@@ -814,7 +814,7 @@
         };
 
         $scope.editDestiny = function() {
-            if ($state.params.serviceType == 45) {
+            if ( $state.params.serviceType == 45 ) {
                 //Its a diligence
                 $scope.extraData.navigateTo = $scope.extraData.flow + '.resume';
                 $state.go($scope.extraData.flow + '.stops');
@@ -825,7 +825,7 @@
         };
 
         $scope.editFeatures = function() {
-            if ($state.params.serviceType == 45) {
+            if ( $state.params.serviceType == 45 ) {
                 //Its a diligence
                 $scope.extraData.navigateTo = $scope.extraData.flow + '.resume';
                 $state.go($scope.extraData.flow + '.clientfeatures');
@@ -836,7 +836,7 @@
         };
 
         $scope.editDestinatary = function() {
-            if ($state.params.serviceType == 45) {
+            if ( $state.params.serviceType == 45 ) {
                 //Its a diligence
                 $scope.extraData.navigateTo = $scope.extraData.flow + '.resume';
                 $state.go($scope.extraData.flow + '.stops');
@@ -846,20 +846,19 @@
             }
         };
 
-
         $scope.confirmResume = function() {
             $state.go($scope.extraData.resumeNext);
         };
 
         function requestQuotation() {
             Shipping.quotation($scope.data.originLatitude, $scope.data.originLongitude,
-                    $scope.data.destinyLatitude, $scope.data.destinyLongitude, $state.params.serviceType, $scope.data.bagId)
+                $scope.data.destinyLatitude, $scope.data.destinyLongitude, $state.params.serviceType, $scope.data.bagId)
                 .then(function(response) {
-                    if (response.return && response.status == 200) {
+                    if ( response.return && response.status == 200 ) {
                         quotationSuccessful(response.data);
                     }
                 }, function(error) {
-                    if (error.message)
+                    if ( error.message )
                         Logger.error(error.message);
                     else
                         Logger.error('');
@@ -869,34 +868,27 @@
         function quotationSuccessful(response) {
             $scope.data.quotation = response;
             $scope.data.amount = response.price;
-            $scope.data.distance = response.kilometers_text;
-
+            $scope.data.distance = ($state.params.serviceType == 45 ? Number(response.km) * 1000 : response.kilometers_text);
         }
 
         function requestQuotationDiligence() {
             Diligence.quotation($state.params.serviceType, $scope.data.samepoint, $scope.data.destiniesData, $scope.data.originLatitude, $scope.data.originLongitude)
                 .then(function(response) {
-                    if (response.return && response.status == 200) {
-                        quotationDiligenceSuccessful(response.data);
+                    if ( response.return && response.status == 200 ) {
+                        quotationSuccessful(response.data);
                     }
                 }, function(error) {
-                    if (error.message)
+                    if ( error.message )
                         Logger.error(error.message);
                     else
                         Logger.error('');
                 });
         }
 
-        function quotationDiligenceSuccessful(response) {
-            $scope.data.quotation = response;
-            $scope.data.amount = response.price;
-            $scope.data.distance = Number(response.km) * 1000 ;
-        }
-
         function activate() {
             $scope.data = $state.current.data.data;
             $scope.extraData = $state.current.data.extraData;
-            if ($state.params.serviceType == 45) {
+            if ( $state.params.serviceType == 45 ) {
                 //Its a diligence
                 requestQuotationDiligence();
             } else {
