@@ -358,7 +358,7 @@
                 { name: 'Contra-Entrega (Efectivo)', value: 3 },
             ],
             //Deligences destinies' address maximum
-            deligencesDestiniesMax:5
+            diligencesMaxDestinies: 5
         });
 })();
 ;

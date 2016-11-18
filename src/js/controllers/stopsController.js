@@ -3,14 +3,11 @@
         .controller('StopsController', StopsController);
     StopsController.$inject = ['$rootScope', '$scope', '$state', 'Logger'];
 
-    function StopsController($rootScope, $scope, $state, Logger) {
+    function StopsController($rootScope, $scope, $state) {
         activate();
 
-        var valux = "";
-
         $scope.editDestiny = function(valux) {
-            console.log(valux);
-            $scope.data.arrayPositionDestiny = valux;
+            $scope.data.editStopIndex = valux;
             $scope.data.editing = true;
             $scope.extraData.navigateTo = $scope.extraData.flow + '.stops';
             $state.go($scope.extraData.flow + '.destiny');

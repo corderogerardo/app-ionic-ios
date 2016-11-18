@@ -12,8 +12,6 @@
             $scope.markers[0].position = $scope.place.geometry.location;
         };
 
-        $scope.buttonState = false;
-
         $scope.pickHere = function() {
             $scope.buttonState = true;
             $scope.markers[0].icon = "{url: 'img/inputs/pin-mapa-check1.png', scaledSize: [48,48]}"
@@ -24,7 +22,7 @@
             $scope.data.originLatitude = $scope.place.geometry.location.lat();
             $scope.data.originLongitude = $scope.place.geometry.location.lng();
             $scope.data.originPlace = $scope.place;
-            if ($scope.extraData.navigateTo) {
+            if ( $scope.extraData.navigateTo ) {
                 $state.go($scope.extraData.navigateTo);
                 delete $scope.extraData.navigateTo;
             } else {
@@ -35,22 +33,24 @@
         function setExistingAddress() {
             $scope.markers[0].position = "" + $scope.data.originLatitude + "," + $scope.data.originLongitude;
             $scope.address = $scope.data.originAddress;
-            $scope.place = $state.current.data.data.originPlace;
+            $scope.place = $scope.data.originPlace;
+        }
+
+        function initialUIStates() {
+            $scope.focused = false;
+            $scope.focused2 = false;
+            $scope.buttonState = false;
         }
 
         function activate() {
-            $scope.focused = false;
-            $scope.focused2 = false;
             $scope.data = $state.current.data.data;
             $scope.extraData = $state.current.data.extraData;
-            $scope.customIconOrigin = {
-
-            };
+            initialUIStates();
             $scope.markers = [{
                 title: 'Origen',
-                icon: "{url: 'img/inputs/pin-mapa1.png', scaledSize: [48,48]}"
+                icon : "{url: 'img/inputs/pin-mapa1.png', scaledSize: [48,48]}"
             }];
-            if ($scope.data.originPlace)
+            if ( $scope.data.originPlace )
                 setExistingAddress();
         }
 

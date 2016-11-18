@@ -90,8 +90,7 @@
         function quotationDiligenceSuccessful(response) {
             $scope.data.quotation = response;
             $scope.data.amount = response.price;
-            $scope.data.distance = response.km;
-
+            $scope.data.distance = Number(response.km) * 1000 ;
         }
 
         function activate() {
