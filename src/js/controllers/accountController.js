@@ -2,9 +2,9 @@
     angular.module('axpress')
         .controller("AccountController", AccountController);
 
-    AccountController.$inject = ['$scope', '$rootScope', '$ionicPopup', 'Client'];
+    AccountController.$inject = ['$scope', '$rootScope', 'Client'];
 
-    function AccountController($scope, $rootScope, $ionicPopup, Client) {
+    function AccountController($scope, $rootScope, Client) {
         activate();
 
         function activate() {

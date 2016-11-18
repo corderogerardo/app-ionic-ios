@@ -1,0 +1,42 @@
++<div class="bar bar-header bar-balanced">
+     <h1 class="title">CARACTERÍSTICAS</h1>
+</div>
+<ion-view view-title="SendType">
+    <ion-content scroll="false" >
+        <div class="space"></div>
+        <section class="caracteristics-title">
+            <div>
+                <span>Diligencia la siguiente información.</span>
+            </div>
+        </section>
+
+        <section class="package-options">
+            <div class="package-container">
+                <label for="Altura">Altura</label>
+                    <input type="number" name="" min="0" ng-model="data.height" value="" placeholder="CM">
+            </div>
+            <div class="package-container">
+                <label for="Ancho">Ancho</label>
+                <input type="number" name="" min="0" value="" ng-model="data.width" placeholder="CM">
+
+            </div>
+            <div class="package-container">
+                <label for="Longitud">Longitud</label>
+                <input type="number" name="" min="0" value="" ng-model="data.longitude" placeholder="CM">
+            </div>
+            <div class="package-container">
+                <label for="Peso">Peso</label>
+                <input type="number" name="" min="0" value="" ng-model="data.weight" placeholder="Kg">
+            </div>
+        </section>
+        <section class="package-icon">
+            <img src="img/inputs/Paquete2-144x144.png" alt="">
+        </section>
+        <section class="button-bottom">
+
+            <div class="container-button">
+                <a class="button-noicon" ng-click="confirmPackage()" title="">CONTINUAR</a>
+            </div>
+        </section>
+    </ion-content>
+</ion-view>

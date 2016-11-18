@@ -1,0 +1,63 @@
+<div class="bar bar-header bar-balanced">
+    <h3 class="title">RESUMEN DEL ENVÍO </h3>
+</div>
+<ion-view view-title="Resumen del Envío">
+    <ion-content scroll="false" >
+        <div class="space">
+        </div>
+        <section class="sentresume-data">
+            <section class="sentresume-content">
+                <div class="data-origin">
+                    <b>Origen del paquete</b>
+                    <p>{{ data.originAddress }}</p>
+                    <p>{{ data.originDetail }}</p>
+                </div>
+                <a class="" ng-click="editOrigin()" title="">
+                    <i class="ion-edit"></i>
+
+                </a>
+            </section>
+            <section class="sentresume-content">
+                <div class="data-origin">
+                    <b>Destino del paquete</b>
+                    <p>{{ data.destinyAddress }}</p>
+                    <p>{{ data.destinyDetail }}</p>
+                </div>
+                <a class="" ng-click="editDestiny()" title="">
+                    <i class="ion-edit"></i>
+                </a>
+            </section>
+            <section class="sentresume-content">
+                <div class="data-origin">
+                    <b>Características</b>
+                    <p>{{ data.descriptionText }}</p>
+                    <p>Valor Declarado: {{ data.amountDeclared }}</p>
+                </div>
+                <a class="" ng-click="editFeatures()" title="">
+                    <i class="ion-edit"></i>
+                </a>
+            </section>
+            <section class="sentresume-content">
+                <div class="data-origin">
+                    <b>Destinatario</b>
+                    <p>{{ data.destinyName }}<br>{{ data.emailDestinyClient }} <br> {{ data.cellphoneDestinyClient }} .</p>
+                </div>
+                <a class="" ng-click="editDestinatary()" title="">
+                    <i class="ion-edit"></i>
+                </a>
+            </section>
+        </section>
+        <section class="sentresume-cost">
+
+            Costo del envío:
+            <b>{{ data.amount || 0}} COT </b>
+
+        </section>
+        <section class="sentresume-button">
+            <div class="container-button">
+
+                <a class="button-noicon" ng-click="confirmResume()" title=""> CONFIRMAR TU ENVÍO</a>
+            </div>
+        </section>
+    </ion-content>
+</ion-view>

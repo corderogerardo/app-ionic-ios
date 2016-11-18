@@ -20,6 +20,9 @@ input,
 textarea{
 	box-sizing: border-box;
 }
+.row{
+    flex:0 1 100% !important;
+}
 /* Generalized inputs */
 .inputs-container{
 	display:flex;
@@ -39,17 +42,19 @@ textarea{
 	label{
 			align-items: center;
 			display:flex;
-				height: 100% !important;;
+				height: 100% !important;
 			color:white;
 			justify-content: center;
-			border-left: 1px solid rgba($graybbb,0.5);
 			width:80%;
 		input{
-			background-color:rgba($grayb,0.01);
+            border-left: 1px solid rgba($graybbb,0.5);
+            background-color:rgba($grayb,0.01);
+            display: flex;
+            justify-content: center;
 			font-size: 2.5vh;
 						color:$graybbb;
 						font-weight: bold;
-						height:70% !important;
+						height:60% !important;
 			padding:5%;
 			width:100%;
 						&:focus{
@@ -60,13 +65,14 @@ textarea{
 		}
 	}
 }
+
 .inputs-container-last{
 		display:flex;
 		min-height:50px;
 		flex-direction: row;
 		width:90%;
 		i{
-				align-items: center;
+            align-items: center;
 				display:flex;
 				color:white;
 				font-size: 2.5vh;
@@ -74,19 +80,19 @@ textarea{
 				width:20%;
 		}
 		label{
-				align-items: center;
+            align-items: center;
 				display:flex;
-				height: 100% !important;;
 				color:white;
 				justify-content: center;
-				border-left: 1px solid rgba($graybbb,0.5);
 				width:80%;
 				input{
-						background-color:rgba($grayb,0.01);
+                        border-left: 1px solid rgba($graybbb,0.5);
+                        background-color:rgba($grayb,0.01);
 						font-size: 2.5vh;
+                    display: flex;
 						color:$graybbb;
 						font-weight: bold;
-						height:70% !important;
+						height:80% !important;
 						padding:5%;
 						width:100%;
 						&:focus{
@@ -140,34 +146,64 @@ textarea{
 		padding: 0;
 }
 .icon-user{
-		background-image: url('../img/inputs/user.png');
+		background-image: url('../img/inputs/User1.png');
 		background-size: 40%;
 		background-repeat: no-repeat;
 		background-position: center;
+}
+.icon-user-gray{
+    background-image: url('../img/inputs/User2.png');
+    background-size: 40%;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 .icon-pass{
-		background-image: url('../img/inputs/password.png');
+		background-image: url('../img/inputs/Password1.png');
 		background-size: 40%;
 		background-repeat: no-repeat;
 		background-position: center;
+}
+.icon-pass-gray{
+    background-image: url('../img/inputs/Password2.png');
+    background-size: 40%;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 .icon-email{
-		background-image: url('../img/inputs/mail.png');
+		background-image: url('../img/inputs/Mail1.png');
 		background-size: 40%;
 		background-repeat: no-repeat;
 		background-position: center;
+}
+.icon-email-gray{
+    background-image: url('../img/inputs/Mail2.png');
+    background-size: 40%;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 .icon-phone{
-		background-image: url('../img/inputs/Phone.png');
+		background-image: url('../img/inputs/Phone1.png');
 		background-size: 40%;
 		background-repeat: no-repeat;
 		background-position: center;
 }
+.icon-phone-gray{
+    background-image: url('../img/inputs/Phone2.png');
+    background-size: 40%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
 .icon-cinit{
-		background-image: url('../img/inputs/CajaText-Cedula.png');
-		background-size: 40%;
+    background-image: url('../img/inputs/Cedula1.png');
+    background-size: 40%;
 		background-repeat: no-repeat;
 		background-position: center;
+}
+.icon-cinit-gray{
+    background-image: url('../img/inputs/Cedula2.png');
+    background-size: 40%;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 .icon-marker-gray{
 		background-image: url('../img/inputs/pin-direccion.png');
@@ -204,6 +240,18 @@ textarea{
 		background-size: 40%;
 		background-repeat: no-repeat;
 		background-position: center;
+}
+.icon-location-color{
+    background-image: url('../img/inputs/Location1.png');
+    background-size: 50%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.icon-location-color2 {
+    background-image: url('../img/inputs/Location2.png');
+    background-size: 50%;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 .icon-camera-gray{
     background-image: url('../img/inputs/Camara2.png');
