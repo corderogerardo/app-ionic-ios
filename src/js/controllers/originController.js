@@ -13,8 +13,8 @@
             $scope.place = (typeof place == "object" ? place : this.getPlace());
             $timeout(function() {
                 $scope.markers[0].position = $scope.place.geometry.location;
-            },0);
-            if (typeof place == "object")
+            }, 0);
+            if ( typeof place == "object" )
                 $scope.address = $scope.place.formatted_address;
         };
 
@@ -37,7 +37,7 @@
         };
 
         $scope.mapCallbacks = {
-            mapTapped: mapTap,
+            mapTapped    : mapTap,
             markerDragend: markerDraged
         };
 
@@ -47,7 +47,7 @@
         }
 
         function markerDraged(marker) {
-            var latlng = {lat: marker.latLng.lat(), lng: marker.latLng.lng()};
+            var latlng = { lat: marker.latLng.lat(), lng: marker.latLng.lng() };
             GoogleMapGeocoder.reverseGeocode(latlng)
                 .then(geocoderCallback);
         }
@@ -57,13 +57,13 @@
         }
 
         function mapTap(event) {
-            var latlng = {lat: event.latLng.lat(), lng: event.latLng.lng()};
+            var latlng = { lat: event.latLng.lat(), lng: event.latLng.lng() };
             GoogleMapGeocoder.reverseGeocode(latlng)
                 .then(geocoderCallback);
         }
 
         function setExistingAddress() {
-            var latlng = {lat: $scope.data.originLatitude, lng: $scope.data.originLongitude};
+            var latlng = { lat: $scope.data.originLatitude, lng: $scope.data.originLongitude };
             GoogleMapGeocoder.reverseGeocode(latlng)
                 .then(geocoderCallback);
         }
@@ -79,8 +79,8 @@
             $scope.extraData = $state.current.data.extraData;
             initialUIStates();
             $scope.markers = [{
-                title: 'Origen',
-                icon : "{url: 'img/inputs/pin-mapa1.png', scaledSize: [48,48]}",
+                title    : 'Origen',
+                icon     : "{url: 'img/inputs/pin-mapa1.png', scaledSize: [48,48]}",
                 draggable: true
             }];
             if ( $scope.data.originPlace )

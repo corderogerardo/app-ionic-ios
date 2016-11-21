@@ -334,20 +334,26 @@
     angular.module('axpress')
         .controller('DestinyController', DocumentDestinyController);
 
-    DocumentDestinyController.$inject = ['$rootScope', '$scope', '$state', '$cordovaGeolocation'];
+    DocumentDestinyController.$inject = ['$rootScope', '$scope', '$state', '$cordovaGeolocation', 'NgMap',
+        '$timeout', 'GoogleMapGeocoder'];
 
-    function DocumentDestinyController($rootScope, $scope, $state, $cordovaGeolocation) {
+    function DocumentDestinyController($rootScope, $scope, $state, $cordovaGeolocation, NgMap,
+                                       $timeout, GoogleMapGeocoder) {
         activate();
 
-        $scope.placeChanged = function() {
-            $scope.place = this.getPlace();
-            $scope.markers[$scope.markers.length-1].position = $scope.place.geometry.location;
+        $scope.placeChanged = function(place) {
+            $scope.place = (typeof place == "object" ? place : this.getPlace());
+            $timeout(function() {
+                $scope.markers[$scope.markers.length-1].position = $scope.place.geometry.location;
+            }, 0);
+            if ( typeof place == "object" )
+                $scope.tempData.address = $scope.place.formatted_address;
             $scope.focused = true;
         };
 
         $scope.pickHere = function() {
             $scope.buttonState = true;
-            $scope.markers[1].icon = "{url: 'img/inputs/pin-mapa-check2.png', scaledSize: [48,48]}"
+            $scope.markers[$scope.markers.length-1].icon = "{url: 'img/inputs/pin-mapa-check2.png', scaledSize: [48,48]}"
         };
 
         $scope.addNewDirection = function() {
@@ -356,7 +362,6 @@
                 position: [$scope.place.geometry.location.lat(), $scope.place.geometry.location.lng()],
                 icon    : "{url: 'img/inputs/pin-mapa-check2.png', scaledSize: [48,48]}"
             });
-
             $scope.data.destiniesData.push(getStopElement($scope.tempData));
             resetTempData();
         };
@@ -387,10 +392,36 @@
             }
         };
 
+        $scope.mapCallbacks = {
+            mapTapped: mapTap,
+            markerDragend: markerDraged
+        };
+
+        function geocoderCallback(results) {
+            $scope.placeChanged(results[0]);
+            setMapCenter(results[0].geometry.location);
+        }
+
+        function markerDraged(marker) {
+            var latlng = {lat: marker.latLng.lat(), lng: marker.latLng.lng()};
+            GoogleMapGeocoder.reverseGeocode(latlng)
+                .then(geocoderCallback);
+        }
+
+        function setMapCenter(position) {
+            $scope.map.center = position;
+        }
+
+        function mapTap(event) {
+            var latlng = {lat: event.latLng.lat(), lng: event.latLng.lng()};
+            GoogleMapGeocoder.reverseGeocode(latlng)
+                .then(geocoderCallback);
+        }
+
         function setExistingAddress() {
-            $scope.markers[1].position = "" + $scope.data.destinyLatitude + "," + $scope.data.destinyLongitude;
-            $scope.tempData.address = $scope.data.destinyAddress;
-            $scope.place = $state.current.data.data.destinyPlace;
+            var latlng = { lat: $scope.data.destinyLatitude, lng: $scope.data.destinyLongitude };
+            GoogleMapGeocoder.reverseGeocode(latlng)
+                .then(geocoderCallback);
         }
 
         function initialUIStates() {
@@ -432,6 +463,9 @@
                     icon : "{url: 'img/inputs/pin-mapa2.png', scaledSize: [48,48]}"
                 });
             }
+            NgMap.getMap().then(function(map) {
+                $scope.map = map;
+            });
             if ($scope.data.destinyLatitude && $scope.data.destinyLongitude)
                 setExistingAddress();
         }
@@ -612,8 +646,8 @@
             $scope.place = (typeof place == "object" ? place : this.getPlace());
             $timeout(function() {
                 $scope.markers[0].position = $scope.place.geometry.location;
-            },0);
-            if (typeof place == "object")
+            }, 0);
+            if ( typeof place == "object" )
                 $scope.address = $scope.place.formatted_address;
         };
 
@@ -636,7 +670,7 @@
         };
 
         $scope.mapCallbacks = {
-            mapTapped: mapTap,
+            mapTapped    : mapTap,
             markerDragend: markerDraged
         };
 
@@ -646,7 +680,7 @@
         }
 
         function markerDraged(marker) {
-            var latlng = {lat: marker.latLng.lat(), lng: marker.latLng.lng()};
+            var latlng = { lat: marker.latLng.lat(), lng: marker.latLng.lng() };
             GoogleMapGeocoder.reverseGeocode(latlng)
                 .then(geocoderCallback);
         }
@@ -656,13 +690,13 @@
         }
 
         function mapTap(event) {
-            var latlng = {lat: event.latLng.lat(), lng: event.latLng.lng()};
+            var latlng = { lat: event.latLng.lat(), lng: event.latLng.lng() };
             GoogleMapGeocoder.reverseGeocode(latlng)
                 .then(geocoderCallback);
         }
 
         function setExistingAddress() {
-            var latlng = {lat: $scope.data.originLatitude, lng: $scope.data.originLongitude};
+            var latlng = { lat: $scope.data.originLatitude, lng: $scope.data.originLongitude };
             GoogleMapGeocoder.reverseGeocode(latlng)
                 .then(geocoderCallback);
         }
@@ -678,8 +712,8 @@
             $scope.extraData = $state.current.data.extraData;
             initialUIStates();
             $scope.markers = [{
-                title: 'Origen',
-                icon : "{url: 'img/inputs/pin-mapa1.png', scaledSize: [48,48]}",
+                title    : 'Origen',
+                icon     : "{url: 'img/inputs/pin-mapa1.png', scaledSize: [48,48]}",
                 draggable: true
             }];
             if ( $scope.data.originPlace )
