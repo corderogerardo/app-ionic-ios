@@ -2,14 +2,20 @@
     angular.module('axpress')
         .controller('OriginController', DocumentOriginController);
 
-    DocumentOriginController.$inject = ['$rootScope', '$scope', '$state', '$cordovaGeolocation'];
+    DocumentOriginController.$inject = ['$rootScope', '$scope', '$state', '$cordovaGeolocation', 'NgMap',
+        '$timeout', 'GoogleMapGeocoder'];
 
-    function DocumentOriginController($rootScope, $scope, $state, $cordovaGeolocation) {
+    function DocumentOriginController($rootScope, $scope, $state, $cordovaGeolocation, NgMap,
+                                      $timeout, GoogleMapGeocoder) {
         activate();
 
-        $scope.placeChanged = function() {
-            $scope.place = this.getPlace();
-            $scope.markers[0].position = $scope.place.geometry.location;
+        $scope.placeChanged = function(place) {
+            $scope.place = (typeof place == "object" ? place : this.getPlace());
+            $timeout(function() {
+                $scope.markers[0].position = $scope.place.geometry.location;
+            },0);
+            if (typeof place == "object")
+                $scope.address = $scope.place.formatted_address;
         };
 
         $scope.pickHere = function() {
@@ -30,10 +36,36 @@
             }
         };
 
+        $scope.mapCallbacks = {
+            mapTapped: mapTap,
+            markerDragend: markerDraged
+        };
+
+        function geocoderCallback(results) {
+            $scope.placeChanged(results[0]);
+            setMapCenter(results[0].geometry.location);
+        }
+
+        function markerDraged(marker) {
+            var latlng = {lat: marker.latLng.lat(), lng: marker.latLng.lng()};
+            GoogleMapGeocoder.reverseGeocode(latlng)
+                .then(geocoderCallback);
+        }
+
+        function setMapCenter(position) {
+            $scope.map.center = position;
+        }
+
+        function mapTap(event) {
+            var latlng = {lat: event.latLng.lat(), lng: event.latLng.lng()};
+            GoogleMapGeocoder.reverseGeocode(latlng)
+                .then(geocoderCallback);
+        }
+
         function setExistingAddress() {
-            $scope.markers[0].position = "" + $scope.data.originLatitude + "," + $scope.data.originLongitude;
-            $scope.address = $scope.data.originAddress;
-            $scope.place = $scope.data.originPlace;
+            var latlng = {lat: $scope.data.originLatitude, lng: $scope.data.originLongitude};
+            GoogleMapGeocoder.reverseGeocode(latlng)
+                .then(geocoderCallback);
         }
 
         function initialUIStates() {
@@ -48,10 +80,15 @@
             initialUIStates();
             $scope.markers = [{
                 title: 'Origen',
-                icon : "{url: 'img/inputs/pin-mapa1.png', scaledSize: [48,48]}"
+                icon : "{url: 'img/inputs/pin-mapa1.png', scaledSize: [48,48]}",
+                draggable: true
             }];
             if ( $scope.data.originPlace )
                 setExistingAddress();
+            NgMap.getMap().then(function(map) {
+                $scope.map = map;
+            });
+
         }
 
         /**
