@@ -83,7 +83,7 @@
                 icon     : "{url: 'img/inputs/pin-mapa1.png', scaledSize: [48,48]}",
                 draggable: true
             }];
-            if ( $scope.data.originPlace )
+            if ( $scope.data.originAddress )
                 setExistingAddress();
             NgMap.getMap().then(function(map) {
                 $scope.map = map;

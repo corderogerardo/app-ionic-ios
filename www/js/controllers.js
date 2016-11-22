@@ -344,7 +344,8 @@
         $scope.placeChanged = function(place) {
             $scope.place = (typeof place == "object" ? place : this.getPlace());
             $timeout(function() {
-                $scope.markers[$scope.markers.length-1].position = $scope.place.geometry.location;
+                var marker = $scope.markers[$scope.markers.length - 1];
+                marker.position = $scope.place.geometry.location;
             }, 0);
             if ( typeof place == "object" )
                 $scope.tempData.address = $scope.place.formatted_address;
@@ -353,14 +354,17 @@
 
         $scope.pickHere = function() {
             $scope.buttonState = true;
-            $scope.markers[$scope.markers.length-1].icon = "{url: 'img/inputs/pin-mapa-check2.png', scaledSize: [48,48]}"
+            var marker = $scope.markers[$scope.markers.length - 1];
+            marker.icon = "{url: 'img/inputs/pin-mapa-check2.png', scaledSize: [48,48]}";
+            marker.draggable = false;
         };
 
-        $scope.addNewDirection = function() {
+        $scope.addNewAddress = function() {
+            var lastMarker = $scope.markers[$scope.markers.length - 1];
+            lastMarker.draggable = false;
+            lastMarker.icon = "{url: 'img/inputs/pin-mapa-check2.png', scaledSize: [48,48]}";
             $scope.markers.push({
-                title   : "Another destiny",
-                position: [$scope.place.geometry.location.lat(), $scope.place.geometry.location.lng()],
-                icon    : "{url: 'img/inputs/pin-mapa-check2.png', scaledSize: [48,48]}"
+                icon: "{url: 'img/inputs/pin-mapa2.png', scaledSize: [48,48]}"
             });
             $scope.data.destiniesData.push(getStopElement($scope.tempData));
             resetTempData();
@@ -368,10 +372,11 @@
 
         $scope.confirmDestiny = function() {
             if ( $state.params.serviceType == 45 ) {
-                if ( $scope.data.editStopIndex >= 0 ) {
+                if ( $scope.data.editStopIndex ) {
                     //Editing a previous added stop
                     var index = $scope.data.editStopIndex;
                     $scope.data.destiniesData[index] = getStopElement($scope.tempData);
+                    delete $scope.data.editStopIndex;
                 } else {
                     //Adding a new stop
                     $scope.data.destiniesData.push(getStopElement($scope.tempData));
@@ -393,7 +398,7 @@
         };
 
         $scope.mapCallbacks = {
-            mapTapped: mapTap,
+            mapTapped    : mapTap,
             markerDragend: markerDraged
         };
 
@@ -403,7 +408,7 @@
         }
 
         function markerDraged(marker) {
-            var latlng = {lat: marker.latLng.lat(), lng: marker.latLng.lng()};
+            var latlng = { lat: marker.latLng.lat(), lng: marker.latLng.lng() };
             GoogleMapGeocoder.reverseGeocode(latlng)
                 .then(geocoderCallback);
         }
@@ -413,7 +418,7 @@
         }
 
         function mapTap(event) {
-            var latlng = {lat: event.latLng.lat(), lng: event.latLng.lng()};
+            var latlng = { lat: event.latLng.lat(), lng: event.latLng.lng() };
             GoogleMapGeocoder.reverseGeocode(latlng)
                 .then(geocoderCallback);
         }
@@ -422,6 +427,24 @@
             var latlng = { lat: $scope.data.destinyLatitude, lng: $scope.data.destinyLongitude };
             GoogleMapGeocoder.reverseGeocode(latlng)
                 .then(geocoderCallback);
+        }
+
+        function getStopElement(data) {
+            return {
+                phone    : data.phone,
+                longitude: $scope.place.geometry.location.lng(),
+                latitude : $scope.place.geometry.location.lat(),
+                address  : $scope.place.formatted_address,
+                name     : data.name
+            };
+        }
+
+        function resetTempData() {
+            $scope.tempData = {
+                address: '',
+                phone  : '',
+                name   : ''
+            };
         }
 
         function initialUIStates() {
@@ -443,30 +466,33 @@
             $scope.tempData = {};
             $scope.address = "";
             initialUIStates();
-            if ( $scope.data.editStopIndex != undefined ) {
+            if ( $scope.data.destiniesData ) {
                 var index = $scope.data.editStopIndex;
-                $scope.tempData.phone = $scope.data.destiniesData[index].phone;
-                $scope.tempData.address = $scope.data.destiniesData[index].address;
-                $scope.tempData.name = $scope.data.destiniesData[index].name;
-
-                $scope.data.destiniesData.forEach(function(destiny) {
+                if ( typeof index != "undefined" ) {
+                    $scope.tempData.phone = $scope.data.destiniesData[index].phone;
+                    $scope.tempData.address = $scope.data.destiniesData[index].address;
+                    $scope.tempData.name = $scope.data.destiniesData[index].name;
+                }
+                $scope.data.destiniesData.forEach(function(destiny, destIndex) {
                     $scope.markers.push({
-                        title   : 'Destino',
-                        icon    : "{url: 'img/inputs/pin-mapa2.png', scaledSize: [48,48]}",
-                        position: [destiny.longitude, destiny.latitude]
-                    })
+                        title    : 'Destino',
+                        icon     : (destIndex == index ? "{url: 'img/inputs/pin-mapa2.png', scaledSize: [48,48]}" : "{url: 'img/inputs/pin-mapa-check2.png', scaledSize: [48,48]}"),
+                        position : [destiny.latitude, destiny.longitude],
+                        draggable: (destIndex == index)
+                    });
                 });
             } else {
                 $scope.data.destiniesData = [];
                 $scope.markers.push({
-                    title: 'Destino',
-                    icon : "{url: 'img/inputs/pin-mapa2.png', scaledSize: [48,48]}"
+                    title    : 'Destino',
+                    icon     : "{url: 'img/inputs/pin-mapa2.png', scaledSize: [48,48]}",
+                    draggable: true
                 });
             }
             NgMap.getMap().then(function(map) {
                 $scope.map = map;
             });
-            if ($scope.data.destinyLatitude && $scope.data.destinyLongitude)
+            if ( $scope.data.destinyLatitude && $scope.data.destinyLongitude )
                 setExistingAddress();
         }
 
@@ -485,24 +511,6 @@
                     // error
                 });
         };
-
-        function getStopElement(data) {
-            return {
-                phone    : data.phone,
-                longitude: $scope.place.geometry.location.lng(),
-                latitude : $scope.place.geometry.location.lat(),
-                address  : $scope.place.formatted_address,
-                name     : data.name
-            }
-        }
-
-        function resetTempData() {
-            $scope.tempData = {
-                address: '',
-                phone: '',
-                name: ''
-            };
-        }
     }
 
 })();
@@ -716,7 +724,7 @@
                 icon     : "{url: 'img/inputs/pin-mapa1.png', scaledSize: [48,48]}",
                 draggable: true
             }];
-            if ( $scope.data.originPlace )
+            if ( $scope.data.originAddress )
                 setExistingAddress();
             NgMap.getMap().then(function(map) {
                 $scope.map = map;
