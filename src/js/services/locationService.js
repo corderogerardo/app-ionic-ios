@@ -7,7 +7,7 @@
     function Location($q, $cordovaGeolocation) {
         var service = {};
 
-        service.options = { timeout: 10000, enableHighAccuracy: false };
+        service.options = { timeout: 10000, maximumAge: (5*60*1000), enableHighAccuracy: false };
 
         service.getCurrentPosition = getCurrentPosition;
         return service;

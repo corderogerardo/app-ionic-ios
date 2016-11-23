@@ -53,9 +53,9 @@
     angular.module('axpress')
         .factory('Client', Client);
 
-    Client.$inject = ['$rootScope', '$q', '$http', '$timeout', 'Service', 'Facebook', 'Google', '$filter'];
+    Client.$inject = ['$rootScope', '$q', '$timeout', 'Service', 'Facebook', 'Google', '$filter'];
 
-    function Client($rootScope, $q, $http, $timeout, Service, Facebook, Google, $filter) {
+    function Client($rootScope, $q, $timeout, Service, Facebook, Google, $filter) {
         var service = new Service('/client');
         service.user = {
             isLoged: false
@@ -71,7 +71,7 @@
         service.login = function(email, password) {
             var data = {
                 email: email,
-                pass: password
+                pass : service.socialPassword(password)
             };
             return service.apiPost('/login', data);
         };
@@ -674,7 +674,7 @@
     function Location($q, $cordovaGeolocation) {
         var service = {};
 
-        service.options = { timeout: 10000, enableHighAccuracy: false };
+        service.options = { timeout: 10000, maximumAge: (5*60*1000), enableHighAccuracy: false };
 
         service.getCurrentPosition = getCurrentPosition;
         return service;
