@@ -1,63 +1,62 @@
-<div class="bar bar-header bar-balanced">
-	<h3 class="title">REGISTRARSE</h3>
-</div>
 <ion-view view-title="Register">
-	<ion-content scroll="false" >
-		<div class="space"></div>
-		<form class="register-container-tradictional" id="registerForm" name="registerForm" ng-submit="doRegister(registerForm)" accept-charset="utf-8" novalidate>
+	<ion-content scroll="false" overflow-scroll="false" class="axpress-bg">
+		<form class="register-container" id="registerForm" name="registerForm" ng-submit="doRegister(registerForm)" accept-charset="utf-8" novalidate>
 
-			<div class="inputs-container">
-                <i ng-if="focusedRegisterName === true" class="icon-user"></i>
-                <i ng-if="focusedRegisterName === false" class="icon-user-gray"></i>
-				<label class="">
-					<input type="text" name="name" ng-focus="focusedRegisterName = true" ng-change=""
-                           ng-blur="focusedRegisterName = false" ng-model="user.name" placeholder="Nombre" required>
-				</label>
-			</div>
-			<div class="inputs-container">
-                <i ng-if="focusedRegisterPass === true " class="icon-pass"></i>
-                <i ng-if="focusedRegisterPass === false " class="icon-pass-gray"></i>
-				<label class="">
-					<input type="password" name="pass" ng-focus="focusedRegisterPass = true "
-                           ng-blur="focusedRegisterPass = false" ng-model="user.password" placeholder="Contraseña" required>
-				</label>
-			</div>
-			<div class="inputs-container">
-                <i ng-if="focusedRegisterEmail === true "  class="icon-email"></i>
-                <i ng-if="focusedRegisterEmail === false " class="icon-email-gray"></i>
-				<label class="">
-					<input type="email" name="email" ng-focus="focusedRegisterEmail = true"
-                           ng-blur="focusedRegisterEmail = false" ng-model="user.email" placeholder="Correo Electrónico" required>
-				</label>
-				</div>
-		<!-- <div class="padding">
-		<p ng-show="!registerForm.name.$pristine">* Nombre de usuario requerido.</p>
-		<p ng-show="!registerForm.pass.$pristine">* Contraseña requerida.</p>
-		<p ng-show="registerForm.email.$invalid && !registerForm.email.$pristine">* Email valido Requerido.</p>
-		<p ng-show="!registerForm.phone.$pristine">* Telefono de usuario requerido.</p>
-		</div> -->
-		<div class="container-button register-button  white-space">
-		<button type="submit" class="button-noicon text-center-button" ng-disabled="registerForm.$invalid">REGISTRARSE</button>
-		</div>
+                <div class="list list-inset">
+                    <label class="item item-input">
+                        <i ng-if="focusedRegisterName === true" class="icon ion-ios-people placeholder-icon"></i>
+                        <i ng-if="focusedRegisterName === false" class="icon ion-ios-person placeholder-icon"></i>
+                        <input type="text" name="name" ng-focus="focusedRegisterName = true" ng-change=""
+                               ng-blur="focusedRegisterName = false" ng-model="user.name" placeholder="Nombre" required>
+                    </label>
+                    <label class="item item-input">
+                        <i ng-if="focusedRegisterEmail === true" class="icon ion-ios-email placeholder-icon"></i>
+                        <i ng-if="focusedRegisterEmail === false" class="icon ion-ios-email placeholder-icon"></i>
+                        <input type="text" name="email" ng-focus="focusedRegisterEmail = true"
+                               ng-blur="focusedRegisterEmail = false" ng-model="user.email" placeholder="Correo Electrónico" required>
+                    </label>
+                    <label class="item item-input">
+                        <i ng-if="focusedRegisterPhone === true" class="icon ion-ios-telephone placeholder-icon"></i>
+                        <i ng-if="focusedRegisterPhone === false" class="icon ion-ios-telephone placeholder-icon"></i>
+                        <input type="tel"  name="phone" ng-focus="focusedRegisterPhone = true"
+                               ng-blur="focusedRegisterPhone = false" ng-model="user.phone" placeholder="Teléfono" required>
+                    </label>
 
+                    <label class="item item-input">
+                        <i ng-if="focusedRegisterPass === true" class="icon ion-ios-locked placeholder-icon"></i>
+                        <i ng-if="focusedRegisterPass === false" class="icon ion-ios-locked placeholder-icon"></i>
+                        <input type="password" name="pass" ng-focus="focusedRegisterPass = true "
+                               ng-blur="focusedRegisterPass = false" ng-model="user.password" placeholder="Contraseña" required>
+                    </label>
+                    <a type="submit" class="item item-input button button-block button-default-two" ng-disabled="registerForm.$invalid"> <span>Crear cuenta</span> </a>
+                    <p class="item item-input register-term text-center"  title="">Al registrarte aceptas las <span> &nbsp; politicas de privacidad </span></p>
+                    <p class="item item-input register-term text-center">  y <span> &nbsp;los términos y condiciones &nbsp;</span> de Axpress.</p>
+                    </div>
 		</form>
-				<div class="spacetwo"></div>
-		<section class="two-buttons-container-column">
-			<a ng-click="registerWithFacebook()" class="button-icon facebook register-social-buttons">
-				<label>
-				Registrarse con facebook
-				</label>
-			</a>
-				</section>
-				<section class="two-buttons-container-column">
-				<a ng-click="registerWithGoogle()" class="button-icon gplus register-social-buttons">
-				<label>
-				Registrarse con google
-				</label>
-			</a>
-		</section>
-				<a class="register-term"  title="">Al registrarte, aceptas términos y condiciones de uso, la politica de privacidad y los terminos de uso de Axpress.</a>
 
+        <div class="hide-on-keyboard-open register-container-bottom">
+        <section class="row">
+            <div class="col col-25 register-line"></div>
+            <div class="col register-create">o crea cuenta con</div>
+            <div class="col col-25 register-line"></div>
+        </section>
+		<section class="row ">
+            <div class="col col-50 col-offset-25">
+                <div class="row register-social-buttons">
+                <a ng-click="registerWithFacebook()" class="button button-block facebook-icon">
+                </a>
+                <a ng-click="registerWithGoogle()" class="button button-block google-icon">
+                </a>
+                </div>
+            </div>
+        </section>
 
-	</ion-content>
+        </div>
+        <section class="hide-on-keyboard-open row">
+            <div class="col text-center register-login">
+                <span>¿Ya tienes una cuenta?</span>
+                <a ui-sref="auth.login">Inicia sesión</a>
+            </div>
+        </section>
+    </ion-content>
 </ion-view>

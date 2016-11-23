@@ -1,41 +1,166 @@
-.register-container-tradictional{
-	align-items: center;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	height:45%;
-	width:100%;
-	form{
-		border:1px solid blue;
-	}
+.register-container{
+    @include display-flex;
+    @include flex-direction(column);
+    @include align-items(center);
+    @include justify-content(center);
+	height:70%;
+    min-height: 70%;
+    width:100%;
+    min-width: 100%;
 }
-.register-traditional-input{
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	height:50%;
-	width:100%;
+.register-container-bottom{
+    @include display-flex;
+    @include flex-direction(column);
+    @include align-items(center);
+    @include justify-content(center);
+    height:15%;
+    min-height: 15%;
+    margin-bottom: 10%;
+    width:100%;
+    min-width: 100%;
 }
-.register-button{
-	border:none;
-	height:12%;
+.list-inset{
+    @include display-flex;
+    @include flex-direction(column);
+    @include align-items(center);
+    @include justify-content(center);
+    padding-left: 0;
+    margin-left: 0;
+    margin-right: 0;
+    background-color: transparent;
+    width: 100%;
+    min-width: 100%;
+}
+.item{
+    border-color:white;
+    border-width: 2px;
+    border-radius: 25px !important;
+}
+.item-input{
+    background-color: transparent;
+    margin-bottom: 2%;
+    height: 45px !important;
+    min-height: 45px !important;
+    min-width: 80%;
+    width: 80%;
+    i{
+        color:white;
+    }
+    input{
+        padding-left: 5%;
+        padding-top: 0;
+        margin: 0 !important;
+        color: white !important;
+        min-height: 100% !important;
+        min-width: 100% !important;
+        height: 100% !important;
+        width: 100% !important;
+    }
+}
+.register-line{
+    border-bottom:1px solid white;
+    min-height: 1px;
+    padding-top: 10px;
+    height: 1px;
+}
+.register-create{
+    text-align: center;
+    font-size: 12px;
+    color:white;
 }
 .register-social-buttons{
-		width:90%;
+    @include display-flex;
+    @include align-items(center);
+    @include justify-content(space-between);
+    width:100%;
+    a{
+        background-color: transparent;
+        color:white;
+        height: 44px;
+        width: 44px;
+        @media screen and (max-height: 2560px){
+            height: 176px;
+            width: 176px;
+        }
+        @media screen and (max-height: 1920px){
+            height: 132px;
+            width: 132px;
+        }
+        @media screen and (max-height: 1280px){
+            height: 88px;
+            width: 88px;
+        }
+        @media screen and (max-height: 960px){
+            height: 66px;
+            width: 66px;
+        }
+        @media screen and (max-height: 736px){
+            height: 66px;
+            width: 66px;
+        }
+        @media screen and (max-height: 667px){
+            height: 66px;
+            width: 66px;
+        }
+        @media screen and (max-height: 568px){
+            height: 66px;
+            width: 66px;
+        }
+        @media screen and (max-height: 480px){
+            height: 44px;
+            width: 44px;
+        }
+        @media screen and (max-height: 320px){
+            height: 44px;
+            width: 44px;
+        }
+    }
+    &:hover{
+        background-color: transparent;
+    }
+    &:active{
+        background-color: transparent;
+    }
+}
+.button:hover{
+    border:none;
+    background-color: transparent !important;
+}
+.button:active{
+    border:none;
+    background-color: transparent !important;
 }
 .register-term{
-	align-items: center;
-	display:flex;
-	color:$balanced;
-	font-size: 2vh;
+    @include display-flex;
+    @include flex-direction(row);
+    @include align-items(center);
+    @include justify-content(center);
+    padding-left: 0;
+    border:none!important;
+	color:white !important;
+	font-size: 10px;
 	text-decoration: none;
-	justify-content: center;
-	text-align: center;
-	width:100%;
-		padding: 0 5px;
-	margin-top:8%;
+    height: 20px !important;
+    min-height: 20px !important;
+    min-width:80% !important;
+    width: 80%;
+    span{
+        color:$createAccauntTap;
+    }
 }
-.text-center-button{
-	width:100%;
-	padding-left:33%;
+.register-login{
+    font-size: 3vh;
+    span{
+        color:$createAccaunt;
+    }
+    a{
+        color:$createAccauntTap;
+        font-weight: bold;
+        text-decoration: none;
+    }
+}
+.container-button{
+    min-width: 80%;
+    height: 35px;
+    min-height: 35px;
 }

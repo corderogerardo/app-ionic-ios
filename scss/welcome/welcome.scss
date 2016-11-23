@@ -1,59 +1,3 @@
-.welcome-bg{
-    @media screen and (max-height: 2560px){
-        background-image: url('../img/backgroundprincipal/backgroundprincipalxxxhdpi.png');
-        background-size: 100%;
-        background-repeat: no-repeat;
-        background-position: center;
-    }
-    @media screen and (max-height: 1920px){
-        background-image: url('../img/backgroundprincipal/backgroundprincipalxxhdpi.png');
-        background-size: 100%;
-        background-repeat: no-repeat;
-        background-position: center;
-    }
-    @media screen and (max-height: 1280px){
-        background-image: url('../img/backgroundprincipal/backgroundprincipalxhdpi.png');
-        background-size: 100%;
-        background-repeat: no-repeat;
-        background-position: center;
-    }
-    @media screen and (max-height: 960px){
-        background-image: url('../img/backgroundprincipal/backgroundprincipalhdpi.png');
-        background-size: 100%;
-        background-repeat: no-repeat;
-        background-position: center;
-    }
-    @media screen and (max-height: 736px){
-        background-image: url('../img/backgroundprincipal/backgroundprincipalhdpi.png');
-        background-size: 100%;
-        background-repeat: no-repeat;
-        background-position: center;
-    }
-    @media screen and (max-height: 667px){
-        background-image: url('../img/backgroundprincipal/backgroundprincipalhdpi.png');
-        background-size: 100%;
-        background-repeat: no-repeat;
-        background-position: center;
-    }
-    @media screen and (max-height: 568px){
-        background-image: url('../img/backgroundprincipal/backgroundprincipalmdpi.png');
-        background-size: 100%;
-        background-repeat: no-repeat;
-        background-position: center;
-    }
-    @media screen and (max-height: 480px){
-        background-image: url('../img/backgroundprincipal/backgroundprincipalmdpi.png');
-        background-size: 100%;
-        background-repeat: no-repeat;
-        background-position: center;
-    }
-    @media screen and (max-height: 320px){
-        background-image: url('../img/backgroundprincipal/backgroundprincipalmdpi.png');
-        background-size: 100%;
-        background-repeat: no-repeat;
-        background-position: center;
-    }
-}
 ion-slide{
     min-height: 180px;
     @media screen and (max-height: 2560px){
@@ -129,8 +73,6 @@ ion-slide{
 .welcome-info{
     font-size: 2vh !important;
     color:white;
-
-
 }
 .welcome-dots{
 		align-items: center;
