@@ -2,10 +2,10 @@
     angular.module('axpress')
         .controller('OriginController', DocumentOriginController);
 
-    DocumentOriginController.$inject = ['$rootScope', '$scope', '$state', '$cordovaGeolocation', 'NgMap',
+    DocumentOriginController.$inject = ['$rootScope', '$scope', '$state', 'Location', 'NgMap',
         '$timeout', 'GoogleMapGeocoder'];
 
-    function DocumentOriginController($rootScope, $scope, $state, $cordovaGeolocation, NgMap,
+    function DocumentOriginController($rootScope, $scope, $state, Location, NgMap,
                                       $timeout, GoogleMapGeocoder) {
         activate();
 
@@ -36,6 +36,17 @@
             }
         };
 
+        /**
+         * For GPS Geolocation
+         **/
+        $scope.gpsHere = function() {
+            Location.getCurrentPosition()
+                .then(function(pos) {
+                    GoogleMapGeocoder.reverseGeocode(pos)
+                        .then(geocoderCallback);
+                })
+        };
+
         $scope.mapCallbacks = {
             mapTapped    : mapTap,
             markerDragend: markerDraged
@@ -53,7 +64,7 @@
         }
 
         function setMapCenter(position) {
-            $scope.map.center = position;
+            $scope.map.setCenter(position);
         }
 
         function mapTap(event) {
@@ -90,21 +101,5 @@
             });
 
         }
-
-        /**
-         * For GPS Geolocation ngcordova geolocation
-         */
-        var posOptions = { timeout: 10000, enableHighAccuracy: false };
-
-        $scope.gpsHere = function() {
-            $cordovaGeolocation
-                .getCurrentPosition(posOptions)
-                .then(function(position) {
-                    $scope.gps.lat = position.coords.latitude;
-                    $scope.gps.lng = position.coords.longitude;
-                }, function(err) {
-                    // error
-                });
-        };
     }
 })();

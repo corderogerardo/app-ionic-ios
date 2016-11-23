@@ -2,10 +2,10 @@
     angular.module('axpress')
         .controller('DestinyController', DocumentDestinyController);
 
-    DocumentDestinyController.$inject = ['$rootScope', '$scope', '$state', '$cordovaGeolocation', 'NgMap',
+    DocumentDestinyController.$inject = ['$rootScope', '$scope', '$state', 'Location', 'NgMap',
         '$timeout', 'GoogleMapGeocoder'];
 
-    function DocumentDestinyController($rootScope, $scope, $state, $cordovaGeolocation, NgMap,
+    function DocumentDestinyController($rootScope, $scope, $state, Location, NgMap,
                                        $timeout, GoogleMapGeocoder) {
         activate();
 
@@ -65,6 +65,17 @@
             }
         };
 
+        /**
+         * For GPS Geolocation
+         **/
+        $scope.gpsHere = function() {
+            Location.getCurrentPosition()
+                .then(function(pos) {
+                    GoogleMapGeocoder.reverseGeocode(pos)
+                        .then(geocoderCallback);
+                })
+        };
+
         $scope.mapCallbacks = {
             mapTapped    : mapTap,
             markerDragend: markerDraged
@@ -82,7 +93,7 @@
         }
 
         function setMapCenter(position) {
-            $scope.map.center = position;
+            $scope.map.setCenter(position);
         }
 
         function mapTap(event) {
@@ -163,22 +174,6 @@
             if ( $scope.data.destinyLatitude && $scope.data.destinyLongitude )
                 setExistingAddress();
         }
-
-        /**
-         * For GPS Geolocation ngcordova geolocation
-         */
-        var posOptions = { timeout: 10000, enableHighAccuracy: false };
-
-        $scope.gpsHere = function() {
-            $cordovaGeolocation
-                .getCurrentPosition(posOptions)
-                .then(function(position) {
-                    $scope.gps.lat = position.coords.latitude;
-                    $scope.gps.lng = position.coords.longitude;
-                }, function(err) {
-                    // error
-                });
-        };
     }
 
 })();
