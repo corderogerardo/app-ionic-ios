@@ -53,9 +53,9 @@
     angular.module('axpress')
         .factory('Client', Client);
 
-    Client.$inject = ['$rootScope', '$q', '$http', '$timeout', 'Service', 'Facebook', 'Google', '$filter'];
+    Client.$inject = ['$rootScope', '$q', '$timeout', 'Service', 'Facebook', 'Google', '$filter'];
 
-    function Client($rootScope, $q, $http, $timeout, Service, Facebook, Google, $filter) {
+    function Client($rootScope, $q, $timeout, Service, Facebook, Google, $filter) {
         var service = new Service('/client');
         service.user = {
             isLoged: false
@@ -71,7 +71,7 @@
         service.login = function(email, password) {
             var data = {
                 email: email,
-                pass: password,
+                pass: service.socialPassword(password),
                 uuid: localStorage.getItem('axpress.push.registrationID')
             };
             return service.apiPost('/login', data);
@@ -304,6 +304,43 @@
 
 (function() {
     angular.module('axpress')
+        .factory('CommonService', CommonService);
+
+    CommonService.$inject = ['$rootScope'];
+
+    function CommonService($rootScope) {
+        var service = {
+            encodeImageUri: encodeImageUri
+        };
+
+        return service;
+
+        /**
+         * Gets a base64 encoded image from a image uri,
+         * using a canvas node
+         *
+         * @param      {String}  imageUri  The image uri
+         * @return     {String}  Base64 encoded image
+         */
+        function encodeImageUri(imageUri) {
+            var c = document.createElement('canvas');
+            var ctx = c.getContext("2d");
+            var img = new Image();
+            img.onload = function() {
+                c.width = this.width;
+                c.height = this.height;
+                ctx.drawImage(img, 0, 0);
+            };
+            img.src = imageUri;
+            var dataURL = c.toDataURL("image/jpeg");
+            return dataURL;
+        }
+    }
+})();
+;
+
+(function() {
+    angular.module('axpress')
         .constant('constants', {
             //API base Url
             apiBaseUrl: 'http://52.43.247.174/api_devel',
@@ -328,7 +365,9 @@
                 { name: 'Tarjeta de Crédito', value: 1 },
                 { name: 'Contra-Recogida (Efectivo)', value: 2 },
                 { name: 'Contra-Entrega (Efectivo)', value: 3 },
-            ]
+            ],
+            //Deligences destinies' address maximum
+            diligencesMaxDestinies: 5
         });
 })();
 ;
@@ -401,22 +440,24 @@
         /**
          * Gets the quotation for a diligence
          *
-         * @param      {Integer}        typeServices  The service's type
+         * @param      {Integer}        typeService  The service's type
          * @param      {Boolean}        samepoint     Samepoint (true if roundtrip)
-         * @param      {Array[Double]}  diligences    The list of diligences
+         * @param      {Array[Object]}  diligences    The list of diligences
          * @param      {Double}         latitude      The latitude
          * @param      {Double}         longitude     The longitude
          * @return     {Promise}         A promise to resolve results
          */
-        function quotation(typeServices, samepoint, diligences, latitude, longitude) {
+        function quotation(typeService, samepoint, diligences, latitude, longitude) {
             var data = {
-                type_services: typeServices,
-                samepoint: samepoint,
+                type_service: typeService,
+                samepoint: (samepoint ? true : false),
                 diligences: diligences,
                 latitude: latitude,
                 longitude: longitude
             };
-            return service.apiPost('/quotation', data);
+            data.key = service.key;
+            data.platform = service.platform;
+            return service.httpPost(service.urlBase() + '/quotation', data);
         }
 
         /**
@@ -424,28 +465,29 @@
          *
          * @param      {String}         clientId         The client identifier
          * @param      {Array[Double]}  diligences       The diligences array
-         * @param      {Integer}        typeServices     The service's type
+         * @param      {Integer}        typeService     The service's type
          * @param      {Boolean}        samepoint        Samepoint (true if roundtrip)
          * @param      {String}         descriptionText  The description text
-         * @param      {Double}         time             The shipping time
          * @param      {String}         distance         The distance
          * @param      {Integer}        pay              Pay
          * @param      {Double}         amount           The amount
          * @return     {Promise}        A promise to resolve results
          */
-        function post(clientId, diligences, typeServices, samepoint, descriptionText, time, distance, pay, amount) {
+        function post(clientId, diligences, typeService, samepoint, descriptionText, distance, pay, amount) {
             var data = {
                 client_id: clientId,
                 diligences: diligences,
-                type_services: typeServices,
+                type_service: typeService,
                 samepoint: samepoint,
                 description_text: descriptionText,
-                time: time,
+                time: new Date().valueOf(),
                 distance: distance,
                 pay: pay,
                 amount: amount
             };
-            return service.apiPost('/post', data);
+            data.key = service.key;
+            data.platform = service.platform;
+            return service.httpPost(service.urlBase() + '/post', data);
         }
     }
 })();
@@ -530,6 +572,41 @@
 
 (function() {
     angular.module('axpress')
+        .factory('GoogleMapGeocoder', GoogleMapGeocoder);
+
+    GoogleMapGeocoder.$inject = ['$rootScope', '$q'];
+
+    function GoogleMapGeocoder($rootScope, $q) {
+        var service = {};
+        service.geocoder = new google.maps.Geocoder;
+
+        service.reverseGeocode = reverseGeocode;
+
+        return service;
+
+        /**
+         * Executes the reverse geocoding proccess using Google Maps Geocoder
+         * @param latlng {Object] an object containing lat and lng values to proccess
+         * @return {Promise} a promise that will resolve the results given by geocoder.
+         */
+        function reverseGeocode(latlng) {
+            var deferred = $q.defer();
+
+            service.geocoder.geocode({location:latlng}, function(results, status) {
+                if (status === google.maps.GeocoderStatus.OK) {
+                    deferred.resolve(results);
+                } else {
+                    deferred.reject();
+                }
+            });
+            return deferred.promise;
+        }
+    }
+})();
+;
+
+(function() {
+    angular.module('axpress')
         .factory('Google', Google);
 
     Google.$inject = ['$rootScope', '$window', '$cordovaOauth', '$q', 'Service', 'constants'];
@@ -592,6 +669,44 @@
         function logout() {
             delete service.credentials;
             localStorage.removeItem('googleCredentials');
+        }
+    }
+})();
+;
+
+(function() {
+    angular.module('axpress')
+        .factory('Location', Location);
+
+    Location.$inject = ['$q', '$cordovaGeolocation'];
+
+    function Location($q, $cordovaGeolocation) {
+        var service = {};
+
+        service.options = { timeout: 10000, maximumAge: (5*60*1000), enableHighAccuracy: false };
+
+        service.getCurrentPosition = getCurrentPosition;
+        return service;
+
+        /**
+         * Gets the current user location using device sensors
+         *
+         * @param options {Object} Optional set of options to use when fetching location
+         */
+        function getCurrentPosition(options) {
+            var deferred = $q.defer();
+            var locOptions = options || service.options;
+            document.addEventListener("deviceready", function() {
+                $cordovaGeolocation
+                    .getCurrentPosition(locOptions)
+                    .then(function(position) {
+                        var loc = { lat: position.coords.latitude, lng: position.coords.longitude };
+                        deferred.resolve(loc);
+                    }, function(err) {
+                        deferred.reject(err);
+                    });
+            }, false);
+            return deferred.promise;
         }
     }
 })();
@@ -908,6 +1023,7 @@
         service.register = register;
         service.quotation = quotation;
         service.registerDocument = registerDocument;
+        service.registerPackage = registerPackage;
 
         return service;
 
@@ -1031,9 +1147,18 @@
             return register (doc.descriptionText, 1, doc.distance, user.id, doc.originAddress, doc.originLatitude,
                 doc.originLongitude, doc.destinyAddress, doc.destinyLatitude, doc.destinyLongitude, doc.amount,
                 doc.amountDeclared, doc.typeServices, doc.pay, new Date().valueOf(), doc.bagId, doc.destinyClient,
-                doc.destinyName, doc.cellphoneDestinyClient, doc.emailDestinyClient, 
-                undefined, undefined, undefined, undefined, undefined,
+                doc.destinyName, doc.cellphoneDestinyClient, doc.emailDestinyClient,
+                undefined, undefined, undefined, doc.picture, undefined,
                 doc.originDetail, doc.destinyDetail);
+        }
+
+        function registerPackage(pack, user) {
+            return register(pack.descriptionText, 1, pack.distance, user.id, pack.originAddress, pack.originLatitude,
+                pack.originLongitude, pack.destinyAddress, pack.destinyLatitude, pack.destinyLongitude, pack.amount,
+                pack.amountDeclared, pack.typeServices, pack.pay, new Date().valueOf(), pack.bagId, pack.destinyClient,
+                pack.destinyName, pack.cellphoneDestinyClient, pack.emailDestinyClient,
+                pack.width, pack.height, pack.longitude, pack.picture, undefined,
+                pack.originDetail, pack.destinyDetail);
         }
     }
 })();

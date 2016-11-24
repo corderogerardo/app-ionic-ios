@@ -24,6 +24,8 @@
                 { name: 'Tarjeta de Crédito', value: 1 },
                 { name: 'Contra-Recogida (Efectivo)', value: 2 },
                 { name: 'Contra-Entrega (Efectivo)', value: 3 },
-            ]
+            ],
+            //Deligences destinies' address maximum
+            diligencesMaxDestinies: 5
         });
 })();

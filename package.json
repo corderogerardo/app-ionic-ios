@@ -40,7 +40,8 @@
       "variables": {
         "SENDER_ID": "1068552996185"
       }
-    }
+    },
+    "cordova-plugin-geolocation"
   ],
   "cordovaPlatforms": []
 }

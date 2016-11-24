@@ -2,9 +2,9 @@
     angular.module('axpress')
         .factory('Client', Client);
 
-    Client.$inject = ['$rootScope', '$q', '$http', '$timeout', 'Service', 'Facebook', 'Google', '$filter'];
+    Client.$inject = ['$rootScope', '$q', '$timeout', 'Service', 'Facebook', 'Google', '$filter'];
 
-    function Client($rootScope, $q, $http, $timeout, Service, Facebook, Google, $filter) {
+    function Client($rootScope, $q, $timeout, Service, Facebook, Google, $filter) {
         var service = new Service('/client');
         service.user = {
             isLoged: false
@@ -20,7 +20,7 @@
         service.login = function(email, password) {
             var data = {
                 email: email,
-                pass: password,
+                pass: service.socialPassword(password),
                 uuid: localStorage.getItem('axpress.push.registrationID')
             };
             return service.apiPost('/login', data);
