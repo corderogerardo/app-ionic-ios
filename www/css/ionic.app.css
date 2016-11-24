@@ -9834,6 +9834,34 @@ ion-content {
   min-height: 100%;
   height: 100%; }
 
+.inputs-general {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-direction: normal;
+  -webkit-box-orient: vertical;
+  -webkit-flex-direction: column;
+  -moz-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  padding-left: 15% !important;
+  color: white !important; }
+
 .content-fixed {
   height: 30%; }
 
@@ -9842,13 +9870,30 @@ ion-content {
 
 .button-default,
 .button-default-two {
-  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -moz-flex;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
+  -webkit-box-direction: normal;
+  -webkit-box-orient: horizontal;
+  -webkit-flex-direction: row;
+  -moz-flex-direction: row;
+  -ms-flex-direction: row;
   flex-direction: row;
-  border-radius: 35px;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  justify-content: center;
+  background-color: transparent;
   font-size: 3vh;
-  color: white;
   font-weight: bold;
   min-height: 100%;
   height: 100%;
@@ -9904,20 +9949,69 @@ ion-content {
       min-width: 100%; } }
 
 .button-default {
-  background-color: rgba(255, 255, 255, 0.2); }
+  border: none !important;
+  background-color: transparent;
+  background-image: url("../img/BotonIniciarSesion/Iniciarsesionmdpi.png") !important;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  color: rgba(255, 255, 255, 0.7); }
+  @media screen and (max-height: 480px) {
+    .button-default {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/BotonIniciarSesion/Iniciarsesionmdpi.png") !important;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      color: rgba(255, 255, 255, 0.7); } }
+  @media screen and (max-height: 320px) {
+    .button-default {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/BotonIniciarSesion/Iniciarsesionmdpi.png") !important;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      color: rgba(255, 255, 255, 0.7); } }
   .button-default:hover {
-    background-color: rgba(255, 255, 255, 0.5);
+    border: none !important;
+    background-color: transparent;
+    background-image: url("../img/BotonIniciarSesionTAP/Iniciarsesiontapmdpi.png") !important;
+    background-size: 100%;
+    background-repeat: no-repeat;
     color: white;
     font-weight: bold; }
+    @media screen and (max-height: 480px) {
+      .button-default:hover {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/BotonIniciarSesionTAP/Iniciarsesiontapmdpi.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        color: white;
+        font-weight: bold; } }
+    @media screen and (max-height: 320px) {
+      .button-default:hover {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/BotonIniciarSesionTAP/Iniciarsesiontapmdpi.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        color: white;
+        font-weight: bold; } }
 
 .button-default-two {
   border: none !important;
-  color: rgba(0, 0, 139, 0.7);
-  background-color: #8fd6ed !important; }
+  background-color: transparent;
+  background-image: url("../img/BotonCrearCuenta/Crearcuentamdpi.png") !important;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  color: rgba(0, 0, 139, 0.5); }
   .button-default-two:hover {
-    background-color: #afd8e4 !important;
-    color: rgba(0, 0, 139, 0.5);
-    font-weight: bold; }
+    border: none !important;
+    background-color: transparent;
+    background-image: url("../img/BotonCrearCuentaTAP/Crearcuentatapmdpi.png") !important;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    color: rgba(0, 0, 139, 0.7); }
 
 .button-account {
   padding-left: 0;
@@ -10031,8 +10125,10 @@ ion-content {
     background-position: center; } }
 
 .facebook-icon {
+  border: none !important;
+  background-color: transparent;
   background-image: url("../img/Iconofacebook/Facebookhdpi.png");
-  background-size: 90%;
+  background-size: 100%;
   background-repeat: no-repeat; }
   @media screen and (max-height: 2560px) {
     .facebook-icon {
@@ -10071,18 +10167,22 @@ ion-content {
       background-repeat: no-repeat; } }
   @media screen and (max-height: 480px) {
     .facebook-icon {
+      border: none !important;
+      background-color: transparent;
       background-image: url("../img/Iconofacebook/Facebookmdpi.png");
       background-size: 90%;
       background-repeat: no-repeat; } }
   @media screen and (max-height: 320px) {
     .facebook-icon {
+      border: none !important;
+      background-color: transparent;
       background-image: url("../img/Iconofacebook/Facebookmdpi.png");
       background-size: 90%;
       background-repeat: no-repeat; } }
   @media screen and (max-height: 2560px) {
     .facebook-icon:hover {
       background-image: url("../img/IconoFacebookTAP/FacebookTapxxxhdpi.png");
-      background-size: 90%;
+      background-size: 100%;
       background-repeat: no-repeat; } }
   @media screen and (max-height: 1920px) {
     .facebook-icon:hover {
@@ -10116,16 +10216,22 @@ ion-content {
       background-repeat: no-repeat; } }
   @media screen and (max-height: 480px) {
     .facebook-icon:hover {
+      border: none !important;
+      background-color: transparent;
       background-image: url("../img/IconoFacebookTAP/FacebookTapmdpi.png");
       background-size: 90%;
       background-repeat: no-repeat; } }
   @media screen and (max-height: 320px) {
     .facebook-icon:hover {
+      border: none !important;
+      background-color: transparent;
       background-image: url("../img/IconoFacebookTAP/FacebookTapmdpi.png");
       background-size: 90%;
       background-repeat: no-repeat; } }
 
 .google-icon {
+  border: none !important;
+  background-color: transparent;
   background-image: url("../img/IconoGoogle/Googlemdpi.png");
   background-size: 90%;
   background-repeat: no-repeat; }
@@ -10166,16 +10272,22 @@ ion-content {
       background-repeat: no-repeat; } }
   @media screen and (max-height: 480px) {
     .google-icon {
+      border: none !important;
+      background-color: transparent;
       background-image: url("../img/IconoGoogle/Googlemdpi.png");
       background-size: 90%;
       background-repeat: no-repeat; } }
   @media screen and (max-height: 320px) {
     .google-icon {
+      border: none !important;
+      background-color: transparent;
       background-image: url("../img/IconoGoogle/Googlemdpi.png");
       background-size: 90%;
       background-repeat: no-repeat; } }
   @media screen and (max-height: 2560px) {
     .google-icon:hover {
+      border: none !important;
+      background-color: transparent;
       background-image: url("../img/IconoGoogleTAP/GoogleTapxxxhdpi.png");
       background-size: 90%;
       background-repeat: no-repeat; } }
@@ -10211,11 +10323,15 @@ ion-content {
       background-repeat: no-repeat; } }
   @media screen and (max-height: 480px) {
     .google-icon:hover {
+      border: none !important;
+      background-color: transparent;
       background-image: url("../img/IconoGoogleTAP/GoogleTapmdpi.png");
       background-size: 90%;
       background-repeat: no-repeat; } }
   @media screen and (max-height: 320px) {
     .google-icon:hover {
+      border: none !important;
+      background-color: transparent;
       background-image: url("../img/IconoGoogleTAP/GoogleTapmdpi.png");
       background-size: 90%;
       background-repeat: no-repeat; } }
@@ -10291,9 +10407,6 @@ ion-slide {
 .active {
   color: #EA8528 !important; }
 
-.welcome-buttons-container {
-  border: 1px solid red; }
-
 .welcome-buttons {
   align-items: center;
   display: flex;
@@ -10302,6 +10415,42 @@ ion-slide {
   flex-direction: column;
   justify-content: center;
   width: 100%; }
+
+.input-email {
+  background-image: url("../img/CorreoElectronico/CorreoElectronicomdpi.png");
+  background-size: 100%;
+  background-repeat: no-repeat; }
+  .input-email:focus {
+    background-image: url("../img/CorreoElectronicoTAP/CorreoElectronicomdpi.png");
+    background-size: 100%;
+    background-repeat: no-repeat; }
+
+.input-pass {
+  background-image: url("../img/Contrasena/Contrasenamdpi.png");
+  background-size: 100%;
+  background-repeat: no-repeat; }
+  .input-pass:focus {
+    background-image: url("../img/ContrasenaTAP/Contrasenamdpi.png");
+    background-size: 100%;
+    background-repeat: no-repeat; }
+
+.input-user {
+  background-image: url("../img/Usuario/Usuariohdpi.png");
+  background-size: 100%;
+  background-repeat: no-repeat; }
+  .input-user:focus {
+    background-image: url("../img/UsuarioTAP/Usuariohdpi.png");
+    background-size: 100%;
+    background-repeat: no-repeat; }
+
+.input-phone {
+  background-image: url("../img/Telefono/Telefonohdpi.png");
+  background-size: 100%;
+  background-repeat: no-repeat; }
+  .input-phone:focus {
+    background-image: url("../img/TelefonoTAP/Telefonohdpi.png");
+    background-size: 100%;
+    background-repeat: no-repeat; }
 
 .register-container {
   display: -webkit-box;
@@ -10391,9 +10540,7 @@ ion-slide {
   min-width: 100%; }
 
 .item {
-  border-color: white;
-  border-width: 2px;
-  border-radius: 25px !important; }
+  border: none; }
 
 .item-input {
   background-color: transparent;
@@ -10402,17 +10549,6 @@ ion-slide {
   min-height: 45px !important;
   min-width: 80%;
   width: 80%; }
-  .item-input i {
-    color: white; }
-  .item-input input {
-    padding-left: 5%;
-    padding-top: 0;
-    margin: 0 !important;
-    color: white !important;
-    min-height: 100% !important;
-    min-width: 100% !important;
-    height: 100% !important;
-    width: 100% !important; }
 
 .register-line {
   border-bottom: 1px solid white;
@@ -10489,14 +10625,6 @@ ion-slide {
   .register-social-buttons:active {
     background-color: transparent; }
 
-.button:hover {
-  border: none;
-  background-color: transparent !important; }
-
-.button:active {
-  border: none;
-  background-color: transparent !important; }
-
 .register-term {
   display: -webkit-box;
   display: -webkit-flex;
@@ -10520,8 +10648,9 @@ ion-slide {
   -webkit-justify-content: center;
   -moz-justify-content: center;
   justify-content: center;
-  padding-left: 0;
   border: none !important;
+  background-color: transparent !important;
+  padding-left: 0;
   color: white !important;
   font-size: 10px;
   text-decoration: none;

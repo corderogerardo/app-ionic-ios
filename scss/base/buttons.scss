@@ -1,12 +1,11 @@
 .button-default,
 .button-default-two{
-    align-items:center;
-    display: flex;
-    justify-content: center;
-    flex-direction: row;
-    border-radius: 35px;
+    @include display-flex;
+    @include flex-direction(row);
+    @include align-items(center);
+    @include justify-content(center);
+    background-color: transparent;
     font-size: 3vh;
-    color:white;
     font-weight: bold;
     min-height: 100%;
     height: 100%;
@@ -53,22 +52,98 @@
     }
 }
 .button-default{
-    background-color: rgba(white,.2);
-    &:hover{
-        background-color: rgba(white,.5);
-        color:white;
-        font-weight: bold;
+    border:none !important;
+    background-color: transparent;
+    background-image: url("../img/BotonIniciarSesion/Iniciarsesionmdpi.png") !important;
+    background-size: 100%;
+    background-repeat:no-repeat;
+    color:rgba(white,.7);
+    @media screen and (max-height: 2560px){
     }
-
+    @media screen and (max-height: 1920px){
+    }
+    @media screen and (max-height: 1280px){
+    }
+    @media screen and (max-height: 960px){
+    }
+    @media screen and (max-height: 736px){
+    }
+    @media screen and (max-height: 667px){
+    }
+    @media screen and (max-height: 568px){
+    }
+    @media screen and (max-height: 480px){
+        border:none !important;
+        background-color: transparent;
+        background-image: url("../img/BotonIniciarSesion/Iniciarsesionmdpi.png") !important;
+        background-size: 100%;
+        background-repeat:no-repeat;
+        color:rgba(white,.7);
+    }
+    @media screen and (max-height: 320px){
+        border:none !important;
+        background-color: transparent;
+        background-image: url("../img/BotonIniciarSesion/Iniciarsesionmdpi.png") !important;
+        background-size: 100%;
+        background-repeat:no-repeat;
+        color:rgba(white,.7);
+    }
+    &:hover{
+        border:none !important;
+        background-color: transparent;
+        background-image: url("../img/BotonIniciarSesionTAP/Iniciarsesiontapmdpi.png") !important;
+        background-size: 100%;
+        background-repeat:no-repeat;
+        color:rgba(white,1);
+        font-weight: bold;
+        @media screen and (max-height: 2560px){
+        }
+        @media screen and (max-height: 1920px){
+        }
+        @media screen and (max-height: 1280px){
+        }
+        @media screen and (max-height: 960px){
+        }
+        @media screen and (max-height: 736px){
+        }
+        @media screen and (max-height: 667px){
+        }
+        @media screen and (max-height: 568px){
+        }
+        @media screen and (max-height: 480px){
+            border:none !important;
+            background-color: transparent;
+            background-image: url("../img/BotonIniciarSesionTAP/Iniciarsesiontapmdpi.png") !important;
+            background-size: 100%;
+            background-repeat:no-repeat;
+            color:rgba(white,1);
+            font-weight: bold;
+        }
+        @media screen and (max-height: 320px){
+            border:none !important;
+            background-color: transparent;
+            background-image: url("../img/BotonIniciarSesionTAP/Iniciarsesiontapmdpi.png") !important;
+            background-size: 100%;
+            background-repeat:no-repeat;
+            color:rgba(white,1);
+            font-weight: bold;
+        }
+    }
 }
 .button-default-two{
     border:none !important;
-    color:rgba(darkblue,.7);
-    background-color: rgba($createAccauntTap,1) !important;
+    background-color: transparent;
+    background-image: url("../img/BotonCrearCuenta/Crearcuentamdpi.png") !important;
+    background-size: 100%;
+    background-repeat:no-repeat;
+    color:rgba(darkblue,.5);
     &:hover{
-        background-color: rgba($createAccaunt,1) !important;
-        color:rgba(darkblue,.5);
-        font-weight: bold;
+        border:none !important;
+        background-color: transparent;
+        background-image: url("../img/BotonCrearCuentaTAP/Crearcuentatapmdpi.png") !important;
+        background-size: 100%;
+        background-repeat:no-repeat;
+        color:rgba(darkblue,.7);
     }
 }
 .button-account{

@@ -3,31 +3,10 @@
 		<form class="register-container" id="registerForm" name="registerForm" ng-submit="doRegister(registerForm)" accept-charset="utf-8" novalidate>
 
                 <div class="list list-inset">
-                    <label class="item item-input">
-                        <i ng-if="focusedRegisterName === true" class="icon ion-ios-people placeholder-icon"></i>
-                        <i ng-if="focusedRegisterName === false" class="icon ion-ios-person placeholder-icon"></i>
-                        <input type="text" name="name" ng-focus="focusedRegisterName = true" ng-change=""
-                               ng-blur="focusedRegisterName = false" ng-model="user.name" placeholder="Nombre" required>
-                    </label>
-                    <label class="item item-input">
-                        <i ng-if="focusedRegisterEmail === true" class="icon ion-ios-email placeholder-icon"></i>
-                        <i ng-if="focusedRegisterEmail === false" class="icon ion-ios-email placeholder-icon"></i>
-                        <input type="text" name="email" ng-focus="focusedRegisterEmail = true"
-                               ng-blur="focusedRegisterEmail = false" ng-model="user.email" placeholder="Correo Electrónico" required>
-                    </label>
-                    <label class="item item-input">
-                        <i ng-if="focusedRegisterPhone === true" class="icon ion-ios-telephone placeholder-icon"></i>
-                        <i ng-if="focusedRegisterPhone === false" class="icon ion-ios-telephone placeholder-icon"></i>
-                        <input type="tel"  name="phone" ng-focus="focusedRegisterPhone = true"
-                               ng-blur="focusedRegisterPhone = false" ng-model="user.phone" placeholder="Teléfono" required>
-                    </label>
-
-                    <label class="item item-input">
-                        <i ng-if="focusedRegisterPass === true" class="icon ion-ios-locked placeholder-icon"></i>
-                        <i ng-if="focusedRegisterPass === false" class="icon ion-ios-locked placeholder-icon"></i>
-                        <input type="password" name="pass" ng-focus="focusedRegisterPass = true "
-                               ng-blur="focusedRegisterPass = false" ng-model="user.password" placeholder="Contraseña" required>
-                    </label>
+                    <input class="item item-input inputs-general input-user" type="text" name="name" ng-model="user.name" placeholder="Nombre" required>
+                    <input class="item item-input inputs-general input-email" type="text" name="email" ng-model="user.email" placeholder="Correo Electrónico" required>
+                    <input class="item item-input inputs-general input-phone" type="tel" name="phone" ng-model="user.phone" placeholder="Teléfono" required>
+                    <input class="item item-input inputs-general input-pass" type="password" name="pass" ng-model="user.password" placeholder="Contraseña" required>
                     <a type="submit" class="item item-input button button-block button-default-two" ng-disabled="registerForm.$invalid"> <span>Crear cuenta</span> </a>
                     <p class="item item-input register-term text-center"  title="">Al registrarte aceptas las <span> &nbsp; politicas de privacidad </span></p>
                     <p class="item item-input register-term text-center">  y <span> &nbsp;los términos y condiciones &nbsp;</span> de Axpress.</p>

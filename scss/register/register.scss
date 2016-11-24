@@ -32,9 +32,7 @@
     min-width: 100%;
 }
 .item{
-    border-color:white;
-    border-width: 2px;
-    border-radius: 25px !important;
+    border:none;
 }
 .item-input{
     background-color: transparent;
@@ -43,19 +41,6 @@
     min-height: 45px !important;
     min-width: 80%;
     width: 80%;
-    i{
-        color:white;
-    }
-    input{
-        padding-left: 5%;
-        padding-top: 0;
-        margin: 0 !important;
-        color: white !important;
-        min-height: 100% !important;
-        min-width: 100% !important;
-        height: 100% !important;
-        width: 100% !important;
-    }
 }
 .register-line{
     border-bottom:1px solid white;
@@ -122,21 +107,14 @@
         background-color: transparent;
     }
 }
-.button:hover{
-    border:none;
-    background-color: transparent !important;
-}
-.button:active{
-    border:none;
-    background-color: transparent !important;
-}
 .register-term{
     @include display-flex;
     @include flex-direction(row);
     @include align-items(center);
     @include justify-content(center);
+    border:none !important;
+    background-color: transparent !important;
     padding-left: 0;
-    border:none!important;
 	color:white !important;
 	font-size: 10px;
 	text-decoration: none;

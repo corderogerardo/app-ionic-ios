@@ -1,0 +1,41 @@
+.input-email{
+    background-image: url("../img/CorreoElectronico/CorreoElectronicomdpi.png");
+    background-size: 100%;
+    background-repeat:no-repeat;
+    &:focus{
+            background-image: url("../img/CorreoElectronicoTAP/CorreoElectronicomdpi.png");
+            background-size: 100%;
+            background-repeat:no-repeat;
+    }
+
+}
+.input-pass{
+    background-image: url("../img/Contrasena/Contrasenamdpi.png");
+    background-size: 100%;
+    background-repeat:no-repeat;
+    &:focus{
+        background-image: url("../img/ContrasenaTAP/Contrasenamdpi.png");
+        background-size: 100%;
+        background-repeat:no-repeat;
+    }
+}
+.input-user{
+    background-image: url("../img/Usuario/Usuariohdpi.png");
+    background-size: 100%;
+    background-repeat:no-repeat;
+    &:focus{
+        background-image: url("../img/UsuarioTAP/Usuariohdpi.png");
+        background-size: 100%;
+        background-repeat:no-repeat;
+    }
+}
+.input-phone{
+    background-image: url("../img/Telefono/Telefonohdpi.png");
+    background-size: 100%;
+    background-repeat:no-repeat;
+    &:focus{
+        background-image: url("../img/TelefonoTAP/Telefonohdpi.png");
+        background-size: 100%;
+        background-repeat:no-repeat;
+    }
+}

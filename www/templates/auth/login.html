@@ -2,21 +2,11 @@
 	<ion-content scroll="false" class="axpress-bg">
     <section class="register-container">
 
-    <div class="list list-inset">
-        <label class="item item-input">
-            <i ng-if="focusedRegisterEmail === true" class="icon ion-ios-email placeholder-icon"></i>
-            <i ng-if="focusedRegisterEmail === false" class="icon ion-ios-email placeholder-icon"></i>
-            <input ng-model="user.email" ng-focus="focusedLogin = true"
-                   ng-blur="focusedLogin = false"  type="email" placeholder="Correo Electrónico">
-        </label>
-        <label class="item item-input">
-            <i ng-if="focusedRegisterPass === true" class="icon ion-ios-locked placeholder-icon"></i>
-            <i ng-if="focusedRegisterPass === false" class="icon ion-ios-locked placeholder-icon"></i>
-            <input ng-model="user.password" ng-focus="focusedLoginPass = true"
-                   ng-blur="focusedLoginPass = false"  type="password" placeholder="Contraseña">
-        </label>
+    <div class="list list-inset ">
+        <input class="item item-input inputs-general input-email" ng-model="user.email" type="email" placeholder="Correo Electrónico">
+        <input class="item item-input inputs-general input-pass" ng-model="user.password" type="password" placeholder="Contraseña">
         <a class="item item-input button button-block button-default-two" ng-click="login()" title="">INICIAR SESIÓN</a>
-        <a class="item item-input register-term text-center" ui-sref="auth.forgotpassword">¿Olvidaste tu Contraseña?</a>
+        <a class="item item-input button button-block register-term text-center" ui-sref="auth.forgotpassword">¿Olvidaste tu Contraseña?</a>
 
     </div>
     </section>
