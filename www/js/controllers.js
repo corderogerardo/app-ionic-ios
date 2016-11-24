@@ -44,12 +44,6 @@
         activate();
 
         function activate() {
-            $scope.focusedLogin = false;
-            $scope.focusedLoginPass = false;
-            $scope.focusedForgot = false;
-            $scope.focusedRegisterName = false;
-            $scope.focusedRegisterPass = false;
-            $scope.focusedRegisterEmail = false;
 
             $scope.user = {};
             if (localStorage.getItem('axpress.user') && localStorage.getItem('axpress.menu')) {
