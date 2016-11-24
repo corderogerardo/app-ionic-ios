@@ -12,7 +12,7 @@
             scope: {
                 center: "=",
                 markers: "=",
-
+                callbacks: "="
             },
             templateUrl: 'templates/directives/addressSelection.html',
             controller: function ($scope) {
