@@ -149,7 +149,7 @@
                 $scope.map = map;
             });
             initialUIStates();
-            if ( $scope.data.destiniesData ) {
+            if ( Array.isArray($scope.data.destiniesData) && $scope.data.destiniesData.length > 0 ) {
                 var index = $scope.data.editStopIndex;
                 $scope.data.destiniesData.forEach(function(destiny, destIndex) {
                     $scope.markers.push({
