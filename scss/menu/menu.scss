@@ -1,52 +1,94 @@
-.select-send-type{
-	align-items: center;
-	display: flex;
-	height: 15%;
-	justify-content: center;
-}
-.select-send-type span{
-	align-items: center;
-	color:$graybbb;
-	display:flex;
-	justify-content: center;
-	font-size: 3vh;
-	height:50%;
-	text-align:center;
-	width: 100%;
-}
-.select-send-type a{
-	color:$royal;
-	margin: 0 5px;
-}
 .main-menu{
-	align-items: flex-start;
-	background-size: cover;
-	background-position: center;
-	display:flex;
-	flex-direction: row;
-	flex-wrap: wrap;
-	justify-content: space-around;
+    @include display-flex;
+    @include flex-direction(column);
+    @include align-items(center);
+    @include justify-content(space-around);
 	width:100%;
-	height:70%;
-}
-.main-menu-options{
-	align-items: center;
-	background-color:rgba(white,.8);
-	height:43%;
-	display:flex;
-	color:$balanced;
-	font-size: 2vh;
-	flex-direction: column;
-	justify-content: center;
-	text-align: center;
-	text-decoration: none;
-	width:43%;
-	img{
-		width:37%;
-		height:37%;
-		margin-bottom: 10%;
-	}
-	&:hover{
-	background-color: rgba(white,1);
-	}
+    height:100%;
+    min-height:100%;
+    a{
+        @include display-flex;
+        @include flex-direction(column);
+        @include align-items(center);
+        @include justify-content(center);
+        background-color: transparent;
+        height:25%;
+        min-height:25%;
+        color:white;
+        font-size: 3vh;
+        font-weight: bold;
+        text-align: center;
+        text-decoration: none;
+        width:40%;
+        &:hover{
+            background-color: transparent;
+        }
+        img{
+            border:none;
+        }
+        .img-0{
+            height: 100%;
+            min-height: 100%;
+            min-width: 100%;
+            width: 100%;
+            padding: 0;
+            margin: 0;
+            background-color: transparent;
+            background-image: url("../img/MenuDocumentos/Menudocumentosmdpi.png") !important;
+            background-size: 90%;
+            background-position: center;
+            background-repeat:no-repeat;
+            &:hover{
+                height: 100%;
+                min-height: 100%;
+                min-width: 100%;
+                width: 100%;
+                border:none !important;
+                background-color: transparent;
+                background-image: url("../img/MenudocumentosTAP/Menudocumentosmdpi.png") !important;
+                background-size: 90%;
+                background-position: center;
+                background-repeat:no-repeat;
+            }
+        }
+        .img-1{
+            height: 100%;
+            min-height: 100%;
+            min-width: 100%;
+            width: 100%;
+            border:none !important;
+            background-color: transparent;
+            background-image: url("../img/Menupaquetes/Menupaquetesmdpi.png") !important;
+            background-size: 90%;
+            background-position: center;
+            background-repeat:no-repeat;
+            &:hover{
+                border:none !important;
+                background-color: transparent;
+                background-image: url("../img/MenupaquetesTAP/Menupaquetesmdpi.png") !important;
+                background-size: 90%;
+                background-repeat:no-repeat;
+            }
+        }
+        .img-2{
+            height: 100%;
+            min-height: 100%;
+            min-width: 100%;
+            width: 100%;
+            border:none !important;
+            background-color: transparent;
+            background-image: url("../img/MenuDiligencias/Diligenciasmdpi.png") !important;
+            background-size: 90%;
+            background-position: center;
+            background-repeat:no-repeat;
+            &:hover{
+                border:none !important;
+                background-color: transparent;
+                background-image: url("../img/MenuDiligenciasTAP/Diligenciasmdpi.png") !important;
+                background-size: 90%;
+                background-repeat:no-repeat;
+            }
+        }
+    }
+
 }

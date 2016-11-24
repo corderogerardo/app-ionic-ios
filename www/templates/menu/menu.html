@@ -1,21 +1,9 @@
-<div class="bar bar-header bar-balanced">
-	 <h3 class="title">TIPOS DE ENVÍO</h3>
-</div>
-<ion-view view-title="SendType">
-	<ion-content scroll="false" >
-        <div class="space"></div>
-		<section class="select-send-type">
-			<span>Elige el tipo de envío que vas a realizar.</span>
-		</section>
+<ion-view view-title="Menu">
+	<ion-content scroll="false" overflow-scroll="false" class="axpress-bg" >
 		<section class="main-menu" >
 			<a ng-repeat="option in menuoptions" class="main-menu-options" title="{{option.title}}" ng-click="moveTo(option)">
-			<img src="img/ionic.png" alt="">
-			{{ option.title | uppercase }}
-			</a>
-
-            <a class="main-menu-options" href="#/account" title="">
-			<img src="img/ionic.png" alt="">
-			MI CUENTA
+                <img class="img-{{$index}}" />
+			{{ option.title }}
 			</a>
 		</section>
 	</ion-content>
