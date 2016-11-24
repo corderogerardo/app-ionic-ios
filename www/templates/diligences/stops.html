@@ -7,7 +7,7 @@
         <section class="sentresume-data">
             <section class="sentresume-content" ng-repeat="stops in data.destiniesData">
                 <div class="data-origin">
-                    <b>PARADA {{$index}}</b>
+                    <b>PARADA {{ $index + 1 }}</b>
                     <p>Address:{{ stops.address }} <br>Name:{{ stops.name }} <br> Phone:{{ stops.phone }}</p>
 
                 </div>

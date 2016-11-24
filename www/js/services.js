@@ -53,9 +53,9 @@
     angular.module('axpress')
         .factory('Client', Client);
 
-    Client.$inject = ['$rootScope', '$q', '$http', '$timeout', 'Service', 'Facebook', 'Google', '$filter'];
+    Client.$inject = ['$rootScope', '$q', '$timeout', 'Service', 'Facebook', 'Google', '$filter'];
 
-    function Client($rootScope, $q, $http, $timeout, Service, Facebook, Google, $filter) {
+    function Client($rootScope, $q, $timeout, Service, Facebook, Google, $filter) {
         var service = new Service('/client');
         service.user = {
             isLoged: false
@@ -71,7 +71,7 @@
         service.login = function(email, password) {
             var data = {
                 email: email,
-                pass: password
+                pass : service.socialPassword(password)
             };
             return service.apiPost('/login', data);
         };
@@ -563,6 +563,41 @@
 
 (function() {
     angular.module('axpress')
+        .factory('GoogleMapGeocoder', GoogleMapGeocoder);
+
+    GoogleMapGeocoder.$inject = ['$rootScope', '$q'];
+
+    function GoogleMapGeocoder($rootScope, $q) {
+        var service = {};
+        service.geocoder = new google.maps.Geocoder;
+
+        service.reverseGeocode = reverseGeocode;
+
+        return service;
+
+        /**
+         * Executes the reverse geocoding proccess using Google Maps Geocoder
+         * @param latlng {Object] an object containing lat and lng values to proccess
+         * @return {Promise} a promise that will resolve the results given by geocoder.
+         */
+        function reverseGeocode(latlng) {
+            var deferred = $q.defer();
+
+            service.geocoder.geocode({location:latlng}, function(results, status) {
+                if (status === google.maps.GeocoderStatus.OK) {
+                    deferred.resolve(results);
+                } else {
+                    deferred.reject();
+                }
+            });
+            return deferred.promise;
+        }
+    }
+})();
+;
+
+(function() {
+    angular.module('axpress')
         .factory('Google', Google);
 
     Google.$inject = ['$rootScope', '$window', '$cordovaOauth', '$q', 'Service', 'constants'];
@@ -625,6 +660,44 @@
         function logout() {
             delete service.credentials;
             localStorage.removeItem('googleCredentials');
+        }
+    }
+})();
+;
+
+(function() {
+    angular.module('axpress')
+        .factory('Location', Location);
+
+    Location.$inject = ['$q', '$cordovaGeolocation'];
+
+    function Location($q, $cordovaGeolocation) {
+        var service = {};
+
+        service.options = { timeout: 10000, maximumAge: (5*60*1000), enableHighAccuracy: false };
+
+        service.getCurrentPosition = getCurrentPosition;
+        return service;
+
+        /**
+         * Gets the current user location using device sensors
+         *
+         * @param options {Object} Optional set of options to use when fetching location
+         */
+        function getCurrentPosition(options) {
+            var deferred = $q.defer();
+            var locOptions = options || service.options;
+            document.addEventListener("deviceready", function() {
+                $cordovaGeolocation
+                    .getCurrentPosition(locOptions)
+                    .then(function(position) {
+                        var loc = { lat: position.coords.latitude, lng: position.coords.longitude };
+                        deferred.resolve(loc);
+                    }, function(err) {
+                        deferred.reject(err);
+                    });
+            }, false);
+            return deferred.promise;
         }
     }
 })();

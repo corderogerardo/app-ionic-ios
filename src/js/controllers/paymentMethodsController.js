@@ -44,6 +44,7 @@
         };
 
         function successfullyRegisteredRequest() {
+            $scope.data = {};
             $state.go("menu");
         }
 
