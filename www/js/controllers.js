@@ -344,8 +344,10 @@
         $scope.placeChanged = function(place) {
             $scope.place = (typeof place == "object" ? place : this.getPlace());
             $timeout(function() {
-                var marker = $scope.markers[$scope.markers.length - 1];
-                marker.position = $scope.place.geometry.location;
+                // If editing a previously added stop, edit that index plus one (because of the origin),
+                // If adding a destiny/stop, edit last
+                var index = ($scope.data.editStopIndex >= 0 ? ($scope.data.editStopIndex + 1) : ($scope.markers.length - 1));
+                $scope.markers[index].position = $scope.place.geometry.location;
             }, 0);
             if ( typeof place == "object" )
                 $scope.tempData.address = $scope.place.formatted_address;
@@ -372,7 +374,7 @@
 
         $scope.confirmDestiny = function() {
             if ( $state.params.serviceType == 45 ) {
-                if ( $scope.data.editStopIndex ) {
+                if ( $scope.data.editStopIndex >= 0 ) {
                     //Editing a previous added stop
                     var index = $scope.data.editStopIndex;
                     $scope.data.destiniesData[index] = getStopElement($scope.tempData);
@@ -470,39 +472,40 @@
             $scope.data = $state.current.data.data;
             $scope.extraData = $state.current.data.extraData;
             $scope.markers = [{
-                title   : 'Origen',
                 icon    : "{url: 'img/inputs/pin-mapa-check1.png', scaledSize: [48,48]}",
                 position: [$scope.data.originLatitude, $scope.data.originLongitude]
             }];
             $scope.tempData = {};
             $scope.address = "";
+            NgMap.getMap().then(function(map) {
+                $scope.map = map;
+            });
             initialUIStates();
             if ( $scope.data.destiniesData ) {
                 var index = $scope.data.editStopIndex;
-                if ( typeof index != "undefined" ) {
-                    $scope.tempData.phone = $scope.data.destiniesData[index].phone;
-                    $scope.tempData.address = $scope.data.destiniesData[index].address;
-                    $scope.tempData.name = $scope.data.destiniesData[index].name;
-                }
                 $scope.data.destiniesData.forEach(function(destiny, destIndex) {
                     $scope.markers.push({
-                        title    : 'Destino',
                         icon     : (destIndex == index ? "{url: 'img/inputs/pin-mapa2.png', scaledSize: [48,48]}" : "{url: 'img/inputs/pin-mapa-check2.png', scaledSize: [48,48]}"),
                         position : [destiny.latitude, destiny.longitude],
                         draggable: (destIndex == index)
                     });
                 });
+                if ( typeof index != "undefined" ) {
+                    var destiny = $scope.data.destiniesData[index];
+                    $scope.tempData.phone = destiny.phone;
+                    $scope.tempData.address = destiny.address;
+                    $scope.tempData.name = destiny.name;
+                    GoogleMapGeocoder.reverseGeocode({ lat: destiny.latitude, lng: destiny.longitude })
+                        .then(geocoderCallback);
+                }
             } else {
                 $scope.data.destiniesData = [];
                 $scope.markers.push({
-                    title    : 'Destino',
                     icon     : "{url: 'img/inputs/pin-mapa2.png', scaledSize: [48,48]}",
                     draggable: true
                 });
             }
-            NgMap.getMap().then(function(map) {
-                $scope.map = map;
-            });
+
             if ( $scope.data.destinyLatitude && $scope.data.destinyLongitude )
                 setExistingAddress();
         }

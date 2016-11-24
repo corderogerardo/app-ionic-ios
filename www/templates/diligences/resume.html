@@ -19,7 +19,7 @@
             <section class="sentresume-content">
                 <div class="data-origin">
                     <b>Paradas de la diligencia</b>
-                    <p ng-repeat="address in data.destiniesData">{{$index}}.{{ address.address }}</p>
+                    <p ng-repeat="address in data.destiniesData">{{ $index + 1 }}.{{ address.address }}</p>
 
                 </div>
                 <a class="stopsnumbers" title="">
@@ -43,9 +43,9 @@
             <section class="sentresume-content">
                 <div class="data-origin">
                     <b>Destinatarios</b>
-                    <p ng-repeat="destinatario in data.destiniesData">{{$index}}.{{ destinatario.name }}/{{ destinatario.phone }} .</p>
+                    <p ng-repeat="destinatario in data.destiniesData">{{ $index + 1 }}.{{ destinatario.name }}/{{ destinatario.phone }} .</p>
                 </div>
-                <a class="" ng-click="editDestinatary()" title="">
+                <a class="" ng-click="editDestiny()" title="">
                     <i class="ion-edit"></i>
                 </a>
             </section>
