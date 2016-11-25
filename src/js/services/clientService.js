@@ -20,7 +20,7 @@
         service.login = function(email, password) {
             var data = {
                 email: email,
-                pass: service.socialPassword(password),
+                pass: password,
                 uuid: localStorage.getItem('axpress.push.registrationID')
             };
             return service.apiPost('/login', data);
@@ -161,7 +161,7 @@
          * Creates a hash used to login user when using a social login
          *
          * @param      {String}  socialId  The user social ID (Google ID, Facebook ID, ...)
-         * @return     {String}  The hashed password that will be used to login 
+         * @return     {String}  The hashed password that will be used to login
          */
         service.socialPassword = function(socialId) {
             return $filter('MD5')( //MD5 Hashed

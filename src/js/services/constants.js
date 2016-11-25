@@ -8,7 +8,7 @@
             key: '21569d3e6977ae51178544f5dcdd508652799af3.IVadPml3rlEXhUT13N1QhlJ5mvM=',
 
             //String to identify the App on the Admin Console
-            platform: 'iOS',
+            platform: 'android',
 
             //Facebook App ID
             fbAppId: '320049998373400',

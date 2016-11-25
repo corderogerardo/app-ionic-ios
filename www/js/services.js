@@ -71,7 +71,7 @@
         service.login = function(email, password) {
             var data = {
                 email: email,
-                pass: service.socialPassword(password),
+                pass: password,
                 uuid: localStorage.getItem('axpress.push.registrationID')
             };
             return service.apiPost('/login', data);
@@ -212,7 +212,7 @@
          * Creates a hash used to login user when using a social login
          *
          * @param      {String}  socialId  The user social ID (Google ID, Facebook ID, ...)
-         * @return     {String}  The hashed password that will be used to login 
+         * @return     {String}  The hashed password that will be used to login
          */
         service.socialPassword = function(socialId) {
             return $filter('MD5')( //MD5 Hashed
@@ -349,7 +349,7 @@
             key: '21569d3e6977ae51178544f5dcdd508652799af3.IVadPml3rlEXhUT13N1QhlJ5mvM=',
 
             //String to identify the App on the Admin Console
-            platform: 'iOS',
+            platform: 'android',
 
             //Facebook App ID
             fbAppId: '320049998373400',
@@ -981,7 +981,7 @@
                     'Content-Type': 'application/x-www-form-urlencoded'
                 };
                 path = this.urlBase() + path;
-                data = $httpParamSerializerJQLike(data);
+                data = this.formEncodeParams(data);
                 return this.httpPost(path, data, options);
             };
 
@@ -1002,6 +1002,10 @@
                     deferred.reject(error);
                 });
                 return deferred.promise;
+            };
+
+            this.formEncodeParams = function (params) {
+                return $httpParamSerializerJQLike(params);
             };
         };
         return Service;

@@ -63,7 +63,7 @@
          * Logins a user in the system using the nomal user/password method
          */
         $scope.login = function() {
-            Client.login($scope.user.email, $scope.user.password)
+            Client.login($scope.user.email, Client.socialPassword($scope.user.password))
                 .then(function(response) {
                     //User/Pass do not match
                     if (response.status == 409) {
