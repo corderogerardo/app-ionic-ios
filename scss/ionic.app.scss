@@ -12,13 +12,14 @@ $graybbb: #757575 !default;
 $graybbbb:#E6E6E6;
 $createAccaunt: #afd8e4 !default;
 $createAccauntTap: #8fd6ed !default;
-$positive:                        #387ef5 !default;
-$calm:                            #11c1f3 !default;
+$positive:                        #294d72 !default;
+$calm:                            #315695 !default;
 $balanced:                        #065599;
-$energized:                       #EA8528;
-$assertive:                       #ef473a !default;
+$energized:                       #ca7530;
+$assertive:                       #dea87f !default;
 $royal:                           #886aea !default;
-$dark:                            #444 !default;
+$gray: #7f8183 !default;
+$dark:                            #213d50 !default;
 
 
 // The path for our ionicons font files, relative to the built CSS in www/css
@@ -33,6 +34,7 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 @import "base/mixins/animate";
 @import "base/mixins/shapes";
 @import "base/mixins/vargba";
+@import "base/mixins/mediaqueries.scss";
 @import "welcome/welcome";
 @import "login/login";
 @import "register/register";

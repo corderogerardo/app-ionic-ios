@@ -23,19 +23,23 @@
     background-image: url("../img/Usuario/Usuariohdpi.png");
     background-size: 100%;
     background-repeat:no-repeat;
+    background-position: center;
     &:focus{
         background-image: url("../img/UsuarioTAP/Usuariohdpi.png");
         background-size: 100%;
         background-repeat:no-repeat;
+        background-position: center;
     }
 }
 .input-phone{
     background-image: url("../img/Telefono/Telefonohdpi.png");
     background-size: 100%;
     background-repeat:no-repeat;
+    background-position: center;
     &:focus{
         background-image: url("../img/TelefonoTAP/Telefonohdpi.png");
         background-size: 100%;
         background-repeat:no-repeat;
+        background-position: center;
     }
 }

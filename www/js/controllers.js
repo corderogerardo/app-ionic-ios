@@ -653,7 +653,7 @@
 
         $scope.pickHere = function() {
             $scope.buttonState = true;
-            $scope.markers[0].icon = "{url: 'img/inputs/pin-mapa-check1.png', scaledSize: [48,48]}";
+            $scope.markers[0].icon = "{url: 'img/PinOrigen/Origenmdpi.png', scaledSize: [28,38]}";
         };
 
         $scope.confirmOrigin = function() {
@@ -724,7 +724,7 @@
             initialUIStates();
             $scope.markers = [{
                 title    : 'Origen',
-                icon     : "{url: 'img/inputs/pin-mapa1.png', scaledSize: [48,48]}",
+                icon     : "{url: 'img/PinOrigen/Origenmdpi.png', scaledSize: [28,38]}",
                 draggable: true
             }];
             if ( $scope.data.originAddress )

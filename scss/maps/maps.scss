@@ -2,17 +2,73 @@
 	height: 100%;
 	display:flex;
 }
+.bar{
+    border:none !important;
+}
+.bar-balanced{
+    border:none !important;
+}
+.bar-origin{
+    @include display-flex;
+    @include flex-direction(column);
+    @include align-items(center);
+    @include justify-content(flex-end);
+    background-color: rgba($balanced,.7) !important;
+    height: 150px;
+    min-height: 150px;
+    width: 100%;
+    min-width: 100%;
+    margin:0;
+    padding: 0;
+    padding-bottom: 5px !important;
+    h3{
+        width: 100%;
+        margin:0;
+        padding: 0;
+        min-width: 100%;
+        text-align: left !important;
+    }
+}
+.bar-sendtype{
+    @include display-flex;
+    @include flex-direction(column);
+    @include align-items(center);
+    @include justify-content(flex-end);
+    background-color: rgba($balanced,.7) !important;
+    height: 50px;
+    min-height: 50px;
+    width: 100%;
+    min-width: 100%;
+    margin:0;
+    padding: 0;
+    padding-bottom: 5px !important;
+    h3{
+        width: 100%;
+        margin:0;
+        padding: 0;
+        min-width: 100%;
+        text-align: left !important;
+    }
+}
 .input-direction{
-		align-items: center;
-		background-color: $graybbbb;
-	display:flex;
-	height:25%;
-	flex-direction: column;
-	width:100%;
-		position: absolute;
-		justify-content: center;
-		right: auto;
-
+    @include display-flex;
+    @include flex-direction(column);
+    @include align-items(center);
+    @include justify-content(flex-end);
+    map-autocomplete-address{
+        width: 90%;
+        min-width: 90%;
+        height: 100%;
+        min-height: 100%;
+        margin: 0;
+        padding: 0;
+    }
+    input{
+        width: 90%;
+        min-width: 90%;
+        margin: 0;
+        padding: 0;
+    }
 }
 
 .direction-marker{
@@ -27,55 +83,6 @@
 				}
 		}
 }
-@media screen and (max-height: 736px){
-		.input-direction{
-				top:5%;
-		}
-    .gps-button{
-        width:20%;
-        position:absolute;
-        right: 0%;
-        height:20%;
-        top: 25%;
-    }
-}
-@media screen and (max-height: 667px){
-		.input-direction{
-				top:6.8%;
-		}
-    .gps-button{
-        width:20%;
-        position:absolute;
-        right: 0%;
-        height:20%;
-        top: 27%;
-    }
-}
-@media screen and (max-height: 568px){
-		.input-direction{
-				top:11%;
-		}
-    .gps-button{
-        width:20%;
-        position:absolute;
-        right: 0%;
-        height:20%;
-        top: 30%;
-    }
-}
-@media screen and (max-height: 480px){
-		.input-direction{
-				top:9.7%;
-		}
-    .gps-button{
-        width:20%;
-        position:absolute;
-        right: 0%;
-        height:20%;
-        top: 30%;
-    }
-}
-
 .maps-list-places{
 		display: flex;
 		border:1px solid black;
@@ -93,12 +100,26 @@
     height:5%;
     bottom: 10%;
 }
-.pickuphere-button{
-	width:90%;
-	position:absolute;
-	left: 5%;
-	height:5%;
-	bottom: 3%;
+.button-confirm-position{
+    width:80%;
+    left: 0;
+    height:5%;
+    bottom: 3%;
+}
+.button-confirm{
+    color: white !important;
+    background-color: transparent;
+    background-image: url("../img/Botoncontinuar/BotonContinuarmdpi.png") !important;
+    background-size: 100%;
+    background-repeat:no-repeat;
+    background-position: center;
+    &:focus{
+        color: $dark !important;
+        background-image: url("../img/Cajadetextoorigen/Origenmdpi.png");
+        background-size: 100%;
+        background-repeat:no-repeat;
+        background-position: center;
+    }
 }
 .confirm-button{
 	width:90%;
@@ -108,6 +129,9 @@
 	bottom: 3%;
 	a{
 		background-color:$energized;
+        &:hover{
+            background-color:$energized;
+        }
 	}
 }
 .confirm-button-traditional{
@@ -143,3 +167,35 @@
 	height:10%;
 	width:80%;
 }
+.input-origin{
+    color: $dark !important;
+    background-image: url("../img/Cajadetextoorigen/Origenmdpi.png");
+    background-size: 100%;
+    background-repeat:no-repeat;
+    background-position: center;
+    &:focus{
+        color: $dark !important;
+        background-image: url("../img/Cajadetextoorigen/Origenmdpi.png");
+        background-size: 100%;
+        background-repeat:no-repeat;
+        background-position: center;
+    }
+}
+.input-originDetail{
+    color: $dark !important;
+    background-image: url("../img/Detalles/Detallesmdpi.png");
+    background-size: 100%;
+    background-repeat:no-repeat;
+    background-position: center;
+    &:focus{
+        color: $dark !important;
+        background-image: url("../img/Detalles/Detallesmdpi.png");
+        background-size: 100%;
+        background-repeat:no-repeat;
+        background-position: center;
+    }
+}
+.button-gps{
+    @include media-icons("../img/Ubicacion/Ubicacionmdpi.png","../img/Ubicacion/Ubicacionhdpi.png","../img/Ubicacion/Ubicacionxhdpi.png","../img/Ubicacion/Ubicacionxxhdpi.png","../img/Ubicacion/Ubicacionxxxhdpi.png","../img/Ubicacion/Ubicacionmdpi.png","../img/Ubicacion/Ubicacionhdpi.png","../img/Ubicacion/Ubicacionxhdpi.png","../img/Ubicacion/Ubicacionxxhdpi.png","../img/Ubicacion/Ubicacionxxxhdpi.png");
+}
+
