@@ -6,6 +6,7 @@
     angular.module('axpress')
         .directive('mapAutocompleteAddress', mapAutocompleteAddress);
 
+
     function mapAutocompleteAddress() {
         return {
             restrict: 'EA',
@@ -29,7 +30,6 @@
                  */
                 $scope.disableTap = function(event) {
                     var input = event.target;
-
                     // Get the predictions element
                     var container = document.getElementsByClassName('pac-container');
                     container = angular.element(container);
@@ -44,6 +44,7 @@
 
                     // Leave the input field if a prediction is chosen
                     container.on('click', function() {
+                        $scope.focused = true;
                         input.blur();
                     });
                 };

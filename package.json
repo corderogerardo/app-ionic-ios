@@ -18,6 +18,12 @@
     "shelljs": "^0.3.0"
   },
   "cordovaPlugins": [
+    "ionic-plugin-deploy",
+    "cordova-plugin-screen-orientation",
+    {
+      "locator": "https://git-wip-us.apache.org/repos/asf/cordova-plugin-inappbrowser.git",
+      "id": "cordova-plugin-inappbrowser"
+    },
     "cordova-plugin-device",
     "cordova-plugin-console",
     "cordova-plugin-whitelist",
@@ -27,7 +33,15 @@
     "cordova-plugin-camera",
     "cordova-plugin-compat",
     "cordova-plugin-image-picker",
-    "cordova-plugin-inappbrowser"
+    "com-badrit-base64",
+    {
+      "id": "phonegap-plugin-push",
+      "locator": "phonegap-plugin-push",
+      "variables": {
+        "SENDER_ID": "1068552996185"
+      }
+    },
+    "cordova-plugin-geolocation"
   ],
   "cordovaPlatforms": []
 }

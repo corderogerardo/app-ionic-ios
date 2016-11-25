@@ -4,25 +4,31 @@
 <ion-view view-title="SendType">
 		<ion-content scroll="false" >
 
-				<address-selection center="place" markers="markers"></address-selection>
+				<address-selection center="place" markers="markers" callbacks="mapCallbacks"></address-selection>
 
 				<div class="input-direction">
 						<div class="inputs-container">
-								<i class="icon-marker-color2"></i>
+                            <i ng-if="focused === true" class="icon-marker-color2"></i>
+                            <i ng-if="focused === false" class="icon-marker-gray"></i>
 								<label>
-										<map-autocomplete-address on-place-changed="placeChanged" address="address"></map-autocomplete-address>
+										<map-autocomplete-address on-place-changed="placeChanged" address="tempData.address"></map-autocomplete-address>
 								</label>
 						</div>
 						<div class="inputs-container-last flag-maps">
-								<i class="icon-flag-color2"></i>
+                            <i ng-if="focused2 === true" class="icon-flag-color2"></i>
+                            <i ng-if="focused2 === false" class="icon-flag-gray"></i>
 								<label>
-										<input ng-model="data.destinyDetail" type="text" placeholder="Detalles de direccion">
+										<input ng-model="data.destinyDetail" ng-focus="focused2 = true"
+                                               ng-blur="focused2 = false" type="text" placeholder="Detalles de direccion">
 								</label>
 						</div>
 				</div>
-
-				<div class="pickuphere-button">
-						<a class="button-noicon" ng-click="confirmDestiny()" title="">ENTREGAR AQUÍ</a>
+            <i class="gps-button icon-location-color2" ng-click="gpsHere()" title=""></i>
+            <div ng-if="buttonState === false" class="pickuphere-button">
+                <a class="button-noicontwo" ng-click="pickHere()" title="">ENTREGAR AQUÍ</a>
+            </div>
+            <div ng-if="buttonState === true" class="pickuphere-button">
+						<a class="button-noicontwo" ng-click="confirmDestiny()" title="">CONFIRMAR</a>
 				</div>
 		</ion-content>
 </ion-view>

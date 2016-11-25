@@ -3,14 +3,37 @@
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	height: 55%;
+	height: 60%;
+}
+.sentresume-content-top{
+    display:flex;
+    border-bottom: 1px solid $graybbb;
+    border-top: 1px solid $graybbb;
+    flex-direction: row;
+    height:55%;
+    width: 92%;
+    padding-top: 1%;
+    padding-bottom: 1%;
 }
 .sentresume-content{
 	display:flex;
 	border-bottom: 1px solid $graybbb;
 	flex-direction: row;
-	height:55%;
+	height:58%;
 	width: 92%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
+.stopsnumbers{
+    align-items: center;
+    background-color: $energized;
+    border-radius: 50%;
+    display: flex;
+    flex-direction:row;
+    justify-content: center;
+    color:white;
+    width: 20px;
+    height: 18px;
 }
 .data-origin{
 	align-items: flex-start;
@@ -22,9 +45,14 @@
 		font-size:2vh;
 	}
 	p{
+        align-items:flex-start;
 		margin-top: 0;
 		margin-bottom:0;
+        padding-left: 5%;
 		font-size:2vh;
+        width: 100%;
+        height: 100%;
+        text-align: left;
 	}
 }
 .sentresume-content-noborder{
@@ -39,11 +67,11 @@
 	color:$graybbb;
 	display:flex;
 	font-size: 4vh;
-    margin-top: 5%;
-    margin-bottom: 5%;
+    margin-top: 3%;
+    margin-bottom: 2%;
 	flex-direction: row;
 	justify-content: space-around;
-	height:13%;
+	height:12%;
 }
 .sentresume-button{
 	align-items: center;

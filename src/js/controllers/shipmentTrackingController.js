@@ -2,9 +2,10 @@
     angular.module('axpress')
         .controller('ShipmentTrackingController', ShipmentTrackingController);
 
-    ShipmentTrackingController.$inject = ['$rootScope', '$scope', '$cordovaDialogs', '$state', 'NgMap'];
+    ShipmentTrackingController.$inject = ['$rootScope', '$scope', '$state', 'NgMap'];
 
-    function ShipmentTrackingController($rootScope, $scope, $cordovaDialogs, $state, NgMap) {
+    function ShipmentTrackingController($rootScope, $scope, $state, NgMap) {
+
         $scope.originAdd = $rootScope.originLocation.toString().replace("(", "").replace(")", "");
         $scope.destinyAdd = $rootScope.originDestinyLocation.toString().replace("(", "").replace(")", "");
 

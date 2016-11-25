@@ -58,7 +58,7 @@ angular.module('axpress', [
         .state('account', {
             url: '/account',
             templateUrl: 'templates/account/account.html',
-            controller: 'AccountController',
+            controller: 'AccountController'
         })
         .state('history', {
             url: '/history',
@@ -117,6 +117,7 @@ angular.module('axpress', [
                     featuresNext: 'document.receiver',
                     receiverNext: 'document.photo',
                     photoNext: 'document.resume',
+                    resumeNext: 'document.paymentmethods',
                 }
             },
             params: {
@@ -172,8 +173,10 @@ angular.module('axpress', [
                     originNext: 'package.destiny',
                     destinyNext: 'package.features',
                     featuresNext: 'package.receiver',
-                    receiverNext: 'package.photo',
+                    receiverNext: 'package.package',
+                    packageNext: 'package.photo',
                     photoNext: 'package.resume',
+                    resumeNext: 'package.paymentmethods',
                 }
             },
             params: {
@@ -199,6 +202,11 @@ angular.module('axpress', [
             url: '/receiver',
             templateUrl: 'templates/packages/receiver.html',
             controller:'ReceiverController'
+        })
+        .state('package.package', {
+            url: '/package',
+            templateUrl: 'templates/packages/package.html',
+            controller:'FeaturesController'
         })
         .state('package.photo', {
             url: '/photo',
@@ -226,16 +234,20 @@ angular.module('axpress', [
                 data: {},
                 extraData: {
                     flow: 'diligence',
+                    clientNext: 'diligence.origin',
                     originNext: 'diligence.destiny',
-                    destinyNext: 'diligence.features',
-                    featuresNext: 'diligence.receiver',
-                    receiverNext: 'diligence.photo',
-                    photoNext: 'diligence.resume',
+                    destinyNext: 'diligence.resume',
+                    resumeNext:'diligence.paymentmethods'
                 }
             },
             params: {
                 serviceType: null
             }
+        })
+        .state('diligence.clientfeatures', {
+            url: '/clientfeatures',
+            templateUrl: 'templates/diligences/clientfeature.html',
+            controller: 'FeaturesController'
         })
         .state('diligence.origin', {
             url: '/origin',
@@ -251,21 +263,6 @@ angular.module('axpress', [
             url: '/stops',
             templateUrl: 'templates/diligences/stops.html',
             controller: 'StopsController'
-        })
-        .state('diligence.features', {
-            url: '/features',
-            templateUrl: 'templates/diligences/features.html',
-            controller: 'FeaturesController'
-        })
-        .state('diligence.receiver', {
-            url: '/receiver',
-            templateUrl: 'templates/diligences/receiver.html',
-            controller:'ReceiverController'
-        })
-        .state('diligence.photo', {
-            url: '/photo',
-            templateUrl: 'templates/diligences/photo.html',
-            controller:'PhotoController'
         })
         .state('diligence.resume', {
             url: '/resume',
@@ -289,7 +286,7 @@ angular.module('axpress', [
             url: '/shipmentverification',
             templateUrl: 'templates/shipmentverification/shipmentverification.html'
         });
-        
+
     $urlRouterProvider.otherwise('/');
 
     //Ionic Cloud Configurations

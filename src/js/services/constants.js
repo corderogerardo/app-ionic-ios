@@ -31,6 +31,8 @@
                 { name: 'Recogido', value: 2 },
                 { name: 'Entregado', value: 3 },
                 { name: 'Cancelado', value: 4 }
-            ]
+            ],
+            //Deligences destinies' address maximum
+            diligencesMaxDestinies: 5
         });
 })();

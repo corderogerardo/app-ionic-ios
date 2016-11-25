@@ -2,8 +2,8 @@
      geo-fallback-center="{{fallbackCenter}}"
      zoom="11" class="main-container-maps"
      zoom-control="false" map-type-control="false"
-     street-view-control="false" >
+     street-view-control="false" on-click="callbacks.mapTapped()" on-dblclick="callbacks.mapDoubleTap()">
 
-    <marker ng-repeat="marker in markers" position="{{marker.position}}"
-            title="{{marker.title}}"></marker>
+    <marker ng-repeat="marker in markers" icon="{{marker.icon}}" position="{{marker.position || fallbackCenter}}"
+            title="{{marker.title}}" draggable="{{marker.draggable}}" class="marker-origin" on-dragend="callbacks.markerDragend()"></marker>
 </map>
