@@ -351,16 +351,16 @@
         $scope.pickHere = function() {
             $scope.buttonState = true;
             var marker = $scope.markers[$scope.markers.length - 1];
-            marker.icon = "{url: 'img/inputs/pin-mapa-check2.png', scaledSize: [48,48]}";
+            marker.icon = "{url: 'img/Pindestino/Pindetsinomdpi.png', scaledSize: [28,38]}";
             marker.draggable = false;
         };
 
         $scope.addNewAddress = function() {
             var lastMarker = $scope.markers[$scope.markers.length - 1];
             lastMarker.draggable = false;
-            lastMarker.icon = "{url: 'img/inputs/pin-mapa-check2.png', scaledSize: [48,48]}";
+            lastMarker.icon = "{url: 'img/Pindestino/Pindetsinomdpi.png', scaledSize: [28,38]}";
             $scope.markers.push({
-                icon: "{url: 'img/inputs/pin-mapa2.png', scaledSize: [48,48]}"
+                icon: "{url: 'img/Pindestino/Pindetsinomdpi.png', scaledSize: [28,38]}"
             });
             $scope.data.destiniesData.push(getStopElement($scope.tempData));
             resetTempData();
@@ -454,19 +454,12 @@
             };
         }
 
-        function initialUIStates() {
-            $scope.focused = false;
-            $scope.focused2 = false;
-            $scope.buttonState = false;
-            $scope.focusedphonedestinatary = false;
-            $scope.focusednamedestinatary = false;
-        }
 
         function activate() {
             $scope.data = $state.current.data.data;
             $scope.extraData = $state.current.data.extraData;
             $scope.markers = [{
-                icon    : "{url: 'img/inputs/pin-mapa-check1.png', scaledSize: [48,48]}",
+                icon    : "{url: 'img/PinOrigen/Origenmdpi.png', scaledSize: [28,38]}",
                 position: [$scope.data.originLatitude, $scope.data.originLongitude]
             }];
             $scope.tempData = {};
@@ -474,12 +467,11 @@
             NgMap.getMap().then(function(map) {
                 $scope.map = map;
             });
-            initialUIStates();
             if ( Array.isArray($scope.data.destiniesData) && $scope.data.destiniesData.length > 0 ) {
                 var index = $scope.data.editStopIndex;
                 $scope.data.destiniesData.forEach(function(destiny, destIndex) {
                     $scope.markers.push({
-                        icon     : (destIndex == index ? "{url: 'img/inputs/pin-mapa2.png', scaledSize: [48,48]}" : "{url: 'img/inputs/pin-mapa-check2.png', scaledSize: [48,48]}"),
+                        icon     : (destIndex == index ? "{url: 'img/Pindestino/Pindetsinomdpi.png', scaledSize: [28,38]}" : "{url: 'img/Pindestino/Pindetsinomdpi.png', scaledSize: [28,38]}"),
                         position : [destiny.latitude, destiny.longitude],
                         draggable: (destIndex == index)
                     });
@@ -495,7 +487,7 @@
             } else {
                 $scope.data.destiniesData = [];
                 $scope.markers.push({
-                    icon     : "{url: 'img/inputs/pin-mapa2.png', scaledSize: [48,48]}",
+                    icon     : "{url: 'img/Pindestino/Pindetsinomdpi.png', scaledSize: [28,38]}",
                     draggable: true
                 });
             }
@@ -512,9 +504,9 @@
     angular.module('axpress')
         .controller('FeaturesController', FeaturesController);
 
-    FeaturesController.$inject = ['$rootScope', '$scope', '$state'];
+    FeaturesController.$inject = ['$rootScope', '$scope', '$state','Location','NgMap','$timeout','GoogleMapGeocoder'];
 
-    function FeaturesController($rootScope, $scope, $state) {
+    function FeaturesController($rootScope, $scope, $state,Location, NgMap,$timeout,GoogleMapGeocoder) {
         activate();
 
         $scope.confirmServiceType = function() {
@@ -528,7 +520,18 @@
                 $state.go($scope.extraData.featuresNext);
             }
         };
-
+        $scope.placeChanged = function(place) {
+            $scope.place = (typeof place == "object" ? place : this.getPlace());
+            $timeout(function() {
+                // If editing a previously added stop, edit that index plus one (because of the origin),
+                // If adding a destiny/stop, edit last
+                var index = ($scope.data.editStopIndex >= 0 ? ($scope.data.editStopIndex + 1) : ($scope.markers.length - 1));
+                $scope.markers[index].position = $scope.place.geometry.location;
+            }, 0);
+            if ( typeof place == "object" )
+                $scope.tempData.address = $scope.place.formatted_address;
+            $scope.focused = true;
+        };
         $scope.confirmPackage = function() {
 
             if ($scope.extraData.navigateTo) {
@@ -547,11 +550,22 @@
                 $state.go($scope.extraData.clientNext);
             }
         };
-
+        function setMapCenter(position) {
+            $scope.map.setCenter(position);
+        }
         function setExistingChoice() {
             $scope.choice = {
                 bag: $scope.data.bagId
             };
+        }
+        function geocoderCallback(results) {
+            $scope.placeChanged(results[0]);
+            setMapCenter(results[0].geometry.location);
+        }
+        function setExistingAddress() {
+            var latlng = { lat: $scope.data.destinyLatitude, lng: $scope.data.destinyLongitude };
+            GoogleMapGeocoder.reverseGeocode(latlng)
+                .then(geocoderCallback);
         }
 
         function activate() {
@@ -567,6 +581,40 @@
             if ($scope.data.bagId) {
                 setExistingChoice();
             }
+            $scope.markers = [{
+                icon    : "{url: 'img/PinOrigen/Origenmdpi.png', scaledSize: [28,38]}",
+                position: [$scope.data.originLatitude, $scope.data.originLongitude]
+            }];
+            $scope.tempData = {};
+            $scope.address = "";
+            NgMap.getMap().then(function(map) {
+                $scope.map = map;
+            });
+            if ( Array.isArray($scope.data.destiniesData) && $scope.data.destiniesData.length > 0 ) {
+                var index = $scope.data.editStopIndex;
+                $scope.data.destiniesData.forEach(function(destiny, destIndex) {
+                    $scope.markers.push({
+                        icon     : (destIndex == index ? "{url: 'img/Pindestino/Pindetsinomdpi.png', scaledSize: [28,38]}" : "{url: 'img/Pindestino/Pindetsinomdpi.png', scaledSize: [28,38]}"),
+                        position : [destiny.latitude, destiny.longitude],
+                    });
+                });
+                if ( typeof index != "undefined" ) {
+                    var destiny = $scope.data.destiniesData[index];
+                    $scope.tempData.phone = destiny.phone;
+                    $scope.tempData.address = destiny.address;
+                    $scope.tempData.name = destiny.name;
+                    GoogleMapGeocoder.reverseGeocode({ lat: destiny.latitude, lng: destiny.longitude })
+                        .then(geocoderCallback);
+                }
+            } else {
+                $scope.data.destiniesData = [];
+                $scope.markers.push({
+                    icon     : "{url: 'img/Pindestino/Pindetsinomdpi.png', scaledSize: [28,38]}",
+                });
+            }
+
+            if ( $scope.data.destinyLatitude && $scope.data.destinyLongitude )
+                setExistingAddress();
         }
     }
 })();
