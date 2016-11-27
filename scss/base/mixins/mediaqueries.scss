@@ -1,3 +1,9 @@
+@mixin widheigh($minh,$hei,$minw,$wid){
+    min-height: $minh;
+    height: $hei;
+    min-width: $minw;
+    width: $wid;
+}
 @mixin media-icons($img:'',$img2:'',$img3:'',$img4:'',$img5:'',$imgTap:'',$imgTap2:'',$imgTap3:'',$imgTap4:'',$imgTap5:''){
     border:none !important;
     background-color: transparent;

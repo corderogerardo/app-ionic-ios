@@ -152,18 +152,22 @@
     }
 }
 .input-user-dest{
+    color:$balanced !important;
     padding-left: 20% !important;
     @include media-inputs("../img/Usuariodestinatario/Page1mdpi.png","../img/Usuariodestinatario/Page1hdpi.png","../img/Usuariodestinatario/Page1xhdpi.png","../img/Usuariodestinatario/Page1xxhdpi.png","../img/Usuariodestinatario/Page1xxxhdpi.png","../img/UsuariodestinatarioTAP/Usuariodestinatariomdpi.png","../img/UsuariodestinatarioTAP/Usuariodestinatariohdpi.png","../img/UsuariodestinatarioTAP/Usuariodestinatarioxhdpi.png","../img/UsuariodestinatarioTAP/Usuariodestinatarioxxhdpi.png","../img/UsuariodestinatarioTAP/Usuariodestinatarioxxxhdpi.png");
 }
 .input-email-dest{
+    color:$balanced !important;
     padding-left: 20% !important;
     @include media-inputs("../img/Correodestinatario/CorreoElectronicomdpi.png","../img/Correodestinatario/CorreoElectronicohdpi.png","../img/Correodestinatario/CorreoElectronicoxhdpi.png","../img/Correodestinatario/CorreoElectronicoxxhdpi.png","../img/Correodestinatario/CorreoElectronicoxxxhdpi.png","../img/CorreodestinatarioTAP/CorreoElectronicomdpi.png","../img/CorreodestinatarioTAP/CorreoElectronicohdpi.png","../img/CorreodestinatarioTAP/CorreoElectronicoxhdpi.png","../img/CorreodestinatarioTAP/CorreoElectronicoxxhdpi.png","../img/CorreodestinatarioTAP/CorreoElectronicoxxxhdpi.png");
 }
 .input-phone-dest{
+    color:$balanced !important;
     padding-left: 20% !important;
     @include media-inputs("../img/Telefonodestinatario/Telefonodestinatariomdpi.png","../img/Telefonodestinatario/Telefonodestinatariohdpi.png","../img/Telefonodestinatario/Telefonodestinatarioxhdpi.png","../img/Telefonodestinatario/Telefonodestinatarioxxhdpi.png","../img/Telefonodestinatario/Telefonodestinatarioxxxhdpi.png","../img/TelefonodestinatarioTAP/Telefonodestinatariomdpi.png","../img/TelefonodestinatarioTAP/Telefonodestinatariohdpi.png","../img/TelefonodestinatarioTAP/Telefonodestinatarioxhdpi.png","../img/TelefonodestinatarioTAP/Telefonodestinatarioxxhdpi.png","../img/TelefonodestinatarioTAP/Telefonodestinatarioxxhdpi.png");
 }
 .input-dni-dest{
+    color:$balanced !important;
     padding-left: 20% !important;
     @include media-inputs("../img/Ceduladestinatario/Cedulamdpi.png","../img/Ceduladestinatario/Cedulahdpi.png","../img/Ceduladestinatario/Cedulaxhdpi.png","../img/Ceduladestinatario/Cedulaxxhdpi.png","../img/Ceduladestinatario/Cedulaxxxhdpi.png","../img/CeduladestinatarioTAP/Cedulamdpi.png","../img/CeduladestinatarioTAP/Cedulahdpi.png","../img/CeduladestinatarioTAP/Cedulaxhdpi.png","../img/CeduladestinatarioTAP/Cedulaxxhdpi.png","../img/CeduladestinatarioTAP/Cedulaxxxhdpi.png")
 }
