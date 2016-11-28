@@ -11,21 +11,14 @@
 
         return service;
 
-        function pushReceived (event, notification) {
-            console.log("-----------PUSH----------------");
-            console.log(JSON.stringify(event));
-            console.log(JSON.stringify(notification));
-        }
-
         function listenForEvent () {
-            $rootScope.$on('$cordovaPushV5:notificationReceived', pushReceived);
-            $rootScope.$on('$cordovaPush:notificationReceived', pushReceived);
-            $rootScope.$on('$cordovaPushV5:errorOcurred', function(event, e){
-                console.log("PUSH error");
+            $rootScope.$on('$cordovaPushV5:notificationReceived', function (event, data) {
+                console.log("-----------PUSH----------------");
+                console.log(JSON.stringify(data));
             });
 
-            $rootScope.$on('pushNotificationReceived', function (event, notification) {
-                console.log("pushNotificationReceived");
+            $rootScope.$on('$cordovaPushV5:errorOcurred', function(event, e) {
+                console.log("PUSH error");
             });
         }
 
@@ -38,26 +31,27 @@
                 ios: {
                     alert: "true",
                     badge: "true",
-                    sound: "true"
+                    sound: "true",
+                    senderID: constants.pushSenderID,
                 }
             };
 
-            if (!localStorage.getItem('axpress.push.registrationID')) {
-                document.addEventListener("deviceready", function() {
-                    $cordovaPushV5.initialize(pushOptions)
-                        .then(function () {
-                            // start listening for new notifications
-                            $cordovaPushV5.onNotification();
-                            // start listening for errors
-                            $cordovaPushV5.onError();
+            document.addEventListener("deviceready", function() {
+                $cordovaPushV5.initialize(pushOptions)
+                    .then(function () {
+                        console.log("inside initialize");
+                        // start listening for new notifications
+                        $cordovaPushV5.onNotification();
+                        // start listening for errors
+                        $cordovaPushV5.onError();
 
-                            $cordovaPushV5.register().then(function(registrationId) {
-                                localStorage.setItem('axpress.push.registrationID', registrationId);
-                            });
+                        $cordovaPushV5.register().then(function(registrationId) {
+                            console.log("REGISTRATION ID:" + registrationId);
+                            localStorage.setItem('axpress.push.registrationID', registrationId);
+                            listenForEvent();
                         });
-                }, false);
-            }
-            listenForEvent();
+                    });
+            }, false);
         }
     }
 })();
