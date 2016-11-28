@@ -1,58 +1,29 @@
-<div class="bar bar-header bar-balanced">
-	<h3 class="title">DESTINARIO</h3>
+<div class="bar bar-header bar-balanced bar-sendtype">
+    <h3 class="title">Destinario</h3>
 </div>
 <ion-view view-title="Caracteristicas">
-	<ion-content scroll="false" >
-		<div class="space">
-		</div>
-		<section class="caracteristics-title">
-			<div>
-				Escribe los datos de quien recibirá el envío.
-			</div>
-		</section>
-		<section class="caracteristics-container">
-			<div class="caracteristics-inputs">
-				<div class="inputs-container">
-                    <i ng-if="focusedReceiverEmail === true" class="icon-email"></i>
-                    <i ng-if="focusedReceiverEmail === false" class="icon-flag-gray"></i>
-					<label class="">
-						<input type="email" name="email" ng-focus="focusedReceiverEmail = true"
-                               ng-blur="focusedReceiverEmail = false" ng-model="data.emailDestinyClient" placeholder="Correo Electrónico">
-					</label>
-				</div>
-				<div class="inputs-container">
-                    <i ng-if="focusedReceiverName === true" class="icon-user"></i>
-                    <i ng-if="focusedReceiverName === false" class="icon-flag-gray"></i>
-					<label class="">
-						<input type="text"  name="username" ng-focus="focusedReceiverName = true"
-                               ng-blur="focusedReceiverName = false" ng-model="data.destinyName" placeholder="Nombre de Usuario">
-					</label>
-				</div>
+    <ion-content scroll="false" overflow-scroll="false">
+        <section class="caracteristics-container">
+            <section class="caracteristics-title">
+                <div>
+                    Escribe los datos de quien
+                </div>
+                <div>
+                    recibirá el documento.
+                </div>
+            </section>
+            <div class="list list-inset">
+                <input class="item item-input inputs-general input-user-dest" type="text"  name="username" ng-model="data.destinyName" placeholder="Nombre de Usuario">
+                <input class="item item-input inputs-general input-email-dest" type="email" name="email" ng-model="data.emailDestinyClient" placeholder="Correo Electrónico">
+                <input class="item item-input inputs-general input-phone-dest" type="tel" name="phone" ng-model="data.cellphoneDestinyClient"  placeholder="Teléfono">
+                <input class="item item-input inputs-general input-dni-dest" type="text" name="cinit" ng-model="data.destinyClient" placeholder="Cédula o NIT">
+            </div>
 
-				<div class="inputs-container">
-                    <i ng-if="focusedReceiverPhone === true" class="icon-phone"></i>
-                    <i ng-if="focusedReceiverPhone === false" class="icon-flag-gray"></i>
-					<label class="">
-						<input type="tel" name="phone" ng-focus="focusedReceiverPhone = true"
-                               ng-blur="focusedReceiverPhone = false" ng-model="data.cellphoneDestinyClient"  placeholder="Teléfono">
-					</label>
-				</div>
-				<div class="inputs-container">
-                    <i ng-if="focusedReceiverCI === true" class="icon-cinit"></i>
-                    <i ng-if="focusedReceiverCI === false" class="icon-flag-gray"></i>
-					<label class="">
-						<input type="text" name="cinit" ng-focus="focusedReceiverCI = true"
-                               ng-blur="focusedReceiverCI = false" ng-model="data.destinyClient" placeholder="Cédula o NIT">
-					</label>
-				</div>
-			</div>
-		</section>
-		<div class="button-bottom">
-
-			<div class="container-button">
-				<a class="button-noicon" ng-click="saveCaracteristics()" title="">CONTINUAR</a>
-			</div>
-		</div>
-		`
-	</ion-content>
+        </section>
+        <div class="hide-on-keyboard-open row button-bottom-two button-confirm-position">
+            <a class="button button-block button-default-two button-confirm" ng-click="saveCaracteristics()">
+                Continuar
+            </a>
+        </div>
+    </ion-content>
 </ion-view>
