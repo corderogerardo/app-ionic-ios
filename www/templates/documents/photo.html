@@ -7,18 +7,15 @@
             <div ng-if="imageData ==='' "></div>
             <img ng-if="imageData" class="photo-image" border="0" ng-src="{{imageData}}" title="Agrega una imagen de tu envío"/>
         </div>
-
         <section class="photo-container-takeselect">
             <take-photo on-photo-taken="photoTaken"></take-photo>
             <div></div>
             <select-photo on-photo-selected="photoSelected"></select-photo>
         </section>
-
         <div class="list list-inset no-margin-top">
             <input type="number" class="item item-input inputs-general input-text-box" min="0" name="declaredvalue" ng-model="data.amountDeclared" placeholder="Valor declarado:Ej. 1000">
             <input type="text" class="item item-input inputs-general input-text-box" name="shortdescription" ng-model="data.descriptionText" placeholder="Breve descripción">
         </div>
-
         <div class="hide-on-keyboard-open row button-bottom-two button-confirm-position">
             <a class="button button-block button-default-two button-confirm" ng-click="confirmImagePhoto()">
                 Continuar

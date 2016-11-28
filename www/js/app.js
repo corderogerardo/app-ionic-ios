@@ -168,9 +168,9 @@ angular.module('axpress', [
                     originNext: 'package.destiny',
                     destinyNext: 'package.features',
                     featuresNext: 'package.receiver',
-                    receiverNext: 'package.package',
-                    packageNext: 'package.photo',
-                    photoNext: 'package.resume',
+                    receiverNext: 'package.photo',
+                    photoNext: 'package.package',
+                    packageNext: 'package.resume',
                     resumeNext: 'package.paymentmethods',
                 }
             },
