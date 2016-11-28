@@ -1,28 +1,63 @@
 .sentresume-data{
-	align-items: center;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	height: 60%;
+    @include display-flex;
+    @include flex-direction(column);
+    @include align-items(center);
+    @include justify-content(center);
+    @include widheigh(70%,70%,100%,100%);
+    color:$balanced;
+    margin-top: 20%;
+
 }
 .sentresume-content-top{
-    display:flex;
-    border-bottom: 1px solid $graybbb;
-    border-top: 1px solid $graybbb;
-    flex-direction: row;
-    height:55%;
-    width: 92%;
+    @include display-flex;
+    @include flex-direction(row);
+    @include align-items(flex-start);
+    @include justify-content(center);
+    @include widheigh(20%,20%,80%,80%);
     padding-top: 1%;
     padding-bottom: 1%;
+    a{
+        @include display-flex;
+        @include flex-direction(row);
+        @include align-items(flex-start);
+        @include justify-content(center);
+        @include widheigh(100%,100%,25%,25%);
+        color: $energized;
+    }
+}
+.sentresume-content-mid{
+    @include display-flex;
+    @include flex-direction(row);
+    @include align-items(flex-start);
+    @include justify-content(center);
+    @include widheigh(15%,15%,80%,80%);
+    padding-top: 1%;
+    padding-bottom: 1%;
+    a{
+        @include display-flex;
+        @include flex-direction(row);
+        @include align-items(flex-start);
+        @include justify-content(center);
+        @include widheigh(100%,100%,25%,25%);
+        color: $energized;
+    }
 }
 .sentresume-content{
-	display:flex;
-	border-bottom: 1px solid $graybbb;
-	flex-direction: row;
-	height:58%;
-	width: 92%;
+    @include display-flex;
+    @include flex-direction(row);
+    @include align-items(flex-start);
+    @include justify-content(center);
+    @include widheigh(25%,25%,80%,80%);
     padding-top: 1%;
     padding-bottom: 1%;
+    a{
+        @include display-flex;
+        @include flex-direction(row);
+        @include align-items(flex-start);
+        @include justify-content(center);
+        @include widheigh(100%,100%,25%,25%);
+        color: $energized;
+    }
 }
 .stopsnumbers{
     align-items: center;
@@ -36,11 +71,12 @@
     height: 18px;
 }
 .data-origin{
-	align-items: flex-start;
-	display:flex;
-	flex-direction: column;
+    @include display-flex;
+    @include flex-direction(column);
+    @include align-items(flex-start);
+    @include justify-content(center);
 	margin:0;
-	width:95%;
+	width:75%;
 	b{
 		font-size:2vh;
 	}
@@ -62,16 +98,14 @@
 	width: 80%;
 }
 .sentresume-cost{
-    background-color: $graybbbb;
-	align-items: center;
-	color:$graybbb;
-	display:flex;
+    @include display-flex;
+    @include flex-direction(row);
+    @include align-items(center);
+    @include justify-content(center);
+    @include widheigh(5%,5%,100%,100%);
+	color:$balanced;
 	font-size: 4vh;
-    margin-top: 3%;
-    margin-bottom: 2%;
-	flex-direction: row;
-	justify-content: space-around;
-	height:12%;
+    font-weight: bold;
 }
 .sentresume-button{
 	align-items: center;
