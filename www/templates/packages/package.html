@@ -1,42 +1,60 @@
-+<div class="bar bar-header bar-balanced">
-     <h1 class="title">CARACTERÍSTICAS</h1>
-</div>
-<ion-view view-title="SendType">
-    <ion-content scroll="false" >
-        <div class="space"></div>
-        <section class="caracteristics-title">
-            <div>
-                <span>Diligencia la siguiente información.</span>
+<ion-side-menus enable-menu-with-back-views="false">
+    <ion-side-menu-content>
+        <ion-nav-bar class="bar-balanced menu-bg">
+            <ion-nav-back-button>
+            </ion-nav-back-button>
+            <ion-nav-buttons side="left">
+                <button class="button button-icon button-clear ion-navicon" menu-toggle="left">
+                </button>
+            </ion-nav-buttons>
+        </ion-nav-bar>
+        <ion-nav-view name="mainContent">
+            <div class="bar bar-header bar-balanced">
+                <h1 class="title">CARACTERÍSTICAS</h1>
             </div>
-        </section>
+            <ion-view view-title="SendType">
+                <ion-content scroll="false" >
+                    <div class="space"></div>
+                    <section class="caracteristics-title">
+                        <div>
+                            <span>Diligencia la siguiente información.</span>
+                        </div>
+                    </section>
 
-        <section class="package-options">
-            <div class="package-container">
-                <label for="Altura">Altura</label>
-                    <input type="number" name="" min="0" ng-model="data.height" value="" placeholder="CM">
-            </div>
-            <div class="package-container">
-                <label for="Ancho">Ancho</label>
-                <input type="number" name="" min="0" value="" ng-model="data.width" placeholder="CM">
+                    <section class="package-options">
+                        <div class="package-container">
+                            <label for="Altura">Altura</label>
+                            <input type="number" name="" min="0" ng-model="data.height" value="" placeholder="CM">
+                        </div>
+                        <div class="package-container">
+                            <label for="Ancho">Ancho</label>
+                            <input type="number" name="" min="0" value="" ng-model="data.width" placeholder="CM">
 
-            </div>
-            <div class="package-container">
-                <label for="Longitud">Longitud</label>
-                <input type="number" name="" min="0" value="" ng-model="data.longitude" placeholder="CM">
-            </div>
-            <div class="package-container">
-                <label for="Peso">Peso</label>
-                <input type="number" name="" min="0" value="" ng-model="data.weight" placeholder="Kg">
-            </div>
-        </section>
-        <section class="package-icon">
-            <img src="img/inputs/Paquete2-144x144.png" alt="">
-        </section>
-        <section class="button-bottom">
+                        </div>
+                        <div class="package-container">
+                            <label for="Longitud">Longitud</label>
+                            <input type="number" name="" min="0" value="" ng-model="data.longitude" placeholder="CM">
+                        </div>
+                        <div class="package-container">
+                            <label for="Peso">Peso</label>
+                            <input type="number" name="" min="0" value="" ng-model="data.weight" placeholder="Kg">
+                        </div>
+                    </section>
+                    <section class="package-icon">
+                        <img src="img/inputs/Paquete2-144x144.png" alt="">
+                    </section>
+                    <section class="button-bottom">
 
-            <div class="container-button">
-                <a class="button-noicon" ng-click="confirmPackage()" title="">CONTINUAR</a>
-            </div>
-        </section>
-    </ion-content>
-</ion-view>
+                        <div class="container-button">
+                            <a class="button-noicon" ng-click="confirmPackage()" title="">CONTINUAR</a>
+                        </div>
+                    </section>
+                </ion-content>
+            </ion-view>
+
+        </ion-nav-view>
+    </ion-side-menu-content>
+    <ion-side-menu side="left">
+        <sidebar-menu> </sidebar-menu>
+    </ion-side-menu>
+</ion-side-menus>

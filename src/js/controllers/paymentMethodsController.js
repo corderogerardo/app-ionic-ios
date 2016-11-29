@@ -45,7 +45,7 @@
 
         function successfullyRegisteredRequest() {
             $scope.data = {};
-            $state.go("menu");
+            $state.go("menu",null,{reload:true});
         }
 
         function activate() {

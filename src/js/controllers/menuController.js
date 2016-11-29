@@ -2,9 +2,9 @@
     angular.module('axpress')
         .controller('MenuController', MenuController);
 
-    MenuController.$inject = ['$rootScope', '$scope', '$state'];
+    MenuController.$inject = ['$rootScope', '$scope', '$state','$window'];
 
-    function MenuController($rootScope, $scope, $state) {
+    function MenuController($rootScope, $scope, $state,$window) {
         $scope.menuoptions = $rootScope.menu;
 
         var urlsPerServiceType = {
