@@ -13,7 +13,7 @@ angular.module('axpress', [
     'LocalStorageModule'
 ])
 
-.run(['$ionicPlatform', '$rootScope', '$state', function($ionicPlatform, $rootScope, $state) {
+.run(['$ionicPlatform', '$rootScope', '$state', '$stateParams', function($ionicPlatform, $rootScope, $state, $stateParams) {
     $ionicPlatform.ready(function() {
         if (window.cordova && window.cordova.plugins.Keyboard) {
             // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
@@ -41,6 +41,10 @@ angular.module('axpress', [
 
     //Configure moment
     moment.locale('es');
+
+    //State vars
+    $rootScope.$state = $state;
+    $rootScope.$stateParams = $stateParams;
 }])
 
 .config(['$stateProvider', '$urlRouterProvider', '$ionicCloudProvider', function($stateProvider, $urlRouterProvider, $ionicCloudProvider) {
@@ -72,7 +76,7 @@ angular.module('axpress', [
         })
         .state('menu', {
             url: '/menu',
-            templateUrl: 'templates/menu/sidebar.html',
+            templateUrl: 'templates/menu/menu.html',
             controller: 'MenuController'
         })
         /**
@@ -96,10 +100,6 @@ angular.module('axpress', [
             url: '/forgotpassword',
             templateUrl: 'templates/auth/forgotpassword.html'
         })
-
-        /**
-         * SideMenu Options
-         */
         /**
          * Document States
          */
