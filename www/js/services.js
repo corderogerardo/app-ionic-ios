@@ -362,7 +362,6 @@
             shipmentStatuses: [
                 { name: 'No Asignado', value: 10 },
                 { name: 'Asignado', value: 1 },
-                //Pending to be confirmed
                 { name: 'Recogido', value: 2 },
                 { name: 'Entregado', value: 3 },
                 { name: 'Cancelado', value: 4 }
@@ -760,6 +759,7 @@
         service.session = session;
         service.updateLocation = updateLocation;
         service.cancelService = cancelService;
+        service.getLocation = getLocation;
 
         return service;
 
@@ -795,6 +795,19 @@
                 longitude: longitude
             };
             return service.apiPost('/updateLocation', data);
+        }
+
+        /**
+         * Gets the logistic resource location.
+         *
+         * @param      {Integer}  logisticresourceId  The logisticresource identifier
+         * @return     {Promise}  A promise to resolve results
+         */
+        function getLocation(logisticresourceId) {
+            var data = {
+                logisticresource_id: logisticresourceId
+            };
+            return service.apiPost('/getLocation', data);
         }
 
         /**

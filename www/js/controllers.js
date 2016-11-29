@@ -582,9 +582,9 @@
     angular.module('axpress')
         .controller('HistoryController', HistoryController);
 
-    HistoryController.$inject = ['$rootScope', '$scope', 'history', 'constants'];
+    HistoryController.$inject = ['$rootScope', '$scope', 'history', 'constants', '$state', 'logisticResource'];
 
-    function HistoryController($rootScope, $scope, history, constants) {
+    function HistoryController($rootScope, $scope, history, constants, $state, logisticResource) {
         activate();
 
         var openShipping = null; //Locally save the id of the currently open shipping
@@ -622,6 +622,30 @@
                 item.status = findStatusText(item.status);
             });
             $scope.history = tempHistory;
+            // Detailed history
+            if ($state.params.shippingId) {
+                $scope.shipping = $scope.history.filter(function (item) {
+                    return item.shipping_id == parseInt($state.params.shippingId);
+                }).pop();
+                console.log($state);
+                console.log($scope.shipping);
+                loadMarkers();
+                loadCourierPosition();
+            }
+
+            function loadCourierPosition () {
+                logisticResource.getLocation($scope.shipping.currier.currier_id).then(function (response) {
+                    
+                });
+            }
+
+            function loadMarkers () {
+                $scope.markers = [{
+                    position: "["+$scope.shipping.originLatitude+","+$scope.shipping.originLongitude+"]"
+                }, {
+                    position: "["+$scope.shipping.destinyLatitude+","+$scope.shipping.destinyLongitude+"]"
+                }];
+            }
         }
     }
 })();
@@ -986,32 +1010,6 @@
 
 (function() {
     angular.module('axpress')
-        .controller('ShipmentTrackingController', ShipmentTrackingController);
-
-    ShipmentTrackingController.$inject = ['$rootScope', '$scope', '$state', 'NgMap'];
-
-    function ShipmentTrackingController($rootScope, $scope, $state, NgMap) {
-
-        $scope.originAdd = $rootScope.originLocation.toString().replace("(", "").replace(")", "");
-        $scope.destinyAdd = $rootScope.originDestinyLocation.toString().replace("(", "").replace(")", "");
-
-        NgMap.getMap().then(function(map) {
-            $scope.map = map;
-        });
-
-        $scope.goToChat = function() {
-            $state.go("chat");
-        };
-
-        $scope.goToCall = function() {
-            console.log("Call phone number...");
-        };
-    }
-})();
-;
-
-(function() {
-    angular.module('axpress')
         .controller('StopsController', StopsController);
     StopsController.$inject = ['$rootScope', '$scope', '$state', 'Logger'];
 
@@ -1032,6 +1030,81 @@
         function activate() {
             $scope.data = $state.current.data.data;
             $scope.extraData = $state.current.data.extraData;
+        }
+    }
+})();
+;
+
+(function() {
+    angular.module('axpress')
+        .controller('TrackingController', TrackingController);
+
+    TrackingController.$inject = ['$rootScope', '$scope', '$state', 'history', 'constants', 'logisticResource', '$timeout'];
+
+    function TrackingController($rootScope, $scope, $state, history, constants, logisticResource, $timeout) {
+        activate();
+
+        $scope.loadCourierPosition = loadCourierPosition;
+
+        $scope.goToCall = function() {
+            console.log("Call phone number...");
+        };
+
+        function findStatusText (status) {
+            return constants.shipmentStatuses.find(function (statusType) {
+                return status == statusType.value;
+            });
+        }
+
+        function loadCourierPosition () {
+            logisticResource.getLocation($scope.shipping.currier.currier_id).then(function (data) {
+                if (data.return && data.status == 200) {
+                    loadMarkers(data.data);
+                }
+            });
+        }
+
+        function loadMarkers (courier) {
+            var markers = [{
+                position: [$scope.shipping.origin_latitude, $scope.shipping.origin_longitude],
+                icon    : "{url: 'img/inputs/pin-mapa-check1.png', scaledSize: [48,48]}",
+                title: 'Origen'
+            }, {
+                position: [$scope.shipping.destiny_latitude, $scope.shipping.destiny_longitude],
+                icon    : "{url: 'img/inputs/pin-mapa-check2.png', scaledSize: [48,48]}",
+                title: 'Destino'
+            }];
+
+            if (courier) {
+                markers.push({
+                    position: [courier.latitud, courier.longitud],
+                    icon    : "{url: 'img/inputs/pin-mapa2.png', scaledSize: [48,48]}",
+                    title: 'Courier'
+                });
+            }
+            $timeout(function(){
+                $scope.markers = markers;
+            }, 0);
+        }
+
+        function activate () {
+            var tempHistory = history.data.remitent.concat(history.data.receptor);
+            tempHistory.forEach(function (item) {
+                if (item.currier) {
+                    item.currier.fullName = item.currier.name + ' ' + item.currier.last;
+                }
+                item.status = findStatusText(item.status);
+            });
+            $scope.history = tempHistory;
+            // Detailed history
+            if ($state.params.shippingId) {
+                $scope.shipping = $scope.history.filter(function (item) {
+                    return item.shipping_id == parseInt($state.params.shippingId);
+                }).pop();
+                console.log($scope.shipping);
+                loadMarkers();
+                loadCourierPosition();
+            }
         }
     }
 })();

@@ -31,8 +31,8 @@
 								<p>VALOR: ${{item.amount}} COP</p>
 								<p>TIPO DE SOLICITUD: {{item.service}}</p>
 							</div>
-							<div class="historial-button" ng-if="item.status.value != 10 && item.status.value != 4">
-								<a href="" title="" ui-sref="chat({shippingId: '898'})">VER RECORRIDO</a>
+							<div class="historial-button">
+								<a href="" title="" ui-sref="tracking({shippingId: item.shipping_id})">VER RECORRIDO</a>
 							</div>
 						</div>
 					</ion-item>

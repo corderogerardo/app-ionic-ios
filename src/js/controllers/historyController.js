@@ -2,9 +2,9 @@
     angular.module('axpress')
         .controller('HistoryController', HistoryController);
 
-    HistoryController.$inject = ['$rootScope', '$scope', 'history', 'constants'];
+    HistoryController.$inject = ['$rootScope', '$scope', 'history', 'constants', '$state', 'logisticResource'];
 
-    function HistoryController($rootScope, $scope, history, constants) {
+    function HistoryController($rootScope, $scope, history, constants, $state, logisticResource) {
         activate();
 
         var openShipping = null; //Locally save the id of the currently open shipping
@@ -42,6 +42,30 @@
                 item.status = findStatusText(item.status);
             });
             $scope.history = tempHistory;
+            // Detailed history
+            if ($state.params.shippingId) {
+                $scope.shipping = $scope.history.filter(function (item) {
+                    return item.shipping_id == parseInt($state.params.shippingId);
+                }).pop();
+                console.log($state);
+                console.log($scope.shipping);
+                loadMarkers();
+                loadCourierPosition();
+            }
+
+            function loadCourierPosition () {
+                logisticResource.getLocation($scope.shipping.currier.currier_id).then(function (response) {
+                    
+                });
+            }
+
+            function loadMarkers () {
+                $scope.markers = [{
+                    position: "["+$scope.shipping.originLatitude+","+$scope.shipping.originLongitude+"]"
+                }, {
+                    position: "["+$scope.shipping.destinyLatitude+","+$scope.shipping.destinyLongitude+"]"
+                }];
+            }
         }
     }
 })();

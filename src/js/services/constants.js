@@ -27,7 +27,6 @@
             shipmentStatuses: [
                 { name: 'No Asignado', value: 10 },
                 { name: 'Asignado', value: 1 },
-                //Pending to be confirmed
                 { name: 'Recogido', value: 2 },
                 { name: 'Entregado', value: 3 },
                 { name: 'Cancelado', value: 4 }

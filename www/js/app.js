@@ -277,10 +277,15 @@ angular.module('axpress', [
         /**
          * Shipment States
          */
-        .state('shipmenttracking', {
-            url: '/shipmenttracking',
-            templateUrl: 'templates/shipmenttracking/shipmenttracking.html',
-            controller:'ShipmentTrackingController'
+        .state('tracking', {
+            url: '/tracking/:shippingId',
+            templateUrl: 'templates/tracking/tracking.html',
+            controller:'TrackingController',
+            resolve: {
+                history: function (Shipping, $rootScope) {
+                    return Shipping.history($rootScope.user.id);
+                }
+            }
         })
         .state('shipmentverification', {
             url: '/shipmentverification',
