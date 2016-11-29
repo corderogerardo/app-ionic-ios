@@ -50,11 +50,6 @@ angular.module('axpress', [
             templateUrl: 'templates/welcome/welcome.html',
             controller: 'AuthController'
         })
-        .state('menu', {
-            url: '/menu',
-            templateUrl: 'templates/menu/menu.html',
-            controller: 'MenuController'
-        })
         .state('account', {
             url: '/account',
             templateUrl: 'templates/account/account.html',
@@ -74,6 +69,11 @@ angular.module('axpress', [
                     return Chat.history($stateParams.shippingId);
                 }
             }
+        })
+        .state('menu', {
+            url: '/menu',
+            templateUrl: 'templates/menu/sidebar.html',
+            controller: 'MenuController'
         })
         /**
          * Authentication Routes
@@ -96,6 +96,10 @@ angular.module('axpress', [
             url: '/forgotpassword',
             templateUrl: 'templates/auth/forgotpassword.html'
         })
+
+        /**
+         * SideMenu Options
+         */
         /**
          * Document States
          */

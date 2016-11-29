@@ -684,10 +684,10 @@
         .controller('OriginController', DocumentOriginController);
 
     DocumentOriginController.$inject = ['$rootScope', '$scope', '$state', 'Location', 'NgMap',
-        '$timeout', 'GoogleMapGeocoder'];
+        '$timeout', 'GoogleMapGeocoder','sidebarMenu'];
 
     function DocumentOriginController($rootScope, $scope, $state, Location, NgMap,
-                                      $timeout, GoogleMapGeocoder) {
+                                      $timeout, GoogleMapGeocoder,sidebarMenu) {
         activate();
 
         $scope.placeChanged = function(place) {

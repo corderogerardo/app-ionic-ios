@@ -24,7 +24,7 @@
             }
         };
     }
-})();
+})()
 ;
 
 // Drag up for the menu
@@ -44,7 +44,7 @@
             }
         };
     }
-})();
+})()
 ;
 
 /**
@@ -100,7 +100,7 @@
             }
         };
     }
-})();
+})()
 ;
 
 /**
@@ -153,7 +153,23 @@
         };
     }
 
-})();;
+})()
+;
+
+(function () {
+    angular.module('axpress')
+        .directive('sidebarMenu', sidebarMenu);
+
+    function sidebarMenu () {
+        return {
+            restric: 'EA',
+            scope: {
+            },
+            templateUrl: 'templates/directives/sidebarMenu.html'
+        };
+    }
+})()
+;
 
 /**
  * @desc helps take a photo using cordova libraries
@@ -200,7 +216,6 @@
                 $scope.options = Object.assign(tempOptions, $scope.options);
             }, false);
         }
-
         $scope.takePhoto = function () {
             $cordovaCamera.getPicture($scope.options)
                 .then(function(imageData){
@@ -211,5 +226,4 @@
                 });
         };
     }
-
-})();
+})()

@@ -100,5 +100,76 @@
             }
         }
     }
-
 }
+.menu-bg{
+    background-color: transparent !important;
+    border: none !important;
+}
+.bar,
+.bar-header{
+    border-color: transparent !important;
+    background-image: none !important;
+}
+.bar.bar-positive {
+      border-color: transparent !important;
+      background-image: none !important;
+     color: #fff;
+ }
+.side-menu-title{
+    @include display-flex;
+    @include flex-direction(row);
+    @include align-items(center);
+    @include justify-content(center);
+    @include widheigh(30%,20%,100%,100%);
+    background-color: $positive !important;
+    .side-menu-container-user{
+        @include display-flex;
+        @include flex-direction(row);
+        @include align-items(center);
+        @include justify-content(center);
+        @include widheigh(50%,50%,100%,100%);
+        .side-menu-photo{
+            @include display-flex;
+            @include flex-direction(row);
+            @include align-items(center);
+            @include justify-content(center);
+            @include widheigh(100%,100%,25%,25%);
+            margin-right: 5%;
+            margin-left: 10%;
+        }
+        .side-menu-user{
+            @include display-flex;
+            @include flex-direction(column);
+            @include justify-content(center);
+            @include widheigh(100%,100%,65%,65%);
+        }
+    }
+}
+.side-menu-content{
+    @include display-flex;
+    @include flex-direction(column);
+    @include align-items(flex-start);
+    @include justify-content(center);
+    @include widheigh(100%,100%,100%,100%);
+    background-color: $dark;
+    ion-list{
+        @include display-flex;
+        @include flex-direction(column);
+        @include align-items(flex-start);
+        @include justify-content(center);
+        @include widheigh(50%,50%,100%,100%);
+        margin-top: 30%;
+        background-color: $dark !important;
+        a{
+            color:white !important;
+            font-weight: bold;
+            background-color: $dark !important;
+        }
+    }
+    ion-item{
+        color:white !important;
+        font-weight: bold;
+        background-color: $dark !important;
+    }
+}
+

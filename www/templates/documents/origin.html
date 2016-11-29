@@ -1,24 +1,74 @@
-<div class="bar bar-header bar-balanced bar-origin">
-    <h3 class="title">Origen</h3>
-    <div class="list list-inset input-direction">
-        <map-autocomplete-address class="item item-input inputs-general input-origin" on-place-changed="placeChanged" address="address">
-        </map-autocomplete-address>
-        <input class="item item-input inputs-general input-originDetail" ng-model="data.originDetail" type="text" placeholder="Detalles: Apt - Casa - Oficina">
+<ion-side-menus enable-menu-with-back-views="false">
+    <ion-side-menu-content>
+        <ion-nav-bar class="bar-balanced menu-bg">
+            <ion-nav-back-button>
+            </ion-nav-back-button>
 
-    </div>
-</div>
-<ion-view view-title="SendType">
-		<ion-content scroll="false" overflow-scroll="false">
-				<address-selection center="place" markers="markers" callbacks="mapCallbacks"></address-selection>
+            <ion-nav-buttons side="left">
+                <button class="button button-icon button-clear ion-navicon" menu-toggle="left">
+                </button>
+            </ion-nav-buttons>
+        </ion-nav-bar>
+        <ion-nav-view name="mainContent">
+            <div class="bar bar-header bar-balanced bar-origin">
+                <h3 class="title">Origen</h3>
+                <div class="list list-inset input-direction">
+                    <map-autocomplete-address class="item item-input inputs-general input-origin" on-place-changed="placeChanged" address="address">
+                    </map-autocomplete-address>
+                    <input class="item item-input inputs-general input-originDetail" ng-model="data.originDetail" type="text" placeholder="Detalles: Apt - Casa - Oficina">
 
-
-            <i class="hide-on-keyboard-open row button-bottom-three button-gps" ng-click="gpsHere()" title=""></i>
-
-            <div class="hide-on-keyboard-open row button-bottom-two button-confirm-position">
-                <a class="button button-block button-default-two button-confirm" ng-click="confirmOrigin()">
-                    Confirmar origen
-                </a>
+                </div>
             </div>
-		</ion-content>
-</ion-view>
+            <ion-view view-title="SendType">
+                <ion-content scroll="false" overflow-scroll="false">
+                    <address-selection center="place" markers="markers" callbacks="mapCallbacks"></address-selection>
+
+
+                    <i class="hide-on-keyboard-open row button-bottom-three button-gps" ng-click="gpsHere()" title=""></i>
+
+                    <div class="hide-on-keyboard-open row button-bottom-two button-confirm-position">
+                        <a class="button button-block button-default-two button-confirm" ng-click="confirmOrigin()">
+                            Confirmar origen
+                        </a>
+                    </div>
+                </ion-content>
+            </ion-view>
+        </ion-nav-view>
+    </ion-side-menu-content>
+
+    <ion-side-menu side="left">
+        <ion-header-bar class="bar-positive">
+            <h1 class="title">Navigation</h1>
+        </ion-header-bar>
+        <ion-content>
+            <ion-list>
+                <ion-item menu-close href="#/menu/main">
+                    Home
+                </ion-item>
+                <ion-item menu-close href="#/app/aboutus">
+                    About Us
+                </ion-item>
+                <ion-item menu-close href="#/app/menu">
+                    Menu
+                </ion-item>
+                <ion-item menu-close href="#/app/contactus">
+                    Contact Us
+                </ion-item>
+                <ion-item class="item-divider">
+                    Services
+                </ion-item>
+                <ion-item menu-close ng-click="login()">
+                    Login
+                </ion-item>
+                <ion-item menu-close ng-click="reserve()">
+                    Reserve Table
+                </ion-item>
+                <ion-item menu-close href="#/app/favorites">
+                    My Favorites
+                </ion-item>
+
+            </ion-list>
+        </ion-content>
+    </ion-side-menu>
+</ion-side-menus>
 

@@ -43,7 +43,6 @@
                 $scope.options = Object.assign(tempOptions, $scope.options);
             }, false);
         }
-
         $scope.takePhoto = function () {
             $cordovaCamera.getPicture($scope.options)
                 .then(function(imageData){
@@ -54,5 +53,4 @@
                 });
         };
     }
-
-})();
+})()
