@@ -30,27 +30,6 @@
         text-align: left !important;
     }
 }
-.bar-sendtype{
-    @include display-flex;
-    @include flex-direction(column);
-    @include align-items(center);
-    @include justify-content(flex-end);
-    background-color: rgba($balanced,.7) !important;
-    height: 50px;
-    min-height: 50px;
-    width: 100%;
-    min-width: 100%;
-    margin:0;
-    padding: 0;
-    padding-bottom: 5px !important;
-    h3{
-        width: 100%;
-        margin:0;
-        padding: 0;
-        min-width: 100%;
-        text-align: left !important;
-    }
-}
 .input-direction{
     @include display-flex;
     @include flex-direction(column);

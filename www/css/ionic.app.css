@@ -10912,7 +10912,7 @@ ion-slide {
   -moz-justify-content: center;
   justify-content: center;
   min-height: 30%;
-  height: 20%;
+  height: 30%;
   min-width: 100%;
   width: 100%;
   background-color: #294d72 !important; }
@@ -11046,20 +11046,1002 @@ ion-slide {
     -webkit-justify-content: center;
     -moz-justify-content: center;
     justify-content: center;
-    min-height: 50%;
-    height: 50%;
+    min-height: 100%;
+    height: 100%;
     min-width: 100%;
     width: 100%;
-    margin-top: 30%;
     background-color: #213d50 !important; }
     .side-menu-content ion-list a {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -moz-box;
+      display: -moz-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-direction: normal;
+      -webkit-box-orient: horizontal;
+      -webkit-flex-direction: row;
+      -moz-flex-direction: row;
+      -ms-flex-direction: row;
+      flex-direction: row;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      -webkit-align-items: center;
+      -moz-align-items: center;
+      align-items: center;
+      -webkit-box-pack: start;
+      -ms-flex-pack: start;
+      -webkit-justify-content: flex-start;
+      -moz-justify-content: flex-start;
+      justify-content: flex-start;
       color: white !important;
       font-weight: bold;
-      background-color: #213d50 !important; }
+      background-color: #213d50 !important;
+      font-size: 3.5vh; }
+      .side-menu-content ion-list a:hover {
+        color: #ca7530 !important;
+        font-weight: bold;
+        font-size: 3.5vh; }
+      .side-menu-content ion-list a i {
+        margin-right: 20px;
+        min-height: 18px;
+        height: 18px;
+        min-width: 18px;
+        width: 18px; }
   .side-menu-content ion-item {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-direction: normal;
+    -webkit-box-orient: horizontal;
+    -webkit-flex-direction: row;
+    -moz-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    -moz-align-items: center;
+    align-items: center;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    -webkit-justify-content: flex-start;
+    -moz-justify-content: flex-start;
+    justify-content: flex-start;
     color: white !important;
     font-weight: bold;
     background-color: #213d50 !important; }
+    .side-menu-content ion-item:hover {
+      color: #ca7530 !important;
+      font-weight: bold; }
+    .side-menu-content ion-item i {
+      margin-right: 20px;
+      min-height: 18px;
+      height: 18px;
+      min-width: 18px;
+      width: 18px; }
+
+.has-header {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-direction: normal;
+  -webkit-box-orient: vertical;
+  -webkit-flex-direction: column;
+  -moz-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  -webkit-align-items: flex-start;
+  -moz-align-items: flex-start;
+  align-items: flex-start;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  justify-content: center;
+  min-height: 100%;
+  height: 100%;
+  min-width: 100%;
+  width: 100%;
+  margin-top: 0 !important; }
+
+.side-menu-home {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-direction: normal;
+  -webkit-box-orient: vertical;
+  -webkit-flex-direction: column;
+  -moz-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  justify-content: center;
+  min-height: 18px;
+  height: 18px;
+  min-width: 18px;
+  width: 18px;
+  border: none !important;
+  background-color: transparent;
+  background-image: url("../img/MenuLateralInicio/Iniciomdpi.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center; }
+  @media screen and (max-height: 2560px) {
+    .side-menu-home {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/MenuLateralInicio/Inicioxxxhdpi.png");
+      background-size: 90%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 1920px) {
+    .side-menu-home {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/MenuLateralInicio/Inicioxxxhdpi.png");
+      background-size: 90%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 1280px) {
+    .side-menu-home {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/MenuLateralInicio/Inicioxxhdpi.png");
+      background-size: 90%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 960px) {
+    .side-menu-home {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/MenuLateralInicio/Inicioxhdpi.png");
+      background-size: 90%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 736px) {
+    .side-menu-home {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/MenuLateralInicio/Inicioxhdpi.png");
+      background-size: 90%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 667px) {
+    .side-menu-home {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/MenuLateralInicio/Inicioxhdpi.png");
+      background-size: 90%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 568px) {
+    .side-menu-home {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/MenuLateralInicio/Inicioxhdpi.png");
+      background-size: 90%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 480px) {
+    .side-menu-home {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/MenuLateralInicio/Inicioxhdpi.png");
+      background-size: 90%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 320px) {
+    .side-menu-home {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/MenuLateralInicio/Iniciomdpi.png");
+      background-size: 90%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 2560px) {
+    .side-menu-home:hover {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/MenuLateralInicioTAP/Inicioxxxhdpi.png");
+      background-size: 90%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 1920px) {
+    .side-menu-home:hover {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/MenuLateralInicioTAP/Inicioxxxhdpi.png");
+      background-size: 90%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 1280px) {
+    .side-menu-home:hover {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/MenuLateralInicioTAP/Inicioxxhdpi.png");
+      background-size: 90%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 960px) {
+    .side-menu-home:hover {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/MenuLateralInicioTAP/Inicioxhdpi.png");
+      background-size: 90%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 736px) {
+    .side-menu-home:hover {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/MenuLateralInicioTAP/Inicioxhdpi.png");
+      background-size: 90%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 667px) {
+    .side-menu-home:hover {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/MenuLateralInicioTAP/Inicioxhdpi.png");
+      background-size: 90%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 568px) {
+    .side-menu-home:hover {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/MenuLateralInicioTAP/Inicioxhdpi.png");
+      background-size: 90%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 480px) {
+    .side-menu-home:hover {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/MenuLateralInicioTAP/Inicioxhdpi.png");
+      background-size: 90%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 320px) {
+    .side-menu-home:hover {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/MenuLateralInicioTAP/Iniciomdpi.png");
+      background-size: 90%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+
+.side-menu-edit {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-direction: normal;
+  -webkit-box-orient: vertical;
+  -webkit-flex-direction: column;
+  -moz-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  justify-content: center;
+  min-height: 18px;
+  height: 18px;
+  min-width: 18px;
+  width: 18px;
+  border: none !important;
+  background-color: transparent;
+  background-image: url("../img/MenuLateralEditarcuenta/MenuEditarcuentamdpi.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center; }
+  @media screen and (max-height: 2560px) {
+    .side-menu-edit {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/MenuLateralEditarcuenta/MenuEditarcuentaxxxhdpi.png");
+      background-size: 90%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 1920px) {
+    .side-menu-edit {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/MenuLateralEditarcuenta/MenuEditarcuentaxxxhdpi.png");
+      background-size: 90%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 1280px) {
+    .side-menu-edit {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/MenuLateralEditarcuenta/MenuEditarcuentaxxhdpi.png");
+      background-size: 90%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 960px) {
+    .side-menu-edit {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/MenuLateralEditarcuenta/MenuEditarcuentaxhdpi.png");
+      background-size: 90%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 736px) {
+    .side-menu-edit {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/MenuLateralEditarcuenta/MenuEditarcuentaxhdpi.png");
+      background-size: 90%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 667px) {
+    .side-menu-edit {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/MenuLateralEditarcuenta/MenuEditarcuentaxhdpi.png");
+      background-size: 90%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 568px) {
+    .side-menu-edit {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/MenuLateralEditarcuenta/MenuEditarcuentaxhdpi.png");
+      background-size: 90%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 480px) {
+    .side-menu-edit {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/MenuLateralEditarcuenta/MenuEditarcuentaxhdpi.png");
+      background-size: 90%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 320px) {
+    .side-menu-edit {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/MenuLateralEditarcuenta/MenuEditarcuentamdpi.png");
+      background-size: 90%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 2560px) {
+    .side-menu-edit:hover {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/MenuLateralEditarcuentaTAP/MenuEditarcuentaxxxhdpi.png");
+      background-size: 90%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 1920px) {
+    .side-menu-edit:hover {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/MenuLateralEditarcuentaTAP/MenuEditarcuentaxxxhdpi.png");
+      background-size: 90%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 1280px) {
+    .side-menu-edit:hover {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/MenuLateralEditarcuentaTAP/MenuEditarcuentaxxhdpi.png");
+      background-size: 90%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 960px) {
+    .side-menu-edit:hover {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/MenuLateralEditarcuentaTAP/MenuEditarcuentaxhdpi.png");
+      background-size: 90%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 736px) {
+    .side-menu-edit:hover {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/MenuLateralEditarcuentaTAP/MenuEditarcuentaxhdpi.png");
+      background-size: 90%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 667px) {
+    .side-menu-edit:hover {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/MenuLateralEditarcuentaTAP/MenuEditarcuentaxhdpi.png");
+      background-size: 90%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 568px) {
+    .side-menu-edit:hover {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/MenuLateralEditarcuentaTAP/MenuEditarcuentaxhdpi.png");
+      background-size: 90%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 480px) {
+    .side-menu-edit:hover {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/MenuLateralEditarcuentaTAP/MenuEditarcuentaxhdpi.png");
+      background-size: 90%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 320px) {
+    .side-menu-edit:hover {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/MenuLateralEditarcuentaTAP/MenuEditarcuentamdpi.png");
+      background-size: 90%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+
+.side-menu-history {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-direction: normal;
+  -webkit-box-orient: vertical;
+  -webkit-flex-direction: column;
+  -moz-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  justify-content: center;
+  min-height: 18px;
+  height: 18px;
+  min-width: 18px;
+  width: 18px;
+  border: none !important;
+  background-color: transparent;
+  background-image: url("../img/MenuLateralhistorial/Historialmdpi.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center; }
+  @media screen and (max-height: 2560px) {
+    .side-menu-history {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/MenuLateralhistorial/Historialxxxhdpi.png");
+      background-size: 90%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 1920px) {
+    .side-menu-history {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/MenuLateralhistorial/Historialxxxhdpi.png");
+      background-size: 90%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 1280px) {
+    .side-menu-history {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/MenuLateralhistorial/Historialxxhdpi.png");
+      background-size: 90%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 960px) {
+    .side-menu-history {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/MenuLateralhistorial/Historialxhdpi.png");
+      background-size: 90%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 736px) {
+    .side-menu-history {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/MenuLateralhistorial/Historialxhdpi.png");
+      background-size: 90%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 667px) {
+    .side-menu-history {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/MenuLateralhistorial/Historialxhdpi.png");
+      background-size: 90%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 568px) {
+    .side-menu-history {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/MenuLateralhistorial/Historialxhdpi.png");
+      background-size: 90%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 480px) {
+    .side-menu-history {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/MenuLateralhistorial/Historialxhdpi.png");
+      background-size: 90%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 320px) {
+    .side-menu-history {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/MenuLateralhistorial/Historialmdpi.png");
+      background-size: 90%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 2560px) {
+    .side-menu-history:hover {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/MenuLateralhistorialTAP/Historialxxxhdpi.png");
+      background-size: 90%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 1920px) {
+    .side-menu-history:hover {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/MenuLateralhistorialTAP/Historialxxxhdpi.png");
+      background-size: 90%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 1280px) {
+    .side-menu-history:hover {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/MenuLateralhistorialTAP/Historialxxhdpi.png");
+      background-size: 90%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 960px) {
+    .side-menu-history:hover {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/MenuLateralhistorialTAP/Historialxhdpi.png");
+      background-size: 90%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 736px) {
+    .side-menu-history:hover {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/MenuLateralhistorialTAP/Historialxhdpi.png");
+      background-size: 90%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 667px) {
+    .side-menu-history:hover {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/MenuLateralhistorialTAP/Historialxhdpi.png");
+      background-size: 90%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 568px) {
+    .side-menu-history:hover {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/MenuLateralhistorialTAP/Historialxhdpi.png");
+      background-size: 90%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 480px) {
+    .side-menu-history:hover {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/MenuLateralhistorialTAP/Historialxhdpi.png");
+      background-size: 90%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 320px) {
+    .side-menu-history:hover {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/MenuLateralhistorialTAP/Historialmdpi.png");
+      background-size: 90%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+
+.side-menu-cancel-service {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-direction: normal;
+  -webkit-box-orient: vertical;
+  -webkit-flex-direction: column;
+  -moz-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  justify-content: center;
+  min-height: 18px;
+  height: 18px;
+  min-width: 18px;
+  width: 18px;
+  border: none !important;
+  background-color: transparent;
+  background-image: url("../img/MenulateralCancelarservicio/Cancelarserviciomdpi.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center; }
+  @media screen and (max-height: 2560px) {
+    .side-menu-cancel-service {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/MenulateralCancelarservicio/Cancelarservicioxxxhdpi.png");
+      background-size: 90%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 1920px) {
+    .side-menu-cancel-service {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/MenulateralCancelarservicio/Cancelarservicioxxxhdpi.png");
+      background-size: 90%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 1280px) {
+    .side-menu-cancel-service {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/MenulateralCancelarservicio/Cancelarservicioxxhdpi.png");
+      background-size: 90%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 960px) {
+    .side-menu-cancel-service {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/MenulateralCancelarservicio/Cancelarservicioxhdpi.png");
+      background-size: 90%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 736px) {
+    .side-menu-cancel-service {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/MenulateralCancelarservicio/Cancelarservicioxhdpi.png");
+      background-size: 90%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 667px) {
+    .side-menu-cancel-service {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/MenulateralCancelarservicio/Cancelarservicioxhdpi.png");
+      background-size: 90%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 568px) {
+    .side-menu-cancel-service {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/MenulateralCancelarservicio/Cancelarservicioxhdpi.png");
+      background-size: 90%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 480px) {
+    .side-menu-cancel-service {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/MenulateralCancelarservicio/Cancelarservicioxhdpi.png");
+      background-size: 90%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 320px) {
+    .side-menu-cancel-service {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/MenulateralCancelarservicio/Cancelarserviciomdpi.png");
+      background-size: 90%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 2560px) {
+    .side-menu-cancel-service:hover {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/MenulateralCancelarservicioTAP/Cancelarservicioxxxhdpi.png");
+      background-size: 90%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 1920px) {
+    .side-menu-cancel-service:hover {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/MenulateralCancelarservicioTAP/Cancelarservicioxxxhdpi.png");
+      background-size: 90%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 1280px) {
+    .side-menu-cancel-service:hover {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/MenulateralCancelarservicioTAP/Cancelarservicioxxhdpi.png");
+      background-size: 90%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 960px) {
+    .side-menu-cancel-service:hover {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/MenulateralCancelarservicioTAP/Cancelarservicioxhdpi.png");
+      background-size: 90%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 736px) {
+    .side-menu-cancel-service:hover {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/MenulateralCancelarservicioTAP/Cancelarservicioxhdpi.png");
+      background-size: 90%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 667px) {
+    .side-menu-cancel-service:hover {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/MenulateralCancelarservicioTAP/Cancelarservicioxhdpi.png");
+      background-size: 90%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 568px) {
+    .side-menu-cancel-service:hover {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/MenulateralCancelarservicioTAP/Cancelarservicioxhdpi.png");
+      background-size: 90%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 480px) {
+    .side-menu-cancel-service:hover {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/MenulateralCancelarservicioTAP/Cancelarservicioxhdpi.png");
+      background-size: 90%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 320px) {
+    .side-menu-cancel-service:hover {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/MenulateralCancelarservicioTAP/Cancelarserviciomdpi.png");
+      background-size: 90%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+
+.side-menu-logout {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-direction: normal;
+  -webkit-box-orient: vertical;
+  -webkit-flex-direction: column;
+  -moz-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  justify-content: center;
+  min-height: 18px;
+  height: 18px;
+  min-width: 18px;
+  width: 18px;
+  border: none !important;
+  background-color: transparent;
+  background-image: url("../img/MenulateralCerrarsesion/Cerrarsesionmdpi.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center; }
+  @media screen and (max-height: 2560px) {
+    .side-menu-logout {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/MenulateralCerrarsesion/Cerrarsesionxxxhdpi.png");
+      background-size: 90%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 1920px) {
+    .side-menu-logout {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/MenulateralCerrarsesion/Cerrarsesionxxxhdpi.png");
+      background-size: 90%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 1280px) {
+    .side-menu-logout {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/MenulateralCerrarsesion/Cerrarsesionxxhdpi.png");
+      background-size: 90%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 960px) {
+    .side-menu-logout {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/MenulateralCerrarsesion/Cerrarsesionxhdpi.png");
+      background-size: 90%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 736px) {
+    .side-menu-logout {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/MenulateralCerrarsesion/Cerrarsesionxhdpi.png");
+      background-size: 90%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 667px) {
+    .side-menu-logout {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/MenulateralCerrarsesion/Cerrarsesionxhdpi.png");
+      background-size: 90%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 568px) {
+    .side-menu-logout {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/MenulateralCerrarsesion/Cerrarsesionxhdpi.png");
+      background-size: 90%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 480px) {
+    .side-menu-logout {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/MenulateralCerrarsesion/Cerrarsesionxhdpi.png");
+      background-size: 90%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 320px) {
+    .side-menu-logout {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/MenulateralCerrarsesion/Cerrarsesionmdpi.png");
+      background-size: 90%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 2560px) {
+    .side-menu-logout:hover {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/MenulateralCerrarsesionTAP/Cerrarsesionxxhdpi.png");
+      background-size: 90%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 1920px) {
+    .side-menu-logout:hover {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/MenulateralCerrarsesionTAP/Cerrarsesionxxhdpi.png");
+      background-size: 90%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 1280px) {
+    .side-menu-logout:hover {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/MenulateralCerrarsesionTAP/Cerrarsesionxxhdpi.png");
+      background-size: 90%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 960px) {
+    .side-menu-logout:hover {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/MenulateralCerrarsesionTAP/Cerrarsesionxhdpi.png");
+      background-size: 90%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 736px) {
+    .side-menu-logout:hover {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/MenulateralCerrarsesionTAP/Cerrarsesionxhdpi.png");
+      background-size: 90%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 667px) {
+    .side-menu-logout:hover {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/MenulateralCerrarsesionTAP/Cerrarsesionxhdpi.png");
+      background-size: 90%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 568px) {
+    .side-menu-logout:hover {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/MenulateralCerrarsesionTAP/Cerrarsesionxhdpi.png");
+      background-size: 90%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 480px) {
+    .side-menu-logout:hover {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/MenulateralCerrarsesionTAP/Cerrarsesionxhdpi.png");
+      background-size: 90%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 320px) {
+    .side-menu-logout:hover {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/MenulateralCerrarsesionTAP/Cerrarsesionmdpi.png");
+      background-size: 90%;
+      background-repeat: no-repeat;
+      background-position: center; } }
 
 .main-container-maps {
   height: 100%;
@@ -11107,44 +12089,6 @@ ion-slide {
     margin: 0;
     padding: 0;
     padding-left: 10%;
-    min-width: 100%;
-    text-align: left !important; }
-
-.bar-sendtype {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -moz-box;
-  display: -moz-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-direction: normal;
-  -webkit-box-orient: vertical;
-  -webkit-flex-direction: column;
-  -moz-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  -webkit-align-items: center;
-  -moz-align-items: center;
-  align-items: center;
-  -webkit-box-pack: end;
-  -ms-flex-pack: end;
-  -webkit-justify-content: flex-end;
-  -moz-justify-content: flex-end;
-  justify-content: flex-end;
-  background-color: rgba(6, 85, 153, 0.7) !important;
-  height: 50px;
-  min-height: 50px;
-  width: 100%;
-  min-width: 100%;
-  margin: 0;
-  padding: 0;
-  padding-bottom: 5px !important; }
-  .bar-sendtype h3 {
-    width: 100%;
-    margin: 0;
-    padding: 0;
     min-width: 100%;
     text-align: left !important; }
 
@@ -11315,7 +12259,7 @@ ion-slide {
     .button-gps {
       border: none !important;
       background-color: transparent;
-      background-image: url("../img/Ubicacion/Ubicacionxxhdpi.png");
+      background-image: url("../img/Ubicacion/Ubicacionxxxhdpi.png");
       background-size: 90%;
       background-repeat: no-repeat;
       background-position: center; } }
@@ -11323,7 +12267,7 @@ ion-slide {
     .button-gps {
       border: none !important;
       background-color: transparent;
-      background-image: url("../img/Ubicacion/Ubicacionxhdpi.png");
+      background-image: url("../img/Ubicacion/Ubicacionxxhdpi.png");
       background-size: 90%;
       background-repeat: no-repeat;
       background-position: center; } }
@@ -11331,7 +12275,7 @@ ion-slide {
     .button-gps {
       border: none !important;
       background-color: transparent;
-      background-image: url("../img/Ubicacion/Ubicacionhdpi.png");
+      background-image: url("../img/Ubicacion/Ubicacionxhdpi.png");
       background-size: 90%;
       background-repeat: no-repeat;
       background-position: center; } }
@@ -11339,7 +12283,7 @@ ion-slide {
     .button-gps {
       border: none !important;
       background-color: transparent;
-      background-image: url("../img/Ubicacion/Ubicacionhdpi.png");
+      background-image: url("../img/Ubicacion/Ubicacionxhdpi.png");
       background-size: 90%;
       background-repeat: no-repeat;
       background-position: center; } }
@@ -11347,7 +12291,7 @@ ion-slide {
     .button-gps {
       border: none !important;
       background-color: transparent;
-      background-image: url("../img/Ubicacion/Ubicacionhdpi.png");
+      background-image: url("../img/Ubicacion/Ubicacionxhdpi.png");
       background-size: 90%;
       background-repeat: no-repeat;
       background-position: center; } }
@@ -11355,7 +12299,7 @@ ion-slide {
     .button-gps {
       border: none !important;
       background-color: transparent;
-      background-image: url("../img/Ubicacion/Ubicacionhdpi.png");
+      background-image: url("../img/Ubicacion/Ubicacionxhdpi.png");
       background-size: 90%;
       background-repeat: no-repeat;
       background-position: center; } }
@@ -11363,7 +12307,7 @@ ion-slide {
     .button-gps {
       border: none !important;
       background-color: transparent;
-      background-image: url("../img/Ubicacion/Ubicacionmdpi.png");
+      background-image: url("../img/Ubicacion/Ubicacionxhdpi.png");
       background-size: 90%;
       background-repeat: no-repeat;
       background-position: center; } }
@@ -11387,7 +12331,7 @@ ion-slide {
     .button-gps:hover {
       border: none !important;
       background-color: transparent;
-      background-image: url("../img/Ubicacion/Ubicacionxxhdpi.png");
+      background-image: url("../img/Ubicacion/Ubicacionxxxhdpi.png");
       background-size: 90%;
       background-repeat: no-repeat;
       background-position: center; } }
@@ -11395,7 +12339,7 @@ ion-slide {
     .button-gps:hover {
       border: none !important;
       background-color: transparent;
-      background-image: url("../img/Ubicacion/Ubicacionxhdpi.png");
+      background-image: url("../img/Ubicacion/Ubicacionxxhdpi.png");
       background-size: 90%;
       background-repeat: no-repeat;
       background-position: center; } }
@@ -11403,7 +12347,7 @@ ion-slide {
     .button-gps:hover {
       border: none !important;
       background-color: transparent;
-      background-image: url("../img/Ubicacion/Ubicacionhdpi.png");
+      background-image: url("../img/Ubicacion/Ubicacionxhdpi.png");
       background-size: 90%;
       background-repeat: no-repeat;
       background-position: center; } }
@@ -11411,7 +12355,7 @@ ion-slide {
     .button-gps:hover {
       border: none !important;
       background-color: transparent;
-      background-image: url("../img/Ubicacion/Ubicacionhdpi.png");
+      background-image: url("../img/Ubicacion/Ubicacionxhdpi.png");
       background-size: 90%;
       background-repeat: no-repeat;
       background-position: center; } }
@@ -11419,7 +12363,7 @@ ion-slide {
     .button-gps:hover {
       border: none !important;
       background-color: transparent;
-      background-image: url("../img/Ubicacion/Ubicacionhdpi.png");
+      background-image: url("../img/Ubicacion/Ubicacionxhdpi.png");
       background-size: 90%;
       background-repeat: no-repeat;
       background-position: center; } }
@@ -11427,7 +12371,7 @@ ion-slide {
     .button-gps:hover {
       border: none !important;
       background-color: transparent;
-      background-image: url("../img/Ubicacion/Ubicacionhdpi.png");
+      background-image: url("../img/Ubicacion/Ubicacionxhdpi.png");
       background-size: 90%;
       background-repeat: no-repeat;
       background-position: center; } }
@@ -11435,7 +12379,7 @@ ion-slide {
     .button-gps:hover {
       border: none !important;
       background-color: transparent;
-      background-image: url("../img/Ubicacion/Ubicacionmdpi.png");
+      background-image: url("../img/Ubicacion/Ubicacionxhdpi.png");
       background-size: 90%;
       background-repeat: no-repeat;
       background-position: center; } }
@@ -11613,6 +12557,39 @@ ion-slide {
   padding: 0 !important;
   width: 100%;
   z-index: 0; }
+
+.bar-sendtype {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-direction: normal;
+  -webkit-box-orient: vertical;
+  -webkit-flex-direction: column;
+  -moz-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  align-items: center;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  -webkit-justify-content: flex-end;
+  -moz-justify-content: flex-end;
+  justify-content: flex-end;
+  background-color: rgba(6, 85, 153, 0.7) !important;
+  margin: 0;
+  padding: 0;
+  padding-bottom: 5px !important; }
+  .bar-sendtype h3 {
+    margin: 0;
+    padding: 0;
+    padding-left: 15%;
+    text-align: left !important; }
 
 .caracteristics-container {
   display: -webkit-box;
@@ -11817,7 +12794,7 @@ ion-slide {
     .input-user-dest {
       border: none !important;
       background-color: transparent;
-      background-image: url("../img/Usuariodestinatario/Page1xxhdpi.png");
+      background-image: url("../img/Usuariodestinatario/Page1xxxhdpi.png");
       background-size: 90%;
       background-repeat: no-repeat;
       background-position: center; } }
@@ -11825,7 +12802,7 @@ ion-slide {
     .input-user-dest {
       border: none !important;
       background-color: transparent;
-      background-image: url("../img/Usuariodestinatario/Page1xhdpi.png");
+      background-image: url("../img/Usuariodestinatario/Page1xxhdpi.png");
       background-size: 90%;
       background-repeat: no-repeat;
       background-position: center; } }
@@ -11833,7 +12810,7 @@ ion-slide {
     .input-user-dest {
       border: none !important;
       background-color: transparent;
-      background-image: url("../img/Usuariodestinatario/Page1hdpi.png");
+      background-image: url("../img/Usuariodestinatario/Page1xhdpi.png");
       background-size: 90%;
       background-repeat: no-repeat;
       background-position: center; } }
@@ -11841,7 +12818,7 @@ ion-slide {
     .input-user-dest {
       border: none !important;
       background-color: transparent;
-      background-image: url("../img/Usuariodestinatario/Page1hdpi.png");
+      background-image: url("../img/Usuariodestinatario/Page1xhdpi.png");
       background-size: 90%;
       background-repeat: no-repeat;
       background-position: center; } }
@@ -11849,7 +12826,7 @@ ion-slide {
     .input-user-dest {
       border: none !important;
       background-color: transparent;
-      background-image: url("../img/Usuariodestinatario/Page1hdpi.png");
+      background-image: url("../img/Usuariodestinatario/Page1xhdpi.png");
       background-size: 90%;
       background-repeat: no-repeat;
       background-position: center; } }
@@ -11857,7 +12834,7 @@ ion-slide {
     .input-user-dest {
       border: none !important;
       background-color: transparent;
-      background-image: url("../img/Usuariodestinatario/Page1hdpi.png");
+      background-image: url("../img/Usuariodestinatario/Page1xhdpi.png");
       background-size: 90%;
       background-repeat: no-repeat;
       background-position: center; } }
@@ -11865,7 +12842,7 @@ ion-slide {
     .input-user-dest {
       border: none !important;
       background-color: transparent;
-      background-image: url("../img/Usuariodestinatario/Page1mdpi.png");
+      background-image: url("../img/Usuariodestinatario/Page1xhdpi.png");
       background-size: 90%;
       background-repeat: no-repeat;
       background-position: center; } }
@@ -11889,7 +12866,7 @@ ion-slide {
     .input-user-dest:hover {
       border: none !important;
       background-color: transparent;
-      background-image: url("../img/UsuariodestinatarioTAP/Usuariodestinatarioxxhdpi.png");
+      background-image: url("../img/UsuariodestinatarioTAP/Usuariodestinatarioxxxhdpi.png");
       background-size: 90%;
       background-repeat: no-repeat;
       background-position: center; } }
@@ -11897,7 +12874,7 @@ ion-slide {
     .input-user-dest:hover {
       border: none !important;
       background-color: transparent;
-      background-image: url("../img/UsuariodestinatarioTAP/Usuariodestinatarioxhdpi.png");
+      background-image: url("../img/UsuariodestinatarioTAP/Usuariodestinatarioxxhdpi.png");
       background-size: 90%;
       background-repeat: no-repeat;
       background-position: center; } }
@@ -11905,7 +12882,7 @@ ion-slide {
     .input-user-dest:hover {
       border: none !important;
       background-color: transparent;
-      background-image: url("../img/UsuariodestinatarioTAP/Usuariodestinatariohdpi.png");
+      background-image: url("../img/UsuariodestinatarioTAP/Usuariodestinatarioxhdpi.png");
       background-size: 90%;
       background-repeat: no-repeat;
       background-position: center; } }
@@ -11913,7 +12890,7 @@ ion-slide {
     .input-user-dest:hover {
       border: none !important;
       background-color: transparent;
-      background-image: url("../img/UsuariodestinatarioTAP/Usuariodestinatariohdpi.png");
+      background-image: url("../img/UsuariodestinatarioTAP/Usuariodestinatarioxhdpi.png");
       background-size: 90%;
       background-repeat: no-repeat;
       background-position: center; } }
@@ -11921,7 +12898,7 @@ ion-slide {
     .input-user-dest:hover {
       border: none !important;
       background-color: transparent;
-      background-image: url("../img/UsuariodestinatarioTAP/Usuariodestinatariohdpi.png");
+      background-image: url("../img/UsuariodestinatarioTAP/Usuariodestinatarioxhdpi.png");
       background-size: 90%;
       background-repeat: no-repeat;
       background-position: center; } }
@@ -11929,7 +12906,7 @@ ion-slide {
     .input-user-dest:hover {
       border: none !important;
       background-color: transparent;
-      background-image: url("../img/UsuariodestinatarioTAP/Usuariodestinatariohdpi.png");
+      background-image: url("../img/UsuariodestinatarioTAP/Usuariodestinatarioxhdpi.png");
       background-size: 90%;
       background-repeat: no-repeat;
       background-position: center; } }
@@ -11937,7 +12914,7 @@ ion-slide {
     .input-user-dest:hover {
       border: none !important;
       background-color: transparent;
-      background-image: url("../img/UsuariodestinatarioTAP/Usuariodestinatariomdpi.png");
+      background-image: url("../img/UsuariodestinatarioTAP/Usuariodestinatarioxhdpi.png");
       background-size: 90%;
       background-repeat: no-repeat;
       background-position: center; } }
@@ -11971,7 +12948,7 @@ ion-slide {
     .input-email-dest {
       border: none !important;
       background-color: transparent;
-      background-image: url("../img/Correodestinatario/CorreoElectronicoxxhdpi.png");
+      background-image: url("../img/Correodestinatario/CorreoElectronicoxxxhdpi.png");
       background-size: 90%;
       background-repeat: no-repeat;
       background-position: center; } }
@@ -11979,7 +12956,7 @@ ion-slide {
     .input-email-dest {
       border: none !important;
       background-color: transparent;
-      background-image: url("../img/Correodestinatario/CorreoElectronicoxhdpi.png");
+      background-image: url("../img/Correodestinatario/CorreoElectronicoxxhdpi.png");
       background-size: 90%;
       background-repeat: no-repeat;
       background-position: center; } }
@@ -11987,7 +12964,7 @@ ion-slide {
     .input-email-dest {
       border: none !important;
       background-color: transparent;
-      background-image: url("../img/Correodestinatario/CorreoElectronicohdpi.png");
+      background-image: url("../img/Correodestinatario/CorreoElectronicoxhdpi.png");
       background-size: 90%;
       background-repeat: no-repeat;
       background-position: center; } }
@@ -11995,7 +12972,7 @@ ion-slide {
     .input-email-dest {
       border: none !important;
       background-color: transparent;
-      background-image: url("../img/Correodestinatario/CorreoElectronicohdpi.png");
+      background-image: url("../img/Correodestinatario/CorreoElectronicoxhdpi.png");
       background-size: 90%;
       background-repeat: no-repeat;
       background-position: center; } }
@@ -12003,7 +12980,7 @@ ion-slide {
     .input-email-dest {
       border: none !important;
       background-color: transparent;
-      background-image: url("../img/Correodestinatario/CorreoElectronicohdpi.png");
+      background-image: url("../img/Correodestinatario/CorreoElectronicoxhdpi.png");
       background-size: 90%;
       background-repeat: no-repeat;
       background-position: center; } }
@@ -12011,7 +12988,7 @@ ion-slide {
     .input-email-dest {
       border: none !important;
       background-color: transparent;
-      background-image: url("../img/Correodestinatario/CorreoElectronicohdpi.png");
+      background-image: url("../img/Correodestinatario/CorreoElectronicoxhdpi.png");
       background-size: 90%;
       background-repeat: no-repeat;
       background-position: center; } }
@@ -12019,7 +12996,7 @@ ion-slide {
     .input-email-dest {
       border: none !important;
       background-color: transparent;
-      background-image: url("../img/Correodestinatario/CorreoElectronicomdpi.png");
+      background-image: url("../img/Correodestinatario/CorreoElectronicoxhdpi.png");
       background-size: 90%;
       background-repeat: no-repeat;
       background-position: center; } }
@@ -12043,7 +13020,7 @@ ion-slide {
     .input-email-dest:hover {
       border: none !important;
       background-color: transparent;
-      background-image: url("../img/CorreodestinatarioTAP/CorreoElectronicoxxhdpi.png");
+      background-image: url("../img/CorreodestinatarioTAP/CorreoElectronicoxxxhdpi.png");
       background-size: 90%;
       background-repeat: no-repeat;
       background-position: center; } }
@@ -12051,7 +13028,7 @@ ion-slide {
     .input-email-dest:hover {
       border: none !important;
       background-color: transparent;
-      background-image: url("../img/CorreodestinatarioTAP/CorreoElectronicoxhdpi.png");
+      background-image: url("../img/CorreodestinatarioTAP/CorreoElectronicoxxhdpi.png");
       background-size: 90%;
       background-repeat: no-repeat;
       background-position: center; } }
@@ -12059,7 +13036,7 @@ ion-slide {
     .input-email-dest:hover {
       border: none !important;
       background-color: transparent;
-      background-image: url("../img/CorreodestinatarioTAP/CorreoElectronicohdpi.png");
+      background-image: url("../img/CorreodestinatarioTAP/CorreoElectronicoxhdpi.png");
       background-size: 90%;
       background-repeat: no-repeat;
       background-position: center; } }
@@ -12067,7 +13044,7 @@ ion-slide {
     .input-email-dest:hover {
       border: none !important;
       background-color: transparent;
-      background-image: url("../img/CorreodestinatarioTAP/CorreoElectronicohdpi.png");
+      background-image: url("../img/CorreodestinatarioTAP/CorreoElectronicoxhdpi.png");
       background-size: 90%;
       background-repeat: no-repeat;
       background-position: center; } }
@@ -12075,7 +13052,7 @@ ion-slide {
     .input-email-dest:hover {
       border: none !important;
       background-color: transparent;
-      background-image: url("../img/CorreodestinatarioTAP/CorreoElectronicohdpi.png");
+      background-image: url("../img/CorreodestinatarioTAP/CorreoElectronicoxhdpi.png");
       background-size: 90%;
       background-repeat: no-repeat;
       background-position: center; } }
@@ -12083,7 +13060,7 @@ ion-slide {
     .input-email-dest:hover {
       border: none !important;
       background-color: transparent;
-      background-image: url("../img/CorreodestinatarioTAP/CorreoElectronicohdpi.png");
+      background-image: url("../img/CorreodestinatarioTAP/CorreoElectronicoxhdpi.png");
       background-size: 90%;
       background-repeat: no-repeat;
       background-position: center; } }
@@ -12091,7 +13068,7 @@ ion-slide {
     .input-email-dest:hover {
       border: none !important;
       background-color: transparent;
-      background-image: url("../img/CorreodestinatarioTAP/CorreoElectronicomdpi.png");
+      background-image: url("../img/CorreodestinatarioTAP/CorreoElectronicoxhdpi.png");
       background-size: 90%;
       background-repeat: no-repeat;
       background-position: center; } }
@@ -12125,7 +13102,7 @@ ion-slide {
     .input-phone-dest {
       border: none !important;
       background-color: transparent;
-      background-image: url("../img/Telefonodestinatario/Telefonodestinatarioxxhdpi.png");
+      background-image: url("../img/Telefonodestinatario/Telefonodestinatarioxxxhdpi.png");
       background-size: 90%;
       background-repeat: no-repeat;
       background-position: center; } }
@@ -12133,7 +13110,7 @@ ion-slide {
     .input-phone-dest {
       border: none !important;
       background-color: transparent;
-      background-image: url("../img/Telefonodestinatario/Telefonodestinatarioxhdpi.png");
+      background-image: url("../img/Telefonodestinatario/Telefonodestinatarioxxhdpi.png");
       background-size: 90%;
       background-repeat: no-repeat;
       background-position: center; } }
@@ -12141,7 +13118,7 @@ ion-slide {
     .input-phone-dest {
       border: none !important;
       background-color: transparent;
-      background-image: url("../img/Telefonodestinatario/Telefonodestinatariohdpi.png");
+      background-image: url("../img/Telefonodestinatario/Telefonodestinatarioxhdpi.png");
       background-size: 90%;
       background-repeat: no-repeat;
       background-position: center; } }
@@ -12149,7 +13126,7 @@ ion-slide {
     .input-phone-dest {
       border: none !important;
       background-color: transparent;
-      background-image: url("../img/Telefonodestinatario/Telefonodestinatariohdpi.png");
+      background-image: url("../img/Telefonodestinatario/Telefonodestinatarioxhdpi.png");
       background-size: 90%;
       background-repeat: no-repeat;
       background-position: center; } }
@@ -12157,7 +13134,7 @@ ion-slide {
     .input-phone-dest {
       border: none !important;
       background-color: transparent;
-      background-image: url("../img/Telefonodestinatario/Telefonodestinatariohdpi.png");
+      background-image: url("../img/Telefonodestinatario/Telefonodestinatarioxhdpi.png");
       background-size: 90%;
       background-repeat: no-repeat;
       background-position: center; } }
@@ -12165,7 +13142,7 @@ ion-slide {
     .input-phone-dest {
       border: none !important;
       background-color: transparent;
-      background-image: url("../img/Telefonodestinatario/Telefonodestinatariohdpi.png");
+      background-image: url("../img/Telefonodestinatario/Telefonodestinatarioxhdpi.png");
       background-size: 90%;
       background-repeat: no-repeat;
       background-position: center; } }
@@ -12173,7 +13150,7 @@ ion-slide {
     .input-phone-dest {
       border: none !important;
       background-color: transparent;
-      background-image: url("../img/Telefonodestinatario/Telefonodestinatariomdpi.png");
+      background-image: url("../img/Telefonodestinatario/Telefonodestinatarioxhdpi.png");
       background-size: 90%;
       background-repeat: no-repeat;
       background-position: center; } }
@@ -12205,7 +13182,7 @@ ion-slide {
     .input-phone-dest:hover {
       border: none !important;
       background-color: transparent;
-      background-image: url("../img/TelefonodestinatarioTAP/Telefonodestinatarioxhdpi.png");
+      background-image: url("../img/TelefonodestinatarioTAP/Telefonodestinatarioxxhdpi.png");
       background-size: 90%;
       background-repeat: no-repeat;
       background-position: center; } }
@@ -12213,7 +13190,7 @@ ion-slide {
     .input-phone-dest:hover {
       border: none !important;
       background-color: transparent;
-      background-image: url("../img/TelefonodestinatarioTAP/Telefonodestinatariohdpi.png");
+      background-image: url("../img/TelefonodestinatarioTAP/Telefonodestinatarioxhdpi.png");
       background-size: 90%;
       background-repeat: no-repeat;
       background-position: center; } }
@@ -12221,7 +13198,7 @@ ion-slide {
     .input-phone-dest:hover {
       border: none !important;
       background-color: transparent;
-      background-image: url("../img/TelefonodestinatarioTAP/Telefonodestinatariohdpi.png");
+      background-image: url("../img/TelefonodestinatarioTAP/Telefonodestinatarioxhdpi.png");
       background-size: 90%;
       background-repeat: no-repeat;
       background-position: center; } }
@@ -12229,7 +13206,7 @@ ion-slide {
     .input-phone-dest:hover {
       border: none !important;
       background-color: transparent;
-      background-image: url("../img/TelefonodestinatarioTAP/Telefonodestinatariohdpi.png");
+      background-image: url("../img/TelefonodestinatarioTAP/Telefonodestinatarioxhdpi.png");
       background-size: 90%;
       background-repeat: no-repeat;
       background-position: center; } }
@@ -12237,7 +13214,7 @@ ion-slide {
     .input-phone-dest:hover {
       border: none !important;
       background-color: transparent;
-      background-image: url("../img/TelefonodestinatarioTAP/Telefonodestinatariohdpi.png");
+      background-image: url("../img/TelefonodestinatarioTAP/Telefonodestinatarioxhdpi.png");
       background-size: 90%;
       background-repeat: no-repeat;
       background-position: center; } }
@@ -12245,7 +13222,7 @@ ion-slide {
     .input-phone-dest:hover {
       border: none !important;
       background-color: transparent;
-      background-image: url("../img/TelefonodestinatarioTAP/Telefonodestinatariomdpi.png");
+      background-image: url("../img/TelefonodestinatarioTAP/Telefonodestinatarioxhdpi.png");
       background-size: 90%;
       background-repeat: no-repeat;
       background-position: center; } }
@@ -12279,7 +13256,7 @@ ion-slide {
     .input-dni-dest {
       border: none !important;
       background-color: transparent;
-      background-image: url("../img/Ceduladestinatario/Cedulaxxhdpi.png");
+      background-image: url("../img/Ceduladestinatario/Cedulaxxxhdpi.png");
       background-size: 90%;
       background-repeat: no-repeat;
       background-position: center; } }
@@ -12287,7 +13264,7 @@ ion-slide {
     .input-dni-dest {
       border: none !important;
       background-color: transparent;
-      background-image: url("../img/Ceduladestinatario/Cedulaxhdpi.png");
+      background-image: url("../img/Ceduladestinatario/Cedulaxxhdpi.png");
       background-size: 90%;
       background-repeat: no-repeat;
       background-position: center; } }
@@ -12295,7 +13272,7 @@ ion-slide {
     .input-dni-dest {
       border: none !important;
       background-color: transparent;
-      background-image: url("../img/Ceduladestinatario/Cedulahdpi.png");
+      background-image: url("../img/Ceduladestinatario/Cedulaxhdpi.png");
       background-size: 90%;
       background-repeat: no-repeat;
       background-position: center; } }
@@ -12303,7 +13280,7 @@ ion-slide {
     .input-dni-dest {
       border: none !important;
       background-color: transparent;
-      background-image: url("../img/Ceduladestinatario/Cedulahdpi.png");
+      background-image: url("../img/Ceduladestinatario/Cedulaxhdpi.png");
       background-size: 90%;
       background-repeat: no-repeat;
       background-position: center; } }
@@ -12311,7 +13288,7 @@ ion-slide {
     .input-dni-dest {
       border: none !important;
       background-color: transparent;
-      background-image: url("../img/Ceduladestinatario/Cedulahdpi.png");
+      background-image: url("../img/Ceduladestinatario/Cedulaxhdpi.png");
       background-size: 90%;
       background-repeat: no-repeat;
       background-position: center; } }
@@ -12319,7 +13296,7 @@ ion-slide {
     .input-dni-dest {
       border: none !important;
       background-color: transparent;
-      background-image: url("../img/Ceduladestinatario/Cedulahdpi.png");
+      background-image: url("../img/Ceduladestinatario/Cedulaxhdpi.png");
       background-size: 90%;
       background-repeat: no-repeat;
       background-position: center; } }
@@ -12327,7 +13304,7 @@ ion-slide {
     .input-dni-dest {
       border: none !important;
       background-color: transparent;
-      background-image: url("../img/Ceduladestinatario/Cedulamdpi.png");
+      background-image: url("../img/Ceduladestinatario/Cedulaxhdpi.png");
       background-size: 90%;
       background-repeat: no-repeat;
       background-position: center; } }
@@ -12351,7 +13328,7 @@ ion-slide {
     .input-dni-dest:hover {
       border: none !important;
       background-color: transparent;
-      background-image: url("../img/CeduladestinatarioTAP/Cedulaxxhdpi.png");
+      background-image: url("../img/CeduladestinatarioTAP/Cedulaxxxhdpi.png");
       background-size: 90%;
       background-repeat: no-repeat;
       background-position: center; } }
@@ -12359,7 +13336,7 @@ ion-slide {
     .input-dni-dest:hover {
       border: none !important;
       background-color: transparent;
-      background-image: url("../img/CeduladestinatarioTAP/Cedulaxhdpi.png");
+      background-image: url("../img/CeduladestinatarioTAP/Cedulaxxhdpi.png");
       background-size: 90%;
       background-repeat: no-repeat;
       background-position: center; } }
@@ -12367,7 +13344,7 @@ ion-slide {
     .input-dni-dest:hover {
       border: none !important;
       background-color: transparent;
-      background-image: url("../img/CeduladestinatarioTAP/Cedulahdpi.png");
+      background-image: url("../img/CeduladestinatarioTAP/Cedulaxhdpi.png");
       background-size: 90%;
       background-repeat: no-repeat;
       background-position: center; } }
@@ -12375,7 +13352,7 @@ ion-slide {
     .input-dni-dest:hover {
       border: none !important;
       background-color: transparent;
-      background-image: url("../img/CeduladestinatarioTAP/Cedulahdpi.png");
+      background-image: url("../img/CeduladestinatarioTAP/Cedulaxhdpi.png");
       background-size: 90%;
       background-repeat: no-repeat;
       background-position: center; } }
@@ -12383,7 +13360,7 @@ ion-slide {
     .input-dni-dest:hover {
       border: none !important;
       background-color: transparent;
-      background-image: url("../img/CeduladestinatarioTAP/Cedulahdpi.png");
+      background-image: url("../img/CeduladestinatarioTAP/Cedulaxhdpi.png");
       background-size: 90%;
       background-repeat: no-repeat;
       background-position: center; } }
@@ -12391,7 +13368,7 @@ ion-slide {
     .input-dni-dest:hover {
       border: none !important;
       background-color: transparent;
-      background-image: url("../img/CeduladestinatarioTAP/Cedulahdpi.png");
+      background-image: url("../img/CeduladestinatarioTAP/Cedulaxhdpi.png");
       background-size: 90%;
       background-repeat: no-repeat;
       background-position: center; } }
@@ -12399,7 +13376,7 @@ ion-slide {
     .input-dni-dest:hover {
       border: none !important;
       background-color: transparent;
-      background-image: url("../img/CeduladestinatarioTAP/Cedulamdpi.png");
+      background-image: url("../img/CeduladestinatarioTAP/Cedulaxhdpi.png");
       background-size: 90%;
       background-repeat: no-repeat;
       background-position: center; } }
@@ -12488,7 +13465,7 @@ ion-slide {
       .photo-container div {
         border: none !important;
         background-color: transparent;
-        background-image: url("../img/Iconofoto/Iconofotoxxhdpi.png");
+        background-image: url("../img/Iconofoto/Iconofotoxxxhdpi.png");
         background-size: 90%;
         background-repeat: no-repeat;
         background-position: center; } }
@@ -12496,7 +13473,7 @@ ion-slide {
       .photo-container div {
         border: none !important;
         background-color: transparent;
-        background-image: url("../img/Iconofoto/Iconofotoxhdpi.png");
+        background-image: url("../img/Iconofoto/Iconofotoxxhdpi.png");
         background-size: 90%;
         background-repeat: no-repeat;
         background-position: center; } }
@@ -12504,7 +13481,7 @@ ion-slide {
       .photo-container div {
         border: none !important;
         background-color: transparent;
-        background-image: url("../img/Iconofoto/Iconofotohdpi.png");
+        background-image: url("../img/Iconofoto/Iconofotoxhdpi.png");
         background-size: 90%;
         background-repeat: no-repeat;
         background-position: center; } }
@@ -12512,7 +13489,7 @@ ion-slide {
       .photo-container div {
         border: none !important;
         background-color: transparent;
-        background-image: url("../img/Iconofoto/Iconofotohdpi.png");
+        background-image: url("../img/Iconofoto/Iconofotoxhdpi.png");
         background-size: 90%;
         background-repeat: no-repeat;
         background-position: center; } }
@@ -12520,7 +13497,7 @@ ion-slide {
       .photo-container div {
         border: none !important;
         background-color: transparent;
-        background-image: url("../img/Iconofoto/Iconofotohdpi.png");
+        background-image: url("../img/Iconofoto/Iconofotoxhdpi.png");
         background-size: 90%;
         background-repeat: no-repeat;
         background-position: center; } }
@@ -12528,7 +13505,7 @@ ion-slide {
       .photo-container div {
         border: none !important;
         background-color: transparent;
-        background-image: url("../img/Iconofoto/Iconofotohdpi.png");
+        background-image: url("../img/Iconofoto/Iconofotoxhdpi.png");
         background-size: 90%;
         background-repeat: no-repeat;
         background-position: center; } }
@@ -12536,7 +13513,7 @@ ion-slide {
       .photo-container div {
         border: none !important;
         background-color: transparent;
-        background-image: url("../img/Iconofoto/Iconofotomdpi.png");
+        background-image: url("../img/Iconofoto/Iconofotoxhdpi.png");
         background-size: 90%;
         background-repeat: no-repeat;
         background-position: center; } }
@@ -12560,7 +13537,7 @@ ion-slide {
       .photo-container div:hover {
         border: none !important;
         background-color: transparent;
-        background-image: url("../img/Iconofoto/Iconofotoxxhdpi.png");
+        background-image: url("../img/Iconofoto/Iconofotoxxxhdpi.png");
         background-size: 90%;
         background-repeat: no-repeat;
         background-position: center; } }
@@ -12568,7 +13545,7 @@ ion-slide {
       .photo-container div:hover {
         border: none !important;
         background-color: transparent;
-        background-image: url("../img/Iconofoto/Iconofotoxhdpi.png");
+        background-image: url("../img/Iconofoto/Iconofotoxxhdpi.png");
         background-size: 90%;
         background-repeat: no-repeat;
         background-position: center; } }
@@ -12576,7 +13553,7 @@ ion-slide {
       .photo-container div:hover {
         border: none !important;
         background-color: transparent;
-        background-image: url("../img/Iconofoto/Iconofotohdpi.png");
+        background-image: url("../img/Iconofoto/Iconofotoxhdpi.png");
         background-size: 90%;
         background-repeat: no-repeat;
         background-position: center; } }
@@ -12584,7 +13561,7 @@ ion-slide {
       .photo-container div:hover {
         border: none !important;
         background-color: transparent;
-        background-image: url("../img/Iconofoto/Iconofotohdpi.png");
+        background-image: url("../img/Iconofoto/Iconofotoxhdpi.png");
         background-size: 90%;
         background-repeat: no-repeat;
         background-position: center; } }
@@ -12592,7 +13569,7 @@ ion-slide {
       .photo-container div:hover {
         border: none !important;
         background-color: transparent;
-        background-image: url("../img/Iconofoto/Iconofotohdpi.png");
+        background-image: url("../img/Iconofoto/Iconofotoxhdpi.png");
         background-size: 90%;
         background-repeat: no-repeat;
         background-position: center; } }
@@ -12600,7 +13577,7 @@ ion-slide {
       .photo-container div:hover {
         border: none !important;
         background-color: transparent;
-        background-image: url("../img/Iconofoto/Iconofotohdpi.png");
+        background-image: url("../img/Iconofoto/Iconofotoxhdpi.png");
         background-size: 90%;
         background-repeat: no-repeat;
         background-position: center; } }
@@ -12608,7 +13585,7 @@ ion-slide {
       .photo-container div:hover {
         border: none !important;
         background-color: transparent;
-        background-image: url("../img/Iconofoto/Iconofotomdpi.png");
+        background-image: url("../img/Iconofoto/Iconofotoxhdpi.png");
         background-size: 90%;
         background-repeat: no-repeat;
         background-position: center; } }
@@ -12713,7 +13690,7 @@ ion-slide {
     .input-text-box {
       border: none !important;
       background-color: transparent;
-      background-image: url("../img/Cajadetexto/Cajadetextoxxhdpi.png");
+      background-image: url("../img/Cajadetexto/Cajadetextoxxxhdpi.png");
       background-size: 90%;
       background-repeat: no-repeat;
       background-position: center; } }
@@ -12721,7 +13698,7 @@ ion-slide {
     .input-text-box {
       border: none !important;
       background-color: transparent;
-      background-image: url("../img/Cajadetexto/Cajadetextoxhdpi.png");
+      background-image: url("../img/Cajadetexto/Cajadetextoxxhdpi.png");
       background-size: 90%;
       background-repeat: no-repeat;
       background-position: center; } }
@@ -12729,7 +13706,7 @@ ion-slide {
     .input-text-box {
       border: none !important;
       background-color: transparent;
-      background-image: url("../img/Cajadetexto/Cajadetextohdpi.png");
+      background-image: url("../img/Cajadetexto/Cajadetextoxhdpi.png");
       background-size: 90%;
       background-repeat: no-repeat;
       background-position: center; } }
@@ -12737,7 +13714,7 @@ ion-slide {
     .input-text-box {
       border: none !important;
       background-color: transparent;
-      background-image: url("../img/Cajadetexto/Cajadetextohdpi.png");
+      background-image: url("../img/Cajadetexto/Cajadetextoxhdpi.png");
       background-size: 90%;
       background-repeat: no-repeat;
       background-position: center; } }
@@ -12745,7 +13722,7 @@ ion-slide {
     .input-text-box {
       border: none !important;
       background-color: transparent;
-      background-image: url("../img/Cajadetexto/Cajadetextohdpi.png");
+      background-image: url("../img/Cajadetexto/Cajadetextoxhdpi.png");
       background-size: 90%;
       background-repeat: no-repeat;
       background-position: center; } }
@@ -12753,7 +13730,7 @@ ion-slide {
     .input-text-box {
       border: none !important;
       background-color: transparent;
-      background-image: url("../img/Cajadetexto/Cajadetextohdpi.png");
+      background-image: url("../img/Cajadetexto/Cajadetextoxhdpi.png");
       background-size: 90%;
       background-repeat: no-repeat;
       background-position: center; } }
@@ -12761,7 +13738,7 @@ ion-slide {
     .input-text-box {
       border: none !important;
       background-color: transparent;
-      background-image: url("../img/Cajadetexto/Cajadetextomdpi.png");
+      background-image: url("../img/Cajadetexto/Cajadetextoxhdpi.png");
       background-size: 90%;
       background-repeat: no-repeat;
       background-position: center; } }
@@ -12785,7 +13762,7 @@ ion-slide {
     .input-text-box:hover {
       border: none !important;
       background-color: transparent;
-      background-image: url("../img/Cajadetexto/Cajadetextoxxhdpi.png");
+      background-image: url("../img/Cajadetexto/Cajadetextoxxxhdpi.png");
       background-size: 90%;
       background-repeat: no-repeat;
       background-position: center; } }
@@ -12793,7 +13770,7 @@ ion-slide {
     .input-text-box:hover {
       border: none !important;
       background-color: transparent;
-      background-image: url("../img/Cajadetexto/Cajadetextoxhdpi.png");
+      background-image: url("../img/Cajadetexto/Cajadetextoxxhdpi.png");
       background-size: 90%;
       background-repeat: no-repeat;
       background-position: center; } }
@@ -12801,7 +13778,7 @@ ion-slide {
     .input-text-box:hover {
       border: none !important;
       background-color: transparent;
-      background-image: url("../img/Cajadetexto/Cajadetextohdpi.png");
+      background-image: url("../img/Cajadetexto/Cajadetextoxhdpi.png");
       background-size: 90%;
       background-repeat: no-repeat;
       background-position: center; } }
@@ -12809,7 +13786,7 @@ ion-slide {
     .input-text-box:hover {
       border: none !important;
       background-color: transparent;
-      background-image: url("../img/Cajadetexto/Cajadetextohdpi.png");
+      background-image: url("../img/Cajadetexto/Cajadetextoxhdpi.png");
       background-size: 90%;
       background-repeat: no-repeat;
       background-position: center; } }
@@ -12817,7 +13794,7 @@ ion-slide {
     .input-text-box:hover {
       border: none !important;
       background-color: transparent;
-      background-image: url("../img/Cajadetexto/Cajadetextohdpi.png");
+      background-image: url("../img/Cajadetexto/Cajadetextoxhdpi.png");
       background-size: 90%;
       background-repeat: no-repeat;
       background-position: center; } }
@@ -12825,7 +13802,7 @@ ion-slide {
     .input-text-box:hover {
       border: none !important;
       background-color: transparent;
-      background-image: url("../img/Cajadetexto/Cajadetextohdpi.png");
+      background-image: url("../img/Cajadetexto/Cajadetextoxhdpi.png");
       background-size: 90%;
       background-repeat: no-repeat;
       background-position: center; } }
@@ -12833,7 +13810,7 @@ ion-slide {
     .input-text-box:hover {
       border: none !important;
       background-color: transparent;
-      background-image: url("../img/Cajadetexto/Cajadetextomdpi.png");
+      background-image: url("../img/Cajadetexto/Cajadetextoxhdpi.png");
       background-size: 90%;
       background-repeat: no-repeat;
       background-position: center; } }

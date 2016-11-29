@@ -1,25 +1,44 @@
-<div class="bar bar-header bar-balanced bar-sendtype">
-     <h3 class="title">Características envío</h3>
-</div>
-<ion-view view-title="Imagen del Documento">
-    <ion-content scroll="false" overflow-scroll="false">
-        <div class="photo-container">
-            <div ng-if="imageData ==='' "></div>
-            <img ng-if="imageData" class="photo-image" border="0" ng-src="{{imageData}}" title="Agrega una imagen de tu envío"/>
-        </div>
-        <section class="photo-container-takeselect">
-            <take-photo on-photo-taken="photoTaken"></take-photo>
-            <div></div>
-            <select-photo on-photo-selected="photoSelected"></select-photo>
-        </section>
-        <div class="list list-inset no-margin-top">
-            <input type="number" class="item item-input inputs-general input-text-box" min="0" name="declaredvalue" ng-model="data.amountDeclared" placeholder="Valor declarado:Ej. 1000">
-            <input type="text" class="item item-input inputs-general input-text-box" name="shortdescription" ng-model="data.descriptionText" placeholder="Breve descripción">
-        </div>
-        <div class="hide-on-keyboard-open row button-bottom-two button-confirm-position">
-            <a class="button button-block button-default-two button-confirm" ng-click="confirmImagePhoto()">
-                Continuar
-            </a>
-        </div>
-    </ion-content>
-</ion-view>
+<ion-side-menus enable-menu-with-back-views="false">
+    <ion-side-menu-content>
+        <ion-nav-bar class="bar-balanced menu-bg">
+            <ion-nav-back-button>
+            </ion-nav-back-button>
+            <ion-nav-buttons side="left">
+                <button class="button button-icon button-clear ion-navicon" menu-toggle="left">
+                </button>
+            </ion-nav-buttons>
+        </ion-nav-bar>
+        <ion-nav-view name="mainContent">
+            <div class="bar bar-header bar-balanced bar-sendtype">
+                <h3 class="title">Características envío</h3>
+            </div>
+            <ion-view view-title="Imagen del Documento">
+                <ion-content scroll="false" overflow-scroll="false">
+                    <div class="photo-container">
+                        <div ng-if="imageData ==='' "></div>
+                        <img ng-if="imageData" class="photo-image" border="0" ng-src="{{imageData}}" title="Agrega una imagen de tu envío"/>
+                    </div>
+                    <section class="photo-container-takeselect">
+                        <take-photo on-photo-taken="photoTaken"></take-photo>
+                        <div></div>
+                        <select-photo on-photo-selected="photoSelected"></select-photo>
+                    </section>
+                    <div class="list list-inset no-margin-top">
+                        <input type="number" class="item item-input inputs-general input-text-box" min="0" name="declaredvalue" ng-model="data.amountDeclared" placeholder="Valor declarado:Ej. 1000">
+                        <input type="text" class="item item-input inputs-general input-text-box" name="shortdescription" ng-model="data.descriptionText" placeholder="Breve descripción">
+                    </div>
+                    <div class="hide-on-keyboard-open row button-bottom-two button-confirm-position">
+                        <a class="button button-block button-default-two button-confirm" ng-click="confirmImagePhoto()">
+                            Continuar
+                        </a>
+                    </div>
+                </ion-content>
+            </ion-view>
+
+        </ion-nav-view>
+    </ion-side-menu-content>
+    <ion-side-menu side="left">
+        <sidebar-menu> </sidebar-menu>
+    </ion-side-menu>
+</ion-side-menus>
+

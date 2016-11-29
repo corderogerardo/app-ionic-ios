@@ -69,3 +69,19 @@
     width: 100%;
     z-index: 0;
 }
+.bar-sendtype{
+    @include display-flex;
+    @include flex-direction(column);
+    @include align-items(center);
+    @include justify-content(flex-end);
+    background-color: rgba($balanced,.7) !important;
+    margin:0;
+    padding: 0;
+    padding-bottom: 5px !important;
+    h3{
+        margin:0;
+        padding: 0;
+        padding-left: 15%;
+        text-align: left !important;
+    }
+}

@@ -162,7 +162,7 @@
 
     function sidebarMenu () {
         return {
-            restric: 'EA',
+            restric: 'E',
             scope: {
             },
             templateUrl: 'templates/directives/sidebarMenu.html'

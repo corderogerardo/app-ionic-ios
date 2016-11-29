@@ -120,7 +120,7 @@
     @include flex-direction(row);
     @include align-items(center);
     @include justify-content(center);
-    @include widheigh(30%,20%,100%,100%);
+    @include widheigh(30%,30%,100%,100%);
     background-color: $positive !important;
     .side-menu-container-user{
         @include display-flex;
@@ -157,19 +157,91 @@
         @include flex-direction(column);
         @include align-items(flex-start);
         @include justify-content(center);
-        @include widheigh(50%,50%,100%,100%);
-        margin-top: 30%;
+        @include widheigh(100%,100%,100%,100%);
         background-color: $dark !important;
         a{
+            @include display-flex;
+            @include flex-direction(row);
+            @include align-items(center);
+            @include justify-content(flex-start);
             color:white !important;
             font-weight: bold;
             background-color: $dark !important;
+            font-size: 3.5vh;
+            &:hover{
+                color:$energized !important;
+                font-weight: bold;
+                font-size: 3.5vh;
+            }
+            i{
+                margin-right: 20px;
+                @include widheigh(18px,18px,18px,18px);
+            }
         }
     }
     ion-item{
+        @include display-flex;
+        @include flex-direction(row);
+        @include align-items(center);
+        @include justify-content(flex-start);
         color:white !important;
         font-weight: bold;
         background-color: $dark !important;
+        &:hover{
+            color:$energized !important;
+            font-weight: bold;
+        }
+        i{
+            margin-right: 20px;
+            @include widheigh(18px,18px,18px,18px);
+        }
     }
 }
-
+.has-header{
+    @include display-flex;
+    @include flex-direction(column);
+    @include align-items(flex-start);
+    @include justify-content(center);
+    @include widheigh(100%,100%,100%,100%);
+    margin-top: 0 !important;
+}
+.side-menu-home{
+    @include display-flex;
+    @include flex-direction(column);
+    @include align-items(center);
+    @include justify-content(center);
+    @include widheigh(18px,18px,18px,18px);
+    @include media-icons("../img/MenuLateralInicio/Iniciomdpi.png","../img/MenuLateralInicio/Iniciohdpi.png","../img/MenuLateralInicio/Inicioxhdpi.png","../img/MenuLateralInicio/Inicioxxhdpi.png","../img/MenuLateralInicio/Inicioxxxhdpi.png",        "../img/MenuLateralInicioTAP/Iniciomdpi.png","../img/MenuLateralInicioTAP/Iniciohdpi.png","../img/MenuLateralInicioTAP/Inicioxhdpi.png","../img/MenuLateralInicioTAP/Inicioxxhdpi.png","../img/MenuLateralInicioTAP/Inicioxxxhdpi.png");
+}
+.side-menu-edit{
+    @include display-flex;
+    @include flex-direction(column);
+    @include align-items(center);
+    @include justify-content(center);
+    @include widheigh(18px,18px,18px,18px);
+    @include media-icons("../img/MenuLateralEditarcuenta/MenuEditarcuentamdpi.png","../img/MenuLateralEditarcuenta/MenuEditarcuentahdpi.png","../img/MenuLateralEditarcuenta/MenuEditarcuentaxhdpi.png","../img/MenuLateralEditarcuenta/MenuEditarcuentaxxhdpi.png","../img/MenuLateralEditarcuenta/MenuEditarcuentaxxxhdpi.png","../img/MenuLateralEditarcuentaTAP/MenuEditarcuentamdpi.png","../img/MenuLateralEditarcuentaTAP/MenuEditarcuentahdpi.png","../img/MenuLateralEditarcuentaTAP/MenuEditarcuentaxhdpi.png","../img/MenuLateralEditarcuentaTAP/MenuEditarcuentaxxhdpi.png","../img/MenuLateralEditarcuentaTAP/MenuEditarcuentaxxxhdpi.png");
+}
+.side-menu-history{
+    @include display-flex;
+    @include flex-direction(column);
+    @include align-items(center);
+    @include justify-content(center);
+    @include widheigh(18px,18px,18px,18px);
+    @include media-icons("../img/MenuLateralhistorial/Historialmdpi.png","../img/MenuLateralhistorial/Historialhdpi.png","../img/MenuLateralhistorial/Historialxhdpi.png","../img/MenuLateralhistorial/Historialxxhdpi.png","../img/MenuLateralhistorial/Historialxxxhdpi.png","../img/MenuLateralhistorialTAP/Historialmdpi.png","../img/MenuLateralhistorialTAP/Historialhdpi.png","../img/MenuLateralhistorialTAP/Historialxhdpi.png","../img/MenuLateralhistorialTAP/Historialxxhdpi.png","../img/MenuLateralhistorialTAP/Historialxxxhdpi.png");
+}
+.side-menu-cancel-service {
+    @include display-flex;
+    @include flex-direction(column);
+    @include align-items(center);
+    @include justify-content(center);
+    @include widheigh(18px, 18px, 18px, 18px);
+    @include media-icons("../img/MenulateralCancelarservicio/Cancelarserviciomdpi.png", "../img/MenulateralCancelarservicio/Cancelarserviciohdpi.png", "../img/MenulateralCancelarservicio/Cancelarservicioxhdpi.png", "../img/MenulateralCancelarservicio/Cancelarservicioxxhdpi.png", "../img/MenulateralCancelarservicio/Cancelarservicioxxxhdpi.png", "../img/MenulateralCancelarservicioTAP/Cancelarserviciomdpi.png", "../img/MenulateralCancelarservicioTAP/Cancelarserviciohdpi.png", "../img/MenulateralCancelarservicioTAP/Cancelarservicioxhdpi.png", "../img/MenulateralCancelarservicioTAP/Cancelarservicioxxhdpi.png", "../img/MenulateralCancelarservicioTAP/Cancelarservicioxxxhdpi.png");
+}
+.side-menu-logout{
+    @include display-flex;
+    @include flex-direction(column);
+    @include align-items(center);
+    @include justify-content(center);
+    @include widheigh(18px,18px,18px,18px);
+    @include media-icons("../img/MenulateralCerrarsesion/Cerrarsesionmdpi.png","../img/MenulateralCerrarsesion/Cerrarsesionhdpi.png","../img/MenulateralCerrarsesion/Cerrarsesionxhdpi.png","../img/MenulateralCerrarsesion/Cerrarsesionxxhdpi.png","../img/MenulateralCerrarsesion/Cerrarsesionxxxhdpi.png","../img/MenulateralCerrarsesionTAP/Cerrarsesionmdpi.png","../img/MenulateralCerrarsesionTAP/Cerrarsesionhdpi.png","../img/MenulateralCerrarsesionTAP/Cerrarsesionxhdpi.png","../img/MenulateralCerrarsesionTAP/Cerrarsesionxxhdpi.png","../img/MenulateralCerrarsesionTAP/Cerrarsesionxxhdpi.png");
+}
