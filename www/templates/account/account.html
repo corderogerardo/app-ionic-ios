@@ -1,54 +1,50 @@
 <div class="bar bar-header bar-balanced">
-	 <h1 class="title">TU CUENTA</h1>
+    <h1 class="title">TU CUENTA</h1>
 </div>
 <ion-view view-title="Your Account">
-	<ion-content scroll="false" >
-	<div class="space">
-
-	</div>
+    <ion-content scroll="false">
+        <div class="space">
+        </div>
         <form class="account-container" id="accountForm" name="accountForm" accept-charset="utf-8" novalidate>
-			<div class="inputs-container">
-				<i class="icon-user"></i>
-				<label class="">
-					<input type="text" name="name" ng-model="user.name" placeholder="Nombre" required>
-				</label>
-			</div>
-
-			<div class="inputs-container">
-				<i class="icon-email"></i>
-				<label class="">
-					<input type="email" name="email" ng-model="user.email" placeholder="Correo Electrónico" required>
-				</label>
-			</div>
-			<div class="inputs-container">
-				<i class="icon-phone"></i>
-				<label class="">
-					<input type="text" name="mobilephone" ng-model="user.phone" placeholder="Teléfono Móvil" >
-				</label>
-			</div>
-			<div class="inputs-container">
-				<i class="icon-phone"></i>
-				<label class="">
-					<input type="text" name="localphone" ng-model="user.localPhone" placeholder="Teléfono Fijo">
-				</label>
-			</div>
-			<div class="inputs-container">
-				<i class="icon-cinit"></i>
-				<label class="">
-					<input type="text" name="id" ng-model="user.identify" placeholder="Identificación (N° Cedula o Pasaporte)">
-				</label>
-			</div>
-			<div class="inputs-container">
-				<i class="icon-pass"></i>
-				<label class="">
-					<input type="password" name="pass" ng-model="user.pass" placeholder="Contraseña">
-				</label>
-			</div>
-		<div class="button-bottom-account">
-		<a type="submit" class="button-noicon" ng-click="doAccountUpdate(accountForm)" title="GUARDAR CAMBIOS">GUARDAR CAMBIOS</a>
-		</div>
-    </form>
-
-
+            <div class="inputs-container">
+                <i class="icon-user"></i>
+                <label class="">
+                    <input type="text" name="name" ng-model="user.name" placeholder="Nombre" required>
+                </label>
+            </div>
+            <div class="inputs-container">
+                <i class="icon-email"></i>
+                <label class="">
+                    <input type="email" name="email" ng-model="user.email" placeholder="Correo Electrónico" required>
+                </label>
+            </div>
+            <div class="inputs-container">
+                <i class="icon-phone"></i>
+                <label class="">
+                    <input type="text" name="mobilephone" ng-model="user.phone" placeholder="Teléfono Móvil">
+                </label>
+            </div>
+            <div class="inputs-container">
+                <i class="icon-phone"></i>
+                <label class="">
+                    <input type="text" name="localphone" ng-model="user.localPhone" placeholder="Teléfono Fijo">
+                </label>
+            </div>
+            <div class="inputs-container">
+                <i class="icon-cinit"></i>
+                <label class="">
+                    <input type="text" name="id" ng-model="user.identify" placeholder="Identificación (N° Cedula o Pasaporte)">
+                </label>
+            </div>
+            <div class="inputs-container">
+                <i class="icon-pass"></i>
+                <label class="">
+                    <input type="password" name="pass" ng-model="user.pass" placeholder="Contraseña">
+                </label>
+            </div>
+            <div class="button-bottom-account">
+                <a type="submit" class="button-noicon" ng-click="doAccountUpdate(accountForm)" title="GUARDAR CAMBIOS">GUARDAR CAMBIOS</a>
+            </div>
+        </form>
     </ion-content>
 </ion-view>

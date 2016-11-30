@@ -5,7 +5,7 @@
 </ion-header-bar>
 <ion-content class="side-menu-content">
 <ion-list>
-    <ion-item menu-close ui-sref="app.main">
+    <ion-item menu-close ui-sref="app.main" ng-if="!isHome()">
        <i class="side-menu-home"></i>  Inicio
     </ion-item>
     <ion-item menu-close ui-sref="app.account">
@@ -14,7 +14,7 @@
     <ion-item menu-close ui-sref="app.history">
         <i class="side-menu-history"></i>  Historial
     </ion-item>
-    <ion-item menu-close ui-sref="menu">
+    <ion-item menu-close ui-sref="menu" ng-if="isServiceActive()" ng-click="cancelService()">
         <i class="side-menu-cancel-service"></i>  Cancelar servicio
     </ion-item>
     <ion-item menu-close ng-click="logout()">

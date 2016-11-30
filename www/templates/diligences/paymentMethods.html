@@ -2,16 +2,14 @@
     <h1 class="title">MEDIOS DE PAGO</h1>
 </div>
 <ion-view view-title="PaymentMethod">
-    <ion-content scroll="false" >
+    <ion-content scroll="false">
         <div class="space">
-
         </div>
         <section class="send-type-todo">
             <div>
                 <span>Elige un medio de pago</span>
             </div>
         </section>
-
         <section class="payments-options">
             <ion-radio ng-repeat="option in paymentMethods" class="send-type-options-radio" ng-model="data.pay" ng-value="option.value">{{option.name}}</ion-radio>
         </section>

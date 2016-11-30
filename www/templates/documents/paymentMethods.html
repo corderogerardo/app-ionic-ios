@@ -1,40 +1,22 @@
-<ion-side-menus enable-menu-with-back-views="false">
-    <ion-side-menu-content>
-        <ion-nav-bar class="bar-balanced menu-bg">
-            <ion-nav-back-button>
-            </ion-nav-back-button>
-            <ion-nav-buttons side="left">
-                <button class="button button-icon button-clear ion-navicon" menu-toggle="left">
-                </button>
-            </ion-nav-buttons>
-        </ion-nav-bar>
-        <ion-nav-view name="mainContent">
-            <div class="bar bar-header bar-balanced bar-sendtype">
-                <h3 class="title">Medio de pago</h3>
+<div class="bar bar-header bar-balanced bar-sendtype">
+    <h3 class="title">Medio de pago</h3>
+</div>
+<ion-view view-title="PaymentMethod">
+    <ion-content scroll="false" overflow-scroll="false" class="axpress-bg">
+        <div class="container-senttype">
+            <div class="send-type-todo">
+                <div>
+                    <span>Elige un medio de pago</span>
+                </div>
             </div>
-            <ion-view view-title="PaymentMethod">
-                <ion-content scroll="false" overflow-scroll="false" class="axpress-bg">
-                    <div class="container-senttype">
-                        <div class="send-type-todo">
-                            <div>
-                                <span>Elige un medio de pago</span>
-                            </div>
-                        </div>
-                        <div class="send-type-options">
-                            <ion-radio ng-repeat="option in paymentMethods" class="send-type-options-radio" ng-model="data.pay" ng-value="option.value">{{option.name}}</ion-radio>
-                        </div>
-                    </div>
-                    <div class="hide-on-keyboard-open row button-bottom-two button-confirm-position">
-                        <a class="button button-block button-default-two button-confirm" ng-click="confirmPaymentMethod()">
-                            Continuar
-                        </a>
-                    </div>
-                </ion-content>
-            </ion-view>
-
-        </ion-nav-view>
-    </ion-side-menu-content>
-    <ion-side-menu side="left">
-        <sidebar-menu> </sidebar-menu>
-    </ion-side-menu>
-</ion-side-menus>
+            <div class="send-type-options">
+                <ion-radio ng-repeat="option in paymentMethods" class="send-type-options-radio" ng-model="data.pay" ng-value="option.value">{{option.name}}</ion-radio>
+            </div>
+        </div>
+        <div class="hide-on-keyboard-open row button-bottom-two button-confirm-position">
+            <a class="button button-block button-default-two button-confirm" ng-click="confirmPaymentMethod()">
+                Continuar
+            </a>
+        </div>
+    </ion-content>
+</ion-view>

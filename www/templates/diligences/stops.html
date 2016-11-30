@@ -1,25 +1,24 @@
 <div class="bar bar-header bar-balanced">
-     <h1 class="title">RESUMEN DE LA DILIGENCIA</h1>
+    <h1 class="title">RESUMEN DE LA DILIGENCIA</h1>
 </div>
 <ion-view view-title="Resumen del Envío">
-    <ion-content scroll="false" >
-    <div class="space"></div>
+    <ion-content scroll="false">
+        <div class="space"></div>
         <section class="sentresume-data">
             <section class="sentresume-content" ng-repeat="stops in data.destiniesData">
                 <div class="data-origin">
                     <b>PARADA {{ $index + 1 }}</b>
-                    <p>Address:{{ stops.address }} <br>Name:{{ stops.name }} <br> Phone:{{ stops.phone }}</p>
-
+                    <p>Address:{{ stops.address }}
+                        <br>Name:{{ stops.name }}
+                        <br> Phone:{{ stops.phone }}</p>
                 </div>
                 <a class="" ng-click="editDestiny($index)" title="">
                     <i class="ion-edit"></i>
                 </a>
             </section>
-
-    </section>
+        </section>
         <section class="sentresume-button">
             <div class="container-button">
-
                 <a class="button-noicon" ng-click="goBack()" title=""> VOLVER</a>
             </div>
         </section>
