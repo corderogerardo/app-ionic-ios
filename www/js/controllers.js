@@ -49,7 +49,7 @@
             if (localStorage.getItem('axpress.user') && localStorage.getItem('axpress.menu')) {
                 $rootScope.user = JSON.parse(localStorage.getItem('axpress.user'));
                 $rootScope.menu = JSON.parse(localStorage.getItem('axpress.menu'));
-                $state.go('menu');
+                $state.go('app.main');
             }
         }
 
@@ -280,7 +280,7 @@
             $rootScope.menu = menu;
             localStorage.setItem('axpress.user', JSON.stringify(user));
             localStorage.setItem('axpress.menu', JSON.stringify(menu));
-            $state.go('menu');
+            $state.go('app.main');
         }
     }
 })();
@@ -833,7 +833,7 @@
 
         function successfullyRegisteredRequest() {
             $scope.data = {};
-            $state.go("menu",null,{reload:true});
+            $state.go("app.main");
         }
 
         function activate() {

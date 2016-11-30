@@ -36,7 +36,7 @@ angular.module('axpress', [
     if (localStorage.getItem('axpress.user') && localStorage.getItem('axpress.menu')) {
         $rootScope.user = JSON.parse(localStorage.getItem('axpress.user'));
         $rootScope.menu = JSON.parse(localStorage.getItem('axpress.menu'));
-        $state.go('menu');
+        $state.go('app.main');
     }
 
     //Configure moment
@@ -49,15 +49,33 @@ angular.module('axpress', [
 
 .config(['$stateProvider', '$urlRouterProvider', '$ionicCloudProvider', function($stateProvider, $urlRouterProvider, $ionicCloudProvider) {
     $stateProvider
-        .state('app', {
+        .state('root', {
             url: '/',
             templateUrl: 'templates/welcome/welcome.html',
             controller: 'AuthController'
         })
-        .state('account', {
+        .state('app', {
+            url: '/app',
+            abstract: true,
+            templateUrl: 'templates/menu/menu.html'
+        })
+        .state('app.main', {
+            url: '/main',
+            views: {
+                'mainContent': {
+                    templateUrl: 'templates/main.html',
+                    controller: 'MenuController'
+                }
+            }
+        })
+        .state('app.account', {
             url: '/account',
-            templateUrl: 'templates/account/account.html',
-            controller: 'AccountController'
+            views: {
+                'mainContent': {
+                    templateUrl: 'templates/account/account.html',
+                    controller: 'AccountController'
+                }
+            }
         })
         .state('history', {
             url: '/history',
@@ -73,11 +91,6 @@ angular.module('axpress', [
                     return Chat.history($stateParams.shippingId);
                 }
             }
-        })
-        .state('menu', {
-            url: '/menu',
-            templateUrl: 'templates/menu/menu.html',
-            controller: 'MenuController'
         })
         /**
          * Authentication Routes

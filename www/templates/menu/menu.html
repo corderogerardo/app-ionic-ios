@@ -8,20 +8,10 @@
         </button>
       </ion-nav-buttons>
     </ion-nav-bar>
-    <ion-nav-view name="mainContent">
-        <ion-view view-title="Menu">
-            <ion-content class="axpress-bg" scroll="false" overflow-scroll="false">
-                <section class="main-menu" >
-                    <a ng-repeat="option in menuoptions" class="main-menu-options" title="{{option.title}}" ng-click="moveTo(option)">
-                        <div class="img-{{$index}}"> </div>
-                        {{ option.title }}
-                    </a>
-                </section>
-            </ion-content>
-        </ion-view>
-    </ion-nav-view>
+    <ion-nav-view name="mainContent"></ion-nav-view>
   </ion-side-menu-content>
-    <ion-side-menu side="left">
-        <sidebar-menu> </sidebar-menu>
-    </ion-side-menu>
+
+  <ion-side-menu side="left">
+    <sidebar-menu></sidebar-menu>
+  </ion-side-menu>
 </ion-side-menus>

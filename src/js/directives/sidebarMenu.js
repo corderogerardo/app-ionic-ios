@@ -18,7 +18,7 @@
 
         function logout () {
             Client.logout();
-            $rootScope.$state.go('app');
+            $rootScope.$state.go('root');
         }
     }
 })();
