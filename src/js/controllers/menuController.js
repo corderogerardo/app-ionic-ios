@@ -2,15 +2,15 @@
     angular.module('axpress')
         .controller('MenuController', MenuController);
 
-    MenuController.$inject = ['$rootScope', '$scope', '$state','$window'];
+    MenuController.$inject = ['$rootScope', '$scope', '$state'];
 
-    function MenuController($rootScope, $scope, $state,$window) {
+    function MenuController($rootScope, $scope, $state) {
         $scope.menuoptions = $rootScope.menu;
 
         var urlsPerServiceType = {
-            43: 'document.origin',
-            44: 'package.origin',
-            45: 'diligence.clientfeatures'
+            43: 'app.document.origin',
+            44: 'app.package.origin',
+            45: 'app.diligence.clientfeatures'
         };
 
         $scope.moveTo = function(option) {
