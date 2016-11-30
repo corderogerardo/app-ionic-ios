@@ -11,6 +11,7 @@
         service.session = session;
         service.updateLocation = updateLocation;
         service.cancelService = cancelService;
+        service.getLocation = getLocation;
 
         return service;
 
@@ -46,6 +47,19 @@
                 longitude: longitude
             };
             return service.apiPost('/updateLocation', data);
+        }
+
+        /**
+         * Gets the logistic resource location.
+         *
+         * @param      {Integer}  logisticresourceId  The logisticresource identifier
+         * @return     {Promise}  A promise to resolve results
+         */
+        function getLocation(logisticresourceId) {
+            var data = {
+                logisticresource_id: logisticresourceId
+            };
+            return service.apiPost('/getLocation', data);
         }
 
         /**

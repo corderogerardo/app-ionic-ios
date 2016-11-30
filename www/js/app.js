@@ -84,6 +84,11 @@ angular.module('axpress', [
                     templateUrl: 'templates/history/history.html',
                     controller: 'HistoryController'
                 }
+            },
+            resolve: {
+                history: function (Shipping, $rootScope) {
+                    return Shipping.history($rootScope.user.id);
+                }
             }
         })
         .state('app.chat', {
@@ -390,10 +395,19 @@ angular.module('axpress', [
         /**
          * Shipment States
          */
-        .state('shipmenttracking', {
-            url: '/shipmenttracking',
-            templateUrl: 'templates/shipmenttracking/shipmenttracking.html',
-            controller:'ShipmentTrackingController'
+        .state('tracking', {
+            url: '/tracking/:shippingId',
+            views: {
+                'mainContent': {
+                    templateUrl: 'templates/tracking/tracking.html',
+                    controller:'TrackingController'
+                }
+            },
+            resolve: {
+                history: function (Shipping, $rootScope) {
+                    return Shipping.history($rootScope.user.id);
+                }
+            }
         })
         .state('shipmentverification', {
             url: '/shipmentverification',

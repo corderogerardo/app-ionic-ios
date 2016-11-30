@@ -5,34 +5,33 @@
 	<ion-content scroll="false" >
         <map center='{{address || "Bogota"}}'
              geo-fallback-center="[40.74, -74.18]"
-             zoom="11" class="main-container-maps">
-            <marker position="{{ originAdd }}"
-                    title="Origen"
+             zoom="11" class="main-container-maps" zoom-to-include-markers="true"
+             zoom-control="false" map-type-control="false"
+             street-view-control="false">
+            <marker position="{{ marker.position }}" icon="{{marker.icon}}" 
+                ng-repeat="marker in markers"
             ></marker>
-            <marker position="{{ destinyAdd }}"
-                    title="Destino"
-                    centered="true"></marker>
         </map>
 	<section class="main-container-shipementtracking" >
 	<div class="shipementtracking-gps-button">
-		<a class="shipementtracking-gps-button-traditional" title=""><i class="ion-map"></i> </a>
+		<a class="shipementtracking-gps-button-traditional" title="" ng-click="loadCourierPosition()"><i class="ion-map"></i> </a>
 		</div>
 		<!-- Navigation -->
 			<nav class="nav navbar" id="menu">
 				<div class="navbar_top" drag-up>INFORMACION MENSAJERO</div>
 				<section class="deliverboy-info navbar_content">
 					<div class="deliverboy-photo">
-					<i class="ion-ios-people"></i>
+					   <img ng-src="{{shipping.currier.image}}">
 					</div>
 					<div class="deliverboy-data">
 						<div class="deliverboy-data-text">
-						<p>Nombre: Santiago Ruiz</p>
-						<p>Identificacion:1.020.711.823</p>
-						<p>Teléfono: 316 344 56 78</p>
+						<p>Nombre: {{shipping.currier.fullName}}</p>
+						<p>Identificacion: {{shipping.currier.identify}}</p>
+						<p>Teléfono: {{shipping.currier.movil_phone}}</p>
 						</div>
 						<div class="deliverboy-data-buttons">
-							<a class="deliverboy-chat" ng-click="goToChat()">CHAT</a>
-							<a class="deliverboy-call" ng-click="goToCall()">LLAMAR</a>
+							<a class="deliverboy-chat" ui-sref="chat({shippingId: shipping.shipping_id})">Chat</a>
+							<a class="deliverboy-call" href="tel:{{shipping.currier.movil_phone}}">Llamar</a>
 						</div>
 					</div>
 				</section>
