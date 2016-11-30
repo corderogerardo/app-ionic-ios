@@ -13,7 +13,7 @@ angular.module('axpress', [
     'LocalStorageModule'
 ])
 
-.run(['$ionicPlatform', '$rootScope', '$state', function($ionicPlatform, $rootScope, $state) {
+.run(['$ionicPlatform', '$rootScope', '$state', '$stateParams', function($ionicPlatform, $rootScope, $state, $stateParams) {
     $ionicPlatform.ready(function() {
         if (window.cordova && window.cordova.plugins.Keyboard) {
             // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
@@ -36,42 +36,67 @@ angular.module('axpress', [
     if (localStorage.getItem('axpress.user') && localStorage.getItem('axpress.menu')) {
         $rootScope.user = JSON.parse(localStorage.getItem('axpress.user'));
         $rootScope.menu = JSON.parse(localStorage.getItem('axpress.menu'));
-        $state.go('menu');
+        $state.go('app.main');
     }
 
     //Configure moment
     moment.locale('es');
+
+    //State vars
+    $rootScope.$state = $state;
+    $rootScope.$stateParams = $stateParams;
 }])
 
 .config(['$stateProvider', '$urlRouterProvider', '$ionicCloudProvider', function($stateProvider, $urlRouterProvider, $ionicCloudProvider) {
     $stateProvider
-        .state('app', {
+        .state('root', {
             url: '/',
             templateUrl: 'templates/welcome/welcome.html',
             controller: 'AuthController'
         })
-        .state('menu', {
-            url: '/menu',
-            templateUrl: 'templates/menu/menu.html',
-            controller: 'MenuController'
+        .state('app', {
+            url: '/app',
+            abstract: true,
+            templateUrl: 'templates/menu/menu.html'
         })
-        .state('account', {
+        .state('app.main', {
+            url: '/main',
+            views: {
+                'mainContent': {
+                    templateUrl: 'templates/main.html',
+                    controller: 'MenuController'
+                }
+            }
+        })
+        .state('app.account', {
             url: '/account',
-            templateUrl: 'templates/account/account.html',
-            controller: 'AccountController'
+            views: {
+                'mainContent': {
+                    templateUrl: 'templates/account/account.html',
+                    controller: 'AccountController'
+                }
+            }
         })
-        .state('history', {
+        .state('app.history', {
             url: '/history',
-            templateUrl: 'templates/history/history.html',
-            controller: 'HistoryController'
+            views: {
+                'mainContent': {
+                    templateUrl: 'templates/history/history.html',
+                    controller: 'HistoryController'
+                }
+            }
         })
-        .state('chat', {
+        .state('app.chat', {
             url: '/chat/:shippingId',
-            templateUrl: 'templates/chat/chat.html',
-            controller: 'ChatController',
             resolve: {
                 history: function (Chat, $stateParams) {
                     return Chat.history($stateParams.shippingId);
+                }
+            },
+            views: {
+                'mainContent': {
+                    templateUrl: 'templates/chat/chat.html',
+                    controller: 'ChatController'
                 }
             }
         })
@@ -99,175 +124,268 @@ angular.module('axpress', [
         /**
          * Document States
          */
-        .state('document', {
+        .state('app.document', {
             url: '/document',
-            abstract: true,
-            template: '<ui-view/>',
+            views: {
+                'mainContent': {
+                    template: '<ion-nav-view name="documentContent"></ion-nav-view>'
+                }
+            },
             data: {
                 data: {},
                 extraData: {
-                    flow: 'document',
-                    originNext: 'document.destiny',
-                    destinyNext: 'document.features',
-                    featuresNext: 'document.receiver',
-                    receiverNext: 'document.photo',
-                    photoNext: 'document.resume',
-                    resumeNext: 'document.paymentmethods',
+                    flow: 'app.document',
+                    originNext: 'app.document.destiny',
+                    destinyNext: 'app.document.features',
+                    featuresNext: 'app.document.receiver',
+                    receiverNext: 'app.document.photo',
+                    photoNext: 'app.document.resume',
+                    resumeNext: 'app.document.paymentmethods',
                 }
             },
             params: {
                 serviceType: null
             }
         })
-        .state('document.origin', {
+        .state('app.document.origin', {
             url: '/origin',
-            templateUrl: 'templates/documents/origin.html',
-            controller: 'OriginController'
+            views: {
+                'documentContent': {
+                    templateUrl: 'templates/documents/origin.html',
+                    controller: 'OriginController',
+                }
+            }
         })
-        .state('document.destiny', {
+        .state('app.document.destiny', {
             url: '/destiny',
-            templateUrl: 'templates/documents/destiny.html',
-            controller: 'DestinyController'
+            views: {
+                'documentContent': {
+                    templateUrl: 'templates/documents/destiny.html',
+                    controller: 'DestinyController'
+                }
+            }
         })
-        .state('document.features', {
+        .state('app.document.features', {
             url: '/features',
-            templateUrl: 'templates/documents/features.html',
-            controller: 'FeaturesController'
+            views: {
+                'documentContent': {
+                    templateUrl: 'templates/documents/features.html',
+                    controller: 'FeaturesController'
+                }
+            }
         })
-        .state('document.receiver', {
+        .state('app.document.receiver', {
             url: '/receiver',
-            templateUrl: 'templates/documents/receiver.html',
-            controller:'ReceiverController'
+            views: {
+                'documentContent': {
+                    templateUrl: 'templates/documents/receiver.html',
+                    controller:'ReceiverController'
+                }
+            }
         })
-        .state('document.photo', {
+        .state('app.document.photo', {
             url: '/photo',
-            templateUrl: 'templates/documents/photo.html',
-            controller:'PhotoController'
+            views: {
+                'documentContent': {
+                    templateUrl: 'templates/documents/photo.html',
+                    controller:'PhotoController'
+                }
+            }
         })
-        .state('document.resume', {
+        .state('app.document.resume', {
             url: '/resume',
-            templateUrl: 'templates/documents/resume.html',
-            controller:'ResumeController'
+            views: {
+                'documentContent': {
+                    templateUrl: 'templates/documents/resume.html',
+                    controller:'ResumeController'
+                }
+            }
         })
-        .state('document.paymentmethods', {
+        .state('app.document.paymentmethods', {
             url: '/paymentmethods',
-            templateUrl: 'templates/documents/paymentMethods.html',
-            controller:'PaymentMethodsController'
+            views: {
+                'documentContent': {
+                    templateUrl: 'templates/documents/paymentMethods.html',
+                    controller:'PaymentMethodsController'
+                }
+            }
         })
         /**
          * Packages Routes
          */
-        .state('package', {
+        .state('app.package', {
             url: '/package',
-            abstract: true,
-            template: '<ui-view/>',
+            views: {
+                'mainContent': {
+                    template: '<ion-nav-view name="packageContent"></ion-nav-view>',
+                }
+            },
             data: {
                 data: {},
                 extraData: {
                     flow: 'package',
-                    originNext: 'package.destiny',
-                    destinyNext: 'package.features',
-                    featuresNext: 'package.receiver',
-                    receiverNext: 'package.package',
-                    packageNext: 'package.photo',
-                    photoNext: 'package.resume',
-                    resumeNext: 'package.paymentmethods',
+                    originNext: 'app.package.destiny',
+                    destinyNext: 'app.package.features',
+                    featuresNext: 'app.package.receiver',
+                    receiverNext: 'app.package.photo',
+                    photoNext: 'app.package.package',
+                    packageNext: 'app.package.resume',
+                    resumeNext: 'app.package.paymentmethods',
                 }
             },
             params: {
                 serviceType: null
             }
         })
-        .state('package.origin', {
+        .state('app.package.origin', {
             url: '/origin',
-            templateUrl: 'templates/packages/origin.html',
-            controller: 'OriginController'
+            views: {
+                'packageContent': {
+                    templateUrl: 'templates/packages/origin.html',
+                    controller: 'OriginController'
+                }
+            }
         })
-        .state('package.destiny', {
+        .state('app.package.destiny', {
             url: '/destiny',
-            templateUrl: 'templates/packages/destiny.html',
-            controller: 'DestinyController'
+            views: {
+                'packageContent': {
+                    templateUrl: 'templates/packages/destiny.html',
+                    controller: 'DestinyController'
+                }
+            }
         })
-        .state('package.features', {
+        .state('app.package.features', {
             url: '/features',
-            templateUrl: 'templates/packages/features.html',
-            controller: 'FeaturesController'
+            views: {
+                'packageContent': {
+                    templateUrl: 'templates/packages/features.html',
+                    controller: 'FeaturesController'
+                }
+            }
         })
-        .state('package.receiver', {
+        .state('app.package.receiver', {
             url: '/receiver',
-            templateUrl: 'templates/packages/receiver.html',
-            controller:'ReceiverController'
+            views: {
+                'packageContent': {
+                    templateUrl: 'templates/packages/receiver.html',
+                    controller:'ReceiverController'
+                }
+            }
         })
-        .state('package.package', {
+        .state('app.package.package', {
             url: '/package',
-            templateUrl: 'templates/packages/package.html',
-            controller:'FeaturesController'
+            views: {
+                'packageContent': {
+                    templateUrl: 'templates/packages/package.html',
+                    controller:'FeaturesController'
+                }
+            }
         })
-        .state('package.photo', {
+        .state('app.package.photo', {
             url: '/photo',
-            templateUrl: 'templates/packages/photo.html',
-            controller:'PhotoController'
+            views: {
+                'packageContent': {
+                    templateUrl: 'templates/packages/photo.html',
+                    controller:'PhotoController'
+                }
+            }
         })
-        .state('package.resume', {
+        .state('app.package.resume', {
             url: '/resume',
-            templateUrl: 'templates/packages/resume.html',
-            controller:'ResumeController'
+            views: {
+                'packageContent': {
+                    templateUrl: 'templates/packages/resume.html',
+                    controller:'ResumeController'
+                }
+            }
         })
-        .state('package.paymentmethods', {
+        .state('app.package.paymentmethods', {
             url: '/paymentmethods',
-            templateUrl: 'templates/packages/paymentMethods.html',
-            controller:'PaymentMethodsController'
+            views: {
+                'packageContent': {
+                    templateUrl: 'templates/packages/paymentMethods.html',
+                    controller:'PaymentMethodsController'
+                }
+            }
         })
         /**
          * Diligences Routes
          */
-        .state('diligence', {
+        .state('app.diligence', {
             url: '/diligence',
-            abstract: true,
-            template: '<ui-view/>',
+            views: {
+                'mainContent': {
+                    template: '<ion-nav-view name="diligenceContent"></ion-nav-view>',
+                }
+            },
             data: {
                 data: {},
                 extraData: {
-                    flow: 'diligence',
-                    clientNext: 'diligence.origin',
-                    originNext: 'diligence.destiny',
-                    destinyNext: 'diligence.resume',
-                    resumeNext:'diligence.paymentmethods'
+                    flow: 'app.diligence',
+                    clientNext: 'app.diligence.origin',
+                    originNext: 'app.diligence.destiny',
+                    destinyNext: 'app.diligence.resume',
+                    resumeNext:'app.diligence.paymentmethods'
                 }
             },
             params: {
                 serviceType: null
             }
         })
-        .state('diligence.clientfeatures', {
+        .state('app.diligence.clientfeatures', {
             url: '/clientfeatures',
-            templateUrl: 'templates/diligences/clientfeature.html',
-            controller: 'FeaturesController'
+            views: {
+                'diligenceContent': {
+                    templateUrl: 'templates/diligences/clientfeature.html',
+                    controller: 'FeaturesController'
+                }
+            }
         })
-        .state('diligence.origin', {
+        .state('app.diligence.origin', {
             url: '/origin',
-            templateUrl: 'templates/diligences/origin.html',
-            controller: 'OriginController'
+            views: {
+                'diligenceContent': {
+                    templateUrl: 'templates/diligences/origin.html',
+                    controller: 'OriginController'
+                }
+            }
         })
-        .state('diligence.destiny', {
+        .state('app.diligence.destiny', {
             url: '/destiny',
-            templateUrl: 'templates/diligences/destiny.html',
-            controller: 'DestinyController'
+            views: {
+                'diligenceContent': {
+                    templateUrl: 'templates/diligences/destiny.html',
+                    controller: 'DestinyController'
+                }
+            }
         })
-        .state('diligence.stops', {
+        .state('app.diligence.stops', {
             url: '/stops',
-            templateUrl: 'templates/diligences/stops.html',
-            controller: 'StopsController'
+            views: {
+                'diligenceContent': {
+                    templateUrl: 'templates/diligences/stops.html',
+                    controller: 'StopsController'
+                }
+            }
         })
-        .state('diligence.resume', {
+        .state('app.diligence.resume', {
             url: '/resume',
-            templateUrl: 'templates/diligences/resume.html',
-            controller:'ResumeController'
+            views: {
+                'diligenceContent': {
+                    templateUrl: 'templates/diligences/resume.html',
+                    controller:'ResumeController'
+                }
+            }
         })
-        .state('diligence.paymentmethods', {
+        .state('app.diligence.paymentmethods', {
             url: '/paymentmethods',
-            templateUrl: 'templates/diligences/paymentMethods.html',
-            controller:'PaymentMethodsController'
+            views: {
+                'diligenceContent': {
+                    templateUrl: 'templates/diligences/paymentMethods.html',
+                    controller:'PaymentMethodsController'
+                }
+            }
         })
         /**
          * Shipment States

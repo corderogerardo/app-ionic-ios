@@ -25,16 +25,16 @@
         $scope.pickHere = function() {
             $scope.buttonState = true;
             var marker = $scope.markers[$scope.markers.length - 1];
-            marker.icon = "{url: 'img/inputs/pin-mapa-check2.png', scaledSize: [48,48]}";
+            marker.icon = "{url: 'img/Pindestino/Pindetsinomdpi.png', scaledSize: [28,38]}";
             marker.draggable = false;
         };
 
         $scope.addNewAddress = function() {
             var lastMarker = $scope.markers[$scope.markers.length - 1];
             lastMarker.draggable = false;
-            lastMarker.icon = "{url: 'img/inputs/pin-mapa-check2.png', scaledSize: [48,48]}";
+            lastMarker.icon = "{url: 'img/Pindestino/Pindetsinomdpi.png', scaledSize: [28,38]}";
             $scope.markers.push({
-                icon: "{url: 'img/inputs/pin-mapa2.png', scaledSize: [48,48]}"
+                icon: "{url: 'img/Pindestino/Pindetsinomdpi.png', scaledSize: [28,38]}"
             });
             $scope.data.destiniesData.push(getStopElement($scope.tempData));
             resetTempData();
@@ -128,19 +128,12 @@
             };
         }
 
-        function initialUIStates() {
-            $scope.focused = false;
-            $scope.focused2 = false;
-            $scope.buttonState = false;
-            $scope.focusedphonedestinatary = false;
-            $scope.focusednamedestinatary = false;
-        }
 
         function activate() {
             $scope.data = $state.current.data.data;
             $scope.extraData = $state.current.data.extraData;
             $scope.markers = [{
-                icon    : "{url: 'img/inputs/pin-mapa-check1.png', scaledSize: [48,48]}",
+                icon    : "{url: 'img/PinOrigen/Origenmdpi.png', scaledSize: [28,38]}",
                 position: [$scope.data.originLatitude, $scope.data.originLongitude]
             }];
             $scope.tempData = {};
@@ -148,12 +141,11 @@
             NgMap.getMap().then(function(map) {
                 $scope.map = map;
             });
-            initialUIStates();
             if ( Array.isArray($scope.data.destiniesData) && $scope.data.destiniesData.length > 0 ) {
                 var index = $scope.data.editStopIndex;
                 $scope.data.destiniesData.forEach(function(destiny, destIndex) {
                     $scope.markers.push({
-                        icon     : (destIndex == index ? "{url: 'img/inputs/pin-mapa2.png', scaledSize: [48,48]}" : "{url: 'img/inputs/pin-mapa-check2.png', scaledSize: [48,48]}"),
+                        icon     : (destIndex == index ? "{url: 'img/Pindestino/Pindetsinomdpi.png', scaledSize: [28,38]}" : "{url: 'img/Pindestino/Pindetsinomdpi.png', scaledSize: [28,38]}"),
                         position : [destiny.latitude, destiny.longitude],
                         draggable: (destIndex == index)
                     });
@@ -169,7 +161,7 @@
             } else {
                 $scope.data.destiniesData = [];
                 $scope.markers.push({
-                    icon     : "{url: 'img/inputs/pin-mapa2.png', scaledSize: [48,48]}",
+                    icon     : "{url: 'img/Pindestino/Pindetsinomdpi.png', scaledSize: [28,38]}",
                     draggable: true
                 });
             }

@@ -1,38 +1,19 @@
-<div class="bar bar-header bar-balanced">
-		 <h3 class="title">ORIGEN DEL DOCUMENTO</h3>
+<div class="bar bar-header bar-balanced bar-origin">
+    <h3 class="title">Origen</h3>
+    <div class="list list-inset input-direction">
+        <map-autocomplete-address class="item item-input inputs-general input-origin" on-place-changed="placeChanged" address="address">
+        </map-autocomplete-address>
+        <input class="item item-input inputs-general input-originDetail" ng-model="data.originDetail" type="text" placeholder="Detalles: Apt - Casa - Oficina">
+    </div>
 </div>
 <ion-view view-title="SendType">
-		<ion-content scroll="false" >
-
-				<address-selection center="place" markers="markers" callbacks="mapCallbacks"></address-selection>
-
-				<div class="space"></div>
-				<div class="input-direction">
-						<div class="inputs-container direction-marker">
-                            <i ng-if="focused === true" class="icon-marker-color"></i>
-                            <i ng-if="focused === false" class="icon-marker-gray"></i>
-								<label >
-										<map-autocomplete-address  on-place-changed="placeChanged" address="address">
-                                        </map-autocomplete-address>
-								</label>
-						</div>
-						<div class="inputs-container-last flag-maps">
-                            <i ng-if="focused2 === true" class="icon-flag-color"></i>
-                            <i ng-if="focused2 === false" class="icon-flag-gray"></i>
-								<label>
-										<input ng-model="data.originDetail" ng-focus="focused2 = true"
-                                               ng-blur="focused2 = false" type="text" placeholder="Detalles de direccion">
-								</label>
-						</div>
-				</div>
-                <i class="gps-button icon-location-color" ng-click="gpsHere()" title=""></i>
-
-				<div ng-if="buttonState === false" class="pickuphere-button">
-						<a class="button-noicon" ng-click="pickHere()" title="">RECOGER AQUÍ</a>
-				</div>
-            <div ng-if="buttonState === true" class="pickuphere-button">
-                <a class="button-noicon" ng-click="confirmOrigin()" title="">CONFIRMAR</a>
-            </div>
-		</ion-content>
+    <ion-content scroll="false" overflow-scroll="false">
+        <address-selection center="place" markers="markers" callbacks="mapCallbacks"></address-selection>
+        <i class="hide-on-keyboard-open row button-bottom-three button-gps" ng-click="gpsHere()" title=""></i>
+        <div class="hide-on-keyboard-open row button-bottom-two button-confirm-position">
+            <a class="button button-block button-default-two button-confirm" ng-click="confirmOrigin()">
+                Confirmar origen
+            </a>
+        </div>
+    </ion-content>
 </ion-view>
-

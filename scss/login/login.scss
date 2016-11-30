@@ -1,89 +1,45 @@
-.inputs-wrapper{
-		align-items: center;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	height:30%;
-		margin-top: 20%;
-		padding-top: 8%;
-	width:100%;
+.input-email{
+    background-image: url("../img/CorreoElectronico/CorreoElectronicomdpi.png");
+    background-size: 100%;
+    background-repeat:no-repeat;
+    &:focus{
+            background-image: url("../img/CorreoElectronicoTAP/CorreoElectronicomdpi.png");
+            background-size: 100%;
+            background-repeat:no-repeat;
+    }
+
 }
-.button-wrapper{
-		align-items: center;
-		display: inline-flex;
-	flex-direction: column;
-	justify-content: center;
-	width:100%;
-		margin-bottom: 10%;
-		height: 5%;
+.input-pass{
+    background-image: url("../img/Contrasena/Contrasenamdpi.png");
+    background-size: 100%;
+    background-repeat:no-repeat;
+    &:focus{
+        background-image: url("../img/ContrasenaTAP/Contrasenamdpi.png");
+        background-size: 100%;
+        background-repeat:no-repeat;
+    }
 }
-.login-forgot-pass{
-	align-items: center;
-	display:flex;
-	color:$graybbb;
-	font-size: 2.5vh;
-		font-weight:bold;
-	margin-top: 2%;
-	text-decoration: none;
-	justify-content: center;
-	width:100%;
-	height:10%;
+.input-user{
+    background-image: url("../img/Usuario/Usuariohdpi.png");
+    background-size: 100%;
+    background-repeat:no-repeat;
+    background-position: center;
+    &:focus{
+        background-image: url("../img/UsuarioTAP/Usuariohdpi.png");
+        background-size: 100%;
+        background-repeat:no-repeat;
+        background-position: center;
+    }
 }
-.login-container-social{
-	align-items: center;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-		margin-bottom: 3%;
-		height:5%;
-	width:100%;
-}
-.login-new-container{
-		align-items: center;
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		height:15%;
-		width:100%;
-		a{
-				align-items: center;
-				display:flex;
-				flex-direction: row;
-				color:rgba($graybbb,.8);
-				font-size: 2.5vh;
-				height:10%;
-				justify-content: center;
-				text-decoration:none;
-				width:100%;
-				label{
-						display:flex;
-						flex-direction: row;
-						color:$graybbb;
-						font-size: 2.5vh;
-						font-weight: bold;
-						margin-left: 3%;
-						cursor: pointer;
-						justify-content: center;
-						text-decoration:none;
-				}
-		}
-}
-.login-form{
-		background-color: $grayb;
-		align-items: center;
-		display: flex;
-		margin-top: 60%;
-		flex-direction: column;
-		justify-content: center;
-		height:25%;
-		width:100%;
-}
-.button-wrapper-forgot{
-		align-items: center;
-		display: flex;
-		flex-direction: column;
-		margin-top:5%;
-		justify-content: center;
-		height:20%;
-		width:100%;
+.input-phone{
+    background-image: url("../img/Telefono/Telefonohdpi.png");
+    background-size: 100%;
+    background-repeat:no-repeat;
+    background-position: center;
+    &:focus{
+        background-image: url("../img/TelefonoTAP/Telefonohdpi.png");
+        background-size: 100%;
+        background-repeat:no-repeat;
+        background-position: center;
+    }
 }

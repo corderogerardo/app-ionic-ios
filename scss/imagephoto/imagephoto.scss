@@ -1,65 +1,52 @@
-.imagephoto-title{
-	align-items: center;
-	display:flex;
-	flex-direction: row;
-	justify-content: center;
-	color:$balanced;
-	height: 10%;
-	p{
-		color:$balanced;
-		height: 50%;
-		font-size:3vh;
-		width: 80%;
-	}
+.photo-container{
+    @include display-flex;
+    @include flex-direction(row);
+    @include align-items(flex-end);
+    @include justify-content(center);
+    @include widheigh(60%,60%,100%,100%);
+    div {
+        @include display-flex;
+        @include flex-direction(row);
+        @include align-items(center);
+        @include justify-content(center);
+        @include widheigh(75%, 75%, 80%, 80%);
+        border-radius: 10px;
+        color: $graybbb;
+        background-color: $graybbbb !important;
+         @include media-icons("../img/Iconofoto/Iconofotomdpi.png","../img/Iconofoto/Iconofotohdpi.png","../img/Iconofoto/Iconofotoxhdpi.png","../img/Iconofoto/Iconofotoxxhdpi.png","../img/Iconofoto/Iconofotoxxxhdpi.png","../img/Iconofoto/Iconofotomdpi.png","../img/Iconofoto/Iconofotohdpi.png","../img/Iconofoto/Iconofotoxhdpi.png","../img/Iconofoto/Iconofotoxxhdpi.png","../img/Iconofoto/Iconofotoxxxhdpi.png");
+        background-size: 30% !important;
+    }
+    img{
+    @include display-flex;
+    @include flex-direction(row);
+    @include align-items(center);
+    @include justify-content(center);
+    @include widheigh(75%,75%,80%,80%);
+    border-radius: 15px;
+    color: $graybbb;
+    background-color: $graybbbb !important;
+    }
 }
-.imagephoto-container{
-	align-items: center;
-	display:flex;
-	flex-direction: row;
-	justify-content: center;
-	height:30%;
-	button{
-		align-items: center;
-		background-color: white;
-		border:none;
-		display:flex;
-		flex-direction: column;
-		justify-content: center;
-		height:100%;
-		i{
-			align-items: center;
-			display:flex;
-			color:$balanced;
-			font-size: 15vh;
-			justify-content: center;
-			width:100%;
-		}
-		a{
-			align-items: center;
-			background-color: white;
-			color:$balanced;
-			display:flex;
-			flex-direction: row;
-			justify-content: center;
-			margin-top: 10%;
-		}
-	}
+.no-margin-top{
+    margin-top: 0;
 }
-.imagephoto-button{
-	align-items: center;
-	display:flex;
-	flex-direction: column;
-	justify-content: center;
-	width:80%;
-	margin-right: auto;
-	margin-left: auto;
-	margin-top:10%;
-	height:10%;
+.photo-container-takeselect{
+    @include widheigh(10%, 10%, 100%, 100%);
+    @include display-flex;
+    @include flex-direction(row);
+    @include align-items(center);
+    @include justify-content(center);
+    color: $balanced;
+    font-weight: bold;
+    div{
+        background-color: $balanced;
+        @include widheigh(60%,60%,2px,2px);
+        margin-left: 4%;
+        margin-right: 4%;
+    }
 }
-.photo-image{
-     display: flex;
-     color: $graybbb;
-     line-height: 240px;
-     text-align: center;
-     background-color: $graybbbb !important;
- }
+.input-text-box{
+    color:$balanced !important;
+    padding-left: 10% !important;
+    @include media-inputs("../img/Cajadetexto/Cajadetextomdpi.png","../img/Cajadetexto/Cajadetextohdpi.png","../img/Cajadetexto/Cajadetextoxhdpi.png","../img/Cajadetexto/Cajadetextoxxhdpi.png","../img/Cajadetexto/Cajadetextoxxxhdpi.png","../img/Cajadetexto/Cajadetextomdpi.png","../img/Cajadetexto/Cajadetextohdpi.png","../img/Cajadetexto/Cajadetextoxhdpi.png","../img/Cajadetexto/Cajadetextoxxhdpi.png","../img/Cajadetexto/Cajadetextoxxxhdpi.png");
+}

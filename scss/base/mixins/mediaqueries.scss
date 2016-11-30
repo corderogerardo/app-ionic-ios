@@ -1,0 +1,476 @@
+@mixin widheigh($minh,$hei,$minw,$wid){
+    min-height: $minh;
+    height: $hei;
+    min-width: $minw;
+    width: $wid;
+}
+@mixin media-icons($img:'',$img2:'',$img3:'',$img4:'',$img5:'',$imgTap:'',$imgTap2:'',$imgTap3:'',$imgTap4:'',$imgTap5:''){
+    border:none !important;
+    background-color: transparent;
+    background-image: url($img);
+    background-size: 100%;
+    background-repeat:no-repeat;
+    background-position: center;
+    @media screen and (max-height: 2560px){
+        border:none !important;
+        background-color: transparent;
+        background-image: url($img5);
+        background-size: 90%;
+        background-repeat:no-repeat;
+        background-position: center;
+    }
+    @media screen and (max-height: 1920px){
+        border:none !important;
+        background-color: transparent;
+        background-image: url($img5);
+        background-size: 90%;
+        background-repeat:no-repeat;
+        background-position: center;
+    }
+    @media screen and (max-height: 1280px){
+        border:none !important;
+        background-color: transparent;
+        background-image: url($img4);
+        background-size: 90%;
+        background-repeat:no-repeat;
+        background-position: center;
+    }
+    @media screen and (max-height: 960px){
+        border:none !important;
+        background-color: transparent;
+        background-image: url($img3);
+        background-size: 90%;
+        background-repeat:no-repeat;
+        background-position: center;
+    }
+    @media screen and (max-height: 736px){
+        border:none !important;
+        background-color: transparent;
+        background-image: url($img3);
+        background-size: 90%;
+        background-repeat:no-repeat;
+        background-position: center;
+    }
+    @media screen and (max-height: 667px){
+        border:none !important;
+        background-color: transparent;
+        background-image: url($img3);
+        background-size: 90%;
+        background-repeat:no-repeat;
+        background-position: center;
+    }
+    @media screen and (max-height: 568px){
+        border:none !important;
+        background-color: transparent;
+        background-image: url($img3);
+        background-size: 90%;
+        background-repeat:no-repeat;
+        background-position: center;
+    }
+    @media screen and (max-height: 480px){
+        border:none !important;
+        background-color: transparent;
+        background-image: url($img3);
+        background-size: 90%;
+        background-repeat:no-repeat;
+        background-position: center;
+    }
+    @media screen and (max-height: 320px){
+        border:none !important;
+        background-color: transparent;
+        background-image: url($img);
+        background-size: 90%;
+        background-repeat:no-repeat;
+        background-position: center;
+    }
+    &:hover{
+        @media screen and (max-height: 2560px){
+            border:none !important;
+        background-color: transparent;
+        background-image: url($imgTap5);
+        background-size: 90%;
+        background-repeat:no-repeat;
+        background-position: center;
+        }
+        @media screen and (max-height: 1920px){
+              border:none !important;
+        background-color: transparent;
+        background-image: url($imgTap5);
+        background-size: 90%;
+        background-repeat:no-repeat;
+            background-position: center;
+        }
+        @media screen and (max-height: 1280px){
+              border:none !important;
+        background-color: transparent;
+        background-image: url($imgTap4);
+        background-size: 90%;
+        background-repeat:no-repeat;
+            background-position: center;
+        }
+        @media screen and (max-height: 960px){
+              border:none !important;
+        background-color: transparent;
+        background-image: url($imgTap3);
+        background-size: 90%;
+        background-repeat:no-repeat;
+            background-position: center;
+        }
+        @media screen and (max-height: 736px){
+              border:none !important;
+        background-color: transparent;
+        background-image: url($imgTap3);
+        background-size: 90%;
+        background-repeat:no-repeat;
+            background-position: center;
+        }
+        @media screen and (max-height: 667px){
+              border:none !important;
+        background-color: transparent;
+        background-image: url($imgTap3);
+        background-size: 90%;
+        background-repeat:no-repeat;
+            background-position: center;
+        }
+        @media screen and (max-height: 568px){
+              border:none !important;
+        background-color: transparent;
+        background-image: url($imgTap3);
+        background-size: 90%;
+        background-repeat:no-repeat;
+            background-position: center;
+        }
+        @media screen and (max-height: 480px){
+              border:none !important;
+        background-color: transparent;
+        background-image: url($imgTap3);
+        background-size: 90%;
+        background-repeat:no-repeat;
+            background-position: center;
+        }
+        @media screen and (max-height: 320px){
+              border:none !important;
+        background-color: transparent;
+        background-image: url($imgTap);
+        background-size: 90%;
+        background-repeat:no-repeat;
+            background-position: center;
+        }
+    }
+}
+@mixin media-inputs($img:'',$img2:'',$img3:'',$img4:'',$img5:'',$imgTap:'',$imgTap2:'',$imgTap3:'',$imgTap4:'',$imgTap5:''){
+    border:none !important;
+    background-color: transparent;
+    background-image: url($img);
+    background-size: 100%;
+    background-repeat:no-repeat;
+    background-position: center;
+    @media screen and (max-height: 2560px){
+        border:none !important;
+        background-color: transparent;
+        background-image: url($img5);
+        background-size: 90%;
+        background-repeat:no-repeat;
+        background-position: center;
+    }
+    @media screen and (max-height: 1920px){
+        border:none !important;
+        background-color: transparent;
+        background-image: url($img5);
+        background-size: 90%;
+        background-repeat:no-repeat;
+        background-position: center;
+    }
+    @media screen and (max-height: 1280px){
+        border:none !important;
+        background-color: transparent;
+        background-image: url($img4);
+        background-size: 90%;
+        background-repeat:no-repeat;
+        background-position: center;
+    }
+    @media screen and (max-height: 960px){
+        border:none !important;
+        background-color: transparent;
+        background-image: url($img3);
+        background-size: 90%;
+        background-repeat:no-repeat;
+        background-position: center;
+    }
+    @media screen and (max-height: 736px){
+        border:none !important;
+        background-color: transparent;
+        background-image: url($img3);
+        background-size: 90%;
+        background-repeat:no-repeat;
+        background-position: center;
+    }
+    @media screen and (max-height: 667px){
+        border:none !important;
+        background-color: transparent;
+        background-image: url($img3);
+        background-size: 90%;
+        background-repeat:no-repeat;
+        background-position: center;
+    }
+    @media screen and (max-height: 568px){
+        border:none !important;
+        background-color: transparent;
+        background-image: url($img3);
+        background-size: 90%;
+        background-repeat:no-repeat;
+        background-position: center;
+    }
+    @media screen and (max-height: 480px){
+        border:none !important;
+        background-color: transparent;
+        background-image: url($img3);
+        background-size: 90%;
+        background-repeat:no-repeat;
+        background-position: center;
+    }
+    @media screen and (max-height: 320px){
+        border:none !important;
+        background-color: transparent;
+        background-image: url($img);
+        background-size: 90%;
+        background-repeat:no-repeat;
+        background-position: center;
+    }
+    &:hover{
+        @media screen and (max-height: 2560px){
+            border:none !important;
+            background-color: transparent;
+            background-image: url($imgTap5);
+            background-size: 90%;
+            background-repeat:no-repeat;
+            background-position: center;
+        }
+        @media screen and (max-height: 1920px){
+            border:none !important;
+            background-color: transparent;
+            background-image: url($imgTap5);
+            background-size: 90%;
+            background-repeat:no-repeat;
+            background-position: center;
+        }
+        @media screen and (max-height: 1280px){
+            border:none !important;
+            background-color: transparent;
+            background-image: url($imgTap4);
+            background-size: 90%;
+            background-repeat:no-repeat;
+            background-position: center;
+        }
+        @media screen and (max-height: 960px){
+            border:none !important;
+            background-color: transparent;
+            background-image: url($imgTap3);
+            background-size: 90%;
+            background-repeat:no-repeat;
+            background-position: center;
+        }
+        @media screen and (max-height: 736px){
+            border:none !important;
+            background-color: transparent;
+            background-image: url($imgTap3);
+            background-size: 90%;
+            background-repeat:no-repeat;
+            background-position: center;
+        }
+        @media screen and (max-height: 667px){
+            border:none !important;
+            background-color: transparent;
+            background-image: url($imgTap3);
+            background-size: 90%;
+            background-repeat:no-repeat;
+            background-position: center;
+        }
+        @media screen and (max-height: 568px){
+            border:none !important;
+            background-color: transparent;
+            background-image: url($imgTap3);
+            background-size: 90%;
+            background-repeat:no-repeat;
+            background-position: center;
+        }
+        @media screen and (max-height: 480px){
+            border:none !important;
+            background-color: transparent;
+            background-image: url($imgTap3);
+            background-size: 90%;
+            background-repeat:no-repeat;
+            background-position: center;
+        }
+        @media screen and (max-height: 320px){
+            border:none !important;
+            background-color: transparent;
+            background-image: url($imgTap);
+            background-size: 90%;
+            background-repeat:no-repeat;
+            background-position: center;
+        }
+    }
+}
+@mixin media-checkbox($img:'',$img2:'',$img3:'',$img4:'',$img5:'',$imgTap:'',$imgTap2:'',$imgTap3:'',$imgTap4:'',$imgTap5:''){
+    &::before{
+        border:none !important;
+        background-color: transparent;
+        background-image: url($img);
+        background-size: 100%;
+        background-repeat:no-repeat;
+        background-position: center;
+        @media screen and (max-height: 2560px){
+            border:none !important;
+            background-color: transparent;
+            background-image: url($img5) !important;
+            background-size: 90%;
+            background-repeat:no-repeat;
+            background-position: center;
+        }
+        @media screen and (max-height: 1920px){
+            border:none !important;
+            background-color: transparent;
+            background-image: url($img5) !important;
+            background-size: 90%;
+            background-repeat:no-repeat;
+            background-position: center;
+        }
+        @media screen and (max-height: 1280px){
+            border:none !important;
+            background-color: transparent;
+            background-image: url($img4) !important;
+            background-size: 90%;
+            background-repeat:no-repeat;
+            background-position: center;
+        }
+        @media screen and (max-height: 960px){
+            border:none !important;
+            background-color: transparent;
+            background-image: url($img3) !important;
+            background-size: 90%;
+            background-repeat:no-repeat;
+            background-position: center;
+        }
+        @media screen and (max-height: 736px){
+            border:none !important;
+            background-color: transparent;
+            background-image: url($img3) !important;
+            background-size: 90%;
+            background-repeat:no-repeat;
+            background-position: center;
+        }
+        @media screen and (max-height: 667px){
+            border:none !important;
+            background-color: transparent;
+            background-image: url($img3) !important;
+            background-size: 90%;
+            background-repeat:no-repeat;
+            background-position: center;
+        }
+        @media screen and (max-height: 568px){
+            border:none !important;
+            background-color: transparent;
+            background-image: url($img3) !important;
+            background-size: 90%;
+            background-repeat:no-repeat;
+            background-position: center;
+        }
+        @media screen and (max-height: 480px){
+            border:none !important;
+            background-color: transparent;
+            background-image: url($img3)!important ;
+            background-size: 90%;
+            background-repeat:no-repeat;
+            background-position: center;
+        }
+        @media screen and (max-height: 320px){
+            border:none !important;
+            background-color: transparent;
+            background-image: url($img) !important;
+            background-size: 90%;
+            background-repeat:no-repeat;
+            background-position: center;
+        }
+    }
+    &:checked{
+        &::before{
+            @media screen and (max-height: 2560px){
+                border:none !important;
+                background-color: transparent;
+                background-image: url($imgTap5) !important;
+                background-size: 90%;
+                background-repeat:no-repeat;
+                background-position: center;
+            }
+            @media screen and (max-height: 1920px){
+                border:none !important;
+                background-color: transparent;
+                background-image: url($imgTap5) !important;
+                background-size: 90%;
+                background-repeat:no-repeat;
+                background-position: center;
+            }
+            @media screen and (max-height: 1280px){
+                border:none !important;
+                background-color: transparent;
+                background-image: url($imgTap4) !important;
+                background-size: 90%;
+                background-repeat:no-repeat;
+                background-position: center;
+            }
+            @media screen and (max-height: 960px){
+                border:none !important;
+                background-color: transparent;
+                background-image: url($imgTap3) !important;
+                background-size: 90%;
+                background-repeat:no-repeat;
+                background-position: center;
+            }
+            @media screen and (max-height: 736px){
+                border:none !important;
+                background-color: transparent;
+                background-image: url($imgTap3) !important;
+                background-size: 90%;
+                background-repeat:no-repeat;
+                background-position: center;
+            }
+            @media screen and (max-height: 667px){
+                border:none !important;
+                background-color: transparent;
+                background-image: url($imgTap3) !important;
+                background-size: 90%;
+                background-repeat:no-repeat;
+                background-position: center;
+            }
+            @media screen and (max-height: 568px){
+                border:none !important;
+                background-color: transparent;
+                background-image: url($imgTap3) !important;
+                background-size: 90%;
+                background-repeat:no-repeat;
+                background-position: center;
+            }
+            @media screen and (max-height: 480px){
+                border:none !important;
+                background-color: transparent;
+                background-image: url($imgTap3) !important;
+                background-size: 90%;
+                background-repeat:no-repeat;
+                background-position: center;
+            }
+            @media screen and (max-height: 320px){
+                border:none !important;
+                background-color: transparent;
+                background-image: url($imgTap) !important;
+                background-size: 90%;
+                background-repeat:no-repeat;
+                background-position: center;
+            }
+
+        }
+    }
+}
+// For use
+// media-icons($img,$img2,$img3,$img4,$img5,$imgTap,$imgTap2,$imgTap3,$imgTap4,$imgTap5)
+// media-inputs($img,$img2,$img3,$img4,$img5,$imgTap,$imgTap2,$imgTap3,$imgTap4,$imgTap5)

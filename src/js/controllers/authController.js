@@ -8,18 +8,12 @@
         activate();
 
         function activate() {
-            $scope.focusedLogin = false;
-            $scope.focusedLoginPass = false;
-            $scope.focusedForgot = false;
-            $scope.focusedRegisterName = false;
-            $scope.focusedRegisterPass = false;
-            $scope.focusedRegisterEmail = false;
 
             $scope.user = {};
             if (localStorage.getItem('axpress.user') && localStorage.getItem('axpress.menu')) {
                 $rootScope.user = JSON.parse(localStorage.getItem('axpress.user'));
                 $rootScope.menu = JSON.parse(localStorage.getItem('axpress.menu'));
-                $state.go('menu');
+                $state.go('app.main');
             }
         }
 
@@ -250,7 +244,7 @@
             $rootScope.menu = menu;
             localStorage.setItem('axpress.user', JSON.stringify(user));
             localStorage.setItem('axpress.menu', JSON.stringify(menu));
-            $state.go('menu');
+            $state.go('app.main');
         }
     }
 })();

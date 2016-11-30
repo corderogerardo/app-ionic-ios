@@ -1,32 +1,27 @@
-.caracteristics-title{
-	align-items: center;
-	color:$graybbb;
-	display: flex;
-	font-size: 2.5vh;
-	font-weight:bold;
-	flex-direction: column;
-	justify-content: center;
-	text-align:center;
-	height:10%;
-	width:100%;
-}
 .caracteristics-container{
-	align-items: center;
-	display: flex;
-	flex-direction: column;
-	margin-top:5%;
-	justify-content: center;
-	width:100%;
-	height:30%;
+    @include display-flex;
+    @include flex-direction(column);
+    @include align-items(center);
+    @include justify-content(center);
+    min-width: 100%;
+    width:100%;
+    height:90%;
+    min-height: 90%;
 }
-.caracteristics-inputs{
-	align-items: center;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	width:100%;
-	height:100%;
+.caracteristics-title {
+    @include display-flex;
+    @include flex-direction(column);
+    @include align-items(center);
+    @include justify-content(center);
+    color:$positive;
+    font-size: 2.5vh;
+    font-weight: bold;
+    height: 15%;
+    width: 100%;
+    min-height: 15%;
+    min-width: 100%;
 }
+
 .caracteristics-documents{
 	align-items: center;
 	display: flex;
@@ -65,40 +60,11 @@
 	width:80%;
 }
 .package-options{
-    align-items: center;
-    display:flex;
-    flex-direction: column;
-    height: auto;
-}
-.package-container{
-    display:flex;
-    height:10%;
-    flex-direction: row;
-    color:$graybb;
-    justify-content: space-around;
-    border-bottom: 1px solid rgba($graybbb,0.5);
-    margin-bottom: 2%;
-    width:95%;
-    label{
-        width: 48%;
-        align-items: center;
-        display:flex;
-        color:$graybb;
-        font-weight: bold;
-        padding-left: 10%;
-        justify-content: flex-start;
-    }
-    input{
-        width: 48%;
-        border-left: 1px solid rgba($graybbb,0.5);
-        background-color:rgba($grayb,0.01);
-        display: flex;
-        font-weight: bold;
-        justify-content: center;
-        padding-left: 10%;
-        margin-bottom: 2%;
-        font-size: 2.5vh;
-    }
+    @include display-flex;
+    @include flex-direction(column);
+    @include align-items(center);
+    @include justify-content(center);
+    border:1px solid orange;
 }
 .errands-caracteristics-input{
 	align-items: center;
@@ -118,6 +84,74 @@
         text-align: center;
 		width:95%;
 	}
+}
+.container-package-sizes{
+    @include display-flex;
+    @include flex-direction(row);
+    @include align-items(center);
+    @include justify-content(center);
+    @include widheigh(35%,35%,100%,100%);
+    div{
+        @include display-flex;
+        @include flex-direction(column);
+        @include align-items(center);
+        @include justify-content(center);
+        @include widheigh(100%,100%,48%,48%);
+        div{
+            @include widheigh(100%,100%,100%,100%);
+            border:1px solid red !important;
+        }
+    }
+}
+.container-package-sizes-two{
+    @include display-flex;
+    @include flex-direction(row);
+    @include align-items(center);
+    @include justify-content(center);
+    @include widheigh(11%,11%,100%,100%);
+    div{
+        @include display-flex;
+        @include flex-direction(column);
+        @include align-items(center);
+        @include justify-content(center);
+        @include widheigh(100%,100%,48%,48%);
+        padding: 0 !important;
+        margin: 0 !important;
+        div{
+            @include widheigh(100%,100%,100%,100%);
+        }
+    }
+}
+.input-sizes{
+    @include widheigh(100%,100%,90%,90%);
+    border:2px solid $positive !important;
+    border-radius: 25px !important;
+    margin-top: 3%;
+    color: $positive !important;
+}
+.checkbox-height{
+    background-image: none !important;
+    @include widheigh(100%,100%,100%,100%);
+    @include media-checkbox("../img/MedidaCM/CMmdpi.png","../img/MedidaCM/CMhdpi.png","../img/MedidaCM/CMxhdpi.png","../img/MedidaCM/CMxxhdpi.png","../img/MedidaCM/CMxxxhdpi.png","../img/MedidaM/Mmdpi.png","../img/MedidaM/Mhdpi.png","../img/MedidaM/Mxhdpi.png","../img/MedidaM/Mxxhdpi.png","../img/MedidaM/Mxxxhdpi.png");
+    padding: 0;
+    margin: 0;
+    margin-bottom: 7% !important;
+}
+.checkbox-weight{
+    background-image: none !important;
+    @include widheigh(100%,100%,100%,100%);
+    @include media-checkbox("../img/MedidaCM/CMmdpi.png","../img/MedidaCM/CMhdpi.png","../img/MedidaCM/CMxhdpi.png","../img/MedidaCM/CMxxhdpi.png","../img/MedidaCM/CMxxxhdpi.png","../img/MedidaM/Mmdpi.png","../img/MedidaM/Mhdpi.png","../img/MedidaM/Mxhdpi.png","../img/MedidaM/Mxxhdpi.png","../img/MedidaM/Mxxxhdpi.png");
+    padding: 0;
+    margin: 0;
+    margin-bottom: 7% !important;
+}
+.checkbox-long{
+    background-image: none !important;
+    @include widheigh(100%,100%,100%,100%);
+    @include media-checkbox("../img/MedidaCM/CMmdpi.png","../img/MedidaCM/CMhdpi.png","../img/MedidaCM/CMxhdpi.png","../img/MedidaCM/CMxxhdpi.png","../img/MedidaCM/CMxxxhdpi.png","../img/MedidaM/Mmdpi.png","../img/MedidaM/Mhdpi.png","../img/MedidaM/Mxhdpi.png","../img/MedidaM/Mxxhdpi.png","../img/MedidaM/Mxxxhdpi.png");
+    padding: 0;
+    margin: 0;
+    margin-bottom: 7% !important;
 }
 .errands-caracteristics{
 	align-items: center;
@@ -146,13 +180,37 @@
     height:100%;
 }
 .package-icon{
-    align-items: center;
-    display:flex;
-    flex-direction: column;
-    justify-content: center;
-    height: 28%;
-    img{
-        height:80%;
-        width: 40%;
+    @include display-flex;
+    @include flex-direction(column);
+    @include align-items(center);
+    @include justify-content(center);
+    @include widheigh(30%,30%,100%,100%);
+    margin-top: 15%;
+    i{
+        @include widheigh(85%,85%,45%,45%);
+        border:1px solid black;
     }
+}
+.icon-package-package{
+    @include media-icons("../img/Iconomedidaspaquete/Iconomedidaspaquetemdpi.png","../img/Iconomedidaspaquete/Iconomedidaspaquetehdpi.png","../img/Iconomedidaspaquete/Iconomedidaspaquetexhdpi.png","../img/Iconomedidaspaquete/Iconomedidaspaquetexxhdpi.png","www/img/Iconomedidaspaquete/Iconomedidaspaquetexxxhdpi.png","../img/Iconomedidaspaquete/Iconomedidaspaquetemdpi.png","../img/Iconomedidaspaquete/Iconomedidaspaquetehdpi.png","../img/Iconomedidaspaquete/Iconomedidaspaquetexhdpi.png","../img/Iconomedidaspaquete/Iconomedidaspaquetexxhdpi.png","www/img/Iconomedidaspaquete/Iconomedidaspaquetexxxhdpi.png");
+}
+.input-user-dest{
+    color:$balanced !important;
+    padding-left: 20% !important;
+    @include media-inputs("../img/Usuariodestinatario/Page1mdpi.png","../img/Usuariodestinatario/Page1hdpi.png","../img/Usuariodestinatario/Page1xhdpi.png","../img/Usuariodestinatario/Page1xxhdpi.png","../img/Usuariodestinatario/Page1xxxhdpi.png","../img/UsuariodestinatarioTAP/Usuariodestinatariomdpi.png","../img/UsuariodestinatarioTAP/Usuariodestinatariohdpi.png","../img/UsuariodestinatarioTAP/Usuariodestinatarioxhdpi.png","../img/UsuariodestinatarioTAP/Usuariodestinatarioxxhdpi.png","../img/UsuariodestinatarioTAP/Usuariodestinatarioxxxhdpi.png");
+}
+.input-email-dest{
+    color:$balanced !important;
+    padding-left: 20% !important;
+    @include media-inputs("../img/Correodestinatario/CorreoElectronicomdpi.png","../img/Correodestinatario/CorreoElectronicohdpi.png","../img/Correodestinatario/CorreoElectronicoxhdpi.png","../img/Correodestinatario/CorreoElectronicoxxhdpi.png","../img/Correodestinatario/CorreoElectronicoxxxhdpi.png","../img/CorreodestinatarioTAP/CorreoElectronicomdpi.png","../img/CorreodestinatarioTAP/CorreoElectronicohdpi.png","../img/CorreodestinatarioTAP/CorreoElectronicoxhdpi.png","../img/CorreodestinatarioTAP/CorreoElectronicoxxhdpi.png","../img/CorreodestinatarioTAP/CorreoElectronicoxxxhdpi.png");
+}
+.input-phone-dest{
+    color:$balanced !important;
+    padding-left: 20% !important;
+    @include media-inputs("../img/Telefonodestinatario/Telefonodestinatariomdpi.png","../img/Telefonodestinatario/Telefonodestinatariohdpi.png","../img/Telefonodestinatario/Telefonodestinatarioxhdpi.png","../img/Telefonodestinatario/Telefonodestinatarioxxhdpi.png","../img/Telefonodestinatario/Telefonodestinatarioxxxhdpi.png","../img/TelefonodestinatarioTAP/Telefonodestinatariomdpi.png","../img/TelefonodestinatarioTAP/Telefonodestinatariohdpi.png","../img/TelefonodestinatarioTAP/Telefonodestinatarioxhdpi.png","../img/TelefonodestinatarioTAP/Telefonodestinatarioxxhdpi.png","../img/TelefonodestinatarioTAP/Telefonodestinatarioxxhdpi.png");
+}
+.input-dni-dest{
+    color:$balanced !important;
+    padding-left: 20% !important;
+    @include media-inputs("../img/Ceduladestinatario/Cedulamdpi.png","../img/Ceduladestinatario/Cedulahdpi.png","../img/Ceduladestinatario/Cedulaxhdpi.png","../img/Ceduladestinatario/Cedulaxxhdpi.png","../img/Ceduladestinatario/Cedulaxxxhdpi.png","../img/CeduladestinatarioTAP/Cedulamdpi.png","../img/CeduladestinatarioTAP/Cedulahdpi.png","../img/CeduladestinatarioTAP/Cedulaxhdpi.png","../img/CeduladestinatarioTAP/Cedulaxxhdpi.png","../img/CeduladestinatarioTAP/Cedulaxxxhdpi.png")
 }

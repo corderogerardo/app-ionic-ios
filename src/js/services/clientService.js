@@ -26,6 +26,16 @@
         };
 
         /**
+         * Logs out the user from the system
+         */
+        service.logout = function () {
+            localStorage.removeItem('axpress.user');
+            localStorage.removeItem('axpress.menu');
+            localStorage.removeItem('facebookAccessToken');
+            localStorage.removeItem('googleCredentials');
+        };
+
+        /**
          * Registers a user account in the system
          *
          * @param      {String}  name    The user name

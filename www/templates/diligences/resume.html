@@ -2,7 +2,7 @@
     <h3 class="title">RESUMEN DEL ENVÍO </h3>
 </div>
 <ion-view view-title="Resumen del Envío">
-    <ion-content scroll="false" >
+    <ion-content scroll="false">
         <div class="space">
         </div>
         <section class="sentresume-data">
@@ -20,13 +20,12 @@
                 <div class="data-origin">
                     <b>Paradas de la diligencia</b>
                     <p ng-repeat="address in data.destiniesData">{{ $index + 1 }}.{{ address.address }}</p>
-
                 </div>
                 <a class="stopsnumbers" title="">
                     <i>{{data.destiniesData.length}}</i>
                 </a>
                 <a class="" ng-click="editDestiny()" title="">
-                   <i class="ion-edit"></i>
+                    <i class="ion-edit"></i>
                 </a>
             </section>
             <section class="sentresume-content">
@@ -34,7 +33,6 @@
                     <b>Características</b>
                     <p>{{ data.descriptionText }}</p>
                     <p>Ida y Vuelta: <span ng-if="data.samepoint">Si</span><span ng-if="!data.samepoint">No</span></p>
-
                 </div>
                 <a class="" ng-click="editFeatures()" title="">
                     <i class="ion-edit"></i>
@@ -51,14 +49,11 @@
             </section>
         </section>
         <section class="sentresume-cost">
-
             Costo del envío:
             <b>{{ data.amount || 0}} COT </b>
-
         </section>
         <section class="sentresume-button">
             <div class="container-button">
-
                 <a class="button-noicon" ng-click="confirmResume()" title=""> CONFIRMAR TU ENVÍO</a>
             </div>
         </section>

@@ -1,63 +1,40 @@
-<div class="bar bar-header bar-balanced">
-	 <h3 class="title">INICIAR SESIÓN</h3>
-</div>
 <ion-view view-title="Login">
-	<ion-content scroll="false" >
-        <div class="inputs-wrapper">
-            <div class="inputs-container">
-                <i ng-if="focusedLogin === true" class="icon-user"></i>
-                <i ng-if="focusedLogin === false" class="icon-user-gray"></i>
-                <label class="">
-                    <input ng-model="user.email" ng-focus="focusedLogin = true"
-                           ng-blur="focusedLogin = false"  type="email" placeholder="Correo Electrónico">
-                </label>
-            </div>
-            <div class="inputs-container ">
-                <i ng-if="focusedLoginPass === true" class="icon-pass"></i>
-                <i ng-if="focusedLoginPass === false" class="icon-pass-gray"></i>
-                <label class="">
-                    <input ng-model="user.password" ng-focus="focusedLoginPass = true"
-                           ng-blur="focusedLoginPass = false"  type="password" placeholder="Contraseña">
-                </label>
-            </div>
+	<ion-content scroll="false" overflow-scroll="false" class="axpress-bg">
+    <section class="register-container">
+
+    <div class="list list-inset ">
+        <input class="item item-input inputs-general input-email" ng-model="user.email" type="email" placeholder="Correo Electrónico">
+        <input class="item item-input inputs-general input-pass" ng-model="user.password" type="password" placeholder="Contraseña">
+        <a class="item item-input button button-block button-default-two" ng-click="login()" title="">INICIAR SESIÓN</a>
+        <a class="item item-input button button-block register-term text-center" ui-sref="auth.forgotpassword">¿Olvidaste tu Contraseña?</a>
+
+    </div>
+    </section>
+        <div class="hide-on-keyboard-open register-container-bottom">
+            <section class="row">
+                <div class="col col-25 register-line"></div>
+                <div class="col register-create">o inicia sesíon con</div>
+                <div class="col col-25 register-line"></div>
+            </section>
+            <section class="row ">
+                <div class="col col-50 col-offset-25">
+                    <div class="row register-social-buttons">
+                        <a ng-click="loginWithFacebook()" class="button button-block facebook-icon">
+                        </a>
+                        <a ng-click="loginWithGoogle()" class="button button-block google-icon">
+                        </a>
+                    </div>
+                </div>
+            </section>
+
         </div>
-		<div class="button-wrapper">
-			<div class="container-button">
-				<a class="button-noicon" ng-click="login()" title="">INICIAR SESIÓN</a>
-			</div>
-		</div>
-        <div class="button-wrapper">
-            <div class="container-button">
-                <a class="login-forgot-pass" ui-sref="auth.forgotpassword">¿Olvidaste tu Contraseña?</a>
-            </div>
-        </div>
-        <div class="spacetwo"></div>
-		<section class="login-container-social">
-            <div class="container-button">
-                <a class="button-icon facebook" ng-click="loginWithFacebook()">
-                    <label>
-                    Ingresa con facebook
-                    </label>
+        <section class="hide-on-keyboard-open row">
+            <div class="col text-center register-login">
+                <span>¿Eres Nuevo?</span>
+                <a ui-sref="auth.register" class="">
+                    ¡Regístrate ahora!
                 </a>
             </div>
         </section>
-        <section class="login-container-social">
-        <div class="container-button">
-            <a class="button-icon gplus" ng-click="loginWithGoogle()">
-                <label>
-                    Ingresa con google
-                </label>
-            </a>
-        </div>
-        </section>
-        <section class="login-new-container">
-            <a ui-sref="auth.register" class="">
-                ¿Eres Nuevo?
-                <label class="login-register">
-                    ¡Regístrate ahora!
-                </label>
-            </a>
-        </section>
-
     </ion-content>
 </ion-view>
