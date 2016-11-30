@@ -45,6 +45,7 @@
 
         function successfullyRegisteredRequest() {
             $scope.data = {};
+            $state.current.data.data = {};
             $state.go("app.main");
         }
 

@@ -833,6 +833,7 @@
 
         function successfullyRegisteredRequest() {
             $scope.data = {};
+            $state.current.data.data = {};
             $state.go("app.main");
         }
 
@@ -983,7 +984,7 @@
         function quotationSuccessful(response) {
             $scope.data.quotation = response;
             $scope.data.amount = response.price;
-            $scope.data.distance = ($state.params.serviceType == 45 ? Number(response.km) * 1000 : response.kilometers_text);
+            $scope.data.distance = ($state.params.serviceType == 45 ? Number(response.km) * 1000 : response.meters_text);
         }
 
         function requestQuotationDiligence() {
