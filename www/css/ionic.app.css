@@ -12688,38 +12688,29 @@ ion-slide {
   width: 80%; }
 
 .package-options {
-  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -moz-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-direction: normal;
+  -webkit-box-orient: vertical;
+  -webkit-flex-direction: column;
+  -moz-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
-  height: auto; }
-
-.package-container {
-  display: flex;
-  height: 10%;
-  flex-direction: row;
-  color: #c3c3c3;
-  justify-content: space-around;
-  border-bottom: 1px solid rgba(117, 117, 117, 0.5);
-  margin-bottom: 2%;
-  width: 95%; }
-  .package-container label {
-    width: 48%;
-    align-items: center;
-    display: flex;
-    color: #c3c3c3;
-    font-weight: bold;
-    padding-left: 10%;
-    justify-content: flex-start; }
-  .package-container input {
-    width: 48%;
-    border-left: 1px solid rgba(117, 117, 117, 0.5);
-    background-color: rgba(230, 231, 255, 0.01);
-    display: flex;
-    font-weight: bold;
-    justify-content: center;
-    padding-left: 10%;
-    margin-bottom: 2%;
-    font-size: 2.5vh; }
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  justify-content: center;
+  border: 1px solid orange; }
 
 .errands-caracteristics-input {
   align-items: center;
@@ -12738,6 +12729,622 @@ ion-slide {
     display: flex;
     text-align: center;
     width: 95%; }
+
+.container-package-sizes {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-direction: normal;
+  -webkit-box-orient: horizontal;
+  -webkit-flex-direction: row;
+  -moz-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  justify-content: center;
+  min-height: 35%;
+  height: 35%;
+  min-width: 100%;
+  width: 100%; }
+  .container-package-sizes div {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-direction: normal;
+    -webkit-box-orient: vertical;
+    -webkit-flex-direction: column;
+    -moz-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    -moz-align-items: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    -moz-justify-content: center;
+    justify-content: center;
+    min-height: 100%;
+    height: 100%;
+    min-width: 48%;
+    width: 48%; }
+    .container-package-sizes div div {
+      min-height: 100%;
+      height: 100%;
+      min-width: 100%;
+      width: 100%;
+      border: 1px solid red !important; }
+
+.container-package-sizes-two {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-direction: normal;
+  -webkit-box-orient: horizontal;
+  -webkit-flex-direction: row;
+  -moz-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  justify-content: center;
+  min-height: 11%;
+  height: 11%;
+  min-width: 100%;
+  width: 100%; }
+  .container-package-sizes-two div {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-direction: normal;
+    -webkit-box-orient: vertical;
+    -webkit-flex-direction: column;
+    -moz-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    -moz-align-items: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    -moz-justify-content: center;
+    justify-content: center;
+    min-height: 100%;
+    height: 100%;
+    min-width: 48%;
+    width: 48%;
+    padding: 0 !important;
+    margin: 0 !important; }
+    .container-package-sizes-two div div {
+      min-height: 100%;
+      height: 100%;
+      min-width: 100%;
+      width: 100%; }
+
+.input-sizes {
+  min-height: 100%;
+  height: 100%;
+  min-width: 90%;
+  width: 90%;
+  border: 2px solid #294d72 !important;
+  border-radius: 25px !important;
+  margin-top: 3%;
+  color: #294d72 !important; }
+
+.checkbox-height {
+  background-image: none !important;
+  min-height: 100%;
+  height: 100%;
+  min-width: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 7% !important; }
+  .checkbox-height::before {
+    border: none !important;
+    background-color: transparent;
+    background-image: url("../img/MedidaCM/CMmdpi.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center; }
+    @media screen and (max-height: 2560px) {
+      .checkbox-height::before {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/MedidaCM/CMxxxhdpi.png") !important;
+        background-size: 90%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 1920px) {
+      .checkbox-height::before {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/MedidaCM/CMxxxhdpi.png") !important;
+        background-size: 90%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 1280px) {
+      .checkbox-height::before {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/MedidaCM/CMxxhdpi.png") !important;
+        background-size: 90%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 960px) {
+      .checkbox-height::before {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/MedidaCM/CMxhdpi.png") !important;
+        background-size: 90%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 736px) {
+      .checkbox-height::before {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/MedidaCM/CMxhdpi.png") !important;
+        background-size: 90%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 667px) {
+      .checkbox-height::before {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/MedidaCM/CMxhdpi.png") !important;
+        background-size: 90%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 568px) {
+      .checkbox-height::before {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/MedidaCM/CMxhdpi.png") !important;
+        background-size: 90%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 480px) {
+      .checkbox-height::before {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/MedidaCM/CMxhdpi.png") !important;
+        background-size: 90%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 320px) {
+      .checkbox-height::before {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/MedidaCM/CMmdpi.png") !important;
+        background-size: 90%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+  @media screen and (max-height: 2560px) {
+    .checkbox-height:checked::before {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/MedidaM/Mxxxhdpi.png") !important;
+      background-size: 90%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 1920px) {
+    .checkbox-height:checked::before {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/MedidaM/Mxxxhdpi.png") !important;
+      background-size: 90%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 1280px) {
+    .checkbox-height:checked::before {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/MedidaM/Mxxhdpi.png") !important;
+      background-size: 90%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 960px) {
+    .checkbox-height:checked::before {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/MedidaM/Mxhdpi.png") !important;
+      background-size: 90%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 736px) {
+    .checkbox-height:checked::before {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/MedidaM/Mxhdpi.png") !important;
+      background-size: 90%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 667px) {
+    .checkbox-height:checked::before {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/MedidaM/Mxhdpi.png") !important;
+      background-size: 90%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 568px) {
+    .checkbox-height:checked::before {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/MedidaM/Mxhdpi.png") !important;
+      background-size: 90%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 480px) {
+    .checkbox-height:checked::before {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/MedidaM/Mxhdpi.png") !important;
+      background-size: 90%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 320px) {
+    .checkbox-height:checked::before {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/MedidaM/Mmdpi.png") !important;
+      background-size: 90%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+
+.checkbox-weight {
+  background-image: none !important;
+  min-height: 100%;
+  height: 100%;
+  min-width: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 7% !important; }
+  .checkbox-weight::before {
+    border: none !important;
+    background-color: transparent;
+    background-image: url("../img/MedidaCM/CMmdpi.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center; }
+    @media screen and (max-height: 2560px) {
+      .checkbox-weight::before {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/MedidaCM/CMxxxhdpi.png") !important;
+        background-size: 90%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 1920px) {
+      .checkbox-weight::before {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/MedidaCM/CMxxxhdpi.png") !important;
+        background-size: 90%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 1280px) {
+      .checkbox-weight::before {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/MedidaCM/CMxxhdpi.png") !important;
+        background-size: 90%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 960px) {
+      .checkbox-weight::before {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/MedidaCM/CMxhdpi.png") !important;
+        background-size: 90%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 736px) {
+      .checkbox-weight::before {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/MedidaCM/CMxhdpi.png") !important;
+        background-size: 90%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 667px) {
+      .checkbox-weight::before {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/MedidaCM/CMxhdpi.png") !important;
+        background-size: 90%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 568px) {
+      .checkbox-weight::before {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/MedidaCM/CMxhdpi.png") !important;
+        background-size: 90%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 480px) {
+      .checkbox-weight::before {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/MedidaCM/CMxhdpi.png") !important;
+        background-size: 90%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 320px) {
+      .checkbox-weight::before {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/MedidaCM/CMmdpi.png") !important;
+        background-size: 90%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+  @media screen and (max-height: 2560px) {
+    .checkbox-weight:checked::before {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/MedidaM/Mxxxhdpi.png") !important;
+      background-size: 90%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 1920px) {
+    .checkbox-weight:checked::before {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/MedidaM/Mxxxhdpi.png") !important;
+      background-size: 90%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 1280px) {
+    .checkbox-weight:checked::before {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/MedidaM/Mxxhdpi.png") !important;
+      background-size: 90%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 960px) {
+    .checkbox-weight:checked::before {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/MedidaM/Mxhdpi.png") !important;
+      background-size: 90%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 736px) {
+    .checkbox-weight:checked::before {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/MedidaM/Mxhdpi.png") !important;
+      background-size: 90%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 667px) {
+    .checkbox-weight:checked::before {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/MedidaM/Mxhdpi.png") !important;
+      background-size: 90%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 568px) {
+    .checkbox-weight:checked::before {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/MedidaM/Mxhdpi.png") !important;
+      background-size: 90%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 480px) {
+    .checkbox-weight:checked::before {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/MedidaM/Mxhdpi.png") !important;
+      background-size: 90%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 320px) {
+    .checkbox-weight:checked::before {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/MedidaM/Mmdpi.png") !important;
+      background-size: 90%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+
+.checkbox-long {
+  background-image: none !important;
+  min-height: 100%;
+  height: 100%;
+  min-width: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 7% !important; }
+  .checkbox-long::before {
+    border: none !important;
+    background-color: transparent;
+    background-image: url("../img/MedidaCM/CMmdpi.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center; }
+    @media screen and (max-height: 2560px) {
+      .checkbox-long::before {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/MedidaCM/CMxxxhdpi.png") !important;
+        background-size: 90%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 1920px) {
+      .checkbox-long::before {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/MedidaCM/CMxxxhdpi.png") !important;
+        background-size: 90%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 1280px) {
+      .checkbox-long::before {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/MedidaCM/CMxxhdpi.png") !important;
+        background-size: 90%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 960px) {
+      .checkbox-long::before {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/MedidaCM/CMxhdpi.png") !important;
+        background-size: 90%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 736px) {
+      .checkbox-long::before {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/MedidaCM/CMxhdpi.png") !important;
+        background-size: 90%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 667px) {
+      .checkbox-long::before {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/MedidaCM/CMxhdpi.png") !important;
+        background-size: 90%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 568px) {
+      .checkbox-long::before {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/MedidaCM/CMxhdpi.png") !important;
+        background-size: 90%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 480px) {
+      .checkbox-long::before {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/MedidaCM/CMxhdpi.png") !important;
+        background-size: 90%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 320px) {
+      .checkbox-long::before {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/MedidaCM/CMmdpi.png") !important;
+        background-size: 90%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+  @media screen and (max-height: 2560px) {
+    .checkbox-long:checked::before {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/MedidaM/Mxxxhdpi.png") !important;
+      background-size: 90%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 1920px) {
+    .checkbox-long:checked::before {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/MedidaM/Mxxxhdpi.png") !important;
+      background-size: 90%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 1280px) {
+    .checkbox-long:checked::before {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/MedidaM/Mxxhdpi.png") !important;
+      background-size: 90%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 960px) {
+    .checkbox-long:checked::before {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/MedidaM/Mxhdpi.png") !important;
+      background-size: 90%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 736px) {
+    .checkbox-long:checked::before {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/MedidaM/Mxhdpi.png") !important;
+      background-size: 90%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 667px) {
+    .checkbox-long:checked::before {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/MedidaM/Mxhdpi.png") !important;
+      background-size: 90%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 568px) {
+    .checkbox-long:checked::before {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/MedidaM/Mxhdpi.png") !important;
+      background-size: 90%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 480px) {
+    .checkbox-long:checked::before {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/MedidaM/Mxhdpi.png") !important;
+      background-size: 90%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 320px) {
+    .checkbox-long:checked::before {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/MedidaM/Mmdpi.png") !important;
+      background-size: 90%;
+      background-repeat: no-repeat;
+      background-position: center; } }
 
 .errands-caracteristics {
   align-items: center;
@@ -12764,14 +13371,191 @@ ion-slide {
   height: 100%; }
 
 .package-icon {
-  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -moz-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-direction: normal;
+  -webkit-box-orient: vertical;
+  -webkit-flex-direction: column;
+  -moz-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
   justify-content: center;
-  height: 28%; }
-  .package-icon img {
-    height: 80%;
-    width: 40%; }
+  min-height: 30%;
+  height: 30%;
+  min-width: 100%;
+  width: 100%;
+  margin-top: 15%; }
+  .package-icon i {
+    min-height: 85%;
+    height: 85%;
+    min-width: 45%;
+    width: 45%;
+    border: 1px solid black; }
+
+.icon-package-package {
+  border: none !important;
+  background-color: transparent;
+  background-image: url("../img/Iconomedidaspaquete/Iconomedidaspaquetemdpi.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center; }
+  @media screen and (max-height: 2560px) {
+    .icon-package-package {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("www/img/Iconomedidaspaquete/Iconomedidaspaquetexxxhdpi.png");
+      background-size: 90%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 1920px) {
+    .icon-package-package {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("www/img/Iconomedidaspaquete/Iconomedidaspaquetexxxhdpi.png");
+      background-size: 90%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 1280px) {
+    .icon-package-package {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/Iconomedidaspaquete/Iconomedidaspaquetexxhdpi.png");
+      background-size: 90%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 960px) {
+    .icon-package-package {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/Iconomedidaspaquete/Iconomedidaspaquetexhdpi.png");
+      background-size: 90%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 736px) {
+    .icon-package-package {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/Iconomedidaspaquete/Iconomedidaspaquetexhdpi.png");
+      background-size: 90%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 667px) {
+    .icon-package-package {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/Iconomedidaspaquete/Iconomedidaspaquetexhdpi.png");
+      background-size: 90%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 568px) {
+    .icon-package-package {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/Iconomedidaspaquete/Iconomedidaspaquetexhdpi.png");
+      background-size: 90%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 480px) {
+    .icon-package-package {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/Iconomedidaspaquete/Iconomedidaspaquetexhdpi.png");
+      background-size: 90%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 320px) {
+    .icon-package-package {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/Iconomedidaspaquete/Iconomedidaspaquetemdpi.png");
+      background-size: 90%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 2560px) {
+    .icon-package-package:hover {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("www/img/Iconomedidaspaquete/Iconomedidaspaquetexxxhdpi.png");
+      background-size: 90%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 1920px) {
+    .icon-package-package:hover {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("www/img/Iconomedidaspaquete/Iconomedidaspaquetexxxhdpi.png");
+      background-size: 90%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 1280px) {
+    .icon-package-package:hover {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/Iconomedidaspaquete/Iconomedidaspaquetexxhdpi.png");
+      background-size: 90%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 960px) {
+    .icon-package-package:hover {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/Iconomedidaspaquete/Iconomedidaspaquetexhdpi.png");
+      background-size: 90%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 736px) {
+    .icon-package-package:hover {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/Iconomedidaspaquete/Iconomedidaspaquetexhdpi.png");
+      background-size: 90%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 667px) {
+    .icon-package-package:hover {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/Iconomedidaspaquete/Iconomedidaspaquetexhdpi.png");
+      background-size: 90%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 568px) {
+    .icon-package-package:hover {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/Iconomedidaspaquete/Iconomedidaspaquetexhdpi.png");
+      background-size: 90%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 480px) {
+    .icon-package-package:hover {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/Iconomedidaspaquete/Iconomedidaspaquetexhdpi.png");
+      background-size: 90%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 320px) {
+    .icon-package-package:hover {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/Iconomedidaspaquete/Iconomedidaspaquetemdpi.png");
+      background-size: 90%;
+      background-repeat: no-repeat;
+      background-position: center; } }
 
 .input-user-dest {
   color: #065599 !important;

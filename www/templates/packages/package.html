@@ -14,41 +14,36 @@
             </div>
             <ion-view view-title="SendType">
                 <ion-content scroll="false" >
-                    <div class="space"></div>
-                    <section class="caracteristics-title">
-                        <div>
-                            <span>Diligencia la siguiente información.</span>
-                        </div>
-                    </section>
 
-                    <section class="package-options">
-                        <div class="package-container">
-                            <label for="Altura">Altura</label>
-                            <input type="number" name="" min="0" ng-model="data.height" value="" placeholder="CM">
-                        </div>
-                        <div class="package-container">
-                            <label for="Ancho">Ancho</label>
-                            <input type="number" name="" min="0" value="" ng-model="data.width" placeholder="CM">
-
-                        </div>
-                        <div class="package-container">
-                            <label for="Longitud">Longitud</label>
-                            <input type="number" name="" min="0" value="" ng-model="data.longitude" placeholder="CM">
-                        </div>
-                        <div class="package-container">
-                            <label for="Peso">Peso</label>
-                            <input type="number" name="" min="0" value="" ng-model="data.weight" placeholder="Kg">
-                        </div>
-                    </section>
                     <section class="package-icon">
-                        <img src="img/inputs/Paquete2-144x144.png" alt="">
+                       <i class="icon-package-package"></i>
                     </section>
-                    <section class="button-bottom">
 
-                        <div class="container-button">
-                            <a class="button-noicon" ng-click="confirmPackage()" title="">CONTINUAR</a>
+                    <div class="container-package-sizes">
+                        <div class="list list-inset">
+                            <input class="item item-input inputs-general input-sizes" type="number" name="" min="0" ng-model="data.height" value="" placeholder="Alto">
+                            <input class="item item-input inputs-general input-sizes" type="number" name="" min="0" value="" ng-model="data.width" placeholder="Ancho">
+                            <input class="item item-input inputs-general input-sizes" type="number" name="" min="0" value="" ng-model="data.longitude" placeholder="Largo">
                         </div>
-                    </section>
+                        <div class="list list-inset">
+                            <input class="item item-input checkbox-icon checkbox-height" type="checkbox" ng-model="data.checked.height" name="altura" id="altura" />
+                            <input class="item item-input checkbox-icon checkbox-weight" type="checkbox" ng-model="data.checked.width" name="ancho" id="ancho" />
+                            <input class="item item-input checkbox-icon checkbox-long" type="checkbox" ng-model="data.checked.longitude" name="longitud" id="longitud" />
+                        </div>
+                    </div>
+                    <div class="container-package-sizes-two">
+                        <div class="list list-inset">
+                            <input class="item item-input inputs-general input-sizes" type="number" name="" min="0" ng-model="data.weight" value="" placeholder="Peso kg">
+                        </div>
+                        <div class="list list-inset">
+                            <input class="item item-input inputs-general input-sizes" type="number" name="" min="0" ng-model="data.cuantity" value="" placeholder="Cantidad">
+                        </div>
+                    </div>
+                    <div class="hide-on-keyboard-open row button-bottom-two button-confirm-position">
+                        <a class="button button-block button-default-two button-confirm" ng-click="confirmPackage()">
+                           Continuar
+                        </a>
+                    </div>
                 </ion-content>
             </ion-view>
 
