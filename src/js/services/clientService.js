@@ -20,7 +20,8 @@
         service.login = function(email, password) {
             var data = {
                 email: email,
-                pass : service.socialPassword(password)
+                pass: password,
+                uuid: localStorage.getItem('axpress.push.registrationID')
             };
             return service.apiPost('/login', data);
         };
@@ -47,7 +48,8 @@
             var data = {
                 email: email,
                 pass: pass,
-                name: name
+                name: name,
+                uuid: localStorage.getItem('axpress.push.registrationID')
             };
             return service.apiPost('/register', data);
         };
@@ -169,7 +171,7 @@
          * Creates a hash used to login user when using a social login
          *
          * @param      {String}  socialId  The user social ID (Google ID, Facebook ID, ...)
-         * @return     {String}  The hashed password that will be used to login 
+         * @return     {String}  The hashed password that will be used to login
          */
         service.socialPassword = function(socialId) {
             return $filter('MD5')( //MD5 Hashed
@@ -192,7 +194,8 @@
                 email: email,
                 pass: pass,
                 name: name,
-                google_id: googleId
+                google_id: googleId,
+                uuid: localStorage.getItem('axpress.push.registrationID')
             };
             return service.apiPost('/register', data);
         };
@@ -209,7 +212,8 @@
             var data = {
                 email: email,
                 pass: pass,
-                google_id: googleId
+                google_id: googleId,
+                uuid: localStorage.getItem('axpress.push.registrationID')
             };
             return service.apiPost('/login', data);
         };
@@ -228,7 +232,8 @@
                 email: email,
                 pass: pass,
                 name: name,
-                facebook_id: facebookId
+                facebook_id: facebookId,
+                uuid: localStorage.getItem('axpress.push.registrationID')
             };
             return service.apiPost('/register', data);
         };
@@ -245,7 +250,8 @@
             var data = {
                 email: email,
                 pass: pass,
-                facebook_id: facebookId
+                facebook_id: facebookId,
+                uuid: localStorage.getItem('axpress.push.registrationID')
             };
             return service.apiPost('/login', data);
         };

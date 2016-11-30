@@ -13,7 +13,7 @@ angular.module('axpress', [
     'LocalStorageModule'
 ])
 
-.run(['$ionicPlatform', '$rootScope', '$state', '$stateParams', function($ionicPlatform, $rootScope, $state, $stateParams) {
+.run(['$ionicPlatform', '$rootScope', '$state', '$stateParams', 'Push', function($ionicPlatform, $rootScope, $state, $stateParams, Push) {
     $ionicPlatform.ready(function() {
         if (window.cordova && window.cordova.plugins.Keyboard) {
             // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
@@ -45,6 +45,9 @@ angular.module('axpress', [
     //State vars
     $rootScope.$state = $state;
     $rootScope.$stateParams = $stateParams;
+
+    //Initialize Push Service
+    Push.initialize();
 }])
 
 .config(['$stateProvider', '$urlRouterProvider', '$ionicCloudProvider', function($stateProvider, $urlRouterProvider, $ionicCloudProvider) {

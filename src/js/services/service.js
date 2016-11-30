@@ -66,7 +66,7 @@
                     'Content-Type': 'application/x-www-form-urlencoded'
                 };
                 path = this.urlBase() + path;
-                data = $httpParamSerializerJQLike(data);
+                data = this.formEncodeParams(data);
                 return this.httpPost(path, data, options);
             };
 
@@ -87,6 +87,10 @@
                     deferred.reject(error);
                 });
                 return deferred.promise;
+            };
+
+            this.formEncodeParams = function (params) {
+                return $httpParamSerializerJQLike(params);
             };
         };
         return Service;

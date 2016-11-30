@@ -71,7 +71,8 @@
         service.login = function(email, password) {
             var data = {
                 email: email,
-                pass : service.socialPassword(password)
+                pass: password,
+                uuid: localStorage.getItem('axpress.push.registrationID')
             };
             return service.apiPost('/login', data);
         };
@@ -98,7 +99,8 @@
             var data = {
                 email: email,
                 pass: pass,
-                name: name
+                name: name,
+                uuid: localStorage.getItem('axpress.push.registrationID')
             };
             return service.apiPost('/register', data);
         };
@@ -220,7 +222,7 @@
          * Creates a hash used to login user when using a social login
          *
          * @param      {String}  socialId  The user social ID (Google ID, Facebook ID, ...)
-         * @return     {String}  The hashed password that will be used to login 
+         * @return     {String}  The hashed password that will be used to login
          */
         service.socialPassword = function(socialId) {
             return $filter('MD5')( //MD5 Hashed
@@ -243,7 +245,8 @@
                 email: email,
                 pass: pass,
                 name: name,
-                google_id: googleId
+                google_id: googleId,
+                uuid: localStorage.getItem('axpress.push.registrationID')
             };
             return service.apiPost('/register', data);
         };
@@ -260,7 +263,8 @@
             var data = {
                 email: email,
                 pass: pass,
-                google_id: googleId
+                google_id: googleId,
+                uuid: localStorage.getItem('axpress.push.registrationID')
             };
             return service.apiPost('/login', data);
         };
@@ -279,7 +283,8 @@
                 email: email,
                 pass: pass,
                 name: name,
-                facebook_id: facebookId
+                facebook_id: facebookId,
+                uuid: localStorage.getItem('axpress.push.registrationID')
             };
             return service.apiPost('/register', data);
         };
@@ -296,7 +301,8 @@
             var data = {
                 email: email,
                 pass: pass,
-                facebook_id: facebookId
+                facebook_id: facebookId,
+                uuid: localStorage.getItem('axpress.push.registrationID')
             };
             return service.apiPost('/login', data);
         };
@@ -353,13 +359,16 @@
             key: '21569d3e6977ae51178544f5dcdd508652799af3.IVadPml3rlEXhUT13N1QhlJ5mvM=',
 
             //String to identify the App on the Admin Console
-            platform: 'iOS',
+            platform: 'android',
 
             //Facebook App ID
             fbAppId: '320049998373400',
 
             //Google App ID
             googleOAuthClientID: '96059222512-4vm97bgjdolu5i0fe0sg8tl35e85gjdm.apps.googleusercontent.com',
+
+            //Push Sender ID
+            pushSenderID: '1068552996185',
 
             //Payment Methods
             paymentMethods: [
@@ -838,6 +847,65 @@
 
 (function() {
     angular.module('axpress')
+        .factory('Push', PushService);
+
+    PushService.$inject = ['$rootScope', '$q', 'constants', '$cordovaPushV5'];
+
+    function PushService($rootScope, $q, constants, $cordovaPushV5) {
+        var service = {
+            initialize: initialize
+        };
+
+        return service;
+
+        function listenForEvent () {
+            $rootScope.$on('$cordovaPushV5:notificationReceived', function (event, data) {
+                console.log("-----------PUSH----------------");
+                console.log(JSON.stringify(data));
+            });
+
+            $rootScope.$on('$cordovaPushV5:errorOcurred', function(event, e) {
+                console.log("PUSH error");
+            });
+        }
+
+        function initialize () {
+            //Configure Push Notifications
+            var pushOptions = {
+                android: {
+                    senderID: constants.pushSenderID
+                },
+                ios: {
+                    alert: "true",
+                    badge: "true",
+                    sound: "true",
+                    senderID: constants.pushSenderID,
+                }
+            };
+
+            document.addEventListener("deviceready", function() {
+                $cordovaPushV5.initialize(pushOptions)
+                    .then(function () {
+                        console.log("inside initialize");
+                        // start listening for new notifications
+                        $cordovaPushV5.onNotification();
+                        // start listening for errors
+                        $cordovaPushV5.onError();
+
+                        $cordovaPushV5.register().then(function(registrationId) {
+                            console.log("REGISTRATION ID:" + registrationId);
+                            localStorage.setItem('axpress.push.registrationID', registrationId);
+                            listenForEvent();
+                        });
+                    });
+            }, false);
+        }
+    }
+})();
+;
+
+(function() {
+    angular.module('axpress')
         .factory('Rating', RatingService);
 
     RatingService.$inject = ['$rootScope', '$q', 'Service'];
@@ -940,7 +1008,7 @@
                     'Content-Type': 'application/x-www-form-urlencoded'
                 };
                 path = this.urlBase() + path;
-                data = $httpParamSerializerJQLike(data);
+                data = this.formEncodeParams(data);
                 return this.httpPost(path, data, options);
             };
 
@@ -961,6 +1029,10 @@
                     deferred.reject(error);
                 });
                 return deferred.promise;
+            };
+
+            this.formEncodeParams = function (params) {
+                return $httpParamSerializerJQLike(params);
             };
         };
         return Service;
