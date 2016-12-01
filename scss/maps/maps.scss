@@ -95,7 +95,7 @@
     background-color: transparent !important;
     margin: 0 !important;
     padding: 0 !important;
-    bottom: 6%;
+    bottom: 8%;
     position: absolute;
 }
 .button-confirm-position-two{
@@ -222,4 +222,11 @@
     @include media-icons("../img/Ubicacion/Ubicacionmdpi.png","../img/Ubicacion/Ubicacionhdpi.png","../img/Ubicacion/Ubicacionxhdpi.png","../img/Ubicacion/Ubicacionxxhdpi.png","../img/Ubicacion/Ubicacionxxxhdpi.png","../img/Ubicacion/Ubicacionmdpi.png","../img/Ubicacion/Ubicacionhdpi.png","../img/Ubicacion/Ubicacionxhdpi.png","../img/Ubicacion/Ubicacionxxhdpi.png","../img/Ubicacion/Ubicacionxxxhdpi.png");
     bottom: 28%;
 }
-
+.input-diligence-destinatary{
+    @include media-inputs("../img/NombrededestinatarioDiligencias/Destinatariodiligenciamdpi.png","../img/NombrededestinatarioDiligencias/Destinatariodiligenciahdpi.png","../img/NombrededestinatarioDiligencias/Destinatariodiligenciaxhdpi.png","../img/NombrededestinatarioDiligencias/Destinatariodiligenciaxxhdpi.png","../img/NombrededestinatarioDiligencias/Destinatariodiligenciaxxxhdpi.png","../img/NombrededestinatarioDiligencias/Destinatariodiligenciamdpi.png","../img/NombrededestinatarioDiligencias/Destinatariodiligenciahdpi.png","../img/NombrededestinatarioDiligencias/Destinatariodiligenciaxhdpi.png","../img/NombrededestinatarioDiligencias/Destinatariodiligenciaxxhdpi.png","../img/NombrededestinatarioDiligencias/Destinatariodiligenciaxxxhdpi.png");
+    color:$balanced !important;
+}
+.input-diligence-phone{
+    @include media-inputs("../img/TelefonodestinatarioDiligencia/Telefonodestinatariodiligenciamdpi.png","../img/TelefonodestinatarioDiligencia/Telefonodestinatariodiligenciahdpi.png","../img/TelefonodestinatarioDiligencia/Telefonodestinatariodiligenciaxhdpi.png","../img/TelefonodestinatarioDiligencia/Telefonodestinatariodiligenciaxxhdpi.png","../img/TelefonodestinatarioDiligencia/Telefonodestinatariodiligenciaxxxhdpi.png","../img/TelefonodestinatarioDiligencia/Telefonodestinatariodiligenciamdpi.png","../img/TelefonodestinatarioDiligencia/Telefonodestinatariodiligenciahdpi.png","../img/TelefonodestinatarioDiligencia/Telefonodestinatariodiligenciaxhdpi.png","../img/TelefonodestinatarioDiligencia/Telefonodestinatariodiligenciaxxhdpi.png","../img/TelefonodestinatarioDiligencia/Telefonodestinatariodiligenciaxxxhdpi.png");
+    color:$balanced !important;
+}

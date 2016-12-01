@@ -2,8 +2,8 @@
     @include display-flex;
     @include flex-direction(column);
     @include align-items(center);
-    @include justify-content(center);
-    @include widheigh(70%,70%,100%,100%);
+    @include justify-content(flex-start);
+    @include widheigh(80%,80%,100%,100%);
     color:$balanced;
     margin-top: 20%;
 
@@ -43,6 +43,38 @@
     }
 }
 .sentresume-content{
+    @include display-flex;
+    @include flex-direction(row);
+    @include align-items(flex-start);
+    @include justify-content(center);
+    @include widheigh(20%,20%,80%,80%);
+    a{
+        @include display-flex;
+        @include flex-direction(row);
+        @include align-items(flex-start);
+        @include justify-content(center);
+        @include widheigh(100%,100%,25%,25%);
+        color: $energized;
+    }
+}
+.sentresume-content-two{
+    @include display-flex;
+    @include flex-direction(row);
+    @include align-items(flex-start);
+    @include justify-content(center);
+    @include widheigh(25%,25%,80%,80%);
+    padding-top: 1%;
+    padding-bottom: 1%;
+    a{
+        @include display-flex;
+        @include flex-direction(row);
+        @include align-items(flex-start);
+        @include justify-content(center);
+        @include widheigh(100%,100%,25%,25%);
+        color: $energized;
+    }
+}
+.sentresume-content-three{
     @include display-flex;
     @include flex-direction(row);
     @include align-items(flex-start);

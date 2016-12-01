@@ -13,23 +13,10 @@
 
         <div class="errands-inputs">
             <div class="list list-inset input-direction">
-                <input class="item item-input inputs-general input-origin" on-place-changed="placeChanged" ng-model="tempData.name" ng-focus="focusednamedestinatary = true" ng-blur="focusednamedestinatary = false" ng-pristine="focusednamedestinatary = true" type="text" placeholder="Nombre del destinatario">
-
-                <input class="item item-input inputs-general input-originDetail" ng-model="tempData.phone" type="text" placeholder="Teléfono">
-
-            </div>
-            <div class="inputs-container">
-                <label>
-
-                </label>
-            </div>
-            <div class="inputs-container-last flag-maps">
-                <label>
-
-                </label>
+                <input class="item item-input inputs-general input-diligence-destinatary" on-place-changed="placeChanged" ng-model="tempData.name" ng-pristine="focusednamedestinatary = true" type="text" placeholder="Nombre del destinatario">
+                <input class="item item-input inputs-general input-diligence-phone" ng-model="tempData.phone" type="tel" placeholder="Teléfono">
             </div>
         </div>
-
 
         <i class="hide-on-keyboard-open row button-bottom-three button-gps-two" ng-click="gpsHere()" title=""></i>
         <div class="hide-on-keyboard-open row button-bottom-two button-confirm-position-two">
@@ -40,5 +27,6 @@
                 Finalizar
             </a>
         </div>
+
     </ion-content>
 </ion-view>
