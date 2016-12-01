@@ -19,6 +19,8 @@
         $scope.cancelService = cancelService;
         $scope.isServiceActive = isServiceActive;
 
+        $scope.user = $rootScope.user;
+
         function logout() {
             Client.logout();
             $rootScope.$state.go('root');

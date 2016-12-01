@@ -1108,6 +1108,9 @@
         }
 
         function loadMarkers (courier) {
+
+            //TODO: Update markers images
+
             var markers = [{
                 position: [$scope.shipping.origin_latitude, $scope.shipping.origin_longitude],
                 icon    : "{url: 'img/inputs/pin-mapa-check1.png', scaledSize: [48,48]}",
@@ -1144,7 +1147,6 @@
                 $scope.shipping = $scope.history.filter(function (item) {
                     return item.shipping_id == parseInt($state.params.shippingId);
                 }).pop();
-                console.log($scope.shipping);
                 loadMarkers();
                 loadCourierPosition();
             }
