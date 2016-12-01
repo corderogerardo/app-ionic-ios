@@ -1,53 +1,44 @@
-<div class="bar bar-header bar-balanced">
-    <h3 class="title">DESTINO DE LA DILIGENCIA</h3>
+<div class="bar bar-header bar-balanced bar-origin">
+    <h3 class="title">Destino</h3>
+    <div class="list list-inset input-direction">
+        <map-autocomplete-address class="item item-input inputs-general input-origin" on-place-changed="placeChanged" address="tempData.address"></map-autocomplete-address>
+        <input class="item item-input inputs-general input-originDetail" ng-model="tempData.destinyDetail" type="text" placeholder="Detalles: Apt - Casa - Oficina">
+
+    </div>
 </div>
+
 <ion-view view-title="SendType">
     <ion-content scroll="false">
         <address-selection center="place" markers="markers" callbacks="mapCallbacks"></address-selection>
-        <div class="input-direction">
+
+        <div class="errands-inputs">
+            <div class="list list-inset input-direction">
+                <input class="item item-input inputs-general input-origin" on-place-changed="placeChanged" ng-model="tempData.name" ng-focus="focusednamedestinatary = true" ng-blur="focusednamedestinatary = false" ng-pristine="focusednamedestinatary = true" type="text" placeholder="Nombre del destinatario">
+
+                <input class="item item-input inputs-general input-originDetail" ng-model="tempData.phone" type="text" placeholder="Teléfono">
+
+            </div>
             <div class="inputs-container">
-                <i ng-if="focused === true" class="icon-marker-color2"></i>
-                <i ng-if="focused === false" class="icon-marker-gray"></i>
                 <label>
-                    <map-autocomplete-address on-place-changed="placeChanged" address="tempData.address"></map-autocomplete-address>
+
                 </label>
             </div>
             <div class="inputs-container-last flag-maps">
-                <i ng-if="focused2 === true" class="icon-flag-color2"></i>
-                <i ng-if="focused2 === false" class="icon-flag-gray"></i>
                 <label>
-                    <input ng-model="tempData.destinyDetail" ng-focus="focused2 = true" ng-blur="focused2 = false" type="text" placeholder="Detalles de direccion">
+
                 </label>
             </div>
         </div>
-        <i class="gps-button icon-location-color2" ng-click="gpsHere()" title=""></i>
-        <div class="errands-destinatary-input">
-            <div class="inputs-container">
-                <i ng-if="focusednamedestinatary === true" class="icon-user"></i>
-                <i ng-if="focusednamedestinatary === false" class="icon-user-gray"></i>
-                <label>
-                    <input ng-model="tempData.name" ng-focus="focusednamedestinatary = true" ng-blur="focusednamedestinatary = false" ng-pristine="focusednamedestinatary = true" type="text" placeholder="Nombre del destinatario">
-                </label>
-            </div>
-            <div class="inputs-container-last flag-maps">
-                <i ng-if="focusedphonedestinatary === true " class="icon-phone"></i>
-                <i ng-if="focusedphonedestinatary === false" class="icon-phone-gray"></i>
-                <label>
-                    <input ng-model="tempData.phone" ng-focus="focusedphonedestinatary = true" ng-blur="focusedphonedestinatary = false" type="text" placeholder="Teléfono">
-                </label>
-            </div>
-        </div>
-        <div class="new-direction-button" ng-if="!data.editing">
-            <a class="button-noicontwo" ng-click="addNewAddress()" title="">AGREGAR DIRECCION</a>
-        </div>
-        <div ng-if="!buttonState && !data.editing" class="pickuphere-button">
-            <a class="button-noicontwo" ng-click="pickHere()" title="">ENTREGAR AQUÍ</a>
-        </div>
-        <div ng-if="!buttonState && data.editing" class="pickuphere-button">
-            <a class="button-noicontwo" ng-click="confirmDestiny()" title="">EDIT</a>
-        </div>
-        <div ng-if="buttonState" class="pickuphere-button">
-            <a class="button-noicontwo" ng-click="confirmDestiny()" title="">CONFIRMAR</a>
+
+
+        <i class="hide-on-keyboard-open row button-bottom-three button-gps-two" ng-click="gpsHere()" title=""></i>
+        <div class="hide-on-keyboard-open row button-bottom-two button-confirm-position-two">
+            <a class="button button-block button-default-two button-confirm" ng-click="addNewAddress()">
+                Más direcciones
+            </a>
+            <a class="button button-block button-default-two button-confirm" ng-click="confirmDestiny()">
+                Finalizar
+            </a>
         </div>
     </ion-content>
 </ion-view>

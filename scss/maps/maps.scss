@@ -69,7 +69,7 @@
 		width: 80%;
 		height: 10%;
 		top: 30%;
-		left: 0px;
+		left: 0;
 		position: absolute;
 		z-index: 1;
 }
@@ -85,6 +85,46 @@
     left: 0;
     height:5%;
     bottom: 3%;
+}
+.errands-inputs{
+    @include display-flex;
+    @include flex-direction(column);
+    @include align-items(center);
+    @include justify-content(center);
+    @include widheigh(28%,28%,100%,100%);
+    background-color: transparent !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    bottom: 6%;
+    position: absolute;
+}
+.button-confirm-position-two{
+    @include display-flex;
+    @include flex-direction(row);
+    @include align-items(center);
+    @include justify-content(center);
+    width:100% !important;
+    margin-left: 0 !important;
+    height:10%;
+    bottom: 1%;
+    .button-confirm{
+        @include widheigh(100% !important,100% !important,48% !important,48%!important);
+        color: white !important;
+        background-color: transparent;
+        font-size: 3vh !important;
+        background-image: url("../img/Botoncontinuar/BotonContinuarmdpi.png") !important;
+        background-size: 95% 80%;
+        background-repeat:no-repeat;
+        background-position: center;
+        padding: 0!important;
+        &:focus{
+            color: $dark !important;
+            background-image: url("../img/Cajadetextoorigen/Origenmdpi.png");
+            background-size: 95% 80%;
+            background-repeat:no-repeat;
+            background-position: center;
+        }
+    }
 }
 .button-confirm{
     color: white !important;
@@ -177,5 +217,9 @@
 }
 .button-gps{
     @include media-icons("../img/Ubicacion/Ubicacionmdpi.png","../img/Ubicacion/Ubicacionhdpi.png","../img/Ubicacion/Ubicacionxhdpi.png","../img/Ubicacion/Ubicacionxxhdpi.png","../img/Ubicacion/Ubicacionxxxhdpi.png","../img/Ubicacion/Ubicacionmdpi.png","../img/Ubicacion/Ubicacionhdpi.png","../img/Ubicacion/Ubicacionxhdpi.png","../img/Ubicacion/Ubicacionxxhdpi.png","../img/Ubicacion/Ubicacionxxxhdpi.png");
+}
+.button-gps-two{
+    @include media-icons("../img/Ubicacion/Ubicacionmdpi.png","../img/Ubicacion/Ubicacionhdpi.png","../img/Ubicacion/Ubicacionxhdpi.png","../img/Ubicacion/Ubicacionxxhdpi.png","../img/Ubicacion/Ubicacionxxxhdpi.png","../img/Ubicacion/Ubicacionmdpi.png","../img/Ubicacion/Ubicacionhdpi.png","../img/Ubicacion/Ubicacionxhdpi.png","../img/Ubicacion/Ubicacionxxhdpi.png","../img/Ubicacion/Ubicacionxxxhdpi.png");
+    bottom: 28%;
 }
 
