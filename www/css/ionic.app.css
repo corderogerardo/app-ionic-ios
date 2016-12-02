@@ -15282,9 +15282,67 @@ ion-slide {
   min-width: 100%;
   width: 100%;
   color: #065599;
-  margin-top: 20%; }
+  margin-top: 17%; }
 
 .sentresume-content-top {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-direction: normal;
+  -webkit-box-orient: horizontal;
+  -webkit-flex-direction: row;
+  -moz-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  -webkit-align-items: flex-start;
+  -moz-align-items: flex-start;
+  align-items: flex-start;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  justify-content: center;
+  min-height: 16%;
+  height: 16%;
+  min-width: 80%;
+  width: 80%;
+  padding-top: 1%;
+  padding-bottom: 1%; }
+  .sentresume-content-top a {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-direction: normal;
+    -webkit-box-orient: horizontal;
+    -webkit-flex-direction: row;
+    -moz-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    -webkit-align-items: flex-start;
+    -moz-align-items: flex-start;
+    align-items: flex-start;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    -moz-justify-content: center;
+    justify-content: center;
+    min-height: 100%;
+    height: 100%;
+    min-width: 25%;
+    width: 25%;
+    color: #ca7530; }
+
+.sentresume-content-stops {
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
@@ -15313,7 +15371,7 @@ ion-slide {
   width: 80%;
   padding-top: 1%;
   padding-bottom: 1%; }
-  .sentresume-content-top a {
+  .sentresume-content-stops a {
     display: -webkit-box;
     display: -webkit-flex;
     display: -moz-box;
@@ -15423,8 +15481,8 @@ ion-slide {
   -webkit-justify-content: center;
   -moz-justify-content: center;
   justify-content: center;
-  min-height: 20%;
-  height: 20%;
+  min-height: 31%;
+  height: 31%;
   min-width: 80%;
   width: 80%; }
   .sentresume-content a {
@@ -15537,8 +15595,8 @@ ion-slide {
   -webkit-justify-content: center;
   -moz-justify-content: center;
   justify-content: center;
-  min-height: 25%;
-  height: 25%;
+  min-height: 22%;
+  height: 22%;
   min-width: 80%;
   width: 80%;
   padding-top: 1%;
@@ -15649,13 +15707,15 @@ ion-slide {
   -webkit-justify-content: center;
   -moz-justify-content: center;
   justify-content: center;
-  min-height: 5%;
-  height: 5%;
+  min-height: 10%;
+  height: 10%;
   min-width: 100%;
   width: 100%;
   color: #065599;
   font-size: 4vh;
-  font-weight: bold; }
+  font-weight: bold;
+  position: absolute !important;
+  bottom: 10%; }
 
 .sentresume-button {
   align-items: center;

@@ -23,6 +23,36 @@
                 $state.go($scope.extraData.flow + '.destiny');
             }
         };
+        $scope.editSentType = function() {
+            if ( $state.params.serviceType == 45 ) {
+                //Its a diligence
+                $scope.extraData.navigateTo = $scope.extraData.flow + '.resume';
+                $state.go($scope.extraData.flow + '.features');
+            } else {
+                $scope.extraData.navigateTo = $scope.extraData.flow + '.resume';
+                $state.go($scope.extraData.flow + '.features');
+            }
+        };
+        $scope.editPackages = function() {
+            if ( $state.params.serviceType == 45 ) {
+                //Its a diligence
+                $scope.extraData.navigateTo = $scope.extraData.flow + '.resume';
+                $state.go($scope.extraData.flow + '.package');
+            } else {
+                $scope.extraData.navigateTo = $scope.extraData.flow + '.resume';
+                $state.go($scope.extraData.flow + '.package');
+            }
+        };
+        $scope.editPhoto = function() {
+            if ( $state.params.serviceType == 45 ) {
+                //Its a diligence
+                $scope.extraData.navigateTo = $scope.extraData.flow + '.resume';
+                $state.go($scope.extraData.flow + '.photo');
+            } else {
+                $scope.extraData.navigateTo = $scope.extraData.flow + '.resume';
+                $state.go($scope.extraData.flow + '.photo');
+            }
+        };
 
         $scope.editFeatures = function() {
             if ( $state.params.serviceType == 45 ) {

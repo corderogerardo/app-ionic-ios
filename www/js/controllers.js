@@ -511,8 +511,8 @@
 
         $scope.confirmServiceType = function() {
             $scope.data.typeServices = $state.params.serviceType;
-            $scope.data.bagId = $scope.choice.bag;
-            $scope.data.bagId = $scope.choice.bag;
+            $scope.data.bagId = $scope.choice.bag.shipping_bag_id;
+            $scope.data.bagTitle = $scope.choice.bag.subtitle;
             if ($scope.extraData.navigateTo) {
                 $state.go($scope.extraData.navigateTo);
                 delete $scope.extraData.navigateTo;
@@ -975,6 +975,36 @@
                 $state.go($scope.extraData.flow + '.destiny');
             }
         };
+        $scope.editSentType = function() {
+            if ( $state.params.serviceType == 45 ) {
+                //Its a diligence
+                $scope.extraData.navigateTo = $scope.extraData.flow + '.resume';
+                $state.go($scope.extraData.flow + '.features');
+            } else {
+                $scope.extraData.navigateTo = $scope.extraData.flow + '.resume';
+                $state.go($scope.extraData.flow + '.features');
+            }
+        };
+        $scope.editPackages = function() {
+            if ( $state.params.serviceType == 45 ) {
+                //Its a diligence
+                $scope.extraData.navigateTo = $scope.extraData.flow + '.resume';
+                $state.go($scope.extraData.flow + '.package');
+            } else {
+                $scope.extraData.navigateTo = $scope.extraData.flow + '.resume';
+                $state.go($scope.extraData.flow + '.package');
+            }
+        };
+        $scope.editPhoto = function() {
+            if ( $state.params.serviceType == 45 ) {
+                //Its a diligence
+                $scope.extraData.navigateTo = $scope.extraData.flow + '.resume';
+                $state.go($scope.extraData.flow + '.photo');
+            } else {
+                $scope.extraData.navigateTo = $scope.extraData.flow + '.resume';
+                $state.go($scope.extraData.flow + '.photo');
+            }
+        };
 
         $scope.editFeatures = function() {
             if ( $state.params.serviceType == 45 ) {
@@ -1108,6 +1138,9 @@
         }
 
         function loadMarkers (courier) {
+
+            //TODO: Update markers images
+
             var markers = [{
                 position: [$scope.shipping.origin_latitude, $scope.shipping.origin_longitude],
                 icon    : "{url: 'img/inputs/pin-mapa-check1.png', scaledSize: [48,48]}",
@@ -1144,7 +1177,6 @@
                 $scope.shipping = $scope.history.filter(function (item) {
                     return item.shipping_id == parseInt($state.params.shippingId);
                 }).pop();
-                console.log($scope.shipping);
                 loadMarkers();
                 loadCourierPosition();
             }

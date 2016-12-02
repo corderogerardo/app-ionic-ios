@@ -9,8 +9,8 @@
 
         $scope.confirmServiceType = function() {
             $scope.data.typeServices = $state.params.serviceType;
-            $scope.data.bagId = $scope.choice.bag;
-            $scope.data.bagId = $scope.choice.bag;
+            $scope.data.bagId = $scope.choice.bag.shipping_bag_id;
+            $scope.data.bagTitle = $scope.choice.bag.subtitle;
             if ($scope.extraData.navigateTo) {
                 $state.go($scope.extraData.navigateTo);
                 delete $scope.extraData.navigateTo;

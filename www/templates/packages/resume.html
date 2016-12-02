@@ -27,10 +27,10 @@
             <section class="sentresume-content-mid">
                 <div class="data-origin">
                     <b>Tipo de envío</b>
-                    <!-- <p>{{ choice.bag | "No choice" }}</p>-->
+                    <p>{{ data.bagTitle || "" }}</p>
                 </div>
-                <a class="" ng-click="editDestiny()" title="">
-                    <i class="ion-edit"></i> Editar
+                <a class="" ng-click="editFeatures()" title="">
+                    <i class="ion-edit"></i> &nbsp;Editar
                 </a>
             </section>
             <section class="sentresume-content-top">
@@ -39,11 +39,11 @@
                     <p>{{ data.descriptionText }}</p>
                     <p>Valor Declarado: {{ data.amountDeclared }}</p>
                 </div>
-                <a class="" ng-click="editFeatures()" title="">
+                <a class="" ng-click="editPackages()" title="">
                     <i class="ion-edit"></i> Editar
                 </a>
             </section>
-            <section class="sentresume-content">
+            <section class="sentresume-content-three">
                 <div class="data-origin">
                     <b>Destinatario</b>
                     <p>{{ data.destinyName }}
