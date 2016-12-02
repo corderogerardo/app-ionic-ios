@@ -33,12 +33,6 @@ angular.module('axpress', [
         screen.lockOrientation('portrait');
     });
 
-    if (localStorage.getItem('axpress.user') && localStorage.getItem('axpress.menu')) {
-        $rootScope.user = JSON.parse(localStorage.getItem('axpress.user'));
-        $rootScope.menu = JSON.parse(localStorage.getItem('axpress.menu'));
-        $state.go('app.main');
-    }
-
     //Configure moment
     moment.locale('es');
 
@@ -86,11 +80,6 @@ angular.module('axpress', [
                 'mainContent': {
                     templateUrl: 'templates/history/history.html',
                     controller: 'HistoryController'
-                }
-            },
-            resolve: {
-                history: function (Shipping, $rootScope) {
-                    return Shipping.history($rootScope.user.id);
                 }
             }
         })
@@ -398,17 +387,12 @@ angular.module('axpress', [
         /**
          * Shipment States
          */
-        .state('tracking', {
+        .state('app.tracking', {
             url: '/tracking/:shippingId',
             views: {
                 'mainContent': {
                     templateUrl: 'templates/tracking/tracking.html',
                     controller:'TrackingController'
-                }
-            },
-            resolve: {
-                history: function (Shipping, $rootScope) {
-                    return Shipping.history($rootScope.user.id);
                 }
             }
         })

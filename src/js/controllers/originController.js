@@ -3,10 +3,10 @@
         .controller('OriginController', DocumentOriginController);
 
     DocumentOriginController.$inject = ['$rootScope', '$scope', '$state', 'Location', 'NgMap',
-        '$timeout', 'GoogleMapGeocoder'];
+        '$timeout', 'GoogleMapGeocoder', 'Logger'];
 
     function DocumentOriginController($rootScope, $scope, $state, Location, NgMap,
-                                      $timeout, GoogleMapGeocoder) {
+                                      $timeout, GoogleMapGeocoder, Logger) {
         activate();
 
         $scope.placeChanged = function(place) {
@@ -19,11 +19,14 @@
         };
 
         $scope.pickHere = function() {
-            $scope.buttonState = true;
             $scope.markers[0].icon = "{url: 'img/PinOrigen/Origenmdpi.png', scaledSize: [28,38]}";
         };
 
         $scope.confirmOrigin = function() {
+            if (!$scope.place) {
+                Logger.toast("Debe añadir una dirección válida");
+                return;
+            }
             $scope.data.originAddress = $scope.place.formatted_address;
             $scope.data.originLatitude = $scope.place.geometry.location.lat();
             $scope.data.originLongitude = $scope.place.geometry.location.lng();
@@ -44,7 +47,7 @@
                 .then(function(pos) {
                     GoogleMapGeocoder.reverseGeocode(pos)
                         .then(geocoderCallback);
-                })
+                });
         };
 
         $scope.mapCallbacks = {
@@ -79,16 +82,9 @@
                 .then(geocoderCallback);
         }
 
-        function initialUIStates() {
-            $scope.focused = false;
-            $scope.focused2 = false;
-            $scope.buttonState = false;
-        }
-
         function activate() {
             $scope.data = $state.current.data.data;
             $scope.extraData = $state.current.data.extraData;
-            initialUIStates();
             $scope.markers = [{
                 title    : 'Origen',
                 icon     : "{url: 'img/PinOrigen/Origenmdpi.png', scaledSize: [28,38]}",

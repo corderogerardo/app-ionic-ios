@@ -2,9 +2,9 @@
     angular.module('axpress')
         .controller('TrackingController', TrackingController);
 
-    TrackingController.$inject = ['$rootScope', '$scope', '$state', 'history', 'constants', 'logisticResource', '$timeout'];
+    TrackingController.$inject = ['$rootScope', '$scope', '$state', 'constants', 'logisticResource', '$timeout', 'Shipping', 'Logger'];
 
-    function TrackingController($rootScope, $scope, $state, history, constants, logisticResource, $timeout) {
+    function TrackingController($rootScope, $scope, $state, constants, logisticResource, $timeout, Shipping, Logger) {
         activate();
 
         $scope.loadCourierPosition = loadCourierPosition;
@@ -28,9 +28,6 @@
         }
 
         function loadMarkers (courier) {
-
-            //TODO: Update markers images
-
             var markers = [{
                 position: [$scope.shipping.origin_latitude, $scope.shipping.origin_longitude],
                 icon    : "{url: 'img/inputs/pin-mapa-check1.png', scaledSize: [48,48]}",
@@ -53,23 +50,31 @@
             }, 0);
         }
 
-        function activate () {
-            var tempHistory = history.data.remitent.concat(history.data.receptor);
-            tempHistory.forEach(function (item) {
-                if (item.currier) {
-                    item.currier.fullName = item.currier.name + ' ' + item.currier.last;
-                }
-                item.status = findStatusText(item.status);
-            });
-            $scope.history = tempHistory;
-            // Detailed history
-            if ($state.params.shippingId) {
+        function loadHistory () {
+            Logger.displayProgressBar();
+            Shipping.history($rootScope.user.id).then(function (history) {
+                var tempHistory = history.data.remitent.concat(history.data.receptor);
+                tempHistory.forEach(function (item) {
+                    if (item.currier) {
+                        item.currier.fullName = item.currier.name + ' ' + item.currier.last;
+                    }
+                    item.status = findStatusText(item.status);
+                });
+                $scope.history = tempHistory;
+
+                // Detailed history
                 $scope.shipping = $scope.history.filter(function (item) {
                     return item.shipping_id == parseInt($state.params.shippingId);
                 }).pop();
                 loadMarkers();
                 loadCourierPosition();
-            }
+            }, function () {
+                Logger.hideProgressBar();
+            });
+        }
+
+        function activate () {
+            loadHistory();
         }
     }
 })();

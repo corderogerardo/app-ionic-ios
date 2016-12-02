@@ -2,9 +2,9 @@
     angular.module('axpress')
         .controller("AccountController", AccountController);
 
-    AccountController.$inject = ['$scope', '$rootScope', 'Client'];
+    AccountController.$inject = ['$scope', '$rootScope', 'Client', 'Logger', '$state'];
 
-    function AccountController($scope, $rootScope, Client) {
+    function AccountController($scope, $rootScope, Client, Logger, $state) {
         activate();
 
         function activate() {
@@ -13,13 +13,14 @@
 
         $scope.doAccountUpdate = function(accountForm) {
             if (accountForm.$valid) {
+                Logger.displayProgressBar();
                 Client.edit($scope.user.id, $scope.user.email, $scope.user.name, $scope.user.pass, $scope.user.phone,
                         $scope.user.localPhone, $scope.user.identify)
                     .then(function(response) {
                         if (response.return && response.status == 200)
                             successfullyUpdatedAccount();
                     }, function(error) {
-                        //Couldn update user data
+                        Logger.toast("Ha ocurrido un problema actualizando su información.");
                     });
             }
         };
@@ -29,6 +30,9 @@
          */
         function successfullyUpdatedAccount () {
             localStorage.setItem('axpress.user', JSON.stringify($scope.user));
+            Logger.hideProgressBar();
+            $state.go('app.main');
+            Logger.toast("Su información se ha actualizado correctamente.");
         }
     }
 })();
@@ -57,18 +61,21 @@
          * Logins a user in the system using the nomal user/password method
          */
         $scope.login = function() {
+            Logger.displayProgressBar();
             Client.login($scope.user.email, Client.socialPassword($scope.user.password))
                 .then(function(response) {
                     //User/Pass do not match
                     if (response.status == 409) {
-                        Logger.alert('Usuario o Contraseña no coinciden', response.message);
+                        Logger.hideProgressBar();
+                        Logger.toast('Usuario o Contraseña no coinciden');
                     }
                     //Login successfull
                     if (response.return && response.status == 200) {
                         loginSuccessfull(response.data.user, response.data.menu);
                     }
                 }, function(error) {
-                    Logger.alert('badResponse', JSON.stringify(error));
+                    Logger.hideProgressBar();
+                    Logger.toast('Ha ocurrido un error, por favor intente luego.');
                 });
         };
 
@@ -78,6 +85,7 @@
          * @param      {Function}  successCallback  The callback to use on success
          */
         function googleGetUserInfo(successCallback) {
+            Logger.displayProgressBar();
             Client.loginWithGoogle().then(function(response) {
                 Client.googleGetUserInfo().then(function(response) {
                     successCallback(response);
@@ -99,6 +107,7 @@
          * @param      {Function}  successCallback  The callback to use on success
          */
         function facebookGetUserInfo(successCallback) {
+            Logger.displayProgressBar();
             Client.loginWithFacebook().then(function() {
                 Client.facebookGetUserInfo().then(function(response) {
                     successCallback(response);
@@ -125,17 +134,16 @@
                 .then(function(response) {
                     //User/Pass do not match
                     if (response.status == 409) {
-                        Logger.alert('Usuario o Contraseña no coinciden', response.message);
+                        Logger.hideProgressBar();
+                        Logger.toast('Usuario o Contraseña no coinciden');
                     }
                     //Login successfull
                     if (response.return && response.status == 200) {
                         loginSuccessfull(response.data.user, response.data.menu);
                     }
                 }, function(error) {
-                    if (error.message)
-                        Logger.error(error.message);
-                    else
-                        Logger.error('');
+                    Logger.hideProgressBar();
+                    Logger.toast('Ha ocurrido un error, por favor intente luego.');
                 });
         }
 
@@ -157,17 +165,16 @@
                 .then(function(response) {
                     //User/Pass do not match
                     if (response.status == 409) {
-                        Logger.alert('Usuario o Contraseña no coinciden', response.message);
+                        Logger.hideProgressBar();
+                        Logger.toast('Usuario o Contraseña no coinciden');
                     }
                     //Login successfull
                     if (response.return && response.status == 200) {
                         loginSuccessfull(response.data.user, response.data.menu);
                     }
                 }, function(error) {
-                    if (error.message)
-                        Logger.error(error.message);
-                    else
-                        Logger.error('');
+                    Logger.hideProgressBar();
+                    Logger.toast('Ha ocurrido un error, por favor intente luego.');
                 });
         }
 
@@ -186,15 +193,18 @@
          */
         $scope.doRegister = function(registerForm) {
             if (registerForm.$valid) {
+                Logger.displayProgressBar();
                 Client.register($scope.user.name, $scope.user.password, $scope.user.email)
                     .then(function(data) {
                         if (data.return && data.status == 200) {
                             loginSuccessfull(data.data.user, data.data.menu);
                         } else if (data.return && data.status == 409) {
-                            Logger.alert('Usuario ya registrado', data.message);
+                            Logger.hideProgressBar();
+                            Logger.toast('Usuario ya registrado');
                         }
                     }, function(error) {
-                        Logger.error('Ha ocurrido un error inesperado, por favor verifique que la información ingresada es válida.');
+                        Logger.hideProgressBar();
+                        Logger.toast('Ha ocurrido un error inesperado, por favor verifique que la información ingresada es válida.');
                     });
             }
         };
@@ -203,11 +213,15 @@
          * Recovers a user password
          */
         $scope.recoverPassword = function() {
+            Logger.displayProgressBar();
             Client.forgotPassword($scope.user.email)
                 .then(function(response) {
-                    Logger.alert('Recuperación de Contraseña', response.message);
+                    Logger.hideProgressBar();
+                    $state.go('auth.login');
+                    Logger.toast(response.message);
                 }, function(error) {
-                    Logger.error('Ha ocurrido un error, por favor intente luego.');
+                    Logger.hideProgressBar();
+                    Logger.toast('Ha ocurrido un error, por favor intente luego.');
                 });
         };
 
@@ -222,13 +236,12 @@
                     if (response.return && response.status == 200) {
                         loginSuccessfull(response.data.user, response.data.menu);
                     } else if (response.status == 409 && response.message != '') {
-                        Logger.error(response.message);
+                        Logger.hideProgressBar();
+                        Logger.toast('Ha ocurrido un error, por favor intente luego.');
                     }
                 }, function(error) {
-                    if (error.message)
-                        Logger.error(error.message);
-                    else
-                        Logger.error('');
+                    Logger.hideProgressBar();
+                    Logger.toast('Ha ocurrido un error, por favor intente luego.');
                 });
         }
 
@@ -251,13 +264,12 @@
                     if (response.return && response.status == 200) {
                         loginSuccessfull(response.data.user, response.data.menu);
                     } else if (response.status == 409 && response.message != '') {
-                        Logger.error(response.message);
+                        Logger.hideProgressBar();
+                        Logger.toast('Ha ocurrido un error, por favor intente luego.');
                     }
                 }, function(error) {
-                    if (error.message)
-                        Logger.error(error.message);
-                    else
-                        Logger.error('');
+                    Logger.hideProgressBar();
+                    Logger.toast('Ha ocurrido un error, por favor intente luego.');
                 });
         }
 
@@ -280,7 +292,9 @@
             $rootScope.menu = menu;
             localStorage.setItem('axpress.user', JSON.stringify(user));
             localStorage.setItem('axpress.menu', JSON.stringify(menu));
+            Logger.hideProgressBar();
             $state.go('app.main');
+            Logger.toast('Bienvenido!');
         }
     }
 })();
@@ -624,9 +638,9 @@
     angular.module('axpress')
         .controller('HistoryController', HistoryController);
 
-    HistoryController.$inject = ['$rootScope', '$scope', 'history', 'constants', '$state', 'logisticResource'];
+    HistoryController.$inject = ['$rootScope', '$scope', 'constants', '$state', 'logisticResource', 'Shipping', 'Logger'];
 
-    function HistoryController($rootScope, $scope, history, constants, $state, logisticResource) {
+    function HistoryController($rootScope, $scope, constants, $state, logisticResource, Shipping, Logger) {
         activate();
 
         var openShipping = null; //Locally save the id of the currently open shipping
@@ -655,39 +669,25 @@
             return statusValue == status.value;
         };
 
-        function activate () {
-            var tempHistory = history.data.remitent.concat(history.data.receptor);
-            tempHistory.forEach(function (item) {
-                if (item.currier) {
-                    item.currier.fullName = item.currier.name + ' ' + item.currier.last;
-                }
-                item.status = findStatusText(item.status);
-            });
-            $scope.history = tempHistory;
-            // Detailed history
-            if ($state.params.shippingId) {
-                $scope.shipping = $scope.history.filter(function (item) {
-                    return item.shipping_id == parseInt($state.params.shippingId);
-                }).pop();
-                console.log($state);
-                console.log($scope.shipping);
-                loadMarkers();
-                loadCourierPosition();
-            }
-
-            function loadCourierPosition () {
-                logisticResource.getLocation($scope.shipping.currier.currier_id).then(function (response) {
-                    
+        function loadHistory () {
+            Logger.displayProgressBar();
+            Shipping.history($rootScope.user.id).then(function (history) {
+                var tempHistory = history.data.remitent.concat(history.data.receptor);
+                tempHistory.forEach(function (item) {
+                    if (item.currier) {
+                        item.currier.fullName = item.currier.name + ' ' + item.currier.last;
+                    }
+                    item.status = findStatusText(item.status);
                 });
-            }
+                $scope.history = tempHistory;
+                Logger.hideProgressBar();
+            }, function () {
+                Logger.hideProgressBar();
+            });
+        }
 
-            function loadMarkers () {
-                $scope.markers = [{
-                    position: "["+$scope.shipping.originLatitude+","+$scope.shipping.originLongitude+"]"
-                }, {
-                    position: "["+$scope.shipping.destinyLatitude+","+$scope.shipping.destinyLongitude+"]"
-                }];
-            }
+        function activate () {
+            loadHistory();
         }
     }
 })();
@@ -720,10 +720,10 @@
         .controller('OriginController', DocumentOriginController);
 
     DocumentOriginController.$inject = ['$rootScope', '$scope', '$state', 'Location', 'NgMap',
-        '$timeout', 'GoogleMapGeocoder'];
+        '$timeout', 'GoogleMapGeocoder', 'Logger'];
 
     function DocumentOriginController($rootScope, $scope, $state, Location, NgMap,
-                                      $timeout, GoogleMapGeocoder) {
+                                      $timeout, GoogleMapGeocoder, Logger) {
         activate();
 
         $scope.placeChanged = function(place) {
@@ -736,11 +736,14 @@
         };
 
         $scope.pickHere = function() {
-            $scope.buttonState = true;
             $scope.markers[0].icon = "{url: 'img/PinOrigen/Origenmdpi.png', scaledSize: [28,38]}";
         };
 
         $scope.confirmOrigin = function() {
+            if (!$scope.place) {
+                Logger.toast("Debe añadir una dirección válida");
+                return;
+            }
             $scope.data.originAddress = $scope.place.formatted_address;
             $scope.data.originLatitude = $scope.place.geometry.location.lat();
             $scope.data.originLongitude = $scope.place.geometry.location.lng();
@@ -761,7 +764,7 @@
                 .then(function(pos) {
                     GoogleMapGeocoder.reverseGeocode(pos)
                         .then(geocoderCallback);
-                })
+                });
         };
 
         $scope.mapCallbacks = {
@@ -796,16 +799,9 @@
                 .then(geocoderCallback);
         }
 
-        function initialUIStates() {
-            $scope.focused = false;
-            $scope.focused2 = false;
-            $scope.buttonState = false;
-        }
-
         function activate() {
             $scope.data = $state.current.data.data;
             $scope.extraData = $state.current.data.extraData;
-            initialUIStates();
             $scope.markers = [{
                 title    : 'Origen',
                 icon     : "{url: 'img/PinOrigen/Origenmdpi.png', scaledSize: [28,38]}",
@@ -832,6 +828,7 @@
         activate();
 
         $scope.confirmPaymentMethod = function() {
+            Logger.displayProgressBar();
             switch ($state.params.serviceType) {
                 case 43: //Documents
                     Shipping.registerDocument($scope.data, $rootScope.user)
@@ -859,10 +856,7 @@
                             successfullyRegisteredRequest();
                         }
                     }, function(error) {
-                        if (error.message)
-                            Logger.error(error.message);
-                        else
-                            Logger.error('');
+                        Logger.toast("Ha ocurrido un error registrando su solicitud, por favor intente de nuevo.")
                     });
             }
         };
@@ -870,7 +864,9 @@
         function successfullyRegisteredRequest() {
             $scope.data = {};
             $state.current.data.data = {};
+            Logger.hideProgressBar();
             $state.go("app.main");
+            Logger.toast("Solicitud registrada correctamente");
         }
 
         function activate() {
@@ -1082,9 +1078,9 @@
     angular.module('axpress')
         .controller('TrackingController', TrackingController);
 
-    TrackingController.$inject = ['$rootScope', '$scope', '$state', 'history', 'constants', 'logisticResource', '$timeout'];
+    TrackingController.$inject = ['$rootScope', '$scope', '$state', 'constants', 'logisticResource', '$timeout', 'Shipping', 'Logger'];
 
-    function TrackingController($rootScope, $scope, $state, history, constants, logisticResource, $timeout) {
+    function TrackingController($rootScope, $scope, $state, constants, logisticResource, $timeout, Shipping, Logger) {
         activate();
 
         $scope.loadCourierPosition = loadCourierPosition;
@@ -1108,9 +1104,6 @@
         }
 
         function loadMarkers (courier) {
-
-            //TODO: Update markers images
-
             var markers = [{
                 position: [$scope.shipping.origin_latitude, $scope.shipping.origin_longitude],
                 icon    : "{url: 'img/inputs/pin-mapa-check1.png', scaledSize: [48,48]}",
@@ -1133,23 +1126,31 @@
             }, 0);
         }
 
-        function activate () {
-            var tempHistory = history.data.remitent.concat(history.data.receptor);
-            tempHistory.forEach(function (item) {
-                if (item.currier) {
-                    item.currier.fullName = item.currier.name + ' ' + item.currier.last;
-                }
-                item.status = findStatusText(item.status);
-            });
-            $scope.history = tempHistory;
-            // Detailed history
-            if ($state.params.shippingId) {
+        function loadHistory () {
+            Logger.displayProgressBar();
+            Shipping.history($rootScope.user.id).then(function (history) {
+                var tempHistory = history.data.remitent.concat(history.data.receptor);
+                tempHistory.forEach(function (item) {
+                    if (item.currier) {
+                        item.currier.fullName = item.currier.name + ' ' + item.currier.last;
+                    }
+                    item.status = findStatusText(item.status);
+                });
+                $scope.history = tempHistory;
+
+                // Detailed history
                 $scope.shipping = $scope.history.filter(function (item) {
                     return item.shipping_id == parseInt($state.params.shippingId);
                 }).pop();
                 loadMarkers();
                 loadCourierPosition();
-            }
+            }, function () {
+                Logger.hideProgressBar();
+            });
+        }
+
+        function activate () {
+            loadHistory();
         }
     }
 })();

@@ -8,6 +8,7 @@
         activate();
 
         $scope.confirmPaymentMethod = function() {
+            Logger.displayProgressBar();
             switch ($state.params.serviceType) {
                 case 43: //Documents
                     Shipping.registerDocument($scope.data, $rootScope.user)
@@ -35,10 +36,7 @@
                             successfullyRegisteredRequest();
                         }
                     }, function(error) {
-                        if (error.message)
-                            Logger.error(error.message);
-                        else
-                            Logger.error('');
+                        Logger.toast("Ha ocurrido un error registrando su solicitud, por favor intente de nuevo.")
                     });
             }
         };
@@ -46,7 +44,9 @@
         function successfullyRegisteredRequest() {
             $scope.data = {};
             $state.current.data.data = {};
+            Logger.hideProgressBar();
             $state.go("app.main");
+            Logger.toast("Solicitud registrada correctamente");
         }
 
         function activate() {

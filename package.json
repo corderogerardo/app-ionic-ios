@@ -41,7 +41,15 @@
         "SENDER_ID": "1068552996185"
       }
     },
-    "cordova-plugin-geolocation"
+    "cordova-plugin-geolocation",
+    {
+      "locator": "https://github.com/EddyVerbruggen/Toast-PhoneGap-Plugin.git",
+      "id": "cordova-plugin-x-toast"
+    },
+    {
+      "locator": "https://github.com/pbernasconi/cordova-progressIndicator.git",
+      "id": "org.pbernasconi.progressindicator"
+    }
   ],
   "cordovaPlatforms": []
 }
