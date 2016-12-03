@@ -48,13 +48,21 @@
         activate();
 
         function activate() {
-
             $scope.user = {};
+            checkFirstRun();
             if (localStorage.getItem('axpress.user') && localStorage.getItem('axpress.menu')) {
                 $rootScope.user = JSON.parse(localStorage.getItem('axpress.user'));
                 $rootScope.menu = JSON.parse(localStorage.getItem('axpress.menu'));
                 $state.go('app.main');
             }
+        }
+
+        function checkFirstRun () {
+            //If app has been ran before, redirect to login
+            if (localStorage.getItem('axpress.hasRan')) {
+                $state.go('auth.login');
+            }
+            localStorage.setItem('axpress.hasRan', 1);
         }
 
         /**
