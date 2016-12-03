@@ -15,7 +15,7 @@
             <div class="list list-inset">
                 <input class="item item-input inputs-general input-user-dest" type="text" name="username" ng-model="data.destinyName" placeholder="Nombre de Usuario">
                 <input class="item item-input inputs-general input-email-dest" type="email" name="email" ng-model="data.emailDestinyClient" placeholder="Correo Electrónico">
-                <input class="item item-input inputs-general input-phone-dest" type="tel" name="phone" ng-model="data.cellphoneDestinyClient" placeholder="Teléfono">
+                <input class="item item-input inputs-general input-phone-dest" type="text" name="phone" ng-model="data.cellphoneDestinyClient" placeholder="Teléfono" pattern="\d{7,10}" minlength="7" maxlength="10">
                 <input class="item item-input inputs-general input-dni-dest" type="text" name="cinit" ng-model="data.destinyClient" placeholder="Cédula o NIT">
             </div>
         </section>
