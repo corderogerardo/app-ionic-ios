@@ -351,16 +351,16 @@
         $scope.pickHere = function() {
             $scope.buttonState = true;
             var marker = $scope.markers[$scope.markers.length - 1];
-            marker.icon = "{url: 'img/Pindestino/Pindetsinomdpi.png', scaledSize: [28,38]}";
+            marker.icon = "{url: 'img/Pindestino/Pindetsino3x.png.png', scaledSize: [28,38]}";
             marker.draggable = false;
         };
 
         $scope.addNewAddress = function() {
             var lastMarker = $scope.markers[$scope.markers.length - 1];
             lastMarker.draggable = false;
-            lastMarker.icon = "{url: 'img/Pindestino/Pindetsinomdpi.png', scaledSize: [28,38]}";
+            lastMarker.icon = "{url: 'img/Pindestino/Pindetsino3x.png.png', scaledSize: [28,38]}";
             $scope.markers.push({
-                icon: "{url: 'img/Pindestino/Pindetsinomdpi.png', scaledSize: [28,38]}"
+                icon: "{url: 'img/Pindestino/Pindetsino3x.png.png', scaledSize: [28,38]}"
             });
             $scope.data.destiniesData.push(getStopElement($scope.tempData));
             resetTempData();
@@ -459,7 +459,7 @@
             $scope.data = $state.current.data.data;
             $scope.extraData = $state.current.data.extraData;
             $scope.markers = [{
-                icon    : "{url: 'img/PinOrigen/Origenmdpi.png', scaledSize: [28,38]}",
+                icon    : "{url: 'img/PinOrigen/Origen3x.png.png', scaledSize: [28,38]}",
                 position: [$scope.data.originLatitude, $scope.data.originLongitude]
             }];
             $scope.tempData = {};
@@ -471,7 +471,7 @@
                 var index = $scope.data.editStopIndex;
                 $scope.data.destiniesData.forEach(function(destiny, destIndex) {
                     $scope.markers.push({
-                        icon     : (destIndex == index ? "{url: 'img/Pindestino/Pindetsinomdpi.png', scaledSize: [28,38]}" : "{url: 'img/Pindestino/Pindetsinomdpi.png', scaledSize: [28,38]}"),
+                        icon     : (destIndex == index ? "{url: 'img/Pindestino/Pindetsino3x.png.png', scaledSize: [28,38]}" : "{url: 'img/Pindestino/Pindetsino3x.png.png', scaledSize: [28,38]}"),
                         position : [destiny.latitude, destiny.longitude],
                         draggable: (destIndex == index)
                     });
@@ -487,7 +487,7 @@
             } else {
                 $scope.data.destiniesData = [];
                 $scope.markers.push({
-                    icon     : "{url: 'img/Pindestino/Pindetsinomdpi.png', scaledSize: [28,38]}",
+                    icon     : "{url: 'img/Pindestino/Pindetsino3x.png.png', scaledSize: [28,38]}",
                     draggable: true
                 });
             }
@@ -737,7 +737,7 @@
 
         $scope.pickHere = function() {
             $scope.buttonState = true;
-            $scope.markers[0].icon = "{url: 'img/PinOrigen/Origenmdpi.png', scaledSize: [28,38]}";
+            $scope.markers[0].icon = "{url: 'img/PinOrigen/Origen3x.png.png', scaledSize: [28,38]}";
         };
 
         $scope.confirmOrigin = function() {
@@ -808,7 +808,7 @@
             initialUIStates();
             $scope.markers = [{
                 title    : 'Origen',
-                icon     : "{url: 'img/PinOrigen/Origenmdpi.png', scaledSize: [28,38]}",
+                icon     : "{url: 'img/PinOrigen/Origen3x.png.png', scaledSize: [28,38]}",
                 draggable: true
             }];
             if ( $scope.data.originAddress )

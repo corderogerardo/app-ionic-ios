@@ -9949,7 +9949,7 @@ ion-content {
       font-size: 18px;
       min-width: 100%; } }
 
-.button-default {
+.button-createaccount {
   color: white !important;
   border: none !important;
   background-color: transparent;
@@ -9958,7 +9958,7 @@ ion-content {
   background-repeat: no-repeat;
   background-position: center; }
   @media screen and (max-height: 2560px) {
-    .button-default {
+    .button-createaccount {
       border: none !important;
       background-color: transparent;
       background-image: url("../img/IniciarsesionCrearcuenta/IniciarsesionCrearcuenta3x.png.png") !important;
@@ -9966,7 +9966,7 @@ ion-content {
       background-repeat: no-repeat;
       background-position: center; } }
   @media screen and (max-height: 1920px) {
-    .button-default {
+    .button-createaccount {
       border: none !important;
       background-color: transparent;
       background-image: url("../img/IniciarsesionCrearcuenta/IniciarsesionCrearcuenta3x.png.png") !important;
@@ -9974,7 +9974,7 @@ ion-content {
       background-repeat: no-repeat;
       background-position: center; } }
   @media screen and (max-height: 1280px) {
-    .button-default {
+    .button-createaccount {
       border: none !important;
       background-color: transparent;
       background-image: url("../img/IniciarsesionCrearcuenta/IniciarsesionCrearcuenta2x.png.png") !important;
@@ -9982,7 +9982,7 @@ ion-content {
       background-repeat: no-repeat;
       background-position: center; } }
   @media screen and (max-height: 960px) {
-    .button-default {
+    .button-createaccount {
       border: none !important;
       background-color: transparent;
       background-image: url("../img/IniciarsesionCrearcuenta/IniciarsesionCrearcuenta2x.png.png") !important;
@@ -9990,7 +9990,7 @@ ion-content {
       background-repeat: no-repeat;
       background-position: center; } }
   @media screen and (max-height: 736px) {
-    .button-default {
+    .button-createaccount {
       border: none !important;
       background-color: transparent;
       background-image: url("../img/IniciarsesionCrearcuenta/IniciarsesionCrearcuenta2x.png.png") !important;
@@ -9998,7 +9998,7 @@ ion-content {
       background-repeat: no-repeat;
       background-position: center; } }
   @media screen and (max-height: 667px) {
-    .button-default {
+    .button-createaccount {
       border: none !important;
       background-color: transparent;
       background-image: url("../img/IniciarsesionCrearcuenta/IniciarsesionCrearcuenta2x.png.png") !important;
@@ -10006,7 +10006,7 @@ ion-content {
       background-repeat: no-repeat;
       background-position: center; } }
   @media screen and (max-height: 568px) {
-    .button-default {
+    .button-createaccount {
       border: none !important;
       background-color: transparent;
       background-image: url("../img/IniciarsesionCrearcuenta/IniciarsesionCrearcuenta.png") !important;
@@ -10014,7 +10014,7 @@ ion-content {
       background-repeat: no-repeat;
       background-position: center; } }
   @media screen and (max-height: 480px) {
-    .button-default {
+    .button-createaccount {
       border: none !important;
       background-color: transparent;
       background-image: url("../img/IniciarsesionCrearcuenta/IniciarsesionCrearcuenta.png") !important;
@@ -10022,14 +10022,14 @@ ion-content {
       background-repeat: no-repeat;
       background-position: center; } }
   @media screen and (max-height: 320px) {
-    .button-default {
+    .button-createaccount {
       border: none !important;
       background-color: transparent;
       background-image: url("../img/IniciarsesionCrearcuenta/IniciarsesionCrearcuenta.png") !important;
       background-size: 100%;
       background-repeat: no-repeat;
       background-position: center; } }
-  .button-default:hover {
+  .button-createaccount:hover {
     border: none !important;
     background-color: transparent;
     background-image: url("../img/IniciarsesionCrearcuentaTAP/IniciarsesionCrearcuenta.png") !important;
@@ -10037,7 +10037,7 @@ ion-content {
     background-repeat: no-repeat;
     background-position: center; }
     @media screen and (max-height: 2560px) {
-      .button-default:hover {
+      .button-createaccount:hover {
         border: none !important;
         background-color: transparent;
         background-image: url("../img/IniciarsesionCrearcuentaTAP/IniciarsesionCrearcuenta3x.png.png") !important;
@@ -10045,7 +10045,7 @@ ion-content {
         background-repeat: no-repeat;
         background-position: center; } }
     @media screen and (max-height: 1920px) {
-      .button-default:hover {
+      .button-createaccount:hover {
         border: none !important;
         background-color: transparent;
         background-image: url("../img/IniciarsesionCrearcuentaTAP/IniciarsesionCrearcuenta3x.png.png") !important;
@@ -10053,7 +10053,7 @@ ion-content {
         background-repeat: no-repeat;
         background-position: center; } }
     @media screen and (max-height: 1280px) {
-      .button-default:hover {
+      .button-createaccount:hover {
         border: none !important;
         background-color: transparent;
         background-image: url("../img/IniciarsesionCrearcuentaTAP/IniciarsesionCrearcuenta2x.png.png") !important;
@@ -10061,7 +10061,7 @@ ion-content {
         background-repeat: no-repeat;
         background-position: center; } }
     @media screen and (max-height: 960px) {
-      .button-default:hover {
+      .button-createaccount:hover {
         border: none !important;
         background-color: transparent;
         background-image: url("../img/IniciarsesionCrearcuentaTAP/IniciarsesionCrearcuenta2x.png.png") !important;
@@ -10069,7 +10069,7 @@ ion-content {
         background-repeat: no-repeat;
         background-position: center; } }
     @media screen and (max-height: 736px) {
-      .button-default:hover {
+      .button-createaccount:hover {
         border: none !important;
         background-color: transparent;
         background-image: url("../img/IniciarsesionCrearcuentaTAP/IniciarsesionCrearcuenta2x.png.png") !important;
@@ -10077,7 +10077,7 @@ ion-content {
         background-repeat: no-repeat;
         background-position: center; } }
     @media screen and (max-height: 667px) {
-      .button-default:hover {
+      .button-createaccount:hover {
         border: none !important;
         background-color: transparent;
         background-image: url("../img/IniciarsesionCrearcuentaTAP/IniciarsesionCrearcuenta2x.png.png") !important;
@@ -10085,7 +10085,7 @@ ion-content {
         background-repeat: no-repeat;
         background-position: center; } }
     @media screen and (max-height: 568px) {
-      .button-default:hover {
+      .button-createaccount:hover {
         border: none !important;
         background-color: transparent;
         background-image: url("../img/IniciarsesionCrearcuentaTAP/IniciarsesionCrearcuenta2x.png.png") !important;
@@ -10093,7 +10093,7 @@ ion-content {
         background-repeat: no-repeat;
         background-position: center; } }
     @media screen and (max-height: 480px) {
-      .button-default:hover {
+      .button-createaccount:hover {
         border: none !important;
         background-color: transparent;
         background-image: url("../img/IniciarsesionCrearcuentaTAP/IniciarsesionCrearcuenta.png") !important;
@@ -10101,14 +10101,14 @@ ion-content {
         background-repeat: no-repeat;
         background-position: center; } }
     @media screen and (max-height: 320px) {
-      .button-default:hover {
+      .button-createaccount:hover {
         border: none !important;
         background-color: transparent;
         background-image: url("../img/IniciarsesionCrearcuentaTAP/IniciarsesionCrearcuenta.png") !important;
         background-size: 100%;
         background-repeat: no-repeat;
         background-position: center; } }
-  .button-default:hover {
+  .button-createaccount:hover {
     color: white; }
 
 .button-default-two {
@@ -10288,6 +10288,168 @@ ion-content {
   min-width: 12%;
   padding: 0 !important;
   width: 12%; }
+
+.button-continue {
+  color: white !important;
+  border: none !important;
+  background-color: transparent;
+  background-image: url("../img/BotonContinuar/Continuar.png") !important;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center; }
+  .button-continue:hover {
+    color: white; }
+  @media screen and (max-height: 2560px) {
+    .button-continue {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/BotonContinuar/Continuar3x.png.png") !important;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 1920px) {
+    .button-continue {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/BotonContinuar/Continuar3x.png.png") !important;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 1280px) {
+    .button-continue {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/BotonContinuar/Continuar2x.png.png") !important;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 960px) {
+    .button-continue {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/BotonContinuar/Continuar2x.png.png") !important;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 736px) {
+    .button-continue {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/BotonContinuar/Continuar2x.png.png") !important;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 667px) {
+    .button-continue {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/BotonContinuar/Continuar2x.png.png") !important;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 568px) {
+    .button-continue {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/BotonContinuar/Continuar.png") !important;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 480px) {
+    .button-continue {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/BotonContinuar/Continuar.png") !important;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 320px) {
+    .button-continue {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/BotonContinuar/Continuar.png") !important;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  .button-continue:hover {
+    border: none !important;
+    background-color: transparent;
+    background-image: url("../img/BotonContinuarTAP/ContinuarTAP.png") !important;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center; }
+    @media screen and (max-height: 2560px) {
+      .button-continue:hover {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/BotonContinuarTAP/ContinuarTAP3x.png.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 1920px) {
+      .button-continue:hover {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/BotonContinuarTAP/ContinuarTAP3x.png.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 1280px) {
+      .button-continue:hover {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/BotonContinuarTAP/ContinuarTAP2x.png.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 960px) {
+      .button-continue:hover {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/BotonContinuarTAP/ContinuarTAP2x.png.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 736px) {
+      .button-continue:hover {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/BotonContinuarTAP/ContinuarTAP2x.png.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 667px) {
+      .button-continue:hover {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/BotonContinuarTAP/ContinuarTAP2x.png.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 568px) {
+      .button-continue:hover {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/BotonContinuarTAP/ContinuarTAP2x.png.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 480px) {
+      .button-continue:hover {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/BotonContinuarTAP/ContinuarTAP.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 320px) {
+      .button-continue:hover {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/BotonContinuarTAP/ContinuarTAP.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
 
 @media screen and (max-height: 2560px) {
   .axpress-bg {
@@ -11929,22 +12091,221 @@ ion-slide {
       -moz-justify-content: center;
       justify-content: center;
       border: none !important;
-      height: 80%;
-      min-height: 80%;
-      min-width: 80%;
-      width: 80%;
+      min-height: 90%;
+      height: 90%;
+      min-width: 70%;
+      width: 70%;
+      border: none !important;
       background-color: transparent;
-      background-image: url("../img/MenuDocumentos/Menudocumentosmdpi.png") !important;
-      background-size: 70%;
-      background-position: center;
-      background-repeat: no-repeat; }
+      background-image: url("../img/Documentos/Documentos.png") !important;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-position: center; }
+      @media screen and (max-height: 2560px) {
+        .main-menu a .img-0 {
+          min-height: 90%;
+          height: 90%;
+          min-width: 75%;
+          width: 75%; } }
+      @media screen and (max-height: 1920px) {
+        .main-menu a .img-0 {
+          min-height: 90%;
+          height: 90%;
+          min-width: 75%;
+          width: 75%; } }
+      @media screen and (max-height: 1280px) {
+        .main-menu a .img-0 {
+          min-height: 90%;
+          height: 90%;
+          min-width: 75%;
+          width: 75%; } }
+      @media screen and (max-height: 960px) {
+        .main-menu a .img-0 {
+          min-height: 90%;
+          height: 90%;
+          min-width: 75%;
+          width: 75%; } }
+      @media screen and (max-height: 736px) {
+        .main-menu a .img-0 {
+          min-height: 90%;
+          height: 90%;
+          min-width: 75%;
+          width: 75%; } }
+      @media screen and (max-height: 667px) {
+        .main-menu a .img-0 {
+          min-height: 90%;
+          height: 90%;
+          min-width: 75%;
+          width: 75%; } }
+      @media screen and (max-height: 568px) {
+        .main-menu a .img-0 {
+          min-height: 90%;
+          height: 90%;
+          min-width: 70%;
+          width: 70%; } }
+      @media screen and (max-height: 480px) {
+        .main-menu a .img-0 {
+          min-height: 90%;
+          height: 90%;
+          min-width: 70%;
+          width: 70%; } }
+      @media screen and (max-height: 320px) {
+        .main-menu a .img-0 {
+          min-height: 90%;
+          height: 90%;
+          min-width: 70%;
+          width: 70%; } }
+      @media screen and (max-height: 2560px) {
+        .main-menu a .img-0 {
+          border: none !important;
+          background-color: transparent;
+          background-image: url("../img/Documentos/Documentos3x.png.png") !important;
+          background-size: 100%;
+          background-repeat: no-repeat;
+          background-position: center; } }
+      @media screen and (max-height: 1920px) {
+        .main-menu a .img-0 {
+          border: none !important;
+          background-color: transparent;
+          background-image: url("../img/Documentos/Documentos3x.png.png") !important;
+          background-size: 100%;
+          background-repeat: no-repeat;
+          background-position: center; } }
+      @media screen and (max-height: 1280px) {
+        .main-menu a .img-0 {
+          border: none !important;
+          background-color: transparent;
+          background-image: url("../img/Documentos/Documentos2x.png.png") !important;
+          background-size: 100%;
+          background-repeat: no-repeat;
+          background-position: center; } }
+      @media screen and (max-height: 960px) {
+        .main-menu a .img-0 {
+          border: none !important;
+          background-color: transparent;
+          background-image: url("../img/Documentos/Documentos2x.png.png") !important;
+          background-size: 100%;
+          background-repeat: no-repeat;
+          background-position: center; } }
+      @media screen and (max-height: 736px) {
+        .main-menu a .img-0 {
+          border: none !important;
+          background-color: transparent;
+          background-image: url("../img/Documentos/Documentos2x.png.png") !important;
+          background-size: 100%;
+          background-repeat: no-repeat;
+          background-position: center; } }
+      @media screen and (max-height: 667px) {
+        .main-menu a .img-0 {
+          border: none !important;
+          background-color: transparent;
+          background-image: url("../img/Documentos/Documentos2x.png.png") !important;
+          background-size: 100%;
+          background-repeat: no-repeat;
+          background-position: center; } }
+      @media screen and (max-height: 568px) {
+        .main-menu a .img-0 {
+          border: none !important;
+          background-color: transparent;
+          background-image: url("../img/Documentos/Documentos.png") !important;
+          background-size: 100%;
+          background-repeat: no-repeat;
+          background-position: center; } }
+      @media screen and (max-height: 480px) {
+        .main-menu a .img-0 {
+          border: none !important;
+          background-color: transparent;
+          background-image: url("../img/Documentos/Documentos.png") !important;
+          background-size: 100%;
+          background-repeat: no-repeat;
+          background-position: center; } }
+      @media screen and (max-height: 320px) {
+        .main-menu a .img-0 {
+          border: none !important;
+          background-color: transparent;
+          background-image: url("../img/Documentos/Documentos.png") !important;
+          background-size: 100%;
+          background-repeat: no-repeat;
+          background-position: center; } }
       .main-menu a .img-0:hover {
         border: none !important;
         background-color: transparent;
-        background-image: url("../img/MenudocumentosTAP/Menudocumentosmdpi.png") !important;
-        background-size: 70%;
-        background-position: center;
-        background-repeat: no-repeat; }
+        background-image: url("../img/DocumentosTAP/DocuemtosTAP.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; }
+        @media screen and (max-height: 2560px) {
+          .main-menu a .img-0:hover {
+            border: none !important;
+            background-color: transparent;
+            background-image: url("../img/DocumentosTAP/DocuemtosTAP3x.png.png") !important;
+            background-size: 100%;
+            background-repeat: no-repeat;
+            background-position: center; } }
+        @media screen and (max-height: 1920px) {
+          .main-menu a .img-0:hover {
+            border: none !important;
+            background-color: transparent;
+            background-image: url("../img/DocumentosTAP/DocuemtosTAP3x.png.png") !important;
+            background-size: 100%;
+            background-repeat: no-repeat;
+            background-position: center; } }
+        @media screen and (max-height: 1280px) {
+          .main-menu a .img-0:hover {
+            border: none !important;
+            background-color: transparent;
+            background-image: url("../img/DocumentosTAP/DocuemtosTAP2x.png.png") !important;
+            background-size: 100%;
+            background-repeat: no-repeat;
+            background-position: center; } }
+        @media screen and (max-height: 960px) {
+          .main-menu a .img-0:hover {
+            border: none !important;
+            background-color: transparent;
+            background-image: url("../img/DocumentosTAP/DocuemtosTAP2x.png.png") !important;
+            background-size: 100%;
+            background-repeat: no-repeat;
+            background-position: center; } }
+        @media screen and (max-height: 736px) {
+          .main-menu a .img-0:hover {
+            border: none !important;
+            background-color: transparent;
+            background-image: url("../img/DocumentosTAP/DocuemtosTAP2x.png.png") !important;
+            background-size: 100%;
+            background-repeat: no-repeat;
+            background-position: center; } }
+        @media screen and (max-height: 667px) {
+          .main-menu a .img-0:hover {
+            border: none !important;
+            background-color: transparent;
+            background-image: url("../img/DocumentosTAP/DocuemtosTAP2x.png.png") !important;
+            background-size: 100%;
+            background-repeat: no-repeat;
+            background-position: center; } }
+        @media screen and (max-height: 568px) {
+          .main-menu a .img-0:hover {
+            border: none !important;
+            background-color: transparent;
+            background-image: url("../img/DocumentosTAP/DocuemtosTAP2x.png.png") !important;
+            background-size: 100%;
+            background-repeat: no-repeat;
+            background-position: center; } }
+        @media screen and (max-height: 480px) {
+          .main-menu a .img-0:hover {
+            border: none !important;
+            background-color: transparent;
+            background-image: url("../img/DocumentosTAP/DocuemtosTAP.png") !important;
+            background-size: 100%;
+            background-repeat: no-repeat;
+            background-position: center; } }
+        @media screen and (max-height: 320px) {
+          .main-menu a .img-0:hover {
+            border: none !important;
+            background-color: transparent;
+            background-image: url("../img/DocumentosTAP/DocuemtosTAP.png") !important;
+            background-size: 100%;
+            background-repeat: no-repeat;
+            background-position: center; } }
     .main-menu a .img-1 {
       display: -webkit-box;
       display: -webkit-flex;
@@ -11969,21 +12330,221 @@ ion-slide {
       -moz-justify-content: center;
       justify-content: center;
       border: none !important;
-      height: 80%;
-      min-height: 80%;
-      min-width: 80%;
-      width: 80%;
+      min-height: 90%;
+      height: 90%;
+      min-width: 70%;
+      width: 70%;
+      border: none !important;
       background-color: transparent;
-      background-image: url("../img/Menupaquetes/Menupaquetesmdpi.png") !important;
-      background-size: 70%;
-      background-position: center;
-      background-repeat: no-repeat; }
+      background-image: url("../img/Paquetes/Paquetes.png") !important;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-position: center; }
+      @media screen and (max-height: 2560px) {
+        .main-menu a .img-1 {
+          min-height: 90%;
+          height: 90%;
+          min-width: 75%;
+          width: 75%; } }
+      @media screen and (max-height: 1920px) {
+        .main-menu a .img-1 {
+          min-height: 90%;
+          height: 90%;
+          min-width: 75%;
+          width: 75%; } }
+      @media screen and (max-height: 1280px) {
+        .main-menu a .img-1 {
+          min-height: 90%;
+          height: 90%;
+          min-width: 75%;
+          width: 75%; } }
+      @media screen and (max-height: 960px) {
+        .main-menu a .img-1 {
+          min-height: 90%;
+          height: 90%;
+          min-width: 75%;
+          width: 75%; } }
+      @media screen and (max-height: 736px) {
+        .main-menu a .img-1 {
+          min-height: 90%;
+          height: 90%;
+          min-width: 75%;
+          width: 75%; } }
+      @media screen and (max-height: 667px) {
+        .main-menu a .img-1 {
+          min-height: 90%;
+          height: 90%;
+          min-width: 75%;
+          width: 75%; } }
+      @media screen and (max-height: 568px) {
+        .main-menu a .img-1 {
+          min-height: 90%;
+          height: 90%;
+          min-width: 70%;
+          width: 70%; } }
+      @media screen and (max-height: 480px) {
+        .main-menu a .img-1 {
+          min-height: 90%;
+          height: 90%;
+          min-width: 70%;
+          width: 70%; } }
+      @media screen and (max-height: 320px) {
+        .main-menu a .img-1 {
+          min-height: 90%;
+          height: 90%;
+          min-width: 70%;
+          width: 70%; } }
+      @media screen and (max-height: 2560px) {
+        .main-menu a .img-1 {
+          border: none !important;
+          background-color: transparent;
+          background-image: url("../img/Paquetes/Paquetes3x.png.png") !important;
+          background-size: 100%;
+          background-repeat: no-repeat;
+          background-position: center; } }
+      @media screen and (max-height: 1920px) {
+        .main-menu a .img-1 {
+          border: none !important;
+          background-color: transparent;
+          background-image: url("../img/Paquetes/Paquetes3x.png.png") !important;
+          background-size: 100%;
+          background-repeat: no-repeat;
+          background-position: center; } }
+      @media screen and (max-height: 1280px) {
+        .main-menu a .img-1 {
+          border: none !important;
+          background-color: transparent;
+          background-image: url("../img/Paquetes/Paquetes2x.png.png") !important;
+          background-size: 100%;
+          background-repeat: no-repeat;
+          background-position: center; } }
+      @media screen and (max-height: 960px) {
+        .main-menu a .img-1 {
+          border: none !important;
+          background-color: transparent;
+          background-image: url("../img/Paquetes/Paquetes2x.png.png") !important;
+          background-size: 100%;
+          background-repeat: no-repeat;
+          background-position: center; } }
+      @media screen and (max-height: 736px) {
+        .main-menu a .img-1 {
+          border: none !important;
+          background-color: transparent;
+          background-image: url("../img/Paquetes/Paquetes2x.png.png") !important;
+          background-size: 100%;
+          background-repeat: no-repeat;
+          background-position: center; } }
+      @media screen and (max-height: 667px) {
+        .main-menu a .img-1 {
+          border: none !important;
+          background-color: transparent;
+          background-image: url("../img/Paquetes/Paquetes2x.png.png") !important;
+          background-size: 100%;
+          background-repeat: no-repeat;
+          background-position: center; } }
+      @media screen and (max-height: 568px) {
+        .main-menu a .img-1 {
+          border: none !important;
+          background-color: transparent;
+          background-image: url("../img/Paquetes/Paquetes.png") !important;
+          background-size: 100%;
+          background-repeat: no-repeat;
+          background-position: center; } }
+      @media screen and (max-height: 480px) {
+        .main-menu a .img-1 {
+          border: none !important;
+          background-color: transparent;
+          background-image: url("../img/Paquetes/Paquetes.png") !important;
+          background-size: 100%;
+          background-repeat: no-repeat;
+          background-position: center; } }
+      @media screen and (max-height: 320px) {
+        .main-menu a .img-1 {
+          border: none !important;
+          background-color: transparent;
+          background-image: url("../img/Paquetes/Paquetes.png") !important;
+          background-size: 100%;
+          background-repeat: no-repeat;
+          background-position: center; } }
       .main-menu a .img-1:hover {
         border: none !important;
         background-color: transparent;
-        background-image: url("../img/MenupaquetesTAP/Menupaquetesmdpi.png") !important;
-        background-size: 70%;
-        background-repeat: no-repeat; }
+        background-image: url("../img/PaquetesTAP/PaquetesTAP.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; }
+        @media screen and (max-height: 2560px) {
+          .main-menu a .img-1:hover {
+            border: none !important;
+            background-color: transparent;
+            background-image: url("../img/PaquetesTAP/PaquetesTAP3x.png.png") !important;
+            background-size: 100%;
+            background-repeat: no-repeat;
+            background-position: center; } }
+        @media screen and (max-height: 1920px) {
+          .main-menu a .img-1:hover {
+            border: none !important;
+            background-color: transparent;
+            background-image: url("../img/PaquetesTAP/PaquetesTAP3x.png.png") !important;
+            background-size: 100%;
+            background-repeat: no-repeat;
+            background-position: center; } }
+        @media screen and (max-height: 1280px) {
+          .main-menu a .img-1:hover {
+            border: none !important;
+            background-color: transparent;
+            background-image: url("../img/PaquetesTAP/PaquetesTAP2x.png.png") !important;
+            background-size: 100%;
+            background-repeat: no-repeat;
+            background-position: center; } }
+        @media screen and (max-height: 960px) {
+          .main-menu a .img-1:hover {
+            border: none !important;
+            background-color: transparent;
+            background-image: url("../img/PaquetesTAP/PaquetesTAP2x.png.png") !important;
+            background-size: 100%;
+            background-repeat: no-repeat;
+            background-position: center; } }
+        @media screen and (max-height: 736px) {
+          .main-menu a .img-1:hover {
+            border: none !important;
+            background-color: transparent;
+            background-image: url("../img/PaquetesTAP/PaquetesTAP2x.png.png") !important;
+            background-size: 100%;
+            background-repeat: no-repeat;
+            background-position: center; } }
+        @media screen and (max-height: 667px) {
+          .main-menu a .img-1:hover {
+            border: none !important;
+            background-color: transparent;
+            background-image: url("../img/PaquetesTAP/PaquetesTAP2x.png.png") !important;
+            background-size: 100%;
+            background-repeat: no-repeat;
+            background-position: center; } }
+        @media screen and (max-height: 568px) {
+          .main-menu a .img-1:hover {
+            border: none !important;
+            background-color: transparent;
+            background-image: url("../img/PaquetesTAP/PaquetesTAP2x.png.png") !important;
+            background-size: 100%;
+            background-repeat: no-repeat;
+            background-position: center; } }
+        @media screen and (max-height: 480px) {
+          .main-menu a .img-1:hover {
+            border: none !important;
+            background-color: transparent;
+            background-image: url("../img/PaquetesTAP/PaquetesTAP.png") !important;
+            background-size: 100%;
+            background-repeat: no-repeat;
+            background-position: center; } }
+        @media screen and (max-height: 320px) {
+          .main-menu a .img-1:hover {
+            border: none !important;
+            background-color: transparent;
+            background-image: url("../img/PaquetesTAP/PaquetesTAP.png") !important;
+            background-size: 100%;
+            background-repeat: no-repeat;
+            background-position: center; } }
     .main-menu a .img-2 {
       display: -webkit-box;
       display: -webkit-flex;
@@ -12008,21 +12569,221 @@ ion-slide {
       -moz-justify-content: center;
       justify-content: center;
       border: none !important;
-      height: 80%;
-      min-height: 80%;
-      min-width: 80%;
-      width: 80%;
+      min-height: 90%;
+      height: 90%;
+      min-width: 70%;
+      width: 70%;
+      border: none !important;
       background-color: transparent;
-      background-image: url("../img/MenuDiligencias/Diligenciasmdpi.png") !important;
-      background-size: 70%;
-      background-position: center;
-      background-repeat: no-repeat; }
+      background-image: url("../img/Diligencias/Diligencias.png") !important;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-position: center; }
+      @media screen and (max-height: 2560px) {
+        .main-menu a .img-2 {
+          min-height: 90%;
+          height: 90%;
+          min-width: 75%;
+          width: 75%; } }
+      @media screen and (max-height: 1920px) {
+        .main-menu a .img-2 {
+          min-height: 90%;
+          height: 90%;
+          min-width: 75%;
+          width: 75%; } }
+      @media screen and (max-height: 1280px) {
+        .main-menu a .img-2 {
+          min-height: 90%;
+          height: 90%;
+          min-width: 75%;
+          width: 75%; } }
+      @media screen and (max-height: 960px) {
+        .main-menu a .img-2 {
+          min-height: 90%;
+          height: 90%;
+          min-width: 75%;
+          width: 75%; } }
+      @media screen and (max-height: 736px) {
+        .main-menu a .img-2 {
+          min-height: 90%;
+          height: 90%;
+          min-width: 75%;
+          width: 75%; } }
+      @media screen and (max-height: 667px) {
+        .main-menu a .img-2 {
+          min-height: 90%;
+          height: 90%;
+          min-width: 75%;
+          width: 75%; } }
+      @media screen and (max-height: 568px) {
+        .main-menu a .img-2 {
+          min-height: 90%;
+          height: 90%;
+          min-width: 70%;
+          width: 70%; } }
+      @media screen and (max-height: 480px) {
+        .main-menu a .img-2 {
+          min-height: 90%;
+          height: 90%;
+          min-width: 70%;
+          width: 70%; } }
+      @media screen and (max-height: 320px) {
+        .main-menu a .img-2 {
+          min-height: 90%;
+          height: 90%;
+          min-width: 70%;
+          width: 70%; } }
+      @media screen and (max-height: 2560px) {
+        .main-menu a .img-2 {
+          border: none !important;
+          background-color: transparent;
+          background-image: url("../img/Diligencias/Diligencias3x.png.png") !important;
+          background-size: 100%;
+          background-repeat: no-repeat;
+          background-position: center; } }
+      @media screen and (max-height: 1920px) {
+        .main-menu a .img-2 {
+          border: none !important;
+          background-color: transparent;
+          background-image: url("../img/Diligencias/Diligencias3x.png.png") !important;
+          background-size: 100%;
+          background-repeat: no-repeat;
+          background-position: center; } }
+      @media screen and (max-height: 1280px) {
+        .main-menu a .img-2 {
+          border: none !important;
+          background-color: transparent;
+          background-image: url("../img/Diligencias/Diligencias2x.png.png") !important;
+          background-size: 100%;
+          background-repeat: no-repeat;
+          background-position: center; } }
+      @media screen and (max-height: 960px) {
+        .main-menu a .img-2 {
+          border: none !important;
+          background-color: transparent;
+          background-image: url("../img/Diligencias/Diligencias2x.png.png") !important;
+          background-size: 100%;
+          background-repeat: no-repeat;
+          background-position: center; } }
+      @media screen and (max-height: 736px) {
+        .main-menu a .img-2 {
+          border: none !important;
+          background-color: transparent;
+          background-image: url("../img/Diligencias/Diligencias2x.png.png") !important;
+          background-size: 100%;
+          background-repeat: no-repeat;
+          background-position: center; } }
+      @media screen and (max-height: 667px) {
+        .main-menu a .img-2 {
+          border: none !important;
+          background-color: transparent;
+          background-image: url("../img/Diligencias/Diligencias2x.png.png") !important;
+          background-size: 100%;
+          background-repeat: no-repeat;
+          background-position: center; } }
+      @media screen and (max-height: 568px) {
+        .main-menu a .img-2 {
+          border: none !important;
+          background-color: transparent;
+          background-image: url("../img/Diligencias/Diligencias.png") !important;
+          background-size: 100%;
+          background-repeat: no-repeat;
+          background-position: center; } }
+      @media screen and (max-height: 480px) {
+        .main-menu a .img-2 {
+          border: none !important;
+          background-color: transparent;
+          background-image: url("../img/Diligencias/Diligencias.png") !important;
+          background-size: 100%;
+          background-repeat: no-repeat;
+          background-position: center; } }
+      @media screen and (max-height: 320px) {
+        .main-menu a .img-2 {
+          border: none !important;
+          background-color: transparent;
+          background-image: url("../img/Diligencias/Diligencias.png") !important;
+          background-size: 100%;
+          background-repeat: no-repeat;
+          background-position: center; } }
       .main-menu a .img-2:hover {
         border: none !important;
         background-color: transparent;
-        background-image: url("../img/MenuDiligenciasTAP/Diligenciasmdpi.png") !important;
-        background-size: 70%;
-        background-repeat: no-repeat; }
+        background-image: url("../img/DiligenciasTAP/DiligenciasTAP.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; }
+        @media screen and (max-height: 2560px) {
+          .main-menu a .img-2:hover {
+            border: none !important;
+            background-color: transparent;
+            background-image: url("../img/DiligenciasTAP/DiligenciasTAP3x.png.png") !important;
+            background-size: 100%;
+            background-repeat: no-repeat;
+            background-position: center; } }
+        @media screen and (max-height: 1920px) {
+          .main-menu a .img-2:hover {
+            border: none !important;
+            background-color: transparent;
+            background-image: url("../img/DiligenciasTAP/DiligenciasTAP3x.png.png") !important;
+            background-size: 100%;
+            background-repeat: no-repeat;
+            background-position: center; } }
+        @media screen and (max-height: 1280px) {
+          .main-menu a .img-2:hover {
+            border: none !important;
+            background-color: transparent;
+            background-image: url("../img/DiligenciasTAP/DiligenciasTAP2x.png.png") !important;
+            background-size: 100%;
+            background-repeat: no-repeat;
+            background-position: center; } }
+        @media screen and (max-height: 960px) {
+          .main-menu a .img-2:hover {
+            border: none !important;
+            background-color: transparent;
+            background-image: url("../img/DiligenciasTAP/DiligenciasTAP2x.png.png") !important;
+            background-size: 100%;
+            background-repeat: no-repeat;
+            background-position: center; } }
+        @media screen and (max-height: 736px) {
+          .main-menu a .img-2:hover {
+            border: none !important;
+            background-color: transparent;
+            background-image: url("../img/DiligenciasTAP/DiligenciasTAP2x.png.png") !important;
+            background-size: 100%;
+            background-repeat: no-repeat;
+            background-position: center; } }
+        @media screen and (max-height: 667px) {
+          .main-menu a .img-2:hover {
+            border: none !important;
+            background-color: transparent;
+            background-image: url("../img/DiligenciasTAP/DiligenciasTAP2x.png.png") !important;
+            background-size: 100%;
+            background-repeat: no-repeat;
+            background-position: center; } }
+        @media screen and (max-height: 568px) {
+          .main-menu a .img-2:hover {
+            border: none !important;
+            background-color: transparent;
+            background-image: url("../img/DiligenciasTAP/DiligenciasTAP2x.png.png") !important;
+            background-size: 100%;
+            background-repeat: no-repeat;
+            background-position: center; } }
+        @media screen and (max-height: 480px) {
+          .main-menu a .img-2:hover {
+            border: none !important;
+            background-color: transparent;
+            background-image: url("../img/DiligenciasTAP/DiligenciasTAP.png") !important;
+            background-size: 100%;
+            background-repeat: no-repeat;
+            background-position: center; } }
+        @media screen and (max-height: 320px) {
+          .main-menu a .img-2:hover {
+            border: none !important;
+            background-color: transparent;
+            background-image: url("../img/DiligenciasTAP/DiligenciasTAP.png") !important;
+            background-size: 100%;
+            background-repeat: no-repeat;
+            background-position: center; } }
 
 .menu-bg {
   background-color: transparent !important;
@@ -12065,7 +12826,7 @@ ion-slide {
   height: 30%;
   min-width: 100%;
   width: 100%;
-  background-color: #294d72 !important; }
+  background-color: #315695 !important; }
   .side-menu-title .side-menu-container-user {
     display: -webkit-box;
     display: -webkit-flex;
@@ -12074,11 +12835,11 @@ ion-slide {
     display: -ms-flexbox;
     display: flex;
     -webkit-box-direction: normal;
-    -webkit-box-orient: horizontal;
-    -webkit-flex-direction: row;
-    -moz-flex-direction: row;
-    -ms-flex-direction: row;
-    flex-direction: row;
+    -webkit-box-orient: vertical;
+    -webkit-flex-direction: column;
+    -moz-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
     -webkit-box-align: center;
     -ms-flex-align: center;
     -webkit-align-items: center;
@@ -12118,10 +12879,9 @@ ion-slide {
       justify-content: center;
       min-height: 100%;
       height: 100%;
-      min-width: 25%;
-      width: 25%;
-      margin-right: 5%;
-      margin-left: 10%; }
+      min-width: 50%;
+      width: 50%;
+      margin-bottom: 5%; }
     .side-menu-title .side-menu-container-user .side-menu-user {
       display: -webkit-box;
       display: -webkit-flex;
@@ -12135,15 +12895,20 @@ ion-slide {
       -moz-flex-direction: column;
       -ms-flex-direction: column;
       flex-direction: column;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      -webkit-align-items: center;
+      -moz-align-items: center;
+      align-items: center;
       -webkit-box-pack: center;
       -ms-flex-pack: center;
       -webkit-justify-content: center;
       -moz-justify-content: center;
       justify-content: center;
-      min-height: 100%;
-      height: 100%;
-      min-width: 65%;
-      width: 65%; }
+      min-height: 40%;
+      height: 40%;
+      min-width: 50%;
+      width: 50%; }
 
 .side-menu-content {
   display: -webkit-box;
@@ -12172,7 +12937,7 @@ ion-slide {
   height: 100%;
   min-width: 100%;
   width: 100%;
-  background-color: #213d50; }
+  background-color: #294d72; }
   .side-menu-content ion-list {
     display: -webkit-box;
     display: -webkit-flex;
@@ -12200,7 +12965,7 @@ ion-slide {
     height: 100%;
     min-width: 100%;
     width: 100%;
-    background-color: #213d50 !important; }
+    background-color: #294d72 !important; }
     .side-menu-content ion-list a {
       display: -webkit-box;
       display: -webkit-flex;
@@ -12226,7 +12991,7 @@ ion-slide {
       justify-content: flex-start;
       color: white !important;
       font-weight: bold;
-      background-color: #213d50 !important;
+      background-color: #294d72 !important;
       font-size: 3.5vh; }
       .side-menu-content ion-list a:hover {
         color: #ca7530 !important;
@@ -12263,16 +13028,19 @@ ion-slide {
     justify-content: flex-start;
     color: white !important;
     font-weight: bold;
-    background-color: #213d50 !important; }
-    .side-menu-content ion-item:hover {
-      color: #ca7530 !important;
-      font-weight: bold; }
+    background-color: #294d72 !important; }
     .side-menu-content ion-item i {
       margin-right: 20px;
       min-height: 18px;
       height: 18px;
       min-width: 18px;
       width: 18px; }
+
+.item-content {
+  color: white !important; }
+  .item-content:hover {
+    color: #ca7530 !important;
+    font-weight: bold; }
 
 .has-header {
   display: -webkit-box;
@@ -12332,7 +13100,7 @@ ion-slide {
   width: 18px;
   border: none !important;
   background-color: transparent;
-  background-image: url("../img/MenuLateralInicio/Iniciomdpi.png");
+  background-image: url("../img/Iniciomenulateral/Iniciomenu.png") !important;
   background-size: 100%;
   background-repeat: no-repeat;
   background-position: center; }
@@ -12340,146 +13108,153 @@ ion-slide {
     .side-menu-home {
       border: none !important;
       background-color: transparent;
-      background-image: url("../img/MenuLateralInicio/Inicioxxxhdpi.png");
-      background-size: 90%;
+      background-image: url("../img/Iniciomenulateral/Iniciomenu3x.png.png") !important;
+      background-size: 100%;
       background-repeat: no-repeat;
       background-position: center; } }
   @media screen and (max-height: 1920px) {
     .side-menu-home {
       border: none !important;
       background-color: transparent;
-      background-image: url("../img/MenuLateralInicio/Inicioxxxhdpi.png");
-      background-size: 90%;
+      background-image: url("../img/Iniciomenulateral/Iniciomenu3x.png.png") !important;
+      background-size: 100%;
       background-repeat: no-repeat;
       background-position: center; } }
   @media screen and (max-height: 1280px) {
     .side-menu-home {
       border: none !important;
       background-color: transparent;
-      background-image: url("../img/MenuLateralInicio/Inicioxxhdpi.png");
-      background-size: 90%;
+      background-image: url("../img/Iniciomenulateral/Iniciomenu2x.png.png") !important;
+      background-size: 100%;
       background-repeat: no-repeat;
       background-position: center; } }
   @media screen and (max-height: 960px) {
     .side-menu-home {
       border: none !important;
       background-color: transparent;
-      background-image: url("../img/MenuLateralInicio/Inicioxhdpi.png");
-      background-size: 90%;
+      background-image: url("../img/Iniciomenulateral/Iniciomenu2x.png.png") !important;
+      background-size: 100%;
       background-repeat: no-repeat;
       background-position: center; } }
   @media screen and (max-height: 736px) {
     .side-menu-home {
       border: none !important;
       background-color: transparent;
-      background-image: url("../img/MenuLateralInicio/Inicioxhdpi.png");
-      background-size: 90%;
+      background-image: url("../img/Iniciomenulateral/Iniciomenu2x.png.png") !important;
+      background-size: 100%;
       background-repeat: no-repeat;
       background-position: center; } }
   @media screen and (max-height: 667px) {
     .side-menu-home {
       border: none !important;
       background-color: transparent;
-      background-image: url("../img/MenuLateralInicio/Inicioxhdpi.png");
-      background-size: 90%;
+      background-image: url("../img/Iniciomenulateral/Iniciomenu2x.png.png") !important;
+      background-size: 100%;
       background-repeat: no-repeat;
       background-position: center; } }
   @media screen and (max-height: 568px) {
     .side-menu-home {
       border: none !important;
       background-color: transparent;
-      background-image: url("../img/MenuLateralInicio/Inicioxhdpi.png");
-      background-size: 90%;
+      background-image: url("../img/Iniciomenulateral/Iniciomenu.png") !important;
+      background-size: 100%;
       background-repeat: no-repeat;
       background-position: center; } }
   @media screen and (max-height: 480px) {
     .side-menu-home {
       border: none !important;
       background-color: transparent;
-      background-image: url("../img/MenuLateralInicio/Inicioxhdpi.png");
-      background-size: 90%;
+      background-image: url("../img/Iniciomenulateral/Iniciomenu.png") !important;
+      background-size: 100%;
       background-repeat: no-repeat;
       background-position: center; } }
   @media screen and (max-height: 320px) {
     .side-menu-home {
       border: none !important;
       background-color: transparent;
-      background-image: url("../img/MenuLateralInicio/Iniciomdpi.png");
-      background-size: 90%;
+      background-image: url("../img/Iniciomenulateral/Iniciomenu.png") !important;
+      background-size: 100%;
       background-repeat: no-repeat;
       background-position: center; } }
-  @media screen and (max-height: 2560px) {
-    .side-menu-home:hover {
-      border: none !important;
-      background-color: transparent;
-      background-image: url("../img/MenuLateralInicioTAP/Inicioxxxhdpi.png");
-      background-size: 90%;
-      background-repeat: no-repeat;
-      background-position: center; } }
-  @media screen and (max-height: 1920px) {
-    .side-menu-home:hover {
-      border: none !important;
-      background-color: transparent;
-      background-image: url("../img/MenuLateralInicioTAP/Inicioxxxhdpi.png");
-      background-size: 90%;
-      background-repeat: no-repeat;
-      background-position: center; } }
-  @media screen and (max-height: 1280px) {
-    .side-menu-home:hover {
-      border: none !important;
-      background-color: transparent;
-      background-image: url("../img/MenuLateralInicioTAP/Inicioxxhdpi.png");
-      background-size: 90%;
-      background-repeat: no-repeat;
-      background-position: center; } }
-  @media screen and (max-height: 960px) {
-    .side-menu-home:hover {
-      border: none !important;
-      background-color: transparent;
-      background-image: url("../img/MenuLateralInicioTAP/Inicioxhdpi.png");
-      background-size: 90%;
-      background-repeat: no-repeat;
-      background-position: center; } }
-  @media screen and (max-height: 736px) {
-    .side-menu-home:hover {
-      border: none !important;
-      background-color: transparent;
-      background-image: url("../img/MenuLateralInicioTAP/Inicioxhdpi.png");
-      background-size: 90%;
-      background-repeat: no-repeat;
-      background-position: center; } }
-  @media screen and (max-height: 667px) {
-    .side-menu-home:hover {
-      border: none !important;
-      background-color: transparent;
-      background-image: url("../img/MenuLateralInicioTAP/Inicioxhdpi.png");
-      background-size: 90%;
-      background-repeat: no-repeat;
-      background-position: center; } }
-  @media screen and (max-height: 568px) {
-    .side-menu-home:hover {
-      border: none !important;
-      background-color: transparent;
-      background-image: url("../img/MenuLateralInicioTAP/Inicioxhdpi.png");
-      background-size: 90%;
-      background-repeat: no-repeat;
-      background-position: center; } }
-  @media screen and (max-height: 480px) {
-    .side-menu-home:hover {
-      border: none !important;
-      background-color: transparent;
-      background-image: url("../img/MenuLateralInicioTAP/Inicioxhdpi.png");
-      background-size: 90%;
-      background-repeat: no-repeat;
-      background-position: center; } }
-  @media screen and (max-height: 320px) {
-    .side-menu-home:hover {
-      border: none !important;
-      background-color: transparent;
-      background-image: url("../img/MenuLateralInicioTAP/Iniciomdpi.png");
-      background-size: 90%;
-      background-repeat: no-repeat;
-      background-position: center; } }
+  .side-menu-home:hover {
+    border: none !important;
+    background-color: transparent;
+    background-image: url("../img/IniciomenulateralTAP/Iniciomenu.png") !important;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center; }
+    @media screen and (max-height: 2560px) {
+      .side-menu-home:hover {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/IniciomenulateralTAP/Iniciomenu3x.png.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 1920px) {
+      .side-menu-home:hover {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/IniciomenulateralTAP/Iniciomenu3x.png.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 1280px) {
+      .side-menu-home:hover {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/IniciomenulateralTAP/Iniciomenu2x.png.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 960px) {
+      .side-menu-home:hover {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/IniciomenulateralTAP/Iniciomenu2x.png.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 736px) {
+      .side-menu-home:hover {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/IniciomenulateralTAP/Iniciomenu2x.png.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 667px) {
+      .side-menu-home:hover {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/IniciomenulateralTAP/Iniciomenu2x.png.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 568px) {
+      .side-menu-home:hover {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/IniciomenulateralTAP/Iniciomenu2x.png.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 480px) {
+      .side-menu-home:hover {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/IniciomenulateralTAP/Iniciomenu.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 320px) {
+      .side-menu-home:hover {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/IniciomenulateralTAP/Iniciomenu.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
 
 .side-menu-edit {
   display: -webkit-box;
@@ -12507,157 +13282,7 @@ ion-slide {
   min-height: 18px;
   height: 18px;
   min-width: 18px;
-  width: 18px;
-  border: none !important;
-  background-color: transparent;
-  background-image: url("../img/MenuLateralEditarcuenta/MenuEditarcuentamdpi.png");
-  background-size: 100%;
-  background-repeat: no-repeat;
-  background-position: center; }
-  @media screen and (max-height: 2560px) {
-    .side-menu-edit {
-      border: none !important;
-      background-color: transparent;
-      background-image: url("../img/MenuLateralEditarcuenta/MenuEditarcuentaxxxhdpi.png");
-      background-size: 90%;
-      background-repeat: no-repeat;
-      background-position: center; } }
-  @media screen and (max-height: 1920px) {
-    .side-menu-edit {
-      border: none !important;
-      background-color: transparent;
-      background-image: url("../img/MenuLateralEditarcuenta/MenuEditarcuentaxxxhdpi.png");
-      background-size: 90%;
-      background-repeat: no-repeat;
-      background-position: center; } }
-  @media screen and (max-height: 1280px) {
-    .side-menu-edit {
-      border: none !important;
-      background-color: transparent;
-      background-image: url("../img/MenuLateralEditarcuenta/MenuEditarcuentaxxhdpi.png");
-      background-size: 90%;
-      background-repeat: no-repeat;
-      background-position: center; } }
-  @media screen and (max-height: 960px) {
-    .side-menu-edit {
-      border: none !important;
-      background-color: transparent;
-      background-image: url("../img/MenuLateralEditarcuenta/MenuEditarcuentaxhdpi.png");
-      background-size: 90%;
-      background-repeat: no-repeat;
-      background-position: center; } }
-  @media screen and (max-height: 736px) {
-    .side-menu-edit {
-      border: none !important;
-      background-color: transparent;
-      background-image: url("../img/MenuLateralEditarcuenta/MenuEditarcuentaxhdpi.png");
-      background-size: 90%;
-      background-repeat: no-repeat;
-      background-position: center; } }
-  @media screen and (max-height: 667px) {
-    .side-menu-edit {
-      border: none !important;
-      background-color: transparent;
-      background-image: url("../img/MenuLateralEditarcuenta/MenuEditarcuentaxhdpi.png");
-      background-size: 90%;
-      background-repeat: no-repeat;
-      background-position: center; } }
-  @media screen and (max-height: 568px) {
-    .side-menu-edit {
-      border: none !important;
-      background-color: transparent;
-      background-image: url("../img/MenuLateralEditarcuenta/MenuEditarcuentaxhdpi.png");
-      background-size: 90%;
-      background-repeat: no-repeat;
-      background-position: center; } }
-  @media screen and (max-height: 480px) {
-    .side-menu-edit {
-      border: none !important;
-      background-color: transparent;
-      background-image: url("../img/MenuLateralEditarcuenta/MenuEditarcuentaxhdpi.png");
-      background-size: 90%;
-      background-repeat: no-repeat;
-      background-position: center; } }
-  @media screen and (max-height: 320px) {
-    .side-menu-edit {
-      border: none !important;
-      background-color: transparent;
-      background-image: url("../img/MenuLateralEditarcuenta/MenuEditarcuentamdpi.png");
-      background-size: 90%;
-      background-repeat: no-repeat;
-      background-position: center; } }
-  @media screen and (max-height: 2560px) {
-    .side-menu-edit:hover {
-      border: none !important;
-      background-color: transparent;
-      background-image: url("../img/MenuLateralEditarcuentaTAP/MenuEditarcuentaxxxhdpi.png");
-      background-size: 90%;
-      background-repeat: no-repeat;
-      background-position: center; } }
-  @media screen and (max-height: 1920px) {
-    .side-menu-edit:hover {
-      border: none !important;
-      background-color: transparent;
-      background-image: url("../img/MenuLateralEditarcuentaTAP/MenuEditarcuentaxxxhdpi.png");
-      background-size: 90%;
-      background-repeat: no-repeat;
-      background-position: center; } }
-  @media screen and (max-height: 1280px) {
-    .side-menu-edit:hover {
-      border: none !important;
-      background-color: transparent;
-      background-image: url("../img/MenuLateralEditarcuentaTAP/MenuEditarcuentaxxhdpi.png");
-      background-size: 90%;
-      background-repeat: no-repeat;
-      background-position: center; } }
-  @media screen and (max-height: 960px) {
-    .side-menu-edit:hover {
-      border: none !important;
-      background-color: transparent;
-      background-image: url("../img/MenuLateralEditarcuentaTAP/MenuEditarcuentaxhdpi.png");
-      background-size: 90%;
-      background-repeat: no-repeat;
-      background-position: center; } }
-  @media screen and (max-height: 736px) {
-    .side-menu-edit:hover {
-      border: none !important;
-      background-color: transparent;
-      background-image: url("../img/MenuLateralEditarcuentaTAP/MenuEditarcuentaxhdpi.png");
-      background-size: 90%;
-      background-repeat: no-repeat;
-      background-position: center; } }
-  @media screen and (max-height: 667px) {
-    .side-menu-edit:hover {
-      border: none !important;
-      background-color: transparent;
-      background-image: url("../img/MenuLateralEditarcuentaTAP/MenuEditarcuentaxhdpi.png");
-      background-size: 90%;
-      background-repeat: no-repeat;
-      background-position: center; } }
-  @media screen and (max-height: 568px) {
-    .side-menu-edit:hover {
-      border: none !important;
-      background-color: transparent;
-      background-image: url("../img/MenuLateralEditarcuentaTAP/MenuEditarcuentaxhdpi.png");
-      background-size: 90%;
-      background-repeat: no-repeat;
-      background-position: center; } }
-  @media screen and (max-height: 480px) {
-    .side-menu-edit:hover {
-      border: none !important;
-      background-color: transparent;
-      background-image: url("../img/MenuLateralEditarcuentaTAP/MenuEditarcuentaxhdpi.png");
-      background-size: 90%;
-      background-repeat: no-repeat;
-      background-position: center; } }
-  @media screen and (max-height: 320px) {
-    .side-menu-edit:hover {
-      border: none !important;
-      background-color: transparent;
-      background-image: url("../img/MenuLateralEditarcuentaTAP/MenuEditarcuentamdpi.png");
-      background-size: 90%;
-      background-repeat: no-repeat;
-      background-position: center; } }
+  width: 18px; }
 
 .side-menu-history {
   display: -webkit-box;
@@ -12688,7 +13313,7 @@ ion-slide {
   width: 18px;
   border: none !important;
   background-color: transparent;
-  background-image: url("../img/MenuLateralhistorial/Historialmdpi.png");
+  background-image: url("../img/Historial/Historial.png") !important;
   background-size: 100%;
   background-repeat: no-repeat;
   background-position: center; }
@@ -12696,146 +13321,153 @@ ion-slide {
     .side-menu-history {
       border: none !important;
       background-color: transparent;
-      background-image: url("../img/MenuLateralhistorial/Historialxxxhdpi.png");
-      background-size: 90%;
+      background-image: url("../img/Historial/Historial3x.png.png") !important;
+      background-size: 100%;
       background-repeat: no-repeat;
       background-position: center; } }
   @media screen and (max-height: 1920px) {
     .side-menu-history {
       border: none !important;
       background-color: transparent;
-      background-image: url("../img/MenuLateralhistorial/Historialxxxhdpi.png");
-      background-size: 90%;
+      background-image: url("../img/Historial/Historial3x.png.png") !important;
+      background-size: 100%;
       background-repeat: no-repeat;
       background-position: center; } }
   @media screen and (max-height: 1280px) {
     .side-menu-history {
       border: none !important;
       background-color: transparent;
-      background-image: url("../img/MenuLateralhistorial/Historialxxhdpi.png");
-      background-size: 90%;
+      background-image: url("../img/Historial/Historial2x.png.png") !important;
+      background-size: 100%;
       background-repeat: no-repeat;
       background-position: center; } }
   @media screen and (max-height: 960px) {
     .side-menu-history {
       border: none !important;
       background-color: transparent;
-      background-image: url("../img/MenuLateralhistorial/Historialxhdpi.png");
-      background-size: 90%;
+      background-image: url("../img/Historial/Historial2x.png.png") !important;
+      background-size: 100%;
       background-repeat: no-repeat;
       background-position: center; } }
   @media screen and (max-height: 736px) {
     .side-menu-history {
       border: none !important;
       background-color: transparent;
-      background-image: url("../img/MenuLateralhistorial/Historialxhdpi.png");
-      background-size: 90%;
+      background-image: url("../img/Historial/Historial2x.png.png") !important;
+      background-size: 100%;
       background-repeat: no-repeat;
       background-position: center; } }
   @media screen and (max-height: 667px) {
     .side-menu-history {
       border: none !important;
       background-color: transparent;
-      background-image: url("../img/MenuLateralhistorial/Historialxhdpi.png");
-      background-size: 90%;
+      background-image: url("../img/Historial/Historial2x.png.png") !important;
+      background-size: 100%;
       background-repeat: no-repeat;
       background-position: center; } }
   @media screen and (max-height: 568px) {
     .side-menu-history {
       border: none !important;
       background-color: transparent;
-      background-image: url("../img/MenuLateralhistorial/Historialxhdpi.png");
-      background-size: 90%;
+      background-image: url("../img/Historial/Historial.png") !important;
+      background-size: 100%;
       background-repeat: no-repeat;
       background-position: center; } }
   @media screen and (max-height: 480px) {
     .side-menu-history {
       border: none !important;
       background-color: transparent;
-      background-image: url("../img/MenuLateralhistorial/Historialxhdpi.png");
-      background-size: 90%;
+      background-image: url("../img/Historial/Historial.png") !important;
+      background-size: 100%;
       background-repeat: no-repeat;
       background-position: center; } }
   @media screen and (max-height: 320px) {
     .side-menu-history {
       border: none !important;
       background-color: transparent;
-      background-image: url("../img/MenuLateralhistorial/Historialmdpi.png");
-      background-size: 90%;
+      background-image: url("../img/Historial/Historial.png") !important;
+      background-size: 100%;
       background-repeat: no-repeat;
       background-position: center; } }
-  @media screen and (max-height: 2560px) {
-    .side-menu-history:hover {
-      border: none !important;
-      background-color: transparent;
-      background-image: url("../img/MenuLateralhistorialTAP/Historialxxxhdpi.png");
-      background-size: 90%;
-      background-repeat: no-repeat;
-      background-position: center; } }
-  @media screen and (max-height: 1920px) {
-    .side-menu-history:hover {
-      border: none !important;
-      background-color: transparent;
-      background-image: url("../img/MenuLateralhistorialTAP/Historialxxxhdpi.png");
-      background-size: 90%;
-      background-repeat: no-repeat;
-      background-position: center; } }
-  @media screen and (max-height: 1280px) {
-    .side-menu-history:hover {
-      border: none !important;
-      background-color: transparent;
-      background-image: url("../img/MenuLateralhistorialTAP/Historialxxhdpi.png");
-      background-size: 90%;
-      background-repeat: no-repeat;
-      background-position: center; } }
-  @media screen and (max-height: 960px) {
-    .side-menu-history:hover {
-      border: none !important;
-      background-color: transparent;
-      background-image: url("../img/MenuLateralhistorialTAP/Historialxhdpi.png");
-      background-size: 90%;
-      background-repeat: no-repeat;
-      background-position: center; } }
-  @media screen and (max-height: 736px) {
-    .side-menu-history:hover {
-      border: none !important;
-      background-color: transparent;
-      background-image: url("../img/MenuLateralhistorialTAP/Historialxhdpi.png");
-      background-size: 90%;
-      background-repeat: no-repeat;
-      background-position: center; } }
-  @media screen and (max-height: 667px) {
-    .side-menu-history:hover {
-      border: none !important;
-      background-color: transparent;
-      background-image: url("../img/MenuLateralhistorialTAP/Historialxhdpi.png");
-      background-size: 90%;
-      background-repeat: no-repeat;
-      background-position: center; } }
-  @media screen and (max-height: 568px) {
-    .side-menu-history:hover {
-      border: none !important;
-      background-color: transparent;
-      background-image: url("../img/MenuLateralhistorialTAP/Historialxhdpi.png");
-      background-size: 90%;
-      background-repeat: no-repeat;
-      background-position: center; } }
-  @media screen and (max-height: 480px) {
-    .side-menu-history:hover {
-      border: none !important;
-      background-color: transparent;
-      background-image: url("../img/MenuLateralhistorialTAP/Historialxhdpi.png");
-      background-size: 90%;
-      background-repeat: no-repeat;
-      background-position: center; } }
-  @media screen and (max-height: 320px) {
-    .side-menu-history:hover {
-      border: none !important;
-      background-color: transparent;
-      background-image: url("../img/MenuLateralhistorialTAP/Historialmdpi.png");
-      background-size: 90%;
-      background-repeat: no-repeat;
-      background-position: center; } }
+  .side-menu-history:hover {
+    border: none !important;
+    background-color: transparent;
+    background-image: url("../img/HistorialTAP/Historial.png") !important;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center; }
+    @media screen and (max-height: 2560px) {
+      .side-menu-history:hover {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/HistorialTAP/Historial3x.png.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 1920px) {
+      .side-menu-history:hover {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/HistorialTAP/Historial3x.png.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 1280px) {
+      .side-menu-history:hover {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/HistorialTAP/Historial2x.png.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 960px) {
+      .side-menu-history:hover {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/HistorialTAP/Historial2x.png.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 736px) {
+      .side-menu-history:hover {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/HistorialTAP/Historial2x.png.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 667px) {
+      .side-menu-history:hover {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/HistorialTAP/Historial2x.png.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 568px) {
+      .side-menu-history:hover {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/HistorialTAP/Historial2x.png.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 480px) {
+      .side-menu-history:hover {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/HistorialTAP/Historial.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 320px) {
+      .side-menu-history:hover {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/HistorialTAP/Historial.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
 
 .side-menu-cancel-service {
   display: -webkit-box;
@@ -12864,156 +13496,7 @@ ion-slide {
   height: 18px;
   min-width: 18px;
   width: 18px;
-  border: none !important;
-  background-color: transparent;
-  background-image: url("../img/MenulateralCancelarservicio/Cancelarserviciomdpi.png");
-  background-size: 100%;
-  background-repeat: no-repeat;
-  background-position: center; }
-  @media screen and (max-height: 2560px) {
-    .side-menu-cancel-service {
-      border: none !important;
-      background-color: transparent;
-      background-image: url("../img/MenulateralCancelarservicio/Cancelarservicioxxxhdpi.png");
-      background-size: 90%;
-      background-repeat: no-repeat;
-      background-position: center; } }
-  @media screen and (max-height: 1920px) {
-    .side-menu-cancel-service {
-      border: none !important;
-      background-color: transparent;
-      background-image: url("../img/MenulateralCancelarservicio/Cancelarservicioxxxhdpi.png");
-      background-size: 90%;
-      background-repeat: no-repeat;
-      background-position: center; } }
-  @media screen and (max-height: 1280px) {
-    .side-menu-cancel-service {
-      border: none !important;
-      background-color: transparent;
-      background-image: url("../img/MenulateralCancelarservicio/Cancelarservicioxxhdpi.png");
-      background-size: 90%;
-      background-repeat: no-repeat;
-      background-position: center; } }
-  @media screen and (max-height: 960px) {
-    .side-menu-cancel-service {
-      border: none !important;
-      background-color: transparent;
-      background-image: url("../img/MenulateralCancelarservicio/Cancelarservicioxhdpi.png");
-      background-size: 90%;
-      background-repeat: no-repeat;
-      background-position: center; } }
-  @media screen and (max-height: 736px) {
-    .side-menu-cancel-service {
-      border: none !important;
-      background-color: transparent;
-      background-image: url("../img/MenulateralCancelarservicio/Cancelarservicioxhdpi.png");
-      background-size: 90%;
-      background-repeat: no-repeat;
-      background-position: center; } }
-  @media screen and (max-height: 667px) {
-    .side-menu-cancel-service {
-      border: none !important;
-      background-color: transparent;
-      background-image: url("../img/MenulateralCancelarservicio/Cancelarservicioxhdpi.png");
-      background-size: 90%;
-      background-repeat: no-repeat;
-      background-position: center; } }
-  @media screen and (max-height: 568px) {
-    .side-menu-cancel-service {
-      border: none !important;
-      background-color: transparent;
-      background-image: url("../img/MenulateralCancelarservicio/Cancelarservicioxhdpi.png");
-      background-size: 90%;
-      background-repeat: no-repeat;
-      background-position: center; } }
-  @media screen and (max-height: 480px) {
-    .side-menu-cancel-service {
-      border: none !important;
-      background-color: transparent;
-      background-image: url("../img/MenulateralCancelarservicio/Cancelarservicioxhdpi.png");
-      background-size: 90%;
-      background-repeat: no-repeat;
-      background-position: center; } }
-  @media screen and (max-height: 320px) {
-    .side-menu-cancel-service {
-      border: none !important;
-      background-color: transparent;
-      background-image: url("../img/MenulateralCancelarservicio/Cancelarserviciomdpi.png");
-      background-size: 90%;
-      background-repeat: no-repeat;
-      background-position: center; } }
-  @media screen and (max-height: 2560px) {
-    .side-menu-cancel-service:hover {
-      border: none !important;
-      background-color: transparent;
-      background-image: url("../img/MenulateralCancelarservicioTAP/Cancelarservicioxxxhdpi.png");
-      background-size: 90%;
-      background-repeat: no-repeat;
-      background-position: center; } }
-  @media screen and (max-height: 1920px) {
-    .side-menu-cancel-service:hover {
-      border: none !important;
-      background-color: transparent;
-      background-image: url("../img/MenulateralCancelarservicioTAP/Cancelarservicioxxxhdpi.png");
-      background-size: 90%;
-      background-repeat: no-repeat;
-      background-position: center; } }
-  @media screen and (max-height: 1280px) {
-    .side-menu-cancel-service:hover {
-      border: none !important;
-      background-color: transparent;
-      background-image: url("../img/MenulateralCancelarservicioTAP/Cancelarservicioxxhdpi.png");
-      background-size: 90%;
-      background-repeat: no-repeat;
-      background-position: center; } }
-  @media screen and (max-height: 960px) {
-    .side-menu-cancel-service:hover {
-      border: none !important;
-      background-color: transparent;
-      background-image: url("../img/MenulateralCancelarservicioTAP/Cancelarservicioxhdpi.png");
-      background-size: 90%;
-      background-repeat: no-repeat;
-      background-position: center; } }
-  @media screen and (max-height: 736px) {
-    .side-menu-cancel-service:hover {
-      border: none !important;
-      background-color: transparent;
-      background-image: url("../img/MenulateralCancelarservicioTAP/Cancelarservicioxhdpi.png");
-      background-size: 90%;
-      background-repeat: no-repeat;
-      background-position: center; } }
-  @media screen and (max-height: 667px) {
-    .side-menu-cancel-service:hover {
-      border: none !important;
-      background-color: transparent;
-      background-image: url("../img/MenulateralCancelarservicioTAP/Cancelarservicioxhdpi.png");
-      background-size: 90%;
-      background-repeat: no-repeat;
-      background-position: center; } }
-  @media screen and (max-height: 568px) {
-    .side-menu-cancel-service:hover {
-      border: none !important;
-      background-color: transparent;
-      background-image: url("../img/MenulateralCancelarservicioTAP/Cancelarservicioxhdpi.png");
-      background-size: 90%;
-      background-repeat: no-repeat;
-      background-position: center; } }
-  @media screen and (max-height: 480px) {
-    .side-menu-cancel-service:hover {
-      border: none !important;
-      background-color: transparent;
-      background-image: url("../img/MenulateralCancelarservicioTAP/Cancelarservicioxhdpi.png");
-      background-size: 90%;
-      background-repeat: no-repeat;
-      background-position: center; } }
-  @media screen and (max-height: 320px) {
-    .side-menu-cancel-service:hover {
-      border: none !important;
-      background-color: transparent;
-      background-image: url("../img/MenulateralCancelarservicioTAP/Cancelarserviciomdpi.png");
-      background-size: 90%;
-      background-repeat: no-repeat;
-      background-position: center; } }
+  /*  @include media-icons-ios($x1,$hoverx1,$x2,$hoverx2,$x3,$hoverx3);*/ }
 
 .side-menu-logout {
   display: -webkit-box;
@@ -13042,156 +13525,7 @@ ion-slide {
   height: 18px;
   min-width: 18px;
   width: 18px;
-  border: none !important;
-  background-color: transparent;
-  background-image: url("../img/MenulateralCerrarsesion/Cerrarsesionmdpi.png");
-  background-size: 100%;
-  background-repeat: no-repeat;
-  background-position: center; }
-  @media screen and (max-height: 2560px) {
-    .side-menu-logout {
-      border: none !important;
-      background-color: transparent;
-      background-image: url("../img/MenulateralCerrarsesion/Cerrarsesionxxxhdpi.png");
-      background-size: 90%;
-      background-repeat: no-repeat;
-      background-position: center; } }
-  @media screen and (max-height: 1920px) {
-    .side-menu-logout {
-      border: none !important;
-      background-color: transparent;
-      background-image: url("../img/MenulateralCerrarsesion/Cerrarsesionxxxhdpi.png");
-      background-size: 90%;
-      background-repeat: no-repeat;
-      background-position: center; } }
-  @media screen and (max-height: 1280px) {
-    .side-menu-logout {
-      border: none !important;
-      background-color: transparent;
-      background-image: url("../img/MenulateralCerrarsesion/Cerrarsesionxxhdpi.png");
-      background-size: 90%;
-      background-repeat: no-repeat;
-      background-position: center; } }
-  @media screen and (max-height: 960px) {
-    .side-menu-logout {
-      border: none !important;
-      background-color: transparent;
-      background-image: url("../img/MenulateralCerrarsesion/Cerrarsesionxhdpi.png");
-      background-size: 90%;
-      background-repeat: no-repeat;
-      background-position: center; } }
-  @media screen and (max-height: 736px) {
-    .side-menu-logout {
-      border: none !important;
-      background-color: transparent;
-      background-image: url("../img/MenulateralCerrarsesion/Cerrarsesionxhdpi.png");
-      background-size: 90%;
-      background-repeat: no-repeat;
-      background-position: center; } }
-  @media screen and (max-height: 667px) {
-    .side-menu-logout {
-      border: none !important;
-      background-color: transparent;
-      background-image: url("../img/MenulateralCerrarsesion/Cerrarsesionxhdpi.png");
-      background-size: 90%;
-      background-repeat: no-repeat;
-      background-position: center; } }
-  @media screen and (max-height: 568px) {
-    .side-menu-logout {
-      border: none !important;
-      background-color: transparent;
-      background-image: url("../img/MenulateralCerrarsesion/Cerrarsesionxhdpi.png");
-      background-size: 90%;
-      background-repeat: no-repeat;
-      background-position: center; } }
-  @media screen and (max-height: 480px) {
-    .side-menu-logout {
-      border: none !important;
-      background-color: transparent;
-      background-image: url("../img/MenulateralCerrarsesion/Cerrarsesionxhdpi.png");
-      background-size: 90%;
-      background-repeat: no-repeat;
-      background-position: center; } }
-  @media screen and (max-height: 320px) {
-    .side-menu-logout {
-      border: none !important;
-      background-color: transparent;
-      background-image: url("../img/MenulateralCerrarsesion/Cerrarsesionmdpi.png");
-      background-size: 90%;
-      background-repeat: no-repeat;
-      background-position: center; } }
-  @media screen and (max-height: 2560px) {
-    .side-menu-logout:hover {
-      border: none !important;
-      background-color: transparent;
-      background-image: url("../img/MenulateralCerrarsesionTAP/Cerrarsesionxxhdpi.png");
-      background-size: 90%;
-      background-repeat: no-repeat;
-      background-position: center; } }
-  @media screen and (max-height: 1920px) {
-    .side-menu-logout:hover {
-      border: none !important;
-      background-color: transparent;
-      background-image: url("../img/MenulateralCerrarsesionTAP/Cerrarsesionxxhdpi.png");
-      background-size: 90%;
-      background-repeat: no-repeat;
-      background-position: center; } }
-  @media screen and (max-height: 1280px) {
-    .side-menu-logout:hover {
-      border: none !important;
-      background-color: transparent;
-      background-image: url("../img/MenulateralCerrarsesionTAP/Cerrarsesionxxhdpi.png");
-      background-size: 90%;
-      background-repeat: no-repeat;
-      background-position: center; } }
-  @media screen and (max-height: 960px) {
-    .side-menu-logout:hover {
-      border: none !important;
-      background-color: transparent;
-      background-image: url("../img/MenulateralCerrarsesionTAP/Cerrarsesionxhdpi.png");
-      background-size: 90%;
-      background-repeat: no-repeat;
-      background-position: center; } }
-  @media screen and (max-height: 736px) {
-    .side-menu-logout:hover {
-      border: none !important;
-      background-color: transparent;
-      background-image: url("../img/MenulateralCerrarsesionTAP/Cerrarsesionxhdpi.png");
-      background-size: 90%;
-      background-repeat: no-repeat;
-      background-position: center; } }
-  @media screen and (max-height: 667px) {
-    .side-menu-logout:hover {
-      border: none !important;
-      background-color: transparent;
-      background-image: url("../img/MenulateralCerrarsesionTAP/Cerrarsesionxhdpi.png");
-      background-size: 90%;
-      background-repeat: no-repeat;
-      background-position: center; } }
-  @media screen and (max-height: 568px) {
-    .side-menu-logout:hover {
-      border: none !important;
-      background-color: transparent;
-      background-image: url("../img/MenulateralCerrarsesionTAP/Cerrarsesionxhdpi.png");
-      background-size: 90%;
-      background-repeat: no-repeat;
-      background-position: center; } }
-  @media screen and (max-height: 480px) {
-    .side-menu-logout:hover {
-      border: none !important;
-      background-color: transparent;
-      background-image: url("../img/MenulateralCerrarsesionTAP/Cerrarsesionxhdpi.png");
-      background-size: 90%;
-      background-repeat: no-repeat;
-      background-position: center; } }
-  @media screen and (max-height: 320px) {
-    .side-menu-logout:hover {
-      border: none !important;
-      background-color: transparent;
-      background-image: url("../img/MenulateralCerrarsesionTAP/Cerrarsesionmdpi.png");
-      background-size: 90%;
-      background-repeat: no-repeat;
-      background-position: center; } }
+  /* @include media-icons-ios($x1,$hoverx1,$x2,$hoverx2,$x3,$hoverx3);*/ }
 
 .main-container-maps {
   height: 100%;
@@ -13227,13 +13561,67 @@ ion-slide {
   -moz-justify-content: flex-end;
   justify-content: flex-end;
   background-color: rgba(6, 85, 153, 0.7) !important;
-  height: 150px;
   min-height: 150px;
-  width: 100%;
+  height: 150px;
   min-width: 100%;
+  width: 100%;
   margin: 0;
   padding: 0;
   padding-bottom: 5px !important; }
+  @media screen and (max-height: 2560px) {
+    .bar-origin {
+      min-height: 155px;
+      height: 155px;
+      min-width: 100%;
+      width: 100%; } }
+  @media screen and (max-height: 1920px) {
+    .bar-origin {
+      min-height: 155px;
+      height: 155px;
+      min-width: 100%;
+      width: 100%; } }
+  @media screen and (max-height: 1280px) {
+    .bar-origin {
+      min-height: 140px;
+      height: 140px;
+      min-width: 100%;
+      width: 100%; } }
+  @media screen and (max-height: 960px) {
+    .bar-origin {
+      min-height: 155px;
+      height: 155px;
+      min-width: 100%;
+      width: 100%; } }
+  @media screen and (max-height: 736px) {
+    .bar-origin {
+      min-height: 140px;
+      height: 140px;
+      min-width: 100%;
+      width: 100%; } }
+  @media screen and (max-height: 667px) {
+    .bar-origin {
+      min-height: 140px;
+      height: 140px;
+      min-width: 100%;
+      width: 100%; } }
+  @media screen and (max-height: 568px) {
+    .bar-origin {
+      min-height: 130px;
+      height: 130px;
+      min-width: 100%;
+      width: 100%; } }
+  @media screen and (max-height: 480px) {
+    .bar-origin {
+      min-height: 130px;
+      height: 130px;
+      min-width: 100%;
+      width: 100%; } }
+  @media screen and (max-height: 320px) {
+    .bar-origin {
+      min-height: 130px;
+      height: 130px;
+      min-width: 100%;
+      width: 100%; } }
   .bar-origin h3 {
     width: 100%;
     margin: 0;
@@ -13266,17 +13654,127 @@ ion-slide {
   -moz-justify-content: flex-end;
   justify-content: flex-end; }
   .input-direction map-autocomplete-address {
-    width: 90%;
+    min-height: 40px !important;
+    height: 40px !important;
     min-width: 90%;
-    height: 100%;
-    min-height: 100%;
+    width: 90%;
     margin: 0;
     padding: 0; }
+    @media screen and (max-height: 2560px) {
+      .input-direction map-autocomplete-address {
+        min-height: 55px !important;
+        height: 55px !important;
+        min-width: 90%;
+        width: 90%; } }
+    @media screen and (max-height: 1920px) {
+      .input-direction map-autocomplete-address {
+        min-height: 55px !important;
+        height: 55px !important;
+        min-width: 90%;
+        width: 90%; } }
+    @media screen and (max-height: 1280px) {
+      .input-direction map-autocomplete-address {
+        min-height: 50px !important;
+        height: 50px !important;
+        min-width: 90%;
+        width: 90%; } }
+    @media screen and (max-height: 960px) {
+      .input-direction map-autocomplete-address {
+        min-height: 55px !important;
+        height: 55px !important;
+        min-width: 90%;
+        width: 90%; } }
+    @media screen and (max-height: 736px) {
+      .input-direction map-autocomplete-address {
+        min-height: 50px !important;
+        height: 50px !important;
+        min-width: 90%;
+        width: 90%; } }
+    @media screen and (max-height: 667px) {
+      .input-direction map-autocomplete-address {
+        min-height: 50px !important;
+        height: 50px !important;
+        min-width: 90%;
+        width: 90%; } }
+    @media screen and (max-height: 568px) {
+      .input-direction map-autocomplete-address {
+        min-height: 40px !important;
+        height: 40px !important;
+        min-width: 90%;
+        width: 90%; } }
+    @media screen and (max-height: 480px) {
+      .input-direction map-autocomplete-address {
+        min-height: 40px !important;
+        height: 40px !important;
+        min-width: 90%;
+        width: 90%; } }
+    @media screen and (max-height: 320px) {
+      .input-direction map-autocomplete-address {
+        min-height: 40px !important;
+        height: 40px !important;
+        min-width: 90%;
+        width: 90%; } }
   .input-direction input {
-    width: 90%;
+    min-height: 40px !important;
+    height: 40px !important;
     min-width: 90%;
+    width: 90%;
     margin: 0;
     padding: 0; }
+    @media screen and (max-height: 2560px) {
+      .input-direction input {
+        min-height: 55px !important;
+        height: 55px !important;
+        min-width: 90%;
+        width: 90%; } }
+    @media screen and (max-height: 1920px) {
+      .input-direction input {
+        min-height: 55px !important;
+        height: 55px !important;
+        min-width: 90%;
+        width: 90%; } }
+    @media screen and (max-height: 1280px) {
+      .input-direction input {
+        min-height: 50px !important;
+        height: 50px !important;
+        min-width: 90%;
+        width: 90%; } }
+    @media screen and (max-height: 960px) {
+      .input-direction input {
+        min-height: 55px !important;
+        height: 55px !important;
+        min-width: 90%;
+        width: 90%; } }
+    @media screen and (max-height: 736px) {
+      .input-direction input {
+        min-height: 50px !important;
+        height: 50px !important;
+        min-width: 90%;
+        width: 90%; } }
+    @media screen and (max-height: 667px) {
+      .input-direction input {
+        min-height: 50px !important;
+        height: 50px !important;
+        min-width: 90%;
+        width: 90%; } }
+    @media screen and (max-height: 568px) {
+      .input-direction input {
+        min-height: 40px !important;
+        height: 40px !important;
+        min-width: 90%;
+        width: 90%; } }
+    @media screen and (max-height: 480px) {
+      .input-direction input {
+        min-height: 40px !important;
+        height: 40px !important;
+        min-width: 90%;
+        width: 90%; } }
+    @media screen and (max-height: 320px) {
+      .input-direction input {
+        min-height: 40px !important;
+        height: 40px !important;
+        min-width: 90%;
+        width: 90%; } }
 
 .direction-marker input:focus .icon-marker-gray {
   background-image: url("../img/inputs/pin-direccion1.png");
@@ -13446,34 +13944,332 @@ ion-slide {
 
 .input-origin {
   color: #213d50 !important;
-  background-image: url("../img/Cajadetextoorigen/Origenmdpi.png");
+  padding-left: 6% !important;
+  border: none !important;
+  background-color: transparent;
+  background-image: url("../img/TextBoxOrigen/Origen.png") !important;
   background-size: 100%;
   background-repeat: no-repeat;
-  background-position: center; }
+  background-position: center;
+  font-size: 2.5vh !important; }
+  @media screen and (max-height: 2560px) {
+    .input-origin {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/TextBoxOrigen/Origen3x.png.png") !important;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 1920px) {
+    .input-origin {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/TextBoxOrigen/Origen3x.png.png") !important;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 1280px) {
+    .input-origin {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/TextBoxOrigen/Origen2x.png.png") !important;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 960px) {
+    .input-origin {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/TextBoxOrigen/Origen2x.png.png") !important;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 736px) {
+    .input-origin {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/TextBoxOrigen/Origen2x.png.png") !important;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 667px) {
+    .input-origin {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/TextBoxOrigen/Origen2x.png.png") !important;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 568px) {
+    .input-origin {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/TextBoxOrigen/Origen.png") !important;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 480px) {
+    .input-origin {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/TextBoxOrigen/Origen.png") !important;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 320px) {
+    .input-origin {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/TextBoxOrigen/Origen.png") !important;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-position: center; } }
   .input-origin:focus {
-    color: #213d50 !important;
-    background-image: url("../img/Cajadetextoorigen/Origenmdpi.png");
+    border: none !important;
+    background-color: transparent;
+    background-image: url("../img/TextBoxOrigen/Origen.png") !important;
     background-size: 100%;
     background-repeat: no-repeat;
     background-position: center; }
+    @media screen and (max-height: 2560px) {
+      .input-origin:focus {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/TextBoxOrigen/Origen3x.png.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 1920px) {
+      .input-origin:focus {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/TextBoxOrigen/Origen3x.png.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 1280px) {
+      .input-origin:focus {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/TextBoxOrigen/Origen2x.png.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 960px) {
+      .input-origin:focus {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/TextBoxOrigen/Origen2x.png.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 736px) {
+      .input-origin:focus {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/TextBoxOrigen/Origen2x.png.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 667px) {
+      .input-origin:focus {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/TextBoxOrigen/Origen2x.png.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 568px) {
+      .input-origin:focus {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/TextBoxOrigen/Origen2x.png.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 480px) {
+      .input-origin:focus {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/TextBoxOrigen/Origen.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 320px) {
+      .input-origin:focus {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/TextBoxOrigen/Origen.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
 
 .input-originDetail {
   color: #213d50 !important;
-  background-image: url("../img/Detalles/Detallesmdpi.png");
+  padding-left: 10% !important;
+  border: none !important;
+  background-color: transparent;
+  background-image: url("../img/TextBoxdetalles/Detalles.png") !important;
   background-size: 100%;
   background-repeat: no-repeat;
-  background-position: center; }
+  background-position: center;
+  font-size: 2.5vh !important; }
+  @media screen and (max-height: 2560px) {
+    .input-originDetail {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/TextBoxdetalles/Detalles3x.png.png") !important;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 1920px) {
+    .input-originDetail {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/TextBoxdetalles/Detalles3x.png.png") !important;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 1280px) {
+    .input-originDetail {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/TextBoxdetalles/Detalles2x.png.png") !important;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 960px) {
+    .input-originDetail {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/TextBoxdetalles/Detalles2x.png.png") !important;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 736px) {
+    .input-originDetail {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/TextBoxdetalles/Detalles2x.png.png") !important;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 667px) {
+    .input-originDetail {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/TextBoxdetalles/Detalles2x.png.png") !important;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 568px) {
+    .input-originDetail {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/TextBoxdetalles/Detalles.png") !important;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 480px) {
+    .input-originDetail {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/TextBoxdetalles/Detalles.png") !important;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 320px) {
+    .input-originDetail {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/TextBoxdetalles/Detalles.png") !important;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-position: center; } }
   .input-originDetail:focus {
-    color: #213d50 !important;
-    background-image: url("../img/Detalles/Detallesmdpi.png");
+    border: none !important;
+    background-color: transparent;
+    background-image: url("../img/TextBoxdetalles/Detalles.png") !important;
     background-size: 100%;
     background-repeat: no-repeat;
     background-position: center; }
+    @media screen and (max-height: 2560px) {
+      .input-originDetail:focus {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("..img/TextBoxdetalles/Detalles3x.png.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 1920px) {
+      .input-originDetail:focus {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("..img/TextBoxdetalles/Detalles3x.png.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 1280px) {
+      .input-originDetail:focus {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/TextBoxdetalles/Detalles2x.png.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 960px) {
+      .input-originDetail:focus {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/TextBoxdetalles/Detalles2x.png.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 736px) {
+      .input-originDetail:focus {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/TextBoxdetalles/Detalles2x.png.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 667px) {
+      .input-originDetail:focus {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/TextBoxdetalles/Detalles2x.png.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 568px) {
+      .input-originDetail:focus {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/TextBoxdetalles/Detalles2x.png.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 480px) {
+      .input-originDetail:focus {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/TextBoxdetalles/Detalles.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 320px) {
+      .input-originDetail:focus {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/TextBoxdetalles/Detalles.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
 
 .button-gps {
   border: none !important;
   background-color: transparent;
-  background-image: url("../img/Ubicacion/Ubicacionmdpi.png");
+  background-image: url("../img/Ubicacion/Ubicacion.png") !important;
   background-size: 100%;
   background-repeat: no-repeat;
   background-position: center; }
@@ -13481,146 +14277,153 @@ ion-slide {
     .button-gps {
       border: none !important;
       background-color: transparent;
-      background-image: url("../img/Ubicacion/Ubicacionxxxhdpi.png");
-      background-size: 90%;
+      background-image: url("../img/Ubicacion/Ubicacion3x.png.png") !important;
+      background-size: 100%;
       background-repeat: no-repeat;
       background-position: center; } }
   @media screen and (max-height: 1920px) {
     .button-gps {
       border: none !important;
       background-color: transparent;
-      background-image: url("../img/Ubicacion/Ubicacionxxxhdpi.png");
-      background-size: 90%;
+      background-image: url("../img/Ubicacion/Ubicacion3x.png.png") !important;
+      background-size: 100%;
       background-repeat: no-repeat;
       background-position: center; } }
   @media screen and (max-height: 1280px) {
     .button-gps {
       border: none !important;
       background-color: transparent;
-      background-image: url("../img/Ubicacion/Ubicacionxxhdpi.png");
-      background-size: 90%;
+      background-image: url("../img/Ubicacion/Ubicacion2x.png.png") !important;
+      background-size: 100%;
       background-repeat: no-repeat;
       background-position: center; } }
   @media screen and (max-height: 960px) {
     .button-gps {
       border: none !important;
       background-color: transparent;
-      background-image: url("../img/Ubicacion/Ubicacionxhdpi.png");
-      background-size: 90%;
+      background-image: url("../img/Ubicacion/Ubicacion2x.png.png") !important;
+      background-size: 100%;
       background-repeat: no-repeat;
       background-position: center; } }
   @media screen and (max-height: 736px) {
     .button-gps {
       border: none !important;
       background-color: transparent;
-      background-image: url("../img/Ubicacion/Ubicacionxhdpi.png");
-      background-size: 90%;
+      background-image: url("../img/Ubicacion/Ubicacion2x.png.png") !important;
+      background-size: 100%;
       background-repeat: no-repeat;
       background-position: center; } }
   @media screen and (max-height: 667px) {
     .button-gps {
       border: none !important;
       background-color: transparent;
-      background-image: url("../img/Ubicacion/Ubicacionxhdpi.png");
-      background-size: 90%;
+      background-image: url("../img/Ubicacion/Ubicacion2x.png.png") !important;
+      background-size: 100%;
       background-repeat: no-repeat;
       background-position: center; } }
   @media screen and (max-height: 568px) {
     .button-gps {
       border: none !important;
       background-color: transparent;
-      background-image: url("../img/Ubicacion/Ubicacionxhdpi.png");
-      background-size: 90%;
+      background-image: url("../img/Ubicacion/Ubicacion.png") !important;
+      background-size: 100%;
       background-repeat: no-repeat;
       background-position: center; } }
   @media screen and (max-height: 480px) {
     .button-gps {
       border: none !important;
       background-color: transparent;
-      background-image: url("../img/Ubicacion/Ubicacionxhdpi.png");
-      background-size: 90%;
+      background-image: url("../img/Ubicacion/Ubicacion.png") !important;
+      background-size: 100%;
       background-repeat: no-repeat;
       background-position: center; } }
   @media screen and (max-height: 320px) {
     .button-gps {
       border: none !important;
       background-color: transparent;
-      background-image: url("../img/Ubicacion/Ubicacionmdpi.png");
-      background-size: 90%;
+      background-image: url("../img/Ubicacion/Ubicacion.png") !important;
+      background-size: 100%;
       background-repeat: no-repeat;
       background-position: center; } }
-  @media screen and (max-height: 2560px) {
-    .button-gps:hover {
-      border: none !important;
-      background-color: transparent;
-      background-image: url("../img/Ubicacion/Ubicacionxxxhdpi.png");
-      background-size: 90%;
-      background-repeat: no-repeat;
-      background-position: center; } }
-  @media screen and (max-height: 1920px) {
-    .button-gps:hover {
-      border: none !important;
-      background-color: transparent;
-      background-image: url("../img/Ubicacion/Ubicacionxxxhdpi.png");
-      background-size: 90%;
-      background-repeat: no-repeat;
-      background-position: center; } }
-  @media screen and (max-height: 1280px) {
-    .button-gps:hover {
-      border: none !important;
-      background-color: transparent;
-      background-image: url("../img/Ubicacion/Ubicacionxxhdpi.png");
-      background-size: 90%;
-      background-repeat: no-repeat;
-      background-position: center; } }
-  @media screen and (max-height: 960px) {
-    .button-gps:hover {
-      border: none !important;
-      background-color: transparent;
-      background-image: url("../img/Ubicacion/Ubicacionxhdpi.png");
-      background-size: 90%;
-      background-repeat: no-repeat;
-      background-position: center; } }
-  @media screen and (max-height: 736px) {
-    .button-gps:hover {
-      border: none !important;
-      background-color: transparent;
-      background-image: url("../img/Ubicacion/Ubicacionxhdpi.png");
-      background-size: 90%;
-      background-repeat: no-repeat;
-      background-position: center; } }
-  @media screen and (max-height: 667px) {
-    .button-gps:hover {
-      border: none !important;
-      background-color: transparent;
-      background-image: url("../img/Ubicacion/Ubicacionxhdpi.png");
-      background-size: 90%;
-      background-repeat: no-repeat;
-      background-position: center; } }
-  @media screen and (max-height: 568px) {
-    .button-gps:hover {
-      border: none !important;
-      background-color: transparent;
-      background-image: url("../img/Ubicacion/Ubicacionxhdpi.png");
-      background-size: 90%;
-      background-repeat: no-repeat;
-      background-position: center; } }
-  @media screen and (max-height: 480px) {
-    .button-gps:hover {
-      border: none !important;
-      background-color: transparent;
-      background-image: url("../img/Ubicacion/Ubicacionxhdpi.png");
-      background-size: 90%;
-      background-repeat: no-repeat;
-      background-position: center; } }
-  @media screen and (max-height: 320px) {
-    .button-gps:hover {
-      border: none !important;
-      background-color: transparent;
-      background-image: url("../img/Ubicacion/Ubicacionmdpi.png");
-      background-size: 90%;
-      background-repeat: no-repeat;
-      background-position: center; } }
+  .button-gps:hover {
+    border: none !important;
+    background-color: transparent;
+    background-image: url("../img/Ubicacion/Ubicacion.png") !important;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center; }
+    @media screen and (max-height: 2560px) {
+      .button-gps:hover {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/Ubicacion/Ubicacion3x.png.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 1920px) {
+      .button-gps:hover {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/Ubicacion/Ubicacion3x.png.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 1280px) {
+      .button-gps:hover {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/Ubicacion/Ubicacion2x.png.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 960px) {
+      .button-gps:hover {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/Ubicacion/Ubicacion2x.png.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 736px) {
+      .button-gps:hover {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/Ubicacion/Ubicacion2x.png.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 667px) {
+      .button-gps:hover {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/Ubicacion/Ubicacion2x.png.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 568px) {
+      .button-gps:hover {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/Ubicacion/Ubicacion2x.png.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 480px) {
+      .button-gps:hover {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/Ubicacion/Ubicacion.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 320px) {
+      .button-gps:hover {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/Ubicacion/Ubicacion.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
 
 .button-gps-two {
   border: none !important;

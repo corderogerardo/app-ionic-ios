@@ -51,13 +51,14 @@
         min-width: 100%;
     }
 }
-.button-default{
+.button-createaccount{
     color: white !important;
     @include media-icons-ios("../img/IniciarsesionCrearcuenta/IniciarsesionCrearcuenta.png","../img/IniciarsesionCrearcuentaTAP/IniciarsesionCrearcuenta.png","../img/IniciarsesionCrearcuenta/IniciarsesionCrearcuenta2x.png.png","../img/IniciarsesionCrearcuentaTAP/IniciarsesionCrearcuenta2x.png.png","../img/IniciarsesionCrearcuenta/IniciarsesionCrearcuenta3x.png.png","../img/IniciarsesionCrearcuentaTAP/IniciarsesionCrearcuenta3x.png.png");
     &:hover{
         color: white;
     }
 }
+
 .button-default-two{
     border:none !important;
     background-color: transparent;
@@ -96,4 +97,12 @@
     min-width: 12%;
     padding: 0 !important;
     width: 12%;
+}
+.button-continue{
+    color: white !important;
+    &:hover{
+        color: white;
+    }
+    @include media-icons-ios("../img/BotonContinuar/Continuar.png","../img/BotonContinuarTAP/ContinuarTAP.png","../img/BotonContinuar/Continuar2x.png.png","../img/BotonContinuarTAP/ContinuarTAP2x.png.png","../img/BotonContinuar/Continuar3x.png.png","../img/BotonContinuarTAP/ContinuarTAP3x.png.png");
+
 }
