@@ -4,7 +4,63 @@
     min-width: $minw;
     width: $wid;
 }
-@mixin media-icons($img:'',$img2:'',$img3:'',$img4:'',$img5:'',$imgTap:'',$imgTap2:'',$imgTap3:'',$imgTap4:'',$imgTap5:''){
+@mixin responsivewidthheight($hx1,$minhx1,$wx1,$minwx1,$hx2,$minhx2,$wx2,$minwx2,$hx3,$minhx3,$wx3,$minwx3){
+    @media screen and (max-height: 2560px){
+        min-height: $minhx3;
+        height: $hx3;
+        min-width: $minwx3;
+        width: $wx3;
+    }
+    @media screen and (max-height: 1920px){
+        min-height: $minhx3;
+        height: $hx3;
+        min-width: $minwx3;
+        width: $wx3;
+    }
+    @media screen and (max-height: 1280px){
+        min-height: $minhx2;
+        height: $hx2;
+        min-width: $minwx2;
+        width: $wx2;
+    }
+    @media screen and (max-height: 960px){
+        min-height: $minhx3;
+        height: $hx3;
+        min-width: $minwx3;
+        width: $wx3;
+    }
+    @media screen and (max-height: 736px){
+        min-height: $minhx2;
+        height: $hx2;
+        min-width: $minwx2;
+        width: $wx2;
+    }
+    @media screen and (max-height: 667px){
+        min-height: $minhx2;
+        height: $hx2;
+        min-width: $minwx2;
+        width: $wx2;
+    }
+    @media screen and (max-height: 568px){
+        min-height: $minhx1;
+        height: $hx1;
+        min-width: $minwx1;
+        width: $wx1;
+    }
+    @media screen and (max-height: 480px){
+        min-height: $minhx1;
+        height: $hx1;
+        min-width: $minwx1;
+        width: $wx1;
+    }
+    @media screen and (max-height: 320px){
+        min-height: $minhx1;
+        height: $hx1;
+        min-width: $minwx1;
+        width: $wx1;
+    }
+}
+@mixin media-icons-android($img:'',$img2:'',$img3:'',$img4:'',$img5:'',$imgTap:'',$imgTap2:'',$imgTap3:'',$imgTap4:'',$imgTap5:''){
     border:none !important;
     background-color: transparent;
     background-image: url($img);
@@ -158,7 +214,876 @@
         }
     }
 }
-@mixin media-inputs($img:'',$img2:'',$img3:'',$img4:'',$img5:'',$imgTap:'',$imgTap2:'',$imgTap3:'',$imgTap4:'',$imgTap5:''){
+@mixin media-inputs-android($img:'',$img2:'',$img3:'',$img4:'',$img5:'',$imgTap:'',$imgTap2:'',$imgTap3:'',$imgTap4:'',$imgTap5:''){
+    border:none !important;
+    background-color: transparent;
+    background-image: url($img);
+    background-size: 100%;
+    background-repeat:no-repeat;
+    background-position: center;
+    @media screen and (max-height: 2560px){
+        border:none !important;
+        background-color: transparent;
+        background-image: url($img5);
+        background-size: 90%;
+        background-repeat:no-repeat;
+        background-position: center;
+    }
+    @media screen and (max-height: 1920px){
+        border:none !important;
+        background-color: transparent;
+        background-image: url($img5);
+        background-size: 90%;
+        background-repeat:no-repeat;
+        background-position: center;
+    }
+    @media screen and (max-height: 1280px){
+        border:none !important;
+        background-color: transparent;
+        background-image: url($img4);
+        background-size: 90%;
+        background-repeat:no-repeat;
+        background-position: center;
+    }
+    @media screen and (max-height: 960px){
+        border:none !important;
+        background-color: transparent;
+        background-image: url($img3);
+        background-size: 90%;
+        background-repeat:no-repeat;
+        background-position: center;
+    }
+    @media screen and (max-height: 736px){
+        border:none !important;
+        background-color: transparent;
+        background-image: url($img3);
+        background-size: 90%;
+        background-repeat:no-repeat;
+        background-position: center;
+    }
+    @media screen and (max-height: 667px){
+        border:none !important;
+        background-color: transparent;
+        background-image: url($img3);
+        background-size: 90%;
+        background-repeat:no-repeat;
+        background-position: center;
+    }
+    @media screen and (max-height: 568px){
+        border:none !important;
+        background-color: transparent;
+        background-image: url($img3);
+        background-size: 90%;
+        background-repeat:no-repeat;
+        background-position: center;
+    }
+    @media screen and (max-height: 480px){
+        border:none !important;
+        background-color: transparent;
+        background-image: url($img3);
+        background-size: 90%;
+        background-repeat:no-repeat;
+        background-position: center;
+    }
+    @media screen and (max-height: 320px){
+        border:none !important;
+        background-color: transparent;
+        background-image: url($img);
+        background-size: 90%;
+        background-repeat:no-repeat;
+        background-position: center;
+    }
+    &:focus{
+        @media screen and (max-height: 2560px){
+            border:none !important;
+            background-color: transparent;
+            background-image: url($imgTap5);
+            background-size: 90%;
+            background-repeat:no-repeat;
+            background-position: center;
+        }
+        @media screen and (max-height: 1920px){
+            border:none !important;
+            background-color: transparent;
+            background-image: url($imgTap5);
+            background-size: 90%;
+            background-repeat:no-repeat;
+            background-position: center;
+        }
+        @media screen and (max-height: 1280px){
+            border:none !important;
+            background-color: transparent;
+            background-image: url($imgTap4);
+            background-size: 90%;
+            background-repeat:no-repeat;
+            background-position: center;
+        }
+        @media screen and (max-height: 960px){
+            border:none !important;
+            background-color: transparent;
+            background-image: url($imgTap3);
+            background-size: 90%;
+            background-repeat:no-repeat;
+            background-position: center;
+        }
+        @media screen and (max-height: 736px){
+            border:none !important;
+            background-color: transparent;
+            background-image: url($imgTap3);
+            background-size: 90%;
+            background-repeat:no-repeat;
+            background-position: center;
+        }
+        @media screen and (max-height: 667px){
+            border:none !important;
+            background-color: transparent;
+            background-image: url($imgTap3);
+            background-size: 90%;
+            background-repeat:no-repeat;
+            background-position: center;
+        }
+        @media screen and (max-height: 568px){
+            border:none !important;
+            background-color: transparent;
+            background-image: url($imgTap3);
+            background-size: 90%;
+            background-repeat:no-repeat;
+            background-position: center;
+        }
+        @media screen and (max-height: 480px){
+            border:none !important;
+            background-color: transparent;
+            background-image: url($imgTap3);
+            background-size: 90%;
+            background-repeat:no-repeat;
+            background-position: center;
+        }
+        @media screen and (max-height: 320px){
+            border:none !important;
+            background-color: transparent;
+            background-image: url($imgTap);
+            background-size: 90%;
+            background-repeat:no-repeat;
+            background-position: center;
+        }
+    }
+}
+@mixin media-checkbox-android($img:'',$img2:'',$img3:'',$img4:'',$img5:'',$imgTap:'',$imgTap2:'',$imgTap3:'',$imgTap4:'',$imgTap5:''){
+    &::before{
+        border:none !important;
+        background-color: transparent;
+        background-image: url($img);
+        background-size: 100%;
+        background-repeat:no-repeat;
+        background-position: center;
+        @media screen and (max-height: 2560px){
+            border:none !important;
+            background-color: transparent;
+            background-image: url($img5) !important;
+            background-size: 90%;
+            background-repeat:no-repeat;
+            background-position: center;
+        }
+        @media screen and (max-height: 1920px){
+            border:none !important;
+            background-color: transparent;
+            background-image: url($img5) !important;
+            background-size: 90%;
+            background-repeat:no-repeat;
+            background-position: center;
+        }
+        @media screen and (max-height: 1280px){
+            border:none !important;
+            background-color: transparent;
+            background-image: url($img4) !important;
+            background-size: 90%;
+            background-repeat:no-repeat;
+            background-position: center;
+        }
+        @media screen and (max-height: 960px){
+            border:none !important;
+            background-color: transparent;
+            background-image: url($img3) !important;
+            background-size: 90%;
+            background-repeat:no-repeat;
+            background-position: center;
+        }
+        @media screen and (max-height: 736px){
+            border:none !important;
+            background-color: transparent;
+            background-image: url($img3) !important;
+            background-size: 90%;
+            background-repeat:no-repeat;
+            background-position: center;
+        }
+        @media screen and (max-height: 667px){
+            border:none !important;
+            background-color: transparent;
+            background-image: url($img3) !important;
+            background-size: 90%;
+            background-repeat:no-repeat;
+            background-position: center;
+        }
+        @media screen and (max-height: 568px){
+            border:none !important;
+            background-color: transparent;
+            background-image: url($img3) !important;
+            background-size: 90%;
+            background-repeat:no-repeat;
+            background-position: center;
+        }
+        @media screen and (max-height: 480px){
+            border:none !important;
+            background-color: transparent;
+            background-image: url($img3)!important ;
+            background-size: 90%;
+            background-repeat:no-repeat;
+            background-position: center;
+        }
+        @media screen and (max-height: 320px){
+            border:none !important;
+            background-color: transparent;
+            background-image: url($img) !important;
+            background-size: 90%;
+            background-repeat:no-repeat;
+            background-position: center;
+        }
+    }
+    &:checked{
+        &::before{
+            @media screen and (max-height: 2560px){
+                border:none !important;
+                background-color: transparent;
+                background-image: url($imgTap5) !important;
+                background-size: 90%;
+                background-repeat:no-repeat;
+                background-position: center;
+            }
+            @media screen and (max-height: 1920px){
+                border:none !important;
+                background-color: transparent;
+                background-image: url($imgTap5) !important;
+                background-size: 90%;
+                background-repeat:no-repeat;
+                background-position: center;
+            }
+            @media screen and (max-height: 1280px){
+                border:none !important;
+                background-color: transparent;
+                background-image: url($imgTap4) !important;
+                background-size: 90%;
+                background-repeat:no-repeat;
+                background-position: center;
+            }
+            @media screen and (max-height: 960px){
+                border:none !important;
+                background-color: transparent;
+                background-image: url($imgTap3) !important;
+                background-size: 90%;
+                background-repeat:no-repeat;
+                background-position: center;
+            }
+            @media screen and (max-height: 736px){
+                border:none !important;
+                background-color: transparent;
+                background-image: url($imgTap3) !important;
+                background-size: 90%;
+                background-repeat:no-repeat;
+                background-position: center;
+            }
+            @media screen and (max-height: 667px){
+                border:none !important;
+                background-color: transparent;
+                background-image: url($imgTap3) !important;
+                background-size: 90%;
+                background-repeat:no-repeat;
+                background-position: center;
+            }
+            @media screen and (max-height: 568px){
+                border:none !important;
+                background-color: transparent;
+                background-image: url($imgTap3) !important;
+                background-size: 90%;
+                background-repeat:no-repeat;
+                background-position: center;
+            }
+            @media screen and (max-height: 480px){
+                border:none !important;
+                background-color: transparent;
+                background-image: url($imgTap3) !important;
+                background-size: 90%;
+                background-repeat:no-repeat;
+                background-position: center;
+            }
+            @media screen and (max-height: 320px){
+                border:none !important;
+                background-color: transparent;
+                background-image: url($imgTap) !important;
+                background-size: 90%;
+                background-repeat:no-repeat;
+                background-position: center;
+            }
+
+        }
+    }
+}
+@mixin media-icons-ios($x1,$hoverx1,$x2,$hoverx2,$x3,$hoverx3){
+    border:none !important;
+    background-color: transparent;
+    background-image: url($x1) !important;
+    background-size: 100%;
+    background-repeat:no-repeat;
+    background-position: center;
+    @media screen and (max-height: 2560px){
+        border:none !important;
+        background-color: transparent;
+        background-image: url($x3) !important;
+        background-size: 100%;
+        background-repeat:no-repeat;
+        background-position: center;
+    }
+    @media screen and (max-height: 1920px){
+        border:none !important;
+        background-color: transparent;
+        background-image: url($x3) !important;
+        background-size: 100%;
+        background-repeat:no-repeat;
+        background-position: center;
+    }
+    @media screen and (max-height: 1280px){
+        border:none !important;
+        background-color: transparent;
+        background-image: url($x2) !important;
+        background-size: 100%;
+        background-repeat:no-repeat;
+        background-position: center;
+    }
+    @media screen and (max-height: 960px){
+        border:none !important;
+        background-color: transparent;
+        background-image: url($x2) !important;
+        background-size: 100%;
+        background-repeat:no-repeat;
+        background-position: center;
+    }
+    @media screen and (max-height: 736px){
+        border:none !important;
+        background-color: transparent;
+        background-image: url($x2) !important;
+        background-size: 100%;
+        background-repeat:no-repeat;
+        background-position: center;
+    }
+    @media screen and (max-height: 667px){
+        border:none !important;
+        background-color: transparent;
+        background-image: url($x2) !important;
+        background-size: 100%;
+        background-repeat:no-repeat;
+        background-position: center;
+    }
+    @media screen and (max-height: 568px){
+        border:none !important;
+        background-color: transparent;
+        background-image: url($x1) !important;
+        background-size: 100%;
+        background-repeat:no-repeat;
+        background-position: center;
+    }
+    @media screen and (max-height: 480px){
+        border:none !important;
+        background-color: transparent;
+        background-image: url($x1) !important;
+        background-size: 100%;
+        background-repeat:no-repeat;
+        background-position: center;
+    }
+    @media screen and (max-height: 320px){
+        border:none !important;
+        background-color: transparent;
+        background-image: url($x1) !important;
+        background-size: 100%;
+        background-repeat:no-repeat;
+        background-position: center;
+    }
+    &:hover{
+        border:none !important;
+        background-color: transparent;
+        background-image: url($hoverx1) !important;
+        background-size: 100%;
+        background-repeat:no-repeat;
+        background-position: center;
+        @media screen and (max-height: 2560px){
+            border:none !important;
+            background-color: transparent;
+            background-image: url($hoverx3) !important;
+            background-size: 100%;
+            background-repeat:no-repeat;
+            background-position: center;
+        }
+        @media screen and (max-height: 1920px){
+            border:none !important;
+            background-color: transparent;
+            background-image: url($hoverx3) !important;
+            background-size: 100%;
+            background-repeat:no-repeat;
+            background-position: center;
+        }
+        @media screen and (max-height: 1280px){
+            border:none !important;
+            background-color: transparent;
+            background-image: url($hoverx2) !important;
+            background-size: 100%;
+            background-repeat:no-repeat;
+            background-position: center;
+        }
+        @media screen and (max-height: 960px){
+            border:none !important;
+            background-color: transparent;
+            background-image: url($hoverx2) !important;
+            background-size: 100%;
+            background-repeat:no-repeat;
+            background-position: center;
+        }
+        @media screen and (max-height: 736px){
+            border:none !important;
+            background-color: transparent;
+            background-image: url($hoverx2) !important;
+            background-size: 100%;
+            background-repeat:no-repeat;
+            background-position: center;
+        }
+        @media screen and (max-height: 667px){
+            border:none !important;
+            background-color: transparent;
+            background-image: url($hoverx2) !important;
+            background-size: 100%;
+            background-repeat:no-repeat;
+            background-position: center;
+        }
+        @media screen and (max-height: 568px){
+            border:none !important;
+            background-color: transparent;
+            background-image: url($hoverx2) !important;
+            background-size: 100%;
+            background-repeat:no-repeat;
+            background-position: center;
+        }
+        @media screen and (max-height: 480px){
+            border:none !important;
+            background-color: transparent;
+            background-image: url($hoverx1) !important;
+            background-size: 100%;
+            background-repeat:no-repeat;
+            background-position: center;
+        }
+        @media screen and (max-height: 320px){
+            border:none !important;
+            background-color: transparent;
+            background-image: url($hoverx1) !important;
+            background-size: 100%;
+            background-repeat:no-repeat;
+            background-position: center;
+        }
+    }
+}
+@mixin media-inputs-ios($x1,$hoverx1,$x2,$hoverx2,$x3,$hoverx3){
+    border:none !important;
+    background-color: transparent;
+    background-image: url($x1) !important;
+    background-size: 100%;
+    background-repeat:no-repeat;
+    background-position: center;
+    @media screen and (max-height: 2560px){
+        border:none !important;
+        background-color: transparent;
+        background-image: url($x3) !important;
+        background-size: 100%;
+        background-repeat:no-repeat;
+        background-position: center;
+    }
+    @media screen and (max-height: 1920px){
+        border:none !important;
+        background-color: transparent;
+        background-image: url($x3) !important;
+        background-size: 100%;
+        background-repeat:no-repeat;
+        background-position: center;
+    }
+    @media screen and (max-height: 1280px){
+        border:none !important;
+        background-color: transparent;
+        background-image: url($x2) !important;
+        background-size: 100%;
+        background-repeat:no-repeat;
+        background-position: center;
+    }
+    @media screen and (max-height: 960px){
+        border:none !important;
+        background-color: transparent;
+        background-image: url($x2) !important;
+        background-size: 100%;
+        background-repeat:no-repeat;
+        background-position: center;
+    }
+    @media screen and (max-height: 736px){
+        border:none !important;
+        background-color: transparent;
+        background-image: url($x2) !important;
+        background-size: 100%;
+        background-repeat:no-repeat;
+        background-position: center;
+    }
+    @media screen and (max-height: 667px){
+        border:none !important;
+        background-color: transparent;
+        background-image: url($x2) !important;
+        background-size: 100%;
+        background-repeat:no-repeat;
+        background-position: center;
+    }
+    @media screen and (max-height: 568px){
+        border:none !important;
+        background-color: transparent;
+        background-image: url($x1) !important;
+        background-size: 100%;
+        background-repeat:no-repeat;
+        background-position: center;
+    }
+    @media screen and (max-height: 480px){
+        border:none !important;
+        background-color: transparent;
+        background-image: url($x1) !important;
+        background-size: 100%;
+        background-repeat:no-repeat;
+        background-position: center;
+    }
+    @media screen and (max-height: 320px){
+        border:none !important;
+        background-color: transparent;
+        background-image: url($x1) !important;
+        background-size: 100%;
+        background-repeat:no-repeat;
+        background-position: center;
+    }
+    &:focus{
+        border:none !important;
+        background-color: transparent;
+        background-image: url($hoverx1) !important;
+        background-size: 100%;
+        background-repeat:no-repeat;
+        background-position: center;
+        @media screen and (max-height: 2560px){
+            border:none !important;
+            background-color: transparent;
+            background-image: url($hoverx3) !important;
+            background-size: 100%;
+            background-repeat:no-repeat;
+            background-position: center;
+        }
+        @media screen and (max-height: 1920px){
+            border:none !important;
+            background-color: transparent;
+            background-image: url($hoverx3) !important;
+            background-size: 100%;
+            background-repeat:no-repeat;
+            background-position: center;
+        }
+        @media screen and (max-height: 1280px){
+            border:none !important;
+            background-color: transparent;
+            background-image: url($hoverx2) !important;
+            background-size: 100%;
+            background-repeat:no-repeat;
+            background-position: center;
+        }
+        @media screen and (max-height: 960px){
+            border:none !important;
+            background-color: transparent;
+            background-image: url($hoverx2) !important;
+            background-size: 100%;
+            background-repeat:no-repeat;
+            background-position: center;
+        }
+        @media screen and (max-height: 736px){
+            border:none !important;
+            background-color: transparent;
+            background-image: url($hoverx2) !important;
+            background-size: 100%;
+            background-repeat:no-repeat;
+            background-position: center;
+        }
+        @media screen and (max-height: 667px){
+            border:none !important;
+            background-color: transparent;
+            background-image: url($hoverx2) !important;
+            background-size: 100%;
+            background-repeat:no-repeat;
+            background-position: center;
+        }
+        @media screen and (max-height: 568px){
+            border:none !important;
+            background-color: transparent;
+            background-image: url($hoverx2) !important;
+            background-size: 100%;
+            background-repeat:no-repeat;
+            background-position: center;
+        }
+        @media screen and (max-height: 480px){
+            border:none !important;
+            background-color: transparent;
+            background-image: url($hoverx1) !important;
+            background-size: 100%;
+            background-repeat:no-repeat;
+            background-position: center;
+        }
+        @media screen and (max-height: 320px){
+            border:none !important;
+            background-color: transparent;
+            background-image: url($hoverx1) !important;
+            background-size: 100%;
+            background-repeat:no-repeat;
+            background-position: center;
+        }
+    }
+}
+@mixin media-checkbox-ios($x1,$hoverx1,$x2,$hoverx2,$x3,$hoverx3){
+    &::before{
+        border:none !important;
+    background-color: transparent;
+    background-image: url($x1) !important;
+    background-size: 100%;
+    background-repeat:no-repeat;
+    background-position: center;
+    @media screen and (max-height: 2560px){
+        border:none !important;
+        background-color: transparent;
+        background-image: url($x3) !important;
+        background-size: 100%;
+        background-repeat:no-repeat;
+        background-position: center;
+    }
+    @media screen and (max-height: 1920px){
+        border:none !important;
+        background-color: transparent;
+        background-image: url($x3) !important;
+        background-size: 100%;
+        background-repeat:no-repeat;
+        background-position: center;
+    }
+    @media screen and (max-height: 1280px){
+        border:none !important;
+        background-color: transparent;
+        background-image: url($x2) !important;
+        background-size: 100%;
+        background-repeat:no-repeat;
+        background-position: center;
+    }
+    @media screen and (max-height: 960px){
+        border:none !important;
+        background-color: transparent;
+        background-image: url($x2) !important;
+        background-size: 100%;
+        background-repeat:no-repeat;
+        background-position: center;
+    }
+    @media screen and (max-height: 736px){
+        border:none !important;
+        background-color: transparent;
+        background-image: url($x2) !important;
+        background-size: 100%;
+        background-repeat:no-repeat;
+        background-position: center;
+    }
+    @media screen and (max-height: 667px){
+        border:none !important;
+        background-color: transparent;
+        background-image: url($x2) !important;
+        background-size: 100%;
+        background-repeat:no-repeat;
+        background-position: center;
+    }
+    @media screen and (max-height: 568px){
+        border:none !important;
+        background-color: transparent;
+        background-image: url($x1) !important;
+        background-size: 100%;
+        background-repeat:no-repeat;
+        background-position: center;
+    }
+    @media screen and (max-height: 480px){
+        border:none !important;
+        background-color: transparent;
+        background-image: url($x1) !important;
+        background-size: 100%;
+        background-repeat:no-repeat;
+        background-position: center;
+    }
+    @media screen and (max-height: 320px){
+        border:none !important;
+        background-color: transparent;
+        background-image: url($x1) !important;
+        background-size: 100%;
+        background-repeat:no-repeat;
+        background-position: center;
+    }
+   }
+    &:checked{
+        &::before {
+            border: none !important;
+            background-color: transparent;
+            background-image: url($hoverx1) !important;
+            background-size: 100%;
+            background-repeat: no-repeat;
+            background-position: center;
+            @media screen and (max-height: 2560px) {
+                border: none !important;
+                background-color: transparent;
+                background-image: url($hoverx3) !important;
+                background-size: 100%;
+                background-repeat: no-repeat;
+                background-position: center;
+            }
+            @media screen and (max-height: 1920px) {
+                border: none !important;
+                background-color: transparent;
+                background-image: url($hoverx3) !important;
+                background-size: 100%;
+                background-repeat: no-repeat;
+                background-position: center;
+            }
+            @media screen and (max-height: 1280px) {
+                border: none !important;
+                background-color: transparent;
+                background-image: url($hoverx2) !important;
+                background-size: 100%;
+                background-repeat: no-repeat;
+                background-position: center;
+            }
+            @media screen and (max-height: 960px) {
+                border: none !important;
+                background-color: transparent;
+                background-image: url($hoverx2) !important;
+                background-size: 100%;
+                background-repeat: no-repeat;
+                background-position: center;
+            }
+            @media screen and (max-height: 736px) {
+                border: none !important;
+                background-color: transparent;
+                background-image: url($hoverx2) !important;
+                background-size: 100%;
+                background-repeat: no-repeat;
+                background-position: center;
+            }
+            @media screen and (max-height: 667px) {
+                border: none !important;
+                background-color: transparent;
+                background-image: url($hoverx2) !important;
+                background-size: 100%;
+                background-repeat: no-repeat;
+                background-position: center;
+            }
+            @media screen and (max-height: 568px) {
+                border: none !important;
+                background-color: transparent;
+                background-image: url($hoverx2) !important;
+                background-size: 100%;
+                background-repeat: no-repeat;
+                background-position: center;
+            }
+            @media screen and (max-height: 480px) {
+                border: none !important;
+                background-color: transparent;
+                background-image: url($hoverx1) !important;
+                background-size: 100%;
+                background-repeat: no-repeat;
+                background-position: center;
+            }
+            @media screen and (max-height: 320px) {
+                border: none !important;
+                background-color: transparent;
+                background-image: url($hoverx1) !important;
+                background-size: 100%;
+                background-repeat: no-repeat;
+                background-position: center;
+            }
+        }
+    }
+}
+@mixin absolutebottom($x1,$x2,$x3){
+    @include widheigh(10%,10%,80%,80%);
+    position:absolute;
+    bottom: $x1;
+    margin-left: 10%;
+    padding: 0 !important;
+    width: 80%;
+    @media screen and (max-height: 2560px){
+        position:absolute;
+        bottom: $x3;
+        margin-left: 10%;
+        padding: 0 !important;
+        width: 80%;
+    }
+    @media screen and (max-height: 1920px){
+        position:absolute;
+        bottom: $x3;
+        margin-left: 10%;
+        padding: 0 !important;
+        width: 80%;
+    }
+    @media screen and (max-height: 1280px){
+        position:absolute;
+        bottom: $x3;
+        margin-left: 10%;
+        padding: 0 !important;
+        width: 80%;
+    }
+    @media screen and (max-height: 960px){
+        position:absolute;
+        bottom: $x2;
+        margin-left: 10%;
+        padding: 0 !important;
+        width: 80%;
+    }
+    @media screen and (max-height: 736px){
+        position:absolute;
+        bottom: $x2;
+        margin-left: 10%;
+        padding: 0 !important;
+        width: 80%;
+    }
+    @media screen and (max-height: 667px){
+        position:absolute;
+        bottom: $x2;
+        margin-left: 10%;
+        padding: 0 !important;
+        width: 80%;
+    }
+    @media screen and (max-height: 568px){
+        position:absolute;
+        bottom: $x2;
+        margin-left: 10%;
+        padding: 0 !important;
+        width: 80%;
+    }
+    @media screen and (max-height: 480px){
+        position:absolute;
+        bottom: $x1;
+        margin-left: 10%;
+        width: 80%;
+        padding: 0 !important;
+    }
+    @media screen and (max-height: 320px){
+        position:absolute;
+        bottom: $x1;
+        margin-left: 10%;
+        padding: 0 !important;
+        width: 80%;
+    }
+}
+
+@mixin media-icons($img:'',$img2:'',$img3:'',$img4:'',$img5:'',$imgTap:'',$imgTap2:'',$imgTap3:'',$imgTap4:'',$imgTap5:''){
     border:none !important;
     background-color: transparent;
     background-image: url($img);
@@ -238,6 +1163,160 @@
         background-position: center;
     }
     &:hover{
+        @media screen and (max-height: 2560px){
+            border:none !important;
+            background-color: transparent;
+            background-image: url($imgTap5);
+            background-size: 90%;
+            background-repeat:no-repeat;
+            background-position: center;
+        }
+        @media screen and (max-height: 1920px){
+            border:none !important;
+            background-color: transparent;
+            background-image: url($imgTap5);
+            background-size: 90%;
+            background-repeat:no-repeat;
+            background-position: center;
+        }
+        @media screen and (max-height: 1280px){
+            border:none !important;
+            background-color: transparent;
+            background-image: url($imgTap4);
+            background-size: 90%;
+            background-repeat:no-repeat;
+            background-position: center;
+        }
+        @media screen and (max-height: 960px){
+            border:none !important;
+            background-color: transparent;
+            background-image: url($imgTap3);
+            background-size: 90%;
+            background-repeat:no-repeat;
+            background-position: center;
+        }
+        @media screen and (max-height: 736px){
+            border:none !important;
+            background-color: transparent;
+            background-image: url($imgTap3);
+            background-size: 90%;
+            background-repeat:no-repeat;
+            background-position: center;
+        }
+        @media screen and (max-height: 667px){
+            border:none !important;
+            background-color: transparent;
+            background-image: url($imgTap3);
+            background-size: 90%;
+            background-repeat:no-repeat;
+            background-position: center;
+        }
+        @media screen and (max-height: 568px){
+            border:none !important;
+            background-color: transparent;
+            background-image: url($imgTap3);
+            background-size: 90%;
+            background-repeat:no-repeat;
+            background-position: center;
+        }
+        @media screen and (max-height: 480px){
+            border:none !important;
+            background-color: transparent;
+            background-image: url($imgTap3);
+            background-size: 90%;
+            background-repeat:no-repeat;
+            background-position: center;
+        }
+        @media screen and (max-height: 320px){
+            border:none !important;
+            background-color: transparent;
+            background-image: url($imgTap);
+            background-size: 90%;
+            background-repeat:no-repeat;
+            background-position: center;
+        }
+    }
+}
+@mixin media-inputs($img:'',$img2:'',$img3:'',$img4:'',$img5:'',$imgTap:'',$imgTap2:'',$imgTap3:'',$imgTap4:'',$imgTap5:''){
+    border:none !important;
+    background-color: transparent;
+    background-image: url($img);
+    background-size: 100%;
+    background-repeat:no-repeat;
+    background-position: center;
+    @media screen and (max-height: 2560px){
+        border:none !important;
+        background-color: transparent;
+        background-image: url($img5);
+        background-size: 90%;
+        background-repeat:no-repeat;
+        background-position: center;
+    }
+    @media screen and (max-height: 1920px){
+        border:none !important;
+        background-color: transparent;
+        background-image: url($img5);
+        background-size: 90%;
+        background-repeat:no-repeat;
+        background-position: center;
+    }
+    @media screen and (max-height: 1280px){
+        border:none !important;
+        background-color: transparent;
+        background-image: url($img4);
+        background-size: 90%;
+        background-repeat:no-repeat;
+        background-position: center;
+    }
+    @media screen and (max-height: 960px){
+        border:none !important;
+        background-color: transparent;
+        background-image: url($img3);
+        background-size: 90%;
+        background-repeat:no-repeat;
+        background-position: center;
+    }
+    @media screen and (max-height: 736px){
+        border:none !important;
+        background-color: transparent;
+        background-image: url($img3);
+        background-size: 90%;
+        background-repeat:no-repeat;
+        background-position: center;
+    }
+    @media screen and (max-height: 667px){
+        border:none !important;
+        background-color: transparent;
+        background-image: url($img3);
+        background-size: 90%;
+        background-repeat:no-repeat;
+        background-position: center;
+    }
+    @media screen and (max-height: 568px){
+        border:none !important;
+        background-color: transparent;
+        background-image: url($img3);
+        background-size: 90%;
+        background-repeat:no-repeat;
+        background-position: center;
+    }
+    @media screen and (max-height: 480px){
+        border:none !important;
+        background-color: transparent;
+        background-image: url($img3);
+        background-size: 90%;
+        background-repeat:no-repeat;
+        background-position: center;
+    }
+    @media screen and (max-height: 320px){
+        border:none !important;
+        background-color: transparent;
+        background-image: url($img);
+        background-size: 90%;
+        background-repeat:no-repeat;
+        background-position: center;
+    }
+    &:focus{
         @media screen and (max-height: 2560px){
             border:none !important;
             background-color: transparent;
@@ -471,6 +1550,3 @@
         }
     }
 }
-// For use
-// media-icons($img,$img2,$img3,$img4,$img5,$imgTap,$imgTap2,$imgTap3,$imgTap4,$imgTap5)
-// media-inputs($img,$img2,$img3,$img4,$img5,$imgTap,$imgTap2,$imgTap3,$imgTap4,$imgTap5)

@@ -1,45 +1,12 @@
 .input-email{
-    background-image: url("../img/CorreoElectronico/CorreoElectronicomdpi.png");
-    background-size: 100%;
-    background-repeat:no-repeat;
-    &:focus{
-            background-image: url("../img/CorreoElectronicoTAP/CorreoElectronicomdpi.png");
-            background-size: 100%;
-            background-repeat:no-repeat;
-    }
-
+    @include media-inputs-ios("../img/Correoelectronico/Correoelectronico.png","../img/CorreoelectronicoTAP/Correoelectronico.png","../img/Correoelectronico/Correoelectronico2x.png.png","../img/CorreoelectronicoTAP/Correoelectronico2x.png.png","../img/Correoelectronico/Correoelectronico3x.png.png","../img/CorreoelectronicoTAP/Correoelectronico3x.png.png");
 }
 .input-pass{
-    background-image: url("../img/Contrasena/Contrasenamdpi.png");
-    background-size: 100%;
-    background-repeat:no-repeat;
-    &:focus{
-        background-image: url("../img/ContrasenaTAP/Contrasenamdpi.png");
-        background-size: 100%;
-        background-repeat:no-repeat;
-    }
+    @include media-inputs-ios("../img/Contrasena/Contrasena.png","../img/ContrasenaTAP/Contrasena.png","../img/Contrasena/Contrasena2x.png.png","../img/ContrasenaTAP/Contrasena2x.png.png","../img/Contrasena/Contrasena3x.png.png","../img/ContrasenaTAP/Contrasena3x.png.png");
 }
 .input-user{
-    background-image: url("../img/Usuario/Usuariohdpi.png");
-    background-size: 100%;
-    background-repeat:no-repeat;
-    background-position: center;
-    &:focus{
-        background-image: url("../img/UsuarioTAP/Usuariohdpi.png");
-        background-size: 100%;
-        background-repeat:no-repeat;
-        background-position: center;
-    }
+    @include media-inputs-ios("../img/Nombredeusuario/Nombredeusuario.png","../img/NombredeusuarioTAP/Nombredeusuario.png","../img/Nombredeusuario/Nombredeusuario2x.png.png","../img/NombredeusuarioTAP/Nombredeusuario2x.png.png","../img/Nombredeusuario/Nombredeusuario3x.png.png","../img/NombredeusuarioTAP/Nombredeusuario3x.png.png");
 }
 .input-phone{
-    background-image: url("../img/Telefono/Telefonohdpi.png");
-    background-size: 100%;
-    background-repeat:no-repeat;
-    background-position: center;
-    &:focus{
-        background-image: url("../img/TelefonoTAP/Telefonohdpi.png");
-        background-size: 100%;
-        background-repeat:no-repeat;
-        background-position: center;
-    }
+    @include media-inputs-ios("../img/Telefono/Telefono.png","../img/TelefonoTAP/Telefono.png","../img/Telefono/Telefono2x.png.png","../img/TelefonoTAP/Telefono2x.png.png","../img/Telefono/Telefono3x.png.png","../img/TelefonoTAP/Telefono3x.png.png");
 }

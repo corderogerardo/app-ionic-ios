@@ -27,6 +27,7 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 
 // Include all of Ionic
 @import "../www/lib/ionic/scss/ionic.scss";
+@import "base/mixins/mediaqueries.scss";
 @import "base/globals";
 @import "base/buttons";
 @import "base/background";
@@ -34,7 +35,6 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 @import "base/mixins/animate";
 @import "base/mixins/shapes";
 @import "base/mixins/vargba";
-@import "base/mixins/mediaqueries.scss";
 @import "welcome/welcome";
 @import "login/login";
 @import "register/register";
@@ -51,6 +51,14 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 @import "history/history";
 @import "account/account";
 
-
-
+// For use
+// height and width responsive design
+// @include widheigh($minh,$hei,$minw,$wid);
+// @include responsivewidthheight($hx1,$minhx1,$wx1,$minwx1,$hx2,$minhx2,$wx2,$minwx2,$hx3,$minhx3,$wx3,$minwx3);
+// @include media-icons-android($img,$img2,$img3,$img4,$img5,$imgTap,$imgTap2,$imgTap3,$imgTap4,$imgTap5);
+// @include media-inputs-android($img,$img2,$img3,$img4,$img5,$imgTap,$imgTap2,$imgTap3,$imgTap4,$imgTap5);
+// @include media-checkbox-android($img,$img2,$img3,$img4,$img5,$imgTap,$imgTap2,$imgTap3,$imgTap4,$imgTap5);
+// @include media-icons-ios($x1,$hoverx1,$x2,$hoverx2,$x3,$hoverx3);
+// @include media-inputs-ios($x1,$hoverx1,$x2,$hoverx2,$x3,$hoverx3);
+// @include media-checkbox-ios($x1,$hoverx1,$x2,$hoverx2,$x3,$hoverx3);
 

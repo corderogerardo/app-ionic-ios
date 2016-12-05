@@ -52,82 +52,10 @@
     }
 }
 .button-default{
-    border:none !important;
-    background-color: transparent;
-    background-image: url("../img/BotonIniciarSesion/Iniciarsesionmdpi.png") !important;
-    background-size: 100%;
-    background-repeat:no-repeat;
-    color:rgba(white,.7);
-    @media screen and (max-height: 2560px){
-    }
-    @media screen and (max-height: 1920px){
-    }
-    @media screen and (max-height: 1280px){
-    }
-    @media screen and (max-height: 960px){
-    }
-    @media screen and (max-height: 736px){
-    }
-    @media screen and (max-height: 667px){
-    }
-    @media screen and (max-height: 568px){
-    }
-    @media screen and (max-height: 480px){
-        border:none !important;
-        background-color: transparent;
-        background-image: url("../img/BotonIniciarSesion/Iniciarsesionmdpi.png") !important;
-        background-size: 100%;
-        background-repeat:no-repeat;
-        color:rgba(white,.7);
-    }
-    @media screen and (max-height: 320px){
-        border:none !important;
-        background-color: transparent;
-        background-image: url("../img/BotonIniciarSesion/Iniciarsesionmdpi.png") !important;
-        background-size: 100%;
-        background-repeat:no-repeat;
-        color:rgba(white,.7);
-    }
+    color: white !important;
+    @include media-icons-ios("../img/IniciarsesionCrearcuenta/IniciarsesionCrearcuenta.png","../img/IniciarsesionCrearcuentaTAP/IniciarsesionCrearcuenta.png","../img/IniciarsesionCrearcuenta/IniciarsesionCrearcuenta2x.png.png","../img/IniciarsesionCrearcuentaTAP/IniciarsesionCrearcuenta2x.png.png","../img/IniciarsesionCrearcuenta/IniciarsesionCrearcuenta3x.png.png","../img/IniciarsesionCrearcuentaTAP/IniciarsesionCrearcuenta3x.png.png");
     &:hover{
-        border:none !important;
-        background-color: transparent;
-        background-image: url("../img/BotonIniciarSesionTAP/Iniciarsesiontapmdpi.png") !important;
-        background-size: 100%;
-        background-repeat:no-repeat;
-        color:rgba(white,1);
-        font-weight: bold;
-        @media screen and (max-height: 2560px){
-        }
-        @media screen and (max-height: 1920px){
-        }
-        @media screen and (max-height: 1280px){
-        }
-        @media screen and (max-height: 960px){
-        }
-        @media screen and (max-height: 736px){
-        }
-        @media screen and (max-height: 667px){
-        }
-        @media screen and (max-height: 568px){
-        }
-        @media screen and (max-height: 480px){
-            border:none !important;
-            background-color: transparent;
-            background-image: url("../img/BotonIniciarSesionTAP/Iniciarsesiontapmdpi.png") !important;
-            background-size: 100%;
-            background-repeat:no-repeat;
-            color:rgba(white,1);
-            font-weight: bold;
-        }
-        @media screen and (max-height: 320px){
-            border:none !important;
-            background-color: transparent;
-            background-image: url("../img/BotonIniciarSesionTAP/Iniciarsesiontapmdpi.png") !important;
-            background-size: 100%;
-            background-repeat:no-repeat;
-            color:rgba(white,1);
-            font-weight: bold;
-        }
+        color: white;
     }
 }
 .button-default-two{
@@ -153,49 +81,11 @@
     &:hover{
     }
 }
-
 .button-bottom{
-	position:absolute;
-	bottom: 11%;
-    height: 10%;
-    min-height: 10%;
-    margin-left: 10%;
-    padding: 0 !important;
-    min-width: 80%;
-    width: 80%;
-    @media screen and (max-height: 854px){
-        bottom: 20%;
-    }
-    @media screen and (max-height: 736px){
-        bottom: 20%;
-    }
-    @media screen and (max-height: 667px){
-        bottom: 20%;
-    }
-    @media screen and (max-height: 568px){
-        bottom: 20%;
-    }
-    @media screen and (max-height: 480px){
-        bottom: 19%;
-        min-width: 80%;
-        margin-bottom: 1%;
-    }
-    @media screen and (max-height: 320px){
-        bottom: 20%;
-        margin-bottom: 1%;
-        min-width: 80%;
-        width: 80%;
-    }
+    @include absolutebottom(13%,13%,14%);
 }
 .button-bottom-two{
-    position:absolute;
-    bottom: 8%;
-    margin-left: 10%;
-    min-height: 10%;
-    height: 10%;
-    min-width: 80%;
-    padding: 0 !important;
-    width: 80%;
+    @include absolutebottom(3%,4%,4%);
 }
 .button-bottom-three{
     position:absolute;

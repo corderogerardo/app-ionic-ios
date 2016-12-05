@@ -9860,6 +9860,7 @@ ion-content {
   margin: 0;
   padding: 0;
   padding-left: 15% !important;
+  font-size: 2vh !important;
   color: white !important; }
 
 .content-fixed {
@@ -9949,54 +9950,166 @@ ion-content {
       min-width: 100%; } }
 
 .button-default {
+  color: white !important;
   border: none !important;
   background-color: transparent;
-  background-image: url("../img/BotonIniciarSesion/Iniciarsesionmdpi.png") !important;
+  background-image: url("../img/IniciarsesionCrearcuenta/IniciarsesionCrearcuenta.png") !important;
   background-size: 100%;
   background-repeat: no-repeat;
-  color: rgba(255, 255, 255, 0.7); }
+  background-position: center; }
+  @media screen and (max-height: 2560px) {
+    .button-default {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/IniciarsesionCrearcuenta/IniciarsesionCrearcuenta3x.png.png") !important;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 1920px) {
+    .button-default {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/IniciarsesionCrearcuenta/IniciarsesionCrearcuenta3x.png.png") !important;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 1280px) {
+    .button-default {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/IniciarsesionCrearcuenta/IniciarsesionCrearcuenta2x.png.png") !important;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 960px) {
+    .button-default {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/IniciarsesionCrearcuenta/IniciarsesionCrearcuenta2x.png.png") !important;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 736px) {
+    .button-default {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/IniciarsesionCrearcuenta/IniciarsesionCrearcuenta2x.png.png") !important;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 667px) {
+    .button-default {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/IniciarsesionCrearcuenta/IniciarsesionCrearcuenta2x.png.png") !important;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 568px) {
+    .button-default {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/IniciarsesionCrearcuenta/IniciarsesionCrearcuenta.png") !important;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-position: center; } }
   @media screen and (max-height: 480px) {
     .button-default {
       border: none !important;
       background-color: transparent;
-      background-image: url("../img/BotonIniciarSesion/Iniciarsesionmdpi.png") !important;
+      background-image: url("../img/IniciarsesionCrearcuenta/IniciarsesionCrearcuenta.png") !important;
       background-size: 100%;
       background-repeat: no-repeat;
-      color: rgba(255, 255, 255, 0.7); } }
+      background-position: center; } }
   @media screen and (max-height: 320px) {
     .button-default {
       border: none !important;
       background-color: transparent;
-      background-image: url("../img/BotonIniciarSesion/Iniciarsesionmdpi.png") !important;
+      background-image: url("../img/IniciarsesionCrearcuenta/IniciarsesionCrearcuenta.png") !important;
       background-size: 100%;
       background-repeat: no-repeat;
-      color: rgba(255, 255, 255, 0.7); } }
+      background-position: center; } }
   .button-default:hover {
     border: none !important;
     background-color: transparent;
-    background-image: url("../img/BotonIniciarSesionTAP/Iniciarsesiontapmdpi.png") !important;
+    background-image: url("../img/IniciarsesionCrearcuentaTAP/IniciarsesionCrearcuenta.png") !important;
     background-size: 100%;
     background-repeat: no-repeat;
-    color: white;
-    font-weight: bold; }
+    background-position: center; }
+    @media screen and (max-height: 2560px) {
+      .button-default:hover {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/IniciarsesionCrearcuentaTAP/IniciarsesionCrearcuenta3x.png.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 1920px) {
+      .button-default:hover {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/IniciarsesionCrearcuentaTAP/IniciarsesionCrearcuenta3x.png.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 1280px) {
+      .button-default:hover {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/IniciarsesionCrearcuentaTAP/IniciarsesionCrearcuenta2x.png.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 960px) {
+      .button-default:hover {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/IniciarsesionCrearcuentaTAP/IniciarsesionCrearcuenta2x.png.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 736px) {
+      .button-default:hover {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/IniciarsesionCrearcuentaTAP/IniciarsesionCrearcuenta2x.png.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 667px) {
+      .button-default:hover {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/IniciarsesionCrearcuentaTAP/IniciarsesionCrearcuenta2x.png.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 568px) {
+      .button-default:hover {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/IniciarsesionCrearcuentaTAP/IniciarsesionCrearcuenta2x.png.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
     @media screen and (max-height: 480px) {
       .button-default:hover {
         border: none !important;
         background-color: transparent;
-        background-image: url("../img/BotonIniciarSesionTAP/Iniciarsesiontapmdpi.png") !important;
+        background-image: url("../img/IniciarsesionCrearcuentaTAP/IniciarsesionCrearcuenta.png") !important;
         background-size: 100%;
         background-repeat: no-repeat;
-        color: white;
-        font-weight: bold; } }
+        background-position: center; } }
     @media screen and (max-height: 320px) {
       .button-default:hover {
         border: none !important;
         background-color: transparent;
-        background-image: url("../img/BotonIniciarSesionTAP/Iniciarsesiontapmdpi.png") !important;
+        background-image: url("../img/IniciarsesionCrearcuentaTAP/IniciarsesionCrearcuenta.png") !important;
         background-size: 100%;
         background-repeat: no-repeat;
-        color: white;
-        font-weight: bold; } }
+        background-position: center; } }
+  .button-default:hover {
+    color: white; }
 
 .button-default-two {
   border: none !important;
@@ -10019,47 +10132,152 @@ ion-content {
   min-width: 100%; }
 
 .button-bottom {
-  position: absolute;
-  bottom: 11%;
-  height: 10%;
   min-height: 10%;
+  height: 10%;
+  min-width: 80%;
+  width: 80%;
+  position: absolute;
+  bottom: 13%;
   margin-left: 10%;
   padding: 0 !important;
-  min-width: 80%;
   width: 80%; }
-  @media screen and (max-height: 854px) {
+  @media screen and (max-height: 2560px) {
     .button-bottom {
-      bottom: 20%; } }
+      position: absolute;
+      bottom: 14%;
+      margin-left: 10%;
+      padding: 0 !important;
+      width: 80%; } }
+  @media screen and (max-height: 1920px) {
+    .button-bottom {
+      position: absolute;
+      bottom: 14%;
+      margin-left: 10%;
+      padding: 0 !important;
+      width: 80%; } }
+  @media screen and (max-height: 1280px) {
+    .button-bottom {
+      position: absolute;
+      bottom: 14%;
+      margin-left: 10%;
+      padding: 0 !important;
+      width: 80%; } }
+  @media screen and (max-height: 960px) {
+    .button-bottom {
+      position: absolute;
+      bottom: 13%;
+      margin-left: 10%;
+      padding: 0 !important;
+      width: 80%; } }
   @media screen and (max-height: 736px) {
     .button-bottom {
-      bottom: 20%; } }
+      position: absolute;
+      bottom: 13%;
+      margin-left: 10%;
+      padding: 0 !important;
+      width: 80%; } }
   @media screen and (max-height: 667px) {
     .button-bottom {
-      bottom: 20%; } }
+      position: absolute;
+      bottom: 13%;
+      margin-left: 10%;
+      padding: 0 !important;
+      width: 80%; } }
   @media screen and (max-height: 568px) {
     .button-bottom {
-      bottom: 20%; } }
+      position: absolute;
+      bottom: 13%;
+      margin-left: 10%;
+      padding: 0 !important;
+      width: 80%; } }
   @media screen and (max-height: 480px) {
     .button-bottom {
-      bottom: 19%;
-      min-width: 80%;
-      margin-bottom: 1%; } }
+      position: absolute;
+      bottom: 13%;
+      margin-left: 10%;
+      width: 80%;
+      padding: 0 !important; } }
   @media screen and (max-height: 320px) {
     .button-bottom {
-      bottom: 20%;
-      margin-bottom: 1%;
-      min-width: 80%;
+      position: absolute;
+      bottom: 13%;
+      margin-left: 10%;
+      padding: 0 !important;
       width: 80%; } }
 
 .button-bottom-two {
-  position: absolute;
-  bottom: 8%;
-  margin-left: 10%;
   min-height: 10%;
   height: 10%;
   min-width: 80%;
+  width: 80%;
+  position: absolute;
+  bottom: 3%;
+  margin-left: 10%;
   padding: 0 !important;
   width: 80%; }
+  @media screen and (max-height: 2560px) {
+    .button-bottom-two {
+      position: absolute;
+      bottom: 4%;
+      margin-left: 10%;
+      padding: 0 !important;
+      width: 80%; } }
+  @media screen and (max-height: 1920px) {
+    .button-bottom-two {
+      position: absolute;
+      bottom: 4%;
+      margin-left: 10%;
+      padding: 0 !important;
+      width: 80%; } }
+  @media screen and (max-height: 1280px) {
+    .button-bottom-two {
+      position: absolute;
+      bottom: 4%;
+      margin-left: 10%;
+      padding: 0 !important;
+      width: 80%; } }
+  @media screen and (max-height: 960px) {
+    .button-bottom-two {
+      position: absolute;
+      bottom: 4%;
+      margin-left: 10%;
+      padding: 0 !important;
+      width: 80%; } }
+  @media screen and (max-height: 736px) {
+    .button-bottom-two {
+      position: absolute;
+      bottom: 4%;
+      margin-left: 10%;
+      padding: 0 !important;
+      width: 80%; } }
+  @media screen and (max-height: 667px) {
+    .button-bottom-two {
+      position: absolute;
+      bottom: 4%;
+      margin-left: 10%;
+      padding: 0 !important;
+      width: 80%; } }
+  @media screen and (max-height: 568px) {
+    .button-bottom-two {
+      position: absolute;
+      bottom: 4%;
+      margin-left: 10%;
+      padding: 0 !important;
+      width: 80%; } }
+  @media screen and (max-height: 480px) {
+    .button-bottom-two {
+      position: absolute;
+      bottom: 3%;
+      margin-left: 10%;
+      width: 80%;
+      padding: 0 !important; } }
+  @media screen and (max-height: 320px) {
+    .button-bottom-two {
+      position: absolute;
+      bottom: 3%;
+      margin-left: 10%;
+      padding: 0 !important;
+      width: 80%; } }
 
 .button-bottom-three {
   position: absolute;
@@ -10137,261 +10355,560 @@ ion-content {
 .facebook-icon {
   border: none !important;
   background-color: transparent;
-  background-image: url("../img/Iconofacebook/Facebookhdpi.png");
+  background-image: url("../img/Facebook/Page1.png") !important;
   background-size: 100%;
-  background-repeat: no-repeat; }
+  background-repeat: no-repeat;
+  background-position: center;
+  min-height: 40px;
+  height: 40px;
+  min-width: 39px;
+  width: 39px; }
   @media screen and (max-height: 2560px) {
     .facebook-icon {
-      background-image: url("../img/Iconofacebook/Facebookxxxhdpi.png");
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/Facebook/Page13x.png.png") !important;
       background-size: 100%;
-      background-repeat: no-repeat; } }
+      background-repeat: no-repeat;
+      background-position: center; } }
   @media screen and (max-height: 1920px) {
     .facebook-icon {
-      background-image: url("../img/Iconofacebook/Facebookxxhdpi.png");
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/Facebook/Page13x.png.png") !important;
       background-size: 100%;
-      background-repeat: no-repeat; } }
+      background-repeat: no-repeat;
+      background-position: center; } }
   @media screen and (max-height: 1280px) {
     .facebook-icon {
-      background-image: url("../img/Iconofacebook/Facebookxhdpi.png");
-      background-size: 90%;
-      background-repeat: no-repeat; } }
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/Facebook/Page12x.png.png") !important;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-position: center; } }
   @media screen and (max-height: 960px) {
     .facebook-icon {
-      background-image: url("../img/Iconofacebook/Facebookhdpi.png");
-      background-size: 90%;
-      background-repeat: no-repeat; } }
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/Facebook/Page12x.png.png") !important;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-position: center; } }
   @media screen and (max-height: 736px) {
     .facebook-icon {
-      background-image: url("../img/Iconofacebook/Facebookhdpi.png");
-      background-size: 90%;
-      background-repeat: no-repeat; } }
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/Facebook/Page12x.png.png") !important;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-position: center; } }
   @media screen and (max-height: 667px) {
     .facebook-icon {
-      background-image: url("../img/Iconofacebook/Facebookhdpi.png");
-      background-size: 90%;
-      background-repeat: no-repeat; } }
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/Facebook/Page12x.png.png") !important;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-position: center; } }
   @media screen and (max-height: 568px) {
     .facebook-icon {
-      background-image: url("../img/Iconofacebook/Facebookhdpi.png");
-      background-size: 90%;
-      background-repeat: no-repeat; } }
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/Facebook/Page1.png") !important;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-position: center; } }
   @media screen and (max-height: 480px) {
     .facebook-icon {
       border: none !important;
       background-color: transparent;
-      background-image: url("../img/Iconofacebook/Facebookmdpi.png");
-      background-size: 90%;
-      background-repeat: no-repeat; } }
+      background-image: url("../img/Facebook/Page1.png") !important;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-position: center; } }
   @media screen and (max-height: 320px) {
     .facebook-icon {
       border: none !important;
       background-color: transparent;
-      background-image: url("../img/Iconofacebook/Facebookmdpi.png");
-      background-size: 90%;
-      background-repeat: no-repeat; } }
-  @media screen and (max-height: 2560px) {
-    .facebook-icon:hover {
-      background-image: url("../img/IconoFacebookTAP/FacebookTapxxxhdpi.png");
+      background-image: url("../img/Facebook/Page1.png") !important;
       background-size: 100%;
-      background-repeat: no-repeat; } }
+      background-repeat: no-repeat;
+      background-position: center; } }
+  .facebook-icon:hover {
+    border: none !important;
+    background-color: transparent;
+    background-image: url("../img/FacebookTAP/Facebook.png") !important;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center; }
+    @media screen and (max-height: 2560px) {
+      .facebook-icon:hover {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/FacebookTAP/Facebook3x.png.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 1920px) {
+      .facebook-icon:hover {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/FacebookTAP/Facebook3x.png.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 1280px) {
+      .facebook-icon:hover {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/FacebookTAP/Facebook2x.png.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 960px) {
+      .facebook-icon:hover {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/FacebookTAP/Facebook2x.png.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 736px) {
+      .facebook-icon:hover {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/FacebookTAP/Facebook2x.png.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 667px) {
+      .facebook-icon:hover {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/FacebookTAP/Facebook2x.png.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 568px) {
+      .facebook-icon:hover {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/FacebookTAP/Facebook2x.png.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 480px) {
+      .facebook-icon:hover {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/FacebookTAP/Facebook.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 320px) {
+      .facebook-icon:hover {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/FacebookTAP/Facebook.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+  @media screen and (max-height: 2560px) {
+    .facebook-icon {
+      min-height: 60px;
+      height: 60px;
+      min-width: 59px;
+      width: 59px; } }
   @media screen and (max-height: 1920px) {
-    .facebook-icon:hover {
-      background-image: url("../img/IconoFacebookTAP/FacebookTapxxhdpi.png");
-      background-size: 90%;
-      background-repeat: no-repeat; } }
+    .facebook-icon {
+      min-height: 60px;
+      height: 60px;
+      min-width: 59px;
+      width: 59px; } }
   @media screen and (max-height: 1280px) {
-    .facebook-icon:hover {
-      background-image: url("../img/IconoFacebookTAP/FacebookTapxhdpi.png");
-      background-size: 90%;
-      background-repeat: no-repeat; } }
+    .facebook-icon {
+      min-height: 50px;
+      height: 50px;
+      min-width: 49px;
+      width: 49px; } }
   @media screen and (max-height: 960px) {
-    .facebook-icon:hover {
-      background-image: url("../img/IconoFacebookTAP/FacebookTaphdpi.png");
-      background-size: 90%;
-      background-repeat: no-repeat; } }
+    .facebook-icon {
+      min-height: 60px;
+      height: 60px;
+      min-width: 59px;
+      width: 59px; } }
   @media screen and (max-height: 736px) {
-    .facebook-icon:hover {
-      background-image: url("../img/IconoFacebookTAP/FacebookTaphdpi.png");
-      background-size: 90%;
-      background-repeat: no-repeat; } }
+    .facebook-icon {
+      min-height: 50px;
+      height: 50px;
+      min-width: 49px;
+      width: 49px; } }
   @media screen and (max-height: 667px) {
-    .facebook-icon:hover {
-      background-image: url("../img/IconoFacebookTAP/FacebookTaphdpi.png");
-      background-size: 90%;
-      background-repeat: no-repeat; } }
+    .facebook-icon {
+      min-height: 50px;
+      height: 50px;
+      min-width: 49px;
+      width: 49px; } }
   @media screen and (max-height: 568px) {
-    .facebook-icon:hover {
-      background-image: url("../img/IconoFacebookTAP/FacebookTaphdpi.png");
-      background-size: 90%;
-      background-repeat: no-repeat; } }
+    .facebook-icon {
+      min-height: 40px;
+      height: 40px;
+      min-width: 39px;
+      width: 39px; } }
   @media screen and (max-height: 480px) {
-    .facebook-icon:hover {
-      border: none !important;
-      background-color: transparent;
-      background-image: url("../img/IconoFacebookTAP/FacebookTapmdpi.png");
-      background-size: 90%;
-      background-repeat: no-repeat; } }
+    .facebook-icon {
+      min-height: 40px;
+      height: 40px;
+      min-width: 39px;
+      width: 39px; } }
   @media screen and (max-height: 320px) {
-    .facebook-icon:hover {
-      border: none !important;
-      background-color: transparent;
-      background-image: url("../img/IconoFacebookTAP/FacebookTapmdpi.png");
-      background-size: 90%;
-      background-repeat: no-repeat; } }
+    .facebook-icon {
+      min-height: 40px;
+      height: 40px;
+      min-width: 39px;
+      width: 39px; } }
 
 .google-icon {
   border: none !important;
   background-color: transparent;
-  background-image: url("../img/IconoGoogle/Googlemdpi.png");
-  background-size: 90%;
-  background-repeat: no-repeat; }
+  background-image: url("../img/Google/Google.png") !important;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  min-height: 40px;
+  height: 40px;
+  min-width: 39px;
+  width: 39px; }
   @media screen and (max-height: 2560px) {
     .google-icon {
-      background-image: url("../img/IconoGoogle/Googlexxxhdpi.png");
-      background-size: 90%;
-      background-repeat: no-repeat; } }
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/Google/Google3x.png.png") !important;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-position: center; } }
   @media screen and (max-height: 1920px) {
     .google-icon {
-      background-image: url("../img/IconoGoogle/Googlexxhdpi.png");
-      background-size: 90%;
-      background-repeat: no-repeat; } }
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/Google/Google3x.png.png") !important;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-position: center; } }
   @media screen and (max-height: 1280px) {
     .google-icon {
-      background-image: url("../img/IconoGoogle/Googlexhdpi.png");
-      background-size: 90%;
-      background-repeat: no-repeat; } }
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/Google/Google2x.png.png") !important;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-position: center; } }
   @media screen and (max-height: 960px) {
     .google-icon {
-      background-image: url("../img/IconoGoogle/Googlehdpi.png");
-      background-size: 90%;
-      background-repeat: no-repeat; } }
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/Google/Google2x.png.png") !important;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-position: center; } }
   @media screen and (max-height: 736px) {
     .google-icon {
-      background-image: url("../img/IconoGoogle/Googlehdpi.png");
-      background-size: 90%;
-      background-repeat: no-repeat; } }
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/Google/Google2x.png.png") !important;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-position: center; } }
   @media screen and (max-height: 667px) {
     .google-icon {
-      background-image: url("../img/IconoGoogle/Googlehdpi.png");
-      background-size: 90%;
-      background-repeat: no-repeat; } }
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/Google/Google2x.png.png") !important;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-position: center; } }
   @media screen and (max-height: 568px) {
     .google-icon {
-      background-image: url("../img/IconoGoogle/Googlehdpi.png");
-      background-size: 90%;
-      background-repeat: no-repeat; } }
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/Google/Google.png") !important;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-position: center; } }
   @media screen and (max-height: 480px) {
     .google-icon {
       border: none !important;
       background-color: transparent;
-      background-image: url("../img/IconoGoogle/Googlemdpi.png");
-      background-size: 90%;
-      background-repeat: no-repeat; } }
+      background-image: url("../img/Google/Google.png") !important;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-position: center; } }
   @media screen and (max-height: 320px) {
     .google-icon {
       border: none !important;
       background-color: transparent;
-      background-image: url("../img/IconoGoogle/Googlemdpi.png");
-      background-size: 90%;
-      background-repeat: no-repeat; } }
+      background-image: url("../img/Google/Google.png") !important;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  .google-icon:hover {
+    border: none !important;
+    background-color: transparent;
+    background-image: url("../img/GoogleTAP/Google.png") !important;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center; }
+    @media screen and (max-height: 2560px) {
+      .google-icon:hover {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/GoogleTAP/Google3x.png.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 1920px) {
+      .google-icon:hover {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/GoogleTAP/Google3x.png.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 1280px) {
+      .google-icon:hover {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/GoogleTAP/Google2x.png.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 960px) {
+      .google-icon:hover {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/GoogleTAP/Google2x.png.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 736px) {
+      .google-icon:hover {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/GoogleTAP/Google2x.png.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 667px) {
+      .google-icon:hover {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/GoogleTAP/Google2x.png.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 568px) {
+      .google-icon:hover {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/GoogleTAP/Google2x.png.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 480px) {
+      .google-icon:hover {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/GoogleTAP/Google.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 320px) {
+      .google-icon:hover {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/GoogleTAP/Google.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
   @media screen and (max-height: 2560px) {
-    .google-icon:hover {
-      border: none !important;
-      background-color: transparent;
-      background-image: url("../img/IconoGoogleTAP/GoogleTapxxxhdpi.png");
-      background-size: 90%;
-      background-repeat: no-repeat; } }
+    .google-icon {
+      min-height: 60px;
+      height: 60px;
+      min-width: 59px;
+      width: 59px; } }
   @media screen and (max-height: 1920px) {
-    .google-icon:hover {
-      background-image: url("../img/IconoGoogleTAP/GoogleTapxxhdpi.png");
-      background-size: 90%;
-      background-repeat: no-repeat; } }
+    .google-icon {
+      min-height: 60px;
+      height: 60px;
+      min-width: 59px;
+      width: 59px; } }
   @media screen and (max-height: 1280px) {
-    .google-icon:hover {
-      background-image: url("../img/IconoGoogleTAP/GoogleTapxhdpi.png");
-      background-size: 90%;
-      background-repeat: no-repeat; } }
+    .google-icon {
+      min-height: 50px;
+      height: 50px;
+      min-width: 49px;
+      width: 49px; } }
   @media screen and (max-height: 960px) {
-    .google-icon:hover {
-      background-image: url("../img/IconoGoogleTAP/GoogleTaphdpi.png");
-      background-size: 90%;
-      background-repeat: no-repeat; } }
+    .google-icon {
+      min-height: 60px;
+      height: 60px;
+      min-width: 59px;
+      width: 59px; } }
   @media screen and (max-height: 736px) {
-    .google-icon:hover {
-      background-image: url("../img/IconoGoogleTAP/GoogleTaphdpi.png");
-      background-size: 90%;
-      background-repeat: no-repeat; } }
+    .google-icon {
+      min-height: 50px;
+      height: 50px;
+      min-width: 49px;
+      width: 49px; } }
   @media screen and (max-height: 667px) {
-    .google-icon:hover {
-      background-image: url("../img/IconoGoogleTAP/GoogleTaphdpi.png");
-      background-size: 90%;
-      background-repeat: no-repeat; } }
+    .google-icon {
+      min-height: 50px;
+      height: 50px;
+      min-width: 49px;
+      width: 49px; } }
   @media screen and (max-height: 568px) {
-    .google-icon:hover {
-      background-image: url("../img/IconoGoogleTAP/GoogleTaphdpi.png");
-      background-size: 90%;
-      background-repeat: no-repeat; } }
+    .google-icon {
+      min-height: 40px;
+      height: 40px;
+      min-width: 39px;
+      width: 39px; } }
   @media screen and (max-height: 480px) {
-    .google-icon:hover {
-      border: none !important;
-      background-color: transparent;
-      background-image: url("../img/IconoGoogleTAP/GoogleTapmdpi.png");
-      background-size: 90%;
-      background-repeat: no-repeat; } }
+    .google-icon {
+      min-height: 40px;
+      height: 40px;
+      min-width: 39px;
+      width: 39px; } }
   @media screen and (max-height: 320px) {
-    .google-icon:hover {
-      border: none !important;
-      background-color: transparent;
-      background-image: url("../img/IconoGoogleTAP/GoogleTapmdpi.png");
-      background-size: 90%;
-      background-repeat: no-repeat; } }
+    .google-icon {
+      min-height: 40px;
+      height: 40px;
+      min-width: 39px;
+      width: 39px; } }
 
 /* shapes Use mode:
  * .class {@include circle(200px,black);display:block}
 	.class {@include triangle(100px, right, red);display:block}
  */
 ion-slide {
-  min-height: 180px; }
+  min-height: 180px;
+  height: 180px;
+  min-width: auto;
+  width: auto; }
+  @media screen and (max-height: 2560px) {
+    ion-slide {
+      min-height: 250px;
+      height: 250px;
+      min-width: auto;
+      width: auto; } }
+  @media screen and (max-height: 1920px) {
+    ion-slide {
+      min-height: 250px;
+      height: 250px;
+      min-width: auto;
+      width: auto; } }
+  @media screen and (max-height: 1280px) {
+    ion-slide {
+      min-height: 200px;
+      height: 200px;
+      min-width: auto;
+      width: auto; } }
+  @media screen and (max-height: 960px) {
+    ion-slide {
+      min-height: 250px;
+      height: 250px;
+      min-width: auto;
+      width: auto; } }
+  @media screen and (max-height: 736px) {
+    ion-slide {
+      min-height: 200px;
+      height: 200px;
+      min-width: auto;
+      width: auto; } }
+  @media screen and (max-height: 667px) {
+    ion-slide {
+      min-height: 200px;
+      height: 200px;
+      min-width: auto;
+      width: auto; } }
+  @media screen and (max-height: 568px) {
+    ion-slide {
+      min-height: 170px;
+      height: 170px;
+      min-width: auto;
+      width: auto; } }
+  @media screen and (max-height: 480px) {
+    ion-slide {
+      min-height: 170px;
+      height: 170px;
+      min-width: auto;
+      width: auto; } }
   @media screen and (max-height: 320px) {
     ion-slide {
-      min-height: 170px; } }
+      min-height: 170px;
+      height: 170px;
+      min-width: auto;
+      width: auto; } }
 
 .space-welcome {
-  height: 20%; }
+  min-height: 25%;
+  height: 25%;
+  min-width: 100%;
+  width: 100%; }
+  @media screen and (max-height: 2560px) {
+    .space-welcome {
+      min-height: 35%;
+      height: 35%;
+      min-width: 100%;
+      width: 100%; } }
+  @media screen and (max-height: 1920px) {
+    .space-welcome {
+      min-height: 35%;
+      height: 35%;
+      min-width: 100%;
+      width: 100%; } }
+  @media screen and (max-height: 1280px) {
+    .space-welcome {
+      min-height: 30%;
+      height: 30%;
+      min-width: 100%;
+      width: 100%; } }
   @media screen and (max-height: 960px) {
     .space-welcome {
-      height: 40%; } }
+      min-height: 35%;
+      height: 35%;
+      min-width: 100%;
+      width: 100%; } }
   @media screen and (max-height: 736px) {
     .space-welcome {
-      height: 37%; } }
+      min-height: 30%;
+      height: 30%;
+      min-width: 100%;
+      width: 100%; } }
   @media screen and (max-height: 667px) {
     .space-welcome {
-      height: 35%; } }
+      min-height: 30%;
+      height: 30%;
+      min-width: 100%;
+      width: 100%; } }
   @media screen and (max-height: 568px) {
     .space-welcome {
-      height: 35%; } }
+      min-height: 25%;
+      height: 25%;
+      min-width: 100%;
+      width: 100%; } }
   @media screen and (max-height: 480px) {
     .space-welcome {
-      height: 25%; } }
+      min-height: 25%;
+      height: 25%;
+      min-width: 100%;
+      width: 100%; } }
   @media screen and (max-height: 320px) {
     .space-welcome {
-      min-height: 40px;
-      height: 40px; } }
-
-.space-welcome-buttons {
-  height: 20%; }
-  @media screen and (max-height: 736px) {
-    .space-welcome-buttons {
-      height: 30%; } }
-  @media screen and (max-height: 667px) {
-    .space-welcome-buttons {
-      height: 30%; } }
-  @media screen and (max-height: 568px) {
-    .space-welcome-buttons {
-      height: 30%; } }
-  @media screen and (max-height: 480px) {
-    .space-welcome-buttons {
-      height: 30%; } }
+      min-height: 25%;
+      height: 25%;
+      min-width: 100%;
+      width: 100%; } }
 
 .welcome-title {
   font-size: 30px;
@@ -10401,15 +10918,6 @@ ion-slide {
 .welcome-info {
   font-size: 2vh !important;
   color: white; }
-
-.welcome-dots {
-  align-items: center;
-  display: flex;
-  height: 5%;
-  flex-direction: column;
-  justify-content: center;
-  margin-bottom: 5%;
-  width: 100%; }
 
 .slider-pager-page {
   color: white !important; }
@@ -10427,44 +10935,640 @@ ion-slide {
   width: 100%; }
 
 .input-email {
-  background-image: url("../img/CorreoElectronico/CorreoElectronicomdpi.png");
+  border: none !important;
+  background-color: transparent;
+  background-image: url("../img/Correoelectronico/Correoelectronico.png") !important;
   background-size: 100%;
-  background-repeat: no-repeat; }
+  background-repeat: no-repeat;
+  background-position: center; }
+  @media screen and (max-height: 2560px) {
+    .input-email {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/Correoelectronico/Correoelectronico3x.png.png") !important;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 1920px) {
+    .input-email {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/Correoelectronico/Correoelectronico3x.png.png") !important;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 1280px) {
+    .input-email {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/Correoelectronico/Correoelectronico2x.png.png") !important;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 960px) {
+    .input-email {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/Correoelectronico/Correoelectronico2x.png.png") !important;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 736px) {
+    .input-email {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/Correoelectronico/Correoelectronico2x.png.png") !important;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 667px) {
+    .input-email {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/Correoelectronico/Correoelectronico2x.png.png") !important;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 568px) {
+    .input-email {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/Correoelectronico/Correoelectronico.png") !important;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 480px) {
+    .input-email {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/Correoelectronico/Correoelectronico.png") !important;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 320px) {
+    .input-email {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/Correoelectronico/Correoelectronico.png") !important;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-position: center; } }
   .input-email:focus {
-    background-image: url("../img/CorreoElectronicoTAP/CorreoElectronicomdpi.png");
+    border: none !important;
+    background-color: transparent;
+    background-image: url("../img/CorreoelectronicoTAP/Correoelectronico.png") !important;
     background-size: 100%;
-    background-repeat: no-repeat; }
+    background-repeat: no-repeat;
+    background-position: center; }
+    @media screen and (max-height: 2560px) {
+      .input-email:focus {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/CorreoelectronicoTAP/Correoelectronico3x.png.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 1920px) {
+      .input-email:focus {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/CorreoelectronicoTAP/Correoelectronico3x.png.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 1280px) {
+      .input-email:focus {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/CorreoelectronicoTAP/Correoelectronico2x.png.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 960px) {
+      .input-email:focus {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/CorreoelectronicoTAP/Correoelectronico2x.png.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 736px) {
+      .input-email:focus {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/CorreoelectronicoTAP/Correoelectronico2x.png.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 667px) {
+      .input-email:focus {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/CorreoelectronicoTAP/Correoelectronico2x.png.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 568px) {
+      .input-email:focus {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/CorreoelectronicoTAP/Correoelectronico2x.png.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 480px) {
+      .input-email:focus {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/CorreoelectronicoTAP/Correoelectronico.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 320px) {
+      .input-email:focus {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/CorreoelectronicoTAP/Correoelectronico.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
 
 .input-pass {
-  background-image: url("../img/Contrasena/Contrasenamdpi.png");
+  border: none !important;
+  background-color: transparent;
+  background-image: url("../img/Contrasena/Contrasena.png") !important;
   background-size: 100%;
-  background-repeat: no-repeat; }
+  background-repeat: no-repeat;
+  background-position: center; }
+  @media screen and (max-height: 2560px) {
+    .input-pass {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/Contrasena/Contrasena3x.png.png") !important;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 1920px) {
+    .input-pass {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/Contrasena/Contrasena3x.png.png") !important;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 1280px) {
+    .input-pass {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/Contrasena/Contrasena2x.png.png") !important;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 960px) {
+    .input-pass {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/Contrasena/Contrasena2x.png.png") !important;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 736px) {
+    .input-pass {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/Contrasena/Contrasena2x.png.png") !important;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 667px) {
+    .input-pass {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/Contrasena/Contrasena2x.png.png") !important;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 568px) {
+    .input-pass {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/Contrasena/Contrasena.png") !important;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 480px) {
+    .input-pass {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/Contrasena/Contrasena.png") !important;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 320px) {
+    .input-pass {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/Contrasena/Contrasena.png") !important;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-position: center; } }
   .input-pass:focus {
-    background-image: url("../img/ContrasenaTAP/Contrasenamdpi.png");
+    border: none !important;
+    background-color: transparent;
+    background-image: url("../img/ContrasenaTAP/Contrasena.png") !important;
     background-size: 100%;
-    background-repeat: no-repeat; }
+    background-repeat: no-repeat;
+    background-position: center; }
+    @media screen and (max-height: 2560px) {
+      .input-pass:focus {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/ContrasenaTAP/Contrasena3x.png.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 1920px) {
+      .input-pass:focus {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/ContrasenaTAP/Contrasena3x.png.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 1280px) {
+      .input-pass:focus {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/ContrasenaTAP/Contrasena2x.png.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 960px) {
+      .input-pass:focus {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/ContrasenaTAP/Contrasena2x.png.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 736px) {
+      .input-pass:focus {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/ContrasenaTAP/Contrasena2x.png.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 667px) {
+      .input-pass:focus {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/ContrasenaTAP/Contrasena2x.png.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 568px) {
+      .input-pass:focus {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/ContrasenaTAP/Contrasena2x.png.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 480px) {
+      .input-pass:focus {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/ContrasenaTAP/Contrasena.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 320px) {
+      .input-pass:focus {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/ContrasenaTAP/Contrasena.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
 
 .input-user {
-  background-image: url("../img/Usuario/Usuariohdpi.png");
+  border: none !important;
+  background-color: transparent;
+  background-image: url("../img/Nombredeusuario/Nombredeusuario.png") !important;
   background-size: 100%;
   background-repeat: no-repeat;
   background-position: center; }
+  @media screen and (max-height: 2560px) {
+    .input-user {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/Nombredeusuario/Nombredeusuario3x.png.png") !important;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 1920px) {
+    .input-user {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/Nombredeusuario/Nombredeusuario3x.png.png") !important;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 1280px) {
+    .input-user {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/Nombredeusuario/Nombredeusuario2x.png.png") !important;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 960px) {
+    .input-user {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/Nombredeusuario/Nombredeusuario2x.png.png") !important;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 736px) {
+    .input-user {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/Nombredeusuario/Nombredeusuario2x.png.png") !important;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 667px) {
+    .input-user {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/Nombredeusuario/Nombredeusuario2x.png.png") !important;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 568px) {
+    .input-user {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/Nombredeusuario/Nombredeusuario.png") !important;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 480px) {
+    .input-user {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/Nombredeusuario/Nombredeusuario.png") !important;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 320px) {
+    .input-user {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/Nombredeusuario/Nombredeusuario.png") !important;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-position: center; } }
   .input-user:focus {
-    background-image: url("../img/UsuarioTAP/Usuariohdpi.png");
+    border: none !important;
+    background-color: transparent;
+    background-image: url("../img/NombredeusuarioTAP/Nombredeusuario.png") !important;
     background-size: 100%;
     background-repeat: no-repeat;
     background-position: center; }
+    @media screen and (max-height: 2560px) {
+      .input-user:focus {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/NombredeusuarioTAP/Nombredeusuario3x.png.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 1920px) {
+      .input-user:focus {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/NombredeusuarioTAP/Nombredeusuario3x.png.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 1280px) {
+      .input-user:focus {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/NombredeusuarioTAP/Nombredeusuario2x.png.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 960px) {
+      .input-user:focus {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/NombredeusuarioTAP/Nombredeusuario2x.png.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 736px) {
+      .input-user:focus {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/NombredeusuarioTAP/Nombredeusuario2x.png.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 667px) {
+      .input-user:focus {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/NombredeusuarioTAP/Nombredeusuario2x.png.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 568px) {
+      .input-user:focus {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/NombredeusuarioTAP/Nombredeusuario2x.png.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 480px) {
+      .input-user:focus {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/NombredeusuarioTAP/Nombredeusuario.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 320px) {
+      .input-user:focus {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/NombredeusuarioTAP/Nombredeusuario.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
 
 .input-phone {
-  background-image: url("../img/Telefono/Telefonohdpi.png");
+  border: none !important;
+  background-color: transparent;
+  background-image: url("../img/Telefono/Telefono.png") !important;
   background-size: 100%;
   background-repeat: no-repeat;
   background-position: center; }
+  @media screen and (max-height: 2560px) {
+    .input-phone {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/Telefono/Telefono3x.png.png") !important;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 1920px) {
+    .input-phone {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/Telefono/Telefono3x.png.png") !important;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 1280px) {
+    .input-phone {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/Telefono/Telefono2x.png.png") !important;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 960px) {
+    .input-phone {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/Telefono/Telefono2x.png.png") !important;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 736px) {
+    .input-phone {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/Telefono/Telefono2x.png.png") !important;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 667px) {
+    .input-phone {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/Telefono/Telefono2x.png.png") !important;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 568px) {
+    .input-phone {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/Telefono/Telefono.png") !important;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 480px) {
+    .input-phone {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/Telefono/Telefono.png") !important;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 320px) {
+    .input-phone {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/Telefono/Telefono.png") !important;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-position: center; } }
   .input-phone:focus {
-    background-image: url("../img/TelefonoTAP/Telefonohdpi.png");
+    border: none !important;
+    background-color: transparent;
+    background-image: url("../img/TelefonoTAP/Telefono.png") !important;
     background-size: 100%;
     background-repeat: no-repeat;
     background-position: center; }
+    @media screen and (max-height: 2560px) {
+      .input-phone:focus {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/TelefonoTAP/Telefono3x.png.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 1920px) {
+      .input-phone:focus {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/TelefonoTAP/Telefono3x.png.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 1280px) {
+      .input-phone:focus {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/TelefonoTAP/Telefono2x.png.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 960px) {
+      .input-phone:focus {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/TelefonoTAP/Telefono2x.png.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 736px) {
+      .input-phone:focus {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/TelefonoTAP/Telefono2x.png.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 667px) {
+      .input-phone:focus {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/TelefonoTAP/Telefono2x.png.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 568px) {
+      .input-phone:focus {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/TelefonoTAP/Telefono2x.png.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 480px) {
+      .input-phone:focus {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/TelefonoTAP/Telefono.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 320px) {
+      .input-phone:focus {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/TelefonoTAP/Telefono.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
 
 .register-container {
   display: -webkit-box;
@@ -10558,11 +11662,61 @@ ion-slide {
 
 .item-input {
   background-color: transparent;
-  margin-bottom: 2%;
-  height: 45px !important;
-  min-height: 45px !important;
-  min-width: 80%;
-  width: 80%; }
+  margin-bottom: 2%; }
+  @media screen and (max-height: 2560px) {
+    .item-input {
+      min-height: 90px !important;
+      height: 90px !important;
+      min-width: 80%;
+      width: 80%; } }
+  @media screen and (max-height: 1920px) {
+    .item-input {
+      min-height: 90px !important;
+      height: 90px !important;
+      min-width: 80%;
+      width: 80%; } }
+  @media screen and (max-height: 1280px) {
+    .item-input {
+      min-height: 60px !important;
+      height: 60px !important;
+      min-width: 80%;
+      width: 80%; } }
+  @media screen and (max-height: 960px) {
+    .item-input {
+      min-height: 90px !important;
+      height: 90px !important;
+      min-width: 80%;
+      width: 80%; } }
+  @media screen and (max-height: 736px) {
+    .item-input {
+      min-height: 60px !important;
+      height: 60px !important;
+      min-width: 80%;
+      width: 80%; } }
+  @media screen and (max-height: 667px) {
+    .item-input {
+      min-height: 60px !important;
+      height: 60px !important;
+      min-width: 80%;
+      width: 80%; } }
+  @media screen and (max-height: 568px) {
+    .item-input {
+      min-height: 46px !important;
+      height: 46px !important;
+      min-width: 80%;
+      width: 80%; } }
+  @media screen and (max-height: 480px) {
+    .item-input {
+      min-height: 46px !important;
+      height: 46px !important;
+      min-width: 80%;
+      width: 80%; } }
+  @media screen and (max-height: 320px) {
+    .item-input {
+      min-height: 46px !important;
+      height: 46px !important;
+      min-width: 80%;
+      width: 80%; } }
 
 .register-line {
   border-bottom: 1px solid white;
@@ -10572,7 +11726,7 @@ ion-slide {
 
 .register-create {
   text-align: center;
-  font-size: 12px;
+  font-size: 3vh;
   color: white; }
 
 .register-social-buttons {
@@ -10595,49 +11749,7 @@ ion-slide {
   width: 100%; }
   .register-social-buttons a {
     background-color: transparent;
-    color: white;
-    height: 44px;
-    width: 44px; }
-    @media screen and (max-height: 2560px) {
-      .register-social-buttons a {
-        height: 176px;
-        width: 176px; } }
-    @media screen and (max-height: 1920px) {
-      .register-social-buttons a {
-        height: 132px;
-        width: 132px; } }
-    @media screen and (max-height: 1280px) {
-      .register-social-buttons a {
-        height: 88px;
-        width: 88px; } }
-    @media screen and (max-height: 960px) {
-      .register-social-buttons a {
-        height: 66px;
-        width: 66px; } }
-    @media screen and (max-height: 736px) {
-      .register-social-buttons a {
-        height: 66px;
-        width: 66px; } }
-    @media screen and (max-height: 667px) {
-      .register-social-buttons a {
-        height: 66px;
-        width: 66px; } }
-    @media screen and (max-height: 568px) {
-      .register-social-buttons a {
-        height: 66px;
-        width: 66px; } }
-    @media screen and (max-height: 480px) {
-      .register-social-buttons a {
-        height: 44px;
-        width: 44px; } }
-    @media screen and (max-height: 320px) {
-      .register-social-buttons a {
-        height: 44px;
-        width: 44px; } }
-  .register-social-buttons:hover {
-    background-color: transparent; }
-  .register-social-buttons:active {
-    background-color: transparent; }
+    color: white; }
 
 .register-term {
   display: -webkit-box;
@@ -10665,14 +11777,52 @@ ion-slide {
   border: none !important;
   background-color: transparent !important;
   padding-left: 0;
-  color: white !important;
-  font-size: 10px;
+  color: #8fd6ed !important;
+  font-size: 2vh;
+  font-weight: 200;
   text-decoration: none;
   height: 20px !important;
   min-height: 20px !important;
   min-width: 80% !important;
   width: 80%; }
   .register-term span {
+    color: #8fd6ed; }
+
+.forgot-pass {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-direction: normal;
+  -webkit-box-orient: horizontal;
+  -webkit-flex-direction: row;
+  -moz-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  justify-content: center;
+  border: none !important;
+  background-color: transparent !important;
+  padding-left: 0;
+  color: white !important;
+  font-size: 2vh;
+  font-weight: 200;
+  text-decoration: none;
+  height: 20px !important;
+  min-height: 20px !important;
+  min-width: 80% !important;
+  width: 80%; }
+  .forgot-pass span {
     color: #8fd6ed; }
 
 .register-login {
@@ -12706,7 +13856,7 @@ ion-slide {
       background-repeat: no-repeat;
       background-position: center; } }
   @media screen and (max-height: 2560px) {
-    .input-diligence-destinatary:hover {
+    .input-diligence-destinatary:focus {
       border: none !important;
       background-color: transparent;
       background-image: url("../img/NombrededestinatarioDiligencias/Destinatariodiligenciaxxxhdpi.png");
@@ -12714,7 +13864,7 @@ ion-slide {
       background-repeat: no-repeat;
       background-position: center; } }
   @media screen and (max-height: 1920px) {
-    .input-diligence-destinatary:hover {
+    .input-diligence-destinatary:focus {
       border: none !important;
       background-color: transparent;
       background-image: url("../img/NombrededestinatarioDiligencias/Destinatariodiligenciaxxxhdpi.png");
@@ -12722,7 +13872,7 @@ ion-slide {
       background-repeat: no-repeat;
       background-position: center; } }
   @media screen and (max-height: 1280px) {
-    .input-diligence-destinatary:hover {
+    .input-diligence-destinatary:focus {
       border: none !important;
       background-color: transparent;
       background-image: url("../img/NombrededestinatarioDiligencias/Destinatariodiligenciaxxhdpi.png");
@@ -12730,7 +13880,7 @@ ion-slide {
       background-repeat: no-repeat;
       background-position: center; } }
   @media screen and (max-height: 960px) {
-    .input-diligence-destinatary:hover {
+    .input-diligence-destinatary:focus {
       border: none !important;
       background-color: transparent;
       background-image: url("../img/NombrededestinatarioDiligencias/Destinatariodiligenciaxhdpi.png");
@@ -12738,7 +13888,7 @@ ion-slide {
       background-repeat: no-repeat;
       background-position: center; } }
   @media screen and (max-height: 736px) {
-    .input-diligence-destinatary:hover {
+    .input-diligence-destinatary:focus {
       border: none !important;
       background-color: transparent;
       background-image: url("../img/NombrededestinatarioDiligencias/Destinatariodiligenciaxhdpi.png");
@@ -12746,7 +13896,7 @@ ion-slide {
       background-repeat: no-repeat;
       background-position: center; } }
   @media screen and (max-height: 667px) {
-    .input-diligence-destinatary:hover {
+    .input-diligence-destinatary:focus {
       border: none !important;
       background-color: transparent;
       background-image: url("../img/NombrededestinatarioDiligencias/Destinatariodiligenciaxhdpi.png");
@@ -12754,7 +13904,7 @@ ion-slide {
       background-repeat: no-repeat;
       background-position: center; } }
   @media screen and (max-height: 568px) {
-    .input-diligence-destinatary:hover {
+    .input-diligence-destinatary:focus {
       border: none !important;
       background-color: transparent;
       background-image: url("../img/NombrededestinatarioDiligencias/Destinatariodiligenciaxhdpi.png");
@@ -12762,7 +13912,7 @@ ion-slide {
       background-repeat: no-repeat;
       background-position: center; } }
   @media screen and (max-height: 480px) {
-    .input-diligence-destinatary:hover {
+    .input-diligence-destinatary:focus {
       border: none !important;
       background-color: transparent;
       background-image: url("../img/NombrededestinatarioDiligencias/Destinatariodiligenciaxhdpi.png");
@@ -12770,7 +13920,7 @@ ion-slide {
       background-repeat: no-repeat;
       background-position: center; } }
   @media screen and (max-height: 320px) {
-    .input-diligence-destinatary:hover {
+    .input-diligence-destinatary:focus {
       border: none !important;
       background-color: transparent;
       background-image: url("../img/NombrededestinatarioDiligencias/Destinatariodiligenciamdpi.png");
@@ -12859,7 +14009,7 @@ ion-slide {
       background-repeat: no-repeat;
       background-position: center; } }
   @media screen and (max-height: 2560px) {
-    .input-diligence-phone:hover {
+    .input-diligence-phone:focus {
       border: none !important;
       background-color: transparent;
       background-image: url("../img/TelefonodestinatarioDiligencia/Telefonodestinatariodiligenciaxxxhdpi.png");
@@ -12867,7 +14017,7 @@ ion-slide {
       background-repeat: no-repeat;
       background-position: center; } }
   @media screen and (max-height: 1920px) {
-    .input-diligence-phone:hover {
+    .input-diligence-phone:focus {
       border: none !important;
       background-color: transparent;
       background-image: url("../img/TelefonodestinatarioDiligencia/Telefonodestinatariodiligenciaxxxhdpi.png");
@@ -12875,7 +14025,7 @@ ion-slide {
       background-repeat: no-repeat;
       background-position: center; } }
   @media screen and (max-height: 1280px) {
-    .input-diligence-phone:hover {
+    .input-diligence-phone:focus {
       border: none !important;
       background-color: transparent;
       background-image: url("../img/TelefonodestinatarioDiligencia/Telefonodestinatariodiligenciaxxhdpi.png");
@@ -12883,7 +14033,7 @@ ion-slide {
       background-repeat: no-repeat;
       background-position: center; } }
   @media screen and (max-height: 960px) {
-    .input-diligence-phone:hover {
+    .input-diligence-phone:focus {
       border: none !important;
       background-color: transparent;
       background-image: url("../img/TelefonodestinatarioDiligencia/Telefonodestinatariodiligenciaxhdpi.png");
@@ -12891,7 +14041,7 @@ ion-slide {
       background-repeat: no-repeat;
       background-position: center; } }
   @media screen and (max-height: 736px) {
-    .input-diligence-phone:hover {
+    .input-diligence-phone:focus {
       border: none !important;
       background-color: transparent;
       background-image: url("../img/TelefonodestinatarioDiligencia/Telefonodestinatariodiligenciaxhdpi.png");
@@ -12899,7 +14049,7 @@ ion-slide {
       background-repeat: no-repeat;
       background-position: center; } }
   @media screen and (max-height: 667px) {
-    .input-diligence-phone:hover {
+    .input-diligence-phone:focus {
       border: none !important;
       background-color: transparent;
       background-image: url("../img/TelefonodestinatarioDiligencia/Telefonodestinatariodiligenciaxhdpi.png");
@@ -12907,7 +14057,7 @@ ion-slide {
       background-repeat: no-repeat;
       background-position: center; } }
   @media screen and (max-height: 568px) {
-    .input-diligence-phone:hover {
+    .input-diligence-phone:focus {
       border: none !important;
       background-color: transparent;
       background-image: url("../img/TelefonodestinatarioDiligencia/Telefonodestinatariodiligenciaxhdpi.png");
@@ -12915,7 +14065,7 @@ ion-slide {
       background-repeat: no-repeat;
       background-position: center; } }
   @media screen and (max-height: 480px) {
-    .input-diligence-phone:hover {
+    .input-diligence-phone:focus {
       border: none !important;
       background-color: transparent;
       background-image: url("../img/TelefonodestinatarioDiligencia/Telefonodestinatariodiligenciaxhdpi.png");
@@ -12923,7 +14073,7 @@ ion-slide {
       background-repeat: no-repeat;
       background-position: center; } }
   @media screen and (max-height: 320px) {
-    .input-diligence-phone:hover {
+    .input-diligence-phone:focus {
       border: none !important;
       background-color: transparent;
       background-image: url("../img/TelefonodestinatarioDiligencia/Telefonodestinatariodiligenciamdpi.png");
@@ -14286,7 +15436,7 @@ ion-slide {
       background-repeat: no-repeat;
       background-position: center; } }
   @media screen and (max-height: 2560px) {
-    .input-user-dest:hover {
+    .input-user-dest:focus {
       border: none !important;
       background-color: transparent;
       background-image: url("../img/UsuariodestinatarioTAP/Usuariodestinatarioxxxhdpi.png");
@@ -14294,7 +15444,7 @@ ion-slide {
       background-repeat: no-repeat;
       background-position: center; } }
   @media screen and (max-height: 1920px) {
-    .input-user-dest:hover {
+    .input-user-dest:focus {
       border: none !important;
       background-color: transparent;
       background-image: url("../img/UsuariodestinatarioTAP/Usuariodestinatarioxxxhdpi.png");
@@ -14302,7 +15452,7 @@ ion-slide {
       background-repeat: no-repeat;
       background-position: center; } }
   @media screen and (max-height: 1280px) {
-    .input-user-dest:hover {
+    .input-user-dest:focus {
       border: none !important;
       background-color: transparent;
       background-image: url("../img/UsuariodestinatarioTAP/Usuariodestinatarioxxhdpi.png");
@@ -14310,7 +15460,7 @@ ion-slide {
       background-repeat: no-repeat;
       background-position: center; } }
   @media screen and (max-height: 960px) {
-    .input-user-dest:hover {
+    .input-user-dest:focus {
       border: none !important;
       background-color: transparent;
       background-image: url("../img/UsuariodestinatarioTAP/Usuariodestinatarioxhdpi.png");
@@ -14318,7 +15468,7 @@ ion-slide {
       background-repeat: no-repeat;
       background-position: center; } }
   @media screen and (max-height: 736px) {
-    .input-user-dest:hover {
+    .input-user-dest:focus {
       border: none !important;
       background-color: transparent;
       background-image: url("../img/UsuariodestinatarioTAP/Usuariodestinatarioxhdpi.png");
@@ -14326,7 +15476,7 @@ ion-slide {
       background-repeat: no-repeat;
       background-position: center; } }
   @media screen and (max-height: 667px) {
-    .input-user-dest:hover {
+    .input-user-dest:focus {
       border: none !important;
       background-color: transparent;
       background-image: url("../img/UsuariodestinatarioTAP/Usuariodestinatarioxhdpi.png");
@@ -14334,7 +15484,7 @@ ion-slide {
       background-repeat: no-repeat;
       background-position: center; } }
   @media screen and (max-height: 568px) {
-    .input-user-dest:hover {
+    .input-user-dest:focus {
       border: none !important;
       background-color: transparent;
       background-image: url("../img/UsuariodestinatarioTAP/Usuariodestinatarioxhdpi.png");
@@ -14342,7 +15492,7 @@ ion-slide {
       background-repeat: no-repeat;
       background-position: center; } }
   @media screen and (max-height: 480px) {
-    .input-user-dest:hover {
+    .input-user-dest:focus {
       border: none !important;
       background-color: transparent;
       background-image: url("../img/UsuariodestinatarioTAP/Usuariodestinatarioxhdpi.png");
@@ -14350,7 +15500,7 @@ ion-slide {
       background-repeat: no-repeat;
       background-position: center; } }
   @media screen and (max-height: 320px) {
-    .input-user-dest:hover {
+    .input-user-dest:focus {
       border: none !important;
       background-color: transparent;
       background-image: url("../img/UsuariodestinatarioTAP/Usuariodestinatariomdpi.png");
@@ -14440,7 +15590,7 @@ ion-slide {
       background-repeat: no-repeat;
       background-position: center; } }
   @media screen and (max-height: 2560px) {
-    .input-email-dest:hover {
+    .input-email-dest:focus {
       border: none !important;
       background-color: transparent;
       background-image: url("../img/CorreodestinatarioTAP/CorreoElectronicoxxxhdpi.png");
@@ -14448,7 +15598,7 @@ ion-slide {
       background-repeat: no-repeat;
       background-position: center; } }
   @media screen and (max-height: 1920px) {
-    .input-email-dest:hover {
+    .input-email-dest:focus {
       border: none !important;
       background-color: transparent;
       background-image: url("../img/CorreodestinatarioTAP/CorreoElectronicoxxxhdpi.png");
@@ -14456,7 +15606,7 @@ ion-slide {
       background-repeat: no-repeat;
       background-position: center; } }
   @media screen and (max-height: 1280px) {
-    .input-email-dest:hover {
+    .input-email-dest:focus {
       border: none !important;
       background-color: transparent;
       background-image: url("../img/CorreodestinatarioTAP/CorreoElectronicoxxhdpi.png");
@@ -14464,7 +15614,7 @@ ion-slide {
       background-repeat: no-repeat;
       background-position: center; } }
   @media screen and (max-height: 960px) {
-    .input-email-dest:hover {
+    .input-email-dest:focus {
       border: none !important;
       background-color: transparent;
       background-image: url("../img/CorreodestinatarioTAP/CorreoElectronicoxhdpi.png");
@@ -14472,7 +15622,7 @@ ion-slide {
       background-repeat: no-repeat;
       background-position: center; } }
   @media screen and (max-height: 736px) {
-    .input-email-dest:hover {
+    .input-email-dest:focus {
       border: none !important;
       background-color: transparent;
       background-image: url("../img/CorreodestinatarioTAP/CorreoElectronicoxhdpi.png");
@@ -14480,7 +15630,7 @@ ion-slide {
       background-repeat: no-repeat;
       background-position: center; } }
   @media screen and (max-height: 667px) {
-    .input-email-dest:hover {
+    .input-email-dest:focus {
       border: none !important;
       background-color: transparent;
       background-image: url("../img/CorreodestinatarioTAP/CorreoElectronicoxhdpi.png");
@@ -14488,7 +15638,7 @@ ion-slide {
       background-repeat: no-repeat;
       background-position: center; } }
   @media screen and (max-height: 568px) {
-    .input-email-dest:hover {
+    .input-email-dest:focus {
       border: none !important;
       background-color: transparent;
       background-image: url("../img/CorreodestinatarioTAP/CorreoElectronicoxhdpi.png");
@@ -14496,7 +15646,7 @@ ion-slide {
       background-repeat: no-repeat;
       background-position: center; } }
   @media screen and (max-height: 480px) {
-    .input-email-dest:hover {
+    .input-email-dest:focus {
       border: none !important;
       background-color: transparent;
       background-image: url("../img/CorreodestinatarioTAP/CorreoElectronicoxhdpi.png");
@@ -14504,7 +15654,7 @@ ion-slide {
       background-repeat: no-repeat;
       background-position: center; } }
   @media screen and (max-height: 320px) {
-    .input-email-dest:hover {
+    .input-email-dest:focus {
       border: none !important;
       background-color: transparent;
       background-image: url("../img/CorreodestinatarioTAP/CorreoElectronicomdpi.png");
@@ -14594,7 +15744,7 @@ ion-slide {
       background-repeat: no-repeat;
       background-position: center; } }
   @media screen and (max-height: 2560px) {
-    .input-phone-dest:hover {
+    .input-phone-dest:focus {
       border: none !important;
       background-color: transparent;
       background-image: url("../img/TelefonodestinatarioTAP/Telefonodestinatarioxxhdpi.png");
@@ -14602,7 +15752,7 @@ ion-slide {
       background-repeat: no-repeat;
       background-position: center; } }
   @media screen and (max-height: 1920px) {
-    .input-phone-dest:hover {
+    .input-phone-dest:focus {
       border: none !important;
       background-color: transparent;
       background-image: url("../img/TelefonodestinatarioTAP/Telefonodestinatarioxxhdpi.png");
@@ -14610,7 +15760,7 @@ ion-slide {
       background-repeat: no-repeat;
       background-position: center; } }
   @media screen and (max-height: 1280px) {
-    .input-phone-dest:hover {
+    .input-phone-dest:focus {
       border: none !important;
       background-color: transparent;
       background-image: url("../img/TelefonodestinatarioTAP/Telefonodestinatarioxxhdpi.png");
@@ -14618,7 +15768,7 @@ ion-slide {
       background-repeat: no-repeat;
       background-position: center; } }
   @media screen and (max-height: 960px) {
-    .input-phone-dest:hover {
+    .input-phone-dest:focus {
       border: none !important;
       background-color: transparent;
       background-image: url("../img/TelefonodestinatarioTAP/Telefonodestinatarioxhdpi.png");
@@ -14626,7 +15776,7 @@ ion-slide {
       background-repeat: no-repeat;
       background-position: center; } }
   @media screen and (max-height: 736px) {
-    .input-phone-dest:hover {
+    .input-phone-dest:focus {
       border: none !important;
       background-color: transparent;
       background-image: url("../img/TelefonodestinatarioTAP/Telefonodestinatarioxhdpi.png");
@@ -14634,7 +15784,7 @@ ion-slide {
       background-repeat: no-repeat;
       background-position: center; } }
   @media screen and (max-height: 667px) {
-    .input-phone-dest:hover {
+    .input-phone-dest:focus {
       border: none !important;
       background-color: transparent;
       background-image: url("../img/TelefonodestinatarioTAP/Telefonodestinatarioxhdpi.png");
@@ -14642,7 +15792,7 @@ ion-slide {
       background-repeat: no-repeat;
       background-position: center; } }
   @media screen and (max-height: 568px) {
-    .input-phone-dest:hover {
+    .input-phone-dest:focus {
       border: none !important;
       background-color: transparent;
       background-image: url("../img/TelefonodestinatarioTAP/Telefonodestinatarioxhdpi.png");
@@ -14650,7 +15800,7 @@ ion-slide {
       background-repeat: no-repeat;
       background-position: center; } }
   @media screen and (max-height: 480px) {
-    .input-phone-dest:hover {
+    .input-phone-dest:focus {
       border: none !important;
       background-color: transparent;
       background-image: url("../img/TelefonodestinatarioTAP/Telefonodestinatarioxhdpi.png");
@@ -14658,7 +15808,7 @@ ion-slide {
       background-repeat: no-repeat;
       background-position: center; } }
   @media screen and (max-height: 320px) {
-    .input-phone-dest:hover {
+    .input-phone-dest:focus {
       border: none !important;
       background-color: transparent;
       background-image: url("../img/TelefonodestinatarioTAP/Telefonodestinatariomdpi.png");
@@ -14748,7 +15898,7 @@ ion-slide {
       background-repeat: no-repeat;
       background-position: center; } }
   @media screen and (max-height: 2560px) {
-    .input-dni-dest:hover {
+    .input-dni-dest:focus {
       border: none !important;
       background-color: transparent;
       background-image: url("../img/CeduladestinatarioTAP/Cedulaxxxhdpi.png");
@@ -14756,7 +15906,7 @@ ion-slide {
       background-repeat: no-repeat;
       background-position: center; } }
   @media screen and (max-height: 1920px) {
-    .input-dni-dest:hover {
+    .input-dni-dest:focus {
       border: none !important;
       background-color: transparent;
       background-image: url("../img/CeduladestinatarioTAP/Cedulaxxxhdpi.png");
@@ -14764,7 +15914,7 @@ ion-slide {
       background-repeat: no-repeat;
       background-position: center; } }
   @media screen and (max-height: 1280px) {
-    .input-dni-dest:hover {
+    .input-dni-dest:focus {
       border: none !important;
       background-color: transparent;
       background-image: url("../img/CeduladestinatarioTAP/Cedulaxxhdpi.png");
@@ -14772,7 +15922,7 @@ ion-slide {
       background-repeat: no-repeat;
       background-position: center; } }
   @media screen and (max-height: 960px) {
-    .input-dni-dest:hover {
+    .input-dni-dest:focus {
       border: none !important;
       background-color: transparent;
       background-image: url("../img/CeduladestinatarioTAP/Cedulaxhdpi.png");
@@ -14780,7 +15930,7 @@ ion-slide {
       background-repeat: no-repeat;
       background-position: center; } }
   @media screen and (max-height: 736px) {
-    .input-dni-dest:hover {
+    .input-dni-dest:focus {
       border: none !important;
       background-color: transparent;
       background-image: url("../img/CeduladestinatarioTAP/Cedulaxhdpi.png");
@@ -14788,7 +15938,7 @@ ion-slide {
       background-repeat: no-repeat;
       background-position: center; } }
   @media screen and (max-height: 667px) {
-    .input-dni-dest:hover {
+    .input-dni-dest:focus {
       border: none !important;
       background-color: transparent;
       background-image: url("../img/CeduladestinatarioTAP/Cedulaxhdpi.png");
@@ -14796,7 +15946,7 @@ ion-slide {
       background-repeat: no-repeat;
       background-position: center; } }
   @media screen and (max-height: 568px) {
-    .input-dni-dest:hover {
+    .input-dni-dest:focus {
       border: none !important;
       background-color: transparent;
       background-image: url("../img/CeduladestinatarioTAP/Cedulaxhdpi.png");
@@ -14804,7 +15954,7 @@ ion-slide {
       background-repeat: no-repeat;
       background-position: center; } }
   @media screen and (max-height: 480px) {
-    .input-dni-dest:hover {
+    .input-dni-dest:focus {
       border: none !important;
       background-color: transparent;
       background-image: url("../img/CeduladestinatarioTAP/Cedulaxhdpi.png");
@@ -14812,7 +15962,7 @@ ion-slide {
       background-repeat: no-repeat;
       background-position: center; } }
   @media screen and (max-height: 320px) {
-    .input-dni-dest:hover {
+    .input-dni-dest:focus {
       border: none !important;
       background-color: transparent;
       background-image: url("../img/CeduladestinatarioTAP/Cedulamdpi.png");
@@ -15182,7 +16332,7 @@ ion-slide {
       background-repeat: no-repeat;
       background-position: center; } }
   @media screen and (max-height: 2560px) {
-    .input-text-box:hover {
+    .input-text-box:focus {
       border: none !important;
       background-color: transparent;
       background-image: url("../img/Cajadetexto/Cajadetextoxxxhdpi.png");
@@ -15190,7 +16340,7 @@ ion-slide {
       background-repeat: no-repeat;
       background-position: center; } }
   @media screen and (max-height: 1920px) {
-    .input-text-box:hover {
+    .input-text-box:focus {
       border: none !important;
       background-color: transparent;
       background-image: url("../img/Cajadetexto/Cajadetextoxxxhdpi.png");
@@ -15198,7 +16348,7 @@ ion-slide {
       background-repeat: no-repeat;
       background-position: center; } }
   @media screen and (max-height: 1280px) {
-    .input-text-box:hover {
+    .input-text-box:focus {
       border: none !important;
       background-color: transparent;
       background-image: url("../img/Cajadetexto/Cajadetextoxxhdpi.png");
@@ -15206,7 +16356,7 @@ ion-slide {
       background-repeat: no-repeat;
       background-position: center; } }
   @media screen and (max-height: 960px) {
-    .input-text-box:hover {
+    .input-text-box:focus {
       border: none !important;
       background-color: transparent;
       background-image: url("../img/Cajadetexto/Cajadetextoxhdpi.png");
@@ -15214,7 +16364,7 @@ ion-slide {
       background-repeat: no-repeat;
       background-position: center; } }
   @media screen and (max-height: 736px) {
-    .input-text-box:hover {
+    .input-text-box:focus {
       border: none !important;
       background-color: transparent;
       background-image: url("../img/Cajadetexto/Cajadetextoxhdpi.png");
@@ -15222,7 +16372,7 @@ ion-slide {
       background-repeat: no-repeat;
       background-position: center; } }
   @media screen and (max-height: 667px) {
-    .input-text-box:hover {
+    .input-text-box:focus {
       border: none !important;
       background-color: transparent;
       background-image: url("../img/Cajadetexto/Cajadetextoxhdpi.png");
@@ -15230,7 +16380,7 @@ ion-slide {
       background-repeat: no-repeat;
       background-position: center; } }
   @media screen and (max-height: 568px) {
-    .input-text-box:hover {
+    .input-text-box:focus {
       border: none !important;
       background-color: transparent;
       background-image: url("../img/Cajadetexto/Cajadetextoxhdpi.png");
@@ -15238,7 +16388,7 @@ ion-slide {
       background-repeat: no-repeat;
       background-position: center; } }
   @media screen and (max-height: 480px) {
-    .input-text-box:hover {
+    .input-text-box:focus {
       border: none !important;
       background-color: transparent;
       background-image: url("../img/Cajadetexto/Cajadetextoxhdpi.png");
@@ -15246,7 +16396,7 @@ ion-slide {
       background-repeat: no-repeat;
       background-position: center; } }
   @media screen and (max-height: 320px) {
-    .input-text-box:hover {
+    .input-text-box:focus {
       border: none !important;
       background-color: transparent;
       background-image: url("../img/Cajadetexto/Cajadetextomdpi.png");
