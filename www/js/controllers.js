@@ -548,12 +548,14 @@
     angular.module('axpress')
         .controller('FeaturesController', FeaturesController);
 
-    FeaturesController.$inject = ['$rootScope', '$scope', '$state','Location','NgMap','$timeout','GoogleMapGeocoder'];
+    FeaturesController.$inject = ['$rootScope', '$scope', '$state','Location','NgMap','$timeout','GoogleMapGeocoder', 'Logger'];
 
-    function FeaturesController($rootScope, $scope, $state,Location, NgMap,$timeout,GoogleMapGeocoder) {
+    function FeaturesController($rootScope, $scope, $state,Location, NgMap,$timeout,GoogleMapGeocoder, Logger) {
         activate();
 
         $scope.confirmServiceType = function() {
+            if (!hasSelectedTypeService()) return;
+
             $scope.data.typeServices = $state.params.serviceType;
             $scope.data.bagId = $scope.choice.bag;
             $scope.data.bagId = $scope.choice.bag;
@@ -564,6 +566,7 @@
                 $state.go($scope.extraData.featuresNext);
             }
         };
+
         $scope.placeChanged = function(place) {
             $scope.place = (typeof place == "object" ? place : this.getPlace());
             $timeout(function() {
@@ -576,7 +579,9 @@
                 $scope.tempData.address = $scope.place.formatted_address;
             $scope.focused = true;
         };
+
         $scope.confirmPackage = function() {
+            if (!hasFilledPackage()) return;
 
             if ($scope.extraData.navigateTo) {
                 $state.go($scope.extraData.navigateTo);
@@ -587,6 +592,8 @@
         };
 
         $scope.confirmClientFeatures = function() {
+            if (!hasFilledDescription()) return;
+
             if ($scope.extraData.navigateTo) {
                 $state.go($scope.extraData.navigateTo);
                 delete $scope.extraData.navigateTo;
@@ -594,18 +601,50 @@
                 $state.go($scope.extraData.clientNext);
             }
         };
+
+        function hasSelectedTypeService () {
+            if (!$scope.choice.bag) {
+                Logger.toast("Debe seleccionar un tipo de envío");
+                return false;
+            }
+            return true;
+        }
+
+        function hasFilledDescription () {
+            if (!$scope.data.descriptionText) {
+                Logger.toast("Debe añadir una breve descripción de la diligencia");
+                return false;
+            }
+            return true;
+        }
+
+        function hasFilledPackage () {
+            if (!$scope.data.height || !$scope.data.width || !$scope.data.longitude) {
+                Logger.toast("Debe indicar todas las medidas del paquete");
+                return false;
+            }
+            if (!$scope.data.weight || !$scope.data.cuantity) {
+                Logger.toast("Debe indicar peso y número de paquetes");
+                return false;
+            }
+            return true;
+        }
+
         function setMapCenter(position) {
             $scope.map.setCenter(position);
         }
+
         function setExistingChoice() {
             $scope.choice = {
                 bag: $scope.data.bagId
             };
         }
+
         function geocoderCallback(results) {
             $scope.placeChanged(results[0]);
             setMapCenter(results[0].geometry.location);
         }
+
         function setExistingAddress() {
             var latlng = { lat: $scope.data.destinyLatitude, lng: $scope.data.destinyLongitude };
             GoogleMapGeocoder.reverseGeocode(latlng)
@@ -925,9 +964,9 @@
     angular.module('axpress')
         .controller('PhotoController', PhotoController);
 
-    PhotoController.$inject = ['$rootScope', '$scope', '$state'];
+    PhotoController.$inject = ['$rootScope', '$scope', '$state', 'Logger'];
 
-    function PhotoController($rootScope, $scope, $state) {
+    function PhotoController($rootScope, $scope, $state, Logger) {
         activate();
 
         $scope.photoTaken = function(imageData) {
@@ -941,12 +980,22 @@
         };
 
         $scope.confirmImagePhoto = function() {
+            if (!hasCompletedFeatures()) return;
+            
             //We replace the meta data used to display the image
             $scope.data.picture = $scope.imageData
                 .replace("data:image/jpeg;base64,", "")
                 .replace("data:image/*;charset=utf-8;base64,","");
             $state.go($scope.extraData.photoNext);
         };
+
+        function hasCompletedFeatures () {
+            if (!$scope.data.amountDeclared || !$scope.data.descriptionText) {
+                Logger.toast("Debe declarar un valor y añadir una descripción");
+                return false;
+            }
+            return true;
+        }
 
         function activate() {
             $scope.imageData = "";
