@@ -23,10 +23,9 @@
         };
 
         $scope.confirmOrigin = function() {
-            if (!$scope.place) {
-                Logger.toast("Debe añadir una dirección válida");
-                return;
-            }
+            //If cant continue
+            if (!canContinue()) return;
+
             $scope.data.originAddress = $scope.place.formatted_address;
             $scope.data.originLatitude = $scope.place.geometry.location.lat();
             $scope.data.originLongitude = $scope.place.geometry.location.lng();
@@ -38,6 +37,19 @@
                 $state.go($scope.extraData.originNext);
             }
         };
+
+        function canContinue () {
+            if (!$scope.place) {
+                Logger.toast("Debe añadir una dirección válida");
+                return false;
+            }
+            if (!$scope.data.originDetail) {
+                Logger.toast("Debe añadir un detalle a la dirección");
+                return false;
+            }
+
+            return true;
+        }
 
         /**
          * For GPS Geolocation

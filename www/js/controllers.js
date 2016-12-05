@@ -351,10 +351,10 @@
         .controller('DestinyController', DocumentDestinyController);
 
     DocumentDestinyController.$inject = ['$rootScope', '$scope', '$state', 'Location', 'NgMap',
-        '$timeout', 'GoogleMapGeocoder'];
+        '$timeout', 'GoogleMapGeocoder', 'constants', 'Logger'];
 
     function DocumentDestinyController($rootScope, $scope, $state, Location, NgMap,
-                                       $timeout, GoogleMapGeocoder) {
+                                       $timeout, GoogleMapGeocoder, constants, Logger) {
         activate();
 
         $scope.placeChanged = function(place) {
@@ -378,6 +378,8 @@
         };
 
         $scope.addNewAddress = function() {
+            if (!hasAddressSelected()) return;
+            if (!hasAddedNameAndPhone()) return;
             var lastMarker = $scope.markers[$scope.markers.length - 1];
             lastMarker.draggable = false;
             lastMarker.icon = "{url: 'img/Pindestino/Pindetsinomdpi.png', scaledSize: [28,38]}";
@@ -389,7 +391,10 @@
         };
 
         $scope.confirmDestiny = function() {
+            if (!hasAddressSelected()) return;
             if ( $state.params.serviceType == 45 ) {
+                if (!hasAddedNameAndPhone()) return;
+
                 if ( $scope.data.editStopIndex >= 0 ) {
                     //Editing a previous added stop
                     var index = $scope.data.editStopIndex;
@@ -415,6 +420,23 @@
             }
         };
 
+        function hasAddressSelected () {
+            if (!$scope.place) {
+                Logger.toast("Debe añadir una dirección");
+                return false;
+            }
+
+            return true;
+        }
+
+        function hasAddedNameAndPhone () {
+            if (!$scope.tempData.name || !$scope.tempData.phone) {
+                Logger.toast("Debe añadir nombre y teléfono de contacto");
+                return false;
+            }
+            return true;
+        }
+
         /**
          * For GPS Geolocation
          **/
@@ -423,7 +445,7 @@
                 .then(function(pos) {
                     GoogleMapGeocoder.reverseGeocode(pos)
                         .then(geocoderCallback);
-                })
+                });
         };
 
         $scope.mapCallbacks = {
@@ -748,10 +770,9 @@
         };
 
         $scope.confirmOrigin = function() {
-            if (!$scope.place) {
-                Logger.toast("Debe añadir una dirección válida");
-                return;
-            }
+            //If cant continue
+            if (!canContinue()) return;
+
             $scope.data.originAddress = $scope.place.formatted_address;
             $scope.data.originLatitude = $scope.place.geometry.location.lat();
             $scope.data.originLongitude = $scope.place.geometry.location.lng();
@@ -763,6 +784,19 @@
                 $state.go($scope.extraData.originNext);
             }
         };
+
+        function canContinue () {
+            if (!$scope.place) {
+                Logger.toast("Debe añadir una dirección válida");
+                return false;
+            }
+            if (!$scope.data.originDetail) {
+                Logger.toast("Debe añadir un detalle a la dirección");
+                return false;
+            }
+
+            return true;
+        }
 
         /**
          * For GPS Geolocation
