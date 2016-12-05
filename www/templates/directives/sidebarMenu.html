@@ -5,16 +5,16 @@
 </ion-header-bar>
 <ion-content class="side-menu-content">
 <ion-list>
-    <ion-item menu-close ui-sref="app.main" ng-if="!isHome()">
+    <ion-item menu-close ui-sref="app.main">
        <i class="side-menu-home"></i>  Inicio
     </ion-item>
-    <ion-item menu-close ui-sref="app.account">
+    <ion-item menu-close ui-sref="app.account" ng-if="!isOnService()">
        <i class="side-menu-edit"></i>  Editar cuenta
     </ion-item>
-    <ion-item menu-close ui-sref="app.history">
+    <ion-item menu-close ui-sref="app.history" ng-if="!isOnService()">
         <i class="side-menu-history"></i>  Historial
     </ion-item>
-    <ion-item menu-close ui-sref="menu" ng-if="isServiceActive()" ng-click="cancelService()">
+    <ion-item menu-close ui-sref="menu" ng-if="isOnService() || isServiceActive()" ng-click="cancelService()">
         <i class="side-menu-cancel-service"></i>  Cancelar servicio
     </ion-item>
     <ion-item menu-close ng-click="logout()">

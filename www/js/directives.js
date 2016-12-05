@@ -176,6 +176,7 @@
         $scope.isHome = isHome;
         $scope.cancelService = cancelService;
         $scope.isServiceActive = isServiceActive;
+        $scope.isOnService = isOnService;
 
         $scope.user = $rootScope.user;
 
@@ -196,6 +197,12 @@
                 $rootScope.$state.go('app.main');
                 $ionicSideMenuDelegate.toggleLeft();
             }
+        }
+
+        function isOnService () {
+            return $rootScope.$state.includes("app.document") ||
+                $rootScope.$state.includes("app.package") ||
+                $rootScope.$state.includes("app.diligence");
         }
 
         function isServiceActive() {
