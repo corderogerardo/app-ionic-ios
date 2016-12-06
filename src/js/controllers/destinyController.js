@@ -160,6 +160,7 @@
             }];
             $scope.tempData = {};
             $scope.address = "";
+            $scope.maxDestinies = constants.diligencesMaxDestinies;
             NgMap.getMap().then(function(map) {
                 $scope.map = map;
             });
