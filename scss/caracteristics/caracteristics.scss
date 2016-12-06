@@ -5,8 +5,8 @@
     @include justify-content(center);
     min-width: 100%;
     width:100%;
-    height:90%;
-    min-height: 90%;
+    height:85%;
+    min-height: 85%;
 }
 .caracteristics-title {
     @include display-flex;
@@ -90,17 +90,15 @@
     @include flex-direction(row);
     @include align-items(center);
     @include justify-content(center);
-    @include widheigh(35%,35%,100%,100%);
+    @include widheigh(55%,55%,100%,100%);
     div{
         @include display-flex;
         @include flex-direction(column);
         @include align-items(center);
-        @include justify-content(center);
-        @include widheigh(100%,100%,48%,48%);
-        div{
-            @include widheigh(100%,100%,100%,100%);
-            border:1px solid red !important;
-        }
+        @include justify-content(flex-start);
+        @include widheigh(100%,100%,90%,90%);
+        padding: 0 !important;
+        margin:0 !important;
     }
 }
 .container-package-sizes-two{
@@ -119,39 +117,47 @@
         margin: 0 !important;
         div{
             @include widheigh(100%,100%,100%,100%);
+            padding: 0 !important;
+            margin: 0 !important;
         }
     }
 }
-.input-sizes{
-    @include widheigh(100%,100%,90%,90%);
+.input-sizes-height{
+    @include widheigh(90%,90%,90%,90%);
     border:2px solid $positive !important;
     border-radius: 25px !important;
-    margin-top: 3%;
+    @include media-inputs-ios("../img/Altocm/Altocm.png","../img/Altocm/Altocm.png","../img/Altocm/Altocm2x.png.png","../img/Altocm/Altocm2x.png.png","../img/Altocm/Altocm3x.png.png","../img/Altocm/Altocm3x.png.png");
     color: $positive !important;
+    padding-left: 40% !important;
+    font-size: 3vh !important;
 }
-.checkbox-height{
-    background-image: none !important;
-    @include widheigh(100%,100%,100%,100%);
-    @include media-checkbox("../img/MedidaCM/CMmdpi.png","../img/MedidaCM/CMhdpi.png","../img/MedidaCM/CMxhdpi.png","../img/MedidaCM/CMxxhdpi.png","../img/MedidaCM/CMxxxhdpi.png","../img/MedidaM/Mmdpi.png","../img/MedidaM/Mhdpi.png","../img/MedidaM/Mxhdpi.png","../img/MedidaM/Mxxhdpi.png","../img/MedidaM/Mxxxhdpi.png");
-    padding: 0;
-    margin: 0;
-    margin-bottom: 7% !important;
+.input-sizes-width{
+    @include widheigh(90%,90%,90%,90%);
+    @include media-inputs-ios("../img/Anchocm/Anchocm.png","../img/Anchocm/Anchocm.png","../img/Anchocm/Anchocm2x.png.png","../img/Anchocm/Anchocm2x.png.png","../img/Anchocm/Anchocm3x.png.png","../img/Anchocm/Anchocm3x.png.png");
+    color: $positive !important;
+    padding-left: 40% !important;
+    font-size: 3vh !important;
 }
-.checkbox-weight{
-    background-image: none !important;
-    @include widheigh(100%,100%,100%,100%);
-    @include media-checkbox("../img/MedidaCM/CMmdpi.png","../img/MedidaCM/CMhdpi.png","../img/MedidaCM/CMxhdpi.png","../img/MedidaCM/CMxxhdpi.png","../img/MedidaCM/CMxxxhdpi.png","../img/MedidaM/Mmdpi.png","../img/MedidaM/Mhdpi.png","../img/MedidaM/Mxhdpi.png","../img/MedidaM/Mxxhdpi.png","../img/MedidaM/Mxxxhdpi.png");
-    padding: 0;
-    margin: 0;
-    margin-bottom: 7% !important;
+.input-sizes-longitude{
+    @include widheigh(90%,90%,90%,90%);
+    @include media-inputs-ios("../img/Largocm/Largocm.png","../img/Largocm/Largocm.png","../img/Largocm/Largocm2x.png.png","../img/Largocm/Largocm2x.png.png","../img/Largocm/Largocm3x.png.png","../img/Largocm/Largocm3x.png.png");
+    color: $positive !important;
+    padding-left: 40% !important;
+    font-size: 3vh !important;
 }
-.checkbox-long{
-    background-image: none !important;
-    @include widheigh(100%,100%,100%,100%);
-    @include media-checkbox("../img/MedidaCM/CMmdpi.png","../img/MedidaCM/CMhdpi.png","../img/MedidaCM/CMxhdpi.png","../img/MedidaCM/CMxxhdpi.png","../img/MedidaCM/CMxxxhdpi.png","../img/MedidaM/Mmdpi.png","../img/MedidaM/Mhdpi.png","../img/MedidaM/Mxhdpi.png","../img/MedidaM/Mxxhdpi.png","../img/MedidaM/Mxxxhdpi.png");
-    padding: 0;
-    margin: 0;
-    margin-bottom: 7% !important;
+.input-sizes-weight{
+    @include widheigh(90%,90%,90%,90%);
+    @include media-inputs-ios("../img/Pesokg/Pesokg.png","../img/Pesokg/Pesokg.png","../img/Pesokg/Pesokg2x.png.png","../img/Pesokg/Pesokg2x.png.png","../img/Pesokg/Pesokg3x.png.png","../img/Pesokg/Pesokg3x.png.png");
+    color: $positive !important;
+    padding-left: 40% !important;
+    font-size: 3vh !important;
+}
+.input-sizes-quantity{
+    @include widheigh(90%,90%,90%,90%);
+    @include media-inputs-ios("../img/Cantidad/Cantidad.png","../img/Cantidad/Cantidad.png","../img/Cantidad/Cantidad2x.png.png","../img/Cantidad/Cantidad2x.png.png","../img/Cantidad/Cantidad3x.png.png","../img/Cantidad/Cantidad3x.png.png");
+    color: $positive !important;
+    padding-left: 40% !important;
+    font-size: 3vh !important;
 }
 .errands-caracteristics{
 	align-items: center;
@@ -184,33 +190,37 @@
     @include flex-direction(column);
     @include align-items(center);
     @include justify-content(center);
-    @include widheigh(30%,30%,100%,100%);
+    @include widheigh(25%,25%,100%,100%);
     margin-top: 15%;
     i{
-        @include widheigh(85%,85%,45%,45%);
+        @include widheigh(85%,85%,40%,40%);
         border:1px solid black;
     }
 }
 .icon-package-package{
-    @include media-icons("../img/Iconomedidaspaquete/Iconomedidaspaquetemdpi.png","../img/Iconomedidaspaquete/Iconomedidaspaquetehdpi.png","../img/Iconomedidaspaquete/Iconomedidaspaquetexhdpi.png","../img/Iconomedidaspaquete/Iconomedidaspaquetexxhdpi.png","www/img/Iconomedidaspaquete/Iconomedidaspaquetexxxhdpi.png","../img/Iconomedidaspaquete/Iconomedidaspaquetemdpi.png","../img/Iconomedidaspaquete/Iconomedidaspaquetehdpi.png","../img/Iconomedidaspaquete/Iconomedidaspaquetexhdpi.png","../img/Iconomedidaspaquete/Iconomedidaspaquetexxhdpi.png","www/img/Iconomedidaspaquete/Iconomedidaspaquetexxxhdpi.png");
+    @include media-icons-ios("../img/Iconomedidasdepaquete/Iconomedidaspaquete.png","../img/Iconomedidasdepaquete/Iconomedidaspaquete.png","../img/Iconomedidasdepaquete/Iconomedidaspaquete2x.png.png","../img/Iconomedidasdepaquete/Iconomedidaspaquete2x.png.png","../img/Iconomedidasdepaquete/Iconomedidaspaquete3x.png.png","../img/Iconomedidasdepaquete/Iconomedidaspaquete3x.png.png");
 }
 .input-user-dest{
     color:$balanced !important;
-    padding-left: 20% !important;
-    @include media-inputs("../img/Usuariodestinatario/Page1mdpi.png","../img/Usuariodestinatario/Page1hdpi.png","../img/Usuariodestinatario/Page1xhdpi.png","../img/Usuariodestinatario/Page1xxhdpi.png","../img/Usuariodestinatario/Page1xxxhdpi.png","../img/UsuariodestinatarioTAP/Usuariodestinatariomdpi.png","../img/UsuariodestinatarioTAP/Usuariodestinatariohdpi.png","../img/UsuariodestinatarioTAP/Usuariodestinatarioxhdpi.png","../img/UsuariodestinatarioTAP/Usuariodestinatarioxxhdpi.png","../img/UsuariodestinatarioTAP/Usuariodestinatarioxxxhdpi.png");
+    padding-left: 15% !important;
+    font-size: 3vh !important;
+    @include media-inputs-ios("../img/Nombredestinatario/NombreDesttinatario.png","../img/NombredestinatarioTAP/NombreDesttinatario.png","../img/Nombredestinatario/NombreDesttinatario2x.png.png","../img/NombredestinatarioTAP/NombreDesttinatario2x.png.png","../img/Nombredestinatario/NombreDesttinatario3x.png.png","../img/NombredestinatarioTAP/NombreDesttinatario3x.png.png");
 }
 .input-email-dest{
     color:$balanced !important;
-    padding-left: 20% !important;
-    @include media-inputs("../img/Correodestinatario/CorreoElectronicomdpi.png","../img/Correodestinatario/CorreoElectronicohdpi.png","../img/Correodestinatario/CorreoElectronicoxhdpi.png","../img/Correodestinatario/CorreoElectronicoxxhdpi.png","../img/Correodestinatario/CorreoElectronicoxxxhdpi.png","../img/CorreodestinatarioTAP/CorreoElectronicomdpi.png","../img/CorreodestinatarioTAP/CorreoElectronicohdpi.png","../img/CorreodestinatarioTAP/CorreoElectronicoxhdpi.png","../img/CorreodestinatarioTAP/CorreoElectronicoxxhdpi.png","../img/CorreodestinatarioTAP/CorreoElectronicoxxxhdpi.png");
+    padding-left: 15% !important;
+    font-size: 3vh !important;
+    @include media-inputs-ios("../img/Correoelectronicodestinatario/Correoelectronicodest.png","../img/CooreoelectronicoTAP/Correoelectronicodest.png","../img/Correoelectronicodestinatario/Correoelectronicodest2x.png.png","../img/CooreoelectronicoTAP/Correoelectronicodest2x.png.png","../img/Correoelectronicodestinatario/Correoelectronicodest3x.png.png","../img/CooreoelectronicoTAP/Correoelectronicodest3x.png.png");
 }
 .input-phone-dest{
     color:$balanced !important;
-    padding-left: 20% !important;
-    @include media-inputs("../img/Telefonodestinatario/Telefonodestinatariomdpi.png","../img/Telefonodestinatario/Telefonodestinatariohdpi.png","../img/Telefonodestinatario/Telefonodestinatarioxhdpi.png","../img/Telefonodestinatario/Telefonodestinatarioxxhdpi.png","../img/Telefonodestinatario/Telefonodestinatarioxxxhdpi.png","../img/TelefonodestinatarioTAP/Telefonodestinatariomdpi.png","../img/TelefonodestinatarioTAP/Telefonodestinatariohdpi.png","../img/TelefonodestinatarioTAP/Telefonodestinatarioxhdpi.png","../img/TelefonodestinatarioTAP/Telefonodestinatarioxxhdpi.png","../img/TelefonodestinatarioTAP/Telefonodestinatarioxxhdpi.png");
+    padding-left: 15% !important;
+    font-size: 3vh !important;
+    @include media-inputs-ios("../img/Telefonodeldestinatario/Telefoonodestinatario.png","../img/TelefonodeldestinatarioTAP/Telefoonodestinatario.png","../img/Telefonodeldestinatario/Telefoonodestinatario2x.png.png","../img/TelefonodeldestinatarioTAP/Telefoonodestinatario2x.png.png","../img/Telefonodeldestinatario/Telefoonodestinatario3x.png.png","../img/TelefonodeldestinatarioTAP/Telefoonodestinatario3x.png.png");
 }
 .input-dni-dest{
     color:$balanced !important;
-    padding-left: 20% !important;
-    @include media-inputs("../img/Ceduladestinatario/Cedulamdpi.png","../img/Ceduladestinatario/Cedulahdpi.png","../img/Ceduladestinatario/Cedulaxhdpi.png","../img/Ceduladestinatario/Cedulaxxhdpi.png","../img/Ceduladestinatario/Cedulaxxxhdpi.png","../img/CeduladestinatarioTAP/Cedulamdpi.png","../img/CeduladestinatarioTAP/Cedulahdpi.png","../img/CeduladestinatarioTAP/Cedulaxhdpi.png","../img/CeduladestinatarioTAP/Cedulaxxhdpi.png","../img/CeduladestinatarioTAP/Cedulaxxxhdpi.png")
+    padding-left: 15% !important;
+    font-size: 3vh !important;
+    @include media-inputs-ios("../img/Ceduladestinatario/Ceduladestinatario.png","../img/CeduladestinatarioTAP/Ceduladestinatario.png","../img/Ceduladestinatario/Ceduladestinatario2x.png.png","../img/CeduladestinatarioTAP/Ceduladestinatario2x.png.png","../img/Ceduladestinatario/Ceduladestinatario3x.png.png","../img/CeduladestinatarioTAP/Ceduladestinatario3x.png.png");
 }

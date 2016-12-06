@@ -189,6 +189,12 @@
     @include media-inputs-ios("../img/TextBoxOrigen/Origen.png","../img/TextBoxOrigen/Origen.png","../img/TextBoxOrigen/Origen2x.png.png","../img/TextBoxOrigen/Origen2x.png.png","../img/TextBoxOrigen/Origen3x.png.png","../img/TextBoxOrigen/Origen3x.png.png");
     font-size: 2.5vh !important;
 }
+.input-destinies{
+    color: $dark !important;
+    padding-left: 6% !important;
+    @include media-inputs-ios("../img/Destino/Destino.png","../img/Destino/Destino.png","../img/Destino/Destino2x.png.png","../img/Destino/Destino2x.png.png","../img/Destino/Destino3x.png.png","../img/Destino/Destino3x.png.png");
+    font-size: 2.5vh !important;
+}
 .input-originDetail{
     color: $dark !important;
     padding-left: 10% !important;

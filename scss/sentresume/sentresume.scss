@@ -47,7 +47,7 @@
     @include flex-direction(row);
     @include align-items(flex-start);
     @include justify-content(center);
-    @include widheigh(15%,15%,80%,80%);
+    @include widheigh(11%,11%,80%,80%);
     padding-top: 1%;
     padding-bottom: 1%;
     a{
@@ -108,6 +108,38 @@
         color: $energized;
     }
 }
+.sentresume-content-three{
+    @include display-flex;
+    @include flex-direction(row);
+    @include align-items(flex-start);
+    @include justify-content(center);
+    @include widheigh(22%,22%,80%,80%);
+    padding-top: 1%;
+    padding-bottom: 1%;
+    a{
+        @include display-flex;
+        @include flex-direction(row);
+        @include align-items(flex-start);
+        @include justify-content(center);
+        @include widheigh(100%,100%,25%,25%);
+        color: $energized;
+    }
+}
+.sentresume-content-four{
+    @include display-flex;
+    @include flex-direction(row);
+    @include align-items(flex-start);
+    @include justify-content(center);
+    @include widheigh(25%,25%,80%,80%);
+    a{
+        @include display-flex;
+        @include flex-direction(row);
+        @include align-items(flex-start);
+        @include justify-content(center);
+        @include widheigh(100%,100%,25%,25%);
+        color: $energized;
+    }
+}
 .stopsnumbers{
     align-items: center;
     background-color: $energized;
@@ -133,7 +165,6 @@
         align-items:flex-start;
 		margin-top: 0;
 		margin-bottom:0;
-        padding-left: 5%;
 		font-size:2vh;
         width: 100%;
         height: 100%;
@@ -184,4 +215,14 @@
 	margin-right:auto;
 	margin-left:auto;
 	width:80%;
+}
+.ion-edit-resume{
+    @include display-flex;
+    @include flex-direction(row);
+    @include align-items(center);
+    @include justify-content(center);
+    @include widheigh(50%,50%,80%,80%);
+    @include responsivewidthheight(50%,50%,80%,80%,60%,60%,90%,90%,60%,60%,80%,80%);
+    @include media-icons-ios("../img/Editar/Editar1x.png" !important,"../img/EditarTAP/Editar1x.png" !important,"../img/Editar/Editar2x.png","../img/EditarTAP/Editar2x.png","../img/Editar/Editar3x.png","../img/EditarTAP/Editar3x.png");
+    border:1px solid black !important;
 }
