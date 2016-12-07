@@ -10,7 +10,8 @@ angular.module('axpress', [
     'ngResource',
     'ngCordova',
     'ngCordovaOauth',
-    'LocalStorageModule'
+    'LocalStorageModule',
+    'ionic-ratings'
 ])
 
 .run(['$ionicPlatform', '$rootScope', '$state', '$stateParams', 'Push', function($ionicPlatform, $rootScope, $state, $stateParams, Push) {
@@ -371,7 +372,7 @@ angular.module('axpress', [
             views: {
                 'diligenceContent': {
                     templateUrl: 'templates/diligences/resume.html',
-                    controller:'ResumeController'
+                    controller: 'ResumeController'
                 }
             }
         })
@@ -380,7 +381,7 @@ angular.module('axpress', [
             views: {
                 'diligenceContent': {
                     templateUrl: 'templates/diligences/paymentMethods.html',
-                    controller:'PaymentMethodsController'
+                    controller: 'PaymentMethodsController'
                 }
             }
         })
@@ -392,13 +393,18 @@ angular.module('axpress', [
             views: {
                 'mainContent': {
                     templateUrl: 'templates/tracking/tracking.html',
-                    controller:'TrackingController'
+                    controller: 'TrackingController'
                 }
             }
         })
-        .state('shipmentverification', {
-            url: '/shipmentverification',
-            templateUrl: 'templates/shipmentverification/shipmentverification.html'
+        .state('app.rating', {
+            url: '/rating/:shippingId',
+            views: {
+                'mainContent': {
+                    templateUrl: 'templates/rating/rating.html',
+                    controller: 'RatingController'
+                }
+            }
         });
 
     $urlRouterProvider.otherwise('/');
