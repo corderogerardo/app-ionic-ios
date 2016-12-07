@@ -184,10 +184,10 @@
     @include justify-content(center);
     @include widheigh(10%,10%,100%,100%);
 	color:$balanced;
-	font-size: 4vh;
+	font-size: 3vh;
     font-weight: bold;
     position: absolute !important;
-    bottom: 10%;
+    bottom: 7%;
 }
 .sentresume-button{
 	align-items: center;

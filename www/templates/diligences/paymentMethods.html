@@ -6,16 +6,19 @@
         <div class="container-senttype">
             <div class="send-type-todo">
                 <div>
+                    <span><br></span>
                     <span>Elige un medio de pago</span>
+                    <span><br></span>
                 </div>
             </div>
             <div class="send-type-options">
-                <ion-radio ng-repeat="option in paymentMethods" class="send-type-options-radio" ng-model="data.pay" ng-value="option.value">{{option.name}}</ion-radio>
+                <div class="" ng-repeat="option in paymentMethods">
+                <input type="radio" class="item item-input checkbox-icon inputs-checkbox-axpress"   ng-model="data.pay" title="option.name" ng-value="option.value"/> {{option.name}}</div>
             </div>
         </div>
 
         <div class="hide-on-keyboard-open row button-bottom-two button-confirm-position">
-            <a class="button button-block button-default-two button-confirm" ng-click="confirmPaymentMethod()">
+            <a class="button button-block button-default-two button-continue" ng-click="confirmPaymentMethod()">
                 Continuar
             </a>
         </div>

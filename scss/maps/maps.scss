@@ -76,12 +76,6 @@
     height:5%;
     bottom: 10%;
 }
-.button-confirm-position{
-    width:80%;
-    left: 0;
-    height:5%;
-    bottom: 3%;
-}
 .errands-inputs{
     @include display-flex;
     @include flex-direction(column);
@@ -98,67 +92,23 @@
     @include display-flex;
     @include flex-direction(row);
     @include align-items(center);
-    @include justify-content(center);
+    @include justify-content(space-around);
     width:100% !important;
     margin-left: 0 !important;
     height:10%;
     bottom: 1%;
     .button-confirm{
-        @include widheigh(100% !important,100% !important,48% !important,48%!important);
+        @include widheigh(85% !important,85% !important,45% !important,4%!important);
         color: white !important;
-        background-color: transparent;
-        font-size: 3vh !important;
-        background-image: url("../img/Botoncontinuar/BotonContinuarmdpi.png") !important;
-        background-size: 95% 80%;
-        background-repeat:no-repeat;
-        background-position: center;
+        background-color: $positive !important;
+        border-radius: 25px !important;
+        font-size: 2.5vh !important;
         padding: 0!important;
-        &:focus{
-            color: $dark !important;
-            background-image: url("../img/Cajadetextoorigen/Origenmdpi.png");
-            background-size: 95% 80%;
-            background-repeat:no-repeat;
-            background-position: center;
-        }
+        @include borderradiusmixin(25px,30px,35px);
+    &:hover{
+        background-color: $calm !important;
     }
-}
-.button-confirm{
-    color: white !important;
-    background-color: transparent;
-    background-image: url("../img/Botoncontinuar/BotonContinuarmdpi.png") !important;
-    background-size: 100%;
-    background-repeat:no-repeat;
-    background-position: center;
-    &:focus{
-        color: $dark !important;
-        background-image: url("../img/Cajadetextoorigen/Origenmdpi.png");
-        background-size: 100%;
-        background-repeat:no-repeat;
-        background-position: center;
     }
-}
-.confirm-button{
-	width:90%;
-	position:absolute;
-	left: 5%;
-	height:8%;
-	bottom: 3%;
-	a{
-		background-color:$energized;
-        &:hover{
-            background-color:$energized;
-        }
-	}
-}
-.confirm-button-traditional{
-	align-items: center;
-	display:flex;
-	color:white;
-	text-decoration: none;
-	justify-content: center;
-	background-color:$energized;
-	width:100%;
-	height:50px;
 }
 .errands-destinatary-input{
 	bottom:16%;
@@ -205,14 +155,14 @@
     @include media-icons-ios("../img/Ubicacion/Ubicacion.png","../img/Ubicacion/Ubicacion.png","../img/Ubicacion/Ubicacion2x.png.png","../img/Ubicacion/Ubicacion2x.png.png","../img/Ubicacion/Ubicacion3x.png.png","../img/Ubicacion/Ubicacion3x.png.png");
 }
 .button-gps-two{
-    @include media-icons("../img/Ubicacion/Ubicacionmdpi.png","../img/Ubicacion/Ubicacionhdpi.png","../img/Ubicacion/Ubicacionxhdpi.png","../img/Ubicacion/Ubicacionxxhdpi.png","../img/Ubicacion/Ubicacionxxxhdpi.png","../img/Ubicacion/Ubicacionmdpi.png","../img/Ubicacion/Ubicacionhdpi.png","../img/Ubicacion/Ubicacionxhdpi.png","../img/Ubicacion/Ubicacionxxhdpi.png","../img/Ubicacion/Ubicacionxxxhdpi.png");
+    @include media-icons-ios("../img/Ubicacion/Ubicacion.png","../img/Ubicacion/Ubicacion.png","../img/Ubicacion/Ubicacion2x.png.png","../img/Ubicacion/Ubicacion2x.png.png","../img/Ubicacion/Ubicacion3x.png.png","../img/Ubicacion/Ubicacion3x.png.png");
     bottom: 28%;
 }
 .input-diligence-destinatary{
-    @include media-inputs("../img/NombrededestinatarioDiligencias/Destinatariodiligenciamdpi.png","../img/NombrededestinatarioDiligencias/Destinatariodiligenciahdpi.png","../img/NombrededestinatarioDiligencias/Destinatariodiligenciaxhdpi.png","../img/NombrededestinatarioDiligencias/Destinatariodiligenciaxxhdpi.png","../img/NombrededestinatarioDiligencias/Destinatariodiligenciaxxxhdpi.png","../img/NombrededestinatarioDiligencias/Destinatariodiligenciamdpi.png","../img/NombrededestinatarioDiligencias/Destinatariodiligenciahdpi.png","../img/NombrededestinatarioDiligencias/Destinatariodiligenciaxhdpi.png","../img/NombrededestinatarioDiligencias/Destinatariodiligenciaxxhdpi.png","../img/NombrededestinatarioDiligencias/Destinatariodiligenciaxxxhdpi.png");
+    @include media-inputs-ios("../img/Nombredeldestinatario/Nombredeldestinatario.png","../img/NombredeldestinatarioTAP/Nombredeldestinatario.png","../img/Nombredeldestinatario/Nombredeldestinatario2x.png.png","../img/NombredeldestinatarioTAP/Nombredeldestinatario2x.png.png","../img/Nombredeldestinatario/Nombredeldestinatario3x.png.png","../img/NombredeldestinatarioTAP/Nombredeldestinatario3x.png.png");
     color:$balanced !important;
 }
 .input-diligence-phone{
-    @include media-inputs("../img/TelefonodestinatarioDiligencia/Telefonodestinatariodiligenciamdpi.png","../img/TelefonodestinatarioDiligencia/Telefonodestinatariodiligenciahdpi.png","../img/TelefonodestinatarioDiligencia/Telefonodestinatariodiligenciaxhdpi.png","../img/TelefonodestinatarioDiligencia/Telefonodestinatariodiligenciaxxhdpi.png","../img/TelefonodestinatarioDiligencia/Telefonodestinatariodiligenciaxxxhdpi.png","../img/TelefonodestinatarioDiligencia/Telefonodestinatariodiligenciamdpi.png","../img/TelefonodestinatarioDiligencia/Telefonodestinatariodiligenciahdpi.png","../img/TelefonodestinatarioDiligencia/Telefonodestinatariodiligenciaxhdpi.png","../img/TelefonodestinatarioDiligencia/Telefonodestinatariodiligenciaxxhdpi.png","../img/TelefonodestinatarioDiligencia/Telefonodestinatariodiligenciaxxxhdpi.png");
+    @include media-inputs-ios("../img/Telefonodeldestinatario/Telefoonodestinatario.png","../img/TelefonodeldestinatarioTAP/Telefoonodestinatario.png","../img/Telefonodeldestinatario/Telefoonodestinatario2x.png.png","../img/TelefonodeldestinatarioTAP/Telefoonodestinatario2x.png.png","../img/Telefonodeldestinatario/Telefoonodestinatario3x.png.png","../img/TelefonodeldestinatarioTAP/Telefoonodestinatario3x.png.png");
     color:$balanced !important;
 }

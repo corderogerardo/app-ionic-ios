@@ -11,9 +11,8 @@
                 </div>
             </div>
             <div class="send-type-options">
-                <ion-radio ng-repeat="bag in bagservice" class="send-type-options-radio" ng-model="choice.bag" ng-value="bag">
-                    {{bag.subtitle}}
-                </ion-radio>
+                <div class="" ng-repeat="bag in bagservice">
+                    <input type="radio" class="item item-input checkbox-icon inputs-checkbox-axpress"   ng-model="choice.bag" ng-value="bag"/>   {{bag.subtitle}}</div>
             </div>
         </div>
         <div class="hide-on-keyboard-open row button-bottom-two button-confirm-position">

@@ -4,6 +4,36 @@
     min-width: $minw;
     width: $wid;
 }
+@mixin borderradiusmixin($x1,$x2,$x3){
+    border-radius: $x1 !important;
+    @media screen and (max-height: 2560px){
+        border-radius: $x3 !important;
+    }
+    @media screen and (max-height: 1920px){
+        border-radius: $x3 !important;
+    }
+    @media screen and (max-height: 1280px){
+        border-radius: $x3 !important;
+    }
+    @media screen and (max-height: 960px){
+        border-radius: $x2 !important;
+    }
+    @media screen and (max-height: 736px){
+        border-radius: $x2 !important;
+    }
+    @media screen and (max-height: 667px){
+        border-radius: $x2 !important;
+    }
+    @media screen and (max-height: 568px){
+        border-radius: $x2 !important;
+    }
+    @media screen and (max-height: 480px){
+        border-radius: $x1 !important;
+    }
+    @media screen and (max-height: 320px){
+        border-radius: $x1 !important;
+    }
+}
 @mixin responsivewidthheight($hx1,$minhx1,$wx1,$minwx1,$hx2,$minhx2,$wx2,$minwx2,$hx3,$minhx3,$wx3,$minwx3){
     @media screen and (max-height: 2560px){
         min-height: $minhx3;

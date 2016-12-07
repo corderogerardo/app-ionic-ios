@@ -13799,12 +13799,6 @@ ion-slide {
   height: 5%;
   bottom: 10%; }
 
-.button-confirm-position {
-  width: 80%;
-  left: 0;
-  height: 5%;
-  bottom: 3%; }
-
 .errands-inputs {
   display: -webkit-box;
   display: -webkit-flex;
@@ -13856,69 +13850,55 @@ ion-slide {
   -webkit-align-items: center;
   -moz-align-items: center;
   align-items: center;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  -webkit-justify-content: center;
-  -moz-justify-content: center;
-  justify-content: center;
+  -webkit-box-pack: space-around;
+  -ms-flex-pack: space-around;
+  -webkit-justify-content: space-around;
+  -moz-justify-content: space-around;
+  justify-content: space-around;
   width: 100% !important;
   margin-left: 0 !important;
   height: 10%;
   bottom: 1%; }
   .button-confirm-position-two .button-confirm {
-    min-height: 100% !important;
-    height: 100% !important;
-    min-width: 48% !important;
-    width: 48% !important;
+    min-height: 85% !important;
+    height: 85% !important;
+    min-width: 45% !important;
+    width: 4% !important;
     color: white !important;
-    background-color: transparent;
-    font-size: 3vh !important;
-    background-image: url("../img/Botoncontinuar/BotonContinuarmdpi.png") !important;
-    background-size: 95% 80%;
-    background-repeat: no-repeat;
-    background-position: center;
-    padding: 0 !important; }
-    .button-confirm-position-two .button-confirm:focus {
-      color: #213d50 !important;
-      background-image: url("../img/Cajadetextoorigen/Origenmdpi.png");
-      background-size: 95% 80%;
-      background-repeat: no-repeat;
-      background-position: center; }
-
-.button-confirm {
-  color: white !important;
-  background-color: transparent;
-  background-image: url("../img/Botoncontinuar/BotonContinuarmdpi.png") !important;
-  background-size: 100%;
-  background-repeat: no-repeat;
-  background-position: center; }
-  .button-confirm:focus {
-    color: #213d50 !important;
-    background-image: url("../img/Cajadetextoorigen/Origenmdpi.png");
-    background-size: 100%;
-    background-repeat: no-repeat;
-    background-position: center; }
-
-.confirm-button {
-  width: 90%;
-  position: absolute;
-  left: 5%;
-  height: 8%;
-  bottom: 3%; }
-  .confirm-button a {
-    background-color: #ca7530; }
-    .confirm-button a:hover {
-      background-color: #ca7530; }
-
-.confirm-button-traditional {
-  align-items: center;
-  display: flex;
-  color: white;
-  text-decoration: none;
-  justify-content: center;
-  background-color: #ca7530;
-  width: 100%;
-  height: 50px; }
+    background-color: #294d72 !important;
+    border-radius: 25px !important;
+    font-size: 2.5vh !important;
+    padding: 0 !important;
+    border-radius: 25px !important; }
+    @media screen and (max-height: 2560px) {
+      .button-confirm-position-two .button-confirm {
+        border-radius: 35px !important; } }
+    @media screen and (max-height: 1920px) {
+      .button-confirm-position-two .button-confirm {
+        border-radius: 35px !important; } }
+    @media screen and (max-height: 1280px) {
+      .button-confirm-position-two .button-confirm {
+        border-radius: 35px !important; } }
+    @media screen and (max-height: 960px) {
+      .button-confirm-position-two .button-confirm {
+        border-radius: 30px !important; } }
+    @media screen and (max-height: 736px) {
+      .button-confirm-position-two .button-confirm {
+        border-radius: 30px !important; } }
+    @media screen and (max-height: 667px) {
+      .button-confirm-position-two .button-confirm {
+        border-radius: 30px !important; } }
+    @media screen and (max-height: 568px) {
+      .button-confirm-position-two .button-confirm {
+        border-radius: 30px !important; } }
+    @media screen and (max-height: 480px) {
+      .button-confirm-position-two .button-confirm {
+        border-radius: 25px !important; } }
+    @media screen and (max-height: 320px) {
+      .button-confirm-position-two .button-confirm {
+        border-radius: 25px !important; } }
+    .button-confirm-position-two .button-confirm:hover {
+      background-color: #315695 !important; }
 
 .errands-destinatary-input {
   bottom: 16%;
@@ -14590,7 +14570,7 @@ ion-slide {
 .button-gps-two {
   border: none !important;
   background-color: transparent;
-  background-image: url("../img/Ubicacion/Ubicacionmdpi.png");
+  background-image: url("../img/Ubicacion/Ubicacion.png") !important;
   background-size: 100%;
   background-repeat: no-repeat;
   background-position: center;
@@ -14599,151 +14579,158 @@ ion-slide {
     .button-gps-two {
       border: none !important;
       background-color: transparent;
-      background-image: url("../img/Ubicacion/Ubicacionxxxhdpi.png");
-      background-size: 90%;
+      background-image: url("../img/Ubicacion/Ubicacion3x.png.png") !important;
+      background-size: 100%;
       background-repeat: no-repeat;
       background-position: center; } }
   @media screen and (max-height: 1920px) {
     .button-gps-two {
       border: none !important;
       background-color: transparent;
-      background-image: url("../img/Ubicacion/Ubicacionxxxhdpi.png");
-      background-size: 90%;
+      background-image: url("../img/Ubicacion/Ubicacion3x.png.png") !important;
+      background-size: 100%;
       background-repeat: no-repeat;
       background-position: center; } }
   @media screen and (max-height: 1280px) {
     .button-gps-two {
       border: none !important;
       background-color: transparent;
-      background-image: url("../img/Ubicacion/Ubicacionxxhdpi.png");
-      background-size: 90%;
+      background-image: url("../img/Ubicacion/Ubicacion2x.png.png") !important;
+      background-size: 100%;
       background-repeat: no-repeat;
       background-position: center; } }
   @media screen and (max-height: 960px) {
     .button-gps-two {
       border: none !important;
       background-color: transparent;
-      background-image: url("../img/Ubicacion/Ubicacionxhdpi.png");
-      background-size: 90%;
+      background-image: url("../img/Ubicacion/Ubicacion2x.png.png") !important;
+      background-size: 100%;
       background-repeat: no-repeat;
       background-position: center; } }
   @media screen and (max-height: 736px) {
     .button-gps-two {
       border: none !important;
       background-color: transparent;
-      background-image: url("../img/Ubicacion/Ubicacionxhdpi.png");
-      background-size: 90%;
+      background-image: url("../img/Ubicacion/Ubicacion2x.png.png") !important;
+      background-size: 100%;
       background-repeat: no-repeat;
       background-position: center; } }
   @media screen and (max-height: 667px) {
     .button-gps-two {
       border: none !important;
       background-color: transparent;
-      background-image: url("../img/Ubicacion/Ubicacionxhdpi.png");
-      background-size: 90%;
+      background-image: url("../img/Ubicacion/Ubicacion2x.png.png") !important;
+      background-size: 100%;
       background-repeat: no-repeat;
       background-position: center; } }
   @media screen and (max-height: 568px) {
     .button-gps-two {
       border: none !important;
       background-color: transparent;
-      background-image: url("../img/Ubicacion/Ubicacionxhdpi.png");
-      background-size: 90%;
+      background-image: url("../img/Ubicacion/Ubicacion.png") !important;
+      background-size: 100%;
       background-repeat: no-repeat;
       background-position: center; } }
   @media screen and (max-height: 480px) {
     .button-gps-two {
       border: none !important;
       background-color: transparent;
-      background-image: url("../img/Ubicacion/Ubicacionxhdpi.png");
-      background-size: 90%;
+      background-image: url("../img/Ubicacion/Ubicacion.png") !important;
+      background-size: 100%;
       background-repeat: no-repeat;
       background-position: center; } }
   @media screen and (max-height: 320px) {
     .button-gps-two {
       border: none !important;
       background-color: transparent;
-      background-image: url("../img/Ubicacion/Ubicacionmdpi.png");
-      background-size: 90%;
+      background-image: url("../img/Ubicacion/Ubicacion.png") !important;
+      background-size: 100%;
       background-repeat: no-repeat;
       background-position: center; } }
-  @media screen and (max-height: 2560px) {
-    .button-gps-two:hover {
-      border: none !important;
-      background-color: transparent;
-      background-image: url("../img/Ubicacion/Ubicacionxxxhdpi.png");
-      background-size: 90%;
-      background-repeat: no-repeat;
-      background-position: center; } }
-  @media screen and (max-height: 1920px) {
-    .button-gps-two:hover {
-      border: none !important;
-      background-color: transparent;
-      background-image: url("../img/Ubicacion/Ubicacionxxxhdpi.png");
-      background-size: 90%;
-      background-repeat: no-repeat;
-      background-position: center; } }
-  @media screen and (max-height: 1280px) {
-    .button-gps-two:hover {
-      border: none !important;
-      background-color: transparent;
-      background-image: url("../img/Ubicacion/Ubicacionxxhdpi.png");
-      background-size: 90%;
-      background-repeat: no-repeat;
-      background-position: center; } }
-  @media screen and (max-height: 960px) {
-    .button-gps-two:hover {
-      border: none !important;
-      background-color: transparent;
-      background-image: url("../img/Ubicacion/Ubicacionxhdpi.png");
-      background-size: 90%;
-      background-repeat: no-repeat;
-      background-position: center; } }
-  @media screen and (max-height: 736px) {
-    .button-gps-two:hover {
-      border: none !important;
-      background-color: transparent;
-      background-image: url("../img/Ubicacion/Ubicacionxhdpi.png");
-      background-size: 90%;
-      background-repeat: no-repeat;
-      background-position: center; } }
-  @media screen and (max-height: 667px) {
-    .button-gps-two:hover {
-      border: none !important;
-      background-color: transparent;
-      background-image: url("../img/Ubicacion/Ubicacionxhdpi.png");
-      background-size: 90%;
-      background-repeat: no-repeat;
-      background-position: center; } }
-  @media screen and (max-height: 568px) {
-    .button-gps-two:hover {
-      border: none !important;
-      background-color: transparent;
-      background-image: url("../img/Ubicacion/Ubicacionxhdpi.png");
-      background-size: 90%;
-      background-repeat: no-repeat;
-      background-position: center; } }
-  @media screen and (max-height: 480px) {
-    .button-gps-two:hover {
-      border: none !important;
-      background-color: transparent;
-      background-image: url("../img/Ubicacion/Ubicacionxhdpi.png");
-      background-size: 90%;
-      background-repeat: no-repeat;
-      background-position: center; } }
-  @media screen and (max-height: 320px) {
-    .button-gps-two:hover {
-      border: none !important;
-      background-color: transparent;
-      background-image: url("../img/Ubicacion/Ubicacionmdpi.png");
-      background-size: 90%;
-      background-repeat: no-repeat;
-      background-position: center; } }
+  .button-gps-two:hover {
+    border: none !important;
+    background-color: transparent;
+    background-image: url("../img/Ubicacion/Ubicacion.png") !important;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center; }
+    @media screen and (max-height: 2560px) {
+      .button-gps-two:hover {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/Ubicacion/Ubicacion3x.png.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 1920px) {
+      .button-gps-two:hover {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/Ubicacion/Ubicacion3x.png.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 1280px) {
+      .button-gps-two:hover {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/Ubicacion/Ubicacion2x.png.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 960px) {
+      .button-gps-two:hover {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/Ubicacion/Ubicacion2x.png.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 736px) {
+      .button-gps-two:hover {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/Ubicacion/Ubicacion2x.png.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 667px) {
+      .button-gps-two:hover {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/Ubicacion/Ubicacion2x.png.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 568px) {
+      .button-gps-two:hover {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/Ubicacion/Ubicacion2x.png.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 480px) {
+      .button-gps-two:hover {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/Ubicacion/Ubicacion.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 320px) {
+      .button-gps-two:hover {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/Ubicacion/Ubicacion.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
 
 .input-diligence-destinatary {
   border: none !important;
   background-color: transparent;
-  background-image: url("../img/NombrededestinatarioDiligencias/Destinatariodiligenciamdpi.png");
+  background-image: url("../img/Nombredeldestinatario/Nombredeldestinatario.png") !important;
   background-size: 100%;
   background-repeat: no-repeat;
   background-position: center;
@@ -14752,151 +14739,158 @@ ion-slide {
     .input-diligence-destinatary {
       border: none !important;
       background-color: transparent;
-      background-image: url("../img/NombrededestinatarioDiligencias/Destinatariodiligenciaxxxhdpi.png");
-      background-size: 90%;
+      background-image: url("../img/Nombredeldestinatario/Nombredeldestinatario3x.png.png") !important;
+      background-size: 100%;
       background-repeat: no-repeat;
       background-position: center; } }
   @media screen and (max-height: 1920px) {
     .input-diligence-destinatary {
       border: none !important;
       background-color: transparent;
-      background-image: url("../img/NombrededestinatarioDiligencias/Destinatariodiligenciaxxxhdpi.png");
-      background-size: 90%;
+      background-image: url("../img/Nombredeldestinatario/Nombredeldestinatario3x.png.png") !important;
+      background-size: 100%;
       background-repeat: no-repeat;
       background-position: center; } }
   @media screen and (max-height: 1280px) {
     .input-diligence-destinatary {
       border: none !important;
       background-color: transparent;
-      background-image: url("../img/NombrededestinatarioDiligencias/Destinatariodiligenciaxxhdpi.png");
-      background-size: 90%;
+      background-image: url("../img/Nombredeldestinatario/Nombredeldestinatario2x.png.png") !important;
+      background-size: 100%;
       background-repeat: no-repeat;
       background-position: center; } }
   @media screen and (max-height: 960px) {
     .input-diligence-destinatary {
       border: none !important;
       background-color: transparent;
-      background-image: url("../img/NombrededestinatarioDiligencias/Destinatariodiligenciaxhdpi.png");
-      background-size: 90%;
+      background-image: url("../img/Nombredeldestinatario/Nombredeldestinatario2x.png.png") !important;
+      background-size: 100%;
       background-repeat: no-repeat;
       background-position: center; } }
   @media screen and (max-height: 736px) {
     .input-diligence-destinatary {
       border: none !important;
       background-color: transparent;
-      background-image: url("../img/NombrededestinatarioDiligencias/Destinatariodiligenciaxhdpi.png");
-      background-size: 90%;
+      background-image: url("../img/Nombredeldestinatario/Nombredeldestinatario2x.png.png") !important;
+      background-size: 100%;
       background-repeat: no-repeat;
       background-position: center; } }
   @media screen and (max-height: 667px) {
     .input-diligence-destinatary {
       border: none !important;
       background-color: transparent;
-      background-image: url("../img/NombrededestinatarioDiligencias/Destinatariodiligenciaxhdpi.png");
-      background-size: 90%;
+      background-image: url("../img/Nombredeldestinatario/Nombredeldestinatario2x.png.png") !important;
+      background-size: 100%;
       background-repeat: no-repeat;
       background-position: center; } }
   @media screen and (max-height: 568px) {
     .input-diligence-destinatary {
       border: none !important;
       background-color: transparent;
-      background-image: url("../img/NombrededestinatarioDiligencias/Destinatariodiligenciaxhdpi.png");
-      background-size: 90%;
+      background-image: url("../img/Nombredeldestinatario/Nombredeldestinatario.png") !important;
+      background-size: 100%;
       background-repeat: no-repeat;
       background-position: center; } }
   @media screen and (max-height: 480px) {
     .input-diligence-destinatary {
       border: none !important;
       background-color: transparent;
-      background-image: url("../img/NombrededestinatarioDiligencias/Destinatariodiligenciaxhdpi.png");
-      background-size: 90%;
+      background-image: url("../img/Nombredeldestinatario/Nombredeldestinatario.png") !important;
+      background-size: 100%;
       background-repeat: no-repeat;
       background-position: center; } }
   @media screen and (max-height: 320px) {
     .input-diligence-destinatary {
       border: none !important;
       background-color: transparent;
-      background-image: url("../img/NombrededestinatarioDiligencias/Destinatariodiligenciamdpi.png");
-      background-size: 90%;
+      background-image: url("../img/Nombredeldestinatario/Nombredeldestinatario.png") !important;
+      background-size: 100%;
       background-repeat: no-repeat;
       background-position: center; } }
-  @media screen and (max-height: 2560px) {
-    .input-diligence-destinatary:focus {
-      border: none !important;
-      background-color: transparent;
-      background-image: url("../img/NombrededestinatarioDiligencias/Destinatariodiligenciaxxxhdpi.png");
-      background-size: 90%;
-      background-repeat: no-repeat;
-      background-position: center; } }
-  @media screen and (max-height: 1920px) {
-    .input-diligence-destinatary:focus {
-      border: none !important;
-      background-color: transparent;
-      background-image: url("../img/NombrededestinatarioDiligencias/Destinatariodiligenciaxxxhdpi.png");
-      background-size: 90%;
-      background-repeat: no-repeat;
-      background-position: center; } }
-  @media screen and (max-height: 1280px) {
-    .input-diligence-destinatary:focus {
-      border: none !important;
-      background-color: transparent;
-      background-image: url("../img/NombrededestinatarioDiligencias/Destinatariodiligenciaxxhdpi.png");
-      background-size: 90%;
-      background-repeat: no-repeat;
-      background-position: center; } }
-  @media screen and (max-height: 960px) {
-    .input-diligence-destinatary:focus {
-      border: none !important;
-      background-color: transparent;
-      background-image: url("../img/NombrededestinatarioDiligencias/Destinatariodiligenciaxhdpi.png");
-      background-size: 90%;
-      background-repeat: no-repeat;
-      background-position: center; } }
-  @media screen and (max-height: 736px) {
-    .input-diligence-destinatary:focus {
-      border: none !important;
-      background-color: transparent;
-      background-image: url("../img/NombrededestinatarioDiligencias/Destinatariodiligenciaxhdpi.png");
-      background-size: 90%;
-      background-repeat: no-repeat;
-      background-position: center; } }
-  @media screen and (max-height: 667px) {
-    .input-diligence-destinatary:focus {
-      border: none !important;
-      background-color: transparent;
-      background-image: url("../img/NombrededestinatarioDiligencias/Destinatariodiligenciaxhdpi.png");
-      background-size: 90%;
-      background-repeat: no-repeat;
-      background-position: center; } }
-  @media screen and (max-height: 568px) {
-    .input-diligence-destinatary:focus {
-      border: none !important;
-      background-color: transparent;
-      background-image: url("../img/NombrededestinatarioDiligencias/Destinatariodiligenciaxhdpi.png");
-      background-size: 90%;
-      background-repeat: no-repeat;
-      background-position: center; } }
-  @media screen and (max-height: 480px) {
-    .input-diligence-destinatary:focus {
-      border: none !important;
-      background-color: transparent;
-      background-image: url("../img/NombrededestinatarioDiligencias/Destinatariodiligenciaxhdpi.png");
-      background-size: 90%;
-      background-repeat: no-repeat;
-      background-position: center; } }
-  @media screen and (max-height: 320px) {
-    .input-diligence-destinatary:focus {
-      border: none !important;
-      background-color: transparent;
-      background-image: url("../img/NombrededestinatarioDiligencias/Destinatariodiligenciamdpi.png");
-      background-size: 90%;
-      background-repeat: no-repeat;
-      background-position: center; } }
+  .input-diligence-destinatary:focus {
+    border: none !important;
+    background-color: transparent;
+    background-image: url("../img/NombredeldestinatarioTAP/Nombredeldestinatario.png") !important;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center; }
+    @media screen and (max-height: 2560px) {
+      .input-diligence-destinatary:focus {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/NombredeldestinatarioTAP/Nombredeldestinatario3x.png.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 1920px) {
+      .input-diligence-destinatary:focus {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/NombredeldestinatarioTAP/Nombredeldestinatario3x.png.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 1280px) {
+      .input-diligence-destinatary:focus {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/NombredeldestinatarioTAP/Nombredeldestinatario2x.png.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 960px) {
+      .input-diligence-destinatary:focus {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/NombredeldestinatarioTAP/Nombredeldestinatario2x.png.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 736px) {
+      .input-diligence-destinatary:focus {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/NombredeldestinatarioTAP/Nombredeldestinatario2x.png.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 667px) {
+      .input-diligence-destinatary:focus {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/NombredeldestinatarioTAP/Nombredeldestinatario2x.png.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 568px) {
+      .input-diligence-destinatary:focus {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/NombredeldestinatarioTAP/Nombredeldestinatario2x.png.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 480px) {
+      .input-diligence-destinatary:focus {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/NombredeldestinatarioTAP/Nombredeldestinatario.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 320px) {
+      .input-diligence-destinatary:focus {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/NombredeldestinatarioTAP/Nombredeldestinatario.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
 
 .input-diligence-phone {
   border: none !important;
   background-color: transparent;
-  background-image: url("../img/TelefonodestinatarioDiligencia/Telefonodestinatariodiligenciamdpi.png");
+  background-image: url("../img/Telefonodeldestinatario/Telefoonodestinatario.png") !important;
   background-size: 100%;
   background-repeat: no-repeat;
   background-position: center;
@@ -14905,146 +14899,153 @@ ion-slide {
     .input-diligence-phone {
       border: none !important;
       background-color: transparent;
-      background-image: url("../img/TelefonodestinatarioDiligencia/Telefonodestinatariodiligenciaxxxhdpi.png");
-      background-size: 90%;
+      background-image: url("../img/Telefonodeldestinatario/Telefoonodestinatario3x.png.png") !important;
+      background-size: 100%;
       background-repeat: no-repeat;
       background-position: center; } }
   @media screen and (max-height: 1920px) {
     .input-diligence-phone {
       border: none !important;
       background-color: transparent;
-      background-image: url("../img/TelefonodestinatarioDiligencia/Telefonodestinatariodiligenciaxxxhdpi.png");
-      background-size: 90%;
+      background-image: url("../img/Telefonodeldestinatario/Telefoonodestinatario3x.png.png") !important;
+      background-size: 100%;
       background-repeat: no-repeat;
       background-position: center; } }
   @media screen and (max-height: 1280px) {
     .input-diligence-phone {
       border: none !important;
       background-color: transparent;
-      background-image: url("../img/TelefonodestinatarioDiligencia/Telefonodestinatariodiligenciaxxhdpi.png");
-      background-size: 90%;
+      background-image: url("../img/Telefonodeldestinatario/Telefoonodestinatario2x.png.png") !important;
+      background-size: 100%;
       background-repeat: no-repeat;
       background-position: center; } }
   @media screen and (max-height: 960px) {
     .input-diligence-phone {
       border: none !important;
       background-color: transparent;
-      background-image: url("../img/TelefonodestinatarioDiligencia/Telefonodestinatariodiligenciaxhdpi.png");
-      background-size: 90%;
+      background-image: url("../img/Telefonodeldestinatario/Telefoonodestinatario2x.png.png") !important;
+      background-size: 100%;
       background-repeat: no-repeat;
       background-position: center; } }
   @media screen and (max-height: 736px) {
     .input-diligence-phone {
       border: none !important;
       background-color: transparent;
-      background-image: url("../img/TelefonodestinatarioDiligencia/Telefonodestinatariodiligenciaxhdpi.png");
-      background-size: 90%;
+      background-image: url("../img/Telefonodeldestinatario/Telefoonodestinatario2x.png.png") !important;
+      background-size: 100%;
       background-repeat: no-repeat;
       background-position: center; } }
   @media screen and (max-height: 667px) {
     .input-diligence-phone {
       border: none !important;
       background-color: transparent;
-      background-image: url("../img/TelefonodestinatarioDiligencia/Telefonodestinatariodiligenciaxhdpi.png");
-      background-size: 90%;
+      background-image: url("../img/Telefonodeldestinatario/Telefoonodestinatario2x.png.png") !important;
+      background-size: 100%;
       background-repeat: no-repeat;
       background-position: center; } }
   @media screen and (max-height: 568px) {
     .input-diligence-phone {
       border: none !important;
       background-color: transparent;
-      background-image: url("../img/TelefonodestinatarioDiligencia/Telefonodestinatariodiligenciaxhdpi.png");
-      background-size: 90%;
+      background-image: url("../img/Telefonodeldestinatario/Telefoonodestinatario.png") !important;
+      background-size: 100%;
       background-repeat: no-repeat;
       background-position: center; } }
   @media screen and (max-height: 480px) {
     .input-diligence-phone {
       border: none !important;
       background-color: transparent;
-      background-image: url("../img/TelefonodestinatarioDiligencia/Telefonodestinatariodiligenciaxhdpi.png");
-      background-size: 90%;
+      background-image: url("../img/Telefonodeldestinatario/Telefoonodestinatario.png") !important;
+      background-size: 100%;
       background-repeat: no-repeat;
       background-position: center; } }
   @media screen and (max-height: 320px) {
     .input-diligence-phone {
       border: none !important;
       background-color: transparent;
-      background-image: url("../img/TelefonodestinatarioDiligencia/Telefonodestinatariodiligenciamdpi.png");
-      background-size: 90%;
+      background-image: url("../img/Telefonodeldestinatario/Telefoonodestinatario.png") !important;
+      background-size: 100%;
       background-repeat: no-repeat;
       background-position: center; } }
-  @media screen and (max-height: 2560px) {
-    .input-diligence-phone:focus {
-      border: none !important;
-      background-color: transparent;
-      background-image: url("../img/TelefonodestinatarioDiligencia/Telefonodestinatariodiligenciaxxxhdpi.png");
-      background-size: 90%;
-      background-repeat: no-repeat;
-      background-position: center; } }
-  @media screen and (max-height: 1920px) {
-    .input-diligence-phone:focus {
-      border: none !important;
-      background-color: transparent;
-      background-image: url("../img/TelefonodestinatarioDiligencia/Telefonodestinatariodiligenciaxxxhdpi.png");
-      background-size: 90%;
-      background-repeat: no-repeat;
-      background-position: center; } }
-  @media screen and (max-height: 1280px) {
-    .input-diligence-phone:focus {
-      border: none !important;
-      background-color: transparent;
-      background-image: url("../img/TelefonodestinatarioDiligencia/Telefonodestinatariodiligenciaxxhdpi.png");
-      background-size: 90%;
-      background-repeat: no-repeat;
-      background-position: center; } }
-  @media screen and (max-height: 960px) {
-    .input-diligence-phone:focus {
-      border: none !important;
-      background-color: transparent;
-      background-image: url("../img/TelefonodestinatarioDiligencia/Telefonodestinatariodiligenciaxhdpi.png");
-      background-size: 90%;
-      background-repeat: no-repeat;
-      background-position: center; } }
-  @media screen and (max-height: 736px) {
-    .input-diligence-phone:focus {
-      border: none !important;
-      background-color: transparent;
-      background-image: url("../img/TelefonodestinatarioDiligencia/Telefonodestinatariodiligenciaxhdpi.png");
-      background-size: 90%;
-      background-repeat: no-repeat;
-      background-position: center; } }
-  @media screen and (max-height: 667px) {
-    .input-diligence-phone:focus {
-      border: none !important;
-      background-color: transparent;
-      background-image: url("../img/TelefonodestinatarioDiligencia/Telefonodestinatariodiligenciaxhdpi.png");
-      background-size: 90%;
-      background-repeat: no-repeat;
-      background-position: center; } }
-  @media screen and (max-height: 568px) {
-    .input-diligence-phone:focus {
-      border: none !important;
-      background-color: transparent;
-      background-image: url("../img/TelefonodestinatarioDiligencia/Telefonodestinatariodiligenciaxhdpi.png");
-      background-size: 90%;
-      background-repeat: no-repeat;
-      background-position: center; } }
-  @media screen and (max-height: 480px) {
-    .input-diligence-phone:focus {
-      border: none !important;
-      background-color: transparent;
-      background-image: url("../img/TelefonodestinatarioDiligencia/Telefonodestinatariodiligenciaxhdpi.png");
-      background-size: 90%;
-      background-repeat: no-repeat;
-      background-position: center; } }
-  @media screen and (max-height: 320px) {
-    .input-diligence-phone:focus {
-      border: none !important;
-      background-color: transparent;
-      background-image: url("../img/TelefonodestinatarioDiligencia/Telefonodestinatariodiligenciamdpi.png");
-      background-size: 90%;
-      background-repeat: no-repeat;
-      background-position: center; } }
+  .input-diligence-phone:focus {
+    border: none !important;
+    background-color: transparent;
+    background-image: url("../img/TelefonodeldestinatarioTAP/Telefoonodestinatario.png") !important;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center; }
+    @media screen and (max-height: 2560px) {
+      .input-diligence-phone:focus {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/TelefonodeldestinatarioTAP/Telefoonodestinatario3x.png.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 1920px) {
+      .input-diligence-phone:focus {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/TelefonodeldestinatarioTAP/Telefoonodestinatario3x.png.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 1280px) {
+      .input-diligence-phone:focus {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/TelefonodeldestinatarioTAP/Telefoonodestinatario2x.png.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 960px) {
+      .input-diligence-phone:focus {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/TelefonodeldestinatarioTAP/Telefoonodestinatario2x.png.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 736px) {
+      .input-diligence-phone:focus {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/TelefonodeldestinatarioTAP/Telefoonodestinatario2x.png.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 667px) {
+      .input-diligence-phone:focus {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/TelefonodeldestinatarioTAP/Telefoonodestinatario2x.png.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 568px) {
+      .input-diligence-phone:focus {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/TelefonodeldestinatarioTAP/Telefoonodestinatario2x.png.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 480px) {
+      .input-diligence-phone:focus {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/TelefonodeldestinatarioTAP/Telefoonodestinatario.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 320px) {
+      .input-diligence-phone:focus {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/TelefonodeldestinatarioTAP/Telefoonodestinatario.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
 
 .container-senttype {
   background-color: white;
@@ -15417,9 +15418,153 @@ ion-slide {
   min-height: 85%;
   width: 100%;
   min-width: 100%;
-  color: #065599 !important;
+  color: black !important;
   margin-top: 4%;
   margin-bottom: 20%; }
+  .send-type-options div {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-direction: normal;
+    -webkit-box-orient: horizontal;
+    -webkit-flex-direction: row;
+    -moz-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    -moz-align-items: center;
+    align-items: center;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    -webkit-justify-content: flex-start;
+    -moz-justify-content: flex-start;
+    justify-content: flex-start;
+    min-height: auto;
+    height: auto;
+    min-width: 80%;
+    width: 80%;
+    font-size: 2.5vh;
+    color: #065599 !important; }
+    @media screen and (max-height: 2560px) {
+      .send-type-options div {
+        min-height: auto;
+        height: auto;
+        min-width: 80%;
+        width: 80%; } }
+    @media screen and (max-height: 1920px) {
+      .send-type-options div {
+        min-height: auto;
+        height: auto;
+        min-width: 80%;
+        width: 80%; } }
+    @media screen and (max-height: 1280px) {
+      .send-type-options div {
+        min-height: auto;
+        height: auto;
+        min-width: 80%;
+        width: 80%; } }
+    @media screen and (max-height: 960px) {
+      .send-type-options div {
+        min-height: auto;
+        height: auto;
+        min-width: 80%;
+        width: 80%; } }
+    @media screen and (max-height: 736px) {
+      .send-type-options div {
+        min-height: auto;
+        height: auto;
+        min-width: 80%;
+        width: 80%; } }
+    @media screen and (max-height: 667px) {
+      .send-type-options div {
+        min-height: auto;
+        height: auto;
+        min-width: 80%;
+        width: 80%; } }
+    @media screen and (max-height: 568px) {
+      .send-type-options div {
+        min-height: auto;
+        height: auto;
+        min-width: 80%;
+        width: 80%; } }
+    @media screen and (max-height: 480px) {
+      .send-type-options div {
+        min-height: auto;
+        height: auto;
+        min-width: 80%;
+        width: 80%; } }
+    @media screen and (max-height: 320px) {
+      .send-type-options div {
+        min-height: auto;
+        height: auto;
+        min-width: 80%;
+        width: 80%; } }
+    .send-type-options div:checked {
+      color: #065599 !important; }
+      .send-type-options div:checked input {
+        min-height: auto;
+        height: auto;
+        min-width: 10%;
+        width: 10%; }
+        @media screen and (max-height: 2560px) {
+          .send-type-options div:checked input {
+            min-height: auto;
+            height: auto;
+            min-width: 90%;
+            width: 90%; } }
+        @media screen and (max-height: 1920px) {
+          .send-type-options div:checked input {
+            min-height: auto;
+            height: auto;
+            min-width: 90%;
+            width: 90%; } }
+        @media screen and (max-height: 1280px) {
+          .send-type-options div:checked input {
+            min-height: auto;
+            height: auto;
+            min-width: 90%;
+            width: 90%; } }
+        @media screen and (max-height: 960px) {
+          .send-type-options div:checked input {
+            min-height: auto;
+            height: auto;
+            min-width: 90%;
+            width: 90%; } }
+        @media screen and (max-height: 736px) {
+          .send-type-options div:checked input {
+            min-height: auto;
+            height: auto;
+            min-width: 90%;
+            width: 90%; } }
+        @media screen and (max-height: 667px) {
+          .send-type-options div:checked input {
+            min-height: auto;
+            height: auto;
+            min-width: 90%;
+            width: 90%; } }
+        @media screen and (max-height: 568px) {
+          .send-type-options div:checked input {
+            min-height: auto;
+            height: auto;
+            min-width: 20% !important;
+            width: 20% !important; } }
+        @media screen and (max-height: 480px) {
+          .send-type-options div:checked input {
+            min-height: auto;
+            height: auto;
+            min-width: 20% !important;
+            width: 20% !important; } }
+        @media screen and (max-height: 320px) {
+          .send-type-options div:checked input {
+            min-height: auto;
+            height: auto;
+            min-width: 20% !important;
+            width: 20% !important; } }
 
 .send-type-options-radio {
   min-height: auto;
@@ -15580,7 +15725,8 @@ ion-slide {
   width: 100%;
   padding: 0 !important;
   width: 100%;
-  z-index: 0; }
+  z-index: 0;
+  font-size: 3vh; }
   @media screen and (max-height: 2560px) {
     .container-senttype-errands-title {
       min-height: auto;
@@ -15661,20 +15807,179 @@ ion-slide {
   -moz-justify-content: center;
   justify-content: center;
   bottom: 0;
-  min-height: 20%;
-  height: 20%;
+  min-height: 25%;
+  height: 25%;
   min-width: 100%;
   padding: 0 !important;
   width: 100%;
   z-index: 0;
-  margin-top: 2%;
+  margin-top: 5%;
   margin-bottom: 20%; }
   .container-senttype-errands .input-sizes {
-    min-height: 100px !important;
-    height: 100px !important;
+    color: #7f8183 !important;
+    font-size: 3vh !important;
+    min-height: 100% !important;
+    height: 100% !important;
     min-width: 90%;
     width: 90%;
-    border-radius: 50px !important; }
+    border: none !important;
+    background-color: transparent;
+    background-image: url("../img/TexBoxcaracteristicasdeladiligencia/TextBoxCaracteristicas.png") !important;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    text-align: start !important; }
+    @media screen and (max-height: 2560px) {
+      .container-senttype-errands .input-sizes {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/TexBoxcaracteristicasdeladiligencia/TextBoxCaracteristicas3x.png.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 1920px) {
+      .container-senttype-errands .input-sizes {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/TexBoxcaracteristicasdeladiligencia/TextBoxCaracteristicas3x.png.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 1280px) {
+      .container-senttype-errands .input-sizes {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/TexBoxcaracteristicasdeladiligencia/TextBoxCaracteristicas2x.png.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 960px) {
+      .container-senttype-errands .input-sizes {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/TexBoxcaracteristicasdeladiligencia/TextBoxCaracteristicas2x.png.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 736px) {
+      .container-senttype-errands .input-sizes {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/TexBoxcaracteristicasdeladiligencia/TextBoxCaracteristicas2x.png.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 667px) {
+      .container-senttype-errands .input-sizes {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/TexBoxcaracteristicasdeladiligencia/TextBoxCaracteristicas2x.png.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 568px) {
+      .container-senttype-errands .input-sizes {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/TexBoxcaracteristicasdeladiligencia/TextBoxCaracteristicas.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 480px) {
+      .container-senttype-errands .input-sizes {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/TexBoxcaracteristicasdeladiligencia/TextBoxCaracteristicas.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 320px) {
+      .container-senttype-errands .input-sizes {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/TexBoxcaracteristicasdeladiligencia/TextBoxCaracteristicas.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    .container-senttype-errands .input-sizes:focus {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/TexBoxcaracteristicasdeladiligencia/TextBoxCaracteristicas.png") !important;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-position: center; }
+      @media screen and (max-height: 2560px) {
+        .container-senttype-errands .input-sizes:focus {
+          border: none !important;
+          background-color: transparent;
+          background-image: url("../img/TexBoxcaracteristicasdeladiligencia/TextBoxCaracteristicas3x.png.png") !important;
+          background-size: 100%;
+          background-repeat: no-repeat;
+          background-position: center; } }
+      @media screen and (max-height: 1920px) {
+        .container-senttype-errands .input-sizes:focus {
+          border: none !important;
+          background-color: transparent;
+          background-image: url("../img/TexBoxcaracteristicasdeladiligencia/TextBoxCaracteristicas3x.png.png") !important;
+          background-size: 100%;
+          background-repeat: no-repeat;
+          background-position: center; } }
+      @media screen and (max-height: 1280px) {
+        .container-senttype-errands .input-sizes:focus {
+          border: none !important;
+          background-color: transparent;
+          background-image: url("../img/TexBoxcaracteristicasdeladiligencia/TextBoxCaracteristicas2x.png.png") !important;
+          background-size: 100%;
+          background-repeat: no-repeat;
+          background-position: center; } }
+      @media screen and (max-height: 960px) {
+        .container-senttype-errands .input-sizes:focus {
+          border: none !important;
+          background-color: transparent;
+          background-image: url("../img/TexBoxcaracteristicasdeladiligencia/TextBoxCaracteristicas2x.png.png") !important;
+          background-size: 100%;
+          background-repeat: no-repeat;
+          background-position: center; } }
+      @media screen and (max-height: 736px) {
+        .container-senttype-errands .input-sizes:focus {
+          border: none !important;
+          background-color: transparent;
+          background-image: url("../img/TexBoxcaracteristicasdeladiligencia/TextBoxCaracteristicas2x.png.png") !important;
+          background-size: 100%;
+          background-repeat: no-repeat;
+          background-position: center; } }
+      @media screen and (max-height: 667px) {
+        .container-senttype-errands .input-sizes:focus {
+          border: none !important;
+          background-color: transparent;
+          background-image: url("../img/TexBoxcaracteristicasdeladiligencia/TextBoxCaracteristicas2x.png.png") !important;
+          background-size: 100%;
+          background-repeat: no-repeat;
+          background-position: center; } }
+      @media screen and (max-height: 568px) {
+        .container-senttype-errands .input-sizes:focus {
+          border: none !important;
+          background-color: transparent;
+          background-image: url("../img/TexBoxcaracteristicasdeladiligencia/TextBoxCaracteristicas2x.png.png") !important;
+          background-size: 100%;
+          background-repeat: no-repeat;
+          background-position: center; } }
+      @media screen and (max-height: 480px) {
+        .container-senttype-errands .input-sizes:focus {
+          border: none !important;
+          background-color: transparent;
+          background-image: url("../img/TexBoxcaracteristicasdeladiligencia/TextBoxCaracteristicas.png") !important;
+          background-size: 100%;
+          background-repeat: no-repeat;
+          background-position: center; } }
+      @media screen and (max-height: 320px) {
+        .container-senttype-errands .input-sizes:focus {
+          border: none !important;
+          background-color: transparent;
+          background-image: url("../img/TexBoxcaracteristicasdeladiligencia/TextBoxCaracteristicas.png") !important;
+          background-size: 100%;
+          background-repeat: no-repeat;
+          background-position: center; } }
 
 .container-senttype-errands-check {
   background-color: white;
@@ -15706,11 +16011,35 @@ ion-slide {
   min-width: 100%;
   padding: 0 !important;
   width: 100%;
-  z-index: 0; }
+  z-index: 0;
+  font-size: 3.5vh !important; }
   .container-senttype-errands-check p {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-direction: normal;
+    -webkit-box-orient: horizontal;
+    -webkit-flex-direction: row;
+    -moz-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    -moz-align-items: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    -moz-justify-content: center;
+    justify-content: center;
+    margin-bottom: 6%;
     text-align: center;
     color: #294d72;
-    font-weight: bold; }
+    font-size: 3vh !important; }
 
 .bar-sendtype {
   display: -webkit-box;
@@ -15744,6 +16073,251 @@ ion-slide {
     padding: 0;
     padding-left: 15%;
     text-align: left !important; }
+
+.inputs-checkbox-axpress {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-direction: normal;
+  -webkit-box-orient: vertical;
+  -webkit-flex-direction: column;
+  -moz-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  justify-content: center;
+  min-height: 15%;
+  height: 15%;
+  min-width: 12%;
+  width: 12%;
+  margin-right: 5% !important;
+  font-size: 2.5vh !important; }
+  @media screen and (max-height: 2560px) {
+    .inputs-checkbox-axpress {
+      min-height: 17%;
+      height: 17%;
+      min-width: 14%;
+      width: 14%; } }
+  @media screen and (max-height: 1920px) {
+    .inputs-checkbox-axpress {
+      min-height: 17%;
+      height: 17%;
+      min-width: 14%;
+      width: 14%; } }
+  @media screen and (max-height: 1280px) {
+    .inputs-checkbox-axpress {
+      min-height: 16%;
+      height: 16%;
+      min-width: 13%;
+      width: 13%; } }
+  @media screen and (max-height: 960px) {
+    .inputs-checkbox-axpress {
+      min-height: 17%;
+      height: 17%;
+      min-width: 14%;
+      width: 14%; } }
+  @media screen and (max-height: 736px) {
+    .inputs-checkbox-axpress {
+      min-height: 16%;
+      height: 16%;
+      min-width: 13%;
+      width: 13%; } }
+  @media screen and (max-height: 667px) {
+    .inputs-checkbox-axpress {
+      min-height: 16%;
+      height: 16%;
+      min-width: 13%;
+      width: 13%; } }
+  @media screen and (max-height: 568px) {
+    .inputs-checkbox-axpress {
+      min-height: 15%;
+      height: 15%;
+      min-width: 12%;
+      width: 12%; } }
+  @media screen and (max-height: 480px) {
+    .inputs-checkbox-axpress {
+      min-height: 15%;
+      height: 15%;
+      min-width: 12%;
+      width: 12%; } }
+  @media screen and (max-height: 320px) {
+    .inputs-checkbox-axpress {
+      min-height: 15%;
+      height: 15%;
+      min-width: 12%;
+      width: 12%; } }
+  .inputs-checkbox-axpress::before {
+    border: none !important;
+    background-color: transparent;
+    background-image: url("../img/Radiobutton/RadioButton.png") !important;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center; }
+    @media screen and (max-height: 2560px) {
+      .inputs-checkbox-axpress::before {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/Radiobutton/RadioButton3x.png.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 1920px) {
+      .inputs-checkbox-axpress::before {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/Radiobutton/RadioButton3x.png.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 1280px) {
+      .inputs-checkbox-axpress::before {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/Radiobutton/RadioButton2x.png.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 960px) {
+      .inputs-checkbox-axpress::before {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/Radiobutton/RadioButton2x.png.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 736px) {
+      .inputs-checkbox-axpress::before {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/Radiobutton/RadioButton2x.png.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 667px) {
+      .inputs-checkbox-axpress::before {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/Radiobutton/RadioButton2x.png.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 568px) {
+      .inputs-checkbox-axpress::before {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/Radiobutton/RadioButton.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 480px) {
+      .inputs-checkbox-axpress::before {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/Radiobutton/RadioButton.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 320px) {
+      .inputs-checkbox-axpress::before {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/Radiobutton/RadioButton.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+  .inputs-checkbox-axpress:checked::before {
+    border: none !important;
+    background-color: transparent;
+    background-image: url("../img/RadioButtonSelected/RadioButtonSelected.png") !important;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center; }
+    @media screen and (max-height: 2560px) {
+      .inputs-checkbox-axpress:checked::before {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/RadioButtonSelected/RadioButtonSelected3x.png.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 1920px) {
+      .inputs-checkbox-axpress:checked::before {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/RadioButtonSelected/RadioButtonSelected3x.png.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 1280px) {
+      .inputs-checkbox-axpress:checked::before {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/RadioButtonSelected/RadioButtonSelected2x.png.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 960px) {
+      .inputs-checkbox-axpress:checked::before {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/RadioButtonSelected/RadioButtonSelected2x.png.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 736px) {
+      .inputs-checkbox-axpress:checked::before {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/RadioButtonSelected/RadioButtonSelected2x.png.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 667px) {
+      .inputs-checkbox-axpress:checked::before {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/RadioButtonSelected/RadioButtonSelected2x.png.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 568px) {
+      .inputs-checkbox-axpress:checked::before {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/RadioButtonSelected/RadioButtonSelected2x.png.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 480px) {
+      .inputs-checkbox-axpress:checked::before {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/RadioButtonSelected/RadioButtonSelected.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 320px) {
+      .inputs-checkbox-axpress:checked::before {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/RadioButtonSelected/RadioButtonSelected.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+
+.checkbox-icon:after {
+  position: relative !important; }
 
 .caracteristics-container {
   display: -webkit-box;
@@ -17385,7 +17959,7 @@ ion-slide {
   font-size: 3vh !important;
   border: none !important;
   background-color: transparent;
-  background-image: url("../img/Telefonodeldestinatario/Telefoonodestinatario.png") !important;
+  background-image: url("../img/Telefonodestinatario/Telefonodestinatario.png") !important;
   background-size: 100%;
   background-repeat: no-repeat;
   background-position: center; }
@@ -17393,7 +17967,7 @@ ion-slide {
     .input-phone-dest {
       border: none !important;
       background-color: transparent;
-      background-image: url("../img/Telefonodeldestinatario/Telefoonodestinatario3x.png.png") !important;
+      background-image: url("../img/Telefonodestinatario/Telefonodestinatario3x.png.png") !important;
       background-size: 100%;
       background-repeat: no-repeat;
       background-position: center; } }
@@ -17401,7 +17975,7 @@ ion-slide {
     .input-phone-dest {
       border: none !important;
       background-color: transparent;
-      background-image: url("../img/Telefonodeldestinatario/Telefoonodestinatario3x.png.png") !important;
+      background-image: url("../img/Telefonodestinatario/Telefonodestinatario3x.png.png") !important;
       background-size: 100%;
       background-repeat: no-repeat;
       background-position: center; } }
@@ -17409,7 +17983,7 @@ ion-slide {
     .input-phone-dest {
       border: none !important;
       background-color: transparent;
-      background-image: url("../img/Telefonodeldestinatario/Telefoonodestinatario2x.png.png") !important;
+      background-image: url("../img/Telefonodestinatario/Telefonodestinatario2x.png.png") !important;
       background-size: 100%;
       background-repeat: no-repeat;
       background-position: center; } }
@@ -17417,7 +17991,7 @@ ion-slide {
     .input-phone-dest {
       border: none !important;
       background-color: transparent;
-      background-image: url("../img/Telefonodeldestinatario/Telefoonodestinatario2x.png.png") !important;
+      background-image: url("../img/Telefonodestinatario/Telefonodestinatario2x.png.png") !important;
       background-size: 100%;
       background-repeat: no-repeat;
       background-position: center; } }
@@ -17425,7 +17999,7 @@ ion-slide {
     .input-phone-dest {
       border: none !important;
       background-color: transparent;
-      background-image: url("../img/Telefonodeldestinatario/Telefoonodestinatario2x.png.png") !important;
+      background-image: url("../img/Telefonodestinatario/Telefonodestinatario2x.png.png") !important;
       background-size: 100%;
       background-repeat: no-repeat;
       background-position: center; } }
@@ -17433,7 +18007,7 @@ ion-slide {
     .input-phone-dest {
       border: none !important;
       background-color: transparent;
-      background-image: url("../img/Telefonodeldestinatario/Telefoonodestinatario2x.png.png") !important;
+      background-image: url("../img/Telefonodestinatario/Telefonodestinatario2x.png.png") !important;
       background-size: 100%;
       background-repeat: no-repeat;
       background-position: center; } }
@@ -17441,7 +18015,7 @@ ion-slide {
     .input-phone-dest {
       border: none !important;
       background-color: transparent;
-      background-image: url("../img/Telefonodeldestinatario/Telefoonodestinatario.png") !important;
+      background-image: url("../img/Telefonodestinatario/Telefonodestinatario.png") !important;
       background-size: 100%;
       background-repeat: no-repeat;
       background-position: center; } }
@@ -17449,7 +18023,7 @@ ion-slide {
     .input-phone-dest {
       border: none !important;
       background-color: transparent;
-      background-image: url("../img/Telefonodeldestinatario/Telefoonodestinatario.png") !important;
+      background-image: url("../img/Telefonodestinatario/Telefonodestinatario.png") !important;
       background-size: 100%;
       background-repeat: no-repeat;
       background-position: center; } }
@@ -17457,14 +18031,14 @@ ion-slide {
     .input-phone-dest {
       border: none !important;
       background-color: transparent;
-      background-image: url("../img/Telefonodeldestinatario/Telefoonodestinatario.png") !important;
+      background-image: url("../img/Telefonodestinatario/Telefonodestinatario.png") !important;
       background-size: 100%;
       background-repeat: no-repeat;
       background-position: center; } }
   .input-phone-dest:focus {
     border: none !important;
     background-color: transparent;
-    background-image: url("../img/TelefonodeldestinatarioTAP/Telefoonodestinatario.png") !important;
+    background-image: url("../img/TelefonodestinatarioTAP/Telefonodestinatario.png") !important;
     background-size: 100%;
     background-repeat: no-repeat;
     background-position: center; }
@@ -17472,7 +18046,7 @@ ion-slide {
       .input-phone-dest:focus {
         border: none !important;
         background-color: transparent;
-        background-image: url("../img/TelefonodeldestinatarioTAP/Telefoonodestinatario3x.png.png") !important;
+        background-image: url("../img/TelefonodestinatarioTAP/Telefonodestinatario3x.png.png") !important;
         background-size: 100%;
         background-repeat: no-repeat;
         background-position: center; } }
@@ -17480,7 +18054,7 @@ ion-slide {
       .input-phone-dest:focus {
         border: none !important;
         background-color: transparent;
-        background-image: url("../img/TelefonodeldestinatarioTAP/Telefoonodestinatario3x.png.png") !important;
+        background-image: url("../img/TelefonodestinatarioTAP/Telefonodestinatario3x.png.png") !important;
         background-size: 100%;
         background-repeat: no-repeat;
         background-position: center; } }
@@ -17488,7 +18062,7 @@ ion-slide {
       .input-phone-dest:focus {
         border: none !important;
         background-color: transparent;
-        background-image: url("../img/TelefonodeldestinatarioTAP/Telefoonodestinatario2x.png.png") !important;
+        background-image: url("../img/TelefonodestinatarioTAP/Telefonodestinatario2x.png.png") !important;
         background-size: 100%;
         background-repeat: no-repeat;
         background-position: center; } }
@@ -17496,7 +18070,7 @@ ion-slide {
       .input-phone-dest:focus {
         border: none !important;
         background-color: transparent;
-        background-image: url("../img/TelefonodeldestinatarioTAP/Telefoonodestinatario2x.png.png") !important;
+        background-image: url("../img/TelefonodestinatarioTAP/Telefonodestinatario2x.png.png") !important;
         background-size: 100%;
         background-repeat: no-repeat;
         background-position: center; } }
@@ -17504,7 +18078,7 @@ ion-slide {
       .input-phone-dest:focus {
         border: none !important;
         background-color: transparent;
-        background-image: url("../img/TelefonodeldestinatarioTAP/Telefoonodestinatario2x.png.png") !important;
+        background-image: url("../img/TelefonodestinatarioTAP/Telefonodestinatario2x.png.png") !important;
         background-size: 100%;
         background-repeat: no-repeat;
         background-position: center; } }
@@ -17512,7 +18086,7 @@ ion-slide {
       .input-phone-dest:focus {
         border: none !important;
         background-color: transparent;
-        background-image: url("../img/TelefonodeldestinatarioTAP/Telefoonodestinatario2x.png.png") !important;
+        background-image: url("../img/TelefonodestinatarioTAP/Telefonodestinatario2x.png.png") !important;
         background-size: 100%;
         background-repeat: no-repeat;
         background-position: center; } }
@@ -17520,7 +18094,7 @@ ion-slide {
       .input-phone-dest:focus {
         border: none !important;
         background-color: transparent;
-        background-image: url("../img/TelefonodeldestinatarioTAP/Telefoonodestinatario2x.png.png") !important;
+        background-image: url("../img/TelefonodestinatarioTAP/Telefonodestinatario2x.png.png") !important;
         background-size: 100%;
         background-repeat: no-repeat;
         background-position: center; } }
@@ -17528,7 +18102,7 @@ ion-slide {
       .input-phone-dest:focus {
         border: none !important;
         background-color: transparent;
-        background-image: url("../img/TelefonodeldestinatarioTAP/Telefoonodestinatario.png") !important;
+        background-image: url("../img/TelefonodestinatarioTAP/Telefonodestinatario.png") !important;
         background-size: 100%;
         background-repeat: no-repeat;
         background-position: center; } }
@@ -17536,7 +18110,7 @@ ion-slide {
       .input-phone-dest:focus {
         border: none !important;
         background-color: transparent;
-        background-image: url("../img/TelefonodeldestinatarioTAP/Telefoonodestinatario.png") !important;
+        background-image: url("../img/TelefonodestinatarioTAP/Telefonodestinatario.png") !important;
         background-size: 100%;
         background-repeat: no-repeat;
         background-position: center; } }
@@ -18722,10 +19296,10 @@ ion-slide {
   min-width: 100%;
   width: 100%;
   color: #065599;
-  font-size: 4vh;
+  font-size: 3vh;
   font-weight: bold;
   position: absolute !important;
-  bottom: 10%; }
+  bottom: 7%; }
 
 .sentresume-button {
   align-items: center;

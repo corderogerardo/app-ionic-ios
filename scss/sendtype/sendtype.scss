@@ -56,9 +56,26 @@
     min-height: 85%;
     width:100%;
     min-width:100%;
-    color:$balanced !important;
+    color:black !important;
     margin-top: 4%;
     margin-bottom: 20%;
+    div{
+        @include display-flex;
+        @include flex-direction(row);
+        @include align-items(center);
+        @include justify-content(flex-start);
+        @include widheigh(auto,auto,80%,80%);
+        @include responsivewidthheight(auto,auto,80%,80%,auto,auto,80%,80%,auto,auto,80%,80%);
+        font-size:2.5vh;
+        color:$balanced !important;
+        &:checked{
+            color:$balanced !important;
+            input{
+                @include widheigh(auto,auto,10%,10%);
+                @include responsivewidthheight(auto,auto,20% !important,20% !important,auto,auto,90%,90%,auto,auto,90%,90%);
+            }
+        }
+    }
 }
 .send-type-options-radio{
     @include widheigh(auto,auto,90%,90%);
@@ -91,6 +108,7 @@
     padding: 0 !important;
     width: 100%;
     z-index: 0;
+    font-size: 3vh;
 }
 .container-senttype-errands{
     background-color: white;
@@ -99,17 +117,21 @@
     @include align-items(center);
     @include justify-content(center);
     bottom: 0;
-    min-height: 20%;
-    height: 20%;
+    min-height: 25%;
+    height: 25%;
     min-width: 100%;
     padding: 0 !important;
     width: 100%;
     z-index: 0;
-    margin-top: 2%;
+    margin-top: 5%;
     margin-bottom: 20%;
     .input-sizes{
-        @include widheigh(100px !important,100px !important,90%,90%);
-        border-radius: 50px !important;
+        color:$gray !important;
+        font-size: 3vh !important;
+        @include widheigh(100% !important,100% !important,90%,90%);
+        @include media-inputs-ios("../img/TexBoxcaracteristicasdeladiligencia/TextBoxCaracteristicas.png","../img/TexBoxcaracteristicasdeladiligencia/TextBoxCaracteristicas.png","../img/TexBoxcaracteristicasdeladiligencia/TextBoxCaracteristicas2x.png.png","../img/TexBoxcaracteristicasdeladiligencia/TextBoxCaracteristicas2x.png.png","../img/TexBoxcaracteristicasdeladiligencia/TextBoxCaracteristicas3x.png.png","../img/TexBoxcaracteristicasdeladiligencia/TextBoxCaracteristicas3x.png.png");
+        text-align:start !important;
+
     }
 }
 .container-senttype-errands-check{
@@ -125,10 +147,16 @@
     padding: 0 !important;
     width: 100%;
     z-index: 0;
+    font-size: 3.5vh !important;
     p{
+        @include display-flex;
+        @include flex-direction(row);
+        @include align-items(center);
+        @include justify-content(center);
+        margin-bottom: 6%;
         text-align: center;
         color:$positive;
-        font-weight: bold;
+        font-size: 3vh !important;
     }
 }
 .bar-sendtype{
@@ -146,4 +174,18 @@
         padding-left: 15%;
         text-align: left !important;
     }
+}
+.inputs-checkbox-axpress{
+    @include display-flex;
+    @include flex-direction(column);
+    @include align-items(center);
+    @include justify-content(center);
+    @include widheigh(15%,15%,12%,12%);
+    @include responsivewidthheight(15%,15%,12%,12%,16%,16%,13%,13%,17%,17%,14%,14%);
+    @include media-checkbox-ios("../img/Radiobutton/RadioButton.png","../img/RadioButtonSelected/RadioButtonSelected.png","../img/Radiobutton/RadioButton2x.png.png","../img/RadioButtonSelected/RadioButtonSelected2x.png.png","../img/Radiobutton/RadioButton3x.png.png","../img/RadioButtonSelected/RadioButtonSelected3x.png.png");
+    margin-right: 5% !important;
+    font-size: 2.5vh !important;
+}
+.checkbox-icon:after{
+    position: relative !important;
 }
