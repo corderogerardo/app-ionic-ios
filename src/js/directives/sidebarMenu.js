@@ -14,6 +14,9 @@
     sidebarMenuController.$inject = ['$rootScope', '$scope', 'Client', '$ionicSideMenuDelegate'];
 
     function sidebarMenuController($rootScope, $scope, Client, $ionicSideMenuDelegate) {
+
+        activate();
+
         $scope.logout = logout;
         $scope.isHome = isHome;
         $scope.cancelService = cancelService;
@@ -57,6 +60,17 @@
             for (var i in obj)
                 if (obj.hasOwnProperty(i)) return false;
             return true;
+        }
+
+        function activate () {
+            $scope.user = $rootScope.user;
+
+            //Watch global user to update own scope variable
+            $rootScope.$watch('user', function(newValue, oldValue) {
+                if (newValue !== oldValue) {
+                    $scope.user = $rootScope.user;
+                }
+            }, true);
         }
     }
 })();

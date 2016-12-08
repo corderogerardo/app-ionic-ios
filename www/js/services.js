@@ -85,6 +85,8 @@
             localStorage.removeItem('axpress.menu');
             localStorage.removeItem('facebookAccessToken');
             localStorage.removeItem('googleCredentials');
+            $rootScope.user = {};
+            $rootScope.menu = {};
         };
 
         /**
@@ -565,7 +567,7 @@
                 service.get("https://graph.facebook.com/v2.8/me", {
                     params: {
                         access_token: access_token,
-                        fields: "id,name,email",
+                        fields: "id,name,email, picture",
                         format: 'json'
                     }
                 }).then(function(response) {
@@ -902,14 +904,12 @@
             document.addEventListener("deviceready", function() {
                 $cordovaPushV5.initialize(pushOptions)
                     .then(function () {
-                        console.log("inside initialize");
                         // start listening for new notifications
                         $cordovaPushV5.onNotification();
                         // start listening for errors
                         $cordovaPushV5.onError();
 
                         $cordovaPushV5.register().then(function(registrationId) {
-                            console.log("REGISTRATION ID:" + registrationId);
                             localStorage.setItem('axpress.push.registrationID', registrationId);
                             listenForEvent();
                         });

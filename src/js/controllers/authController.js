@@ -107,6 +107,7 @@
                     }
                     //Login successfull
                     if (response.return && response.status == 200) {
+                        response.data.user.social_picture = details.picture.data.url;
                         loginSuccessfull(response.data.user, response.data.menu);
                     }
                 }, function(error) {
@@ -138,6 +139,7 @@
                     }
                     //Login successfull
                     if (response.return && response.status == 200) {
+                        response.data.user.social_picture = details.picture;
                         loginSuccessfull(response.data.user, response.data.menu);
                     }
                 }, function(error) {

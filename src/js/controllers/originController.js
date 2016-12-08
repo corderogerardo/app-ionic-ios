@@ -43,10 +43,6 @@
                 Logger.toast("Debe añadir una dirección válida");
                 return false;
             }
-            if (!$scope.data.originDetail) {
-                Logger.toast("Debe añadir un detalle a la dirección");
-                return false;
-            }
 
             return true;
         }

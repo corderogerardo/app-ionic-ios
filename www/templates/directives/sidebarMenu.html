@@ -1,6 +1,6 @@
 <ion-header-bar class="bar-positive side-menu-title">
     <div class="side-menu-container-user">
-        <div class="side-menu-photo"><img src="img/iconofotoperfil/Iconofotoperfilmdpi.png" alt=""></div><div class="side-menu-user"><div>{{user.name}}</div><div>{{user.email}}</div></div>
+        <div class="side-menu-photo"><img ng-src="{{user.social_picture || 'img/iconofotoperfil/Iconofotoperfilmdpi.png'}}" alt=""></div><div class="side-menu-user"><div>{{user.name}}</div><div>{{user.email}}</div></div>
     </div>
 </ion-header-bar>
 <ion-content class="side-menu-content">

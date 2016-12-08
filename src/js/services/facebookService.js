@@ -51,7 +51,7 @@
                 service.get("https://graph.facebook.com/v2.8/me", {
                     params: {
                         access_token: access_token,
-                        fields: "id,name,email",
+                        fields: "id,name,email, picture",
                         format: 'json'
                     }
                 }).then(function(response) {

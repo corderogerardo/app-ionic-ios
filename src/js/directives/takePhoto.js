@@ -49,7 +49,8 @@
                     $scope.imageSrc = "data:image/jpeg;base64, " + imageData;
                     $scope.successCallback(imageData);
                 }, function (err) {
-                    $scope.errorCallback(err);
+                    if (typeof $scope.errorCallback != "undefined")
+                        $scope.errorCallback(err);
                 });
         };
     }
