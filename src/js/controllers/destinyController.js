@@ -18,7 +18,7 @@
                 $scope.markers[index].position = $scope.place.geometry.location;
             }, 0);
             if ( typeof place == "object" )
-                $scope.tempData.address = $scope.place.formatted_address;
+                $scope.address = GoogleMapGeocoder.removeStateAndCountry($scope.place.formatted_address);
             $scope.focused = true;
         };
 
@@ -137,7 +137,7 @@
                 phone    : data.phone,
                 longitude: $scope.place.geometry.location.lng(),
                 latitude : $scope.place.geometry.location.lat(),
-                address  : $scope.place.formatted_address,
+                address  : GoogleMapGeocoder.removeStateAndCountry($scope.place.formatted_address),
                 name     : data.name
             };
         }

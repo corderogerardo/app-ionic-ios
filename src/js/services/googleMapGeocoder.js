@@ -9,6 +9,7 @@
         service.geocoder = new google.maps.Geocoder;
 
         service.reverseGeocode = reverseGeocode;
+        service.removeStateAndCountry = removeStateAndCountry;
 
         return service;
 
@@ -20,7 +21,7 @@
         function reverseGeocode(latlng) {
             var deferred = $q.defer();
 
-            service.geocoder.geocode({location:latlng}, function(results, status) {
+            service.geocoder.geocode({location:latlng, region: 'co'}, function(results, status) {
                 if (status === google.maps.GeocoderStatus.OK) {
                     deferred.resolve(results);
                 } else {
@@ -28,6 +29,10 @@
                 }
             });
             return deferred.promise;
+        }
+
+        function removeStateAndCountry (formattedAddress) {
+            return formattedAddress.replace(/, [A-zÀ-ÿ]+, [A-zÀ-ÿ]+$/, "");
         }
     }
 })();

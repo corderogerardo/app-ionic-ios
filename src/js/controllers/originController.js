@@ -15,7 +15,7 @@
                 $scope.markers[0].position = $scope.place.geometry.location;
             }, 0);
             if ( typeof place == "object" )
-                $scope.address = $scope.place.formatted_address;
+                $scope.address = GoogleMapGeocoder.removeStateAndCountry($scope.place.formatted_address);
         };
 
         $scope.pickHere = function() {
