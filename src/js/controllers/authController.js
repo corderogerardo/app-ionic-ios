@@ -164,13 +164,16 @@
         $scope.doRegister = function(registerForm) {
             if (registerForm.$valid) {
                 Logger.displayProgressBar();
-                Client.register($scope.user.name, $scope.user.password, $scope.user.email)
+                Client.register($scope.user.name, Client.socialPassword($scope.user.password), $scope.user.email)
                     .then(function(data) {
                         if (data.return && data.status == 200) {
                             loginSuccessfull(data.data.user, data.data.menu);
                         } else if (data.return && data.status == 409) {
                             Logger.hideProgressBar();
                             Logger.toast('Usuario ya registrado');
+                        } else {
+                            Logger.hideProgressBar();
+                            Logger.toast('Ha ocurrido un error.');
                         }
                     }, function(error) {
                         Logger.hideProgressBar();
