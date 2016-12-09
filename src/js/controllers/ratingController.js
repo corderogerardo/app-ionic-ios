@@ -13,18 +13,18 @@
             $scope.rating = 2;
             var shippingId = $scope.shipping.shipping_id,
                 rating = $scope.rating;
-           /* Logger.displayProgressBar();*/
+            Logger.displayProgressBar();
             Rating.post(shippingId, rating).then(function (response) {
-               /* Logger.hideProgressBar();*/
+                Logger.hideProgressBar();
                 $state.go('app.main');
                 Logger.toast("Se ha guardado su calificación correctamente.");
             }, function () {
-              /*  Logger.hideProgressBar();*/
+                Logger.hideProgressBar();
             });
         }
 
         function loadHistory () {
-          /*  Logger.displayProgressBar();*/
+            Logger.displayProgressBar();
             Shipping.history($rootScope.user.id).then(function (history) {
                 var tempHistory = history.data.remitent.concat(history.data.receptor);
                 tempHistory.forEach(function (item) {
@@ -39,7 +39,7 @@
                     return item.shipping_id == parseInt($state.params.shippingId);
                 }).pop();
             }, function () {
-              /*  Logger.hideProgressBar();*/
+                Logger.hideProgressBar();
             });
         }
 
@@ -48,7 +48,6 @@
                 iconOn : 'ion-ios-star',
                 iconOff : 'ion-ios-star-outline',
                 iconOnColor: 'rgb(200, 200, 100)',
-                iconOffColor:  'rgb(200, 100, 100)',
                 rating:  2,
                 minRating:1
             };

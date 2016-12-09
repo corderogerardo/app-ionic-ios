@@ -1,32 +1,24 @@
 <div class="bar bar-header bar-balanced">
-	 <h1 class="title">VERIFICACÍON DEL ENVÍO</h1>
+	 <h1 class="title">Verificación del envío</h1>
 </div>
 <ion-view view-title="SendType">
 	<ion-content scroll="false" >
-
-	<section class="main-container">
-		<section class="shipment-main-title">
-			<div>
-				<span>¡TU DOCUMENTO HA SIDO ENTREGADO!</span>
-			</div>
-		</section>
-		<section class="send-type-icon">
-			<img src="img/documentverified.png" alt="">
-		</section>
-		<section class="send-type-options">
-
-			<div class="shipment-vote-title">
-				<p>Califica tu Envío</p>
-			</div>
-			<ionic-ratings ratingsobj='ratingsObject'></ionic-ratings>
-
-		</section>
-		<section class="sendtype-button">
-			<a class="sendtype-button-traditional" href="" title="" ng-click="rateService()">TERMINAR</a>
-		</section>
-
-
-	</section>
-
+        <div class="rating-container">
+            <div class="container-img">
+                <img src="img/Envioentregado/Envioentregado3x.png.png" height="80px" width="80px" alt="">
+                <div>
+                    ¡Tu documento <br>ha sido entregado!
+                </div>
+            </div>
+            <section class="rating-starts">
+                <p>Califica tu Envío</p>
+                <ionic-ratings ratingsobj='ratingsObject'></ionic-ratings>
+            </section>
+        </div>
+        <div class="hide-on-keyboard-open row button-bottom-two button-confirm-position">
+            <a class="button button-block button-default-two button-continue" title="Finalizar" ng-click="rateService()">
+                Finalizar
+            </a>
+        </div>
 	</ion-content>
 </ion-view>

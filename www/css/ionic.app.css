@@ -15685,10 +15685,6 @@ ion-slide {
       height: 15%;
       min-width: 100%;
       width: 100%;
-      min-height: 15%;
-      height: 15%;
-      min-width: 100%;
-      width: 100%;
       color: white;
       font-size: 2.5vh;
       font-weight: bold; }
@@ -23504,3 +23500,439 @@ ion-slide {
     min-width: 50%;
     width: 50%;
     color: #7f8183 !important; }
+
+.rating-container {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-direction: normal;
+  -webkit-box-orient: vertical;
+  -webkit-flex-direction: column;
+  -moz-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  align-items: center;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  -webkit-justify-content: flex-start;
+  -moz-justify-content: flex-start;
+  justify-content: flex-start;
+  min-height: 90%;
+  height: 90%;
+  min-width: 100%;
+  width: 100%;
+  padding-top: 25% !important; }
+
+.container-img {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-direction: normal;
+  -webkit-box-orient: vertical;
+  -webkit-flex-direction: column;
+  -moz-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  justify-content: center;
+  min-height: 50%;
+  height: 50%;
+  min-width: 100%;
+  width: 100%; }
+  .container-img div {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-direction: normal;
+    -webkit-box-orient: horizontal;
+    -webkit-flex-direction: row;
+    -moz-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    -moz-align-items: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    -moz-justify-content: center;
+    justify-content: center;
+    min-height: 40%;
+    height: 40%;
+    min-width: 100%;
+    width: 100%;
+    text-align: center;
+    color: #065599;
+    font-size: 22px; }
+
+.rating-starts {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-direction: normal;
+  -webkit-box-orient: vertical;
+  -webkit-flex-direction: column;
+  -moz-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  justify-content: center;
+  min-height: 50%;
+  height: 50%;
+  min-width: 100%;
+  width: 100%;
+  color: #065599;
+  font-size: 18px; }
+
+.ion-ios-star {
+  border: none !important;
+  background-color: transparent;
+  background-image: url("../img/Estrelladecalificacion/1x.png") !important;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  color: transparent !important; }
+  @media screen and (max-height: 2560px) {
+    .ion-ios-star {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/Estrelladecalificacion/3x.png") !important;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 1920px) {
+    .ion-ios-star {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/Estrelladecalificacion/3x.png") !important;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 1280px) {
+    .ion-ios-star {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/Estrelladecalificacion/2x.png") !important;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 960px) {
+    .ion-ios-star {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/Estrelladecalificacion/2x.png") !important;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 736px) {
+    .ion-ios-star {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/Estrelladecalificacion/2x.png") !important;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 667px) {
+    .ion-ios-star {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/Estrelladecalificacion/2x.png") !important;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 568px) {
+    .ion-ios-star {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/Estrelladecalificacion/1x.png") !important;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 480px) {
+    .ion-ios-star {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/Estrelladecalificacion/1x.png") !important;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 320px) {
+    .ion-ios-star {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/Estrelladecalificacion/1x.png") !important;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  .ion-ios-star:hover {
+    border: none !important;
+    background-color: transparent;
+    background-image: url("../img/Estrelladecalificacion/1x.png") !important;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center; }
+    @media screen and (max-height: 2560px) {
+      .ion-ios-star:hover {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/Estrelladecalificacion/3x.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 1920px) {
+      .ion-ios-star:hover {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/Estrelladecalificacion/3x.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 1280px) {
+      .ion-ios-star:hover {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/Estrelladecalificacion/2x.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 960px) {
+      .ion-ios-star:hover {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/Estrelladecalificacion/2x.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 736px) {
+      .ion-ios-star:hover {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/Estrelladecalificacion/2x.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 667px) {
+      .ion-ios-star:hover {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/Estrelladecalificacion/2x.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 568px) {
+      .ion-ios-star:hover {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/Estrelladecalificacion/2x.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 480px) {
+      .ion-ios-star:hover {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/Estrelladecalificacion/1x.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 320px) {
+      .ion-ios-star:hover {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/Estrelladecalificacion/1x.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+
+.ion-ios-star-outline {
+  border: none !important;
+  background-color: transparent;
+  background-image: url("../img/Estrelladecalificacionselected/1x.pngg") !important;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center; }
+  @media screen and (max-height: 2560px) {
+    .ion-ios-star-outline {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/Estrelladecalificacionselected/3x.png") !important;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 1920px) {
+    .ion-ios-star-outline {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/Estrelladecalificacionselected/3x.png") !important;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 1280px) {
+    .ion-ios-star-outline {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/Estrelladecalificacionselected/2x.png") !important;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 960px) {
+    .ion-ios-star-outline {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/Estrelladecalificacionselected/2x.png") !important;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 736px) {
+    .ion-ios-star-outline {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/Estrelladecalificacionselected/2x.png") !important;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 667px) {
+    .ion-ios-star-outline {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/Estrelladecalificacionselected/2x.png") !important;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 568px) {
+    .ion-ios-star-outline {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/Estrelladecalificacionselected/1x.pngg") !important;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 480px) {
+    .ion-ios-star-outline {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/Estrelladecalificacionselected/1x.pngg") !important;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 320px) {
+    .ion-ios-star-outline {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/Estrelladecalificacionselected/1x.pngg") !important;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  .ion-ios-star-outline:hover {
+    border: none !important;
+    background-color: transparent;
+    background-image: url("../img/Estrelladecalificacionselected/1x.png") !important;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center; }
+    @media screen and (max-height: 2560px) {
+      .ion-ios-star-outline:hover {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/Estrelladecalificacionselected/3x.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 1920px) {
+      .ion-ios-star-outline:hover {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/Estrelladecalificacionselected/3x.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 1280px) {
+      .ion-ios-star-outline:hover {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/Estrelladecalificacionselected/2x.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 960px) {
+      .ion-ios-star-outline:hover {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/Estrelladecalificacionselected/2x.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 736px) {
+      .ion-ios-star-outline:hover {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/Estrelladecalificacionselected/2x.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 667px) {
+      .ion-ios-star-outline:hover {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/Estrelladecalificacionselected/2x.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 568px) {
+      .ion-ios-star-outline:hover {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/Estrelladecalificacionselected/2x.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 480px) {
+      .ion-ios-star-outline:hover {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/Estrelladecalificacionselected/1x.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 320px) {
+      .ion-ios-star-outline:hover {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/Estrelladecalificacionselected/1x.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
