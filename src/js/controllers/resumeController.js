@@ -10,7 +10,7 @@
 
         $scope.editOrigin = function() {
             $scope.extraData.navigateTo = $scope.extraData.flow + '.resume';
-            $state.go($scope.extraData.flow + '.origin');
+            $state.go($scope.extraData.flow + '.origin', {}, {reload: true});
         };
 
         $scope.editDestiny = function() {
@@ -20,7 +20,7 @@
                 $state.go($scope.extraData.flow + '.stops');
             } else {
                 $scope.extraData.navigateTo = $scope.extraData.flow + '.resume';
-                $state.go($scope.extraData.flow + '.destiny');
+                $state.go($scope.extraData.flow + '.destiny', {}, {reload: true});
             }
         };
         $scope.editSentType = function() {
@@ -61,19 +61,13 @@
                 $state.go($scope.extraData.flow + '.clientfeatures');
             } else {
                 $scope.extraData.navigateTo = $scope.extraData.flow + '.resume';
-                $state.go($scope.extraData.flow + '.features');
+                $state.go($scope.extraData.flow + '.features', {}, {reload: true});
             }
         };
 
         $scope.editDestinatary = function() {
-            if ( $state.params.serviceType == 45 ) {
-                //Its a diligence
-                $scope.extraData.navigateTo = $scope.extraData.flow + '.resume';
-                $state.go($scope.extraData.flow + '.stops');
-            } else {
-                $scope.extraData.navigateTo = $scope.extraData.flow + '.resume';
-                $state.go($scope.extraData.flow + '.receiver');
-            }
+            $scope.extraData.navigateTo = $scope.extraData.flow + '.resume';
+            $state.go($scope.extraData.flow + '.receiver');
         };
 
         $scope.confirmResume = function() {

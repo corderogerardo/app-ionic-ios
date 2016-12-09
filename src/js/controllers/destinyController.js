@@ -57,7 +57,7 @@
                     $scope.data.destiniesData.push(getStopElement($scope.tempData));
                 }
             } else {
-                $scope.data.destinyAddress = $scope.place.formatted_address;
+                $scope.data.destinyAddress = GoogleMapGeocoder.removeStateAndCountry($scope.place.formatted_address);
                 $scope.data.destinyLatitude = $scope.place.geometry.location.lat();
                 $scope.data.destinyLongitude = $scope.place.geometry.location.lng();
                 $scope.data.destinyPlace = $scope.place;
@@ -65,7 +65,7 @@
             resetTempData();
             $scope.buttonState = false;
             if ( $scope.extraData.navigateTo ) {
-                $state.go($scope.extraData.navigateTo);
+                $state.go($scope.extraData.navigateTo, {}, {reload: true});
                 delete $scope.extraData.navigateTo;
             } else {
                 $state.go($scope.extraData.destinyNext);

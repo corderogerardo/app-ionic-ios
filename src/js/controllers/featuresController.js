@@ -12,7 +12,7 @@
 
             $scope.data.typeServices = $state.params.serviceType;
             $scope.data.bagId = $scope.choice.bag.shipping_bag_id;
-            $scope.data.bagTitle = $scope.choice.bag.subtitle;
+            $scope.data.bagTitle = $scope.choice.bag.title;
             if ($scope.extraData.navigateTo) {
                 $state.go($scope.extraData.navigateTo);
                 delete $scope.extraData.navigateTo;
@@ -89,8 +89,11 @@
         }
 
         function setExistingChoice() {
+            var bag = $scope.bagservice.filter(function (item) {
+                return item.shipping_bag_id == $scope.data.bagId;
+            }).pop();
             $scope.choice = {
-                bag: $scope.data.bagId
+                bag: bag
             };
         }
 

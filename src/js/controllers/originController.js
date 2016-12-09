@@ -26,12 +26,12 @@
             //If cant continue
             if (!canContinue()) return;
 
-            $scope.data.originAddress = $scope.place.formatted_address;
+            $scope.data.originAddress = GoogleMapGeocoder.removeStateAndCountry($scope.place.formatted_address);
             $scope.data.originLatitude = $scope.place.geometry.location.lat();
             $scope.data.originLongitude = $scope.place.geometry.location.lng();
             $scope.data.originPlace = $scope.place;
             if ( $scope.extraData.navigateTo ) {
-                $state.go($scope.extraData.navigateTo);
+                $state.go($scope.extraData.navigateTo, {}, {reload: true});
                 delete $scope.extraData.navigateTo;
             } else {
                 $state.go($scope.extraData.originNext);
