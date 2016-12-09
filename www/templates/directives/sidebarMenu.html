@@ -14,6 +14,15 @@
     <ion-item menu-close ui-sref="app.history" ng-if="!isOnService()">
         <i class="side-menu-history"></i>  Historial
     </ion-item>
+    <ion-item menu-close ui-sref="app.chat" ng-if="!isOnService()">
+        <i class="side-menu-history"></i>  Chat
+    </ion-item>
+    <ion-item menu-close ui-sref="app.tracking" ng-if="!isOnService()">
+        <i class="side-menu-history"></i>  Tracking
+    </ion-item>
+    <ion-item menu-close ui-sref="app.rating" ng-if="!isOnService()">
+        <i class="side-menu-history"></i>  Rating
+    </ion-item>
     <ion-item menu-close ui-sref="menu" ng-if="isOnService() || isServiceActive()" ng-click="cancelService()">
         <i class="side-menu-cancel-service"></i>  Cancelar servicio
     </ion-item>
