@@ -221,7 +221,7 @@ angular.module('axpress', [
             data: {
                 data: {},
                 extraData: {
-                    flow: 'package',
+                    flow: 'app.package',
                     originNext: 'app.package.destiny',
                     destinyNext: 'app.package.features',
                     featuresNext: 'app.package.receiver',

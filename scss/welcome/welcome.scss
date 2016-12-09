@@ -1,69 +1,18 @@
 ion-slide{
-    min-height: 180px;
-    @media screen and (max-height: 2560px){
-    }
-    @media screen and (max-height: 1920px){
-    }
-    @media screen and (max-height: 1280px){
-    }
-    @media screen and (max-height: 960px){
-    }
-    @media screen and (max-height: 736px){
-    }
-    @media screen and (max-height: 667px){
-    }
-    @media screen and (max-height: 568px){
-    }
-    @media screen and (max-height: 480px){
-    }
-    @media screen and (max-height: 320px){
-        min-height: 170px;
-    }
+    @include display-flex;
+    @include flex-direction(row);
+    @include align-items(center);
+    @include justify-content(center);
+    @include widheigh(180px,180px,auto,auto);
+    @include responsivewidthheight(170px,170px,auto,auto,200px,200px,auto,auto,250px,250px,auto,auto);
 }
 .space-welcome{
-    height: 20%;
-    @media screen and (max-height: 2560px){
-    }
-    @media screen and (max-height: 1920px){
-    }
-    @media screen and (max-height: 1280px){
-    }
-    @media screen and (max-height: 960px){
-        height: 40%;
-    }
-    @media screen and (max-height: 736px){
-        height: 37%;
-    }
-    @media screen and (max-height: 667px){
-        height: 35%;
-    }
-    @media screen and (max-height: 568px){
-        height: 35%;
-    }
-    @media screen and (max-height: 480px){
-        height: 25%;
-    }
-    @media screen and (max-height: 320px){
-        min-height: 40px;
-        height: 40px;
-    }
-}
-.space-welcome-buttons{
-    height: 20%;
-    @media screen and (max-height: 736px){
-        height: 30%;
-    }
-    @media screen and (max-height: 667px){
-        height: 30%;
-    }
-    @media screen and (max-height: 568px){
-        height: 30%;
-    }
-    @media screen and (max-height: 480px){
-        height: 30%;
-    }
-    @media screen and (max-height: 320px){
-    }
+    @include display-flex;
+    @include flex-direction(row);
+    @include align-items(center);
+    @include justify-content(center);
+    @include widheigh(27%,27%,100%,100%);
+    @include responsivewidthheight(27%,27%,100%,100%,32%,32%,100%,100%,35%,35%,100%,100%);
 }
 .welcome-title{
     font-size: 30px;
@@ -74,16 +23,6 @@ ion-slide{
     font-size: 2vh !important;
     color:white;
 }
-.welcome-dots{
-		align-items: center;
-		display:flex;
-		height: 5%;
-		flex-direction: column;
-		justify-content: center;
-    margin-bottom: 5%;
-		width:100%;
-}
-
 .slider-pager-page{
     color: white !important;
 }

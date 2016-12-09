@@ -13,7 +13,7 @@
         border-radius: 10px;
         color: $graybbb;
         background-color: $graybbbb !important;
-         @include media-icons("../img/Iconofoto/Iconofotomdpi.png","../img/Iconofoto/Iconofotohdpi.png","../img/Iconofoto/Iconofotoxhdpi.png","../img/Iconofoto/Iconofotoxxhdpi.png","../img/Iconofoto/Iconofotoxxxhdpi.png","../img/Iconofoto/Iconofotomdpi.png","../img/Iconofoto/Iconofotohdpi.png","../img/Iconofoto/Iconofotoxhdpi.png","../img/Iconofoto/Iconofotoxxhdpi.png","../img/Iconofoto/Iconofotoxxxhdpi.png");
+        @include media-icons-ios("../img/Iconofoto/Iconofoto.png","../img/Iconofoto/Iconofoto.png","../img/Iconofoto/Iconofoto2x.png.png","../img/Iconofoto/Iconofoto2x.png.png","../img/Iconofoto/Iconofoto3x.png.png","../img/Iconofoto/Iconofoto3x.png.png");
         background-size: 30% !important;
     }
     img{
@@ -28,7 +28,7 @@
     }
 }
 .no-margin-top{
-    margin-top: 0;
+    margin-top: 0 !important;
 }
 .photo-container-takeselect{
     @include widheigh(10%, 10%, 100%, 100%);
@@ -48,5 +48,5 @@
 .input-text-box{
     color:$balanced !important;
     padding-left: 10% !important;
-    @include media-inputs("../img/Cajadetexto/Cajadetextomdpi.png","../img/Cajadetexto/Cajadetextohdpi.png","../img/Cajadetexto/Cajadetextoxhdpi.png","../img/Cajadetexto/Cajadetextoxxhdpi.png","../img/Cajadetexto/Cajadetextoxxxhdpi.png","../img/Cajadetexto/Cajadetextomdpi.png","../img/Cajadetexto/Cajadetextohdpi.png","../img/Cajadetexto/Cajadetextoxhdpi.png","../img/Cajadetexto/Cajadetextoxxhdpi.png","../img/Cajadetexto/Cajadetextoxxxhdpi.png");
+    @include media-inputs-ios("../img/TextBox/TextBox.png","../img/TextBox/TextBox.png","../img/TextBox/TextBox2x.png.png","../img/TextBox/TextBox2x.png.png","../img/TextBox/TextBox3x.png.png","../img/TextBox/TextBox3x.png.png");
 }

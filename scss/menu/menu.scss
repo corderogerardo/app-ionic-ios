@@ -35,23 +35,9 @@
             @include align-items(center);
             @include justify-content(center);
             border:none !important;
-            height: 80%;
-            min-height: 80%;
-            min-width: 80%;
-            width: 80%;
-            background-color: transparent;
-            background-image: url("../img/MenuDocumentos/Menudocumentosmdpi.png") !important;
-            background-size: 70%;
-            background-position: center;
-            background-repeat:no-repeat;
-            &:hover{
-                border:none !important;
-                background-color: transparent;
-                background-image: url("../img/MenudocumentosTAP/Menudocumentosmdpi.png") !important;
-                background-size: 70%;
-                background-position: center;
-                background-repeat:no-repeat;
-            }
+            @include widheigh(90%,90%,70%,70%);
+            @include responsivewidthheight(90%,90%,70%,70%,90%,90%,75%,75%,90%,90%,75%,75%);
+            @include media-icons-ios("../img/Documentos/Documentos.png","../img/DocumentosTAP/DocuemtosTAP.png","../img/Documentos/Documentos2x.png.png","../img/DocumentosTAP/DocuemtosTAP2x.png.png","../img/Documentos/Documentos3x.png.png","../img/DocumentosTAP/DocuemtosTAP3x.png.png");
         }
         .img-1{
             @include display-flex;
@@ -59,22 +45,9 @@
             @include align-items(center);
             @include justify-content(center);
             border:none !important;
-            height: 80%;
-            min-height: 80%;
-            min-width: 80%;
-            width: 80%;
-            background-color: transparent;
-            background-image: url("../img/Menupaquetes/Menupaquetesmdpi.png") !important;
-            background-size: 70%;
-            background-position: center;
-            background-repeat:no-repeat;
-            &:hover{
-                border:none !important;
-                background-color: transparent;
-                background-image: url("../img/MenupaquetesTAP/Menupaquetesmdpi.png") !important;
-                background-size: 70%;
-                background-repeat:no-repeat;
-            }
+            @include widheigh(90%,90%,70%,70%);
+            @include responsivewidthheight(90%,90%,70%,70%,90%,90%,75%,75%,90%,90%,75%,75%);
+            @include media-icons-ios("../img/Paquetes/Paquetes.png","../img/PaquetesTAP/PaquetesTAP.png","../img/Paquetes/Paquetes2x.png.png","../img/PaquetesTAP/PaquetesTAP2x.png.png","../img/Paquetes/Paquetes3x.png.png","../img/PaquetesTAP/PaquetesTAP3x.png.png");
         }
         .img-2{
             @include display-flex;
@@ -82,22 +55,9 @@
             @include align-items(center);
             @include justify-content(center);
             border:none !important;
-            height: 80%;
-            min-height: 80%;
-            min-width: 80%;
-            width: 80%;
-            background-color: transparent;
-            background-image: url("../img/MenuDiligencias/Diligenciasmdpi.png") !important;
-            background-size: 70%;
-            background-position: center;
-            background-repeat:no-repeat;
-            &:hover{
-                border:none !important;
-                background-color: transparent;
-                background-image: url("../img/MenuDiligenciasTAP/Diligenciasmdpi.png") !important;
-                background-size: 70%;
-                background-repeat:no-repeat;
-            }
+            @include widheigh(90%,90%,70%,70%);
+            @include responsivewidthheight(90%,90%,70%,70%,90%,90%,75%,75%,90%,90%,75%,75%);
+            @include media-icons-ios("../img/Diligencias/Diligencias.png","../img/DiligenciasTAP/DiligenciasTAP.png","../img/Diligencias/Diligencias2x.png.png","../img/DiligenciasTAP/DiligenciasTAP2x.png.png","../img/Diligencias/Diligencias3x.png.png","../img/DiligenciasTAP/DiligenciasTAP3x.png.png");
         }
     }
 }
@@ -121,10 +81,10 @@
     @include align-items(center);
     @include justify-content(center);
     @include widheigh(30%,30%,100%,100%);
-    background-color: $positive !important;
+    background-color: $calm !important;
     .side-menu-container-user{
         @include display-flex;
-        @include flex-direction(row);
+        @include flex-direction(column);
         @include align-items(center);
         @include justify-content(center);
         @include widheigh(50%,50%,100%,100%);
@@ -133,15 +93,15 @@
             @include flex-direction(row);
             @include align-items(center);
             @include justify-content(center);
-            @include widheigh(100%,100%,25%,25%);
-            margin-right: 5%;
-            margin-left: 10%;
+            @include widheigh(100%,100%,50%,50%);
+            margin-bottom: 5%;
         }
         .side-menu-user{
             @include display-flex;
             @include flex-direction(column);
+            @include align-items(center);
             @include justify-content(center);
-            @include widheigh(100%,100%,65%,65%);
+            @include widheigh(40%,40%,50%,50%);
         }
     }
 }
@@ -151,14 +111,14 @@
     @include align-items(flex-start);
     @include justify-content(center);
     @include widheigh(100%,100%,100%,100%);
-    background-color: $dark;
+    background-color: $positive;
     ion-list{
         @include display-flex;
         @include flex-direction(column);
         @include align-items(flex-start);
         @include justify-content(center);
         @include widheigh(100%,100%,100%,100%);
-        background-color: $dark !important;
+        background-color: $positive !important;
         a{
             @include display-flex;
             @include flex-direction(row);
@@ -166,7 +126,7 @@
             @include justify-content(flex-start);
             color:white !important;
             font-weight: bold;
-            background-color: $dark !important;
+            background-color: $positive !important;
             font-size: 3.5vh;
             &:hover{
                 color:$energized !important;
@@ -186,15 +146,18 @@
         @include justify-content(flex-start);
         color:white !important;
         font-weight: bold;
-        background-color: $dark !important;
-        &:hover{
-            color:$energized !important;
-            font-weight: bold;
-        }
+        background-color: $positive !important;
         i{
             margin-right: 20px;
             @include widheigh(18px,18px,18px,18px);
         }
+        }
+}
+.item-content{
+    color:white !important;
+    &:hover{
+        color:$energized !important;
+        font-weight: bold;
     }
 }
 .has-header{
@@ -211,7 +174,7 @@
     @include align-items(center);
     @include justify-content(center);
     @include widheigh(18px,18px,18px,18px);
-    @include media-icons("../img/MenuLateralInicio/Iniciomdpi.png","../img/MenuLateralInicio/Iniciohdpi.png","../img/MenuLateralInicio/Inicioxhdpi.png","../img/MenuLateralInicio/Inicioxxhdpi.png","../img/MenuLateralInicio/Inicioxxxhdpi.png",        "../img/MenuLateralInicioTAP/Iniciomdpi.png","../img/MenuLateralInicioTAP/Iniciohdpi.png","../img/MenuLateralInicioTAP/Inicioxhdpi.png","../img/MenuLateralInicioTAP/Inicioxxhdpi.png","../img/MenuLateralInicioTAP/Inicioxxxhdpi.png");
+    @include media-icons-ios("../img/Iniciomenulateral/Iniciomenu.png","../img/IniciomenulateralTAP/Iniciomenu.png","../img/Iniciomenulateral/Iniciomenu2x.png.png","../img/IniciomenulateralTAP/Iniciomenu2x.png.png","../img/Iniciomenulateral/Iniciomenu3x.png.png","../img/IniciomenulateralTAP/Iniciomenu3x.png.png");
 }
 .side-menu-edit{
     @include display-flex;
@@ -219,7 +182,6 @@
     @include align-items(center);
     @include justify-content(center);
     @include widheigh(18px,18px,18px,18px);
-    @include media-icons("../img/MenuLateralEditarcuenta/MenuEditarcuentamdpi.png","../img/MenuLateralEditarcuenta/MenuEditarcuentahdpi.png","../img/MenuLateralEditarcuenta/MenuEditarcuentaxhdpi.png","../img/MenuLateralEditarcuenta/MenuEditarcuentaxxhdpi.png","../img/MenuLateralEditarcuenta/MenuEditarcuentaxxxhdpi.png","../img/MenuLateralEditarcuentaTAP/MenuEditarcuentamdpi.png","../img/MenuLateralEditarcuentaTAP/MenuEditarcuentahdpi.png","../img/MenuLateralEditarcuentaTAP/MenuEditarcuentaxhdpi.png","../img/MenuLateralEditarcuentaTAP/MenuEditarcuentaxxhdpi.png","../img/MenuLateralEditarcuentaTAP/MenuEditarcuentaxxxhdpi.png");
 }
 .side-menu-history{
     @include display-flex;
@@ -227,7 +189,7 @@
     @include align-items(center);
     @include justify-content(center);
     @include widheigh(18px,18px,18px,18px);
-    @include media-icons("../img/MenuLateralhistorial/Historialmdpi.png","../img/MenuLateralhistorial/Historialhdpi.png","../img/MenuLateralhistorial/Historialxhdpi.png","../img/MenuLateralhistorial/Historialxxhdpi.png","../img/MenuLateralhistorial/Historialxxxhdpi.png","../img/MenuLateralhistorialTAP/Historialmdpi.png","../img/MenuLateralhistorialTAP/Historialhdpi.png","../img/MenuLateralhistorialTAP/Historialxhdpi.png","../img/MenuLateralhistorialTAP/Historialxxhdpi.png","../img/MenuLateralhistorialTAP/Historialxxxhdpi.png");
+    @include media-icons-ios("../img/Historial/Historial.png","../img/HistorialTAP/Historial.png","../img/Historial/Historial2x.png.png","../img/HistorialTAP/Historial2x.png.png","../img/Historial/Historial3x.png.png","../img/HistorialTAP/Historial3x.png.png");
 }
 .side-menu-cancel-service {
     @include display-flex;
@@ -235,7 +197,7 @@
     @include align-items(center);
     @include justify-content(center);
     @include widheigh(18px, 18px, 18px, 18px);
-    @include media-icons("../img/MenulateralCancelarservicio/Cancelarserviciomdpi.png", "../img/MenulateralCancelarservicio/Cancelarserviciohdpi.png", "../img/MenulateralCancelarservicio/Cancelarservicioxhdpi.png", "../img/MenulateralCancelarservicio/Cancelarservicioxxhdpi.png", "../img/MenulateralCancelarservicio/Cancelarservicioxxxhdpi.png", "../img/MenulateralCancelarservicioTAP/Cancelarserviciomdpi.png", "../img/MenulateralCancelarservicioTAP/Cancelarserviciohdpi.png", "../img/MenulateralCancelarservicioTAP/Cancelarservicioxhdpi.png", "../img/MenulateralCancelarservicioTAP/Cancelarservicioxxhdpi.png", "../img/MenulateralCancelarservicioTAP/Cancelarservicioxxxhdpi.png");
+  /*  @include media-icons-ios($x1,$hoverx1,$x2,$hoverx2,$x3,$hoverx3);*/
 }
 .side-menu-logout{
     @include display-flex;
@@ -243,5 +205,5 @@
     @include align-items(center);
     @include justify-content(center);
     @include widheigh(18px,18px,18px,18px);
-    @include media-icons("../img/MenulateralCerrarsesion/Cerrarsesionmdpi.png","../img/MenulateralCerrarsesion/Cerrarsesionhdpi.png","../img/MenulateralCerrarsesion/Cerrarsesionxhdpi.png","../img/MenulateralCerrarsesion/Cerrarsesionxxhdpi.png","../img/MenulateralCerrarsesion/Cerrarsesionxxxhdpi.png","../img/MenulateralCerrarsesionTAP/Cerrarsesionmdpi.png","../img/MenulateralCerrarsesionTAP/Cerrarsesionhdpi.png","../img/MenulateralCerrarsesionTAP/Cerrarsesionxhdpi.png","../img/MenulateralCerrarsesionTAP/Cerrarsesionxxhdpi.png","../img/MenulateralCerrarsesionTAP/Cerrarsesionxxhdpi.png");
+   /* @include media-icons-ios($x1,$hoverx1,$x2,$hoverx2,$x3,$hoverx3);*/
 }

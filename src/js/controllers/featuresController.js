@@ -11,8 +11,8 @@
             if (!hasSelectedTypeService()) return;
 
             $scope.data.typeServices = $state.params.serviceType;
-            $scope.data.bagId = $scope.choice.bag;
-            $scope.data.bagId = $scope.choice.bag;
+            $scope.data.bagId = $scope.choice.bag.shipping_bag_id;
+            $scope.data.bagTitle = $scope.choice.bag.subtitle;
             if ($scope.extraData.navigateTo) {
                 $state.go($scope.extraData.navigateTo);
                 delete $scope.extraData.navigateTo;
@@ -119,7 +119,7 @@
                 setExistingChoice();
             }
             $scope.markers = [{
-                icon    : "{url: 'img/PinOrigen/Origenmdpi.png', scaledSize: [28,38]}",
+                icon    : "{url: 'img/PinOrigen/Origen3x.png.png', scaledSize: [28,38]}",
                 position: [$scope.data.originLatitude, $scope.data.originLongitude]
             }];
             $scope.tempData = {};
@@ -131,7 +131,7 @@
                 var index = $scope.data.editStopIndex;
                 $scope.data.destiniesData.forEach(function(destiny, destIndex) {
                     $scope.markers.push({
-                        icon     : (destIndex == index ? "{url: 'img/Pindestino/Pindetsinomdpi.png', scaledSize: [28,38]}" : "{url: 'img/Pindestino/Pindetsinomdpi.png', scaledSize: [28,38]}"),
+                        icon     : (destIndex == index ? "{url: 'img/Pindestino/Pindetsino3x.png.png', scaledSize: [28,38]}" : "{url: 'img/Pindestino/Pindetsino3x.png.png', scaledSize: [28,38]}"),
                         position : [destiny.latitude, destiny.longitude],
                     });
                 });
@@ -146,7 +146,7 @@
             } else {
                 $scope.data.destiniesData = [];
                 $scope.markers.push({
-                    icon     : "{url: 'img/Pindestino/Pindetsinomdpi.png', scaledSize: [28,38]}",
+                    icon     : "{url: 'img/Pindestino/Pindetsino3x.png.png', scaledSize: [28,38]}",
                 });
             }
 

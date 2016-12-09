@@ -19,7 +19,7 @@
         };
 
         $scope.pickHere = function() {
-            $scope.markers[0].icon = "{url: 'img/PinOrigen/Origenmdpi.png', scaledSize: [28,38]}";
+            $scope.markers[0].icon = "{url: 'img/PinOrigen/Origen3x.png.png', scaledSize: [28,38]}";
         };
 
         $scope.confirmOrigin = function() {
@@ -95,7 +95,7 @@
             $scope.extraData = $state.current.data.extraData;
             $scope.markers = [{
                 title    : 'Origen',
-                icon     : "{url: 'img/PinOrigen/Origenmdpi.png', scaledSize: [28,38]}",
+                icon     : "{url: 'img/PinOrigen/Origen3x.png.png', scaledSize: [28,38]}",
                 draggable: true
             }];
             if ( $scope.data.originAddress )

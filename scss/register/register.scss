@@ -37,10 +37,7 @@
 .item-input{
     background-color: transparent;
     margin-bottom: 2%;
-    height: 45px !important;
-    min-height: 45px !important;
-    min-width: 80%;
-    width: 80%;
+    @include responsivewidthheight(46px !important,46px !important,80%,80%,60px !important,60px !important,80%,80%,90px !important,90px !important,80%,80%);
 }
 .register-line{
     border-bottom:1px solid white;
@@ -50,7 +47,7 @@
 }
 .register-create{
     text-align: center;
-    font-size: 12px;
+    font-size: 3vh;
     color:white;
 }
 .register-social-buttons{
@@ -61,50 +58,6 @@
     a{
         background-color: transparent;
         color:white;
-        height: 44px;
-        width: 44px;
-        @media screen and (max-height: 2560px){
-            height: 176px;
-            width: 176px;
-        }
-        @media screen and (max-height: 1920px){
-            height: 132px;
-            width: 132px;
-        }
-        @media screen and (max-height: 1280px){
-            height: 88px;
-            width: 88px;
-        }
-        @media screen and (max-height: 960px){
-            height: 66px;
-            width: 66px;
-        }
-        @media screen and (max-height: 736px){
-            height: 66px;
-            width: 66px;
-        }
-        @media screen and (max-height: 667px){
-            height: 66px;
-            width: 66px;
-        }
-        @media screen and (max-height: 568px){
-            height: 66px;
-            width: 66px;
-        }
-        @media screen and (max-height: 480px){
-            height: 44px;
-            width: 44px;
-        }
-        @media screen and (max-height: 320px){
-            height: 44px;
-            width: 44px;
-        }
-    }
-    &:hover{
-        background-color: transparent;
-    }
-    &:active{
-        background-color: transparent;
     }
 }
 .register-term{
@@ -115,9 +68,30 @@
     border:none !important;
     background-color: transparent !important;
     padding-left: 0;
-	color:white !important;
-	font-size: 10px;
+	color:$createAccauntTap !important;
+	font-size: 2vh;
+    font-weight: 200;
 	text-decoration: none;
+    height: 20px !important;
+    min-height: 20px !important;
+    min-width:80% !important;
+    width: 80%;
+    span{
+        color:$createAccauntTap;
+    }
+}
+.forgot-pass{
+    @include display-flex;
+    @include flex-direction(row);
+    @include align-items(center);
+    @include justify-content(center);
+    border:none !important;
+    background-color: transparent !important;
+    padding-left: 0;
+    color:white !important;
+    font-size: 2vh;
+    font-weight: 200;
+    text-decoration: none;
     height: 20px !important;
     min-height: 20px !important;
     min-width:80% !important;

@@ -1,51 +1,31 @@
-<div class="bar bar-header bar-balanced">
-    <h1 class="title">CARACTERÍSTICAS</h1>
+<div class="bar bar-header bar-balanced bar-sendtype">
+    <h3 class="title">Características envío</h3>
 </div>
 <ion-view view-title="SendType">
     <ion-content scroll="false">
-        <div class="space"></div>
-        <section class="caracteristics-title">
             <div>
                 <span>Diligencia la siguiente información.</span>
             </div>
-            <ion-view view-title="SendType">
-                <ion-content scroll="false" >
+<ion-view view-title="SendType">
+    <ion-content scroll="false" >
 
-                    <section class="package-icon">
-                       <i class="icon-package-package"></i>
-                    </section>
+        <section class="package-icon">
+           <i class="icon-package-package"></i>
+        </section>
 
-                    <div class="container-package-sizes">
-                        <div class="list list-inset">
-                            <input class="item item-input inputs-general input-sizes" type="number" name="" min="0" ng-model="data.height" value="" placeholder="Alto">
-                            <input class="item item-input inputs-general input-sizes" type="number" name="" min="0" value="" ng-model="data.width" placeholder="Ancho">
-                            <input class="item item-input inputs-general input-sizes" type="number" name="" min="0" value="" ng-model="data.longitude" placeholder="Largo">
-                        </div>
-                        <div class="list list-inset">
-                            <input class="item item-input checkbox-icon checkbox-height" type="checkbox" ng-model="data.checked.height" name="altura" id="altura" />
-                            <input class="item item-input checkbox-icon checkbox-weight" type="checkbox" ng-model="data.checked.width" name="ancho" id="ancho" />
-                            <input class="item item-input checkbox-icon checkbox-long" type="checkbox" ng-model="data.checked.longitude" name="longitud" id="longitud" />
-                        </div>
-                    </div>
-                    <div class="container-package-sizes-two">
-                        <div class="list list-inset">
-                            <input class="item item-input inputs-general input-sizes" type="number" name="" min="0" ng-model="data.weight" value="" placeholder="Peso kg">
-                        </div>
-                        <div class="list list-inset">
-                            <input class="item item-input inputs-general input-sizes" type="number" name="" min="0" ng-model="data.cuantity" value="" placeholder="Cantidad">
-                        </div>
-                    </div>
-                    <div class="hide-on-keyboard-open row button-bottom-two button-confirm-position">
-                        <a class="button button-block button-default-two button-confirm" ng-click="confirmPackage()">
-                           Continuar
-                        </a>
-                    </div>
-                </ion-content>
-            </ion-view>
-
-        </ion-nav-view>
-    </ion-side-menu-content>
-    <ion-side-menu side="left">
-        <sidebar-menu> </sidebar-menu>
-    </ion-side-menu>
-</ion-side-menus>
+        <div class="container-package-sizes">
+            <div class="list list-inset">
+                <input class="item item-input inputs-general input-sizes-height" type="number" name="" min="0" ng-model="data.height" value="" >
+                <input class="item item-input inputs-general input-sizes-width" type="number" name="" min="0" value="" ng-model="data.width" >
+                <input class="item item-input inputs-general input-sizes-longitude" type="number" name="" min="0" value="" ng-model="data.longitude" >
+                <input class="item item-input inputs-general input-sizes-weight" type="number" name="" min="0" value="" ng-model="data.weight">
+                <input class="item item-input inputs-general input-sizes-quantity" type="number" name="" min="0" value="" ng-model="data.cuantity" >
+            </div>
+        </div>
+        <div class="hide-on-keyboard-open row button-bottom-two button-confirm-position">
+            <a class="button button-block button-default-two button-continue" ng-click="confirmPackage()">
+               Continuar
+            </a>
+        </div>
+    </ion-content>
+</ion-view>

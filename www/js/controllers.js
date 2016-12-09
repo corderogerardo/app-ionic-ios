@@ -378,7 +378,7 @@
         $scope.pickHere = function() {
             $scope.buttonState = true;
             var marker = $scope.markers[$scope.markers.length - 1];
-            marker.icon = "{url: 'img/Pindestino/Pindetsinomdpi.png', scaledSize: [28,38]}";
+            marker.icon = "{url: 'img/Pindestino/Pindetsino3x.png.png', scaledSize: [28,38]}";
             marker.draggable = false;
         };
 
@@ -387,9 +387,9 @@
             if (!hasAddedNameAndPhone()) return;
             var lastMarker = $scope.markers[$scope.markers.length - 1];
             lastMarker.draggable = false;
-            lastMarker.icon = "{url: 'img/Pindestino/Pindetsinomdpi.png', scaledSize: [28,38]}";
+            lastMarker.icon = "{url: 'img/Pindestino/Pindetsino3x.png.png', scaledSize: [28,38]}";
             $scope.markers.push({
-                icon: "{url: 'img/Pindestino/Pindetsinomdpi.png', scaledSize: [28,38]}"
+                icon: "{url: 'img/Pindestino/Pindetsino3x.png.png', scaledSize: [28,38]}"
             });
             $scope.data.destiniesData.push(getStopElement($scope.tempData));
             resetTempData();
@@ -508,7 +508,7 @@
             $scope.data = $state.current.data.data;
             $scope.extraData = $state.current.data.extraData;
             $scope.markers = [{
-                icon    : "{url: 'img/PinOrigen/Origenmdpi.png', scaledSize: [28,38]}",
+                icon    : "{url: 'img/PinOrigen/Origen3x.png.png', scaledSize: [28,38]}",
                 position: [$scope.data.originLatitude, $scope.data.originLongitude]
             }];
             $scope.tempData = {};
@@ -521,7 +521,7 @@
                 var index = $scope.data.editStopIndex;
                 $scope.data.destiniesData.forEach(function(destiny, destIndex) {
                     $scope.markers.push({
-                        icon     : (destIndex == index ? "{url: 'img/Pindestino/Pindetsinomdpi.png', scaledSize: [28,38]}" : "{url: 'img/Pindestino/Pindetsinomdpi.png', scaledSize: [28,38]}"),
+                        icon     : (destIndex == index ? "{url: 'img/Pindestino/Pindetsino3x.png.png', scaledSize: [28,38]}" : "{url: 'img/Pindestino/Pindetsino3x.png.png', scaledSize: [28,38]}"),
                         position : [destiny.latitude, destiny.longitude],
                         draggable: (destIndex == index)
                     });
@@ -537,7 +537,7 @@
             } else {
                 $scope.data.destiniesData = [];
                 $scope.markers.push({
-                    icon     : "{url: 'img/Pindestino/Pindetsinomdpi.png', scaledSize: [28,38]}",
+                    icon     : "{url: 'img/Pindestino/Pindetsino3x.png.png', scaledSize: [28,38]}",
                     draggable: true
                 });
             }
@@ -563,8 +563,8 @@
             if (!hasSelectedTypeService()) return;
 
             $scope.data.typeServices = $state.params.serviceType;
-            $scope.data.bagId = $scope.choice.bag;
-            $scope.data.bagId = $scope.choice.bag;
+            $scope.data.bagId = $scope.choice.bag.shipping_bag_id;
+            $scope.data.bagTitle = $scope.choice.bag.subtitle;
             if ($scope.extraData.navigateTo) {
                 $state.go($scope.extraData.navigateTo);
                 delete $scope.extraData.navigateTo;
@@ -671,7 +671,7 @@
                 setExistingChoice();
             }
             $scope.markers = [{
-                icon    : "{url: 'img/PinOrigen/Origenmdpi.png', scaledSize: [28,38]}",
+                icon    : "{url: 'img/PinOrigen/Origen3x.png.png', scaledSize: [28,38]}",
                 position: [$scope.data.originLatitude, $scope.data.originLongitude]
             }];
             $scope.tempData = {};
@@ -683,7 +683,7 @@
                 var index = $scope.data.editStopIndex;
                 $scope.data.destiniesData.forEach(function(destiny, destIndex) {
                     $scope.markers.push({
-                        icon     : (destIndex == index ? "{url: 'img/Pindestino/Pindetsinomdpi.png', scaledSize: [28,38]}" : "{url: 'img/Pindestino/Pindetsinomdpi.png', scaledSize: [28,38]}"),
+                        icon     : (destIndex == index ? "{url: 'img/Pindestino/Pindetsino3x.png.png', scaledSize: [28,38]}" : "{url: 'img/Pindestino/Pindetsino3x.png.png', scaledSize: [28,38]}"),
                         position : [destiny.latitude, destiny.longitude],
                     });
                 });
@@ -698,7 +698,7 @@
             } else {
                 $scope.data.destiniesData = [];
                 $scope.markers.push({
-                    icon     : "{url: 'img/Pindestino/Pindetsinomdpi.png', scaledSize: [28,38]}",
+                    icon     : "{url: 'img/Pindestino/Pindetsino3x.png.png', scaledSize: [28,38]}",
                 });
             }
 
@@ -811,7 +811,7 @@
         };
 
         $scope.pickHere = function() {
-            $scope.markers[0].icon = "{url: 'img/PinOrigen/Origenmdpi.png', scaledSize: [28,38]}";
+            $scope.markers[0].icon = "{url: 'img/PinOrigen/Origen3x.png.png', scaledSize: [28,38]}";
         };
 
         $scope.confirmOrigin = function() {
@@ -887,7 +887,7 @@
             $scope.extraData = $state.current.data.extraData;
             $scope.markers = [{
                 title    : 'Origen',
-                icon     : "{url: 'img/PinOrigen/Origenmdpi.png', scaledSize: [28,38]}",
+                icon     : "{url: 'img/PinOrigen/Origen3x.png.png', scaledSize: [28,38]}",
                 draggable: true
             }];
             if ( $scope.data.originAddress )
@@ -1117,7 +1117,7 @@
 
         $scope.editOrigin = function() {
             $scope.extraData.navigateTo = $scope.extraData.flow + '.resume';
-            $state.go($scope.extraData.flow + '.origin', {}, {reload: true});
+            $state.go($scope.extraData.flow + '.origin');
         };
 
         $scope.editDestiny = function() {
@@ -1127,7 +1127,37 @@
                 $state.go($scope.extraData.flow + '.stops');
             } else {
                 $scope.extraData.navigateTo = $scope.extraData.flow + '.resume';
-                $state.go($scope.extraData.flow + '.destiny', {}, {reload: true});
+                $state.go($scope.extraData.flow + '.destiny');
+            }
+        };
+        $scope.editSentType = function() {
+            if ( $state.params.serviceType == 45 ) {
+                //Its a diligence
+                $scope.extraData.navigateTo = $scope.extraData.flow + '.resume';
+                $state.go($scope.extraData.flow + '.features');
+            } else {
+                $scope.extraData.navigateTo = $scope.extraData.flow + '.resume';
+                $state.go($scope.extraData.flow + '.features');
+            }
+        };
+        $scope.editPackages = function() {
+            if ( $state.params.serviceType == 45 ) {
+                //Its a diligence
+                $scope.extraData.navigateTo = $scope.extraData.flow + '.resume';
+                $state.go($scope.extraData.flow + '.package');
+            } else {
+                $scope.extraData.navigateTo = $scope.extraData.flow + '.resume';
+                $state.go($scope.extraData.flow + '.package');
+            }
+        };
+        $scope.editPhoto = function() {
+            if ( $state.params.serviceType == 45 ) {
+                //Its a diligence
+                $scope.extraData.navigateTo = $scope.extraData.flow + '.resume';
+                $state.go($scope.extraData.flow + '.photo');
+            } else {
+                $scope.extraData.navigateTo = $scope.extraData.flow + '.resume';
+                $state.go($scope.extraData.flow + '.photo');
             }
         };
 

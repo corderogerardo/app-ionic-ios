@@ -1,4 +1,4 @@
-<div class="bar bar-header bar-balanced">
+<div class="bar bar-header bar-balanced bar-sendtype">
      <h3 class="title">Diligencia</h3>
 </div>
 <ion-view view-title="SendType">
@@ -10,17 +10,19 @@
             </div>
         </section>
         <section class="container-senttype-errands">
-        <input class="item item-input inputs-general input-sizes" type="text" name="" value="" ng-model="data.descriptionText" placeholder="Breve descripcion de tu envio...">
+        <input class="item item-input inputs-general input-sizes" type="text" name="" value="" ng-model="data.descriptionText" placeholder="Breve descripción de tu diligencia">
         </section>
-        <section class="container-senttype-errands-check">
-        <p>Selecciona si tu envio termina en el punto de partida.</p>
-        <ion-checkbox id="goback" ng-model="data.samepoint">Ida y Vuelta</ion-checkbox>
+        <section class=" container-senttype-errands-check">
+        <p>Selecciona si tu diligencia <br> termina en el punto de partida.</p>
+            <section class="container-senttype-errands">
+            <input class="item item-input checkbox-icon inputs-checkbox-axpress" id="goback" title="Ida y Vuelta"  value="Ida y Vuelta" type="checkbox" ng-model="data.samepoint" > &nbsp; Ida y vuelta
+            </section>
         </section>
 
         </div>
 
         <div class="hide-on-keyboard-open row button-bottom-two button-confirm-position">
-            <a class="button button-block button-default-two button-confirm" ng-click="confirmClientFeatures()">
+            <a class="button button-block button-default-two button-continue" ng-click="confirmClientFeatures()">
                 Continuar
             </a>
         </div>

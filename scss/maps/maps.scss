@@ -14,10 +14,8 @@
     @include align-items(center);
     @include justify-content(flex-end);
     background-color: rgba($balanced,.7) !important;
-    height: 150px;
-    min-height: 150px;
-    width: 100%;
-    min-width: 100%;
+    @include widheigh(150px,150px,100%,100%);
+    @include responsivewidthheight(130px,130px,100%,100%,140px,140px,100%,100%,155px,155px,100%,100%);
     margin:0;
     padding: 0;
     padding-bottom: 5px !important;
@@ -36,16 +34,14 @@
     @include align-items(center);
     @include justify-content(flex-end);
     map-autocomplete-address{
-        width: 90%;
-        min-width: 90%;
-        height: 100%;
-        min-height: 100%;
+        @include widheigh(40px !important,40px !important,90%,90%);
+        @include responsivewidthheight(40px !important,40px !important,90%,90%,50px !important,50px !important,90%,90%,55px !important,55px !important,90%,90%);
         margin: 0;
         padding: 0;
     }
     input{
-        width: 90%;
-        min-width: 90%;
+        @include widheigh(40px !important,40px !important,90%,90%);
+        @include responsivewidthheight(40px !important,40px !important,90%,90%,50px !important,50px !important,90%,90%,55px !important,55px !important,90%,90%);
         margin: 0;
         padding: 0;
     }
@@ -69,7 +65,7 @@
 		width: 80%;
 		height: 10%;
 		top: 30%;
-		left: 0px;
+		left: 0;
 		position: absolute;
 		z-index: 1;
 }
@@ -80,49 +76,39 @@
     height:5%;
     bottom: 10%;
 }
-.button-confirm-position{
-    width:80%;
-    left: 0;
-    height:5%;
-    bottom: 3%;
+.errands-inputs{
+    @include display-flex;
+    @include flex-direction(column);
+    @include align-items(center);
+    @include justify-content(center);
+    @include widheigh(28%,28%,100%,100%);
+    background-color: transparent !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    bottom: 8%;
+    position: absolute;
 }
-.button-confirm{
-    color: white !important;
-    background-color: transparent;
-    background-image: url("../img/Botoncontinuar/BotonContinuarmdpi.png") !important;
-    background-size: 100%;
-    background-repeat:no-repeat;
-    background-position: center;
-    &:focus{
-        color: $dark !important;
-        background-image: url("../img/Cajadetextoorigen/Origenmdpi.png");
-        background-size: 100%;
-        background-repeat:no-repeat;
-        background-position: center;
+.button-confirm-position-two{
+    @include display-flex;
+    @include flex-direction(row);
+    @include align-items(center);
+    @include justify-content(space-around);
+    width:100% !important;
+    margin-left: 0 !important;
+    height:10%;
+    bottom: 1%;
+    .button-confirm{
+        @include widheigh(85% !important,85% !important,45% !important,4%!important);
+        color: white !important;
+        background-color: $positive !important;
+        border-radius: 25px !important;
+        font-size: 2.5vh !important;
+        padding: 0!important;
+        @include borderradiusmixin(25px,30px,35px);
+    &:hover{
+        background-color: $calm !important;
     }
-}
-.confirm-button{
-	width:90%;
-	position:absolute;
-	left: 5%;
-	height:8%;
-	bottom: 3%;
-	a{
-		background-color:$energized;
-        &:hover{
-            background-color:$energized;
-        }
-	}
-}
-.confirm-button-traditional{
-	align-items: center;
-	display:flex;
-	color:white;
-	text-decoration: none;
-	justify-content: center;
-	background-color:$energized;
-	width:100%;
-	height:50px;
+    }
 }
 .errands-destinatary-input{
 	bottom:16%;
@@ -149,33 +135,34 @@
 }
 .input-origin{
     color: $dark !important;
-    background-image: url("../img/Cajadetextoorigen/Origenmdpi.png");
-    background-size: 100%;
-    background-repeat:no-repeat;
-    background-position: center;
-    &:focus{
-        color: $dark !important;
-        background-image: url("../img/Cajadetextoorigen/Origenmdpi.png");
-        background-size: 100%;
-        background-repeat:no-repeat;
-        background-position: center;
-    }
+    padding-left: 6% !important;
+    @include media-inputs-ios("../img/TextBoxOrigen/Origen.png","../img/TextBoxOrigen/Origen.png","../img/TextBoxOrigen/Origen2x.png.png","../img/TextBoxOrigen/Origen2x.png.png","../img/TextBoxOrigen/Origen3x.png.png","../img/TextBoxOrigen/Origen3x.png.png");
+    font-size: 2.5vh !important;
+}
+.input-destinies{
+    color: $dark !important;
+    padding-left: 6% !important;
+    @include media-inputs-ios("../img/Destino/Destino.png","../img/Destino/Destino.png","../img/Destino/Destino2x.png.png","../img/Destino/Destino2x.png.png","../img/Destino/Destino3x.png.png","../img/Destino/Destino3x.png.png");
+    font-size: 2.5vh !important;
 }
 .input-originDetail{
     color: $dark !important;
-    background-image: url("../img/Detalles/Detallesmdpi.png");
-    background-size: 100%;
-    background-repeat:no-repeat;
-    background-position: center;
-    &:focus{
-        color: $dark !important;
-        background-image: url("../img/Detalles/Detallesmdpi.png");
-        background-size: 100%;
-        background-repeat:no-repeat;
-        background-position: center;
-    }
+    padding-left: 10% !important;
+    @include media-inputs-ios("../img/TextBoxdetalles/Detalles.png","../img/TextBoxdetalles/Detalles.png","../img/TextBoxdetalles/Detalles2x.png.png","../img/TextBoxdetalles/Detalles2x.png.png","../img/TextBoxdetalles/Detalles3x.png.png","..img/TextBoxdetalles/Detalles3x.png.png");
+    font-size: 2.5vh !important;
 }
 .button-gps{
-    @include media-icons("../img/Ubicacion/Ubicacionmdpi.png","../img/Ubicacion/Ubicacionhdpi.png","../img/Ubicacion/Ubicacionxhdpi.png","../img/Ubicacion/Ubicacionxxhdpi.png","../img/Ubicacion/Ubicacionxxxhdpi.png","../img/Ubicacion/Ubicacionmdpi.png","../img/Ubicacion/Ubicacionhdpi.png","../img/Ubicacion/Ubicacionxhdpi.png","../img/Ubicacion/Ubicacionxxhdpi.png","../img/Ubicacion/Ubicacionxxxhdpi.png");
+    @include media-icons-ios("../img/Ubicacion/Ubicacion.png","../img/Ubicacion/Ubicacion.png","../img/Ubicacion/Ubicacion2x.png.png","../img/Ubicacion/Ubicacion2x.png.png","../img/Ubicacion/Ubicacion3x.png.png","../img/Ubicacion/Ubicacion3x.png.png");
 }
-
+.button-gps-two{
+    @include media-icons-ios("../img/Ubicacion/Ubicacion.png","../img/Ubicacion/Ubicacion.png","../img/Ubicacion/Ubicacion2x.png.png","../img/Ubicacion/Ubicacion2x.png.png","../img/Ubicacion/Ubicacion3x.png.png","../img/Ubicacion/Ubicacion3x.png.png");
+    bottom: 28%;
+}
+.input-diligence-destinatary{
+    @include media-inputs-ios("../img/Nombredeldestinatario/Nombredeldestinatario.png","../img/NombredeldestinatarioTAP/Nombredeldestinatario.png","../img/Nombredeldestinatario/Nombredeldestinatario2x.png.png","../img/NombredeldestinatarioTAP/Nombredeldestinatario2x.png.png","../img/Nombredeldestinatario/Nombredeldestinatario3x.png.png","../img/NombredeldestinatarioTAP/Nombredeldestinatario3x.png.png");
+    color:$balanced !important;
+}
+.input-diligence-phone{
+    @include media-inputs-ios("../img/Telefonodeldestinatario/Telefoonodestinatario.png","../img/TelefonodeldestinatarioTAP/Telefoonodestinatario.png","../img/Telefonodeldestinatario/Telefoonodestinatario2x.png.png","../img/TelefonodeldestinatarioTAP/Telefoonodestinatario2x.png.png","../img/Telefonodeldestinatario/Telefoonodestinatario3x.png.png","../img/TelefonodeldestinatarioTAP/Telefoonodestinatario3x.png.png");
+    color:$balanced !important;
+}
