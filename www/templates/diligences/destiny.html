@@ -37,10 +37,12 @@
                 </label>
             </div>
         </div>
-        <div class="new-direction-button" ng-if="!data.editing">
+        <!-- Add address only if not editing and not max allowed destinies minus one -->
+        <div class="new-direction-button" ng-if="!data.editing && (data.destiniesData.length < (maxDestinies - 1))">
             <a class="button-noicontwo" ng-click="addNewAddress()" title="">AGREGAR DIRECCION</a>
         </div>
-        <div ng-if="!buttonState && !data.editing" class="pickuphere-button">
+        <!-- Deliver here only if not editing and has at least a previous stop -->
+        <div ng-if="!data.editing && (data.destiniesData.length >= 1)" class="pickuphere-button">
             <a class="button-noicontwo" ng-click="pickHere()" title="">ENTREGAR AQUÍ</a>
         </div>
         <div ng-if="!buttonState && data.editing" class="pickuphere-button">

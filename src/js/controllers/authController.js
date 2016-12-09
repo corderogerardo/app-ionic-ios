@@ -8,8 +8,8 @@
         activate();
 
         function activate() {
-
             $scope.user = {};
+            checkFirstRun();
             if (localStorage.getItem('axpress.user') && localStorage.getItem('axpress.menu')) {
                 $rootScope.user = JSON.parse(localStorage.getItem('axpress.user'));
                 $rootScope.menu = JSON.parse(localStorage.getItem('axpress.menu'));
@@ -17,22 +17,33 @@
             }
         }
 
+        function checkFirstRun () {
+            //If app has been ran before, redirect to login
+            if (localStorage.getItem('axpress.hasRan')) {
+                $state.go('auth.login');
+            }
+            localStorage.setItem('axpress.hasRan', 1);
+        }
+
         /**
          * Logins a user in the system using the nomal user/password method
          */
         $scope.login = function() {
+            Logger.displayProgressBar();
             Client.login($scope.user.email, Client.socialPassword($scope.user.password))
                 .then(function(response) {
                     //User/Pass do not match
                     if (response.status == 409) {
-                        Logger.alert('Usuario o Contraseña no coinciden', response.message);
+                        Logger.hideProgressBar();
+                        Logger.toast('Usuario o Contraseña no coinciden');
                     }
                     //Login successfull
                     if (response.return && response.status == 200) {
                         loginSuccessfull(response.data.user, response.data.menu);
                     }
                 }, function(error) {
-                    Logger.alert('badResponse', JSON.stringify(error));
+                    Logger.hideProgressBar();
+                    Logger.toast('Ha ocurrido un error, por favor intente luego.');
                 });
         };
 
@@ -42,6 +53,7 @@
          * @param      {Function}  successCallback  The callback to use on success
          */
         function googleGetUserInfo(successCallback) {
+            Logger.displayProgressBar();
             Client.loginWithGoogle().then(function(response) {
                 Client.googleGetUserInfo().then(function(response) {
                     successCallback(response);
@@ -63,6 +75,7 @@
          * @param      {Function}  successCallback  The callback to use on success
          */
         function facebookGetUserInfo(successCallback) {
+            Logger.displayProgressBar();
             Client.loginWithFacebook().then(function() {
                 Client.facebookGetUserInfo().then(function(response) {
                     successCallback(response);
@@ -89,17 +102,17 @@
                 .then(function(response) {
                     //User/Pass do not match
                     if (response.status == 409) {
-                        Logger.alert('Usuario o Contraseña no coinciden', response.message);
+                        Logger.hideProgressBar();
+                        Logger.toast('Usuario o Contraseña no coinciden');
                     }
                     //Login successfull
                     if (response.return && response.status == 200) {
+                        response.data.user.social_picture = details.picture.data.url;
                         loginSuccessfull(response.data.user, response.data.menu);
                     }
                 }, function(error) {
-                    if (error.message)
-                        Logger.error(error.message);
-                    else
-                        Logger.error('');
+                    Logger.hideProgressBar();
+                    Logger.toast('Ha ocurrido un error, por favor intente luego.');
                 });
         }
 
@@ -121,17 +134,17 @@
                 .then(function(response) {
                     //User/Pass do not match
                     if (response.status == 409) {
-                        Logger.alert('Usuario o Contraseña no coinciden', response.message);
+                        Logger.hideProgressBar();
+                        Logger.toast('Usuario o Contraseña no coinciden');
                     }
                     //Login successfull
                     if (response.return && response.status == 200) {
+                        response.data.user.social_picture = details.picture;
                         loginSuccessfull(response.data.user, response.data.menu);
                     }
                 }, function(error) {
-                    if (error.message)
-                        Logger.error(error.message);
-                    else
-                        Logger.error('');
+                    Logger.hideProgressBar();
+                    Logger.toast('Ha ocurrido un error, por favor intente luego.');
                 });
         }
 
@@ -150,15 +163,21 @@
          */
         $scope.doRegister = function(registerForm) {
             if (registerForm.$valid) {
-                Client.register($scope.user.name, $scope.user.password, $scope.user.email)
+                Logger.displayProgressBar();
+                Client.register($scope.user.name, Client.socialPassword($scope.user.password), $scope.user.email)
                     .then(function(data) {
                         if (data.return && data.status == 200) {
                             loginSuccessfull(data.data.user, data.data.menu);
                         } else if (data.return && data.status == 409) {
-                            Logger.alert('Usuario ya registrado', data.message);
+                            Logger.hideProgressBar();
+                            Logger.toast('Usuario ya registrado');
+                        } else {
+                            Logger.hideProgressBar();
+                            Logger.toast('Ha ocurrido un error.');
                         }
                     }, function(error) {
-                        Logger.error('Ha ocurrido un error inesperado, por favor verifique que la información ingresada es válida.');
+                        Logger.hideProgressBar();
+                        Logger.toast('Ha ocurrido un error inesperado, por favor verifique que la información ingresada es válida.');
                     });
             }
         };
@@ -167,11 +186,15 @@
          * Recovers a user password
          */
         $scope.recoverPassword = function() {
+            Logger.displayProgressBar();
             Client.forgotPassword($scope.user.email)
                 .then(function(response) {
-                    Logger.alert('Recuperación de Contraseña', response.message);
+                    Logger.hideProgressBar();
+                    $state.go('auth.login');
+                    Logger.toast(response.message);
                 }, function(error) {
-                    Logger.error('Ha ocurrido un error, por favor intente luego.');
+                    Logger.hideProgressBar();
+                    Logger.toast('Ha ocurrido un error, por favor intente luego.');
                 });
         };
 
@@ -186,13 +209,12 @@
                     if (response.return && response.status == 200) {
                         loginSuccessfull(response.data.user, response.data.menu);
                     } else if (response.status == 409 && response.message != '') {
-                        Logger.error(response.message);
+                        Logger.hideProgressBar();
+                        Logger.toast('Ha ocurrido un error, por favor intente luego.');
                     }
                 }, function(error) {
-                    if (error.message)
-                        Logger.error(error.message);
-                    else
-                        Logger.error('');
+                    Logger.hideProgressBar();
+                    Logger.toast('Ha ocurrido un error, por favor intente luego.');
                 });
         }
 
@@ -215,13 +237,12 @@
                     if (response.return && response.status == 200) {
                         loginSuccessfull(response.data.user, response.data.menu);
                     } else if (response.status == 409 && response.message != '') {
-                        Logger.error(response.message);
+                        Logger.hideProgressBar();
+                        Logger.toast('Ha ocurrido un error, por favor intente luego.');
                     }
                 }, function(error) {
-                    if (error.message)
-                        Logger.error(error.message);
-                    else
-                        Logger.error('');
+                    Logger.hideProgressBar();
+                    Logger.toast('Ha ocurrido un error, por favor intente luego.');
                 });
         }
 
@@ -244,7 +265,9 @@
             $rootScope.menu = menu;
             localStorage.setItem('axpress.user', JSON.stringify(user));
             localStorage.setItem('axpress.menu', JSON.stringify(menu));
+            Logger.hideProgressBar();
             $state.go('app.main');
+            Logger.toast('Bienvenido!');
         }
     }
 })();

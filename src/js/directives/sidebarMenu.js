@@ -14,10 +14,14 @@
     sidebarMenuController.$inject = ['$rootScope', '$scope', 'Client', '$ionicSideMenuDelegate'];
 
     function sidebarMenuController($rootScope, $scope, Client, $ionicSideMenuDelegate) {
+
+        activate();
+
         $scope.logout = logout;
         $scope.isHome = isHome;
         $scope.cancelService = cancelService;
         $scope.isServiceActive = isServiceActive;
+        $scope.isOnService = isOnService;
 
         $scope.user = $rootScope.user;
 
@@ -40,6 +44,12 @@
             }
         }
 
+        function isOnService () {
+            return $rootScope.$state.includes("app.document") ||
+                $rootScope.$state.includes("app.package") ||
+                $rootScope.$state.includes("app.diligence");
+        }
+
         function isServiceActive() {
             return !isEmpty($rootScope.$state.get('app.document').data.data) ||
                 !isEmpty($rootScope.$state.get('app.package').data.data) ||
@@ -50,6 +60,17 @@
             for (var i in obj)
                 if (obj.hasOwnProperty(i)) return false;
             return true;
+        }
+
+        function activate () {
+            $scope.user = $rootScope.user;
+
+            //Watch global user to update own scope variable
+            $rootScope.$watch('user', function(newValue, oldValue) {
+                if (newValue !== oldValue) {
+                    $scope.user = $rootScope.user;
+                }
+            }, true);
         }
     }
 })();

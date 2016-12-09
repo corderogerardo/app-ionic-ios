@@ -85,6 +85,8 @@
             localStorage.removeItem('axpress.menu');
             localStorage.removeItem('facebookAccessToken');
             localStorage.removeItem('googleCredentials');
+            $rootScope.user = {};
+            $rootScope.menu = {};
         };
 
         /**
@@ -565,7 +567,7 @@
                 service.get("https://graph.facebook.com/v2.8/me", {
                     params: {
                         access_token: access_token,
-                        fields: "id,name,email",
+                        fields: "id,name,email, picture",
                         format: 'json'
                     }
                 }).then(function(response) {
@@ -600,6 +602,7 @@
         service.geocoder = new google.maps.Geocoder;
 
         service.reverseGeocode = reverseGeocode;
+        service.removeStateAndCountry = removeStateAndCountry;
 
         return service;
 
@@ -611,7 +614,7 @@
         function reverseGeocode(latlng) {
             var deferred = $q.defer();
 
-            service.geocoder.geocode({location:latlng}, function(results, status) {
+            service.geocoder.geocode({location:latlng, region: 'co'}, function(results, status) {
                 if (status === google.maps.GeocoderStatus.OK) {
                     deferred.resolve(results);
                 } else {
@@ -619,6 +622,10 @@
                 }
             });
             return deferred.promise;
+        }
+
+        function removeStateAndCountry (formattedAddress) {
+            return formattedAddress.replace(/, [A-zÀ-ÿ]+, [Cc]olombia$/, "");
         }
     }
 })();
@@ -735,12 +742,16 @@
     angular.module('axpress')
         .service('Logger', Logger);
 
-    Logger.$inject = ['$ionicPopup'];
+    Logger.$inject = ['$ionicPopup', '$cordovaToast', '$cordovaProgress'];
 
-    function Logger($ionicPopup) {
+    function Logger($ionicPopup, $cordovaToast, $cordovaProgress) {
         return {
             alert: alert,
-            error: error
+            error: error,
+            toast: toast,
+
+            displayProgressBar: displayProgressBar,
+            hideProgressBar: hideProgressBar
         };
 
         /**
@@ -760,6 +771,18 @@
          */
         function error(body) {
             $ionicPopup.alert({ title: 'Ha ocurrido un error', template: body });
+        }
+
+        function toast (message, duration, position) {
+            $cordovaToast.show(message, duration || 'short', position || 'bottom');
+        }
+
+        function displayProgressBar () {
+            $cordovaProgress.showSimple(true);
+        }
+
+        function hideProgressBar () {
+            $cordovaProgress.hide();
         }
     }
 })();
@@ -886,14 +909,12 @@
             document.addEventListener("deviceready", function() {
                 $cordovaPushV5.initialize(pushOptions)
                     .then(function () {
-                        console.log("inside initialize");
                         // start listening for new notifications
                         $cordovaPushV5.onNotification();
                         // start listening for errors
                         $cordovaPushV5.onError();
 
                         $cordovaPushV5.register().then(function(registrationId) {
-                            console.log("REGISTRATION ID:" + registrationId);
                             localStorage.setItem('axpress.push.registrationID', registrationId);
                             listenForEvent();
                         });

@@ -69,4 +69,5 @@
   </platform>
   <icon src="resources/ios/icon/icon-small@3x.png"/>
   <engine name="android" spec="~6.0.0"/>
+  <access origin="*" />
 </widget>

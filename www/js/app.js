@@ -10,7 +10,8 @@ angular.module('axpress', [
     'ngResource',
     'ngCordova',
     'ngCordovaOauth',
-    'LocalStorageModule'
+    'LocalStorageModule',
+    'ionic-ratings'
 ])
 
 .run(['$ionicPlatform', '$rootScope', '$state', '$stateParams', 'Push', function($ionicPlatform, $rootScope, $state, $stateParams, Push) {
@@ -32,12 +33,6 @@ angular.module('axpress', [
         //Force Portrait mode
         screen.lockOrientation('portrait');
     });
-
-    if (localStorage.getItem('axpress.user') && localStorage.getItem('axpress.menu')) {
-        $rootScope.user = JSON.parse(localStorage.getItem('axpress.user'));
-        $rootScope.menu = JSON.parse(localStorage.getItem('axpress.menu'));
-        $state.go('app.main');
-    }
 
     //Configure moment
     moment.locale('es');
@@ -86,11 +81,6 @@ angular.module('axpress', [
                 'mainContent': {
                     templateUrl: 'templates/history/history.html',
                     controller: 'HistoryController'
-                }
-            },
-            resolve: {
-                history: function (Shipping, $rootScope) {
-                    return Shipping.history($rootScope.user.id);
                 }
             }
         })
@@ -382,7 +372,7 @@ angular.module('axpress', [
             views: {
                 'diligenceContent': {
                     templateUrl: 'templates/diligences/resume.html',
-                    controller:'ResumeController'
+                    controller: 'ResumeController'
                 }
             }
         })
@@ -391,30 +381,30 @@ angular.module('axpress', [
             views: {
                 'diligenceContent': {
                     templateUrl: 'templates/diligences/paymentMethods.html',
-                    controller:'PaymentMethodsController'
+                    controller: 'PaymentMethodsController'
                 }
             }
         })
         /**
          * Shipment States
          */
-        .state('tracking', {
+        .state('app.tracking', {
             url: '/tracking/:shippingId',
             views: {
                 'mainContent': {
                     templateUrl: 'templates/tracking/tracking.html',
-                    controller:'TrackingController'
-                }
-            },
-            resolve: {
-                history: function (Shipping, $rootScope) {
-                    return Shipping.history($rootScope.user.id);
+                    controller: 'TrackingController'
                 }
             }
         })
-        .state('shipmentverification', {
-            url: '/shipmentverification',
-            templateUrl: 'templates/shipmentverification/shipmentverification.html'
+        .state('app.rating', {
+            url: '/rating/:shippingId',
+            views: {
+                'mainContent': {
+                    templateUrl: 'templates/rating/rating.html',
+                    controller: 'RatingController'
+                }
+            }
         });
 
     $urlRouterProvider.otherwise('/');

@@ -34,6 +34,8 @@
             localStorage.removeItem('axpress.menu');
             localStorage.removeItem('facebookAccessToken');
             localStorage.removeItem('googleCredentials');
+            $rootScope.user = {};
+            $rootScope.menu = {};
         };
 
         /**

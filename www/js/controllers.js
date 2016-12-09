@@ -2,9 +2,9 @@
     angular.module('axpress')
         .controller("AccountController", AccountController);
 
-    AccountController.$inject = ['$scope', '$rootScope', 'Client'];
+    AccountController.$inject = ['$scope', '$rootScope', 'Client', 'Logger', '$state'];
 
-    function AccountController($scope, $rootScope, Client) {
+    function AccountController($scope, $rootScope, Client, Logger, $state) {
         activate();
 
         function activate() {
@@ -13,13 +13,14 @@
 
         $scope.doAccountUpdate = function(accountForm) {
             if (accountForm.$valid) {
+                Logger.displayProgressBar();
                 Client.edit($scope.user.id, $scope.user.email, $scope.user.name, $scope.user.pass, $scope.user.phone,
                         $scope.user.localPhone, $scope.user.identify)
                     .then(function(response) {
                         if (response.return && response.status == 200)
                             successfullyUpdatedAccount();
                     }, function(error) {
-                        //Couldn update user data
+                        Logger.toast("Ha ocurrido un problema actualizando su información.");
                     });
             }
         };
@@ -29,6 +30,9 @@
          */
         function successfullyUpdatedAccount () {
             localStorage.setItem('axpress.user', JSON.stringify($scope.user));
+            Logger.hideProgressBar();
+            $state.go('app.main');
+            Logger.toast("Su información se ha actualizado correctamente.");
         }
     }
 })();
@@ -44,8 +48,8 @@
         activate();
 
         function activate() {
-
             $scope.user = {};
+            checkFirstRun();
             if (localStorage.getItem('axpress.user') && localStorage.getItem('axpress.menu')) {
                 $rootScope.user = JSON.parse(localStorage.getItem('axpress.user'));
                 $rootScope.menu = JSON.parse(localStorage.getItem('axpress.menu'));
@@ -53,22 +57,33 @@
             }
         }
 
+        function checkFirstRun () {
+            //If app has been ran before, redirect to login
+            if (localStorage.getItem('axpress.hasRan')) {
+                $state.go('auth.login');
+            }
+            localStorage.setItem('axpress.hasRan', 1);
+        }
+
         /**
          * Logins a user in the system using the nomal user/password method
          */
         $scope.login = function() {
+            Logger.displayProgressBar();
             Client.login($scope.user.email, Client.socialPassword($scope.user.password))
                 .then(function(response) {
                     //User/Pass do not match
                     if (response.status == 409) {
-                        Logger.alert('Usuario o Contraseña no coinciden', response.message);
+                        Logger.hideProgressBar();
+                        Logger.toast('Usuario o Contraseña no coinciden');
                     }
                     //Login successfull
                     if (response.return && response.status == 200) {
                         loginSuccessfull(response.data.user, response.data.menu);
                     }
                 }, function(error) {
-                    Logger.alert('badResponse', JSON.stringify(error));
+                    Logger.hideProgressBar();
+                    Logger.toast('Ha ocurrido un error, por favor intente luego.');
                 });
         };
 
@@ -78,6 +93,7 @@
          * @param      {Function}  successCallback  The callback to use on success
          */
         function googleGetUserInfo(successCallback) {
+            Logger.displayProgressBar();
             Client.loginWithGoogle().then(function(response) {
                 Client.googleGetUserInfo().then(function(response) {
                     successCallback(response);
@@ -99,6 +115,7 @@
          * @param      {Function}  successCallback  The callback to use on success
          */
         function facebookGetUserInfo(successCallback) {
+            Logger.displayProgressBar();
             Client.loginWithFacebook().then(function() {
                 Client.facebookGetUserInfo().then(function(response) {
                     successCallback(response);
@@ -125,17 +142,17 @@
                 .then(function(response) {
                     //User/Pass do not match
                     if (response.status == 409) {
-                        Logger.alert('Usuario o Contraseña no coinciden', response.message);
+                        Logger.hideProgressBar();
+                        Logger.toast('Usuario o Contraseña no coinciden');
                     }
                     //Login successfull
                     if (response.return && response.status == 200) {
+                        response.data.user.social_picture = details.picture.data.url;
                         loginSuccessfull(response.data.user, response.data.menu);
                     }
                 }, function(error) {
-                    if (error.message)
-                        Logger.error(error.message);
-                    else
-                        Logger.error('');
+                    Logger.hideProgressBar();
+                    Logger.toast('Ha ocurrido un error, por favor intente luego.');
                 });
         }
 
@@ -157,17 +174,17 @@
                 .then(function(response) {
                     //User/Pass do not match
                     if (response.status == 409) {
-                        Logger.alert('Usuario o Contraseña no coinciden', response.message);
+                        Logger.hideProgressBar();
+                        Logger.toast('Usuario o Contraseña no coinciden');
                     }
                     //Login successfull
                     if (response.return && response.status == 200) {
+                        response.data.user.social_picture = details.picture;
                         loginSuccessfull(response.data.user, response.data.menu);
                     }
                 }, function(error) {
-                    if (error.message)
-                        Logger.error(error.message);
-                    else
-                        Logger.error('');
+                    Logger.hideProgressBar();
+                    Logger.toast('Ha ocurrido un error, por favor intente luego.');
                 });
         }
 
@@ -186,15 +203,21 @@
          */
         $scope.doRegister = function(registerForm) {
             if (registerForm.$valid) {
-                Client.register($scope.user.name, $scope.user.password, $scope.user.email)
+                Logger.displayProgressBar();
+                Client.register($scope.user.name, Client.socialPassword($scope.user.password), $scope.user.email)
                     .then(function(data) {
                         if (data.return && data.status == 200) {
                             loginSuccessfull(data.data.user, data.data.menu);
                         } else if (data.return && data.status == 409) {
-                            Logger.alert('Usuario ya registrado', data.message);
+                            Logger.hideProgressBar();
+                            Logger.toast('Usuario ya registrado');
+                        } else {
+                            Logger.hideProgressBar();
+                            Logger.toast('Ha ocurrido un error.');
                         }
                     }, function(error) {
-                        Logger.error('Ha ocurrido un error inesperado, por favor verifique que la información ingresada es válida.');
+                        Logger.hideProgressBar();
+                        Logger.toast('Ha ocurrido un error inesperado, por favor verifique que la información ingresada es válida.');
                     });
             }
         };
@@ -203,11 +226,15 @@
          * Recovers a user password
          */
         $scope.recoverPassword = function() {
+            Logger.displayProgressBar();
             Client.forgotPassword($scope.user.email)
                 .then(function(response) {
-                    Logger.alert('Recuperación de Contraseña', response.message);
+                    Logger.hideProgressBar();
+                    $state.go('auth.login');
+                    Logger.toast(response.message);
                 }, function(error) {
-                    Logger.error('Ha ocurrido un error, por favor intente luego.');
+                    Logger.hideProgressBar();
+                    Logger.toast('Ha ocurrido un error, por favor intente luego.');
                 });
         };
 
@@ -222,13 +249,12 @@
                     if (response.return && response.status == 200) {
                         loginSuccessfull(response.data.user, response.data.menu);
                     } else if (response.status == 409 && response.message != '') {
-                        Logger.error(response.message);
+                        Logger.hideProgressBar();
+                        Logger.toast('Ha ocurrido un error, por favor intente luego.');
                     }
                 }, function(error) {
-                    if (error.message)
-                        Logger.error(error.message);
-                    else
-                        Logger.error('');
+                    Logger.hideProgressBar();
+                    Logger.toast('Ha ocurrido un error, por favor intente luego.');
                 });
         }
 
@@ -251,13 +277,12 @@
                     if (response.return && response.status == 200) {
                         loginSuccessfull(response.data.user, response.data.menu);
                     } else if (response.status == 409 && response.message != '') {
-                        Logger.error(response.message);
+                        Logger.hideProgressBar();
+                        Logger.toast('Ha ocurrido un error, por favor intente luego.');
                     }
                 }, function(error) {
-                    if (error.message)
-                        Logger.error(error.message);
-                    else
-                        Logger.error('');
+                    Logger.hideProgressBar();
+                    Logger.toast('Ha ocurrido un error, por favor intente luego.');
                 });
         }
 
@@ -280,7 +305,9 @@
             $rootScope.menu = menu;
             localStorage.setItem('axpress.user', JSON.stringify(user));
             localStorage.setItem('axpress.menu', JSON.stringify(menu));
+            Logger.hideProgressBar();
             $state.go('app.main');
+            Logger.toast('Bienvenido!');
         }
     }
 })();
@@ -329,10 +356,10 @@
         .controller('DestinyController', DocumentDestinyController);
 
     DocumentDestinyController.$inject = ['$rootScope', '$scope', '$state', 'Location', 'NgMap',
-        '$timeout', 'GoogleMapGeocoder'];
+        '$timeout', 'GoogleMapGeocoder', 'constants', 'Logger'];
 
     function DocumentDestinyController($rootScope, $scope, $state, Location, NgMap,
-                                       $timeout, GoogleMapGeocoder) {
+                                       $timeout, GoogleMapGeocoder, constants, Logger) {
         activate();
 
         $scope.placeChanged = function(place) {
@@ -344,7 +371,7 @@
                 $scope.markers[index].position = $scope.place.geometry.location;
             }, 0);
             if ( typeof place == "object" )
-                $scope.tempData.address = $scope.place.formatted_address;
+                $scope.tempData.address = GoogleMapGeocoder.removeStateAndCountry($scope.place.formatted_address);
             $scope.focused = true;
         };
 
@@ -356,6 +383,8 @@
         };
 
         $scope.addNewAddress = function() {
+            if (!hasAddressSelected()) return;
+            if (!hasAddedNameAndPhone()) return;
             var lastMarker = $scope.markers[$scope.markers.length - 1];
             lastMarker.draggable = false;
             lastMarker.icon = "{url: 'img/Pindestino/Pindetsinomdpi.png', scaledSize: [28,38]}";
@@ -367,7 +396,10 @@
         };
 
         $scope.confirmDestiny = function() {
+            if (!hasAddressSelected()) return;
             if ( $state.params.serviceType == 45 ) {
+                if (!hasAddedNameAndPhone()) return;
+
                 if ( $scope.data.editStopIndex >= 0 ) {
                     //Editing a previous added stop
                     var index = $scope.data.editStopIndex;
@@ -393,6 +425,23 @@
             }
         };
 
+        function hasAddressSelected () {
+            if (!$scope.place) {
+                Logger.toast("Debe añadir una dirección");
+                return false;
+            }
+
+            return true;
+        }
+
+        function hasAddedNameAndPhone () {
+            if (!$scope.tempData.name || !$scope.tempData.phone) {
+                Logger.toast("Debe añadir nombre y teléfono de contacto");
+                return false;
+            }
+            return true;
+        }
+
         /**
          * For GPS Geolocation
          **/
@@ -401,7 +450,7 @@
                 .then(function(pos) {
                     GoogleMapGeocoder.reverseGeocode(pos)
                         .then(geocoderCallback);
-                })
+                });
         };
 
         $scope.mapCallbacks = {
@@ -441,7 +490,7 @@
                 phone    : data.phone,
                 longitude: $scope.place.geometry.location.lng(),
                 latitude : $scope.place.geometry.location.lat(),
-                address  : $scope.place.formatted_address,
+                address  : GoogleMapGeocoder.removeStateAndCountry($scope.place.formatted_address),
                 name     : data.name
             };
         }
@@ -463,7 +512,8 @@
                 position: [$scope.data.originLatitude, $scope.data.originLongitude]
             }];
             $scope.tempData = {};
-            $scope.address = "";
+            $scope.tempData.address = "";
+            $scope.maxDestinies = constants.diligencesMaxDestinies;
             NgMap.getMap().then(function(map) {
                 $scope.map = map;
             });
@@ -504,12 +554,14 @@
     angular.module('axpress')
         .controller('FeaturesController', FeaturesController);
 
-    FeaturesController.$inject = ['$rootScope', '$scope', '$state','Location','NgMap','$timeout','GoogleMapGeocoder'];
+    FeaturesController.$inject = ['$rootScope', '$scope', '$state','Location','NgMap','$timeout','GoogleMapGeocoder', 'Logger'];
 
-    function FeaturesController($rootScope, $scope, $state,Location, NgMap,$timeout,GoogleMapGeocoder) {
+    function FeaturesController($rootScope, $scope, $state,Location, NgMap,$timeout,GoogleMapGeocoder, Logger) {
         activate();
 
         $scope.confirmServiceType = function() {
+            if (!hasSelectedTypeService()) return;
+
             $scope.data.typeServices = $state.params.serviceType;
             $scope.data.bagId = $scope.choice.bag;
             $scope.data.bagId = $scope.choice.bag;
@@ -520,6 +572,7 @@
                 $state.go($scope.extraData.featuresNext);
             }
         };
+
         $scope.placeChanged = function(place) {
             $scope.place = (typeof place == "object" ? place : this.getPlace());
             $timeout(function() {
@@ -532,7 +585,9 @@
                 $scope.tempData.address = $scope.place.formatted_address;
             $scope.focused = true;
         };
+
         $scope.confirmPackage = function() {
+            if (!hasFilledPackage()) return;
 
             if ($scope.extraData.navigateTo) {
                 $state.go($scope.extraData.navigateTo);
@@ -543,6 +598,8 @@
         };
 
         $scope.confirmClientFeatures = function() {
+            if (!hasFilledDescription()) return;
+
             if ($scope.extraData.navigateTo) {
                 $state.go($scope.extraData.navigateTo);
                 delete $scope.extraData.navigateTo;
@@ -550,18 +607,50 @@
                 $state.go($scope.extraData.clientNext);
             }
         };
+
+        function hasSelectedTypeService () {
+            if (!$scope.choice.bag) {
+                Logger.toast("Debe seleccionar un tipo de envío");
+                return false;
+            }
+            return true;
+        }
+
+        function hasFilledDescription () {
+            if (!$scope.data.descriptionText) {
+                Logger.toast("Debe añadir una breve descripción de la diligencia");
+                return false;
+            }
+            return true;
+        }
+
+        function hasFilledPackage () {
+            if (!$scope.data.height || !$scope.data.width || !$scope.data.longitude) {
+                Logger.toast("Debe indicar todas las medidas del paquete");
+                return false;
+            }
+            if (!$scope.data.weight || !$scope.data.cuantity) {
+                Logger.toast("Debe indicar peso y número de paquetes");
+                return false;
+            }
+            return true;
+        }
+
         function setMapCenter(position) {
             $scope.map.setCenter(position);
         }
+
         function setExistingChoice() {
             $scope.choice = {
                 bag: $scope.data.bagId
             };
         }
+
         function geocoderCallback(results) {
             $scope.placeChanged(results[0]);
             setMapCenter(results[0].geometry.location);
         }
+
         function setExistingAddress() {
             var latlng = { lat: $scope.data.destinyLatitude, lng: $scope.data.destinyLongitude };
             GoogleMapGeocoder.reverseGeocode(latlng)
@@ -624,9 +713,9 @@
     angular.module('axpress')
         .controller('HistoryController', HistoryController);
 
-    HistoryController.$inject = ['$rootScope', '$scope', 'history', 'constants', '$state', 'logisticResource'];
+    HistoryController.$inject = ['$rootScope', '$scope', 'constants', '$state', 'logisticResource', 'Shipping', 'Logger'];
 
-    function HistoryController($rootScope, $scope, history, constants, $state, logisticResource) {
+    function HistoryController($rootScope, $scope, constants, $state, logisticResource, Shipping, Logger) {
         activate();
 
         var openShipping = null; //Locally save the id of the currently open shipping
@@ -655,39 +744,25 @@
             return statusValue == status.value;
         };
 
-        function activate () {
-            var tempHistory = history.data.remitent.concat(history.data.receptor);
-            tempHistory.forEach(function (item) {
-                if (item.currier) {
-                    item.currier.fullName = item.currier.name + ' ' + item.currier.last;
-                }
-                item.status = findStatusText(item.status);
-            });
-            $scope.history = tempHistory;
-            // Detailed history
-            if ($state.params.shippingId) {
-                $scope.shipping = $scope.history.filter(function (item) {
-                    return item.shipping_id == parseInt($state.params.shippingId);
-                }).pop();
-                console.log($state);
-                console.log($scope.shipping);
-                loadMarkers();
-                loadCourierPosition();
-            }
-
-            function loadCourierPosition () {
-                logisticResource.getLocation($scope.shipping.currier.currier_id).then(function (response) {
-                    
+        function loadHistory () {
+            Logger.displayProgressBar();
+            Shipping.history($rootScope.user.id).then(function (history) {
+                var tempHistory = history.data.remitent.concat(history.data.receptor);
+                tempHistory.forEach(function (item) {
+                    if (item.currier) {
+                        item.currier.fullName = item.currier.name + ' ' + item.currier.last;
+                    }
+                    item.status = findStatusText(item.status);
                 });
-            }
+                $scope.history = tempHistory;
+                Logger.hideProgressBar();
+            }, function () {
+                Logger.hideProgressBar();
+            });
+        }
 
-            function loadMarkers () {
-                $scope.markers = [{
-                    position: "["+$scope.shipping.originLatitude+","+$scope.shipping.originLongitude+"]"
-                }, {
-                    position: "["+$scope.shipping.destinyLatitude+","+$scope.shipping.destinyLongitude+"]"
-                }];
-            }
+        function activate () {
+            loadHistory();
         }
     }
 })();
@@ -720,10 +795,10 @@
         .controller('OriginController', DocumentOriginController);
 
     DocumentOriginController.$inject = ['$rootScope', '$scope', '$state', 'Location', 'NgMap',
-        '$timeout', 'GoogleMapGeocoder'];
+        '$timeout', 'GoogleMapGeocoder', 'Logger'];
 
     function DocumentOriginController($rootScope, $scope, $state, Location, NgMap,
-                                      $timeout, GoogleMapGeocoder) {
+                                      $timeout, GoogleMapGeocoder, Logger) {
         activate();
 
         $scope.placeChanged = function(place) {
@@ -732,15 +807,17 @@
                 $scope.markers[0].position = $scope.place.geometry.location;
             }, 0);
             if ( typeof place == "object" )
-                $scope.address = $scope.place.formatted_address;
+                $scope.address = GoogleMapGeocoder.removeStateAndCountry($scope.place.formatted_address);
         };
 
         $scope.pickHere = function() {
-            $scope.buttonState = true;
             $scope.markers[0].icon = "{url: 'img/PinOrigen/Origenmdpi.png', scaledSize: [28,38]}";
         };
 
         $scope.confirmOrigin = function() {
+            //If cant continue
+            if (!canContinue()) return;
+
             $scope.data.originAddress = $scope.place.formatted_address;
             $scope.data.originLatitude = $scope.place.geometry.location.lat();
             $scope.data.originLongitude = $scope.place.geometry.location.lng();
@@ -753,6 +830,15 @@
             }
         };
 
+        function canContinue () {
+            if (!$scope.place) {
+                Logger.toast("Debe añadir una dirección válida");
+                return false;
+            }
+
+            return true;
+        }
+
         /**
          * For GPS Geolocation
          **/
@@ -761,7 +847,7 @@
                 .then(function(pos) {
                     GoogleMapGeocoder.reverseGeocode(pos)
                         .then(geocoderCallback);
-                })
+                });
         };
 
         $scope.mapCallbacks = {
@@ -796,16 +882,9 @@
                 .then(geocoderCallback);
         }
 
-        function initialUIStates() {
-            $scope.focused = false;
-            $scope.focused2 = false;
-            $scope.buttonState = false;
-        }
-
         function activate() {
             $scope.data = $state.current.data.data;
             $scope.extraData = $state.current.data.extraData;
-            initialUIStates();
             $scope.markers = [{
                 title    : 'Origen',
                 icon     : "{url: 'img/PinOrigen/Origenmdpi.png', scaledSize: [28,38]}",
@@ -832,6 +911,7 @@
         activate();
 
         $scope.confirmPaymentMethod = function() {
+            Logger.displayProgressBar();
             switch ($state.params.serviceType) {
                 case 43: //Documents
                     Shipping.registerDocument($scope.data, $rootScope.user)
@@ -859,10 +939,7 @@
                             successfullyRegisteredRequest();
                         }
                     }, function(error) {
-                        if (error.message)
-                            Logger.error(error.message);
-                        else
-                            Logger.error('');
+                        Logger.toast("Ha ocurrido un error registrando su solicitud, por favor intente de nuevo.")
                     });
             }
         };
@@ -870,7 +947,9 @@
         function successfullyRegisteredRequest() {
             $scope.data = {};
             $state.current.data.data = {};
+            Logger.hideProgressBar();
             $state.go("app.main");
+            Logger.toast("Solicitud registrada correctamente");
         }
 
         function activate() {
@@ -887,9 +966,9 @@
     angular.module('axpress')
         .controller('PhotoController', PhotoController);
 
-    PhotoController.$inject = ['$rootScope', '$scope', '$state'];
+    PhotoController.$inject = ['$rootScope', '$scope', '$state', 'Logger'];
 
-    function PhotoController($rootScope, $scope, $state) {
+    function PhotoController($rootScope, $scope, $state, Logger) {
         activate();
 
         $scope.photoTaken = function(imageData) {
@@ -903,12 +982,22 @@
         };
 
         $scope.confirmImagePhoto = function() {
+            if (!hasCompletedFeatures()) return;
+            
             //We replace the meta data used to display the image
             $scope.data.picture = $scope.imageData
                 .replace("data:image/jpeg;base64,", "")
                 .replace("data:image/*;charset=utf-8;base64,","");
             $state.go($scope.extraData.photoNext);
         };
+
+        function hasCompletedFeatures () {
+            if (!$scope.data.amountDeclared || !$scope.data.descriptionText) {
+                Logger.toast("Debe declarar un valor y añadir una descripción");
+                return false;
+            }
+            return true;
+        }
 
         function activate() {
             $scope.imageData = "";
@@ -921,27 +1010,93 @@
 
 (function() {
     angular.module('axpress')
+        .controller('RatingController', RatingController);
+
+    RatingController.$inject = ['$rootScope', '$scope', '$state', 'constants', 'Rating', '$timeout', 'Shipping', 'Logger'];
+
+    function RatingController($rootScope, $scope, $state, constants, Rating, $timeout, Shipping, Logger) {
+        activate();
+
+        $scope.rateService = rateService;
+
+        function rateService () {
+            $scope.rating = 2;
+            var shippingId = $scope.shipping.shipping_id,
+                rating = $scope.rating;
+            Logger.displayProgressBar();
+            Rating.post(shippingId, rating).then(function (response) {
+                Logger.hideProgressBar();
+                $state.go('app.main');
+                Logger.toast("Se ha guardado su calificación correctamente.");
+            }, function () {
+                Logger.hideProgressBar();
+            });
+        }
+
+        function loadHistory () {
+            Logger.displayProgressBar();
+            Shipping.history($rootScope.user.id).then(function (history) {
+                var tempHistory = history.data.remitent.concat(history.data.receptor);
+                tempHistory.forEach(function (item) {
+                    if (item.currier) {
+                        item.currier.fullName = item.currier.name + ' ' + item.currier.last;
+                    }
+                });
+                $scope.history = tempHistory;
+
+                // Specific shipping
+                $scope.shipping = $scope.history.filter(function (item) {
+                    return item.shipping_id == parseInt($state.params.shippingId);
+                }).pop();
+            }, function () {
+                Logger.hideProgressBar();
+            });
+        }
+
+        function activate () {
+            $scope.ratingsObject = {
+                iconOn : 'ion-ios-star',
+                iconOff : 'ion-ios-star-outline',
+                iconOnColor: 'rgb(200, 200, 100)',
+                iconOffColor:  'rgb(200, 100, 100)',
+                rating:  2,
+                minRating:1
+            };
+            loadHistory();
+        }
+    }
+})();
+;
+
+(function() {
+    angular.module('axpress')
         .controller('ReceiverController', ReceiverController);
 
-    ReceiverController.$inject = ['$rootScope', '$scope', '$state'];
+    ReceiverController.$inject = ['$rootScope', '$scope', '$state', 'Logger'];
 
-    function ReceiverController($rootScope, $scope, $state) {
+    function ReceiverController($rootScope, $scope, $state, Logger) {
         activate();
 
         $scope.saveCaracteristics = function() {
-            if ($scope.extraData.navigateTo) {
-                $state.go($scope.extraData.navigateTo);
-                delete $scope.extraData.navigateTo;
+            if (isFormValid()) {
+                if ($scope.extraData.navigateTo) {
+                    $state.go($scope.extraData.navigateTo);
+                    delete $scope.extraData.navigateTo;
+                } else {
+                    $state.go($scope.extraData.receiverNext);
+                }
             } else {
-                $state.go($scope.extraData.receiverNext);
+                Logger.toast("Debe completar el nombre, correo electrónico y teléfono");
             }
         };
 
+        function isFormValid () {
+            return $scope.data.destinyName != "" &&
+                $scope.data.emailDestinyClient != "" &&
+                $scope.data.cellphoneDestinyClient != "";
+        }
+
         function activate() {
-            $scope.focusedReceiverEmail = false;
-            $scope.focusedReceiverName = false;
-            $scope.focusedReceiverPhone = false;
-            $scope.focusedReceiverCI = false;
             $scope.data = $state.current.data.data;
             $scope.extraData = $state.current.data.extraData;
 
@@ -962,7 +1117,7 @@
 
         $scope.editOrigin = function() {
             $scope.extraData.navigateTo = $scope.extraData.flow + '.resume';
-            $state.go($scope.extraData.flow + '.origin');
+            $state.go($scope.extraData.flow + '.origin', {}, {reload: true});
         };
 
         $scope.editDestiny = function() {
@@ -972,7 +1127,7 @@
                 $state.go($scope.extraData.flow + '.stops');
             } else {
                 $scope.extraData.navigateTo = $scope.extraData.flow + '.resume';
-                $state.go($scope.extraData.flow + '.destiny');
+                $state.go($scope.extraData.flow + '.destiny', {}, {reload: true});
             }
         };
 
@@ -1082,9 +1237,9 @@
     angular.module('axpress')
         .controller('TrackingController', TrackingController);
 
-    TrackingController.$inject = ['$rootScope', '$scope', '$state', 'history', 'constants', 'logisticResource', '$timeout'];
+    TrackingController.$inject = ['$rootScope', '$scope', '$state', 'constants', 'logisticResource', '$timeout', 'Shipping', 'Logger'];
 
-    function TrackingController($rootScope, $scope, $state, history, constants, logisticResource, $timeout) {
+    function TrackingController($rootScope, $scope, $state, constants, logisticResource, $timeout, Shipping, Logger) {
         activate();
 
         $scope.loadCourierPosition = loadCourierPosition;
@@ -1108,9 +1263,6 @@
         }
 
         function loadMarkers (courier) {
-
-            //TODO: Update markers images
-
             var markers = [{
                 position: [$scope.shipping.origin_latitude, $scope.shipping.origin_longitude],
                 icon    : "{url: 'img/inputs/pin-mapa-check1.png', scaledSize: [48,48]}",
@@ -1133,23 +1285,31 @@
             }, 0);
         }
 
-        function activate () {
-            var tempHistory = history.data.remitent.concat(history.data.receptor);
-            tempHistory.forEach(function (item) {
-                if (item.currier) {
-                    item.currier.fullName = item.currier.name + ' ' + item.currier.last;
-                }
-                item.status = findStatusText(item.status);
-            });
-            $scope.history = tempHistory;
-            // Detailed history
-            if ($state.params.shippingId) {
+        function loadHistory () {
+            Logger.displayProgressBar();
+            Shipping.history($rootScope.user.id).then(function (history) {
+                var tempHistory = history.data.remitent.concat(history.data.receptor);
+                tempHistory.forEach(function (item) {
+                    if (item.currier) {
+                        item.currier.fullName = item.currier.name + ' ' + item.currier.last;
+                    }
+                    item.status = findStatusText(item.status);
+                });
+                $scope.history = tempHistory;
+
+                // Detailed history
                 $scope.shipping = $scope.history.filter(function (item) {
                     return item.shipping_id == parseInt($state.params.shippingId);
                 }).pop();
                 loadMarkers();
                 loadCourierPosition();
-            }
+            }, function () {
+                Logger.hideProgressBar();
+            });
+        }
+
+        function activate () {
+            loadHistory();
         }
     }
 })();

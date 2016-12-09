@@ -10,6 +10,7 @@
     "ng-cordova-oauth": "^0.2.10",
     "angular-local-storage": "^0.5.2",
     "ngmap": "^1.17.8",
-    "moment": "^2.15.2"
+    "moment": "^2.15.2",
+    "ionic-ratings": "^0.3.0"
   }
 }

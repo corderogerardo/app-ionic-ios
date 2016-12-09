@@ -3,10 +3,10 @@
         .controller('DestinyController', DocumentDestinyController);
 
     DocumentDestinyController.$inject = ['$rootScope', '$scope', '$state', 'Location', 'NgMap',
-        '$timeout', 'GoogleMapGeocoder'];
+        '$timeout', 'GoogleMapGeocoder', 'constants', 'Logger'];
 
     function DocumentDestinyController($rootScope, $scope, $state, Location, NgMap,
-                                       $timeout, GoogleMapGeocoder) {
+                                       $timeout, GoogleMapGeocoder, constants, Logger) {
         activate();
 
         $scope.placeChanged = function(place) {
@@ -18,7 +18,7 @@
                 $scope.markers[index].position = $scope.place.geometry.location;
             }, 0);
             if ( typeof place == "object" )
-                $scope.tempData.address = $scope.place.formatted_address;
+                $scope.tempData.address = GoogleMapGeocoder.removeStateAndCountry($scope.place.formatted_address);
             $scope.focused = true;
         };
 
@@ -30,6 +30,8 @@
         };
 
         $scope.addNewAddress = function() {
+            if (!hasAddressSelected()) return;
+            if (!hasAddedNameAndPhone()) return;
             var lastMarker = $scope.markers[$scope.markers.length - 1];
             lastMarker.draggable = false;
             lastMarker.icon = "{url: 'img/Pindestino/Pindetsinomdpi.png', scaledSize: [28,38]}";
@@ -41,7 +43,10 @@
         };
 
         $scope.confirmDestiny = function() {
+            if (!hasAddressSelected()) return;
             if ( $state.params.serviceType == 45 ) {
+                if (!hasAddedNameAndPhone()) return;
+
                 if ( $scope.data.editStopIndex >= 0 ) {
                     //Editing a previous added stop
                     var index = $scope.data.editStopIndex;
@@ -67,6 +72,23 @@
             }
         };
 
+        function hasAddressSelected () {
+            if (!$scope.place) {
+                Logger.toast("Debe añadir una dirección");
+                return false;
+            }
+
+            return true;
+        }
+
+        function hasAddedNameAndPhone () {
+            if (!$scope.tempData.name || !$scope.tempData.phone) {
+                Logger.toast("Debe añadir nombre y teléfono de contacto");
+                return false;
+            }
+            return true;
+        }
+
         /**
          * For GPS Geolocation
          **/
@@ -75,7 +97,7 @@
                 .then(function(pos) {
                     GoogleMapGeocoder.reverseGeocode(pos)
                         .then(geocoderCallback);
-                })
+                });
         };
 
         $scope.mapCallbacks = {
@@ -115,7 +137,7 @@
                 phone    : data.phone,
                 longitude: $scope.place.geometry.location.lng(),
                 latitude : $scope.place.geometry.location.lat(),
-                address  : $scope.place.formatted_address,
+                address  : GoogleMapGeocoder.removeStateAndCountry($scope.place.formatted_address),
                 name     : data.name
             };
         }
@@ -137,7 +159,8 @@
                 position: [$scope.data.originLatitude, $scope.data.originLongitude]
             }];
             $scope.tempData = {};
-            $scope.address = "";
+            $scope.tempData.address = "";
+            $scope.maxDestinies = constants.diligencesMaxDestinies;
             NgMap.getMap().then(function(map) {
                 $scope.map = map;
             });

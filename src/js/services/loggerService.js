@@ -2,12 +2,16 @@
     angular.module('axpress')
         .service('Logger', Logger);
 
-    Logger.$inject = ['$ionicPopup'];
+    Logger.$inject = ['$ionicPopup', '$cordovaToast', '$cordovaProgress'];
 
-    function Logger($ionicPopup) {
+    function Logger($ionicPopup, $cordovaToast, $cordovaProgress) {
         return {
             alert: alert,
-            error: error
+            error: error,
+            toast: toast,
+
+            displayProgressBar: displayProgressBar,
+            hideProgressBar: hideProgressBar
         };
 
         /**
@@ -27,6 +31,18 @@
          */
         function error(body) {
             $ionicPopup.alert({ title: 'Ha ocurrido un error', template: body });
+        }
+
+        function toast (message, duration, position) {
+            $cordovaToast.show(message, duration || 'short', position || 'bottom');
+        }
+
+        function displayProgressBar () {
+            $cordovaProgress.showSimple(true);
+        }
+
+        function hideProgressBar () {
+            $cordovaProgress.hide();
         }
     }
 })();
