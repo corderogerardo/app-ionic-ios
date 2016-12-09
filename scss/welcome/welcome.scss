@@ -14,6 +14,14 @@ ion-slide{
     @include widheigh(27%,27%,100%,100%);
     @include responsivewidthheight(27%,27%,100%,100%,32%,32%,100%,100%,35%,35%,100%,100%);
 }
+.space-views{
+    @include display-flex;
+    @include flex-direction(row);
+    @include align-items(center);
+    @include justify-content(center);
+    @include widheigh(10%,10%,100%,100%);
+    @include responsivewidthheight(10%,10%,100%,100%,7%,7%,100%,100%,7%,7%,100%,100%);
+}
 .welcome-title{
     font-size: 30px;
     margin-bottom: 20px;
