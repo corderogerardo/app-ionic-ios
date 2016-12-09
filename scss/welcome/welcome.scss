@@ -1,10 +1,18 @@
 ion-slide{
+    @include display-flex;
+    @include flex-direction(row);
+    @include align-items(center);
+    @include justify-content(center);
     @include widheigh(180px,180px,auto,auto);
     @include responsivewidthheight(170px,170px,auto,auto,200px,200px,auto,auto,250px,250px,auto,auto);
 }
 .space-welcome{
-    @include widheigh(25%,25%,100%,100%);
-    @include responsivewidthheight(25%,25%,100%,100%,30%,30%,100%,100%,35%,35%,100%,100%);
+    @include display-flex;
+    @include flex-direction(row);
+    @include align-items(center);
+    @include justify-content(center);
+    @include widheigh(27%,27%,100%,100%);
+    @include responsivewidthheight(27%,27%,100%,100%,32%,32%,100%,100%,35%,35%,100%,100%);
 }
 .welcome-title{
     font-size: 30px;

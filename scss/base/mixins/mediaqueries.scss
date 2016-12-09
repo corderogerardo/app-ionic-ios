@@ -1580,3 +1580,33 @@
         }
     }
 }
+@mixin font-mediaqueries($x1,$x2,$x3,$x4){
+    font-size: $x1 !important;
+    @media screen and (max-height: 2560px){
+        font-size: $x4 !important;
+    }
+    @media screen and (max-height: 1920px){
+        font-size: $x4 !important;
+    }
+    @media screen and (max-height: 1280px){
+        font-size: $x3 !important;
+    }
+    @media screen and (max-height: 960px){
+        font-size: $x3 !important;
+    }
+    @media screen and (max-height: 736px){
+        font-size: $x2 !important;
+    }
+    @media screen and (max-height: 667px){
+        font-size: $x2 !important;
+    }
+    @media screen and (max-height: 568px){
+        font-size: $x2 !important;
+    }
+    @media screen and (max-height: 480px){
+        font-size: $x1 !important;
+    }
+    @media screen and (max-height: 320px){
+        font-size: $x1 !important;
+    }
+}

@@ -9806,9 +9806,26 @@ a.button {
   transition-duration: 0s; }
 
 @font-face {
-  font-family: 'Gautami';
-  src: url("font-axpress/gautami.ttf");
-  src: url("font-axpress/gautami.ttf");
+  font-family: 'Playbold';
+  src: url("../css/font-axpress/Play-Bold.ttf");
+  font-stretch: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Playregular';
+  src: url("../css/font-axpress/Play-Regular.ttf");
+  font-stretch: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Ubuntu';
+  src: url("../css/font-axpress/Ubuntu-Regular.ttf");
+  font-stretch: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Ubuntubold';
+  src: url("../css/font-axpress/Ubuntu-Bold.ttf");
   font-stretch: normal;
   font-style: normal; }
 
@@ -9825,14 +9842,16 @@ button {
 
 input,
 textarea {
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  font-family: "Playregular", sans-serif !important; }
 
 .row {
   flex: 0 1 100% !important; }
 
 ion-content {
   min-height: 100%;
-  height: 100%; }
+  height: 100%;
+  font-family: "Playregular", sans-serif !important; }
 
 .inputs-general {
   display: -webkit-box;
@@ -9894,8 +9913,7 @@ ion-content {
   -moz-justify-content: center;
   justify-content: center;
   background-color: transparent;
-  font-size: 3vh;
-  font-weight: bold;
+  font-family: "Playbold", sans-serif !important;
   min-height: 100%;
   height: 100%;
   min-width: 100%; }
@@ -10275,6 +10293,154 @@ ion-content {
     .button-bottom-two {
       position: absolute;
       bottom: 3%;
+      margin-left: 10%;
+      padding: 0 !important;
+      width: 80%; } }
+
+.button-bottom-welcome {
+  min-height: 10%;
+  height: 10%;
+  min-width: 80%;
+  width: 80%;
+  position: absolute;
+  bottom: 15%;
+  margin-left: 10%;
+  padding: 0 !important;
+  width: 80%; }
+  @media screen and (max-height: 2560px) {
+    .button-bottom-welcome {
+      position: absolute;
+      bottom: 17%;
+      margin-left: 10%;
+      padding: 0 !important;
+      width: 80%; } }
+  @media screen and (max-height: 1920px) {
+    .button-bottom-welcome {
+      position: absolute;
+      bottom: 17%;
+      margin-left: 10%;
+      padding: 0 !important;
+      width: 80%; } }
+  @media screen and (max-height: 1280px) {
+    .button-bottom-welcome {
+      position: absolute;
+      bottom: 17%;
+      margin-left: 10%;
+      padding: 0 !important;
+      width: 80%; } }
+  @media screen and (max-height: 960px) {
+    .button-bottom-welcome {
+      position: absolute;
+      bottom: 15%;
+      margin-left: 10%;
+      padding: 0 !important;
+      width: 80%; } }
+  @media screen and (max-height: 736px) {
+    .button-bottom-welcome {
+      position: absolute;
+      bottom: 15%;
+      margin-left: 10%;
+      padding: 0 !important;
+      width: 80%; } }
+  @media screen and (max-height: 667px) {
+    .button-bottom-welcome {
+      position: absolute;
+      bottom: 15%;
+      margin-left: 10%;
+      padding: 0 !important;
+      width: 80%; } }
+  @media screen and (max-height: 568px) {
+    .button-bottom-welcome {
+      position: absolute;
+      bottom: 15%;
+      margin-left: 10%;
+      padding: 0 !important;
+      width: 80%; } }
+  @media screen and (max-height: 480px) {
+    .button-bottom-welcome {
+      position: absolute;
+      bottom: 15%;
+      margin-left: 10%;
+      width: 80%;
+      padding: 0 !important; } }
+  @media screen and (max-height: 320px) {
+    .button-bottom-welcome {
+      position: absolute;
+      bottom: 15%;
+      margin-left: 10%;
+      padding: 0 !important;
+      width: 80%; } }
+
+.button-bottom-welcome-two {
+  min-height: 10%;
+  height: 10%;
+  min-width: 80%;
+  width: 80%;
+  position: absolute;
+  bottom: 5%;
+  margin-left: 10%;
+  padding: 0 !important;
+  width: 80%; }
+  @media screen and (max-height: 2560px) {
+    .button-bottom-welcome-two {
+      position: absolute;
+      bottom: 7%;
+      margin-left: 10%;
+      padding: 0 !important;
+      width: 80%; } }
+  @media screen and (max-height: 1920px) {
+    .button-bottom-welcome-two {
+      position: absolute;
+      bottom: 7%;
+      margin-left: 10%;
+      padding: 0 !important;
+      width: 80%; } }
+  @media screen and (max-height: 1280px) {
+    .button-bottom-welcome-two {
+      position: absolute;
+      bottom: 7%;
+      margin-left: 10%;
+      padding: 0 !important;
+      width: 80%; } }
+  @media screen and (max-height: 960px) {
+    .button-bottom-welcome-two {
+      position: absolute;
+      bottom: 6%;
+      margin-left: 10%;
+      padding: 0 !important;
+      width: 80%; } }
+  @media screen and (max-height: 736px) {
+    .button-bottom-welcome-two {
+      position: absolute;
+      bottom: 6%;
+      margin-left: 10%;
+      padding: 0 !important;
+      width: 80%; } }
+  @media screen and (max-height: 667px) {
+    .button-bottom-welcome-two {
+      position: absolute;
+      bottom: 6%;
+      margin-left: 10%;
+      padding: 0 !important;
+      width: 80%; } }
+  @media screen and (max-height: 568px) {
+    .button-bottom-welcome-two {
+      position: absolute;
+      bottom: 6%;
+      margin-left: 10%;
+      padding: 0 !important;
+      width: 80%; } }
+  @media screen and (max-height: 480px) {
+    .button-bottom-welcome-two {
+      position: absolute;
+      bottom: 5%;
+      margin-left: 10%;
+      width: 80%;
+      padding: 0 !important; } }
+  @media screen and (max-height: 320px) {
+    .button-bottom-welcome-two {
+      position: absolute;
+      bottom: 5%;
       margin-left: 10%;
       padding: 0 !important;
       width: 80%; } }
@@ -10953,6 +11119,28 @@ ion-content {
 	.class {@include triangle(100px, right, red);display:block}
  */
 ion-slide {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-direction: normal;
+  -webkit-box-orient: horizontal;
+  -webkit-flex-direction: row;
+  -moz-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  justify-content: center;
   min-height: 180px;
   height: 180px;
   min-width: auto;
@@ -11013,8 +11201,30 @@ ion-slide {
       width: auto; } }
 
 .space-welcome {
-  min-height: 25%;
-  height: 25%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-direction: normal;
+  -webkit-box-orient: horizontal;
+  -webkit-flex-direction: row;
+  -moz-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  justify-content: center;
+  min-height: 27%;
+  height: 27%;
   min-width: 100%;
   width: 100%; }
   @media screen and (max-height: 2560px) {
@@ -11031,8 +11241,8 @@ ion-slide {
       width: 100%; } }
   @media screen and (max-height: 1280px) {
     .space-welcome {
-      min-height: 30%;
-      height: 30%;
+      min-height: 32%;
+      height: 32%;
       min-width: 100%;
       width: 100%; } }
   @media screen and (max-height: 960px) {
@@ -11043,32 +11253,32 @@ ion-slide {
       width: 100%; } }
   @media screen and (max-height: 736px) {
     .space-welcome {
-      min-height: 30%;
-      height: 30%;
+      min-height: 32%;
+      height: 32%;
       min-width: 100%;
       width: 100%; } }
   @media screen and (max-height: 667px) {
     .space-welcome {
-      min-height: 30%;
-      height: 30%;
+      min-height: 32%;
+      height: 32%;
       min-width: 100%;
       width: 100%; } }
   @media screen and (max-height: 568px) {
     .space-welcome {
-      min-height: 25%;
-      height: 25%;
+      min-height: 27%;
+      height: 27%;
       min-width: 100%;
       width: 100%; } }
   @media screen and (max-height: 480px) {
     .space-welcome {
-      min-height: 25%;
-      height: 25%;
+      min-height: 27%;
+      height: 27%;
       min-width: 100%;
       width: 100%; } }
   @media screen and (max-height: 320px) {
     .space-welcome {
-      min-height: 25%;
-      height: 25%;
+      min-height: 27%;
+      height: 27%;
       min-width: 100%;
       width: 100%; } }
 

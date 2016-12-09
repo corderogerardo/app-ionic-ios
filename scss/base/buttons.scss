@@ -5,8 +5,7 @@
     @include align-items(center);
     @include justify-content(center);
     background-color: transparent;
-    font-size: 3vh;
-    font-weight: bold;
+    font-family: "Playbold", sans-serif !important;
     min-height: 100%;
     height: 100%;
     min-width: 100%;
@@ -87,6 +86,12 @@
 }
 .button-bottom-two{
     @include absolutebottom(3%,4%,4%);
+}
+.button-bottom-welcome{
+    @include absolutebottom(15%,15%,17%);
+}
+.button-bottom-welcome-two{
+    @include absolutebottom(5%,6%,7%);
 }
 .button-bottom-three{
     position:absolute;
