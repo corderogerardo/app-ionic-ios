@@ -1,43 +1,114 @@
 .chat-container{
-	height: 90%;
-	width: 100%;
-	padding-top: 15%;
+    @include display-flex;
+    @include flex-direction(column);
+    @include align-items(center);
+    @include justify-content(flex-start);
+    @include widheigh(90%,90%,100%,100%);
+    @include responsivewidthheight(90%,90%,100%,100%,90%,90%,100%,100%,90%,90%,100%,100%);
+    padding-top: 20%;
 }
 .message-courier{
-	align-items: center;
-	background-color: lightgray;
-	border-radius: 5px;
-	display:flex;
-	flex-direction: column;
-	justify-content: center;
-	left: 5%;
-	position:relative;
-	width: 60%;
+    @include display-flex;
+    @include flex-direction(column);
+    @include align-items(center);
+    @include justify-content(center);
+    margin-bottom: 10%;
+    position:relative;
+	width: 100%;
+    div{
+        @include display-flex;
+        @include flex-direction(row);
+        @include align-items(center);
+        @include justify-content(flex-start);
+        margin-left: 3%;
+        width: 100%;
+        .chat-from{
+            @include display-flex;
+            @include flex-direction(column);
+            @include align-items(flex-start);
+            @include justify-content(center);
+            border: 1px solid white !important;
+            border-radius: 50%;
+            width:15%;
+            height: 50px !important;
+        }
+        .chat-message-hour {
+            @include display-flex;
+            @include flex-direction(column);
+            @include align-items(flex-start);
+            @include justify-content(flex-start);
+            width: 60%;
+            .chat-message{
+                border: 1px solid white !important;
+                border:1px solid red;
+                border-radius: 25px;
+                height: 40px;
+                padding-left: 5%;
+                color:white!important;
+            }
+            .chat-hour{
+                position: absolute;
+                font-size: 10px;
+                bottom: -19px !important;
+                color:white!important;
+            }
+        }
+
+        }
 }
 .message-client{
-	align-items: center;
-	background-color: $balanced;
-	border-radius: 5px;
-	display:flex;
-	flex-direction: column;
-	justify-content: center;
-	margin-top: 5%;
-	margin-bottom: 5%;
-	right: -35%;
-	position:relative;
-	width: 60%;
-}
-.chat-from{
-	border-bottom: 1px solid white;
-	padding: 2%;
-	width:90%;
-}
-.chat-message-hour{
-	display: flex;
-	padding: 2%;
-	width:90%;
+    @include display-flex;
+    @include flex-direction(column);
+    @include align-items(center);
+    @include justify-content(center);
+    margin-bottom: 10%;
+    position:relative;
+    width: 100%;
+    div{
+        @include display-flex;
+        @include flex-direction(row);
+        @include align-items(center);
+        @include justify-content(flex-end);
+        margin-right: 4%;
+        width: 100%;
+        .chat-from{
+            @include display-flex;
+            @include flex-direction(column);
+            @include align-items(center);
+            @include justify-content(center);
+            border: 1px solid white !important;
+            border-radius: 50%;
+            width:15%;
+            height: 50px !important;
+        }
+        .chat-message-hour {
+            @include display-flex;
+            @include flex-direction(column);
+            @include align-items(flex-start);
+            @include justify-content(flex-start);
+            width: 60%;
+            .chat-message{
+                @include align-items(center);
+                @include justify-content(flex-start);
+                border: 1px solid white !important;
+                border-radius: 25px;
+                height: 40px;
+                padding-left: 5%;
+                color:$balanced!important;
+                background-color: white;
+            }
+            .chat-hour{
+                position: absolute;
+                font-size: 10px;
+                bottom: -19px !important;
+                color:white!important;
+                width: 55%;
+            }
+        }
 
+    }
 }
+
 .chat-message{
 	width:75%;
 }
@@ -45,39 +116,64 @@
 	width:25%;
 }
 .chat-container-input{
-	background-color:rgba(lightgray,.3);
-	height:10%;
-	display:flex;
-	flex-direction: row;
+	background-color:white;
+    @include display-flex;
+    @include flex-direction(row);
+    @include align-items(center);
+    @include justify-content(center);
+    @include widheigh(10%,10%,100%,100%);
+    @include responsivewidthheight(10%,10%,100%,100%,10%,10%,100%,100%,10%,10%,100%,100%);
 }
 .chat-camera{
-	align-items: center;
-	display:flex;
-	justify-content: center;
-	width:20%;
+    @include display-flex;
+    @include flex-direction(row);
+    @include align-items(center);
+    @include justify-content(center);
+    @include widheigh(100%,100%,20%,20%);
+    @include responsivewidthheight(100%,100%,20%,20%,100%,100%,20%,20%,100%,100%,20%,20%);
 	a{
-		font-size: 40px;
+		font-size: 30px;
 		color:$calm;
+        @include display-flex;
+        @include flex-direction(row);
+        @include align-items(center);
+        @include justify-content(center);
+        @include widheigh(100%,100%,100%,100%);
 		text-decoration:none;
 	}
 }
 .chat-input{
-	align-items: center;
-	display:flex;
-	justify-content: center;
-	width:60%;
+    @include display-flex;
+    @include flex-direction(row);
+    @include align-items(center);
+    @include justify-content(center);
+    @include widheigh(100%,100%,60%,60%);
+    @include responsivewidthheight(100%,100%,60%,60%,100%,100%,60%,60%,100%,100%,60%,60%);
 	input{
-		border-radius:10px;
-	}
+        @include widheigh(100%,100%,100%,100%);
+        padding: 0 !important;
+        margin: 0 !important;
+        color: $balanced !important;
+    }
 }
 .chat-button{
-	align-items: center;
-	display:flex;
-	justify-content: center;
-	width:20%;
+    @include display-flex;
+    @include flex-direction(row);
+    @include align-items(center);
+    @include justify-content(center);
+    @include widheigh(100%,100%,20%,20%);
+    @include responsivewidthheight(100%,100%,20%,20%,100%,100%,20%,20%,100%,100%,20%,20%);
 	a{
+        @include display-flex;
+        @include flex-direction(row);
+        @include align-items(center);
+        @include justify-content(center);
+        @include widheigh(100%,100%,100%,100%);
+        @include responsivewidthheight(100%,100%,100%,100%,100%,100%,100%,100%,100%,100%,100%,100%);
 		color:$calm;
 		font-size:18px;
 		text-decoration: none;
+        @include media-icons-ios("../img/Enviarchat/Enviarchat1x.png","../img/EnviarchatTAP/1x.png","../img/Enviarchat/Enviarchat2x.png","../img/EnviarchatTAP/2x.png","../img/Enviarchat/Enviarchat3x.png","../img/EnviarchatTAP/3x.png");
+        background-size: 60% !important;
 	}
 }

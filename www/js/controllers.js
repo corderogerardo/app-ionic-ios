@@ -1063,7 +1063,6 @@
                 iconOn : 'ion-ios-star',
                 iconOff : 'ion-ios-star-outline',
                 iconOnColor: 'rgb(200, 200, 100)',
-                iconOffColor:  'rgb(200, 100, 100)',
                 rating:  2,
                 minRating:1
             };
@@ -1294,18 +1293,18 @@
         function loadMarkers (courier) {
             var markers = [{
                 position: [$scope.shipping.origin_latitude, $scope.shipping.origin_longitude],
-                icon    : "{url: 'img/inputs/pin-mapa-check1.png', scaledSize: [48,48]}",
+                icon    : "{url: 'img/Pindestino/Pindetsino3x.png.png', scaledSize: [48,48]}",
                 title: 'Origen'
             }, {
                 position: [$scope.shipping.destiny_latitude, $scope.shipping.destiny_longitude],
-                icon    : "{url: 'img/inputs/pin-mapa-check2.png', scaledSize: [48,48]}",
+                icon    : "{url: 'img/PinOrigen/Origen3x.png.png', scaledSize: [48,48]}",
                 title: 'Destino'
             }];
 
             if (courier) {
                 markers.push({
                     position: [courier.latitud, courier.longitud],
-                    icon    : "{url: 'img/inputs/pin-mapa2.png', scaledSize: [48,48]}",
+                    icon    : "{url: 'img/PinOrigen/Origen3x.png.png', scaledSize: [48,48]}",
                     title: 'Courier'
                 });
             }

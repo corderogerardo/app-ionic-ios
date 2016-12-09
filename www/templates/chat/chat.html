@@ -1,42 +1,41 @@
-<div class="bar bar-header bar-balanced">
-	 <h1 class="title">CHAT</h1>
+<div class="bar bar-header bar-balanced bar-sendtype">
+	 <h1 class="title">Chat</h1>
 </div>
 <ion-view view-title="Chat">
-	<ion-content scroll="false" >
-		<section class="main-container">
+	<ion-content scroll="false" overflow-scroll="false" class="axpress-bg">
 			<div class="chat-container">
 				<div ng-repeat="message in history" ng-class="{'message-courier': (message.rol == 0), 'message-client': (message.rol == 1)}">
-					<div class="chat-from" ng-if="message.rol == 0">
-					Axpress
-					</div>
-					<div class="chat-from" ng-if="message.rol == 1">
-					Cliente
-					</div>
-					<div class="chat-message-hour">
-						<div class="chat-message">
-						{{message.conversacion}}
-						</div>
-						<div class="chat-hour">
-						{{message.fecha_registro}}
-						</div>
+                    <div>
+                        <div class="chat-from" ng-if="message.rol == 0">
+                        Axpress
+                        </div>
+                       <!-- <div class="chat-from" ng-if="message.rol == 1">
+                        Cliente
+                        </div>-->
+                        <div class="chat-message-hour">
+                            <div class="chat-message">
+                            {{message.conversacion}}
+                            </div>
+                            <div class="chat-hour">
+                            {{message.fecha_registro}}
+                            </div>
 
-					</div>
+                        </div>
+                    </div>
 				</div>
+
 			</div>
 			<div class="chat-container-input">
 			<div class="chat-camera">
 				<a href="" class="ion-camera"></a>
 			</div>
 			<div class="chat-input">
-			<label class="item item-input">
-				<input ng-model="chat.message" type="text" placeholder="Mensaje">
-			</label>
+				<input  class="item item-input inputs-general" ng-model="chat.message" type="text" placeholder="Mensaje">
 			</div>
 			<div class="chat-button">
-			<a ng-click="sendMessage()" title="">Enviar</a>
+			<a ng-click="sendMessage()" title=""></a>
 			</div>
 
 			</div>
-		</section>
 	</ion-content>
 </ion-view>
