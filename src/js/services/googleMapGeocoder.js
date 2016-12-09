@@ -32,7 +32,7 @@
         }
 
         function removeStateAndCountry (formattedAddress) {
-            return formattedAddress.replace(/, [A-zÀ-ÿ]+, [A-zÀ-ÿ]+$/, "");
+            return formattedAddress.replace(/, [A-zÀ-ÿ]+, [Cc]olombia$/, "");
         }
     }
 })();

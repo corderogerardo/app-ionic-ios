@@ -18,7 +18,7 @@
                 $scope.markers[index].position = $scope.place.geometry.location;
             }, 0);
             if ( typeof place == "object" )
-                $scope.address = GoogleMapGeocoder.removeStateAndCountry($scope.place.formatted_address);
+                $scope.tempData.address = GoogleMapGeocoder.removeStateAndCountry($scope.place.formatted_address);
             $scope.focused = true;
         };
 
@@ -159,7 +159,7 @@
                 position: [$scope.data.originLatitude, $scope.data.originLongitude]
             }];
             $scope.tempData = {};
-            $scope.address = "";
+            $scope.tempData.address = "";
             $scope.maxDestinies = constants.diligencesMaxDestinies;
             NgMap.getMap().then(function(map) {
                 $scope.map = map;
