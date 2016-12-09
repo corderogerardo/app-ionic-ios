@@ -745,7 +745,7 @@
         };
 
         function loadHistory () {
-            /*Logger.displayProgressBar();*/
+            Logger.displayProgressBar();
             Shipping.history($rootScope.user.id).then(function (history) {
                 var tempHistory = history.data.remitent.concat(history.data.receptor);
                 tempHistory.forEach(function (item) {
@@ -755,9 +755,9 @@
                     item.status = findStatusText(item.status);
                 });
                 $scope.history = tempHistory;
-                /*Logger.hideProgressBar();*/
+                Logger.hideProgressBar();
             }, function () {
-                /*Logger.hideProgressBar();*/
+                Logger.hideProgressBar();
             });
         }
 
