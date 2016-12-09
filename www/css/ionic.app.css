@@ -12183,32 +12183,32 @@ ion-slide {
   margin-bottom: 2%; }
   @media screen and (max-height: 2560px) {
     .item-input {
-      min-height: 90px !important;
-      height: 90px !important;
+      min-height: 65px !important;
+      height: 65px !important;
       min-width: 80%;
       width: 80%; } }
   @media screen and (max-height: 1920px) {
     .item-input {
-      min-height: 90px !important;
-      height: 90px !important;
+      min-height: 65px !important;
+      height: 65px !important;
       min-width: 80%;
       width: 80%; } }
   @media screen and (max-height: 1280px) {
     .item-input {
-      min-height: 90px !important;
-      height: 90px !important;
+      min-height: 65px !important;
+      height: 65px !important;
       min-width: 80%;
       width: 80%; } }
   @media screen and (max-height: 960px) {
     .item-input {
-      min-height: 90px !important;
-      height: 90px !important;
+      min-height: 65px !important;
+      height: 65px !important;
       min-width: 80%;
       width: 80%; } }
   @media screen and (max-height: 736px) {
     .item-input {
-      min-height: 90px !important;
-      height: 90px !important;
+      min-height: 65px !important;
+      height: 65px !important;
       min-width: 80%;
       width: 80%; } }
   @media screen and (max-height: 667px) {
@@ -15796,7 +15796,7 @@ ion-slide {
     -webkit-justify-content: flex-start;
     -moz-justify-content: flex-start;
     justify-content: flex-start;
-    min-height: auto;
+    min-height: 50px;
     height: auto;
     min-width: 80%;
     width: 80%;
@@ -15804,55 +15804,55 @@ ion-slide {
     color: #065599 !important; }
     @media screen and (max-height: 2560px) {
       .send-type-options div {
-        min-height: auto;
+        min-height: 60px;
         height: auto;
         min-width: 80%;
         width: 80%; } }
     @media screen and (max-height: 1920px) {
       .send-type-options div {
-        min-height: auto;
+        min-height: 60px;
         height: auto;
         min-width: 80%;
         width: 80%; } }
     @media screen and (max-height: 1280px) {
       .send-type-options div {
-        min-height: auto;
+        min-height: 60px;
         height: auto;
         min-width: 80%;
         width: 80%; } }
     @media screen and (max-height: 960px) {
       .send-type-options div {
-        min-height: auto;
+        min-height: 60px;
         height: auto;
         min-width: 80%;
         width: 80%; } }
     @media screen and (max-height: 736px) {
       .send-type-options div {
-        min-height: auto;
+        min-height: 60px;
         height: auto;
         min-width: 80%;
         width: 80%; } }
     @media screen and (max-height: 667px) {
       .send-type-options div {
-        min-height: auto;
+        min-height: 55px;
         height: auto;
         min-width: 80%;
         width: 80%; } }
     @media screen and (max-height: 568px) {
       .send-type-options div {
-        min-height: auto;
+        min-height: 50px;
         height: auto;
         min-width: 80%;
         width: 80%; } }
     @media screen and (max-height: 480px) {
       .send-type-options div {
-        min-height: auto;
+        min-height: 50px;
         height: auto;
         min-width: 80%;
         width: 80%; } }
     @media screen and (max-height: 320px) {
       .send-type-options div {
-        min-height: auto;
+        min-height: 50px;
         height: auto;
         min-width: 80%;
         width: 80%; } }
@@ -15865,55 +15865,55 @@ ion-slide {
         width: 10%; }
         @media screen and (max-height: 2560px) {
           .send-type-options div:checked input {
-            min-height: auto;
+            min-height: 60px;
             height: auto;
             min-width: 90%;
             width: 90%; } }
         @media screen and (max-height: 1920px) {
           .send-type-options div:checked input {
-            min-height: auto;
+            min-height: 60px;
             height: auto;
             min-width: 90%;
             width: 90%; } }
         @media screen and (max-height: 1280px) {
           .send-type-options div:checked input {
-            min-height: auto;
+            min-height: 60px;
             height: auto;
             min-width: 90%;
             width: 90%; } }
         @media screen and (max-height: 960px) {
           .send-type-options div:checked input {
-            min-height: auto;
+            min-height: 60px;
             height: auto;
             min-width: 90%;
             width: 90%; } }
         @media screen and (max-height: 736px) {
           .send-type-options div:checked input {
-            min-height: auto;
+            min-height: 60px;
             height: auto;
             min-width: 90%;
             width: 90%; } }
         @media screen and (max-height: 667px) {
           .send-type-options div:checked input {
-            min-height: auto;
+            min-height: 55px;
             height: auto;
             min-width: 90%;
             width: 90%; } }
         @media screen and (max-height: 568px) {
           .send-type-options div:checked input {
-            min-height: auto;
+            min-height: 50px;
             height: auto;
             min-width: 20% !important;
             width: 20% !important; } }
         @media screen and (max-height: 480px) {
           .send-type-options div:checked input {
-            min-height: auto;
+            min-height: 50px;
             height: auto;
             min-width: 20% !important;
             width: 20% !important; } }
         @media screen and (max-height: 320px) {
           .send-type-options div:checked input {
-            min-height: auto;
+            min-height: 50px;
             height: auto;
             min-width: 20% !important;
             width: 20% !important; } }
@@ -23618,6 +23618,7 @@ ion-slide {
   color: #065599;
   font-size: 18px; }
 
+.ionic_rating_icon_on,
 .ion-ios-star {
   border: none !important;
   background-color: transparent;
@@ -23627,6 +23628,7 @@ ion-slide {
   background-position: center;
   color: transparent !important; }
   @media screen and (max-height: 2560px) {
+    .ionic_rating_icon_on,
     .ion-ios-star {
       border: none !important;
       background-color: transparent;
@@ -23635,6 +23637,7 @@ ion-slide {
       background-repeat: no-repeat;
       background-position: center; } }
   @media screen and (max-height: 1920px) {
+    .ionic_rating_icon_on,
     .ion-ios-star {
       border: none !important;
       background-color: transparent;
@@ -23643,6 +23646,7 @@ ion-slide {
       background-repeat: no-repeat;
       background-position: center; } }
   @media screen and (max-height: 1280px) {
+    .ionic_rating_icon_on,
     .ion-ios-star {
       border: none !important;
       background-color: transparent;
@@ -23651,6 +23655,7 @@ ion-slide {
       background-repeat: no-repeat;
       background-position: center; } }
   @media screen and (max-height: 960px) {
+    .ionic_rating_icon_on,
     .ion-ios-star {
       border: none !important;
       background-color: transparent;
@@ -23659,6 +23664,7 @@ ion-slide {
       background-repeat: no-repeat;
       background-position: center; } }
   @media screen and (max-height: 736px) {
+    .ionic_rating_icon_on,
     .ion-ios-star {
       border: none !important;
       background-color: transparent;
@@ -23667,6 +23673,7 @@ ion-slide {
       background-repeat: no-repeat;
       background-position: center; } }
   @media screen and (max-height: 667px) {
+    .ionic_rating_icon_on,
     .ion-ios-star {
       border: none !important;
       background-color: transparent;
@@ -23675,6 +23682,7 @@ ion-slide {
       background-repeat: no-repeat;
       background-position: center; } }
   @media screen and (max-height: 568px) {
+    .ionic_rating_icon_on,
     .ion-ios-star {
       border: none !important;
       background-color: transparent;
@@ -23683,6 +23691,7 @@ ion-slide {
       background-repeat: no-repeat;
       background-position: center; } }
   @media screen and (max-height: 480px) {
+    .ionic_rating_icon_on,
     .ion-ios-star {
       border: none !important;
       background-color: transparent;
@@ -23691,6 +23700,7 @@ ion-slide {
       background-repeat: no-repeat;
       background-position: center; } }
   @media screen and (max-height: 320px) {
+    .ionic_rating_icon_on,
     .ion-ios-star {
       border: none !important;
       background-color: transparent;
@@ -23698,6 +23708,7 @@ ion-slide {
       background-size: 100%;
       background-repeat: no-repeat;
       background-position: center; } }
+  .ionic_rating_icon_on:hover,
   .ion-ios-star:hover {
     border: none !important;
     background-color: transparent;
@@ -23706,6 +23717,7 @@ ion-slide {
     background-repeat: no-repeat;
     background-position: center; }
     @media screen and (max-height: 2560px) {
+      .ionic_rating_icon_on:hover,
       .ion-ios-star:hover {
         border: none !important;
         background-color: transparent;
@@ -23714,6 +23726,7 @@ ion-slide {
         background-repeat: no-repeat;
         background-position: center; } }
     @media screen and (max-height: 1920px) {
+      .ionic_rating_icon_on:hover,
       .ion-ios-star:hover {
         border: none !important;
         background-color: transparent;
@@ -23722,6 +23735,7 @@ ion-slide {
         background-repeat: no-repeat;
         background-position: center; } }
     @media screen and (max-height: 1280px) {
+      .ionic_rating_icon_on:hover,
       .ion-ios-star:hover {
         border: none !important;
         background-color: transparent;
@@ -23730,6 +23744,7 @@ ion-slide {
         background-repeat: no-repeat;
         background-position: center; } }
     @media screen and (max-height: 960px) {
+      .ionic_rating_icon_on:hover,
       .ion-ios-star:hover {
         border: none !important;
         background-color: transparent;
@@ -23738,6 +23753,7 @@ ion-slide {
         background-repeat: no-repeat;
         background-position: center; } }
     @media screen and (max-height: 736px) {
+      .ionic_rating_icon_on:hover,
       .ion-ios-star:hover {
         border: none !important;
         background-color: transparent;
@@ -23746,6 +23762,7 @@ ion-slide {
         background-repeat: no-repeat;
         background-position: center; } }
     @media screen and (max-height: 667px) {
+      .ionic_rating_icon_on:hover,
       .ion-ios-star:hover {
         border: none !important;
         background-color: transparent;
@@ -23754,6 +23771,7 @@ ion-slide {
         background-repeat: no-repeat;
         background-position: center; } }
     @media screen and (max-height: 568px) {
+      .ionic_rating_icon_on:hover,
       .ion-ios-star:hover {
         border: none !important;
         background-color: transparent;
@@ -23762,6 +23780,7 @@ ion-slide {
         background-repeat: no-repeat;
         background-position: center; } }
     @media screen and (max-height: 480px) {
+      .ionic_rating_icon_on:hover,
       .ion-ios-star:hover {
         border: none !important;
         background-color: transparent;
@@ -23770,6 +23789,7 @@ ion-slide {
         background-repeat: no-repeat;
         background-position: center; } }
     @media screen and (max-height: 320px) {
+      .ionic_rating_icon_on:hover,
       .ion-ios-star:hover {
         border: none !important;
         background-color: transparent;
@@ -23778,14 +23798,17 @@ ion-slide {
         background-repeat: no-repeat;
         background-position: center; } }
 
+.ionic_rating_icon_off,
 .ion-ios-star-outline {
   border: none !important;
   background-color: transparent;
   background-image: url("../img/Estrelladecalificacionselected/1x.pngg") !important;
   background-size: 100%;
   background-repeat: no-repeat;
-  background-position: center; }
+  background-position: center;
+  color: transparent !important; }
   @media screen and (max-height: 2560px) {
+    .ionic_rating_icon_off,
     .ion-ios-star-outline {
       border: none !important;
       background-color: transparent;
@@ -23794,6 +23817,7 @@ ion-slide {
       background-repeat: no-repeat;
       background-position: center; } }
   @media screen and (max-height: 1920px) {
+    .ionic_rating_icon_off,
     .ion-ios-star-outline {
       border: none !important;
       background-color: transparent;
@@ -23802,6 +23826,7 @@ ion-slide {
       background-repeat: no-repeat;
       background-position: center; } }
   @media screen and (max-height: 1280px) {
+    .ionic_rating_icon_off,
     .ion-ios-star-outline {
       border: none !important;
       background-color: transparent;
@@ -23810,6 +23835,7 @@ ion-slide {
       background-repeat: no-repeat;
       background-position: center; } }
   @media screen and (max-height: 960px) {
+    .ionic_rating_icon_off,
     .ion-ios-star-outline {
       border: none !important;
       background-color: transparent;
@@ -23818,6 +23844,7 @@ ion-slide {
       background-repeat: no-repeat;
       background-position: center; } }
   @media screen and (max-height: 736px) {
+    .ionic_rating_icon_off,
     .ion-ios-star-outline {
       border: none !important;
       background-color: transparent;
@@ -23826,6 +23853,7 @@ ion-slide {
       background-repeat: no-repeat;
       background-position: center; } }
   @media screen and (max-height: 667px) {
+    .ionic_rating_icon_off,
     .ion-ios-star-outline {
       border: none !important;
       background-color: transparent;
@@ -23834,6 +23862,7 @@ ion-slide {
       background-repeat: no-repeat;
       background-position: center; } }
   @media screen and (max-height: 568px) {
+    .ionic_rating_icon_off,
     .ion-ios-star-outline {
       border: none !important;
       background-color: transparent;
@@ -23842,6 +23871,7 @@ ion-slide {
       background-repeat: no-repeat;
       background-position: center; } }
   @media screen and (max-height: 480px) {
+    .ionic_rating_icon_off,
     .ion-ios-star-outline {
       border: none !important;
       background-color: transparent;
@@ -23850,6 +23880,7 @@ ion-slide {
       background-repeat: no-repeat;
       background-position: center; } }
   @media screen and (max-height: 320px) {
+    .ionic_rating_icon_off,
     .ion-ios-star-outline {
       border: none !important;
       background-color: transparent;
@@ -23857,6 +23888,7 @@ ion-slide {
       background-size: 100%;
       background-repeat: no-repeat;
       background-position: center; } }
+  .ionic_rating_icon_off:hover,
   .ion-ios-star-outline:hover {
     border: none !important;
     background-color: transparent;
@@ -23865,6 +23897,7 @@ ion-slide {
     background-repeat: no-repeat;
     background-position: center; }
     @media screen and (max-height: 2560px) {
+      .ionic_rating_icon_off:hover,
       .ion-ios-star-outline:hover {
         border: none !important;
         background-color: transparent;
@@ -23873,6 +23906,7 @@ ion-slide {
         background-repeat: no-repeat;
         background-position: center; } }
     @media screen and (max-height: 1920px) {
+      .ionic_rating_icon_off:hover,
       .ion-ios-star-outline:hover {
         border: none !important;
         background-color: transparent;
@@ -23881,6 +23915,7 @@ ion-slide {
         background-repeat: no-repeat;
         background-position: center; } }
     @media screen and (max-height: 1280px) {
+      .ionic_rating_icon_off:hover,
       .ion-ios-star-outline:hover {
         border: none !important;
         background-color: transparent;
@@ -23889,6 +23924,7 @@ ion-slide {
         background-repeat: no-repeat;
         background-position: center; } }
     @media screen and (max-height: 960px) {
+      .ionic_rating_icon_off:hover,
       .ion-ios-star-outline:hover {
         border: none !important;
         background-color: transparent;
@@ -23897,6 +23933,7 @@ ion-slide {
         background-repeat: no-repeat;
         background-position: center; } }
     @media screen and (max-height: 736px) {
+      .ionic_rating_icon_off:hover,
       .ion-ios-star-outline:hover {
         border: none !important;
         background-color: transparent;
@@ -23905,6 +23942,7 @@ ion-slide {
         background-repeat: no-repeat;
         background-position: center; } }
     @media screen and (max-height: 667px) {
+      .ionic_rating_icon_off:hover,
       .ion-ios-star-outline:hover {
         border: none !important;
         background-color: transparent;
@@ -23913,6 +23951,7 @@ ion-slide {
         background-repeat: no-repeat;
         background-position: center; } }
     @media screen and (max-height: 568px) {
+      .ionic_rating_icon_off:hover,
       .ion-ios-star-outline:hover {
         border: none !important;
         background-color: transparent;
@@ -23921,6 +23960,7 @@ ion-slide {
         background-repeat: no-repeat;
         background-position: center; } }
     @media screen and (max-height: 480px) {
+      .ionic_rating_icon_off:hover,
       .ion-ios-star-outline:hover {
         border: none !important;
         background-color: transparent;
@@ -23929,6 +23969,7 @@ ion-slide {
         background-repeat: no-repeat;
         background-position: center; } }
     @media screen and (max-height: 320px) {
+      .ionic_rating_icon_off:hover,
       .ion-ios-star-outline:hover {
         border: none !important;
         background-color: transparent;

@@ -63,15 +63,15 @@
         @include flex-direction(row);
         @include align-items(center);
         @include justify-content(flex-start);
-        @include widheigh(auto,auto,80%,80%);
-        @include responsivewidthheight(auto,auto,80%,80%,auto,auto,80%,80%,auto,auto,80%,80%);
+        @include widheigh(50px,auto,80%,80%);
+        @include responsivewidthheight(auto,50px,80%,80%,auto,55px,80%,80%,auto,60px,80%,80%);
         font-size:2.5vh;
         color:$balanced !important;
         &:checked{
             color:$balanced !important;
             input{
                 @include widheigh(auto,auto,10%,10%);
-                @include responsivewidthheight(auto,auto,20% !important,20% !important,auto,auto,90%,90%,auto,auto,90%,90%);
+                @include responsivewidthheight(auto,50px,20% !important,20% !important,auto,55px,90%,90%,auto,60px,90%,90%);
             }
         }
     }
