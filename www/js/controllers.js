@@ -410,7 +410,7 @@
                     $scope.data.destiniesData.push(getStopElement($scope.tempData));
                 }
             } else {
-                $scope.data.destinyAddress = $scope.place.formatted_address;
+                $scope.data.destinyAddress = GoogleMapGeocoder.removeStateAndCountry($scope.place.formatted_address);
                 $scope.data.destinyLatitude = $scope.place.geometry.location.lat();
                 $scope.data.destinyLongitude = $scope.place.geometry.location.lng();
                 $scope.data.destinyPlace = $scope.place;
@@ -418,7 +418,7 @@
             resetTempData();
             $scope.buttonState = false;
             if ( $scope.extraData.navigateTo ) {
-                $state.go($scope.extraData.navigateTo);
+                $state.go($scope.extraData.navigateTo, {}, {reload: true});
                 delete $scope.extraData.navigateTo;
             } else {
                 $state.go($scope.extraData.destinyNext);
@@ -564,7 +564,7 @@
 
             $scope.data.typeServices = $state.params.serviceType;
             $scope.data.bagId = $scope.choice.bag.shipping_bag_id;
-            $scope.data.bagTitle = $scope.choice.bag.subtitle;
+            $scope.data.bagTitle = $scope.choice.bag.title;
             if ($scope.extraData.navigateTo) {
                 $state.go($scope.extraData.navigateTo);
                 delete $scope.extraData.navigateTo;
@@ -641,8 +641,13 @@
         }
 
         function setExistingChoice() {
+            var bag = $scope.bagservice.filter(function (item) {
+                return item.shipping_bag_id == $scope.data.bagId;
+            }).pop();
+            console.log("BAG ID:", $scope.data.bagId);
+            console.log(JSON.stringify(bag));
             $scope.choice = {
-                bag: $scope.data.bagId
+                bag: bag
             };
         }
 
@@ -818,12 +823,12 @@
             //If cant continue
             if (!canContinue()) return;
 
-            $scope.data.originAddress = $scope.place.formatted_address;
+            $scope.data.originAddress = GoogleMapGeocoder.removeStateAndCountry($scope.place.formatted_address);
             $scope.data.originLatitude = $scope.place.geometry.location.lat();
             $scope.data.originLongitude = $scope.place.geometry.location.lng();
             $scope.data.originPlace = $scope.place;
             if ( $scope.extraData.navigateTo ) {
-                $state.go($scope.extraData.navigateTo);
+                $state.go($scope.extraData.navigateTo, {}, {reload: true});
                 delete $scope.extraData.navigateTo;
             } else {
                 $state.go($scope.extraData.originNext);
@@ -1117,7 +1122,7 @@
 
         $scope.editOrigin = function() {
             $scope.extraData.navigateTo = $scope.extraData.flow + '.resume';
-            $state.go($scope.extraData.flow + '.origin');
+            $state.go($scope.extraData.flow + '.origin', {}, {reload: true});
         };
 
         $scope.editDestiny = function() {
@@ -1127,7 +1132,7 @@
                 $state.go($scope.extraData.flow + '.stops');
             } else {
                 $scope.extraData.navigateTo = $scope.extraData.flow + '.resume';
-                $state.go($scope.extraData.flow + '.destiny');
+                $state.go($scope.extraData.flow + '.destiny', {}, {reload: true});
             }
         };
         $scope.editSentType = function() {
@@ -1168,19 +1173,13 @@
                 $state.go($scope.extraData.flow + '.clientfeatures');
             } else {
                 $scope.extraData.navigateTo = $scope.extraData.flow + '.resume';
-                $state.go($scope.extraData.flow + '.features');
+                $state.go($scope.extraData.flow + '.features', {}, {reload: true});
             }
         };
 
         $scope.editDestinatary = function() {
-            if ( $state.params.serviceType == 45 ) {
-                //Its a diligence
-                $scope.extraData.navigateTo = $scope.extraData.flow + '.resume';
-                $state.go($scope.extraData.flow + '.stops');
-            } else {
-                $scope.extraData.navigateTo = $scope.extraData.flow + '.resume';
-                $state.go($scope.extraData.flow + '.receiver');
-            }
+            $scope.extraData.navigateTo = $scope.extraData.flow + '.resume';
+            $state.go($scope.extraData.flow + '.receiver');
         };
 
         $scope.confirmResume = function() {
