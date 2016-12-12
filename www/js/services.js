@@ -132,12 +132,13 @@
          * @param      {String}  identify    The user national ID
          * @return     {Promise}  A promise to resolve server response
          */
-        service.edit = function(clientId, email, name, password, movilPhone, localPhone, identify) {
+        service.edit = function(clientId, email, name, password, newPassword, movilPhone, localPhone, identify) {
             var data = {
                 client_id: clientId,
                 email: email,
                 name: name,
-                pass: password,
+                pass: service.socialPassword(password),
+                new_pass: service.socialPassword(newPassword),
                 movil_phone: movilPhone,
                 local_phone: localPhone,
                 identify: identify

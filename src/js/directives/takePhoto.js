@@ -21,37 +21,41 @@
 
     takePhotoController.$inject = ['$scope', '$cordovaCamera'];
 
-    function takePhotoController ($scope, $cordovaCamera) {
+    function takePhotoController ($scope) {
         activate();
+        var camera;
 
         function activate () {
+            $scope.options = {};
             document.addEventListener("deviceready", function () {
+                camera = navigator.camera;
                 var tempOptions = {
-                    quality:            100,
-                    destinationType:    Camera.DestinationType.DATA_URL,
-                    sourceType:         Camera.PictureSourceType.CAMERA,
-                    allowEdit:          true,
-                    encodingType:       Camera.EncodingType.JPEG,
+                    destinationType:    camera.DestinationType.DATA_URL,
+                    sourceType:         camera.PictureSourceType.CAMERA,
+                    encodingType:       camera.EncodingType.JPEG,
+                    mediaType:          camera.MediaType.PICTURE, 
+                    quality:            90,
+                    allowEdit:          false,
                     targetWidth:        800,
                     targetHeight:       800,
-                    popoverOptions:     CameraPopoverOptions,
                     saveToPhotoAlbum:   false,
                     correctOrientation: true
                 };
-
                 //Sets custom options over the default ones
                 $scope.options = Object.assign(tempOptions, $scope.options);
             }, false);
         }
+
         $scope.takePhoto = function () {
-            $cordovaCamera.getPicture($scope.options)
-                .then(function(imageData){
-                    $scope.imageSrc = "data:image/jpeg;base64, " + imageData;
+            document.addEventListener("deviceready", function () {
+                camera.cleanup();
+                camera.getPicture(function(imageData){
                     $scope.successCallback(imageData);
                 }, function (err) {
                     if (typeof $scope.errorCallback != "undefined")
                         $scope.errorCallback(err);
-                });
+                }, $scope.options);
+            }, false);
         };
     }
-})()
+})();

@@ -14,7 +14,7 @@
         $scope.doAccountUpdate = function(accountForm) {
             if (accountForm.$valid) {
                 Logger.displayProgressBar();
-                Client.edit($scope.user.id, $scope.user.email, $scope.user.name, $scope.user.pass, $scope.user.phone,
+                Client.edit($scope.user.id, $scope.user.email, $scope.user.name, $scope.user.pass, $scope.user.newPass, $scope.user.phone,
                         $scope.user.localPhone, $scope.user.identify)
                     .then(function(response) {
                         if (response.return && response.status == 200)
@@ -644,8 +644,6 @@
             var bag = $scope.bagservice.filter(function (item) {
                 return item.shipping_bag_id == $scope.data.bagId;
             }).pop();
-            console.log("BAG ID:", $scope.data.bagId);
-            console.log(JSON.stringify(bag));
             $scope.choice = {
                 bag: bag
             };
@@ -974,25 +972,21 @@
     PhotoController.$inject = ['$rootScope', '$scope', '$state', 'Logger'];
 
     function PhotoController($rootScope, $scope, $state, Logger) {
+        var preBase64 = "data:image/jpeg;base64,";
         activate();
 
         $scope.photoTaken = function(imageData) {
-            $scope.imageData = "data:image/jpeg;base64," + imageData;
+            $scope.data.picture = preBase64 + imageData;
+            $state.reload();
         };
 
-        $scope.photoSelected = function(results) {
-            window.plugins.Base64.encodeFile(results[0], function(base64){
-                $scope.imageData = base64;
-            });
+        $scope.photoSelected = function(imageData) {
+            $scope.data.picture = preBase64 + imageData;
+            $state.reload();
         };
 
         $scope.confirmImagePhoto = function() {
             if (!hasCompletedFeatures()) return;
-            
-            //We replace the meta data used to display the image
-            $scope.data.picture = $scope.imageData
-                .replace("data:image/jpeg;base64,", "")
-                .replace("data:image/*;charset=utf-8;base64,","");
             $state.go($scope.extraData.photoNext);
         };
 
@@ -1005,7 +999,6 @@
         }
 
         function activate() {
-            $scope.imageData = "";
             $scope.data = $state.current.data.data;
             $scope.extraData = $state.current.data.extraData;
         }
@@ -1089,15 +1082,30 @@
                 } else {
                     $state.go($scope.extraData.receiverNext);
                 }
-            } else {
-                Logger.toast("Debe completar el nombre, correo electrónico y teléfono");
             }
         };
 
         function isFormValid () {
-            return $scope.data.destinyName != "" &&
-                $scope.data.emailDestinyClient != "" &&
-                $scope.data.cellphoneDestinyClient != "";
+            var name = $scope.data.destinyName,
+                email = $scope.data.emailDestinyClient,
+                phone = $scope.data.cellphoneDestinyClient;
+
+            if (name == undefined || name == "") {
+                Logger.toast("Debe completar el nombre");
+                return false;
+            }
+
+            if (email == undefined || email == "") {
+                Logger.toast("Debe completar el correo electrónico");
+                return false;
+            }
+
+            if (phone == undefined || phone == "") {
+                Logger.toast("Debe completar el teléfono");
+                return false;
+            }
+
+            return true;
         }
 
         function activate() {

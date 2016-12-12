@@ -32,8 +32,6 @@
     "ionic-plugin-keyboard",
     "cordova-plugin-camera",
     "cordova-plugin-compat",
-    "cordova-plugin-image-picker",
-    "com-badrit-base64",
     {
       "id": "phonegap-plugin-push",
       "locator": "phonegap-plugin-push",
