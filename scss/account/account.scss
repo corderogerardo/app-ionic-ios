@@ -1,38 +1,38 @@
 .account-container{
-    margin:0 !important;
+		margin:0 !important;
 }
 .account-buttons{
 	height:10%;
 	width: 80%;
 }
 .button-bottom-account{
-    width:92%;
-    position:absolute;
-    left: 5%;
-    height:5%;
-    bottom: 3%;
+		width:92%;
+		position:absolute;
+		left: 5%;
+		height:5%;
+		bottom: 3%;
 }
 .account-container-user{
-    @include display-flex;
-    @include flex-direction(column);
-    @include align-items(center);
-    @include justify-content(flex-end);
-    @include widheigh(35%,35%,100%,100%);
-    color:$gray !important;
-    .account-photo{
-        @include display-flex;
-        @include flex-direction(row);
-        @include align-items(center);
-        @include justify-content(center);
-        @include widheigh(50%,50%,50%,50%);
-        color:$gray !important;
-    }
-    .account-user{
-        @include display-flex;
-        @include flex-direction(column);
-        @include align-items(center);
-        @include justify-content(center);
-        @include widheigh(20%,20%,50%,50%);
-        color:$gray !important;
-    }
+		@include display-flex;
+		@include flex-direction(column);
+		@include align-items(center);
+		@include justify-content(flex-end);
+		@include widheigh(35%,35%,100%,100%);
+		color:$gray !important;
+		.account-photo{
+				@include display-flex;
+				@include flex-direction(row);
+				@include align-items(center);
+				@include justify-content(center);
+				@include widheigh(50%,50%,50%,50%);
+				color:$gray !important;
+		}
+		.account-user{
+				@include display-flex;
+				@include flex-direction(column);
+				@include align-items(center);
+				@include justify-content(center);
+				@include widheigh(20%,20%,50%,50%);
+				color:$gray !important;
+		}
 }
