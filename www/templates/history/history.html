@@ -9,13 +9,9 @@
 				<div ng-repeat="item in history">
 
 					<ion-item class="item-avatar item-icon-right" ng-click="toggleShipping(item.shipping_id)" ng-class="{active: isShippingShown(item.shipping_id)}">
-						<img ng-src="../img/Historial/{{item.service}}.png">
+						<img ng-src="img/Historial/{{item.service}}.png">
 						<div class="text-center full-size">
-							<!--{{item.service}}<br>-->
-							{{item.date}}<!--<br>-->
-							<!--<span ng-class="{'unasigned': (item.status.value == 10),
-								'asigned': (item.status.value == 1), 'collected': (item.status.value == 2),
-								'delivered': (item.status.value == 3), 'canceled': (item.status.value == 4)}">{{item.status.name}} &#9679;</span>-->
+							{{item.date}}
 						</div>
 						<i class="icon" ng-class="isShippingShown(item.shipping_id) ? 'ion-ios-arrow-up' : 'ion-ios-arrow-down'"></i>
 					</ion-item>
@@ -31,7 +27,8 @@
 
 							</div>
 							<div class="historial-button">
-								<a href="" title="" ui-sref="app.tracking({shippingId: item.shipping_id})">Ver recorrido</a>
+								<a title="" ui-sref="app.tracking({shippingId: item.shipping_id})" ng-if="item.status.value == 1 || item.status.value == 2">Ver recorrido</a>
+								<a ui-sref="app.tracking({shippingId: item.shipping_id})" ng-if="item.status.value == 3">Calificar</a>
 							</div>
 						</div>
 					</ion-item>

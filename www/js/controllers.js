@@ -14,7 +14,7 @@
         $scope.doAccountUpdate = function(accountForm) {
             if (accountForm.$valid) {
                 Logger.displayProgressBar();
-                Client.edit($scope.user.id, $scope.user.email, $scope.user.name, $scope.user.pass, $scope.user.phone,
+                Client.edit($scope.user.id, $scope.user.email, $scope.user.name, $scope.user.pass, $scope.user.newPass, $scope.user.phone,
                         $scope.user.localPhone, $scope.user.identify)
                     .then(function(response) {
                         if (response.return && response.status == 200)
@@ -1082,15 +1082,30 @@
                 } else {
                     $state.go($scope.extraData.receiverNext);
                 }
-            } else {
-                Logger.toast("Debe completar el nombre, correo electrónico y teléfono");
             }
         };
 
         function isFormValid () {
-            return $scope.data.destinyName != "" &&
-                $scope.data.emailDestinyClient != "" &&
-                $scope.data.cellphoneDestinyClient != "";
+            var name = $scope.data.destinyName,
+                email = $scope.data.emailDestinyClient,
+                phone = $scope.data.cellphoneDestinyClient;
+
+            if (name == undefined || name == "") {
+                Logger.toast("Debe completar el nombre");
+                return false;
+            }
+
+            if (email == undefined || email == "") {
+                Logger.toast("Debe completar el correo electrónico");
+                return false;
+            }
+
+            if (phone == undefined || phone == "") {
+                Logger.toast("Debe completar el teléfono");
+                return false;
+            }
+
+            return true;
         }
 
         function activate() {

@@ -14,7 +14,7 @@
         $scope.doAccountUpdate = function(accountForm) {
             if (accountForm.$valid) {
                 Logger.displayProgressBar();
-                Client.edit($scope.user.id, $scope.user.email, $scope.user.name, $scope.user.pass, $scope.user.phone,
+                Client.edit($scope.user.id, $scope.user.email, $scope.user.name, $scope.user.pass, $scope.user.newPass, $scope.user.phone,
                         $scope.user.localPhone, $scope.user.identify)
                     .then(function(response) {
                         if (response.return && response.status == 200)

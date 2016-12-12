@@ -20,7 +20,7 @@
                 <section class="navbar_content">
                     <div class="deliverboy-info">
                         <div class="deliverboy-photo">
-                           <img ng-src="{{shipping.currier.image || '../img/Iconofoto/Iconofoto3x.png.png'}}" height="60px" width="60px">
+                           <img ng-src="{{shipping.currier.image || 'img/Iconofoto/Iconofoto3x.png.png'}}" height="60px" width="60px">
                         </div>
                         <div class="deliverboy-data">
                             <div class="deliverboy-data-text">
@@ -31,7 +31,7 @@
                         </div>
                     </div>
                     <div class="deliverboy-data-buttons">
-                        <a class="deliverboy-chat" ui-sref="chat({shippingId: shipping.shipping_id})">Chat</a>
+                        <a class="deliverboy-chat" ui-sref="app.chat({shippingId: shipping.shipping_id})">Chat</a>
                         <a class="deliverboy-call" href="tel:{{shipping.currier.movil_phone}}">Llamar</a>
                     </div>
 				</section>
