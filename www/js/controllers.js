@@ -644,8 +644,6 @@
             var bag = $scope.bagservice.filter(function (item) {
                 return item.shipping_bag_id == $scope.data.bagId;
             }).pop();
-            console.log("BAG ID:", $scope.data.bagId);
-            console.log(JSON.stringify(bag));
             $scope.choice = {
                 bag: bag
             };
@@ -974,25 +972,21 @@
     PhotoController.$inject = ['$rootScope', '$scope', '$state', 'Logger'];
 
     function PhotoController($rootScope, $scope, $state, Logger) {
+        var preBase64 = "data:image/jpeg;base64,";
         activate();
 
         $scope.photoTaken = function(imageData) {
-            $scope.imageData = "data:image/jpeg;base64," + imageData;
+            $scope.data.picture = preBase64 + imageData;
+            $state.reload();
         };
 
-        $scope.photoSelected = function(results) {
-            window.plugins.Base64.encodeFile(results[0], function(base64){
-                $scope.imageData = base64;
-            });
+        $scope.photoSelected = function(imageData) {
+            $scope.data.picture = preBase64 + imageData;
+            $state.reload();
         };
 
         $scope.confirmImagePhoto = function() {
             if (!hasCompletedFeatures()) return;
-            
-            //We replace the meta data used to display the image
-            $scope.data.picture = $scope.imageData
-                .replace("data:image/jpeg;base64,", "")
-                .replace("data:image/*;charset=utf-8;base64,","");
             $state.go($scope.extraData.photoNext);
         };
 
@@ -1005,7 +999,6 @@
         }
 
         function activate() {
-            $scope.imageData = "";
             $scope.data = $state.current.data.data;
             $scope.extraData = $state.current.data.extraData;
         }
