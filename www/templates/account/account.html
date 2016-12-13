@@ -5,9 +5,9 @@
     <ion-content scroll="false">
         <div class="account-container-user">
             <div class="account-photo">
-                <img ng-src="{{user.social_picture || 'img/Anadirfoto/Anadirfoto3x.png.png'}}" height="60px" width="60px" alt="">
+                <img ng-src="{{user.social_picture || user.selectedPhoto || 'img/Anadirfoto/Anadirfoto3x.png.png'}}" height="60px" width="60px" alt="">
                 </div><div class="account-user">
-                <div>Añadir foto</div>
+                <select-photo on-photo-selected="imageSelected" ng-if="!user.social_picture"></select-photo>
             </div>
         </div>
         <form class="list list-inset account-container" id="accountForm" name="accountForm" accept-charset="utf-8" novalidate>

@@ -10,7 +10,7 @@
         $scope.rateService = rateService;
 
         function rateService () {
-            $scope.rating = 2;
+            $scope.rating = 3;
             var shippingId = $scope.shipping.shipping_id,
                 rating = $scope.rating;
             Logger.displayProgressBar();
