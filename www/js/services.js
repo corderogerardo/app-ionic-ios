@@ -873,24 +873,79 @@
     angular.module('axpress')
         .factory('Push', PushService);
 
-    PushService.$inject = ['$rootScope', '$q', 'constants', '$cordovaPushV5'];
+    PushService.$inject = ['$rootScope', '$q', 'constants'];
 
-    function PushService($rootScope, $q, constants, $cordovaPushV5) {
+    function PushService($rootScope, $q, constants) {
         var service = {
-            initialize: initialize
+            initialize: initialize,
+            clearAllNotifications: clearAllNotifications
         };
+
+        var push;
 
         return service;
 
-        function listenForEvent () {
-            $rootScope.$on('$cordovaPushV5:notificationReceived', function (event, data) {
-                console.log("-----------PUSH----------------");
-                console.log(JSON.stringify(data));
-            });
+        function notificationReceived (data) {
+            //The app started by clicking the notification
+            if (data.additionalData.coldstart) {
+                console.log("APP STARTED!");
+                console.log(JSON.stringify(data.additionalData));
+                switch(data.additionalData.type) {
+                    //Courier assigned
+                    case 1:
+                        onCourierAssigned(data.additionalData.data.shipping_id);
+                        break;
+                    //Package Picked
+                    case 2:
+                        onPackagePicked(data.additionalData.data.shipping_id);
+                        break;
+                    //
+                    case 3:
+                        onPackageDelivered(data.additionalData.data.shipping_id);
+                        break;
+                    //
+                    case 5:
+                        onChatMessageReceived(data.additionalData.data.shipping_id);
+                        break;
+                    //Default case
+                    default:
+                        console.log("sandbox push");
+                        //onCourierAssigned(1289);
+                        break;
+                    
+                }
+            }
 
-            $rootScope.$on('$cordovaPushV5:errorOcurred', function(event, e) {
-                console.log("PUSH error");
-            });
+            //The app was already running when the notification was received
+            if (data.additionalData.foreground) {
+                console.log("APP ALREADY RUNNING!");
+                console.log(JSON.stringify(data.additionalData));
+            }
+        }
+
+        function onCourierAssigned (shippingId) {
+            $rootScope.$state.go('app.tracking', {shippingId: shippingId});
+        }
+
+        function onPackagePicked (shippingId) {
+            $rootScope.$state.go('app.tracking', {shippingId: shippingId});
+        }
+
+        function onPackageDelivered (shippingId) {
+            $rootScope.$state.go('app.rating', {shippingId: shippingId});
+        }
+
+        function onChatMessageReceived (shippingId) {
+            $rootScope.$state.go('app.chat', {shippingId: shippingId});
+        }
+
+        function clearAllNotifications () {
+            push.clearAllNotifications(function() {}, function() {});
+        }
+
+        function onInit(data) {
+            localStorage.setItem('axpress.push.registrationID', data.registrationId);
+            push.on('notification', notificationReceived);
         }
 
         function initialize () {
@@ -900,26 +955,16 @@
                     senderID: constants.pushSenderID
                 },
                 ios: {
-                    alert: "true",
-                    badge: "true",
-                    sound: "true",
+                    alert: true,
+                    badge: true,
+                    sound: true,
                     senderID: constants.pushSenderID,
                 }
             };
 
             document.addEventListener("deviceready", function() {
-                $cordovaPushV5.initialize(pushOptions)
-                    .then(function () {
-                        // start listening for new notifications
-                        $cordovaPushV5.onNotification();
-                        // start listening for errors
-                        $cordovaPushV5.onError();
-
-                        $cordovaPushV5.register().then(function(registrationId) {
-                            localStorage.setItem('axpress.push.registrationID', registrationId);
-                            listenForEvent();
-                        });
-                    });
+                PushNotification.on('registration', onInit);
+                push = PushNotification.init(pushOptions);
             }, false);
         }
     }
