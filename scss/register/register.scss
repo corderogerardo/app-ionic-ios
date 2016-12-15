@@ -37,7 +37,7 @@
 .item-input{
     background-color: transparent;
     margin-bottom: 2%;
-    @include responsivewidthheight(46px !important,46px !important,80%,80%,60px !important,60px !important,80%,80%,65px !important,65px !important,80%,80%);
+    @include responsivewidthheight(46px !important,46px !important,80%,80%,47px !important,47px !important,80%,80%,53px !important,53px !important,80%,80%,59px !important,59px !important,80%,80%);
 }
 .register-line{
     border-bottom:1px solid white;
@@ -47,7 +47,7 @@
 }
 .register-create{
     text-align: center;
-    font-size: 3vh;
+    @include font-mediaqueries(14px,15px,16px,17px);
     color:white;
 }
 .register-social-buttons{
@@ -68,8 +68,8 @@
     border:none !important;
     background-color: transparent !important;
     padding-left: 0;
-	color:$createAccauntTap !important;
-	font-size: 2vh;
+	color:white !important;
+    @include font-mediaqueries(11px,11px,12px,14px);
     font-weight: 200;
 	text-decoration: none;
     height: 20px !important;
@@ -89,7 +89,7 @@
     background-color: transparent !important;
     padding-left: 0;
     color:white !important;
-    font-size: 2vh;
+    @include font-mediaqueries(11px,11px,12px,14px);
     font-weight: 200;
     text-decoration: none;
     height: 20px !important;
@@ -101,7 +101,7 @@
     }
 }
 .register-login{
-    font-size: 3vh;
+    @include font-mediaqueries(12px,13px,16px,16px);
     span{
         color:$createAccaunt;
     }

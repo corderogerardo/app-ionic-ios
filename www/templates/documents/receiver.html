@@ -2,7 +2,7 @@
     <h3 class="title">Destinario</h3>
 </div>
 <ion-view view-title="Caracteristicas">
-    <ion-content scroll="false" overflow-scroll="false">
+    <ion-content scroll="false" overflow-scroll="true">
         <div class="space"></div>
         <section class="caracteristics-container">
             <section class="caracteristics-title">
@@ -13,7 +13,7 @@
                     recibirá el documento.
                 </div>
             </section>
-            <div class="list list-inset">
+            <div class="list list-inset" keyboard-attach>
                 <input class="item item-input inputs-general input-user-dest" type="text" name="username" ng-model="data.destinyName" placeholder="Nombre de Usuario">
                 <input class="item item-input inputs-general input-email-dest" type="email" name="email" ng-model="data.emailDestinyClient" placeholder="Correo Electrónico">
                 <input class="item item-input inputs-general input-phone-dest" type="tel" name="phone" ng-model="data.cellphoneDestinyClient" placeholder="Teléfono" pattern="\d{7,10}">

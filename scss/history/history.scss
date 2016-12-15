@@ -4,7 +4,7 @@
     @include align-items(center);
     @include justify-content(flex-start);
     @include widheigh(100%,100%,100%,100%);
-    @include responsivewidthheight(100%,100%,100%,100%,200px,200px,auto,auto,250px,250px,auto,auto);
+    @include responsivewidthheight(100%,100%,100%,100%,200px,200px,auto,auto,250px,250px,auto,auto,250px,250px,auto,auto);
 }
 .item-avatar{
 	width: 100%;
@@ -45,7 +45,7 @@
         @include justify-content(space-around);
         @include align-items(center);
         @include widheigh(100%,100%,100%,100%);
-        @include responsivewidthheight(100%,100%,100%,100%,100%,100%,100%,100%,100%,100%,100%,100%);
+        @include responsivewidthheight(100%,100%,100%,100%,100%,100%,100%,100%,100%,100%,100%,100%,100%,100%,100%,100%);
 		background-color: $balanced;
 		border-radius: 25px;
 		color: $stable;
@@ -74,7 +74,7 @@
     @include align-items(center);
     @include justify-content(center);
     @include widheigh(100%,100%,200px,200px);
-    @include responsivewidthheight(100%,100%,200px,200px,100%,100%,250px,250px,100%,100%,290px,290px);
+    @include responsivewidthheight(100%,100%,200px,200px,100%,100%,250px,250px,100%,100%,290px,290px,100%,100%,290px,290px);
     margin-top: 5%!important;
 }
 .ion-ios-arrow-up:before {

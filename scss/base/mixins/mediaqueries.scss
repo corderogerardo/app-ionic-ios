@@ -34,7 +34,7 @@
         border-radius: $x1 !important;
     }
 }
-@mixin responsivewidthheight($hx1,$minhx1,$wx1,$minwx1,$hx2,$minhx2,$wx2,$minwx2,$hx3,$minhx3,$wx3,$minwx3){
+@mixin responsivewidthheight($hx1,$minhx1,$wx1,$minwx1,$hx2,$minhx2,$wx2,$minwx2,$hx3,$minhx3,$wx3,$minwx3,$hx4,$minhx4,$wx4,$minwx4){
     @media screen and (max-height: 2560px){
         min-height: $minhx3;
         height: $hx3;
@@ -60,22 +60,22 @@
         width: $wx3;
     }
     @media screen and (max-height: 736px){
+        min-height: $minhx4;
+        height: $hx4;
+        min-width: $minwx4;
+        width: $wx4;
+    }
+    @media screen and (max-height: 667px){
         min-height: $minhx3;
         height: $hx3;
         min-width: $minwx3;
         width: $wx3;
     }
-    @media screen and (max-height: 667px){
+    @media screen and (max-height: 568px){
         min-height: $minhx2;
         height: $hx2;
         min-width: $minwx2;
         width: $wx2;
-    }
-    @media screen and (max-height: 568px){
-        min-height: $minhx1;
-        height: $hx1;
-        min-width: $minwx1;
-        width: $wx1;
     }
     @media screen and (max-height: 480px){
         min-height: $minhx1;
@@ -1589,16 +1589,16 @@
         font-size: $x4 !important;
     }
     @media screen and (max-height: 1280px){
-        font-size: $x3 !important;
+        font-size: $x4 !important;
     }
     @media screen and (max-height: 960px){
-        font-size: $x3 !important;
+        font-size: $x4 !important;
     }
     @media screen and (max-height: 736px){
-        font-size: $x2 !important;
+        font-size: $x4 !important;
     }
     @media screen and (max-height: 667px){
-        font-size: $x2 !important;
+        font-size: $x3 !important;
     }
     @media screen and (max-height: 568px){
         font-size: $x2 !important;

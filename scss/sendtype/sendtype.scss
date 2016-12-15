@@ -7,7 +7,7 @@
     position:absolute;
     bottom: 0;
     @include widheigh(auto,auto,100%,100%);
-    @include responsivewidthheight(auto,auto,100%,100%,auto,auto,100%,100%,auto,auto,100%,100%);
+    @include responsivewidthheight(auto,150px,100%,100%,auto,160px,100%,100%,auto,165px,100%,100%,auto,170px,100%,100%);
     padding: 0 !important;
     width: 100%;
     z-index: 0;
@@ -18,8 +18,8 @@
     @include align-items(center);
     @include justify-content(center);
     background-color:$positive;
-    @include widheigh(auto,auto,100%,100%);
-    @include responsivewidthheight(auto,auto,100%,100%,auto,auto,100%,100%,auto,auto,100%,100%);
+    @include widheigh(auto,50px,100%,100%);
+    @include responsivewidthheight(auto,50px,100%,100%,auto,55px,100%,100%,auto,55px,100%,100%,auto,55px,100%,100%);
     top:0;
     left: 0;
     div{
@@ -28,7 +28,7 @@
         @include align-items(center);
         @include justify-content(space-around);
         @include widheigh(15%,15%,100%,100%);
-        @include responsivewidthheight(15%,15%,100%,100%,15%,15%,100%,100%,15%,15%,100%,100%);
+        @include responsivewidthheight(15%,15%,100%,100%,15%,15%,100%,100%,15%,15%,100%,100%,15%,15%,100%,100%);
         text-align: center;
         span{
             position: relative;
@@ -37,11 +37,10 @@
             @include align-items(center);
             @include justify-content(center);
             @include widheigh(15%,15%,100%,100%);
-            @include responsivewidthheight(15%,15%,100%,100%,15%,15%,100%,100%,15%,15%,100%,100%);
+            @include responsivewidthheight(15%,15%,100%,100%,15%,15%,100%,100%,15%,15%,100%,100%,15%,15%,100%,100%);
             color:white;
-            font-size:2.5vh;
+            @include font-mediaqueries(12px,14px,16px,18px);
             font-weight:bold;
-
         }
     }
 
@@ -64,21 +63,20 @@
         @include align-items(center);
         @include justify-content(flex-start);
         @include widheigh(50px,auto,80%,80%);
-        @include responsivewidthheight(auto,50px,80%,80%,auto,55px,80%,80%,auto,60px,80%,80%);
-        font-size:2.5vh;
+        @include responsivewidthheight(auto,50px,80%,80%,auto,55px,80%,80%,auto,60px,80%,80%,auto,60px,80%,80%);
         color:$balanced !important;
+        @include font-mediaqueries(14px,16px,18px,20px);
         &:checked{
-            color:$balanced !important;
             input{
                 @include widheigh(auto,auto,10%,10%);
-                @include responsivewidthheight(auto,50px,20% !important,20% !important,auto,55px,90%,90%,auto,60px,90%,90%);
+                @include responsivewidthheight(70px,70px,50% !important,50% !important,auto,55px,90%,90%,auto,60px,90%,90%,auto,60px,90%,90%);
             }
         }
     }
 }
 .send-type-options-radio{
     @include widheigh(auto,auto,90%,90%);
-    @include responsivewidthheight(auto,auto,90%,90%,auto,auto,90%,90%,auto,auto,90%,90%);
+    @include responsivewidthheight(auto,auto,90%,90%,auto,auto,90%,90%,auto,auto,90%,90%,auto,auto,90%,90%);
 	font-size:2vh;
     color:$balanced !important;
     &:checked{
@@ -87,14 +85,13 @@
 }
 .item-content{
     @include widheigh(40px,40px,90%,90%);
-    @include responsivewidthheight(40px,40px,90%,90%,50px,50px,90%,90%,50px,50px,90%,90%);
+    @include responsivewidthheight(40px,40px,90%,90%,50px,50px,90%,90%,50px,50px,90%,90%,50px,50px,90%,90%);
     color:$balanced !important;
     background-color: transparent !important;
     span{
         color:$balanced !important;
     }
 }
-
 .container-senttype-errands-title{
     background-color: white;
     @include display-flex;
@@ -103,7 +100,7 @@
     @include justify-content(center);
     bottom: 0;
     @include widheigh(auto,auto,100%,100%);
-    @include responsivewidthheight(auto,auto,100%,100%,auto,auto,100%,100%,auto,auto,100%,100%);
+    @include responsivewidthheight(auto,auto,100%,100%,auto,auto,100%,100%,auto,auto,100%,100%,auto,auto,100%,100%);
     padding: 0 !important;
     width: 100%;
     z-index: 0;
@@ -168,10 +165,11 @@
     padding: 0;
     padding-bottom: 5px !important;
     h3{
+        @include widheigh(40px !important,40px !important,95%,95%);
         margin:0;
         padding: 0;
-        padding-left: 15%;
-        text-align: left !important;
+        min-width: 100%;
+        @include font-mediaqueries(20px,20px,22px,24px);
     }
 }
 .inputs-checkbox-axpress{
@@ -179,11 +177,10 @@
     @include flex-direction(column);
     @include align-items(center);
     @include justify-content(center);
-    @include widheigh(15%,15%,12%,12%);
-    @include responsivewidthheight(15%,15%,12%,12%,16%,16%,13%,13%,17%,17%,14%,14%);
+    @include widheigh(20%,20%,17%,17%);
+    @include responsivewidthheight(20%,20%,17%,17%,20%,20%,17%,17%,20%,20%,17%,17%,20%,20%,17%,17%);
     @include media-checkbox-ios("../img/Radiobutton/RadioButton.png","../img/RadioButtonSelected/RadioButtonSelected.png","../img/Radiobutton/RadioButton2x.png.png","../img/RadioButtonSelected/RadioButtonSelected2x.png.png","../img/Radiobutton/RadioButton3x.png.png","../img/RadioButtonSelected/RadioButtonSelected3x.png.png");
     margin-right: 5% !important;
-    font-size: 2.5vh !important;
 }
 .checkbox-icon:after{
     position: relative !important;

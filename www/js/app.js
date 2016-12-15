@@ -41,7 +41,11 @@ angular.module('axpress', [
 
 		//Configure moment
 		moment.locale('es');
-
+    if (localStorage.getItem('axpress.user') && localStorage.getItem('axpress.menu')) {
+        $rootScope.user = JSON.parse(localStorage.getItem('axpress.user'));
+        $rootScope.menu = JSON.parse(localStorage.getItem('axpress.menu'));
+        $state.go('app.main');
+    }
 		//State vars
 		$rootScope.$state = $state;
 		$rootScope.$stateParams = $stateParams;

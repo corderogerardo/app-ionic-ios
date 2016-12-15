@@ -1,12 +1,17 @@
 .input-email{
     @include media-inputs-ios("../img/Correoelectronico/Correoelectronico.png","../img/CorreoelectronicoTAP/Correoelectronico.png","../img/Correoelectronico/Correoelectronico2x.png.png","../img/CorreoelectronicoTAP/Correoelectronico2x.png.png","../img/Correoelectronico/Correoelectronico3x.png.png","../img/CorreoelectronicoTAP/Correoelectronico3x.png.png");
+    @include font-mediaqueries(12px,14px,16px,18px);
+
 }
 .input-pass{
     @include media-inputs-ios("../img/Contrasena/Contrasena.png","../img/ContrasenaTAP/Contrasena.png","../img/Contrasena/Contrasena2x.png.png","../img/ContrasenaTAP/Contrasena2x.png.png","../img/Contrasena/Contrasena3x.png.png","../img/ContrasenaTAP/Contrasena3x.png.png");
+    @include font-mediaqueries(12px,14px,16px,18px);
 }
 .input-user{
     @include media-inputs-ios("../img/Nombredeusuario/Nombredeusuario.png","../img/NombredeusuarioTAP/Nombredeusuario.png","../img/Nombredeusuario/Nombredeusuario2x.png.png","../img/NombredeusuarioTAP/Nombredeusuario2x.png.png","../img/Nombredeusuario/Nombredeusuario3x.png.png","../img/NombredeusuarioTAP/Nombredeusuario3x.png.png");
+    @include font-mediaqueries(12px,14px,16px,18px);
 }
 .input-phone{
     @include media-inputs-ios("../img/Telefono/Telefono.png","../img/TelefonoTAP/Telefono.png","../img/Telefono/Telefono2x.png.png","../img/TelefonoTAP/Telefono2x.png.png","../img/Telefono/Telefono3x.png.png","../img/TelefonoTAP/Telefono3x.png.png");
+    @include font-mediaqueries(12px,14px,16px,18px);
 }

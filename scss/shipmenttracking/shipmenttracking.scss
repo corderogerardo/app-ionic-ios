@@ -47,7 +47,7 @@
 	bottom: 0;
     .deliver-see{
         @include widheigh(20px,20px,20px,20px);
-        @include responsivewidthheight(20px,20px,20px,20px,20px,20px,20px,20px,20px,20px,20px,20px);
+        @include responsivewidthheight(20px,20px,20px,20px,20px,20px,20px,20px,20px,20px,20px,20px,20px,20px,20px,20px);
         border:1px solid yellow;
         margin-left: 5% !important;
         @include media-inputs-ios("../img/Vermenosinfomensajero/VermenosCopy.png","../img/Vermenosinfomensajero/VermenosCopy.png","../img/Vermenosinfomensajero/VermenosCopy2x.png.png","../img/Vermenosinfomensajero/VermenosCopy2x.png.png","../img/Vermenosinfomensajero/VermenosCopy3x.png.png","../img/Vermenosinfomensajero/VermenosCopy3x.png.png");
@@ -62,7 +62,7 @@
     @include align-items(center);
     @include justify-content(center);
     @include widheigh(40px,40px,50%,50%);
-    @include responsivewidthheight(40px,40px,100%,100%,50px,50px,100%,100%,60px,60px,100%,100%);
+    @include responsivewidthheight(40px,40px,100%,100%,50px,50px,100%,100%,60px,60px,100%,100%,60px,60px,100%,100%);
 }
 #menu .navbar_content {
     background-color:white;
@@ -71,7 +71,7 @@
     @include align-items(center);
     @include justify-content(space-around);
     @include widheigh(180px,180px,100%,100%);
-    @include responsivewidthheight(180px,180px,100%,100%,180px,180px,100%,100%,180px,180px,100%,100%);
+    @include responsivewidthheight(180px,180px,100%,100%,180px,180px,100%,100%,180px,180px,100%,100%,180px,180px,100%,100%);
 }
 .deliverboy-info{
 	background-color:white;
@@ -80,7 +80,7 @@
     @include align-items(center);
     @include justify-content(space-around);
     @include widheigh(100px,100px,100%,100%);
-    @include responsivewidthheight(100px,100px,100%,100%,100px,100px,100%,100%,100px,100px,100%,100%);
+    @include responsivewidthheight(100px,100px,100%,100%,100px,100px,100%,100%,100px,100px,100%,100%,100px,100px,100%,100%);
 }
 .deliverboy-photo{
     @include display-flex;
@@ -88,7 +88,7 @@
     @include align-items(center);
     @include justify-content(center);
     @include widheigh(100%,100%,40%,40%);
-    @include responsivewidthheight(100%,100%,40%,40%,100%,100%,40%,40%,100%,100%,40%,40%);
+    @include responsivewidthheight(100%,100%,40%,40%,100%,100%,40%,40%,100%,100%,40%,40%,100%,100%,40%,40%);
 	i{
 		font-size: 72px;
 	}
@@ -99,7 +99,7 @@
     @include align-items(center);
     @include justify-content(center);
     @include widheigh(100%,100%,60%,60%);
-    @include responsivewidthheight(100%,100%,60%,60%,100%,100%,60%,60%,100%,100%,60%,60%);
+    @include responsivewidthheight(100%,100%,60%,60%,100%,100%,60%,60%,100%,100%,60%,60%,100%,100%,60%,60%);
 	display:flex;
 	flex-direction: column;
 	width:60%;
@@ -125,7 +125,7 @@
             @include justify-content(center);
             margin-bottom: 5px !important;
             @include widheigh(20px,20px,20px,20px);
-            @include responsivewidthheight(20px,20px,20px,20px,20px,20px,20px,20px,20px,20px,20px,20px);
+            @include responsivewidthheight(20px,20px,20px,20px,20px,20px,20px,20px,20px,20px,20px,20px,20px,20px,20px,20px);
             border:1px solid yellow;
         }
 	}
@@ -136,7 +136,7 @@
     @include align-items(center);
     @include justify-content(center);
     @include widheigh(30%,30%,100%,100%);
-    @include responsivewidthheight(30%,30%,100%,100%,30%,30%,100%,100%,30%,30%,100%,100%);
+    @include responsivewidthheight(30%,30%,100%,100%,30%,30%,100%,100%,30%,30%,100%,100%,30%,30%,100%,100%);
 }
 .deliverboy-chat{
     @include display-flex;
@@ -144,7 +144,7 @@
     @include align-items(center);
     @include justify-content(center);
     @include widheigh(65%,65%,35%,35%);
-    @include responsivewidthheight(65%,65%,35%,35%,65%,65%,35%,35%,65%,65%,35%,35%);
+    @include responsivewidthheight(65%,65%,35%,35%,65%,65%,35%,35%,65%,65%,35%,35%,65%,65%,35%,35%);
     background-color:$positive;
 	cursor: pointer;
 	color:white;
@@ -157,7 +157,7 @@
     @include align-items(center);
     @include justify-content(center);
     @include widheigh(65%,65%,35%,35%);
-    @include responsivewidthheight(65%,65%,35%,35%,65%,65%,35%,35%,65%,65%,35%,35%);
+    @include responsivewidthheight(65%,65%,35%,35%,65%,65%,35%,35%,65%,65%,35%,35%,65%,65%,35%,35%);
     background-color:$positive;
     cursor: pointer;
     color:white;
@@ -182,7 +182,7 @@
 }
 .deliver-see{
     @include widheigh(20px,20px,20px,20px);
-    @include responsivewidthheight(20px,20px,20px,20px,20px,20px,20px,20px,20px,20px,20px,20px);
+    @include responsivewidthheight(20px,20px,20px,20px,20px,20px,20px,20px,20px,20px,20px,20px,20px,20px,20px,20px);
     border:1px solid yellow;
     margin-left: 5% !important;
     @include media-inputs-ios("../img/Vermasinfomensajero/Vermas.png","../img/Vermasinfomensajero/Vermas.png","../img/Vermasinfomensajero/Vermas2x.png.png","../img/Vermasinfomensajero/Vermas2x.png.png","../img/Vermasinfomensajero/Vermas3x.png.png","../img/Vermasinfomensajero/Vermas3x.png.png");
