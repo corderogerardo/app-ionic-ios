@@ -1,31 +1,30 @@
 <div class="bar bar-header bar-balanced bar-sendtype">
-     <h3 class="title">Diligencia</h3>
+		 <h3 class="title">Diligencia</h3>
 </div>
 <ion-view view-title="SendType">
-    <ion-content scroll="false" overflow-scroll="false" >
-        <div class="send-type-options">
-        <section class="container-senttype-errands-title">
-            <div>
-                <span>Caracteristicas de la Diligencia.</span>
-            </div>
-        </section>
-        <section class="container-senttype-errands">
-        <input class="item item-input inputs-general input-sizes" type="text" name="" value="" ng-model="data.descriptionText" placeholder="Breve descripción de tu diligencia">
-        </section>
-        <section class=" container-senttype-errands-check">
-        <p>Selecciona si tu diligencia <br> termina en el punto de partida.</p>
-            <section class="container-senttype-errands">
-            <input class="item item-input checkbox-icon inputs-checkbox-axpress" id="goback" title="Ida y Vuelta"  value="Ida y Vuelta" type="checkbox" ng-model="data.samepoint" > &nbsp; Ida y vuelta
-            </section>
-        </section>
+		<ion-content scroll="false" overflow-scroll="false" >
+				<div class="space-errands"></div>
+					<section class="container-senttype-errands-title">
+							<div>
+									<span>Caracteristicas de la Diligencia.</span>
+							</div>
+					</section>
+					<section class="container-senttype-errands">
+					<input class="item item-input inputs-general input-sizes" type="text" name="" value="" ng-model="data.descriptionText" placeholder="Breve descripción de tu diligencia">
+					</section>
+					<section class=" container-senttype-errands-check">
+					<p>Selecciona si tu diligencia <br> termina en el punto de partida.</p>
+							<section class="container-senttype-errands">
+							<input class="item item-input checkbox-icon inputs-checkbox-axpress" id="goback" title="Ida y Vuelta"  value="Ida y Vuelta" type="checkbox" ng-model="data.samepoint" > &nbsp; Ida y vuelta
+							</section>
+					</section>
 
-        </div>
 
-        <div class="hide-on-keyboard-open row button-bottom-two button-confirm-position">
-            <a class="button button-block button-default-two button-continue" ng-click="confirmClientFeatures()">
-                Continuar
-            </a>
-        </div>
+				<div class="hide-on-keyboard-open row button-bottom-two button-confirm-position">
+						<a class="button button-block button-default-two button-continue" ng-click="confirmClientFeatures()">
+								Continuar
+						</a>
+				</div>
 
-    </ion-content>
+		</ion-content>
 </ion-view>

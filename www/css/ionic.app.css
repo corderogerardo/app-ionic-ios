@@ -14817,65 +14817,65 @@ ion-slide {
   -webkit-justify-content: flex-end;
   -moz-justify-content: flex-end;
   justify-content: flex-end;
-  background-color: rgba(6, 85, 153, 0.7) !important;
-  min-height: 140px;
-  height: 140px;
+  min-height: auto;
+  height: 150px;
   min-width: 100%;
   width: 100%;
+  background-color: rgba(6, 85, 153, 0.7) !important;
   margin: 0;
   padding: 0; }
   @media screen and (max-height: 2560px) {
-    .bar-origin {
-      min-height: 155px;
-      height: 155px;
-      min-width: 100%;
-      width: 100%; } }
-  @media screen and (max-height: 1920px) {
-    .bar-origin {
-      min-height: 155px;
-      height: 155px;
-      min-width: 100%;
-      width: 100%; } }
-  @media screen and (max-height: 1280px) {
-    .bar-origin {
-      min-height: 155px;
-      height: 155px;
-      min-width: 100%;
-      width: 100%; } }
-  @media screen and (max-height: 960px) {
-    .bar-origin {
-      min-height: 155px;
-      height: 155px;
-      min-width: 100%;
-      width: 100%; } }
-  @media screen and (max-height: 736px) {
     .bar-origin {
       min-height: 160px;
       height: 160px;
       min-width: 100%;
       width: 100%; } }
+  @media screen and (max-height: 1920px) {
+    .bar-origin {
+      min-height: 160px;
+      height: 160px;
+      min-width: 100%;
+      width: 100%; } }
+  @media screen and (max-height: 1280px) {
+    .bar-origin {
+      min-height: 160px;
+      height: 160px;
+      min-width: 100%;
+      width: 100%; } }
+  @media screen and (max-height: 960px) {
+    .bar-origin {
+      min-height: 160px;
+      height: 160px;
+      min-width: 100%;
+      width: 100%; } }
+  @media screen and (max-height: 736px) {
+    .bar-origin {
+      min-height: 175px;
+      height: 175px;
+      min-width: 100%;
+      width: 100%; } }
   @media screen and (max-height: 667px) {
     .bar-origin {
-      min-height: 155px;
-      height: 155px;
+      min-height: 160px;
+      height: 160px;
       min-width: 100%;
       width: 100%; } }
   @media screen and (max-height: 568px) {
     .bar-origin {
-      min-height: 140px;
-      height: 140px;
+      min-height: 150px;
+      height: 150px;
       min-width: 100%;
       width: 100%; } }
   @media screen and (max-height: 480px) {
     .bar-origin {
-      min-height: 140px;
-      height: 140px;
+      min-height: 150px;
+      height: 150px;
       min-width: 100%;
       width: 100%; } }
   @media screen and (max-height: 320px) {
     .bar-origin {
-      min-height: 140px;
-      height: 140px;
+      min-height: 150px;
+      height: 150px;
       min-width: 100%;
       width: 100%; } }
   .bar-origin h3 {
@@ -14886,7 +14886,8 @@ ion-slide {
     margin: 0;
     padding: 0;
     min-width: 100%;
-    font-size: 20px !important; }
+    font-size: 20px !important;
+    margin-bottom: 10px !important; }
     @media screen and (max-height: 2560px) {
       .bar-origin h3 {
         font-size: 24px !important; } }
@@ -14938,41 +14939,41 @@ ion-slide {
   -webkit-justify-content: flex-end;
   -moz-justify-content: flex-end;
   justify-content: flex-end;
-  margin-bottom: 2% !important; }
+  margin-bottom: 0 !important; }
   @media screen and (max-height: 2560px) {
     .input-direction {
-      min-height: 110px;
-      height: 110px;
+      min-height: 100px;
+      height: 100px;
       min-width: 100%;
       width: 100%; } }
   @media screen and (max-height: 1920px) {
     .input-direction {
-      min-height: 110px;
-      height: 110px;
+      min-height: 100px;
+      height: 100px;
       min-width: 100%;
       width: 100%; } }
   @media screen and (max-height: 1280px) {
     .input-direction {
-      min-height: 110px;
-      height: 110px;
+      min-height: 100px;
+      height: 100px;
       min-width: 100%;
       width: 100%; } }
   @media screen and (max-height: 960px) {
     .input-direction {
-      min-height: 110px;
-      height: 110px;
+      min-height: 100px;
+      height: 100px;
       min-width: 100%;
       width: 100%; } }
   @media screen and (max-height: 736px) {
     .input-direction {
-      min-height: 110px;
-      height: 110px;
+      min-height: 115px;
+      height: 115px;
       min-width: 100%;
       width: 100%; } }
   @media screen and (max-height: 667px) {
     .input-direction {
-      min-height: 110px;
-      height: 110px;
+      min-height: 100px;
+      height: 100px;
       min-width: 100%;
       width: 100%; } }
   @media screen and (max-height: 568px) {
@@ -14998,6 +14999,7 @@ ion-slide {
     height: 40px !important;
     min-width: 90%;
     width: 90%;
+    margin-top: 10px !important;
     margin: 0;
     padding: 0; }
     @media screen and (max-height: 2560px) {
@@ -15026,8 +15028,8 @@ ion-slide {
         width: 90%; } }
     @media screen and (max-height: 736px) {
       .input-direction map-autocomplete-address {
-        min-height: 55px !important;
-        height: 55px !important;
+        min-height: 60px !important;
+        height: 60px !important;
         min-width: 90%;
         width: 90%; } }
     @media screen and (max-height: 667px) {
@@ -15090,8 +15092,8 @@ ion-slide {
         width: 90%; } }
     @media screen and (max-height: 736px) {
       .input-direction input {
-        min-height: 55px !important;
-        height: 55px !important;
+        min-height: 60px !important;
+        height: 60px !important;
         min-width: 90%;
         width: 90%; } }
     @media screen and (max-height: 667px) {
@@ -16436,11 +16438,11 @@ ion-slide {
   -webkit-align-items: center;
   -moz-align-items: center;
   align-items: center;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  -webkit-justify-content: center;
-  -moz-justify-content: center;
-  justify-content: center;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  -webkit-justify-content: flex-start;
+  -moz-justify-content: flex-start;
+  justify-content: flex-start;
   position: absolute;
   bottom: 0;
   min-height: auto;
@@ -16448,8 +16450,8 @@ ion-slide {
   min-width: 100%;
   width: 100%;
   padding: 0 !important;
-  width: 100%;
-  z-index: 0; }
+  z-index: 0;
+  padding-bottom: 65px !important; }
   @media screen and (max-height: 2560px) {
     .container-senttype {
       min-height: 165px;
@@ -16488,7 +16490,7 @@ ion-slide {
       width: 100%; } }
   @media screen and (max-height: 568px) {
     .container-senttype {
-      min-height: 160px;
+      min-height: auto;
       height: auto;
       min-width: 100%;
       width: 100%; } }
@@ -16529,12 +16531,13 @@ ion-slide {
   -moz-justify-content: center;
   justify-content: center;
   background-color: #294d72;
-  min-height: auto;
-  height: 50px;
+  min-height: 50px;
+  height: auto;
   min-width: 100%;
   width: 100%;
   top: 0;
-  left: 0; }
+  left: 0;
+  position: relative; }
   @media screen and (max-height: 2560px) {
     .send-type-todo {
       min-height: 55px;
@@ -16807,13 +16810,66 @@ ion-slide {
   -webkit-justify-content: center;
   -moz-justify-content: center;
   justify-content: center;
-  height: 85%;
-  min-height: 85%;
-  width: 100%;
+  min-height: 100px;
+  height: auto;
   min-width: 100%;
+  width: 100%;
   color: black !important;
-  margin-top: 4%;
-  margin-bottom: 20%; }
+  position: relative; }
+  @media screen and (max-height: 2560px) {
+    .send-type-options {
+      min-height: 115px;
+      height: auto;
+      min-width: 100%;
+      width: 100%; } }
+  @media screen and (max-height: 1920px) {
+    .send-type-options {
+      min-height: 115px;
+      height: auto;
+      min-width: 100%;
+      width: 100%; } }
+  @media screen and (max-height: 1280px) {
+    .send-type-options {
+      min-height: 115px;
+      height: auto;
+      min-width: 100%;
+      width: 100%; } }
+  @media screen and (max-height: 960px) {
+    .send-type-options {
+      min-height: 115px;
+      height: auto;
+      min-width: 100%;
+      width: 100%; } }
+  @media screen and (max-height: 736px) {
+    .send-type-options {
+      min-height: 115px;
+      height: auto;
+      min-width: 100%;
+      width: 100%; } }
+  @media screen and (max-height: 667px) {
+    .send-type-options {
+      min-height: 115px;
+      height: auto;
+      min-width: 100%;
+      width: 100%; } }
+  @media screen and (max-height: 568px) {
+    .send-type-options {
+      min-height: 100px;
+      height: auto;
+      min-width: 100%;
+      width: 100%; } }
+  @media screen and (max-height: 480px) {
+    .send-type-options {
+      min-height: 100px;
+      height: auto;
+      min-width: 100%;
+      width: 100%; } }
+  @media screen and (max-height: 320px) {
+    .send-type-options {
+      min-height: 100px;
+      height: auto;
+      min-width: 100%;
+      width: 100%; } }
   .send-type-options div {
     display: -webkit-box;
     display: -webkit-flex;
@@ -16837,7 +16893,7 @@ ion-slide {
     -webkit-justify-content: flex-start;
     -moz-justify-content: flex-start;
     justify-content: flex-start;
-    min-height: 50px;
+    min-height: 60px;
     height: auto;
     min-width: 80%;
     width: 80%;
@@ -16845,25 +16901,25 @@ ion-slide {
     font-size: 14px !important; }
     @media screen and (max-height: 2560px) {
       .send-type-options div {
-        min-height: 60px;
+        min-height: 50px;
         height: auto;
         min-width: 80%;
         width: 80%; } }
     @media screen and (max-height: 1920px) {
       .send-type-options div {
-        min-height: 60px;
+        min-height: 50px;
         height: auto;
         min-width: 80%;
         width: 80%; } }
     @media screen and (max-height: 1280px) {
       .send-type-options div {
-        min-height: 60px;
+        min-height: 50px;
         height: auto;
         min-width: 80%;
         width: 80%; } }
     @media screen and (max-height: 960px) {
       .send-type-options div {
-        min-height: 60px;
+        min-height: 50px;
         height: auto;
         min-width: 80%;
         width: 80%; } }
@@ -16875,25 +16931,25 @@ ion-slide {
         width: 80%; } }
     @media screen and (max-height: 667px) {
       .send-type-options div {
-        min-height: 60px;
+        min-height: 50px;
         height: auto;
         min-width: 80%;
         width: 80%; } }
     @media screen and (max-height: 568px) {
       .send-type-options div {
-        min-height: 55px;
+        min-height: 40px;
         height: auto;
         min-width: 80%;
         width: 80%; } }
     @media screen and (max-height: 480px) {
       .send-type-options div {
-        min-height: 50px;
+        min-height: 40px;
         height: auto;
         min-width: 80%;
         width: 80%; } }
     @media screen and (max-height: 320px) {
       .send-type-options div {
-        min-height: 50px;
+        min-height: 40px;
         height: auto;
         min-width: 80%;
         width: 80%; } }
@@ -16989,7 +17045,7 @@ ion-slide {
   height: auto;
   min-width: 90%;
   width: 90%;
-  font-size: 2vh;
+  font-size: 20px !important;
   color: #065599 !important; }
   @media screen and (max-height: 2560px) {
     .send-type-options-radio {
@@ -17045,6 +17101,33 @@ ion-slide {
       height: auto;
       min-width: 90%;
       width: 90%; } }
+  @media screen and (max-height: 2560px) {
+    .send-type-options-radio {
+      font-size: 28px !important; } }
+  @media screen and (max-height: 1920px) {
+    .send-type-options-radio {
+      font-size: 28px !important; } }
+  @media screen and (max-height: 1280px) {
+    .send-type-options-radio {
+      font-size: 28px !important; } }
+  @media screen and (max-height: 960px) {
+    .send-type-options-radio {
+      font-size: 28px !important; } }
+  @media screen and (max-height: 736px) {
+    .send-type-options-radio {
+      font-size: 28px !important; } }
+  @media screen and (max-height: 667px) {
+    .send-type-options-radio {
+      font-size: 26px !important; } }
+  @media screen and (max-height: 568px) {
+    .send-type-options-radio {
+      font-size: 22px !important; } }
+  @media screen and (max-height: 480px) {
+    .send-type-options-radio {
+      font-size: 20px !important; } }
+  @media screen and (max-height: 320px) {
+    .send-type-options-radio {
+      font-size: 20px !important; } }
   .send-type-options-radio:checked {
     color: #065599 !important; }
 
@@ -17112,6 +17195,66 @@ ion-slide {
   .item-content span {
     color: #065599 !important; }
 
+.space-errands {
+  min-height: 40px;
+  height: 40px;
+  min-width: 100%;
+  width: 100%; }
+  @media screen and (max-height: 2560px) {
+    .space-errands {
+      min-height: 70px;
+      height: 70px;
+      min-width: 100%;
+      width: 100%; } }
+  @media screen and (max-height: 1920px) {
+    .space-errands {
+      min-height: 70px;
+      height: 70px;
+      min-width: 100%;
+      width: 100%; } }
+  @media screen and (max-height: 1280px) {
+    .space-errands {
+      min-height: 70px;
+      height: 70px;
+      min-width: 100%;
+      width: 100%; } }
+  @media screen and (max-height: 960px) {
+    .space-errands {
+      min-height: 70px;
+      height: 70px;
+      min-width: 100%;
+      width: 100%; } }
+  @media screen and (max-height: 736px) {
+    .space-errands {
+      min-height: 70px;
+      height: 70px;
+      min-width: 100%;
+      width: 100%; } }
+  @media screen and (max-height: 667px) {
+    .space-errands {
+      min-height: 70px;
+      height: 70px;
+      min-width: 100%;
+      width: 100%; } }
+  @media screen and (max-height: 568px) {
+    .space-errands {
+      min-height: 60px;
+      height: 60px;
+      min-width: 100%;
+      width: 100%; } }
+  @media screen and (max-height: 480px) {
+    .space-errands {
+      min-height: 55px;
+      height: 55px;
+      min-width: 100%;
+      width: 100%; } }
+  @media screen and (max-height: 320px) {
+    .space-errands {
+      min-height: 55px;
+      height: 55px;
+      min-width: 100%;
+      width: 100%; } }
+
 .container-senttype-errands-title {
   background-color: white;
   display: -webkit-box;
@@ -17144,7 +17287,7 @@ ion-slide {
   padding: 0 !important;
   width: 100%;
   z-index: 0;
-  font-size: 3vh; }
+  font-size: 18px !important; }
   @media screen and (max-height: 2560px) {
     .container-senttype-errands-title {
       min-height: auto;
@@ -17199,6 +17342,33 @@ ion-slide {
       height: auto;
       min-width: 100%;
       width: 100%; } }
+  @media screen and (max-height: 2560px) {
+    .container-senttype-errands-title {
+      font-size: 24px !important; } }
+  @media screen and (max-height: 1920px) {
+    .container-senttype-errands-title {
+      font-size: 24px !important; } }
+  @media screen and (max-height: 1280px) {
+    .container-senttype-errands-title {
+      font-size: 24px !important; } }
+  @media screen and (max-height: 960px) {
+    .container-senttype-errands-title {
+      font-size: 24px !important; } }
+  @media screen and (max-height: 736px) {
+    .container-senttype-errands-title {
+      font-size: 24px !important; } }
+  @media screen and (max-height: 667px) {
+    .container-senttype-errands-title {
+      font-size: 24px !important; } }
+  @media screen and (max-height: 568px) {
+    .container-senttype-errands-title {
+      font-size: 22px !important; } }
+  @media screen and (max-height: 480px) {
+    .container-senttype-errands-title {
+      font-size: 18px !important; } }
+  @media screen and (max-height: 320px) {
+    .container-senttype-errands-title {
+      font-size: 18px !important; } }
 
 .container-senttype-errands {
   background-color: white;
@@ -17235,7 +17405,7 @@ ion-slide {
   margin-bottom: 20%; }
   .container-senttype-errands .input-sizes {
     color: #7f8183 !important;
-    font-size: 3vh !important;
+    font-size: 18px !important;
     min-height: 100% !important;
     height: 100% !important;
     min-width: 90%;
@@ -17247,6 +17417,33 @@ ion-slide {
     background-repeat: no-repeat;
     background-position: center;
     text-align: start !important; }
+    @media screen and (max-height: 2560px) {
+      .container-senttype-errands .input-sizes {
+        font-size: 24px !important; } }
+    @media screen and (max-height: 1920px) {
+      .container-senttype-errands .input-sizes {
+        font-size: 24px !important; } }
+    @media screen and (max-height: 1280px) {
+      .container-senttype-errands .input-sizes {
+        font-size: 24px !important; } }
+    @media screen and (max-height: 960px) {
+      .container-senttype-errands .input-sizes {
+        font-size: 24px !important; } }
+    @media screen and (max-height: 736px) {
+      .container-senttype-errands .input-sizes {
+        font-size: 24px !important; } }
+    @media screen and (max-height: 667px) {
+      .container-senttype-errands .input-sizes {
+        font-size: 24px !important; } }
+    @media screen and (max-height: 568px) {
+      .container-senttype-errands .input-sizes {
+        font-size: 22px !important; } }
+    @media screen and (max-height: 480px) {
+      .container-senttype-errands .input-sizes {
+        font-size: 18px !important; } }
+    @media screen and (max-height: 320px) {
+      .container-senttype-errands .input-sizes {
+        font-size: 18px !important; } }
     @media screen and (max-height: 2560px) {
       .container-senttype-errands .input-sizes {
         border: none !important;
@@ -17430,7 +17627,34 @@ ion-slide {
   padding: 0 !important;
   width: 100%;
   z-index: 0;
-  font-size: 3.5vh !important; }
+  font-size: 18px !important; }
+  @media screen and (max-height: 2560px) {
+    .container-senttype-errands-check {
+      font-size: 24px !important; } }
+  @media screen and (max-height: 1920px) {
+    .container-senttype-errands-check {
+      font-size: 24px !important; } }
+  @media screen and (max-height: 1280px) {
+    .container-senttype-errands-check {
+      font-size: 24px !important; } }
+  @media screen and (max-height: 960px) {
+    .container-senttype-errands-check {
+      font-size: 24px !important; } }
+  @media screen and (max-height: 736px) {
+    .container-senttype-errands-check {
+      font-size: 24px !important; } }
+  @media screen and (max-height: 667px) {
+    .container-senttype-errands-check {
+      font-size: 24px !important; } }
+  @media screen and (max-height: 568px) {
+    .container-senttype-errands-check {
+      font-size: 22px !important; } }
+  @media screen and (max-height: 480px) {
+    .container-senttype-errands-check {
+      font-size: 18px !important; } }
+  @media screen and (max-height: 320px) {
+    .container-senttype-errands-check {
+      font-size: 18px !important; } }
   .container-senttype-errands-check p {
     display: -webkit-box;
     display: -webkit-flex;
@@ -17457,7 +17681,34 @@ ion-slide {
     margin-bottom: 6%;
     text-align: center;
     color: #294d72;
-    font-size: 3vh !important; }
+    font-size: 18px !important; }
+    @media screen and (max-height: 2560px) {
+      .container-senttype-errands-check p {
+        font-size: 24px !important; } }
+    @media screen and (max-height: 1920px) {
+      .container-senttype-errands-check p {
+        font-size: 24px !important; } }
+    @media screen and (max-height: 1280px) {
+      .container-senttype-errands-check p {
+        font-size: 24px !important; } }
+    @media screen and (max-height: 960px) {
+      .container-senttype-errands-check p {
+        font-size: 24px !important; } }
+    @media screen and (max-height: 736px) {
+      .container-senttype-errands-check p {
+        font-size: 24px !important; } }
+    @media screen and (max-height: 667px) {
+      .container-senttype-errands-check p {
+        font-size: 24px !important; } }
+    @media screen and (max-height: 568px) {
+      .container-senttype-errands-check p {
+        font-size: 22px !important; } }
+    @media screen and (max-height: 480px) {
+      .container-senttype-errands-check p {
+        font-size: 18px !important; } }
+    @media screen and (max-height: 320px) {
+      .container-senttype-errands-check p {
+        font-size: 18px !important; } }
 
 .bar-sendtype {
   display: -webkit-box;
@@ -17555,56 +17806,56 @@ ion-slide {
     .inputs-checkbox-axpress {
       min-height: 20%;
       height: 20%;
-      min-width: 17%;
-      width: 17%; } }
+      min-width: 15%;
+      width: 15%; } }
   @media screen and (max-height: 1920px) {
     .inputs-checkbox-axpress {
       min-height: 20%;
       height: 20%;
-      min-width: 17%;
-      width: 17%; } }
+      min-width: 15%;
+      width: 15%; } }
   @media screen and (max-height: 1280px) {
     .inputs-checkbox-axpress {
       min-height: 20%;
       height: 20%;
-      min-width: 17%;
-      width: 17%; } }
+      min-width: 15%;
+      width: 15%; } }
   @media screen and (max-height: 960px) {
     .inputs-checkbox-axpress {
       min-height: 20%;
       height: 20%;
-      min-width: 17%;
-      width: 17%; } }
+      min-width: 15%;
+      width: 15%; } }
   @media screen and (max-height: 736px) {
     .inputs-checkbox-axpress {
       min-height: 20%;
       height: 20%;
-      min-width: 17%;
-      width: 17%; } }
+      min-width: 15%;
+      width: 15%; } }
   @media screen and (max-height: 667px) {
     .inputs-checkbox-axpress {
       min-height: 20%;
       height: 20%;
-      min-width: 17%;
-      width: 17%; } }
+      min-width: 15%;
+      width: 15%; } }
   @media screen and (max-height: 568px) {
     .inputs-checkbox-axpress {
       min-height: 20%;
       height: 20%;
-      min-width: 17%;
-      width: 17%; } }
+      min-width: 15%;
+      width: 15%; } }
   @media screen and (max-height: 480px) {
     .inputs-checkbox-axpress {
       min-height: 20%;
       height: 20%;
-      min-width: 17%;
-      width: 17%; } }
+      min-width: 14%;
+      width: 14%; } }
   @media screen and (max-height: 320px) {
     .inputs-checkbox-axpress {
       min-height: 20%;
       height: 20%;
-      min-width: 17%;
-      width: 17%; } }
+      min-width: 14%;
+      width: 14%; } }
   .inputs-checkbox-axpress::before {
     border: none !important;
     background-color: transparent;
@@ -20780,7 +21031,11 @@ ion-slide {
     -webkit-justify-content: center;
     -moz-justify-content: center;
     justify-content: center;
-    font-size: 12px !important; }
+    font-size: 12px !important;
+    min-height: 20px;
+    height: 20px;
+    min-width: 100%;
+    width: 100%; }
     @media screen and (max-height: 2560px) {
       .data-origin b {
         font-size: 16px !important; } }
@@ -20808,6 +21063,60 @@ ion-slide {
     @media screen and (max-height: 320px) {
       .data-origin b {
         font-size: 12px !important; } }
+    @media screen and (max-height: 2560px) {
+      .data-origin b {
+        min-height: 30px;
+        height: 30px;
+        min-width: 100%;
+        width: 100%; } }
+    @media screen and (max-height: 1920px) {
+      .data-origin b {
+        min-height: 30px;
+        height: 30px;
+        min-width: 100%;
+        width: 100%; } }
+    @media screen and (max-height: 1280px) {
+      .data-origin b {
+        min-height: 30px;
+        height: 30px;
+        min-width: 100%;
+        width: 100%; } }
+    @media screen and (max-height: 960px) {
+      .data-origin b {
+        min-height: 30px;
+        height: 30px;
+        min-width: 100%;
+        width: 100%; } }
+    @media screen and (max-height: 736px) {
+      .data-origin b {
+        min-height: 35px;
+        height: 35px;
+        min-width: 100%;
+        width: 100%; } }
+    @media screen and (max-height: 667px) {
+      .data-origin b {
+        min-height: 30px;
+        height: 30px;
+        min-width: 100%;
+        width: 100%; } }
+    @media screen and (max-height: 568px) {
+      .data-origin b {
+        min-height: 20px;
+        height: 20px;
+        min-width: 100%;
+        width: 100%; } }
+    @media screen and (max-height: 480px) {
+      .data-origin b {
+        min-height: 20px;
+        height: 20px;
+        min-width: 100%;
+        width: 100%; } }
+    @media screen and (max-height: 320px) {
+      .data-origin b {
+        min-height: 20px;
+        height: 20px;
+        min-width: 100%;
+        width: 100%; } }
   .data-origin p {
     display: -webkit-box;
     display: -webkit-flex;
@@ -20834,8 +21143,10 @@ ion-slide {
     margin-top: 0;
     margin-bottom: 0;
     font-size: 12px !important;
+    min-height: 20px;
+    height: 20px;
+    min-width: 100%;
     width: 100%;
-    height: 100%;
     text-align: left; }
     @media screen and (max-height: 2560px) {
       .data-origin p {
@@ -20864,6 +21175,60 @@ ion-slide {
     @media screen and (max-height: 320px) {
       .data-origin p {
         font-size: 12px !important; } }
+    @media screen and (max-height: 2560px) {
+      .data-origin p {
+        min-height: 30px;
+        height: 30px;
+        min-width: 100%;
+        width: 100%; } }
+    @media screen and (max-height: 1920px) {
+      .data-origin p {
+        min-height: 30px;
+        height: 30px;
+        min-width: 100%;
+        width: 100%; } }
+    @media screen and (max-height: 1280px) {
+      .data-origin p {
+        min-height: 30px;
+        height: 30px;
+        min-width: 100%;
+        width: 100%; } }
+    @media screen and (max-height: 960px) {
+      .data-origin p {
+        min-height: 30px;
+        height: 30px;
+        min-width: 100%;
+        width: 100%; } }
+    @media screen and (max-height: 736px) {
+      .data-origin p {
+        min-height: 35px;
+        height: 35px;
+        min-width: 100%;
+        width: 100%; } }
+    @media screen and (max-height: 667px) {
+      .data-origin p {
+        min-height: 30px;
+        height: 30px;
+        min-width: 100%;
+        width: 100%; } }
+    @media screen and (max-height: 568px) {
+      .data-origin p {
+        min-height: 20px;
+        height: 20px;
+        min-width: 100%;
+        width: 100%; } }
+    @media screen and (max-height: 480px) {
+      .data-origin p {
+        min-height: 20px;
+        height: 20px;
+        min-width: 100%;
+        width: 100%; } }
+    @media screen and (max-height: 320px) {
+      .data-origin p {
+        min-height: 20px;
+        height: 20px;
+        min-width: 100%;
+        width: 100%; } }
 
 .sentresume-content-noborder {
   display: flex;
