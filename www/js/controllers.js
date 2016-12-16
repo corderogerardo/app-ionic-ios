@@ -631,7 +631,7 @@
             if (!hasFilledPackage()) return;
 
             if ($scope.extraData.navigateTo) {
-                $state.go($scope.extraData.navigateTo);
+                $state.go($scope.extraData.navigateTo, {}, {reload: true});
                 delete $scope.extraData.navigateTo;
             } else {
                 $state.go($scope.extraData.packageNext);
@@ -964,7 +964,7 @@
                                 successfullyRegisteredRequest();
                             }
                         }, function(error) {
-                            console.error(error);
+                            Logger.toast("Ha ocurrido un error registrando su solicitud, por favor intente de nuevo.")
                         });
                     break;
                 case 44: //Packages
@@ -974,7 +974,7 @@
                                 successfullyRegisteredRequest();
                             }
                         }, function(error) {
-                            console.error(error);
+                            Logger.toast("Ha ocurrido un error registrando su solicitud, por favor intente de nuevo.")
                         });
                     break;
                 case 45: //Diligence
