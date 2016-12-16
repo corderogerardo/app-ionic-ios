@@ -11,9 +11,9 @@
         };
     }
 
-    sidebarMenuController.$inject = ['$rootScope', '$scope', 'Client', '$ionicSideMenuDelegate'];
+    sidebarMenuController.$inject = ['$rootScope', '$scope', 'Client', '$ionicSideMenuDelegate', 'Push'];
 
-    function sidebarMenuController($rootScope, $scope, Client, $ionicSideMenuDelegate) {
+    function sidebarMenuController($rootScope, $scope, Client, $ionicSideMenuDelegate, Push) {
 
         activate();
 
@@ -27,6 +27,7 @@
 
         function logout() {
             Client.logout();
+            Push.unsubscribe();
             $rootScope.$state.go('root');
         }
 

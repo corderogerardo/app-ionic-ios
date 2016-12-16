@@ -878,7 +878,8 @@
     function PushService($rootScope, $q, constants) {
         var service = {
             initialize: initialize,
-            clearAllNotifications: clearAllNotifications
+            clearAllNotifications: clearAllNotifications,
+            unsubscribe: unsubscribe
         };
 
         var push;
@@ -963,9 +964,13 @@
             };
 
             document.addEventListener("deviceready", function() {
-                PushNotification.on('registration', onInit);
                 push = PushNotification.init(pushOptions);
+                push.on('registration', onInit);
             }, false);
+        }
+
+        function unsubscribe () {
+            push.unsubscribe(function () {}, function () {});
         }
     }
 })();
