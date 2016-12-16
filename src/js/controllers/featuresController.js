@@ -38,7 +38,7 @@
             if (!hasFilledPackage()) return;
 
             if ($scope.extraData.navigateTo) {
-                $state.go($scope.extraData.navigateTo);
+                $state.go($scope.extraData.navigateTo, {}, {reload: true});
                 delete $scope.extraData.navigateTo;
             } else {
                 $state.go($scope.extraData.packageNext);

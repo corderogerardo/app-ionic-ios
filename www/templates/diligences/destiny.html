@@ -14,7 +14,7 @@
         <div class="errands-inputs">
             <div class="list list-inset input-direction">
                 <input class="item item-input inputs-general input-diligence-destinatary" on-place-changed="placeChanged" ng-model="tempData.name" ng-pristine="focusednamedestinatary = true" type="text" placeholder="Nombre del destinatario">
-                <input class="item item-input inputs-general input-diligence-phone" ng-model="tempData.phone" type="tel" placeholder="Teléfono">
+                <input class="item item-input inputs-general input-diligence-phone" ng-model="tempData.phone" type="tel" placeholder="Teléfono" pattern="\d{7,10}">
             </div>
         </div>
 

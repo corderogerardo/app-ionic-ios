@@ -66,7 +66,7 @@
 
         function activate() {
             $scope.user = {};
-            checkFirstRun();
+            //checkFirstRun();
             if (localStorage.getItem('axpress.user') && localStorage.getItem('axpress.menu')) {
                 $rootScope.user = JSON.parse(localStorage.getItem('axpress.user'));
                 $rootScope.menu = JSON.parse(localStorage.getItem('axpress.menu'));
@@ -123,7 +123,7 @@
                         });
                     });
                 });
-            });
+            }, canceledCallback);
         }
 
         /**
@@ -145,7 +145,7 @@
                         });
                     });
                 });
-            });
+            }, canceledCallback);
         }
 
         /**
@@ -243,17 +243,31 @@
          * Recovers a user password
          */
         $scope.recoverPassword = function() {
-            Logger.displayProgressBar();
-            Client.forgotPassword($scope.user.email)
-                .then(function(response) {
-                    Logger.hideProgressBar();
-                    $state.go('auth.login');
-                    Logger.toast(response.message);
-                }, function(error) {
-                    Logger.hideProgressBar();
-                    Logger.toast('Ha ocurrido un error, por favor intente luego.');
-                });
+            if (recoverHasFilledEmail()) {
+                Logger.displayProgressBar();
+                Client.forgotPassword($scope.user.email)
+                    .then(function(response) {
+                        Logger.hideProgressBar();
+                        if (response.status == 409) {
+                            Logger.toast(response.message);
+                        } else {
+                            $state.go('auth.login');
+                            Logger.toast(response.message || "Se ha enviado un correo a su dirección de correo electrónico");
+                        }
+                    }, function(error) {
+                        Logger.hideProgressBar();
+                        Logger.toast('Ha ocurrido un error, por favor intente luego.');
+                    });
+            }
         };
+
+        function recoverHasFilledEmail () {
+            if (!$scope.user.email) {
+                Logger.toast("Debe introducir una dirección de correo válida");
+                return false;
+            }
+            return true;
+        }
 
         /**
          * Callback that receives the data fetched from Google to register a user
@@ -266,6 +280,9 @@
                     if (response.return && response.status == 200) {
                         loginSuccessfull(response.data.user, response.data.menu);
                     } else if (response.status == 409 && response.message != '') {
+                        Logger.hideProgressBar();
+                        Logger.toast(response.message);
+                    } else {
                         Logger.hideProgressBar();
                         Logger.toast('Ha ocurrido un error, por favor intente luego.');
                     }
@@ -294,6 +311,9 @@
                     if (response.return && response.status == 200) {
                         loginSuccessfull(response.data.user, response.data.menu);
                     } else if (response.status == 409 && response.message != '') {
+                        Logger.hideProgressBar();
+                        Logger.toast(response.message);
+                    } else {
                         Logger.hideProgressBar();
                         Logger.toast('Ha ocurrido un error, por favor intente luego.');
                     }
@@ -325,6 +345,10 @@
             Logger.hideProgressBar();
             $state.go('app.main');
             Logger.toast('Bienvenido!');
+        }
+
+        function canceledCallback () {
+            Logger.hideProgressBar();
         }
     }
 })();
@@ -607,7 +631,7 @@
             if (!hasFilledPackage()) return;
 
             if ($scope.extraData.navigateTo) {
-                $state.go($scope.extraData.navigateTo);
+                $state.go($scope.extraData.navigateTo, {}, {reload: true});
                 delete $scope.extraData.navigateTo;
             } else {
                 $state.go($scope.extraData.packageNext);
@@ -940,7 +964,7 @@
                                 successfullyRegisteredRequest();
                             }
                         }, function(error) {
-                            console.error(error);
+                            Logger.toast("Ha ocurrido un error registrando su solicitud, por favor intente de nuevo.")
                         });
                     break;
                 case 44: //Packages
@@ -950,7 +974,7 @@
                                 successfullyRegisteredRequest();
                             }
                         }, function(error) {
-                            console.error(error);
+                            Logger.toast("Ha ocurrido un error registrando su solicitud, por favor intente de nuevo.")
                         });
                     break;
                 case 45: //Diligence
