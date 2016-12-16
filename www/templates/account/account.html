@@ -10,7 +10,7 @@
                 <select-photo on-photo-selected="imageSelected" ng-if="!user.social_picture"></select-photo>
             </div>
         </div>
-        <form class="list list-inset account-container" id="accountForm" name="accountForm" accept-charset="utf-8" novalidate>
+        <form class="list list-inset account-container" keyboard-attach id="accountForm" name="accountForm" accept-charset="utf-8" novalidate>
             <input class="item item-input inputs-general input-user-dest" type="text" name="name" ng-model="user.name" placeholder="Nombre" required>
             <input class="item item-input inputs-general input-email-dest" type="email" name="email" ng-model="user.email" placeholder="Correo Electrónico" required>
             <input class="item item-input inputs-general input-phone-dest" type="tel" name="mobilephone" ng-model="user.phone" placeholder="Teléfono Móvil">

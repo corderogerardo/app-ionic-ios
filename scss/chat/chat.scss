@@ -4,7 +4,7 @@
     @include align-items(center);
     @include justify-content(flex-start);
     @include widheigh(90%,90%,100%,100%);
-    @include responsivewidthheight(90%,90%,100%,100%,90%,90%,100%,100%,90%,90%,100%,100%);
+    @include responsivewidthheight(90%,90%,100%,100%,90%,90%,100%,100%,90%,90%,100%,100%,90%,90%,100%,100%);
     padding-top: 20%;
 }
 .message-courier{
@@ -122,7 +122,7 @@
     @include align-items(center);
     @include justify-content(center);
     @include widheigh(10%,10%,100%,100%);
-    @include responsivewidthheight(10%,10%,100%,100%,10%,10%,100%,100%,10%,10%,100%,100%);
+    @include responsivewidthheight(10%,10%,100%,100%,10%,10%,100%,100%,10%,10%,100%,100%,10%,10%,100%,100%);
 }
 .chat-camera{
     @include display-flex;
@@ -130,7 +130,7 @@
     @include align-items(center);
     @include justify-content(center);
     @include widheigh(100%,100%,20%,20%);
-    @include responsivewidthheight(100%,100%,20%,20%,100%,100%,20%,20%,100%,100%,20%,20%);
+    @include responsivewidthheight(100%,100%,20%,20%,100%,100%,20%,20%,100%,100%,20%,20%,100%,100%,20%,20%);
 	a{
 		font-size: 30px;
 		color:$calm;
@@ -148,7 +148,7 @@
     @include align-items(center);
     @include justify-content(center);
     @include widheigh(100%,100%,60%,60%);
-    @include responsivewidthheight(100%,100%,60%,60%,100%,100%,60%,60%,100%,100%,60%,60%);
+    @include responsivewidthheight(100%,100%,60%,60%,100%,100%,60%,60%,100%,100%,60%,60%,100%,100%,60%,60%);
 	input{
         @include widheigh(100%,100%,100%,100%);
         padding: 0 !important;
@@ -162,14 +162,14 @@
     @include align-items(center);
     @include justify-content(center);
     @include widheigh(100%,100%,20%,20%);
-    @include responsivewidthheight(100%,100%,20%,20%,100%,100%,20%,20%,100%,100%,20%,20%);
+    @include responsivewidthheight(100%,100%,20%,20%,100%,100%,20%,20%,100%,100%,20%,20%,100%,100%,20%,20%);
 	a{
         @include display-flex;
         @include flex-direction(row);
         @include align-items(center);
         @include justify-content(center);
         @include widheigh(100%,100%,100%,100%);
-        @include responsivewidthheight(100%,100%,100%,100%,100%,100%,100%,100%,100%,100%,100%,100%);
+        @include responsivewidthheight(100%,100%,100%,100%,100%,100%,100%,100%,100%,100%,100%,100%,100%,100%,100%,100%);
 		color:$calm;
 		font-size:18px;
 		text-decoration: none;

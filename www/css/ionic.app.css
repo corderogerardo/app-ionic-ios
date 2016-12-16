@@ -9856,19 +9856,19 @@ textarea {
   @media screen and (max-height: 1280px) {
     input,
     textarea {
-      font-size: 16px !important; } }
+      font-size: 18px !important; } }
   @media screen and (max-height: 960px) {
     input,
     textarea {
-      font-size: 16px !important; } }
+      font-size: 18px !important; } }
   @media screen and (max-height: 736px) {
     input,
     textarea {
-      font-size: 14px !important; } }
+      font-size: 18px !important; } }
   @media screen and (max-height: 667px) {
     input,
     textarea {
-      font-size: 14px !important; } }
+      font-size: 16px !important; } }
   @media screen and (max-height: 568px) {
     input,
     textarea {
@@ -9926,16 +9926,16 @@ ion-content {
       font-size: 18px !important; } }
   @media screen and (max-height: 1280px) {
     .inputs-general {
-      font-size: 16px !important; } }
+      font-size: 18px !important; } }
   @media screen and (max-height: 960px) {
     .inputs-general {
-      font-size: 16px !important; } }
+      font-size: 18px !important; } }
   @media screen and (max-height: 736px) {
     .inputs-general {
-      font-size: 14px !important; } }
+      font-size: 18px !important; } }
   @media screen and (max-height: 667px) {
     .inputs-general {
-      font-size: 14px !important; } }
+      font-size: 16px !important; } }
   @media screen and (max-height: 568px) {
     .inputs-general {
       font-size: 14px !important; } }
@@ -9978,9 +9978,46 @@ ion-content {
   justify-content: center;
   background-color: transparent;
   font-family: "Playbold", sans-serif !important;
+  font-size: 18px !important;
   min-height: 100%;
   height: 100%;
   min-width: 100%; }
+  @media screen and (max-height: 2560px) {
+    .button-default,
+    .button-default-two {
+      font-size: 24px !important; } }
+  @media screen and (max-height: 1920px) {
+    .button-default,
+    .button-default-two {
+      font-size: 24px !important; } }
+  @media screen and (max-height: 1280px) {
+    .button-default,
+    .button-default-two {
+      font-size: 24px !important; } }
+  @media screen and (max-height: 960px) {
+    .button-default,
+    .button-default-two {
+      font-size: 24px !important; } }
+  @media screen and (max-height: 736px) {
+    .button-default,
+    .button-default-two {
+      font-size: 24px !important; } }
+  @media screen and (max-height: 667px) {
+    .button-default,
+    .button-default-two {
+      font-size: 22px !important; } }
+  @media screen and (max-height: 568px) {
+    .button-default,
+    .button-default-two {
+      font-size: 20px !important; } }
+  @media screen and (max-height: 480px) {
+    .button-default,
+    .button-default-two {
+      font-size: 18px !important; } }
+  @media screen and (max-height: 320px) {
+    .button-default,
+    .button-default-two {
+      font-size: 18px !important; } }
   @media screen and (max-height: 2560px) {
     .button-default,
     .button-default-two {
@@ -10938,16 +10975,16 @@ ion-content {
       width: 59px; } }
   @media screen and (max-height: 667px) {
     .facebook-icon {
+      min-height: 60px;
+      height: 60px;
+      min-width: 59px;
+      width: 59px; } }
+  @media screen and (max-height: 568px) {
+    .facebook-icon {
       min-height: 50px;
       height: 50px;
       min-width: 49px;
       width: 49px; } }
-  @media screen and (max-height: 568px) {
-    .facebook-icon {
-      min-height: 40px;
-      height: 40px;
-      min-width: 39px;
-      width: 39px; } }
   @media screen and (max-height: 480px) {
     .facebook-icon {
       min-height: 40px;
@@ -11155,16 +11192,16 @@ ion-content {
       width: 59px; } }
   @media screen and (max-height: 667px) {
     .google-icon {
+      min-height: 60px;
+      height: 60px;
+      min-width: 59px;
+      width: 59px; } }
+  @media screen and (max-height: 568px) {
+    .google-icon {
       min-height: 50px;
       height: 50px;
       min-width: 49px;
       width: 49px; } }
-  @media screen and (max-height: 568px) {
-    .google-icon {
-      min-height: 40px;
-      height: 40px;
-      min-width: 39px;
-      width: 39px; } }
   @media screen and (max-height: 480px) {
     .google-icon {
       min-height: 40px;
@@ -11211,32 +11248,32 @@ ion-slide {
   width: auto; }
   @media screen and (max-height: 2560px) {
     ion-slide {
-      min-height: 250px;
-      height: 250px;
+      min-height: 200px;
+      height: 200px;
       min-width: auto;
       width: auto; } }
   @media screen and (max-height: 1920px) {
     ion-slide {
-      min-height: 250px;
-      height: 250px;
+      min-height: 200px;
+      height: 200px;
       min-width: auto;
       width: auto; } }
   @media screen and (max-height: 1280px) {
     ion-slide {
-      min-height: 250px;
-      height: 250px;
+      min-height: 200px;
+      height: 200px;
       min-width: auto;
       width: auto; } }
   @media screen and (max-height: 960px) {
     ion-slide {
-      min-height: 250px;
-      height: 250px;
+      min-height: 200px;
+      height: 200px;
       min-width: auto;
       width: auto; } }
   @media screen and (max-height: 736px) {
     ion-slide {
-      min-height: 250px;
-      height: 250px;
+      min-height: 205px;
+      height: 205px;
       min-width: auto;
       width: auto; } }
   @media screen and (max-height: 667px) {
@@ -11247,20 +11284,20 @@ ion-slide {
       width: auto; } }
   @media screen and (max-height: 568px) {
     ion-slide {
-      min-height: 170px;
-      height: 170px;
+      min-height: 190px;
+      height: 190px;
       min-width: auto;
       width: auto; } }
   @media screen and (max-height: 480px) {
     ion-slide {
-      min-height: 170px;
-      height: 170px;
+      min-height: 175px;
+      height: 175px;
       min-width: auto;
       width: auto; } }
   @media screen and (max-height: 320px) {
     ion-slide {
-      min-height: 170px;
-      height: 170px;
+      min-height: 175px;
+      height: 175px;
       min-width: auto;
       width: auto; } }
 
@@ -11293,32 +11330,32 @@ ion-slide {
   width: 100%; }
   @media screen and (max-height: 2560px) {
     .space-welcome {
-      min-height: 35%;
-      height: 35%;
+      min-height: 32%;
+      height: 32%;
       min-width: 100%;
       width: 100%; } }
   @media screen and (max-height: 1920px) {
     .space-welcome {
-      min-height: 35%;
-      height: 35%;
+      min-height: 32%;
+      height: 32%;
       min-width: 100%;
       width: 100%; } }
   @media screen and (max-height: 1280px) {
     .space-welcome {
-      min-height: 35%;
-      height: 35%;
+      min-height: 32%;
+      height: 32%;
       min-width: 100%;
       width: 100%; } }
   @media screen and (max-height: 960px) {
     .space-welcome {
-      min-height: 35%;
-      height: 35%;
+      min-height: 32%;
+      height: 32%;
       min-width: 100%;
       width: 100%; } }
   @media screen and (max-height: 736px) {
     .space-welcome {
-      min-height: 35%;
-      height: 35%;
+      min-height: 34%;
+      height: 34%;
       min-width: 100%;
       width: 100%; } }
   @media screen and (max-height: 667px) {
@@ -11329,8 +11366,8 @@ ion-slide {
       width: 100%; } }
   @media screen and (max-height: 568px) {
     .space-welcome {
-      min-height: 27%;
-      height: 27%;
+      min-height: 31%;
+      height: 31%;
       min-width: 100%;
       width: 100%; } }
   @media screen and (max-height: 480px) {
@@ -11411,8 +11448,8 @@ ion-slide {
       width: 100%; } }
   @media screen and (max-height: 568px) {
     .space-views {
-      min-height: 10%;
-      height: 10%;
+      min-height: 7%;
+      height: 7%;
       min-width: 100%;
       width: 100%; } }
   @media screen and (max-height: 480px) {
@@ -11429,13 +11466,67 @@ ion-slide {
       width: 100%; } }
 
 .welcome-title {
-  font-size: 30px;
   margin-bottom: 20px;
-  color: white; }
+  color: white;
+  font-size: 30px !important; }
+  @media screen and (max-height: 2560px) {
+    .welcome-title {
+      font-size: 40px !important; } }
+  @media screen and (max-height: 1920px) {
+    .welcome-title {
+      font-size: 40px !important; } }
+  @media screen and (max-height: 1280px) {
+    .welcome-title {
+      font-size: 40px !important; } }
+  @media screen and (max-height: 960px) {
+    .welcome-title {
+      font-size: 40px !important; } }
+  @media screen and (max-height: 736px) {
+    .welcome-title {
+      font-size: 40px !important; } }
+  @media screen and (max-height: 667px) {
+    .welcome-title {
+      font-size: 36px !important; } }
+  @media screen and (max-height: 568px) {
+    .welcome-title {
+      font-size: 34px !important; } }
+  @media screen and (max-height: 480px) {
+    .welcome-title {
+      font-size: 30px !important; } }
+  @media screen and (max-height: 320px) {
+    .welcome-title {
+      font-size: 30px !important; } }
 
 .welcome-info {
-  font-size: 2vh !important;
+  font-size: 12px !important;
   color: white; }
+  @media screen and (max-height: 2560px) {
+    .welcome-info {
+      font-size: 18px !important; } }
+  @media screen and (max-height: 1920px) {
+    .welcome-info {
+      font-size: 18px !important; } }
+  @media screen and (max-height: 1280px) {
+    .welcome-info {
+      font-size: 18px !important; } }
+  @media screen and (max-height: 960px) {
+    .welcome-info {
+      font-size: 18px !important; } }
+  @media screen and (max-height: 736px) {
+    .welcome-info {
+      font-size: 18px !important; } }
+  @media screen and (max-height: 667px) {
+    .welcome-info {
+      font-size: 16px !important; } }
+  @media screen and (max-height: 568px) {
+    .welcome-info {
+      font-size: 14px !important; } }
+  @media screen and (max-height: 480px) {
+    .welcome-info {
+      font-size: 12px !important; } }
+  @media screen and (max-height: 320px) {
+    .welcome-info {
+      font-size: 12px !important; } }
 
 .slider-pager-page {
   color: white !important; }
@@ -11458,7 +11549,8 @@ ion-slide {
   background-image: url("../img/Correoelectronico/Correoelectronico.png") !important;
   background-size: 100%;
   background-repeat: no-repeat;
-  background-position: center; }
+  background-position: center;
+  font-size: 12px !important; }
   @media screen and (max-height: 2560px) {
     .input-email {
       border: none !important;
@@ -11610,6 +11702,33 @@ ion-slide {
         background-size: 100%;
         background-repeat: no-repeat;
         background-position: center; } }
+  @media screen and (max-height: 2560px) {
+    .input-email {
+      font-size: 18px !important; } }
+  @media screen and (max-height: 1920px) {
+    .input-email {
+      font-size: 18px !important; } }
+  @media screen and (max-height: 1280px) {
+    .input-email {
+      font-size: 18px !important; } }
+  @media screen and (max-height: 960px) {
+    .input-email {
+      font-size: 18px !important; } }
+  @media screen and (max-height: 736px) {
+    .input-email {
+      font-size: 18px !important; } }
+  @media screen and (max-height: 667px) {
+    .input-email {
+      font-size: 16px !important; } }
+  @media screen and (max-height: 568px) {
+    .input-email {
+      font-size: 14px !important; } }
+  @media screen and (max-height: 480px) {
+    .input-email {
+      font-size: 12px !important; } }
+  @media screen and (max-height: 320px) {
+    .input-email {
+      font-size: 12px !important; } }
 
 .input-pass {
   border: none !important;
@@ -11617,7 +11736,8 @@ ion-slide {
   background-image: url("../img/Contrasena/Contrasena.png") !important;
   background-size: 100%;
   background-repeat: no-repeat;
-  background-position: center; }
+  background-position: center;
+  font-size: 12px !important; }
   @media screen and (max-height: 2560px) {
     .input-pass {
       border: none !important;
@@ -11769,6 +11889,33 @@ ion-slide {
         background-size: 100%;
         background-repeat: no-repeat;
         background-position: center; } }
+  @media screen and (max-height: 2560px) {
+    .input-pass {
+      font-size: 18px !important; } }
+  @media screen and (max-height: 1920px) {
+    .input-pass {
+      font-size: 18px !important; } }
+  @media screen and (max-height: 1280px) {
+    .input-pass {
+      font-size: 18px !important; } }
+  @media screen and (max-height: 960px) {
+    .input-pass {
+      font-size: 18px !important; } }
+  @media screen and (max-height: 736px) {
+    .input-pass {
+      font-size: 18px !important; } }
+  @media screen and (max-height: 667px) {
+    .input-pass {
+      font-size: 16px !important; } }
+  @media screen and (max-height: 568px) {
+    .input-pass {
+      font-size: 14px !important; } }
+  @media screen and (max-height: 480px) {
+    .input-pass {
+      font-size: 12px !important; } }
+  @media screen and (max-height: 320px) {
+    .input-pass {
+      font-size: 12px !important; } }
 
 .input-user {
   border: none !important;
@@ -11776,7 +11923,8 @@ ion-slide {
   background-image: url("../img/Nombredeusuario/Nombredeusuario.png") !important;
   background-size: 100%;
   background-repeat: no-repeat;
-  background-position: center; }
+  background-position: center;
+  font-size: 12px !important; }
   @media screen and (max-height: 2560px) {
     .input-user {
       border: none !important;
@@ -11928,6 +12076,33 @@ ion-slide {
         background-size: 100%;
         background-repeat: no-repeat;
         background-position: center; } }
+  @media screen and (max-height: 2560px) {
+    .input-user {
+      font-size: 18px !important; } }
+  @media screen and (max-height: 1920px) {
+    .input-user {
+      font-size: 18px !important; } }
+  @media screen and (max-height: 1280px) {
+    .input-user {
+      font-size: 18px !important; } }
+  @media screen and (max-height: 960px) {
+    .input-user {
+      font-size: 18px !important; } }
+  @media screen and (max-height: 736px) {
+    .input-user {
+      font-size: 18px !important; } }
+  @media screen and (max-height: 667px) {
+    .input-user {
+      font-size: 16px !important; } }
+  @media screen and (max-height: 568px) {
+    .input-user {
+      font-size: 14px !important; } }
+  @media screen and (max-height: 480px) {
+    .input-user {
+      font-size: 12px !important; } }
+  @media screen and (max-height: 320px) {
+    .input-user {
+      font-size: 12px !important; } }
 
 .input-phone {
   border: none !important;
@@ -11935,7 +12110,8 @@ ion-slide {
   background-image: url("../img/Telefono/Telefono.png") !important;
   background-size: 100%;
   background-repeat: no-repeat;
-  background-position: center; }
+  background-position: center;
+  font-size: 12px !important; }
   @media screen and (max-height: 2560px) {
     .input-phone {
       border: none !important;
@@ -12087,6 +12263,33 @@ ion-slide {
         background-size: 100%;
         background-repeat: no-repeat;
         background-position: center; } }
+  @media screen and (max-height: 2560px) {
+    .input-phone {
+      font-size: 18px !important; } }
+  @media screen and (max-height: 1920px) {
+    .input-phone {
+      font-size: 18px !important; } }
+  @media screen and (max-height: 1280px) {
+    .input-phone {
+      font-size: 18px !important; } }
+  @media screen and (max-height: 960px) {
+    .input-phone {
+      font-size: 18px !important; } }
+  @media screen and (max-height: 736px) {
+    .input-phone {
+      font-size: 18px !important; } }
+  @media screen and (max-height: 667px) {
+    .input-phone {
+      font-size: 16px !important; } }
+  @media screen and (max-height: 568px) {
+    .input-phone {
+      font-size: 14px !important; } }
+  @media screen and (max-height: 480px) {
+    .input-phone {
+      font-size: 12px !important; } }
+  @media screen and (max-height: 320px) {
+    .input-phone {
+      font-size: 12px !important; } }
 
 .register-container {
   display: -webkit-box;
@@ -12183,44 +12386,44 @@ ion-slide {
   margin-bottom: 2%; }
   @media screen and (max-height: 2560px) {
     .item-input {
-      min-height: 65px !important;
-      height: 65px !important;
+      min-height: 53px !important;
+      height: 53px !important;
       min-width: 80%;
       width: 80%; } }
   @media screen and (max-height: 1920px) {
     .item-input {
-      min-height: 65px !important;
-      height: 65px !important;
+      min-height: 53px !important;
+      height: 53px !important;
       min-width: 80%;
       width: 80%; } }
   @media screen and (max-height: 1280px) {
     .item-input {
-      min-height: 65px !important;
-      height: 65px !important;
+      min-height: 53px !important;
+      height: 53px !important;
       min-width: 80%;
       width: 80%; } }
   @media screen and (max-height: 960px) {
     .item-input {
-      min-height: 65px !important;
-      height: 65px !important;
+      min-height: 53px !important;
+      height: 53px !important;
       min-width: 80%;
       width: 80%; } }
   @media screen and (max-height: 736px) {
     .item-input {
-      min-height: 65px !important;
-      height: 65px !important;
+      min-height: 59px !important;
+      height: 59px !important;
       min-width: 80%;
       width: 80%; } }
   @media screen and (max-height: 667px) {
     .item-input {
-      min-height: 60px !important;
-      height: 60px !important;
+      min-height: 53px !important;
+      height: 53px !important;
       min-width: 80%;
       width: 80%; } }
   @media screen and (max-height: 568px) {
     .item-input {
-      min-height: 46px !important;
-      height: 46px !important;
+      min-height: 47px !important;
+      height: 47px !important;
       min-width: 80%;
       width: 80%; } }
   @media screen and (max-height: 480px) {
@@ -12244,8 +12447,35 @@ ion-slide {
 
 .register-create {
   text-align: center;
-  font-size: 3vh;
+  font-size: 14px !important;
   color: white; }
+  @media screen and (max-height: 2560px) {
+    .register-create {
+      font-size: 17px !important; } }
+  @media screen and (max-height: 1920px) {
+    .register-create {
+      font-size: 17px !important; } }
+  @media screen and (max-height: 1280px) {
+    .register-create {
+      font-size: 17px !important; } }
+  @media screen and (max-height: 960px) {
+    .register-create {
+      font-size: 17px !important; } }
+  @media screen and (max-height: 736px) {
+    .register-create {
+      font-size: 17px !important; } }
+  @media screen and (max-height: 667px) {
+    .register-create {
+      font-size: 16px !important; } }
+  @media screen and (max-height: 568px) {
+    .register-create {
+      font-size: 15px !important; } }
+  @media screen and (max-height: 480px) {
+    .register-create {
+      font-size: 14px !important; } }
+  @media screen and (max-height: 320px) {
+    .register-create {
+      font-size: 14px !important; } }
 
 .register-social-buttons {
   display: -webkit-box;
@@ -12295,14 +12525,41 @@ ion-slide {
   border: none !important;
   background-color: transparent !important;
   padding-left: 0;
-  color: #8fd6ed !important;
-  font-size: 2vh;
+  color: white !important;
+  font-size: 11px !important;
   font-weight: 200;
   text-decoration: none;
   height: 20px !important;
   min-height: 20px !important;
   min-width: 80% !important;
   width: 80%; }
+  @media screen and (max-height: 2560px) {
+    .register-term {
+      font-size: 14px !important; } }
+  @media screen and (max-height: 1920px) {
+    .register-term {
+      font-size: 14px !important; } }
+  @media screen and (max-height: 1280px) {
+    .register-term {
+      font-size: 14px !important; } }
+  @media screen and (max-height: 960px) {
+    .register-term {
+      font-size: 14px !important; } }
+  @media screen and (max-height: 736px) {
+    .register-term {
+      font-size: 14px !important; } }
+  @media screen and (max-height: 667px) {
+    .register-term {
+      font-size: 12px !important; } }
+  @media screen and (max-height: 568px) {
+    .register-term {
+      font-size: 11px !important; } }
+  @media screen and (max-height: 480px) {
+    .register-term {
+      font-size: 11px !important; } }
+  @media screen and (max-height: 320px) {
+    .register-term {
+      font-size: 11px !important; } }
   .register-term span {
     color: #8fd6ed; }
 
@@ -12333,18 +12590,72 @@ ion-slide {
   background-color: transparent !important;
   padding-left: 0;
   color: white !important;
-  font-size: 2vh;
+  font-size: 11px !important;
   font-weight: 200;
   text-decoration: none;
   height: 20px !important;
   min-height: 20px !important;
   min-width: 80% !important;
   width: 80%; }
+  @media screen and (max-height: 2560px) {
+    .forgot-pass {
+      font-size: 14px !important; } }
+  @media screen and (max-height: 1920px) {
+    .forgot-pass {
+      font-size: 14px !important; } }
+  @media screen and (max-height: 1280px) {
+    .forgot-pass {
+      font-size: 14px !important; } }
+  @media screen and (max-height: 960px) {
+    .forgot-pass {
+      font-size: 14px !important; } }
+  @media screen and (max-height: 736px) {
+    .forgot-pass {
+      font-size: 14px !important; } }
+  @media screen and (max-height: 667px) {
+    .forgot-pass {
+      font-size: 12px !important; } }
+  @media screen and (max-height: 568px) {
+    .forgot-pass {
+      font-size: 11px !important; } }
+  @media screen and (max-height: 480px) {
+    .forgot-pass {
+      font-size: 11px !important; } }
+  @media screen and (max-height: 320px) {
+    .forgot-pass {
+      font-size: 11px !important; } }
   .forgot-pass span {
     color: #8fd6ed; }
 
 .register-login {
-  font-size: 3vh; }
+  font-size: 12px !important; }
+  @media screen and (max-height: 2560px) {
+    .register-login {
+      font-size: 16px !important; } }
+  @media screen and (max-height: 1920px) {
+    .register-login {
+      font-size: 16px !important; } }
+  @media screen and (max-height: 1280px) {
+    .register-login {
+      font-size: 16px !important; } }
+  @media screen and (max-height: 960px) {
+    .register-login {
+      font-size: 16px !important; } }
+  @media screen and (max-height: 736px) {
+    .register-login {
+      font-size: 16px !important; } }
+  @media screen and (max-height: 667px) {
+    .register-login {
+      font-size: 16px !important; } }
+  @media screen and (max-height: 568px) {
+    .register-login {
+      font-size: 13px !important; } }
+  @media screen and (max-height: 480px) {
+    .register-login {
+      font-size: 12px !important; } }
+  @media screen and (max-height: 320px) {
+    .register-login {
+      font-size: 12px !important; } }
   .register-login span {
     color: #afd8e4; }
   .register-login a {
@@ -12412,12 +12723,39 @@ ion-slide {
     height: 25%;
     min-height: 25%;
     color: white;
+    font-size: 20px !important;
     margin-bottom: 7%;
-    font-size: 3.5vh;
     font-weight: bold;
     text-align: center;
     text-decoration: none;
     width: 40%; }
+    @media screen and (max-height: 2560px) {
+      .main-menu a {
+        font-size: 28px !important; } }
+    @media screen and (max-height: 1920px) {
+      .main-menu a {
+        font-size: 28px !important; } }
+    @media screen and (max-height: 1280px) {
+      .main-menu a {
+        font-size: 28px !important; } }
+    @media screen and (max-height: 960px) {
+      .main-menu a {
+        font-size: 28px !important; } }
+    @media screen and (max-height: 736px) {
+      .main-menu a {
+        font-size: 28px !important; } }
+    @media screen and (max-height: 667px) {
+      .main-menu a {
+        font-size: 26px !important; } }
+    @media screen and (max-height: 568px) {
+      .main-menu a {
+        font-size: 22px !important; } }
+    @media screen and (max-height: 480px) {
+      .main-menu a {
+        font-size: 20px !important; } }
+    @media screen and (max-height: 320px) {
+      .main-menu a {
+        font-size: 20px !important; } }
     .main-menu a:hover {
       border: none !important;
       background-color: transparent;
@@ -12497,8 +12835,8 @@ ion-slide {
         .main-menu a .img-0 {
           min-height: 90%;
           height: 90%;
-          min-width: 70%;
-          width: 70%; } }
+          min-width: 75%;
+          width: 75%; } }
       @media screen and (max-height: 480px) {
         .main-menu a .img-0 {
           min-height: 90%;
@@ -12736,8 +13074,8 @@ ion-slide {
         .main-menu a .img-1 {
           min-height: 90%;
           height: 90%;
-          min-width: 70%;
-          width: 70%; } }
+          min-width: 75%;
+          width: 75%; } }
       @media screen and (max-height: 480px) {
         .main-menu a .img-1 {
           min-height: 90%;
@@ -12975,8 +13313,8 @@ ion-slide {
         .main-menu a .img-2 {
           min-height: 90%;
           height: 90%;
-          min-width: 70%;
-          width: 70%; } }
+          min-width: 75%;
+          width: 75%; } }
       @media screen and (max-height: 480px) {
         .main-menu a .img-2 {
           min-height: 90%;
@@ -13206,8 +13544,8 @@ ion-slide {
     -webkit-justify-content: center;
     -moz-justify-content: center;
     justify-content: center;
-    min-height: 50%;
-    height: 50%;
+    min-height: 40%;
+    height: 40%;
     min-width: 100%;
     width: 100%; }
     .side-menu-title .side-menu-container-user .side-menu-photo {
@@ -13393,10 +13731,74 @@ ion-slide {
       width: 18px; }
 
 .item-content {
-  color: white !important; }
+  color: white !important;
+  font-size: 18px !important;
+  min-height: 100%;
+  height: 100%;
+  min-width: 100% !important;
+  width: 100% !important; }
+  @media screen and (max-height: 2560px) {
+    .item-content {
+      font-size: 22px !important; } }
+  @media screen and (max-height: 1920px) {
+    .item-content {
+      font-size: 22px !important; } }
+  @media screen and (max-height: 1280px) {
+    .item-content {
+      font-size: 22px !important; } }
+  @media screen and (max-height: 960px) {
+    .item-content {
+      font-size: 22px !important; } }
+  @media screen and (max-height: 736px) {
+    .item-content {
+      font-size: 22px !important; } }
+  @media screen and (max-height: 667px) {
+    .item-content {
+      font-size: 20px !important; } }
+  @media screen and (max-height: 568px) {
+    .item-content {
+      font-size: 20px !important; } }
+  @media screen and (max-height: 480px) {
+    .item-content {
+      font-size: 18px !important; } }
+  @media screen and (max-height: 320px) {
+    .item-content {
+      font-size: 18px !important; } }
   .item-content:hover {
     color: #ca7530 !important;
-    font-weight: bold; }
+    font-weight: bold;
+    font-size: 18px !important;
+    min-height: 100%;
+    height: 100%;
+    min-width: 100% !important;
+    width: 100% !important; }
+    @media screen and (max-height: 2560px) {
+      .item-content:hover {
+        font-size: 22px !important; } }
+    @media screen and (max-height: 1920px) {
+      .item-content:hover {
+        font-size: 22px !important; } }
+    @media screen and (max-height: 1280px) {
+      .item-content:hover {
+        font-size: 22px !important; } }
+    @media screen and (max-height: 960px) {
+      .item-content:hover {
+        font-size: 22px !important; } }
+    @media screen and (max-height: 736px) {
+      .item-content:hover {
+        font-size: 22px !important; } }
+    @media screen and (max-height: 667px) {
+      .item-content:hover {
+        font-size: 20px !important; } }
+    @media screen and (max-height: 568px) {
+      .item-content:hover {
+        font-size: 20px !important; } }
+    @media screen and (max-height: 480px) {
+      .item-content:hover {
+        font-size: 18px !important; } }
+    @media screen and (max-height: 320px) {
+      .item-content:hover {
+        font-size: 18px !important; } }
 
 .has-header {
   display: -webkit-box;
@@ -13450,10 +13852,10 @@ ion-slide {
   -webkit-justify-content: center;
   -moz-justify-content: center;
   justify-content: center;
-  min-height: 18px;
-  height: 18px;
-  min-width: 18px;
-  width: 18px;
+  min-height: 20px !important;
+  height: 20px !important;
+  min-width: 20px !important;
+  width: 20px;
   border: none !important;
   background-color: transparent;
   background-image: url("../img/Iniciomenulateral/Iniciomenu.png") !important;
@@ -13635,10 +14037,167 @@ ion-slide {
   -webkit-justify-content: center;
   -moz-justify-content: center;
   justify-content: center;
-  min-height: 18px;
-  height: 18px;
-  min-width: 18px;
-  width: 18px; }
+  min-height: 20px !important;
+  height: 20px !important;
+  min-width: 20px !important;
+  width: 20px;
+  border: none !important;
+  background-color: transparent;
+  background-image: url("../img/Editarcuentamenu/Editarcuenta.png") !important;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center; }
+  @media screen and (max-height: 2560px) {
+    .side-menu-edit {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/Editarcuentamenu/Editarcuenta3x.png.png") !important;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 1920px) {
+    .side-menu-edit {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/Editarcuentamenu/Editarcuenta3x.png.png") !important;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 1280px) {
+    .side-menu-edit {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/Editarcuentamenu/Editarcuenta2x.png.png") !important;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 960px) {
+    .side-menu-edit {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/Editarcuentamenu/Editarcuenta2x.png.png") !important;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 736px) {
+    .side-menu-edit {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/Editarcuentamenu/Editarcuenta2x.png.png") !important;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 667px) {
+    .side-menu-edit {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/Editarcuentamenu/Editarcuenta2x.png.png") !important;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 568px) {
+    .side-menu-edit {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/Editarcuentamenu/Editarcuenta.png") !important;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 480px) {
+    .side-menu-edit {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/Editarcuentamenu/Editarcuenta.png") !important;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 320px) {
+    .side-menu-edit {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/Editarcuentamenu/Editarcuenta.png") !important;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  .side-menu-edit:hover {
+    border: none !important;
+    background-color: transparent;
+    background-image: url("../img/EditarcuentamenuTAP/Editarcuenta.png") !important;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center; }
+    @media screen and (max-height: 2560px) {
+      .side-menu-edit:hover {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/EditarcuentamenuTAP/Editarcuenta3x.png.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 1920px) {
+      .side-menu-edit:hover {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/EditarcuentamenuTAP/Editarcuenta3x.png.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 1280px) {
+      .side-menu-edit:hover {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/EditarcuentamenuTAP/Editarcuenta2x.png.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 960px) {
+      .side-menu-edit:hover {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/EditarcuentamenuTAP/Editarcuenta2x.png.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 736px) {
+      .side-menu-edit:hover {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/EditarcuentamenuTAP/Editarcuenta2x.png.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 667px) {
+      .side-menu-edit:hover {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/EditarcuentamenuTAP/Editarcuenta2x.png.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 568px) {
+      .side-menu-edit:hover {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/EditarcuentamenuTAP/Editarcuenta2x.png.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 480px) {
+      .side-menu-edit:hover {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/EditarcuentamenuTAP/Editarcuenta.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 320px) {
+      .side-menu-edit:hover {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/EditarcuentamenuTAP/Editarcuenta.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
 
 .side-menu-history {
   display: -webkit-box;
@@ -13663,10 +14222,10 @@ ion-slide {
   -webkit-justify-content: center;
   -moz-justify-content: center;
   justify-content: center;
-  min-height: 18px;
-  height: 18px;
-  min-width: 18px;
-  width: 18px;
+  min-height: 20px !important;
+  height: 20px !important;
+  min-width: 20px !important;
+  width: 20px;
   border: none !important;
   background-color: transparent;
   background-image: url("../img/Historial/Historial.png") !important;
@@ -13848,11 +14407,167 @@ ion-slide {
   -webkit-justify-content: center;
   -moz-justify-content: center;
   justify-content: center;
-  min-height: 18px;
-  height: 18px;
-  min-width: 18px;
-  width: 18px;
-  /*  @include media-icons-ios($x1,$hoverx1,$x2,$hoverx2,$x3,$hoverx3);*/ }
+  min-height: 20px !important;
+  height: 20px !important;
+  min-width: 20px !important;
+  width: 20px;
+  border: none !important;
+  background-color: transparent;
+  background-image: url("../img/Cancelarmenu/Cancelar.png") !important;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center; }
+  @media screen and (max-height: 2560px) {
+    .side-menu-cancel-service {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/Cancelarmenu/Cancelar3x.png.png") !important;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 1920px) {
+    .side-menu-cancel-service {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/Cancelarmenu/Cancelar3x.png.png") !important;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 1280px) {
+    .side-menu-cancel-service {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/Cancelarmenu/Cancelar2x.png.png") !important;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 960px) {
+    .side-menu-cancel-service {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/Cancelarmenu/Cancelar2x.png.png") !important;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 736px) {
+    .side-menu-cancel-service {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/Cancelarmenu/Cancelar2x.png.png") !important;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 667px) {
+    .side-menu-cancel-service {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/Cancelarmenu/Cancelar2x.png.png") !important;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 568px) {
+    .side-menu-cancel-service {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/Cancelarmenu/Cancelar.png") !important;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 480px) {
+    .side-menu-cancel-service {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/Cancelarmenu/Cancelar.png") !important;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 320px) {
+    .side-menu-cancel-service {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/Cancelarmenu/Cancelar.png") !important;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  .side-menu-cancel-service:hover {
+    border: none !important;
+    background-color: transparent;
+    background-image: url("../img/CancelarmenuTAP/Cancelar.png") !important;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center; }
+    @media screen and (max-height: 2560px) {
+      .side-menu-cancel-service:hover {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/CancelarmenuTAP/Cancelar3x.png.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 1920px) {
+      .side-menu-cancel-service:hover {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/CancelarmenuTAP/Cancelar3x.png.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 1280px) {
+      .side-menu-cancel-service:hover {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/CancelarmenuTAP/Cancelar2x.png.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 960px) {
+      .side-menu-cancel-service:hover {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/CancelarmenuTAP/Cancelar2x.png.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 736px) {
+      .side-menu-cancel-service:hover {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/CancelarmenuTAP/Cancelar2x.png.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 667px) {
+      .side-menu-cancel-service:hover {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/CancelarmenuTAP/Cancelar2x.png.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 568px) {
+      .side-menu-cancel-service:hover {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/CancelarmenuTAP/Cancelar2x.png.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 480px) {
+      .side-menu-cancel-service:hover {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/CancelarmenuTAP/Cancelar.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 320px) {
+      .side-menu-cancel-service:hover {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/CancelarmenuTAP/Cancelar.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
 
 .side-menu-logout {
   display: -webkit-box;
@@ -13877,11 +14592,197 @@ ion-slide {
   -webkit-justify-content: center;
   -moz-justify-content: center;
   justify-content: center;
-  min-height: 18px;
-  height: 18px;
-  min-width: 18px;
-  width: 18px;
-  /* @include media-icons-ios($x1,$hoverx1,$x2,$hoverx2,$x3,$hoverx3);*/ }
+  min-height: 20px !important;
+  height: 20px !important;
+  min-width: 20px !important;
+  width: 20px;
+  border: none !important;
+  background-color: transparent;
+  background-image: url("../img/Cerrarsesion/Cerrarsesion.png") !important;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center; }
+  @media screen and (max-height: 2560px) {
+    .side-menu-logout {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/Cerrarsesion/Cerrarsesion3x.png.png") !important;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 1920px) {
+    .side-menu-logout {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/Cerrarsesion/Cerrarsesion3x.png.png") !important;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 1280px) {
+    .side-menu-logout {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/Cerrarsesion/Cerrarsesion2x.png.png") !important;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 960px) {
+    .side-menu-logout {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/Cerrarsesion/Cerrarsesion2x.png.png") !important;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 736px) {
+    .side-menu-logout {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/Cerrarsesion/Cerrarsesion2x.png.png") !important;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 667px) {
+    .side-menu-logout {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/Cerrarsesion/Cerrarsesion2x.png.png") !important;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 568px) {
+    .side-menu-logout {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/Cerrarsesion/Cerrarsesion.png") !important;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 480px) {
+    .side-menu-logout {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/Cerrarsesion/Cerrarsesion.png") !important;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 320px) {
+    .side-menu-logout {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/Cerrarsesion/Cerrarsesion.png") !important;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  .side-menu-logout:hover {
+    border: none !important;
+    background-color: transparent;
+    background-image: url("../img/CerrarsesionTAP/Cerrarsesion.png") !important;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center; }
+    @media screen and (max-height: 2560px) {
+      .side-menu-logout:hover {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/CerrarsesionTAP/Cerrarsesion3x.png.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 1920px) {
+      .side-menu-logout:hover {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/CerrarsesionTAP/Cerrarsesion3x.png.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 1280px) {
+      .side-menu-logout:hover {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/CerrarsesionTAP/Cerrarsesion2x.png.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 960px) {
+      .side-menu-logout:hover {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/CerrarsesionTAP/Cerrarsesion2x.png.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 736px) {
+      .side-menu-logout:hover {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/CerrarsesionTAP/Cerrarsesion2x.png.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 667px) {
+      .side-menu-logout:hover {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/CerrarsesionTAP/Cerrarsesion2x.png.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 568px) {
+      .side-menu-logout:hover {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/CerrarsesionTAP/Cerrarsesion2x.png.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 480px) {
+      .side-menu-logout:hover {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/CerrarsesionTAP/Cerrarsesion.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 320px) {
+      .side-menu-logout:hover {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/CerrarsesionTAP/Cerrarsesion.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+
+.side-menu-logout-title {
+  font-size: 12px !important; }
+  @media screen and (max-height: 2560px) {
+    .side-menu-logout-title {
+      font-size: 16px !important; } }
+  @media screen and (max-height: 1920px) {
+    .side-menu-logout-title {
+      font-size: 16px !important; } }
+  @media screen and (max-height: 1280px) {
+    .side-menu-logout-title {
+      font-size: 16px !important; } }
+  @media screen and (max-height: 960px) {
+    .side-menu-logout-title {
+      font-size: 16px !important; } }
+  @media screen and (max-height: 736px) {
+    .side-menu-logout-title {
+      font-size: 16px !important; } }
+  @media screen and (max-height: 667px) {
+    .side-menu-logout-title {
+      font-size: 16px !important; } }
+  @media screen and (max-height: 568px) {
+    .side-menu-logout-title {
+      font-size: 14px !important; } }
+  @media screen and (max-height: 480px) {
+    .side-menu-logout-title {
+      font-size: 12px !important; } }
+  @media screen and (max-height: 320px) {
+    .side-menu-logout-title {
+      font-size: 12px !important; } }
 
 .main-container-maps {
   height: 100%;
@@ -13916,75 +14817,104 @@ ion-slide {
   -webkit-justify-content: flex-end;
   -moz-justify-content: flex-end;
   justify-content: flex-end;
-  background-color: rgba(6, 85, 153, 0.7) !important;
-  min-height: 150px;
+  min-height: auto;
   height: 150px;
   min-width: 100%;
   width: 100%;
+  background-color: rgba(6, 85, 153, 0.7) !important;
   margin: 0;
-  padding: 0;
-  padding-bottom: 5px !important; }
+  padding: 0; }
   @media screen and (max-height: 2560px) {
     .bar-origin {
-      min-height: 155px;
-      height: 155px;
+      min-height: 160px;
+      height: 160px;
       min-width: 100%;
       width: 100%; } }
   @media screen and (max-height: 1920px) {
     .bar-origin {
-      min-height: 155px;
-      height: 155px;
+      min-height: 160px;
+      height: 160px;
       min-width: 100%;
       width: 100%; } }
   @media screen and (max-height: 1280px) {
     .bar-origin {
-      min-height: 155px;
-      height: 155px;
+      min-height: 160px;
+      height: 160px;
       min-width: 100%;
       width: 100%; } }
   @media screen and (max-height: 960px) {
     .bar-origin {
-      min-height: 155px;
-      height: 155px;
+      min-height: 160px;
+      height: 160px;
       min-width: 100%;
       width: 100%; } }
   @media screen and (max-height: 736px) {
     .bar-origin {
-      min-height: 155px;
-      height: 155px;
+      min-height: 175px;
+      height: 175px;
       min-width: 100%;
       width: 100%; } }
   @media screen and (max-height: 667px) {
     .bar-origin {
-      min-height: 140px;
-      height: 140px;
+      min-height: 160px;
+      height: 160px;
       min-width: 100%;
       width: 100%; } }
   @media screen and (max-height: 568px) {
     .bar-origin {
-      min-height: 130px;
-      height: 130px;
+      min-height: 150px;
+      height: 150px;
       min-width: 100%;
       width: 100%; } }
   @media screen and (max-height: 480px) {
     .bar-origin {
-      min-height: 130px;
-      height: 130px;
+      min-height: 150px;
+      height: 150px;
       min-width: 100%;
       width: 100%; } }
   @media screen and (max-height: 320px) {
     .bar-origin {
-      min-height: 130px;
-      height: 130px;
+      min-height: 150px;
+      height: 150px;
       min-width: 100%;
       width: 100%; } }
   .bar-origin h3 {
-    width: 100%;
+    min-height: 40px !important;
+    height: 40px !important;
+    min-width: 95%;
+    width: 95%;
     margin: 0;
     padding: 0;
-    padding-left: 10%;
     min-width: 100%;
-    text-align: left !important; }
+    font-size: 20px !important;
+    margin-bottom: 10px !important; }
+    @media screen and (max-height: 2560px) {
+      .bar-origin h3 {
+        font-size: 24px !important; } }
+    @media screen and (max-height: 1920px) {
+      .bar-origin h3 {
+        font-size: 24px !important; } }
+    @media screen and (max-height: 1280px) {
+      .bar-origin h3 {
+        font-size: 24px !important; } }
+    @media screen and (max-height: 960px) {
+      .bar-origin h3 {
+        font-size: 24px !important; } }
+    @media screen and (max-height: 736px) {
+      .bar-origin h3 {
+        font-size: 24px !important; } }
+    @media screen and (max-height: 667px) {
+      .bar-origin h3 {
+        font-size: 22px !important; } }
+    @media screen and (max-height: 568px) {
+      .bar-origin h3 {
+        font-size: 20px !important; } }
+    @media screen and (max-height: 480px) {
+      .bar-origin h3 {
+        font-size: 20px !important; } }
+    @media screen and (max-height: 320px) {
+      .bar-origin h3 {
+        font-size: 20px !important; } }
 
 .input-direction {
   display: -webkit-box;
@@ -14008,12 +14938,68 @@ ion-slide {
   -ms-flex-pack: end;
   -webkit-justify-content: flex-end;
   -moz-justify-content: flex-end;
-  justify-content: flex-end; }
+  justify-content: flex-end;
+  margin-bottom: 0 !important; }
+  @media screen and (max-height: 2560px) {
+    .input-direction {
+      min-height: 100px;
+      height: 100px;
+      min-width: 100%;
+      width: 100%; } }
+  @media screen and (max-height: 1920px) {
+    .input-direction {
+      min-height: 100px;
+      height: 100px;
+      min-width: 100%;
+      width: 100%; } }
+  @media screen and (max-height: 1280px) {
+    .input-direction {
+      min-height: 100px;
+      height: 100px;
+      min-width: 100%;
+      width: 100%; } }
+  @media screen and (max-height: 960px) {
+    .input-direction {
+      min-height: 100px;
+      height: 100px;
+      min-width: 100%;
+      width: 100%; } }
+  @media screen and (max-height: 736px) {
+    .input-direction {
+      min-height: 115px;
+      height: 115px;
+      min-width: 100%;
+      width: 100%; } }
+  @media screen and (max-height: 667px) {
+    .input-direction {
+      min-height: 100px;
+      height: 100px;
+      min-width: 100%;
+      width: 100%; } }
+  @media screen and (max-height: 568px) {
+    .input-direction {
+      min-height: 90px;
+      height: 90px;
+      min-width: 100%;
+      width: 100%; } }
+  @media screen and (max-height: 480px) {
+    .input-direction {
+      min-height: 90px;
+      height: 90px;
+      min-width: 100%;
+      width: 100%; } }
+  @media screen and (max-height: 320px) {
+    .input-direction {
+      min-height: 90px;
+      height: 90px;
+      min-width: 100%;
+      width: 100%; } }
   .input-direction map-autocomplete-address {
     min-height: 40px !important;
     height: 40px !important;
     min-width: 90%;
     width: 90%;
+    margin-top: 10px !important;
     margin: 0;
     padding: 0; }
     @media screen and (max-height: 2560px) {
@@ -14042,14 +15028,14 @@ ion-slide {
         width: 90%; } }
     @media screen and (max-height: 736px) {
       .input-direction map-autocomplete-address {
-        min-height: 55px !important;
-        height: 55px !important;
+        min-height: 60px !important;
+        height: 60px !important;
         min-width: 90%;
         width: 90%; } }
     @media screen and (max-height: 667px) {
       .input-direction map-autocomplete-address {
-        min-height: 50px !important;
-        height: 50px !important;
+        min-height: 55px !important;
+        height: 55px !important;
         min-width: 90%;
         width: 90%; } }
     @media screen and (max-height: 568px) {
@@ -14076,7 +15062,10 @@ ion-slide {
     min-width: 90%;
     width: 90%;
     margin: 0;
-    padding: 0; }
+    padding: 0;
+    font-size: 10px !important;
+    color: #065599 !important;
+    font-weight: bold; }
     @media screen and (max-height: 2560px) {
       .input-direction input {
         min-height: 55px !important;
@@ -14103,20 +15092,20 @@ ion-slide {
         width: 90%; } }
     @media screen and (max-height: 736px) {
       .input-direction input {
-        min-height: 55px !important;
-        height: 55px !important;
+        min-height: 60px !important;
+        height: 60px !important;
         min-width: 90%;
         width: 90%; } }
     @media screen and (max-height: 667px) {
       .input-direction input {
-        min-height: 50px !important;
-        height: 50px !important;
+        min-height: 55px !important;
+        height: 55px !important;
         min-width: 90%;
         width: 90%; } }
     @media screen and (max-height: 568px) {
       .input-direction input {
-        min-height: 40px !important;
-        height: 40px !important;
+        min-height: 50px !important;
+        height: 50px !important;
         min-width: 90%;
         width: 90%; } }
     @media screen and (max-height: 480px) {
@@ -14131,6 +15120,33 @@ ion-slide {
         height: 40px !important;
         min-width: 90%;
         width: 90%; } }
+    @media screen and (max-height: 2560px) {
+      .input-direction input {
+        font-size: 15px !important; } }
+    @media screen and (max-height: 1920px) {
+      .input-direction input {
+        font-size: 15px !important; } }
+    @media screen and (max-height: 1280px) {
+      .input-direction input {
+        font-size: 15px !important; } }
+    @media screen and (max-height: 960px) {
+      .input-direction input {
+        font-size: 15px !important; } }
+    @media screen and (max-height: 736px) {
+      .input-direction input {
+        font-size: 15px !important; } }
+    @media screen and (max-height: 667px) {
+      .input-direction input {
+        font-size: 13px !important; } }
+    @media screen and (max-height: 568px) {
+      .input-direction input {
+        font-size: 12px !important; } }
+    @media screen and (max-height: 480px) {
+      .input-direction input {
+        font-size: 10px !important; } }
+    @media screen and (max-height: 320px) {
+      .input-direction input {
+        font-size: 10px !important; } }
 
 .direction-marker input:focus .icon-marker-gray {
   background-image: url("../img/inputs/pin-direccion1.png");
@@ -15422,11 +16438,11 @@ ion-slide {
   -webkit-align-items: center;
   -moz-align-items: center;
   align-items: center;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  -webkit-justify-content: center;
-  -moz-justify-content: center;
-  justify-content: center;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  -webkit-justify-content: flex-start;
+  -moz-justify-content: flex-start;
+  justify-content: flex-start;
   position: absolute;
   bottom: 0;
   min-height: auto;
@@ -15434,41 +16450,41 @@ ion-slide {
   min-width: 100%;
   width: 100%;
   padding: 0 !important;
-  width: 100%;
-  z-index: 0; }
+  z-index: 0;
+  padding-bottom: 65px !important; }
   @media screen and (max-height: 2560px) {
     .container-senttype {
-      min-height: auto;
+      min-height: 165px;
       height: auto;
       min-width: 100%;
       width: 100%; } }
   @media screen and (max-height: 1920px) {
     .container-senttype {
-      min-height: auto;
+      min-height: 165px;
       height: auto;
       min-width: 100%;
       width: 100%; } }
   @media screen and (max-height: 1280px) {
     .container-senttype {
-      min-height: auto;
+      min-height: 165px;
       height: auto;
       min-width: 100%;
       width: 100%; } }
   @media screen and (max-height: 960px) {
     .container-senttype {
-      min-height: auto;
+      min-height: 165px;
       height: auto;
       min-width: 100%;
       width: 100%; } }
   @media screen and (max-height: 736px) {
     .container-senttype {
-      min-height: auto;
+      min-height: 170px;
       height: auto;
       min-width: 100%;
       width: 100%; } }
   @media screen and (max-height: 667px) {
     .container-senttype {
-      min-height: auto;
+      min-height: 165px;
       height: auto;
       min-width: 100%;
       width: 100%; } }
@@ -15480,13 +16496,13 @@ ion-slide {
       width: 100%; } }
   @media screen and (max-height: 480px) {
     .container-senttype {
-      min-height: auto;
+      min-height: 150px;
       height: auto;
       min-width: 100%;
       width: 100%; } }
   @media screen and (max-height: 320px) {
     .container-senttype {
-      min-height: auto;
+      min-height: 150px;
       height: auto;
       min-width: 100%;
       width: 100%; } }
@@ -15515,63 +16531,64 @@ ion-slide {
   -moz-justify-content: center;
   justify-content: center;
   background-color: #294d72;
-  min-height: auto;
+  min-height: 50px;
   height: auto;
   min-width: 100%;
   width: 100%;
   top: 0;
-  left: 0; }
+  left: 0;
+  position: relative; }
   @media screen and (max-height: 2560px) {
     .send-type-todo {
-      min-height: auto;
+      min-height: 55px;
       height: auto;
       min-width: 100%;
       width: 100%; } }
   @media screen and (max-height: 1920px) {
     .send-type-todo {
-      min-height: auto;
+      min-height: 55px;
       height: auto;
       min-width: 100%;
       width: 100%; } }
   @media screen and (max-height: 1280px) {
     .send-type-todo {
-      min-height: auto;
+      min-height: 55px;
       height: auto;
       min-width: 100%;
       width: 100%; } }
   @media screen and (max-height: 960px) {
     .send-type-todo {
-      min-height: auto;
+      min-height: 55px;
       height: auto;
       min-width: 100%;
       width: 100%; } }
   @media screen and (max-height: 736px) {
     .send-type-todo {
-      min-height: auto;
+      min-height: 55px;
       height: auto;
       min-width: 100%;
       width: 100%; } }
   @media screen and (max-height: 667px) {
     .send-type-todo {
-      min-height: auto;
+      min-height: 55px;
       height: auto;
       min-width: 100%;
       width: 100%; } }
   @media screen and (max-height: 568px) {
     .send-type-todo {
-      min-height: auto;
+      min-height: 55px;
       height: auto;
       min-width: 100%;
       width: 100%; } }
   @media screen and (max-height: 480px) {
     .send-type-todo {
-      min-height: auto;
+      min-height: 50px;
       height: auto;
       min-width: 100%;
       width: 100%; } }
   @media screen and (max-height: 320px) {
     .send-type-todo {
-      min-height: auto;
+      min-height: 50px;
       height: auto;
       min-width: 100%;
       width: 100%; } }
@@ -15686,7 +16703,7 @@ ion-slide {
       min-width: 100%;
       width: 100%;
       color: white;
-      font-size: 2.5vh;
+      font-size: 12px !important;
       font-weight: bold; }
       @media screen and (max-height: 2560px) {
         .send-type-todo div span {
@@ -15742,6 +16759,33 @@ ion-slide {
           height: 15%;
           min-width: 100%;
           width: 100%; } }
+      @media screen and (max-height: 2560px) {
+        .send-type-todo div span {
+          font-size: 18px !important; } }
+      @media screen and (max-height: 1920px) {
+        .send-type-todo div span {
+          font-size: 18px !important; } }
+      @media screen and (max-height: 1280px) {
+        .send-type-todo div span {
+          font-size: 18px !important; } }
+      @media screen and (max-height: 960px) {
+        .send-type-todo div span {
+          font-size: 18px !important; } }
+      @media screen and (max-height: 736px) {
+        .send-type-todo div span {
+          font-size: 18px !important; } }
+      @media screen and (max-height: 667px) {
+        .send-type-todo div span {
+          font-size: 16px !important; } }
+      @media screen and (max-height: 568px) {
+        .send-type-todo div span {
+          font-size: 14px !important; } }
+      @media screen and (max-height: 480px) {
+        .send-type-todo div span {
+          font-size: 12px !important; } }
+      @media screen and (max-height: 320px) {
+        .send-type-todo div span {
+          font-size: 12px !important; } }
 
 .send-type-options {
   display: -webkit-box;
@@ -15766,13 +16810,66 @@ ion-slide {
   -webkit-justify-content: center;
   -moz-justify-content: center;
   justify-content: center;
-  height: 85%;
-  min-height: 85%;
-  width: 100%;
+  min-height: 100px;
+  height: auto;
   min-width: 100%;
+  width: 100%;
   color: black !important;
-  margin-top: 4%;
-  margin-bottom: 20%; }
+  position: relative; }
+  @media screen and (max-height: 2560px) {
+    .send-type-options {
+      min-height: 115px;
+      height: auto;
+      min-width: 100%;
+      width: 100%; } }
+  @media screen and (max-height: 1920px) {
+    .send-type-options {
+      min-height: 115px;
+      height: auto;
+      min-width: 100%;
+      width: 100%; } }
+  @media screen and (max-height: 1280px) {
+    .send-type-options {
+      min-height: 115px;
+      height: auto;
+      min-width: 100%;
+      width: 100%; } }
+  @media screen and (max-height: 960px) {
+    .send-type-options {
+      min-height: 115px;
+      height: auto;
+      min-width: 100%;
+      width: 100%; } }
+  @media screen and (max-height: 736px) {
+    .send-type-options {
+      min-height: 115px;
+      height: auto;
+      min-width: 100%;
+      width: 100%; } }
+  @media screen and (max-height: 667px) {
+    .send-type-options {
+      min-height: 115px;
+      height: auto;
+      min-width: 100%;
+      width: 100%; } }
+  @media screen and (max-height: 568px) {
+    .send-type-options {
+      min-height: 100px;
+      height: auto;
+      min-width: 100%;
+      width: 100%; } }
+  @media screen and (max-height: 480px) {
+    .send-type-options {
+      min-height: 100px;
+      height: auto;
+      min-width: 100%;
+      width: 100%; } }
+  @media screen and (max-height: 320px) {
+    .send-type-options {
+      min-height: 100px;
+      height: auto;
+      min-width: 100%;
+      width: 100%; } }
   .send-type-options div {
     display: -webkit-box;
     display: -webkit-flex;
@@ -15796,33 +16893,33 @@ ion-slide {
     -webkit-justify-content: flex-start;
     -moz-justify-content: flex-start;
     justify-content: flex-start;
-    min-height: 50px;
+    min-height: 60px;
     height: auto;
     min-width: 80%;
     width: 80%;
-    font-size: 2.5vh;
-    color: #065599 !important; }
+    color: #065599 !important;
+    font-size: 14px !important; }
     @media screen and (max-height: 2560px) {
       .send-type-options div {
-        min-height: 60px;
+        min-height: 50px;
         height: auto;
         min-width: 80%;
         width: 80%; } }
     @media screen and (max-height: 1920px) {
       .send-type-options div {
-        min-height: 60px;
+        min-height: 50px;
         height: auto;
         min-width: 80%;
         width: 80%; } }
     @media screen and (max-height: 1280px) {
       .send-type-options div {
-        min-height: 60px;
+        min-height: 50px;
         height: auto;
         min-width: 80%;
         width: 80%; } }
     @media screen and (max-height: 960px) {
       .send-type-options div {
-        min-height: 60px;
+        min-height: 50px;
         height: auto;
         min-width: 80%;
         width: 80%; } }
@@ -15834,96 +16931,121 @@ ion-slide {
         width: 80%; } }
     @media screen and (max-height: 667px) {
       .send-type-options div {
-        min-height: 55px;
+        min-height: 50px;
         height: auto;
         min-width: 80%;
         width: 80%; } }
     @media screen and (max-height: 568px) {
       .send-type-options div {
-        min-height: 50px;
+        min-height: 40px;
         height: auto;
         min-width: 80%;
         width: 80%; } }
     @media screen and (max-height: 480px) {
       .send-type-options div {
-        min-height: 50px;
+        min-height: 40px;
         height: auto;
         min-width: 80%;
         width: 80%; } }
     @media screen and (max-height: 320px) {
       .send-type-options div {
-        min-height: 50px;
+        min-height: 40px;
         height: auto;
         min-width: 80%;
         width: 80%; } }
-    .send-type-options div:checked {
-      color: #065599 !important; }
-      .send-type-options div:checked input {
-        min-height: auto;
-        height: auto;
-        min-width: 10%;
-        width: 10%; }
-        @media screen and (max-height: 2560px) {
-          .send-type-options div:checked input {
-            min-height: 60px;
-            height: auto;
-            min-width: 90%;
-            width: 90%; } }
-        @media screen and (max-height: 1920px) {
-          .send-type-options div:checked input {
-            min-height: 60px;
-            height: auto;
-            min-width: 90%;
-            width: 90%; } }
-        @media screen and (max-height: 1280px) {
-          .send-type-options div:checked input {
-            min-height: 60px;
-            height: auto;
-            min-width: 90%;
-            width: 90%; } }
-        @media screen and (max-height: 960px) {
-          .send-type-options div:checked input {
-            min-height: 60px;
-            height: auto;
-            min-width: 90%;
-            width: 90%; } }
-        @media screen and (max-height: 736px) {
-          .send-type-options div:checked input {
-            min-height: 60px;
-            height: auto;
-            min-width: 90%;
-            width: 90%; } }
-        @media screen and (max-height: 667px) {
-          .send-type-options div:checked input {
-            min-height: 55px;
-            height: auto;
-            min-width: 90%;
-            width: 90%; } }
-        @media screen and (max-height: 568px) {
-          .send-type-options div:checked input {
-            min-height: 50px;
-            height: auto;
-            min-width: 20% !important;
-            width: 20% !important; } }
-        @media screen and (max-height: 480px) {
-          .send-type-options div:checked input {
-            min-height: 50px;
-            height: auto;
-            min-width: 20% !important;
-            width: 20% !important; } }
-        @media screen and (max-height: 320px) {
-          .send-type-options div:checked input {
-            min-height: 50px;
-            height: auto;
-            min-width: 20% !important;
-            width: 20% !important; } }
+    @media screen and (max-height: 2560px) {
+      .send-type-options div {
+        font-size: 20px !important; } }
+    @media screen and (max-height: 1920px) {
+      .send-type-options div {
+        font-size: 20px !important; } }
+    @media screen and (max-height: 1280px) {
+      .send-type-options div {
+        font-size: 20px !important; } }
+    @media screen and (max-height: 960px) {
+      .send-type-options div {
+        font-size: 20px !important; } }
+    @media screen and (max-height: 736px) {
+      .send-type-options div {
+        font-size: 20px !important; } }
+    @media screen and (max-height: 667px) {
+      .send-type-options div {
+        font-size: 18px !important; } }
+    @media screen and (max-height: 568px) {
+      .send-type-options div {
+        font-size: 16px !important; } }
+    @media screen and (max-height: 480px) {
+      .send-type-options div {
+        font-size: 14px !important; } }
+    @media screen and (max-height: 320px) {
+      .send-type-options div {
+        font-size: 14px !important; } }
+    .send-type-options div:checked input {
+      min-height: auto;
+      height: auto;
+      min-width: 10%;
+      width: 10%; }
+      @media screen and (max-height: 2560px) {
+        .send-type-options div:checked input {
+          min-height: 60px;
+          height: auto;
+          min-width: 90%;
+          width: 90%; } }
+      @media screen and (max-height: 1920px) {
+        .send-type-options div:checked input {
+          min-height: 60px;
+          height: auto;
+          min-width: 90%;
+          width: 90%; } }
+      @media screen and (max-height: 1280px) {
+        .send-type-options div:checked input {
+          min-height: 60px;
+          height: auto;
+          min-width: 90%;
+          width: 90%; } }
+      @media screen and (max-height: 960px) {
+        .send-type-options div:checked input {
+          min-height: 60px;
+          height: auto;
+          min-width: 90%;
+          width: 90%; } }
+      @media screen and (max-height: 736px) {
+        .send-type-options div:checked input {
+          min-height: 60px;
+          height: auto;
+          min-width: 90%;
+          width: 90%; } }
+      @media screen and (max-height: 667px) {
+        .send-type-options div:checked input {
+          min-height: 60px;
+          height: auto;
+          min-width: 90%;
+          width: 90%; } }
+      @media screen and (max-height: 568px) {
+        .send-type-options div:checked input {
+          min-height: 55px;
+          height: auto;
+          min-width: 90%;
+          width: 90%; } }
+      @media screen and (max-height: 480px) {
+        .send-type-options div:checked input {
+          min-height: 70px;
+          height: 70px;
+          min-width: 50% !important;
+          width: 50% !important; } }
+      @media screen and (max-height: 320px) {
+        .send-type-options div:checked input {
+          min-height: 70px;
+          height: 70px;
+          min-width: 50% !important;
+          width: 50% !important; } }
 
 .send-type-options-radio {
   min-height: auto;
   height: auto;
   min-width: 90%;
   width: 90%;
-  font-size: 2vh;
+  font-size: 20px !important;
   color: #065599 !important; }
   @media screen and (max-height: 2560px) {
     .send-type-options-radio {
@@ -15979,6 +17101,33 @@ ion-slide {
       height: auto;
       min-width: 90%;
       width: 90%; } }
+  @media screen and (max-height: 2560px) {
+    .send-type-options-radio {
+      font-size: 28px !important; } }
+  @media screen and (max-height: 1920px) {
+    .send-type-options-radio {
+      font-size: 28px !important; } }
+  @media screen and (max-height: 1280px) {
+    .send-type-options-radio {
+      font-size: 28px !important; } }
+  @media screen and (max-height: 960px) {
+    .send-type-options-radio {
+      font-size: 28px !important; } }
+  @media screen and (max-height: 736px) {
+    .send-type-options-radio {
+      font-size: 28px !important; } }
+  @media screen and (max-height: 667px) {
+    .send-type-options-radio {
+      font-size: 26px !important; } }
+  @media screen and (max-height: 568px) {
+    .send-type-options-radio {
+      font-size: 22px !important; } }
+  @media screen and (max-height: 480px) {
+    .send-type-options-radio {
+      font-size: 20px !important; } }
+  @media screen and (max-height: 320px) {
+    .send-type-options-radio {
+      font-size: 20px !important; } }
   .send-type-options-radio:checked {
     color: #065599 !important; }
 
@@ -16027,8 +17176,8 @@ ion-slide {
       width: 90%; } }
   @media screen and (max-height: 568px) {
     .item-content {
-      min-height: 40px;
-      height: 40px;
+      min-height: 50px;
+      height: 50px;
       min-width: 90%;
       width: 90%; } }
   @media screen and (max-height: 480px) {
@@ -16045,6 +17194,66 @@ ion-slide {
       width: 90%; } }
   .item-content span {
     color: #065599 !important; }
+
+.space-errands {
+  min-height: 40px;
+  height: 40px;
+  min-width: 100%;
+  width: 100%; }
+  @media screen and (max-height: 2560px) {
+    .space-errands {
+      min-height: 70px;
+      height: 70px;
+      min-width: 100%;
+      width: 100%; } }
+  @media screen and (max-height: 1920px) {
+    .space-errands {
+      min-height: 70px;
+      height: 70px;
+      min-width: 100%;
+      width: 100%; } }
+  @media screen and (max-height: 1280px) {
+    .space-errands {
+      min-height: 70px;
+      height: 70px;
+      min-width: 100%;
+      width: 100%; } }
+  @media screen and (max-height: 960px) {
+    .space-errands {
+      min-height: 70px;
+      height: 70px;
+      min-width: 100%;
+      width: 100%; } }
+  @media screen and (max-height: 736px) {
+    .space-errands {
+      min-height: 70px;
+      height: 70px;
+      min-width: 100%;
+      width: 100%; } }
+  @media screen and (max-height: 667px) {
+    .space-errands {
+      min-height: 70px;
+      height: 70px;
+      min-width: 100%;
+      width: 100%; } }
+  @media screen and (max-height: 568px) {
+    .space-errands {
+      min-height: 60px;
+      height: 60px;
+      min-width: 100%;
+      width: 100%; } }
+  @media screen and (max-height: 480px) {
+    .space-errands {
+      min-height: 55px;
+      height: 55px;
+      min-width: 100%;
+      width: 100%; } }
+  @media screen and (max-height: 320px) {
+    .space-errands {
+      min-height: 55px;
+      height: 55px;
+      min-width: 100%;
+      width: 100%; } }
 
 .container-senttype-errands-title {
   background-color: white;
@@ -16078,7 +17287,7 @@ ion-slide {
   padding: 0 !important;
   width: 100%;
   z-index: 0;
-  font-size: 3vh; }
+  font-size: 18px !important; }
   @media screen and (max-height: 2560px) {
     .container-senttype-errands-title {
       min-height: auto;
@@ -16133,6 +17342,33 @@ ion-slide {
       height: auto;
       min-width: 100%;
       width: 100%; } }
+  @media screen and (max-height: 2560px) {
+    .container-senttype-errands-title {
+      font-size: 24px !important; } }
+  @media screen and (max-height: 1920px) {
+    .container-senttype-errands-title {
+      font-size: 24px !important; } }
+  @media screen and (max-height: 1280px) {
+    .container-senttype-errands-title {
+      font-size: 24px !important; } }
+  @media screen and (max-height: 960px) {
+    .container-senttype-errands-title {
+      font-size: 24px !important; } }
+  @media screen and (max-height: 736px) {
+    .container-senttype-errands-title {
+      font-size: 24px !important; } }
+  @media screen and (max-height: 667px) {
+    .container-senttype-errands-title {
+      font-size: 24px !important; } }
+  @media screen and (max-height: 568px) {
+    .container-senttype-errands-title {
+      font-size: 22px !important; } }
+  @media screen and (max-height: 480px) {
+    .container-senttype-errands-title {
+      font-size: 18px !important; } }
+  @media screen and (max-height: 320px) {
+    .container-senttype-errands-title {
+      font-size: 18px !important; } }
 
 .container-senttype-errands {
   background-color: white;
@@ -16169,7 +17405,7 @@ ion-slide {
   margin-bottom: 20%; }
   .container-senttype-errands .input-sizes {
     color: #7f8183 !important;
-    font-size: 3vh !important;
+    font-size: 18px !important;
     min-height: 100% !important;
     height: 100% !important;
     min-width: 90%;
@@ -16181,6 +17417,33 @@ ion-slide {
     background-repeat: no-repeat;
     background-position: center;
     text-align: start !important; }
+    @media screen and (max-height: 2560px) {
+      .container-senttype-errands .input-sizes {
+        font-size: 24px !important; } }
+    @media screen and (max-height: 1920px) {
+      .container-senttype-errands .input-sizes {
+        font-size: 24px !important; } }
+    @media screen and (max-height: 1280px) {
+      .container-senttype-errands .input-sizes {
+        font-size: 24px !important; } }
+    @media screen and (max-height: 960px) {
+      .container-senttype-errands .input-sizes {
+        font-size: 24px !important; } }
+    @media screen and (max-height: 736px) {
+      .container-senttype-errands .input-sizes {
+        font-size: 24px !important; } }
+    @media screen and (max-height: 667px) {
+      .container-senttype-errands .input-sizes {
+        font-size: 24px !important; } }
+    @media screen and (max-height: 568px) {
+      .container-senttype-errands .input-sizes {
+        font-size: 22px !important; } }
+    @media screen and (max-height: 480px) {
+      .container-senttype-errands .input-sizes {
+        font-size: 18px !important; } }
+    @media screen and (max-height: 320px) {
+      .container-senttype-errands .input-sizes {
+        font-size: 18px !important; } }
     @media screen and (max-height: 2560px) {
       .container-senttype-errands .input-sizes {
         border: none !important;
@@ -16364,7 +17627,34 @@ ion-slide {
   padding: 0 !important;
   width: 100%;
   z-index: 0;
-  font-size: 3.5vh !important; }
+  font-size: 18px !important; }
+  @media screen and (max-height: 2560px) {
+    .container-senttype-errands-check {
+      font-size: 24px !important; } }
+  @media screen and (max-height: 1920px) {
+    .container-senttype-errands-check {
+      font-size: 24px !important; } }
+  @media screen and (max-height: 1280px) {
+    .container-senttype-errands-check {
+      font-size: 24px !important; } }
+  @media screen and (max-height: 960px) {
+    .container-senttype-errands-check {
+      font-size: 24px !important; } }
+  @media screen and (max-height: 736px) {
+    .container-senttype-errands-check {
+      font-size: 24px !important; } }
+  @media screen and (max-height: 667px) {
+    .container-senttype-errands-check {
+      font-size: 24px !important; } }
+  @media screen and (max-height: 568px) {
+    .container-senttype-errands-check {
+      font-size: 22px !important; } }
+  @media screen and (max-height: 480px) {
+    .container-senttype-errands-check {
+      font-size: 18px !important; } }
+  @media screen and (max-height: 320px) {
+    .container-senttype-errands-check {
+      font-size: 18px !important; } }
   .container-senttype-errands-check p {
     display: -webkit-box;
     display: -webkit-flex;
@@ -16391,7 +17681,34 @@ ion-slide {
     margin-bottom: 6%;
     text-align: center;
     color: #294d72;
-    font-size: 3vh !important; }
+    font-size: 18px !important; }
+    @media screen and (max-height: 2560px) {
+      .container-senttype-errands-check p {
+        font-size: 24px !important; } }
+    @media screen and (max-height: 1920px) {
+      .container-senttype-errands-check p {
+        font-size: 24px !important; } }
+    @media screen and (max-height: 1280px) {
+      .container-senttype-errands-check p {
+        font-size: 24px !important; } }
+    @media screen and (max-height: 960px) {
+      .container-senttype-errands-check p {
+        font-size: 24px !important; } }
+    @media screen and (max-height: 736px) {
+      .container-senttype-errands-check p {
+        font-size: 24px !important; } }
+    @media screen and (max-height: 667px) {
+      .container-senttype-errands-check p {
+        font-size: 24px !important; } }
+    @media screen and (max-height: 568px) {
+      .container-senttype-errands-check p {
+        font-size: 22px !important; } }
+    @media screen and (max-height: 480px) {
+      .container-senttype-errands-check p {
+        font-size: 18px !important; } }
+    @media screen and (max-height: 320px) {
+      .container-senttype-errands-check p {
+        font-size: 18px !important; } }
 
 .bar-sendtype {
   display: -webkit-box;
@@ -16421,10 +17738,41 @@ ion-slide {
   padding: 0;
   padding-bottom: 5px !important; }
   .bar-sendtype h3 {
+    min-height: 40px !important;
+    height: 40px !important;
+    min-width: 95%;
+    width: 95%;
     margin: 0;
     padding: 0;
-    padding-left: 15%;
-    text-align: left !important; }
+    min-width: 100%;
+    font-size: 20px !important; }
+    @media screen and (max-height: 2560px) {
+      .bar-sendtype h3 {
+        font-size: 24px !important; } }
+    @media screen and (max-height: 1920px) {
+      .bar-sendtype h3 {
+        font-size: 24px !important; } }
+    @media screen and (max-height: 1280px) {
+      .bar-sendtype h3 {
+        font-size: 24px !important; } }
+    @media screen and (max-height: 960px) {
+      .bar-sendtype h3 {
+        font-size: 24px !important; } }
+    @media screen and (max-height: 736px) {
+      .bar-sendtype h3 {
+        font-size: 24px !important; } }
+    @media screen and (max-height: 667px) {
+      .bar-sendtype h3 {
+        font-size: 22px !important; } }
+    @media screen and (max-height: 568px) {
+      .bar-sendtype h3 {
+        font-size: 20px !important; } }
+    @media screen and (max-height: 480px) {
+      .bar-sendtype h3 {
+        font-size: 20px !important; } }
+    @media screen and (max-height: 320px) {
+      .bar-sendtype h3 {
+        font-size: 20px !important; } }
 
 .inputs-checkbox-axpress {
   display: -webkit-box;
@@ -16449,66 +17797,65 @@ ion-slide {
   -webkit-justify-content: center;
   -moz-justify-content: center;
   justify-content: center;
-  min-height: 15%;
-  height: 15%;
-  min-width: 12%;
-  width: 12%;
-  margin-right: 5% !important;
-  font-size: 2.5vh !important; }
+  min-height: 20%;
+  height: 20%;
+  min-width: 17%;
+  width: 17%;
+  margin-right: 5% !important; }
   @media screen and (max-height: 2560px) {
     .inputs-checkbox-axpress {
-      min-height: 17%;
-      height: 17%;
-      min-width: 14%;
-      width: 14%; } }
+      min-height: 20%;
+      height: 20%;
+      min-width: 15%;
+      width: 15%; } }
   @media screen and (max-height: 1920px) {
     .inputs-checkbox-axpress {
-      min-height: 17%;
-      height: 17%;
-      min-width: 14%;
-      width: 14%; } }
+      min-height: 20%;
+      height: 20%;
+      min-width: 15%;
+      width: 15%; } }
   @media screen and (max-height: 1280px) {
     .inputs-checkbox-axpress {
-      min-height: 17%;
-      height: 17%;
-      min-width: 14%;
-      width: 14%; } }
+      min-height: 20%;
+      height: 20%;
+      min-width: 15%;
+      width: 15%; } }
   @media screen and (max-height: 960px) {
     .inputs-checkbox-axpress {
-      min-height: 17%;
-      height: 17%;
-      min-width: 14%;
-      width: 14%; } }
+      min-height: 20%;
+      height: 20%;
+      min-width: 15%;
+      width: 15%; } }
   @media screen and (max-height: 736px) {
     .inputs-checkbox-axpress {
-      min-height: 17%;
-      height: 17%;
-      min-width: 14%;
-      width: 14%; } }
+      min-height: 20%;
+      height: 20%;
+      min-width: 15%;
+      width: 15%; } }
   @media screen and (max-height: 667px) {
     .inputs-checkbox-axpress {
-      min-height: 16%;
-      height: 16%;
-      min-width: 13%;
-      width: 13%; } }
+      min-height: 20%;
+      height: 20%;
+      min-width: 15%;
+      width: 15%; } }
   @media screen and (max-height: 568px) {
     .inputs-checkbox-axpress {
-      min-height: 15%;
-      height: 15%;
-      min-width: 12%;
-      width: 12%; } }
+      min-height: 20%;
+      height: 20%;
+      min-width: 15%;
+      width: 15%; } }
   @media screen and (max-height: 480px) {
     .inputs-checkbox-axpress {
-      min-height: 15%;
-      height: 15%;
-      min-width: 12%;
-      width: 12%; } }
+      min-height: 20%;
+      height: 20%;
+      min-width: 14%;
+      width: 14%; } }
   @media screen and (max-height: 320px) {
     .inputs-checkbox-axpress {
-      min-height: 15%;
-      height: 15%;
-      min-width: 12%;
-      width: 12%; } }
+      min-height: 20%;
+      height: 20%;
+      min-width: 14%;
+      width: 14%; } }
   .inputs-checkbox-axpress::before {
     border: none !important;
     background-color: transparent;
@@ -16723,12 +18070,39 @@ ion-slide {
   -moz-justify-content: center;
   justify-content: center;
   color: #294d72;
-  font-size: 2.5vh;
+  font-size: 14px !important;
   font-weight: bold;
   height: 15%;
   width: 100%;
   min-height: 15%;
   min-width: 100%; }
+  @media screen and (max-height: 2560px) {
+    .caracteristics-title {
+      font-size: 18px !important; } }
+  @media screen and (max-height: 1920px) {
+    .caracteristics-title {
+      font-size: 18px !important; } }
+  @media screen and (max-height: 1280px) {
+    .caracteristics-title {
+      font-size: 18px !important; } }
+  @media screen and (max-height: 960px) {
+    .caracteristics-title {
+      font-size: 18px !important; } }
+  @media screen and (max-height: 736px) {
+    .caracteristics-title {
+      font-size: 18px !important; } }
+  @media screen and (max-height: 667px) {
+    .caracteristics-title {
+      font-size: 16px !important; } }
+  @media screen and (max-height: 568px) {
+    .caracteristics-title {
+      font-size: 15px !important; } }
+  @media screen and (max-height: 480px) {
+    .caracteristics-title {
+      font-size: 14px !important; } }
+  @media screen and (max-height: 320px) {
+    .caracteristics-title {
+      font-size: 14px !important; } }
 
 .caracteristics-documents {
   align-items: center;
@@ -16740,10 +18114,37 @@ ion-slide {
   width: 100%; }
 
 .caracteristics-documents-title {
-  font-size: 2.5vh;
+  font-size: 12px !important;
   color: #757575;
   font-weight: bold;
   margin-bottom: 3%; }
+  @media screen and (max-height: 2560px) {
+    .caracteristics-documents-title {
+      font-size: 12px !important; } }
+  @media screen and (max-height: 1920px) {
+    .caracteristics-documents-title {
+      font-size: 12px !important; } }
+  @media screen and (max-height: 1280px) {
+    .caracteristics-documents-title {
+      font-size: 12px !important; } }
+  @media screen and (max-height: 960px) {
+    .caracteristics-documents-title {
+      font-size: 12px !important; } }
+  @media screen and (max-height: 736px) {
+    .caracteristics-documents-title {
+      font-size: 12px !important; } }
+  @media screen and (max-height: 667px) {
+    .caracteristics-documents-title {
+      font-size: 12px !important; } }
+  @media screen and (max-height: 568px) {
+    .caracteristics-documents-title {
+      font-size: 12px !important; } }
+  @media screen and (max-height: 480px) {
+    .caracteristics-documents-title {
+      font-size: 12px !important; } }
+  @media screen and (max-height: 320px) {
+    .caracteristics-documents-title {
+      font-size: 12px !important; } }
 
 .input-caracteristics {
   align-items: center;
@@ -19081,7 +20482,7 @@ ion-slide {
   min-width: 100%;
   width: 100%;
   color: #065599;
-  margin-top: 17%; }
+  margin-top: 20% !important; }
 
 .sentresume-content-top {
   display: -webkit-box;
@@ -19578,17 +20979,256 @@ ion-slide {
   -moz-justify-content: center;
   justify-content: center;
   margin: 0;
-  width: 75%; }
+  width: 75%;
+  font-size: 12px !important; }
+  @media screen and (max-height: 2560px) {
+    .data-origin {
+      font-size: 16px !important; } }
+  @media screen and (max-height: 1920px) {
+    .data-origin {
+      font-size: 16px !important; } }
+  @media screen and (max-height: 1280px) {
+    .data-origin {
+      font-size: 16px !important; } }
+  @media screen and (max-height: 960px) {
+    .data-origin {
+      font-size: 16px !important; } }
+  @media screen and (max-height: 736px) {
+    .data-origin {
+      font-size: 16px !important; } }
+  @media screen and (max-height: 667px) {
+    .data-origin {
+      font-size: 14px !important; } }
+  @media screen and (max-height: 568px) {
+    .data-origin {
+      font-size: 13px !important; } }
+  @media screen and (max-height: 480px) {
+    .data-origin {
+      font-size: 12px !important; } }
+  @media screen and (max-height: 320px) {
+    .data-origin {
+      font-size: 12px !important; } }
   .data-origin b {
-    font-size: 2vh; }
-  .data-origin p {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-direction: normal;
+    -webkit-box-orient: vertical;
+    -webkit-flex-direction: column;
+    -moz-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    -webkit-align-items: flex-start;
+    -moz-align-items: flex-start;
     align-items: flex-start;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    -moz-justify-content: center;
+    justify-content: center;
+    font-size: 12px !important;
+    min-height: 20px;
+    height: 20px;
+    min-width: 100%;
+    width: 100%; }
+    @media screen and (max-height: 2560px) {
+      .data-origin b {
+        font-size: 16px !important; } }
+    @media screen and (max-height: 1920px) {
+      .data-origin b {
+        font-size: 16px !important; } }
+    @media screen and (max-height: 1280px) {
+      .data-origin b {
+        font-size: 16px !important; } }
+    @media screen and (max-height: 960px) {
+      .data-origin b {
+        font-size: 16px !important; } }
+    @media screen and (max-height: 736px) {
+      .data-origin b {
+        font-size: 16px !important; } }
+    @media screen and (max-height: 667px) {
+      .data-origin b {
+        font-size: 14px !important; } }
+    @media screen and (max-height: 568px) {
+      .data-origin b {
+        font-size: 13px !important; } }
+    @media screen and (max-height: 480px) {
+      .data-origin b {
+        font-size: 12px !important; } }
+    @media screen and (max-height: 320px) {
+      .data-origin b {
+        font-size: 12px !important; } }
+    @media screen and (max-height: 2560px) {
+      .data-origin b {
+        min-height: 30px;
+        height: 30px;
+        min-width: 100%;
+        width: 100%; } }
+    @media screen and (max-height: 1920px) {
+      .data-origin b {
+        min-height: 30px;
+        height: 30px;
+        min-width: 100%;
+        width: 100%; } }
+    @media screen and (max-height: 1280px) {
+      .data-origin b {
+        min-height: 30px;
+        height: 30px;
+        min-width: 100%;
+        width: 100%; } }
+    @media screen and (max-height: 960px) {
+      .data-origin b {
+        min-height: 30px;
+        height: 30px;
+        min-width: 100%;
+        width: 100%; } }
+    @media screen and (max-height: 736px) {
+      .data-origin b {
+        min-height: 35px;
+        height: 35px;
+        min-width: 100%;
+        width: 100%; } }
+    @media screen and (max-height: 667px) {
+      .data-origin b {
+        min-height: 30px;
+        height: 30px;
+        min-width: 100%;
+        width: 100%; } }
+    @media screen and (max-height: 568px) {
+      .data-origin b {
+        min-height: 20px;
+        height: 20px;
+        min-width: 100%;
+        width: 100%; } }
+    @media screen and (max-height: 480px) {
+      .data-origin b {
+        min-height: 20px;
+        height: 20px;
+        min-width: 100%;
+        width: 100%; } }
+    @media screen and (max-height: 320px) {
+      .data-origin b {
+        min-height: 20px;
+        height: 20px;
+        min-width: 100%;
+        width: 100%; } }
+  .data-origin p {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-direction: normal;
+    -webkit-box-orient: vertical;
+    -webkit-flex-direction: column;
+    -moz-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    -webkit-align-items: flex-start;
+    -moz-align-items: flex-start;
+    align-items: flex-start;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    -moz-justify-content: center;
+    justify-content: center;
     margin-top: 0;
     margin-bottom: 0;
-    font-size: 2vh;
+    font-size: 12px !important;
+    min-height: 20px;
+    height: 20px;
+    min-width: 100%;
     width: 100%;
-    height: 100%;
     text-align: left; }
+    @media screen and (max-height: 2560px) {
+      .data-origin p {
+        font-size: 16px !important; } }
+    @media screen and (max-height: 1920px) {
+      .data-origin p {
+        font-size: 16px !important; } }
+    @media screen and (max-height: 1280px) {
+      .data-origin p {
+        font-size: 16px !important; } }
+    @media screen and (max-height: 960px) {
+      .data-origin p {
+        font-size: 16px !important; } }
+    @media screen and (max-height: 736px) {
+      .data-origin p {
+        font-size: 16px !important; } }
+    @media screen and (max-height: 667px) {
+      .data-origin p {
+        font-size: 14px !important; } }
+    @media screen and (max-height: 568px) {
+      .data-origin p {
+        font-size: 13px !important; } }
+    @media screen and (max-height: 480px) {
+      .data-origin p {
+        font-size: 12px !important; } }
+    @media screen and (max-height: 320px) {
+      .data-origin p {
+        font-size: 12px !important; } }
+    @media screen and (max-height: 2560px) {
+      .data-origin p {
+        min-height: 30px;
+        height: 30px;
+        min-width: 100%;
+        width: 100%; } }
+    @media screen and (max-height: 1920px) {
+      .data-origin p {
+        min-height: 30px;
+        height: 30px;
+        min-width: 100%;
+        width: 100%; } }
+    @media screen and (max-height: 1280px) {
+      .data-origin p {
+        min-height: 30px;
+        height: 30px;
+        min-width: 100%;
+        width: 100%; } }
+    @media screen and (max-height: 960px) {
+      .data-origin p {
+        min-height: 30px;
+        height: 30px;
+        min-width: 100%;
+        width: 100%; } }
+    @media screen and (max-height: 736px) {
+      .data-origin p {
+        min-height: 35px;
+        height: 35px;
+        min-width: 100%;
+        width: 100%; } }
+    @media screen and (max-height: 667px) {
+      .data-origin p {
+        min-height: 30px;
+        height: 30px;
+        min-width: 100%;
+        width: 100%; } }
+    @media screen and (max-height: 568px) {
+      .data-origin p {
+        min-height: 20px;
+        height: 20px;
+        min-width: 100%;
+        width: 100%; } }
+    @media screen and (max-height: 480px) {
+      .data-origin p {
+        min-height: 20px;
+        height: 20px;
+        min-width: 100%;
+        width: 100%; } }
+    @media screen and (max-height: 320px) {
+      .data-origin p {
+        min-height: 20px;
+        height: 20px;
+        min-width: 100%;
+        width: 100%; } }
 
 .sentresume-content-noborder {
   display: flex;
@@ -19624,10 +21264,37 @@ ion-slide {
   min-width: 100%;
   width: 100%;
   color: #065599;
-  font-size: 3vh;
+  font-size: 16px !important;
   font-weight: bold;
   position: absolute !important;
-  bottom: 7%; }
+  bottom: 8%; }
+  @media screen and (max-height: 2560px) {
+    .sentresume-cost {
+      font-size: 24px !important; } }
+  @media screen and (max-height: 1920px) {
+    .sentresume-cost {
+      font-size: 24px !important; } }
+  @media screen and (max-height: 1280px) {
+    .sentresume-cost {
+      font-size: 24px !important; } }
+  @media screen and (max-height: 960px) {
+    .sentresume-cost {
+      font-size: 24px !important; } }
+  @media screen and (max-height: 736px) {
+    .sentresume-cost {
+      font-size: 24px !important; } }
+  @media screen and (max-height: 667px) {
+    .sentresume-cost {
+      font-size: 20px !important; } }
+  @media screen and (max-height: 568px) {
+    .sentresume-cost {
+      font-size: 17px !important; } }
+  @media screen and (max-height: 480px) {
+    .sentresume-cost {
+      font-size: 16px !important; } }
+  @media screen and (max-height: 320px) {
+    .sentresume-cost {
+      font-size: 16px !important; } }
 
 .sentresume-button {
   align-items: center;
@@ -19724,14 +21391,14 @@ ion-slide {
     .ion-edit-resume {
       min-height: 60%;
       height: 60%;
-      min-width: 90%;
-      width: 90%; } }
-  @media screen and (max-height: 568px) {
-    .ion-edit-resume {
-      min-height: 50%;
-      height: 50%;
       min-width: 80%;
       width: 80%; } }
+  @media screen and (max-height: 568px) {
+    .ion-edit-resume {
+      min-height: 60%;
+      height: 60%;
+      min-width: 90%;
+      width: 90%; } }
   @media screen and (max-height: 480px) {
     .ion-edit-resume {
       min-height: 50%;
@@ -20256,14 +21923,14 @@ ion-slide {
       width: 100%; } }
   @media screen and (max-height: 667px) {
     #menu .navbar_top {
-      min-height: 50px;
-      height: 50px;
+      min-height: 60px;
+      height: 60px;
       min-width: 100%;
       width: 100%; } }
   @media screen and (max-height: 568px) {
     #menu .navbar_top {
-      min-height: 40px;
-      height: 40px;
+      min-height: 50px;
+      height: 50px;
       min-width: 100%;
       width: 100%; } }
   @media screen and (max-height: 480px) {
@@ -22774,16 +24441,16 @@ ion-slide {
       width: auto; } }
   @media screen and (max-height: 667px) {
     .history-lists {
-      min-height: 200px;
-      height: 200px;
+      min-height: 250px;
+      height: 250px;
       min-width: auto;
       width: auto; } }
   @media screen and (max-height: 568px) {
     .history-lists {
-      min-height: 100%;
-      height: 100%;
-      min-width: 100%;
-      width: 100%; } }
+      min-height: 200px;
+      height: 200px;
+      min-width: auto;
+      width: auto; } }
   @media screen and (max-height: 480px) {
     .history-lists {
       min-height: 100%;
@@ -23055,14 +24722,14 @@ ion-slide {
     .full-size {
       min-height: 100%;
       height: 100%;
-      min-width: 250px;
-      width: 250px; } }
+      min-width: 290px;
+      width: 290px; } }
   @media screen and (max-height: 568px) {
     .full-size {
       min-height: 100%;
       height: 100%;
-      min-width: 200px;
-      width: 200px; } }
+      min-width: 250px;
+      width: 250px; } }
   @media screen and (max-height: 480px) {
     .full-size {
       min-height: 100%;
