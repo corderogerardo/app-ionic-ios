@@ -92,8 +92,8 @@
             };
 
             document.addEventListener("deviceready", function() {
-                PushNotification.on('registration', onInit);
                 push = PushNotification.init(pushOptions);
+                push.on('registration', onInit);
             }, false);
         }
     }

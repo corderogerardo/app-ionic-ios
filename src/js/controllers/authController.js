@@ -66,7 +66,7 @@
                         });
                     });
                 });
-            });
+            }, canceledCallback);
         }
 
         /**
@@ -88,7 +88,7 @@
                         });
                     });
                 });
-            });
+            }, canceledCallback);
         }
 
         /**
@@ -210,6 +210,9 @@
                         loginSuccessfull(response.data.user, response.data.menu);
                     } else if (response.status == 409 && response.message != '') {
                         Logger.hideProgressBar();
+                        Logger.toast(response.message);
+                    } else {
+                        Logger.hideProgressBar();
                         Logger.toast('Ha ocurrido un error, por favor intente luego.');
                     }
                 }, function(error) {
@@ -237,6 +240,9 @@
                     if (response.return && response.status == 200) {
                         loginSuccessfull(response.data.user, response.data.menu);
                     } else if (response.status == 409 && response.message != '') {
+                        Logger.hideProgressBar();
+                        Logger.toast(response.message);
+                    } else {
                         Logger.hideProgressBar();
                         Logger.toast('Ha ocurrido un error, por favor intente luego.');
                     }
@@ -268,6 +274,10 @@
             Logger.hideProgressBar();
             $state.go('app.main');
             Logger.toast('Bienvenido!');
+        }
+
+        function canceledCallback () {
+            Logger.hideProgressBar();
         }
     }
 })();
