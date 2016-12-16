@@ -66,7 +66,7 @@
 
         function activate() {
             $scope.user = {};
-            checkFirstRun();
+            //checkFirstRun();
             if (localStorage.getItem('axpress.user') && localStorage.getItem('axpress.menu')) {
                 $rootScope.user = JSON.parse(localStorage.getItem('axpress.user'));
                 $rootScope.menu = JSON.parse(localStorage.getItem('axpress.menu'));
@@ -243,17 +243,31 @@
          * Recovers a user password
          */
         $scope.recoverPassword = function() {
-            Logger.displayProgressBar();
-            Client.forgotPassword($scope.user.email)
-                .then(function(response) {
-                    Logger.hideProgressBar();
-                    $state.go('auth.login');
-                    Logger.toast(response.message);
-                }, function(error) {
-                    Logger.hideProgressBar();
-                    Logger.toast('Ha ocurrido un error, por favor intente luego.');
-                });
+            if (recoverHasFilledEmail()) {
+                Logger.displayProgressBar();
+                Client.forgotPassword($scope.user.email)
+                    .then(function(response) {
+                        Logger.hideProgressBar();
+                        if (response.status == 409) {
+                            Logger.toast(response.message);
+                        } else {
+                            $state.go('auth.login');
+                            Logger.toast(response.message || "Se ha enviado un correo a su dirección de correo electrónico");
+                        }
+                    }, function(error) {
+                        Logger.hideProgressBar();
+                        Logger.toast('Ha ocurrido un error, por favor intente luego.');
+                    });
+            }
         };
+
+        function recoverHasFilledEmail () {
+            if (!$scope.user.email) {
+                Logger.toast("Debe introducir una dirección de correo válida");
+                return false;
+            }
+            return true;
+        }
 
         /**
          * Callback that receives the data fetched from Google to register a user
