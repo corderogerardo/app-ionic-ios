@@ -123,26 +123,27 @@
         /**
          * Updates user data in the system
          *
-         * @param      {String}  clientId    The user identifier
-         * @param      {String}  email       The user email
-         * @param      {String}  name        The user name
-         * @param      {String}  password    The user password
-         * @param      {String}  movilPhone  The user movil phone
-         * @param      {String}  localPhone  The user local phone
-         * @param      {String}  identify    The user national ID
+         * @param      {String}   client  The user object
          * @return     {Promise}  A promise to resolve server response
          */
-        service.edit = function(clientId, email, name, password, newPassword, movilPhone, localPhone, identify) {
+        service.edit = function(client) {
+
             var data = {
-                client_id: clientId,
-                email: email,
-                name: name,
-                pass: service.socialPassword(password),
-                new_pass: service.socialPassword(newPassword),
-                movil_phone: movilPhone,
-                local_phone: localPhone,
-                identify: identify
+                client_id: client.id,
+                email: client.email,
+                name: client.name,
+                pass: service.socialPassword(client.pass),
+                new_pass: service.socialPassword(client.newPass),
+                movil_phone: client.phone,
+                local_phone: client.localPhone,
+                identify: client.identify,
             };
+            if (client.isSocialAccount) {
+                delete data.pass;
+                delete data.new_pass;
+                data.access_token = client.access_token
+            };
+            console.log(JSON.stringify(data));
             return service.apiPost('/edit', data);
         };
 

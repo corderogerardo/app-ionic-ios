@@ -108,6 +108,8 @@
                     //Login successfull
                     if (response.return && response.status == 200) {
                         response.data.user.social_picture = details.picture.data.url;
+                        response.data.user.social_id = details.id;
+                        response.data.user.access_token = localStorage.getItem('facebookAccessToken');
                         loginSuccessfull(response.data.user, response.data.menu);
                     }
                 }, function(error) {
@@ -140,6 +142,8 @@
                     //Login successfull
                     if (response.return && response.status == 200) {
                         response.data.user.social_picture = details.picture;
+                        response.data.user.social_id = details.id;
+                        response.data.user.access_token = localStorage.getItem('googleCredentials');
                         loginSuccessfull(response.data.user, response.data.menu);
                     }
                 }, function(error) {
@@ -221,6 +225,8 @@
             Client.register(userInfo.name, Client.socialPassword(userInfo.id), userInfo.email, userInfo.id)
                 .then(function(response) {
                     if (response.return && response.status == 200) {
+                        response.data.user.social_id = userInfo.id;
+                        response.data.user.access_token = localStorage.getItem('facebookAccessToken');
                         loginSuccessfull(response.data.user, response.data.menu);
                     } else if (response.status == 409 && response.message != '') {
                         Logger.hideProgressBar();
@@ -252,6 +258,8 @@
             Client.register(userInfo.name, Client.socialPassword(userInfo.id), userInfo.email, userInfo.id)
                 .then(function(response) {
                     if (response.return && response.status == 200) {
+                        response.data.user.social_id = userInfo.id;
+                        response.data.user.access_token = localStorage.getItem('googleCredentials');
                         loginSuccessfull(response.data.user, response.data.menu);
                     } else if (response.status == 409 && response.message != '') {
                         Logger.hideProgressBar();
