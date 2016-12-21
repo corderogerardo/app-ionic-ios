@@ -2,13 +2,14 @@
     angular.module('axpress')
         .service('Logger', Logger);
 
-    Logger.$inject = ['$ionicPopup', '$cordovaToast', '$cordovaProgress'];
+    Logger.$inject = ['$ionicPopup', '$cordovaToast', '$cordovaProgress', '$cordovaDialogs'];
 
-    function Logger($ionicPopup, $cordovaToast, $cordovaProgress) {
+    function Logger($ionicPopup, $cordovaToast, $cordovaProgress, $cordovaDialogs) {
         return {
             alert: alert,
             error: error,
             toast: toast,
+            confirm: confirm,
 
             displayProgressBar: displayProgressBar,
             hideProgressBar: hideProgressBar
@@ -43,6 +44,10 @@
 
         function hideProgressBar () {
             $cordovaProgress.hide();
+        }
+
+        function confirm (title, message, buttons, confirmCallback) {
+            navigator.notification.confirm(message, confirmCallback, title, buttons || ['Ok', 'Cancelar']);
         }
     }
 })();

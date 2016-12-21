@@ -23,7 +23,6 @@
                 $scope.user.isSocialAccount = $scope.isSocialAccount();
                 Client.edit($scope.user)
                     .then(function(response) {
-                        console.log(JSON.stringify(response));
                         if (response.return && response.status == 200)
                             successfullyUpdatedAccount();
                         else {
@@ -46,7 +45,6 @@
         }
 
         $scope.isSocialAccount = function () {
-            console.log("isSocialAccount:"+($scope.user.access_token != undefined && $scope.user.social_id != undefined));
             return ($scope.user.access_token != undefined && $scope.user.social_id != undefined);
         };
 
