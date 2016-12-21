@@ -18,17 +18,34 @@
         }
 
         $scope.doAccountUpdate = function(accountForm) {
-            if (accountForm.$valid) {
+            if (hasFilledCurrentPassword() && accountForm.$valid) {
                 Logger.displayProgressBar();
-                Client.edit($scope.user.id, $scope.user.email, $scope.user.name, $scope.user.pass, $scope.user.newPass, $scope.user.phone,
-                        $scope.user.localPhone, $scope.user.identify)
+                $scope.user.isSocialAccount = $scope.isSocialAccount();
+                Client.edit($scope.user)
                     .then(function(response) {
                         if (response.return && response.status == 200)
                             successfullyUpdatedAccount();
+                        else {
+                            Logger.hideProgressBar();
+                            Logger.toast(response.message);
+                        }
                     }, function(error) {
+                        Logger.hideProgressBar();
                         Logger.toast("Ha ocurrido un problema actualizando su información.");
                     });
             }
+        };
+
+        function hasFilledCurrentPassword() {
+            if (!$scope.user.access_token && !$scope.user.pass) {
+                Logger.toast("Debe colocar su contraseña actual para actualizar sus datos");
+                return false;
+            }
+            return true;
+        }
+
+        $scope.isSocialAccount = function () {
+            return ($scope.user.access_token != undefined && $scope.user.social_id != undefined);
         };
 
         /**

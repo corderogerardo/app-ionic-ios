@@ -18,17 +18,34 @@
         }
 
         $scope.doAccountUpdate = function(accountForm) {
-            if (accountForm.$valid) {
+            if (hasFilledCurrentPassword() && accountForm.$valid) {
                 Logger.displayProgressBar();
-                Client.edit($scope.user.id, $scope.user.email, $scope.user.name, $scope.user.pass, $scope.user.newPass, $scope.user.phone,
-                        $scope.user.localPhone, $scope.user.identify)
+                $scope.user.isSocialAccount = $scope.isSocialAccount();
+                Client.edit($scope.user)
                     .then(function(response) {
                         if (response.return && response.status == 200)
                             successfullyUpdatedAccount();
+                        else {
+                            Logger.hideProgressBar();
+                            Logger.toast(response.message);
+                        }
                     }, function(error) {
+                        Logger.hideProgressBar();
                         Logger.toast("Ha ocurrido un problema actualizando su información.");
                     });
             }
+        };
+
+        function hasFilledCurrentPassword() {
+            if (!$scope.user.access_token && !$scope.user.pass) {
+                Logger.toast("Debe colocar su contraseña actual para actualizar sus datos");
+                return false;
+            }
+            return true;
+        }
+
+        $scope.isSocialAccount = function () {
+            return ($scope.user.access_token != undefined && $scope.user.social_id != undefined);
         };
 
         /**
@@ -165,6 +182,8 @@
                     //Login successfull
                     if (response.return && response.status == 200) {
                         response.data.user.social_picture = details.picture.data.url;
+                        response.data.user.social_id = details.id;
+                        response.data.user.access_token = localStorage.getItem('facebookAccessToken');
                         loginSuccessfull(response.data.user, response.data.menu);
                     }
                 }, function(error) {
@@ -197,6 +216,8 @@
                     //Login successfull
                     if (response.return && response.status == 200) {
                         response.data.user.social_picture = details.picture;
+                        response.data.user.social_id = details.id;
+                        response.data.user.access_token = localStorage.getItem('googleCredentials');
                         loginSuccessfull(response.data.user, response.data.menu);
                     }
                 }, function(error) {
@@ -278,6 +299,8 @@
             Client.register(userInfo.name, Client.socialPassword(userInfo.id), userInfo.email, userInfo.id)
                 .then(function(response) {
                     if (response.return && response.status == 200) {
+                        response.data.user.social_id = userInfo.id;
+                        response.data.user.access_token = localStorage.getItem('facebookAccessToken');
                         loginSuccessfull(response.data.user, response.data.menu);
                     } else if (response.status == 409 && response.message != '') {
                         Logger.hideProgressBar();
@@ -309,6 +332,8 @@
             Client.register(userInfo.name, Client.socialPassword(userInfo.id), userInfo.email, userInfo.id)
                 .then(function(response) {
                     if (response.return && response.status == 200) {
+                        response.data.user.social_id = userInfo.id;
+                        response.data.user.access_token = localStorage.getItem('googleCredentials');
                         loginSuccessfull(response.data.user, response.data.menu);
                     } else if (response.status == 409 && response.message != '') {
                         Logger.hideProgressBar();
@@ -819,7 +844,10 @@
     MenuController.$inject = ['$rootScope', '$scope', '$state'];
 
     function MenuController($rootScope, $scope, $state) {
-        $scope.menuoptions = $rootScope.menu;
+        $scope.menuoptions = $rootScope.menu.filter(function (item) {
+            var serviceId = item.service_provider_id;
+            return (serviceId == 43 || serviceId == 44 || serviceId == 45);
+        });
 
         var urlsPerServiceType = {
             43: 'app.document.origin',

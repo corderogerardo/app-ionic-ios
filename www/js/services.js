@@ -123,26 +123,26 @@
         /**
          * Updates user data in the system
          *
-         * @param      {String}  clientId    The user identifier
-         * @param      {String}  email       The user email
-         * @param      {String}  name        The user name
-         * @param      {String}  password    The user password
-         * @param      {String}  movilPhone  The user movil phone
-         * @param      {String}  localPhone  The user local phone
-         * @param      {String}  identify    The user national ID
+         * @param      {String}   client  The user object
          * @return     {Promise}  A promise to resolve server response
          */
-        service.edit = function(clientId, email, name, password, newPassword, movilPhone, localPhone, identify) {
+        service.edit = function(client) {
+
             var data = {
-                client_id: clientId,
-                email: email,
-                name: name,
-                pass: service.socialPassword(password),
-                new_pass: service.socialPassword(newPassword),
-                movil_phone: movilPhone,
-                local_phone: localPhone,
-                identify: identify
+                client_id: client.id,
+                email: client.email,
+                name: client.name,
+                pass: service.socialPassword(client.pass),
+                new_pass: service.socialPassword(client.newPass),
+                movil_phone: client.phone,
+                local_phone: client.localPhone,
+                identify: client.identify,
             };
+            if (client.isSocialAccount) {
+                delete data.pass;
+                delete data.new_pass;
+                data.access_token = client.access_token;
+            }
             return service.apiPost('/edit', data);
         };
 
@@ -362,7 +362,7 @@
             key: '21569d3e6977ae51178544f5dcdd508652799af3.IVadPml3rlEXhUT13N1QhlJ5mvM=',
 
             //String to identify the App on the Admin Console
-            platform: 'android',
+            platform: 'ios',
 
             //Facebook App ID
             fbAppId: '320049998373400',
@@ -743,13 +743,14 @@
     angular.module('axpress')
         .service('Logger', Logger);
 
-    Logger.$inject = ['$ionicPopup', '$cordovaToast', '$cordovaProgress'];
+    Logger.$inject = ['$ionicPopup', '$cordovaToast', '$cordovaProgress', '$cordovaDialogs'];
 
-    function Logger($ionicPopup, $cordovaToast, $cordovaProgress) {
+    function Logger($ionicPopup, $cordovaToast, $cordovaProgress, $cordovaDialogs) {
         return {
             alert: alert,
             error: error,
             toast: toast,
+            confirm: confirm,
 
             displayProgressBar: displayProgressBar,
             hideProgressBar: hideProgressBar
@@ -784,6 +785,10 @@
 
         function hideProgressBar () {
             $cordovaProgress.hide();
+        }
+
+        function confirm (title, message, buttons, confirmCallback) {
+            navigator.notification.confirm(message, confirmCallback, title, buttons || ['Ok', 'Cancelar']);
         }
     }
 })();
@@ -873,9 +878,9 @@
     angular.module('axpress')
         .factory('Push', PushService);
 
-    PushService.$inject = ['$rootScope', '$q', 'constants'];
+    PushService.$inject = ['$rootScope', '$q', 'constants', 'Logger'];
 
-    function PushService($rootScope, $q, constants) {
+    function PushService($rootScope, $q, constants, Logger) {
         var service = {
             initialize: initialize,
             clearAllNotifications: clearAllNotifications,
@@ -889,23 +894,21 @@
         function notificationReceived (data) {
             //The app started by clicking the notification
             if (data.additionalData.coldstart) {
-                console.log("APP STARTED!");
-                console.log(JSON.stringify(data.additionalData));
                 switch(data.additionalData.type) {
                     //Courier assigned
-                    case 1:
+                    case '1':
                         onCourierAssigned(data.additionalData.data.shipping_id);
                         break;
                     //Package Picked
-                    case 2:
+                    case '2':
                         onPackagePicked(data.additionalData.data.shipping_id);
                         break;
-                    //
-                    case 3:
+                    //Package Delivered
+                    case '3':
                         onPackageDelivered(data.additionalData.data.shipping_id);
                         break;
-                    //
-                    case 5:
+                    //Chat Message Received
+                    case '5':
                         onChatMessageReceived(data.additionalData.data.shipping_id);
                         break;
                     //Default case
@@ -919,8 +922,40 @@
 
             //The app was already running when the notification was received
             if (data.additionalData.foreground) {
-                console.log("APP ALREADY RUNNING!");
-                console.log(JSON.stringify(data.additionalData));
+                var iosButtonIndex = 0;
+                switch(data.additionalData.type) {
+                    //Courier Assigned
+                    case '1':
+                        Logger.confirm("¡Mensajero Asignado!", "Ha sido asignado un mensajero para tu envío", ['Seguir Paquete', 'Cancelar'], function (buttonIndex) {
+                            if (buttonIndex == iosButtonIndex)
+                                onCourierAssigned(data.additionalData.data.shipping_id);
+                        });
+                        break;
+                    //Package Picked
+                    case '2':
+                        Logger.confirm("Paquete Recogido", "El mensajero ha recogido tu paquete", ['Seguir Paquete', 'Cancelar'], function (buttonIndex) {
+                            if (buttonIndex == iosButtonIndex)
+                                onPackagePicked(data.additionalData.data.shipping_id);
+                        });
+                        break;
+                    //Package Delivered
+                    case '3':
+                        Logger.confirm("Paquete Entregado", "El mensajero ha entregado tu paquete", ['Calificar Envío', 'Cancelar'], function (buttonIndex) {
+                            if (buttonIndex == iosButtonIndex)
+                                onPackageDelivered(data.additionalData.data.shipping_id);
+                        });
+                        break;
+                    //Chat Message Delivered
+                    case '5':
+                        Logger.confirm("Mensaje de Chat", "Tienes un nuevo mensaje", ['Ver', 'Cancelar'], function (buttonIndex) {
+                            if (buttonIndex == iosButtonIndex)
+                                onChatMessageReceived(data.additionalData.data.shipping_id);
+                        });
+                        break;
+                    default:
+                        Logger.confirm("¡Mensaje Consola!", data.message, ['Ok'], function (buttonIndex) {});
+                        break;
+                }
             }
         }
 
