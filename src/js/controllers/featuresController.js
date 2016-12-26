@@ -56,6 +56,10 @@
             }
         };
 
+        $scope.selectShippingType = function (bag) {
+            $scope.choice.bag = bag;
+        }
+
         function hasSelectedTypeService () {
             if (!$scope.choice.bag) {
                 Logger.toast("Debe seleccionar un tipo de envío");

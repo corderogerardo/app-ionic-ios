@@ -17,7 +17,8 @@
                                 successfullyRegisteredRequest();
                             }
                         }, function(error) {
-                            Logger.toast("Ha ocurrido un error registrando su solicitud, por favor intente de nuevo.")
+                            Logger.hideProgressBar();
+                            Logger.toast("Ha ocurrido un error registrando su documento, por favor intente de nuevo.")
                         });
                     break;
                 case 44: //Packages
@@ -27,7 +28,8 @@
                                 successfullyRegisteredRequest();
                             }
                         }, function(error) {
-                            Logger.toast("Ha ocurrido un error registrando su solicitud, por favor intente de nuevo.")
+                            Logger.hideProgressBar();
+                            Logger.toast("Ha ocurrido un error registrando su paquete, por favor intente de nuevo.")
                         });
                     break;
                 case 45: //Diligence
@@ -36,10 +38,15 @@
                             successfullyRegisteredRequest();
                         }
                     }, function(error) {
-                        Logger.toast("Ha ocurrido un error registrando su solicitud, por favor intente de nuevo.")
+                        Logger.hideProgressBar();
+                        Logger.toast("Ha ocurrido un error registrando su diligencia, por favor intente de nuevo.")
                     });
             }
         };
+
+        $scope.selectPaymentMethod = function (method) {
+            $scope.data.pay = method.value;
+        }
 
         function successfullyRegisteredRequest() {
             $scope.data = {};
