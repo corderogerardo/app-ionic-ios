@@ -14755,34 +14755,34 @@ ion-slide {
         background-position: center; } }
 
 .side-menu-logout-title {
-  font-size: 12px !important; }
+  font-size: 18px !important; }
   @media screen and (max-height: 2560px) {
     .side-menu-logout-title {
-      font-size: 16px !important; } }
+      font-size: 22px !important; } }
   @media screen and (max-height: 1920px) {
     .side-menu-logout-title {
-      font-size: 16px !important; } }
+      font-size: 22px !important; } }
   @media screen and (max-height: 1280px) {
     .side-menu-logout-title {
-      font-size: 16px !important; } }
+      font-size: 22px !important; } }
   @media screen and (max-height: 960px) {
     .side-menu-logout-title {
-      font-size: 16px !important; } }
+      font-size: 22px !important; } }
   @media screen and (max-height: 736px) {
     .side-menu-logout-title {
-      font-size: 16px !important; } }
+      font-size: 22px !important; } }
   @media screen and (max-height: 667px) {
     .side-menu-logout-title {
-      font-size: 16px !important; } }
+      font-size: 20px !important; } }
   @media screen and (max-height: 568px) {
     .side-menu-logout-title {
-      font-size: 14px !important; } }
+      font-size: 20px !important; } }
   @media screen and (max-height: 480px) {
     .side-menu-logout-title {
-      font-size: 12px !important; } }
+      font-size: 18px !important; } }
   @media screen and (max-height: 320px) {
     .side-menu-logout-title {
-      font-size: 12px !important; } }
+      font-size: 18px !important; } }
 
 .main-container-maps {
   height: 100%;
@@ -17226,8 +17226,8 @@ ion-slide {
       width: 100%; } }
   @media screen and (max-height: 736px) {
     .space-errands {
-      min-height: 70px;
-      height: 70px;
+      min-height: 75px;
+      height: 75px;
       min-width: 100%;
       width: 100%; } }
   @media screen and (max-height: 667px) {
@@ -17238,20 +17238,20 @@ ion-slide {
       width: 100%; } }
   @media screen and (max-height: 568px) {
     .space-errands {
-      min-height: 60px;
-      height: 60px;
+      min-height: 80px;
+      height: 80px;
       min-width: 100%;
       width: 100%; } }
   @media screen and (max-height: 480px) {
     .space-errands {
-      min-height: 55px;
-      height: 55px;
+      min-height: 60px;
+      height: 60px;
       min-width: 100%;
       width: 100%; } }
   @media screen and (max-height: 320px) {
     .space-errands {
-      min-height: 55px;
-      height: 55px;
+      min-height: 60px;
+      height: 60px;
       min-width: 100%;
       width: 100%; } }
 
@@ -17287,7 +17287,9 @@ ion-slide {
   padding: 0 !important;
   width: 100%;
   z-index: 0;
-  font-size: 18px !important; }
+  font-size: 12px !important;
+  font-weight: 200;
+  color: #065599 !important; }
   @media screen and (max-height: 2560px) {
     .container-senttype-errands-title {
       min-height: auto;
@@ -17344,31 +17346,31 @@ ion-slide {
       width: 100%; } }
   @media screen and (max-height: 2560px) {
     .container-senttype-errands-title {
-      font-size: 24px !important; } }
+      font-size: 16px !important; } }
   @media screen and (max-height: 1920px) {
     .container-senttype-errands-title {
-      font-size: 24px !important; } }
+      font-size: 16px !important; } }
   @media screen and (max-height: 1280px) {
     .container-senttype-errands-title {
-      font-size: 24px !important; } }
+      font-size: 16px !important; } }
   @media screen and (max-height: 960px) {
     .container-senttype-errands-title {
-      font-size: 24px !important; } }
+      font-size: 16px !important; } }
   @media screen and (max-height: 736px) {
     .container-senttype-errands-title {
-      font-size: 24px !important; } }
+      font-size: 16px !important; } }
   @media screen and (max-height: 667px) {
     .container-senttype-errands-title {
-      font-size: 24px !important; } }
+      font-size: 16px !important; } }
   @media screen and (max-height: 568px) {
     .container-senttype-errands-title {
-      font-size: 22px !important; } }
+      font-size: 14px !important; } }
   @media screen and (max-height: 480px) {
     .container-senttype-errands-title {
-      font-size: 18px !important; } }
+      font-size: 12px !important; } }
   @media screen and (max-height: 320px) {
     .container-senttype-errands-title {
-      font-size: 18px !important; } }
+      font-size: 12px !important; } }
 
 .container-senttype-errands {
   background-color: white;
@@ -17394,18 +17396,15 @@ ion-slide {
   -webkit-justify-content: center;
   -moz-justify-content: center;
   justify-content: center;
-  bottom: 0;
   min-height: 25%;
   height: 25%;
   min-width: 100%;
   padding: 0 !important;
   width: 100%;
-  z-index: 0;
-  margin-top: 5%;
   margin-bottom: 20%; }
   .container-senttype-errands .input-sizes {
-    color: #7f8183 !important;
-    font-size: 18px !important;
+    color: #065599 !important;
+    font-size: 12px !important;
     min-height: 100% !important;
     height: 100% !important;
     min-width: 90%;
@@ -17416,34 +17415,35 @@ ion-slide {
     background-size: 100%;
     background-repeat: no-repeat;
     background-position: center;
-    text-align: start !important; }
+    text-align: start !important;
+    padding-left: 25px !important; }
     @media screen and (max-height: 2560px) {
       .container-senttype-errands .input-sizes {
-        font-size: 24px !important; } }
+        font-size: 16px !important; } }
     @media screen and (max-height: 1920px) {
       .container-senttype-errands .input-sizes {
-        font-size: 24px !important; } }
+        font-size: 16px !important; } }
     @media screen and (max-height: 1280px) {
       .container-senttype-errands .input-sizes {
-        font-size: 24px !important; } }
+        font-size: 16px !important; } }
     @media screen and (max-height: 960px) {
       .container-senttype-errands .input-sizes {
-        font-size: 24px !important; } }
+        font-size: 16px !important; } }
     @media screen and (max-height: 736px) {
       .container-senttype-errands .input-sizes {
-        font-size: 24px !important; } }
+        font-size: 16px !important; } }
     @media screen and (max-height: 667px) {
       .container-senttype-errands .input-sizes {
-        font-size: 24px !important; } }
+        font-size: 16px !important; } }
     @media screen and (max-height: 568px) {
       .container-senttype-errands .input-sizes {
-        font-size: 22px !important; } }
+        font-size: 14px !important; } }
     @media screen and (max-height: 480px) {
       .container-senttype-errands .input-sizes {
-        font-size: 18px !important; } }
+        font-size: 12px !important; } }
     @media screen and (max-height: 320px) {
       .container-senttype-errands .input-sizes {
-        font-size: 18px !important; } }
+        font-size: 12px !important; } }
     @media screen and (max-height: 2560px) {
       .container-senttype-errands .input-sizes {
         border: none !important;
@@ -17627,34 +17627,35 @@ ion-slide {
   padding: 0 !important;
   width: 100%;
   z-index: 0;
-  font-size: 18px !important; }
+  color: #294d72;
+  font-size: 12px !important; }
   @media screen and (max-height: 2560px) {
     .container-senttype-errands-check {
-      font-size: 24px !important; } }
+      font-size: 16px !important; } }
   @media screen and (max-height: 1920px) {
     .container-senttype-errands-check {
-      font-size: 24px !important; } }
+      font-size: 16px !important; } }
   @media screen and (max-height: 1280px) {
     .container-senttype-errands-check {
-      font-size: 24px !important; } }
+      font-size: 16px !important; } }
   @media screen and (max-height: 960px) {
     .container-senttype-errands-check {
-      font-size: 24px !important; } }
+      font-size: 16px !important; } }
   @media screen and (max-height: 736px) {
     .container-senttype-errands-check {
-      font-size: 24px !important; } }
+      font-size: 16px !important; } }
   @media screen and (max-height: 667px) {
     .container-senttype-errands-check {
-      font-size: 24px !important; } }
+      font-size: 16px !important; } }
   @media screen and (max-height: 568px) {
     .container-senttype-errands-check {
-      font-size: 22px !important; } }
+      font-size: 14px !important; } }
   @media screen and (max-height: 480px) {
     .container-senttype-errands-check {
-      font-size: 18px !important; } }
+      font-size: 12px !important; } }
   @media screen and (max-height: 320px) {
     .container-senttype-errands-check {
-      font-size: 18px !important; } }
+      font-size: 12px !important; } }
   .container-senttype-errands-check p {
     display: -webkit-box;
     display: -webkit-flex;
@@ -17678,37 +17679,37 @@ ion-slide {
     -webkit-justify-content: center;
     -moz-justify-content: center;
     justify-content: center;
-    margin-bottom: 6%;
+    margin-bottom: 6% !important;
     text-align: center;
-    color: #294d72;
-    font-size: 18px !important; }
+    color: #294d72 !important;
+    font-size: 12px !important; }
     @media screen and (max-height: 2560px) {
       .container-senttype-errands-check p {
-        font-size: 24px !important; } }
+        font-size: 16px !important; } }
     @media screen and (max-height: 1920px) {
       .container-senttype-errands-check p {
-        font-size: 24px !important; } }
+        font-size: 16px !important; } }
     @media screen and (max-height: 1280px) {
       .container-senttype-errands-check p {
-        font-size: 24px !important; } }
+        font-size: 16px !important; } }
     @media screen and (max-height: 960px) {
       .container-senttype-errands-check p {
-        font-size: 24px !important; } }
+        font-size: 16px !important; } }
     @media screen and (max-height: 736px) {
       .container-senttype-errands-check p {
-        font-size: 24px !important; } }
+        font-size: 16px !important; } }
     @media screen and (max-height: 667px) {
       .container-senttype-errands-check p {
-        font-size: 24px !important; } }
+        font-size: 16px !important; } }
     @media screen and (max-height: 568px) {
       .container-senttype-errands-check p {
-        font-size: 22px !important; } }
+        font-size: 14px !important; } }
     @media screen and (max-height: 480px) {
       .container-senttype-errands-check p {
-        font-size: 18px !important; } }
+        font-size: 12px !important; } }
     @media screen and (max-height: 320px) {
       .container-senttype-errands-check p {
-        font-size: 18px !important; } }
+        font-size: 12px !important; } }
 
 .bar-sendtype {
   display: -webkit-box;
@@ -17806,56 +17807,56 @@ ion-slide {
     .inputs-checkbox-axpress {
       min-height: 20%;
       height: 20%;
-      min-width: 15%;
-      width: 15%; } }
+      min-width: 14%;
+      width: 14%; } }
   @media screen and (max-height: 1920px) {
     .inputs-checkbox-axpress {
       min-height: 20%;
       height: 20%;
-      min-width: 15%;
-      width: 15%; } }
+      min-width: 14%;
+      width: 14%; } }
   @media screen and (max-height: 1280px) {
     .inputs-checkbox-axpress {
       min-height: 20%;
       height: 20%;
-      min-width: 15%;
-      width: 15%; } }
+      min-width: 14%;
+      width: 14%; } }
   @media screen and (max-height: 960px) {
     .inputs-checkbox-axpress {
       min-height: 20%;
       height: 20%;
-      min-width: 15%;
-      width: 15%; } }
+      min-width: 14%;
+      width: 14%; } }
   @media screen and (max-height: 736px) {
     .inputs-checkbox-axpress {
       min-height: 20%;
       height: 20%;
-      min-width: 15%;
-      width: 15%; } }
+      min-width: 14%;
+      width: 14%; } }
   @media screen and (max-height: 667px) {
     .inputs-checkbox-axpress {
       min-height: 20%;
       height: 20%;
-      min-width: 15%;
-      width: 15%; } }
+      min-width: 14%;
+      width: 14%; } }
   @media screen and (max-height: 568px) {
     .inputs-checkbox-axpress {
       min-height: 20%;
       height: 20%;
-      min-width: 15%;
-      width: 15%; } }
+      min-width: 12%;
+      width: 12%; } }
   @media screen and (max-height: 480px) {
     .inputs-checkbox-axpress {
       min-height: 20%;
       height: 20%;
-      min-width: 14%;
-      width: 14%; } }
+      min-width: 10%;
+      width: 10%; } }
   @media screen and (max-height: 320px) {
     .inputs-checkbox-axpress {
       min-height: 20%;
       height: 20%;
-      min-width: 14%;
-      width: 14%; } }
+      min-width: 10%;
+      width: 10%; } }
   .inputs-checkbox-axpress::before {
     border: none !important;
     background-color: transparent;
@@ -23785,7 +23786,10 @@ ion-slide {
   min-height: 10%;
   height: 10%;
   min-width: 100%;
-  width: 100%; }
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0; }
   @media screen and (max-height: 2560px) {
     .chat-container-input {
       min-height: 10%;
@@ -24408,7 +24412,8 @@ ion-slide {
   min-height: 100%;
   height: 100%;
   min-width: 100%;
-  width: 100%; }
+  width: 100%;
+  padding-bottom: 40% !important; }
   @media screen and (max-height: 2560px) {
     .history-lists {
       min-height: 250px;
@@ -24449,8 +24454,8 @@ ion-slide {
     .history-lists {
       min-height: 200px;
       height: 200px;
-      min-width: auto;
-      width: auto; } }
+      min-width: 100%;
+      width: 100%; } }
   @media screen and (max-height: 480px) {
     .history-lists {
       min-height: 100%;
@@ -24464,12 +24469,52 @@ ion-slide {
       min-width: 100%;
       width: 100%; } }
 
-.item-avatar {
-  width: 100%;
+.history-scroll {
+  min-height: 100%;
+  height: 100%;
   min-width: 100%;
+  width: 100%; }
+
+.item-avatar {
+  width: 90%;
+  min-width: 90%;
   color: white !important;
   background-color: #294d72;
   margin-bottom: 2px !important; }
+  @media screen and (max-height: 2560px) {
+    .item-avatar {
+      width: 100%;
+      min-width: 100%; } }
+  @media screen and (max-height: 1920px) {
+    .item-avatar {
+      width: 100%;
+      min-width: 100%; } }
+  @media screen and (max-height: 1280px) {
+    .item-avatar {
+      width: 100%;
+      min-width: 100%; } }
+  @media screen and (max-height: 960px) {
+    .item-avatar {
+      width: 100%;
+      min-width: 100%; } }
+  @media screen and (max-height: 736px) {
+    .item-avatar {
+      width: 100%;
+      min-width: 100%; } }
+  @media screen and (max-height: 667px) {
+    .item-avatar {
+      width: 100%;
+      min-width: 100%; } }
+  @media screen and (max-height: 568px) {
+    .item-avatar {
+      width: 90%;
+      min-width: 90%;
+      margin-left: 5% !important; } }
+  @media screen and (max-height: 480px) {
+    .item-avatar {
+      width: 90%;
+      min-width: 90%;
+      margin-left: 5% !important; } }
 
 .list .item.item-accordion {
   display: -webkit-box;
@@ -25285,198 +25330,18 @@ ion-slide {
   color: #065599;
   font-size: 18px; }
 
-.ionic_rating_icon_on,
-.ion-ios-star {
-  border: none !important;
-  background-color: transparent;
-  background-image: url("../img/Estrelladecalificacion/1x.png") !important;
-  background-size: 100%;
-  background-repeat: no-repeat;
-  background-position: center;
-  color: transparent !important; }
-  @media screen and (max-height: 2560px) {
-    .ionic_rating_icon_on,
-    .ion-ios-star {
-      border: none !important;
-      background-color: transparent;
-      background-image: url("../img/Estrelladecalificacion/3x.png") !important;
-      background-size: 100%;
-      background-repeat: no-repeat;
-      background-position: center; } }
-  @media screen and (max-height: 1920px) {
-    .ionic_rating_icon_on,
-    .ion-ios-star {
-      border: none !important;
-      background-color: transparent;
-      background-image: url("../img/Estrelladecalificacion/3x.png") !important;
-      background-size: 100%;
-      background-repeat: no-repeat;
-      background-position: center; } }
-  @media screen and (max-height: 1280px) {
-    .ionic_rating_icon_on,
-    .ion-ios-star {
-      border: none !important;
-      background-color: transparent;
-      background-image: url("../img/Estrelladecalificacion/2x.png") !important;
-      background-size: 100%;
-      background-repeat: no-repeat;
-      background-position: center; } }
-  @media screen and (max-height: 960px) {
-    .ionic_rating_icon_on,
-    .ion-ios-star {
-      border: none !important;
-      background-color: transparent;
-      background-image: url("../img/Estrelladecalificacion/2x.png") !important;
-      background-size: 100%;
-      background-repeat: no-repeat;
-      background-position: center; } }
-  @media screen and (max-height: 736px) {
-    .ionic_rating_icon_on,
-    .ion-ios-star {
-      border: none !important;
-      background-color: transparent;
-      background-image: url("../img/Estrelladecalificacion/2x.png") !important;
-      background-size: 100%;
-      background-repeat: no-repeat;
-      background-position: center; } }
-  @media screen and (max-height: 667px) {
-    .ionic_rating_icon_on,
-    .ion-ios-star {
-      border: none !important;
-      background-color: transparent;
-      background-image: url("../img/Estrelladecalificacion/2x.png") !important;
-      background-size: 100%;
-      background-repeat: no-repeat;
-      background-position: center; } }
-  @media screen and (max-height: 568px) {
-    .ionic_rating_icon_on,
-    .ion-ios-star {
-      border: none !important;
-      background-color: transparent;
-      background-image: url("../img/Estrelladecalificacion/1x.png") !important;
-      background-size: 100%;
-      background-repeat: no-repeat;
-      background-position: center; } }
-  @media screen and (max-height: 480px) {
-    .ionic_rating_icon_on,
-    .ion-ios-star {
-      border: none !important;
-      background-color: transparent;
-      background-image: url("../img/Estrelladecalificacion/1x.png") !important;
-      background-size: 100%;
-      background-repeat: no-repeat;
-      background-position: center; } }
-  @media screen and (max-height: 320px) {
-    .ionic_rating_icon_on,
-    .ion-ios-star {
-      border: none !important;
-      background-color: transparent;
-      background-image: url("../img/Estrelladecalificacion/1x.png") !important;
-      background-size: 100%;
-      background-repeat: no-repeat;
-      background-position: center; } }
-  .ionic_rating_icon_on:hover,
-  .ion-ios-star:hover {
-    border: none !important;
-    background-color: transparent;
-    background-image: url("../img/Estrelladecalificacion/1x.png") !important;
-    background-size: 100%;
-    background-repeat: no-repeat;
-    background-position: center; }
-    @media screen and (max-height: 2560px) {
-      .ionic_rating_icon_on:hover,
-      .ion-ios-star:hover {
-        border: none !important;
-        background-color: transparent;
-        background-image: url("../img/Estrelladecalificacion/3x.png") !important;
-        background-size: 100%;
-        background-repeat: no-repeat;
-        background-position: center; } }
-    @media screen and (max-height: 1920px) {
-      .ionic_rating_icon_on:hover,
-      .ion-ios-star:hover {
-        border: none !important;
-        background-color: transparent;
-        background-image: url("../img/Estrelladecalificacion/3x.png") !important;
-        background-size: 100%;
-        background-repeat: no-repeat;
-        background-position: center; } }
-    @media screen and (max-height: 1280px) {
-      .ionic_rating_icon_on:hover,
-      .ion-ios-star:hover {
-        border: none !important;
-        background-color: transparent;
-        background-image: url("../img/Estrelladecalificacion/2x.png") !important;
-        background-size: 100%;
-        background-repeat: no-repeat;
-        background-position: center; } }
-    @media screen and (max-height: 960px) {
-      .ionic_rating_icon_on:hover,
-      .ion-ios-star:hover {
-        border: none !important;
-        background-color: transparent;
-        background-image: url("../img/Estrelladecalificacion/2x.png") !important;
-        background-size: 100%;
-        background-repeat: no-repeat;
-        background-position: center; } }
-    @media screen and (max-height: 736px) {
-      .ionic_rating_icon_on:hover,
-      .ion-ios-star:hover {
-        border: none !important;
-        background-color: transparent;
-        background-image: url("../img/Estrelladecalificacion/2x.png") !important;
-        background-size: 100%;
-        background-repeat: no-repeat;
-        background-position: center; } }
-    @media screen and (max-height: 667px) {
-      .ionic_rating_icon_on:hover,
-      .ion-ios-star:hover {
-        border: none !important;
-        background-color: transparent;
-        background-image: url("../img/Estrelladecalificacion/2x.png") !important;
-        background-size: 100%;
-        background-repeat: no-repeat;
-        background-position: center; } }
-    @media screen and (max-height: 568px) {
-      .ionic_rating_icon_on:hover,
-      .ion-ios-star:hover {
-        border: none !important;
-        background-color: transparent;
-        background-image: url("../img/Estrelladecalificacion/2x.png") !important;
-        background-size: 100%;
-        background-repeat: no-repeat;
-        background-position: center; } }
-    @media screen and (max-height: 480px) {
-      .ionic_rating_icon_on:hover,
-      .ion-ios-star:hover {
-        border: none !important;
-        background-color: transparent;
-        background-image: url("../img/Estrelladecalificacion/1x.png") !important;
-        background-size: 100%;
-        background-repeat: no-repeat;
-        background-position: center; } }
-    @media screen and (max-height: 320px) {
-      .ionic_rating_icon_on:hover,
-      .ion-ios-star:hover {
-        border: none !important;
-        background-color: transparent;
-        background-image: url("../img/Estrelladecalificacion/1x.png") !important;
-        background-size: 100%;
-        background-repeat: no-repeat;
-        background-position: center; } }
+.ionic_rating_icon_on {
+  color: #ca7530 !important; }
 
-.ionic_rating_icon_off,
-.ion-ios-star-outline {
+.ion-ios-star {
   border: none !important;
   background-color: transparent;
   background-image: url("../img/Estrelladecalificacionselected/1x.pngg") !important;
   background-size: 100%;
   background-repeat: no-repeat;
-  background-position: center;
-  color: transparent !important; }
+  background-position: center; }
   @media screen and (max-height: 2560px) {
-    .ionic_rating_icon_off,
-    .ion-ios-star-outline {
+    .ion-ios-star {
       border: none !important;
       background-color: transparent;
       background-image: url("../img/Estrelladecalificacionselected/3x.png") !important;
@@ -25484,8 +25349,7 @@ ion-slide {
       background-repeat: no-repeat;
       background-position: center; } }
   @media screen and (max-height: 1920px) {
-    .ionic_rating_icon_off,
-    .ion-ios-star-outline {
+    .ion-ios-star {
       border: none !important;
       background-color: transparent;
       background-image: url("../img/Estrelladecalificacionselected/3x.png") !important;
@@ -25493,8 +25357,7 @@ ion-slide {
       background-repeat: no-repeat;
       background-position: center; } }
   @media screen and (max-height: 1280px) {
-    .ionic_rating_icon_off,
-    .ion-ios-star-outline {
+    .ion-ios-star {
       border: none !important;
       background-color: transparent;
       background-image: url("../img/Estrelladecalificacionselected/2x.png") !important;
@@ -25502,8 +25365,7 @@ ion-slide {
       background-repeat: no-repeat;
       background-position: center; } }
   @media screen and (max-height: 960px) {
-    .ionic_rating_icon_off,
-    .ion-ios-star-outline {
+    .ion-ios-star {
       border: none !important;
       background-color: transparent;
       background-image: url("../img/Estrelladecalificacionselected/2x.png") !important;
@@ -25511,8 +25373,7 @@ ion-slide {
       background-repeat: no-repeat;
       background-position: center; } }
   @media screen and (max-height: 736px) {
-    .ionic_rating_icon_off,
-    .ion-ios-star-outline {
+    .ion-ios-star {
       border: none !important;
       background-color: transparent;
       background-image: url("../img/Estrelladecalificacionselected/2x.png") !important;
@@ -25520,8 +25381,7 @@ ion-slide {
       background-repeat: no-repeat;
       background-position: center; } }
   @media screen and (max-height: 667px) {
-    .ionic_rating_icon_off,
-    .ion-ios-star-outline {
+    .ion-ios-star {
       border: none !important;
       background-color: transparent;
       background-image: url("../img/Estrelladecalificacionselected/2x.png") !important;
@@ -25529,8 +25389,7 @@ ion-slide {
       background-repeat: no-repeat;
       background-position: center; } }
   @media screen and (max-height: 568px) {
-    .ionic_rating_icon_off,
-    .ion-ios-star-outline {
+    .ion-ios-star {
       border: none !important;
       background-color: transparent;
       background-image: url("../img/Estrelladecalificacionselected/1x.pngg") !important;
@@ -25538,8 +25397,7 @@ ion-slide {
       background-repeat: no-repeat;
       background-position: center; } }
   @media screen and (max-height: 480px) {
-    .ionic_rating_icon_off,
-    .ion-ios-star-outline {
+    .ion-ios-star {
       border: none !important;
       background-color: transparent;
       background-image: url("../img/Estrelladecalificacionselected/1x.pngg") !important;
@@ -25547,16 +25405,14 @@ ion-slide {
       background-repeat: no-repeat;
       background-position: center; } }
   @media screen and (max-height: 320px) {
-    .ionic_rating_icon_off,
-    .ion-ios-star-outline {
+    .ion-ios-star {
       border: none !important;
       background-color: transparent;
       background-image: url("../img/Estrelladecalificacionselected/1x.pngg") !important;
       background-size: 100%;
       background-repeat: no-repeat;
       background-position: center; } }
-  .ionic_rating_icon_off:hover,
-  .ion-ios-star-outline:hover {
+  .ion-ios-star:hover {
     border: none !important;
     background-color: transparent;
     background-image: url("../img/Estrelladecalificacionselected/1x.png") !important;
@@ -25564,8 +25420,7 @@ ion-slide {
     background-repeat: no-repeat;
     background-position: center; }
     @media screen and (max-height: 2560px) {
-      .ionic_rating_icon_off:hover,
-      .ion-ios-star-outline:hover {
+      .ion-ios-star:hover {
         border: none !important;
         background-color: transparent;
         background-image: url("../img/Estrelladecalificacionselected/3x.png") !important;
@@ -25573,8 +25428,7 @@ ion-slide {
         background-repeat: no-repeat;
         background-position: center; } }
     @media screen and (max-height: 1920px) {
-      .ionic_rating_icon_off:hover,
-      .ion-ios-star-outline:hover {
+      .ion-ios-star:hover {
         border: none !important;
         background-color: transparent;
         background-image: url("../img/Estrelladecalificacionselected/3x.png") !important;
@@ -25582,8 +25436,7 @@ ion-slide {
         background-repeat: no-repeat;
         background-position: center; } }
     @media screen and (max-height: 1280px) {
-      .ionic_rating_icon_off:hover,
-      .ion-ios-star-outline:hover {
+      .ion-ios-star:hover {
         border: none !important;
         background-color: transparent;
         background-image: url("../img/Estrelladecalificacionselected/2x.png") !important;
@@ -25591,8 +25444,7 @@ ion-slide {
         background-repeat: no-repeat;
         background-position: center; } }
     @media screen and (max-height: 960px) {
-      .ionic_rating_icon_off:hover,
-      .ion-ios-star-outline:hover {
+      .ion-ios-star:hover {
         border: none !important;
         background-color: transparent;
         background-image: url("../img/Estrelladecalificacionselected/2x.png") !important;
@@ -25600,8 +25452,7 @@ ion-slide {
         background-repeat: no-repeat;
         background-position: center; } }
     @media screen and (max-height: 736px) {
-      .ionic_rating_icon_off:hover,
-      .ion-ios-star-outline:hover {
+      .ion-ios-star:hover {
         border: none !important;
         background-color: transparent;
         background-image: url("../img/Estrelladecalificacionselected/2x.png") !important;
@@ -25609,8 +25460,7 @@ ion-slide {
         background-repeat: no-repeat;
         background-position: center; } }
     @media screen and (max-height: 667px) {
-      .ionic_rating_icon_off:hover,
-      .ion-ios-star-outline:hover {
+      .ion-ios-star:hover {
         border: none !important;
         background-color: transparent;
         background-image: url("../img/Estrelladecalificacionselected/2x.png") !important;
@@ -25618,8 +25468,7 @@ ion-slide {
         background-repeat: no-repeat;
         background-position: center; } }
     @media screen and (max-height: 568px) {
-      .ionic_rating_icon_off:hover,
-      .ion-ios-star-outline:hover {
+      .ion-ios-star:hover {
         border: none !important;
         background-color: transparent;
         background-image: url("../img/Estrelladecalificacionselected/2x.png") !important;
@@ -25627,8 +25476,7 @@ ion-slide {
         background-repeat: no-repeat;
         background-position: center; } }
     @media screen and (max-height: 480px) {
-      .ionic_rating_icon_off:hover,
-      .ion-ios-star-outline:hover {
+      .ion-ios-star:hover {
         border: none !important;
         background-color: transparent;
         background-image: url("../img/Estrelladecalificacionselected/1x.png") !important;
@@ -25636,11 +25484,172 @@ ion-slide {
         background-repeat: no-repeat;
         background-position: center; } }
     @media screen and (max-height: 320px) {
-      .ionic_rating_icon_off:hover,
-      .ion-ios-star-outline:hover {
+      .ion-ios-star:hover {
         border: none !important;
         background-color: transparent;
         background-image: url("../img/Estrelladecalificacionselected/1x.png") !important;
         background-size: 100%;
         background-repeat: no-repeat;
         background-position: center; } }
+
+.ionic_rating_icon_off {
+  border: none !important;
+  background-color: transparent;
+  background-image: url("../img/Estrelladecalificacion/1x.png") !important;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center; }
+  @media screen and (max-height: 2560px) {
+    .ionic_rating_icon_off {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/Estrelladecalificacion/3x.png") !important;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 1920px) {
+    .ionic_rating_icon_off {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/Estrelladecalificacion/3x.png") !important;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 1280px) {
+    .ionic_rating_icon_off {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/Estrelladecalificacion/2x.png") !important;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 960px) {
+    .ionic_rating_icon_off {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/Estrelladecalificacion/2x.png") !important;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 736px) {
+    .ionic_rating_icon_off {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/Estrelladecalificacion/2x.png") !important;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 667px) {
+    .ionic_rating_icon_off {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/Estrelladecalificacion/2x.png") !important;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 568px) {
+    .ionic_rating_icon_off {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/Estrelladecalificacion/1x.png") !important;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 480px) {
+    .ionic_rating_icon_off {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/Estrelladecalificacion/1x.png") !important;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  @media screen and (max-height: 320px) {
+    .ionic_rating_icon_off {
+      border: none !important;
+      background-color: transparent;
+      background-image: url("../img/Estrelladecalificacion/1x.png") !important;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-position: center; } }
+  .ionic_rating_icon_off:hover {
+    border: none !important;
+    background-color: transparent;
+    background-image: url("../img/Estrelladecalificacion/1x.png") !important;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center; }
+    @media screen and (max-height: 2560px) {
+      .ionic_rating_icon_off:hover {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/Estrelladecalificacion/3x.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 1920px) {
+      .ionic_rating_icon_off:hover {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/Estrelladecalificacion/3x.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 1280px) {
+      .ionic_rating_icon_off:hover {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/Estrelladecalificacion/2x.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 960px) {
+      .ionic_rating_icon_off:hover {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/Estrelladecalificacion/2x.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 736px) {
+      .ionic_rating_icon_off:hover {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/Estrelladecalificacion/2x.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 667px) {
+      .ionic_rating_icon_off:hover {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/Estrelladecalificacion/2x.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 568px) {
+      .ionic_rating_icon_off:hover {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/Estrelladecalificacion/2x.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 480px) {
+      .ionic_rating_icon_off:hover {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/Estrelladecalificacion/1x.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+    @media screen and (max-height: 320px) {
+      .ionic_rating_icon_off:hover {
+        border: none !important;
+        background-color: transparent;
+        background-image: url("../img/Estrelladecalificacion/1x.png") !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center; } }
+
+.ion-ios-star-outline {
+  color: transparent !important; }

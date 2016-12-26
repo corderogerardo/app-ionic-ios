@@ -3,37 +3,37 @@
 </div>
 <ion-view view-title="TrackingShipment">
 	<ion-content scroll="false" >
-        <map center='{{address || "Bogota"}}'
-             geo-fallback-center="[40.74, -74.18]"
-             zoom="11" class="main-container-maps" zoom-to-include-markers="true"
-             zoom-control="false" map-type-control="false"
-             street-view-control="false">
-            <marker position="{{ marker.position }}" icon="{{marker.icon}}"
-                ng-repeat="marker in markers"
-            ></marker>
-        </map>
+				<map center='{{address || "Bogota"}}'
+						 geo-fallback-center="[40.74, -74.18]"
+						 zoom="11" class="main-container-maps" zoom-to-include-markers="true"
+						 zoom-control="false" map-type-control="false"
+						 street-view-control="false">
+						<marker position="{{ marker.position }}" icon="{{marker.icon}}"
+								ng-repeat="marker in markers"
+						></marker>
+				</map>
 	<section class="main-container-shipementtracking" >
-        <i class="hide-on-keyboard-open row button-bottom-three button-gps" ng-click="gpsHere()" ng-click="loadCourierPosition()" title=""></i>
+				<i class="hide-on-keyboard-open row button-bottom-three button-gps" ng-click="gpsHere()" ng-click="loadCourierPosition()" title=""></i>
 		<!-- Navigation -->
 			<nav class="nav navbar" id="menu">
 				<div class="navbar_top" drag-up>Información del mensajero <i class="deliver-see"></i></div>
-                <section class="navbar_content">
-                    <div class="deliverboy-info">
-                        <div class="deliverboy-photo">
-                           <img ng-src="{{shipping.currier.image || 'img/Iconofoto/Iconofoto3x.png.png'}}" height="60px" width="60px">
-                        </div>
-                        <div class="deliverboy-data">
-                            <div class="deliverboy-data-text">
-                            <p><i class="icon-deliver-name"></i> {{shipping.currier.fullName || "José Rodríguez"}}</p>
-                            <p><i class="icon-deliver-id"></i> {{shipping.currier.identify || "1014.123.458"}} </p>
-                            <p><i class="icon-deliver-phone"></i> {{shipping.currier.movil_phone || "300 123 4589"}}</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="deliverboy-data-buttons">
-                        <a class="deliverboy-chat" ui-sref="app.chat({shippingId: shipping.shipping_id})">Chat</a>
-                        <a class="deliverboy-call" href="tel:{{shipping.currier.movil_phone}}">Llamar</a>
-                    </div>
+								<section class="navbar_content">
+										<div class="deliverboy-info">
+												<div class="deliverboy-photo">
+													 <img ng-src="{{shipping.currier.image || 'img/Iconofoto/Iconofoto3x.png.png'}}" height="60px" width="60px">
+												</div>
+												<div class="deliverboy-data">
+														<div class="deliverboy-data-text">
+														<p><i class="icon-deliver-name"></i> {{shipping.currier.fullName || "José Rodríguez"}}</p>
+														<p><i class="icon-deliver-id"></i> {{shipping.currier.identify || "1014.123.458"}} </p>
+														<p><i class="icon-deliver-phone"></i> {{shipping.currier.movil_phone || "300 123 4589"}}</p>
+														</div>
+												</div>
+										</div>
+										<div class="deliverboy-data-buttons">
+												<a class="deliverboy-chat" ui-sref="app.chat({shippingId: shipping.shipping_id})">Chat</a>
+												<a class="deliverboy-call" href="tel:{{shipping.currier.movil_phone}}">Llamar</a>
+										</div>
 				</section>
 
 			</nav>

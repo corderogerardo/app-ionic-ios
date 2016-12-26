@@ -1,51 +1,89 @@
 .history-lists{
-    @include display-flex;
-    @include flex-direction(column);
-    @include align-items(center);
-    @include justify-content(flex-start);
-    @include widheigh(100%,100%,100%,100%);
-    @include responsivewidthheight(100%,100%,100%,100%,200px,200px,auto,auto,250px,250px,auto,auto,250px,250px,auto,auto);
+		@include display-flex;
+		@include flex-direction(column);
+		@include align-items(center);
+		@include justify-content(flex-start);
+		@include widheigh(100%,100%,100%,100%);
+		@include responsivewidthheight(100%,100%,100%,100%,200px,200px,100%,100%,250px,250px,auto,auto,250px,250px,auto,auto);
+		padding-bottom: 40% !important;
+}
+.history-scroll{
+		@include widheigh(100%,100%,100%,100%);
 }
 .item-avatar{
-	width: 100%;
-    min-width: 100%;
-    color:white !important;
-    background-color: $positive;
-    margin-bottom: 2px !important;
+	width: 90%;
+		min-width: 90%;
+		color:white !important;
+		background-color: $positive;
+		margin-bottom: 2px !important;
+		@media screen and (max-height: 2560px){
+			width: 100%;
+			min-width: 100%;
+		}
+		@media screen and (max-height: 1920px){
+			width: 100%;
+			min-width: 100%;
+		}
+		@media screen and (max-height: 1280px){
+			width: 100%;
+			min-width: 100%;
+		}
+		@media screen and (max-height: 960px){
+			width: 100%;
+			min-width: 100%;
+		}
+		@media screen and (max-height: 736px){
+			width: 100%;
+			min-width: 100%;
+		}
+		@media screen and (max-height: 667px){
+			width: 100%;
+			min-width: 100%;
+		}
+		@media screen and (max-height: 568px){
+			width: 90%;
+			min-width: 90%;
+			margin-left:5% !important;
+		}
+		@media screen and (max-height: 480px){
+			width: 90%;
+			min-width: 90%;
+			margin-left:5% !important;
+		}
 }
 .list .item.item-accordion {
-    @include display-flex;
-    @include flex-direction(column);
-    @include align-items(center);
-    @include justify-content(center);
-    height:200px;
-    min-height:200px;
+		@include display-flex;
+		@include flex-direction(column);
+		@include align-items(center);
+		@include justify-content(center);
+		height:200px;
+		min-height:200px;
 	transition: 0.09s all linear;
 }
 .list .item.item-accordion div{
-    @include display-flex;
-    @include flex-direction(column);
-    @include justify-content(space-around);
+		@include display-flex;
+		@include flex-direction(column);
+		@include justify-content(space-around);
 	transition: 0.09s all linear;
 }
 .historial-data{
-    @include display-flex;
-    @include flex-direction(column);
-    @include justify-content(space-around);
-    @include align-items(flex-start);
+		@include display-flex;
+		@include flex-direction(column);
+		@include justify-content(space-around);
+		@include align-items(flex-start);
 }
 .historial-button{
-    @include display-flex;
-    @include flex-direction(column);
-    @include justify-content(space-around);
-    @include align-items(center);
+		@include display-flex;
+		@include flex-direction(column);
+		@include justify-content(space-around);
+		@include align-items(center);
 	a{
-        @include display-flex;
-        @include flex-direction(column);
-        @include justify-content(space-around);
-        @include align-items(center);
-        @include widheigh(100%,100%,100%,100%);
-        @include responsivewidthheight(100%,100%,100%,100%,100%,100%,100%,100%,100%,100%,100%,100%,100%,100%,100%,100%);
+				@include display-flex;
+				@include flex-direction(column);
+				@include justify-content(space-around);
+				@include align-items(center);
+				@include widheigh(100%,100%,100%,100%);
+				@include responsivewidthheight(100%,100%,100%,100%,100%,100%,100%,100%,100%,100%,100%,100%,100%,100%,100%,100%);
 		background-color: $balanced;
 		border-radius: 25px;
 		color: $stable;
@@ -56,7 +94,7 @@
 	}
 }
 .item.active, .item.activated, .item-complex.active .item-content, .item-complex.activated .item-content, .item .item-content.active, .item .item-content.activated{
-    background-color: $positive;
+		background-color: $positive;
 }
 .list .item.item-accordion.ng-hide {
 	width: 100%;
@@ -69,26 +107,26 @@
 .sub-item {
 }
 .full-size{
-    @include display-flex;
-    @include flex-direction(column);
-    @include align-items(center);
-    @include justify-content(center);
-    @include widheigh(100%,100%,200px,200px);
-    @include responsivewidthheight(100%,100%,200px,200px,100%,100%,250px,250px,100%,100%,290px,290px,100%,100%,290px,290px);
-    margin-top: 5%!important;
+		@include display-flex;
+		@include flex-direction(column);
+		@include align-items(center);
+		@include justify-content(center);
+		@include widheigh(100%,100%,200px,200px);
+		@include responsivewidthheight(100%,100%,200px,200px,100%,100%,250px,250px,100%,100%,290px,290px,100%,100%,290px,290px);
+		margin-top: 5%!important;
 }
 .ion-ios-arrow-up:before {
-    color:transparent;
-    content: '`';
-    height: 20px;
-    width: 20px;
-    @include media-icons-ios("../img/Vermenoshistorial/Vermenos.png","../img/Vermenoshistorial/Vermenos.png","../img/Vermenoshistorial/Vermenos2x.png.png","../img/Vermenoshistorial/Vermenos2x.png.png","../img/Vermenoshistorial/Vermenos3x.png.png","../img/Vermenoshistorial/Vermenos3x.png.png");
-    background-size: 50% !important;
+		color:transparent;
+		content: '`';
+		height: 20px;
+		width: 20px;
+		@include media-icons-ios("../img/Vermenoshistorial/Vermenos.png","../img/Vermenoshistorial/Vermenos.png","../img/Vermenoshistorial/Vermenos2x.png.png","../img/Vermenoshistorial/Vermenos2x.png.png","../img/Vermenoshistorial/Vermenos3x.png.png","../img/Vermenoshistorial/Vermenos3x.png.png");
+		background-size: 50% !important;
 }
 .ion-ios-arrow-down:before {
-    color:transparent;
-    content: '`';
-    @include media-icons-ios("../img/Vermashistorial/Vermas.png","../img/Vermashistorial/Vermas.png","../img/Vermashistorial/Vermas2x.png.png","../img/Vermashistorial/Vermas2x.png.png","../img/Vermashistorial/Vermas3x.png.png","../img/Vermashistorial/Vermas3x.png.png");
-    background-size: 50% !important;
+		color:transparent;
+		content: '`';
+		@include media-icons-ios("../img/Vermashistorial/Vermas.png","../img/Vermashistorial/Vermas.png","../img/Vermashistorial/Vermas2x.png.png","../img/Vermashistorial/Vermas2x.png.png","../img/Vermashistorial/Vermas3x.png.png","../img/Vermashistorial/Vermas3x.png.png");
+		background-size: 50% !important;
 
 }

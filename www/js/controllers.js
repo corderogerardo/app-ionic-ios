@@ -1,74 +1,74 @@
 (function() {
-    angular.module('axpress')
-        .controller("AccountController", AccountController);
+		angular.module('axpress')
+				.controller("AccountController", AccountController);
 
-    AccountController.$inject = ['$scope', '$rootScope', 'Client', 'Logger', '$state'];
+		AccountController.$inject = ['$scope', '$rootScope', 'Client', 'Logger', '$state'];
 
-    function AccountController($scope, $rootScope, Client, Logger, $state) {
-        var preBase64 = "data:image/jpeg;base64,";
-        activate();
+		function AccountController($scope, $rootScope, Client, Logger, $state) {
+				var preBase64 = "data:image/jpeg;base64,";
+				activate();
 
-        function activate() {
-            $scope.user = $rootScope.user;
-            $rootScope.$watch('user', function(newValue, oldValue) {
-                if (newValue !== oldValue) {
-                    $scope.user = $rootScope.user;
-                }
-            }, true);
-        }
+				function activate() {
+						$scope.user = $rootScope.user;
+						$rootScope.$watch('user', function(newValue, oldValue) {
+								if (newValue !== oldValue) {
+										$scope.user = $rootScope.user;
+								}
+						}, true);
+				}
 
-        $scope.doAccountUpdate = function(accountForm) {
-            if (hasFilledCurrentPassword() && accountForm.$valid) {
-                Logger.displayProgressBar();
-                $scope.user.isSocialAccount = $scope.isSocialAccount();
-                Client.edit($scope.user)
-                    .then(function(response) {
-                        if (response.return && response.status == 200)
-                            successfullyUpdatedAccount();
-                        else {
-                            Logger.hideProgressBar();
-                            Logger.toast(response.message);
-                        }
-                    }, function(error) {
-                        Logger.hideProgressBar();
-                        Logger.toast("Ha ocurrido un problema actualizando su información.");
-                    });
-            }
-        };
+				$scope.doAccountUpdate = function(accountForm) {
+						if (hasFilledCurrentPassword() && accountForm.$valid) {
+								Logger.displayProgressBar();
+								$scope.user.isSocialAccount = $scope.isSocialAccount();
+								Client.edit($scope.user)
+										.then(function(response) {
+												if (response.return && response.status == 200)
+														successfullyUpdatedAccount();
+												else {
+														Logger.hideProgressBar();
+														Logger.toast(response.message);
+												}
+										}, function(error) {
+												Logger.hideProgressBar();
+												Logger.toast("Ha ocurrido un problema actualizando su información.");
+										});
+						}
+				};
 
-        function hasFilledCurrentPassword() {
-            if (!$scope.user.access_token && !$scope.user.pass) {
-                Logger.toast("Debe colocar su contraseña actual para actualizar sus datos");
-                return false;
-            }
-            return true;
-        }
+				function hasFilledCurrentPassword() {
+						if (!$scope.user.access_token && !$scope.user.pass) {
+								Logger.toast("Debe colocar su contraseña actual para actualizar sus datos");
+								return false;
+						}
+						return true;
+				}
 
-        $scope.isSocialAccount = function () {
-            return ($scope.user.access_token != undefined && $scope.user.social_id != undefined);
-        };
+				$scope.isSocialAccount = function () {
+						return ($scope.user.access_token != undefined && $scope.user.social_id != undefined);
+				};
 
-        /**
-         * Receives the user updated data from the server
-         */
-        function successfullyUpdatedAccount() {
-            localStorage.setItem('axpress.user', JSON.stringify($scope.user));
-            Logger.hideProgressBar();
-            $state.go('app.main');
-            Logger.toast("Su información se ha actualizado correctamente.");
-        }
+				/**
+				 * Receives the user updated data from the server
+				 */
+				function successfullyUpdatedAccount() {
+						localStorage.setItem('axpress.user', JSON.stringify($scope.user));
+						Logger.hideProgressBar();
+						$state.go('app.main');
+						Logger.toast("Su información se ha actualizado correctamente.");
+				}
 
-        /**
-         * Gets and saves to localStorage a profile image selected by the user
-         *
-         * @param      {<type>}  imageData  The image data
-         */
-        $scope.imageSelected = function(imageData) {
-            $scope.user.selectedPhoto = preBase64 + imageData;
-            localStorage.setItem('axpress.user', JSON.stringify($scope.user));
-            $state.reload();
-        };
-    }
+				/**
+				 * Gets and saves to localStorage a profile image selected by the user
+				 *
+				 * @param      {<type>}  imageData  The image data
+				 */
+				$scope.imageSelected = function(imageData) {
+						$scope.user.selectedPhoto = preBase64 + imageData;
+						localStorage.setItem('axpress.user', JSON.stringify($scope.user));
+						$state.reload();
+				};
+		}
 })();
 ;
 
@@ -1076,61 +1076,61 @@
 ;
 
 (function() {
-    angular.module('axpress')
-        .controller('RatingController', RatingController);
+		angular.module('axpress')
+				.controller('RatingController', RatingController);
 
-    RatingController.$inject = ['$rootScope', '$scope', '$state', 'constants', 'Rating', '$timeout', 'Shipping', 'Logger'];
+		RatingController.$inject = ['$rootScope', '$scope', '$state', 'constants', 'Rating', '$timeout', 'Shipping'];
 
-    function RatingController($rootScope, $scope, $state, constants, Rating, $timeout, Shipping, Logger) {
-        activate();
+		function RatingController($rootScope, $scope, $state, constants, Rating, $timeout, Shipping) {
+				activate();
 
-        $scope.rateService = rateService;
+				$scope.rateService = rateService;
 
-        function rateService () {
-            $scope.rating = 3;
-            var shippingId = $scope.shipping.shipping_id,
-                rating = $scope.rating;
-            Logger.displayProgressBar();
-            Rating.post(shippingId, rating).then(function (response) {
-                Logger.hideProgressBar();
-                $state.go('app.main');
-                Logger.toast("Se ha guardado su calificación correctamente.");
-            }, function () {
-                Logger.hideProgressBar();
-            });
-        }
+				function rateService () {
+						$scope.rating = 3;
+						var shippingId = $scope.shipping.shipping_id,
+								rating = $scope.rating;
+						/*Logger.displayProgressBar();*/
+						Rating.post(shippingId, rating).then(function (response) {
+							 /* Logger.hideProgressBar();*/
+								$state.go('app.main');
+								Logger.toast("Se ha guardado su calificación correctamente.");
+						}, function () {
+								/*Logger.hideProgressBar();*/
+						});
+				}
 
-        function loadHistory () {
-            Logger.displayProgressBar();
-            Shipping.history($rootScope.user.id).then(function (history) {
-                var tempHistory = history.data.remitent.concat(history.data.receptor);
-                tempHistory.forEach(function (item) {
-                    if (item.currier) {
-                        item.currier.fullName = item.currier.name + ' ' + item.currier.last;
-                    }
-                });
-                $scope.history = tempHistory;
+				function loadHistory () {
+						/*Logger.displayProgressBar();*/
+						Shipping.history($rootScope.user.id).then(function (history) {
+								var tempHistory = history.data.remitent.concat(history.data.receptor);
+								tempHistory.forEach(function (item) {
+										if (item.currier) {
+												item.currier.fullName = item.currier.name + ' ' + item.currier.last;
+										}
+								});
+								$scope.history = tempHistory;
 
-                // Specific shipping
-                $scope.shipping = $scope.history.filter(function (item) {
-                    return item.shipping_id == parseInt($state.params.shippingId);
-                }).pop();
-            }, function () {
-                Logger.hideProgressBar();
-            });
-        }
+								// Specific shipping
+								$scope.shipping = $scope.history.filter(function (item) {
+										return item.shipping_id == parseInt($state.params.shippingId);
+								}).pop();
+						}, function () {
+								/*Logger.hideProgressBar();*/
+						});
+				}
 
-        function activate () {
-            $scope.ratingsObject = {
-                iconOn : 'ion-ios-star',
-                iconOff : 'ion-ios-star-outline',
-                iconOnColor: 'rgb(200, 200, 100)',
-                rating:  2,
-                minRating:1
-            };
-            loadHistory();
-        }
-    }
+				function activate () {
+						$scope.ratingsObject = {
+								iconOn : 'ion-ios-star',
+								iconOff : 'ion-ios-star-outline',
+								iconOnColor: 'rgb(200, 200, 100)',
+								rating:  2,
+								minRating:1
+						};
+						loadHistory();
+				}
+		}
 })();
 ;
 
@@ -1339,82 +1339,82 @@
 ;
 
 (function() {
-    angular.module('axpress')
-        .controller('TrackingController', TrackingController);
+		angular.module('axpress')
+				.controller('TrackingController', TrackingController);
 
-    TrackingController.$inject = ['$rootScope', '$scope', '$state', 'constants', 'logisticResource', '$timeout', 'Shipping', 'Logger'];
+		TrackingController.$inject = ['$rootScope', '$scope', '$state', 'constants', 'logisticResource', '$timeout', 'Shipping' ];
 
-    function TrackingController($rootScope, $scope, $state, constants, logisticResource, $timeout, Shipping, Logger) {
-        activate();
+		function TrackingController($rootScope, $scope, $state, constants, logisticResource, $timeout, Shipping) {
+				activate();
 
-        $scope.loadCourierPosition = loadCourierPosition;
+				$scope.loadCourierPosition = loadCourierPosition;
 
-        $scope.goToCall = function() {
-            console.log("Call phone number...");
-        };
+				$scope.goToCall = function() {
+						console.log("Call phone number...");
+				};
 
-        function findStatusText (status) {
-            return constants.shipmentStatuses.find(function (statusType) {
-                return status == statusType.value;
-            });
-        }
+				function findStatusText (status) {
+						return constants.shipmentStatuses.find(function (statusType) {
+								return status == statusType.value;
+						});
+				}
 
-        function loadCourierPosition () {
-            logisticResource.getLocation($scope.shipping.currier.currier_id).then(function (data) {
-                if (data.return && data.status == 200) {
-                    loadMarkers(data.data);
-                }
-            });
-        }
+				function loadCourierPosition () {
+						logisticResource.getLocation($scope.shipping.currier.currier_id).then(function (data) {
+								if (data.return && data.status == 200) {
+										loadMarkers(data.data);
+								}
+						});
+				}
 
-        function loadMarkers (courier) {
-            var markers = [{
-                position: [$scope.shipping.origin_latitude, $scope.shipping.origin_longitude],
-                icon    : "{url: 'img/Pindestino/Pindetsino3x.png.png', scaledSize: [48,48]}",
-                title: 'Origen'
-            }, {
-                position: [$scope.shipping.destiny_latitude, $scope.shipping.destiny_longitude],
-                icon    : "{url: 'img/PinOrigen/Origen3x.png.png', scaledSize: [48,48]}",
-                title: 'Destino'
-            }];
+				function loadMarkers (courier) {
+						var markers = [{
+								position: [$scope.shipping.origin_latitude, $scope.shipping.origin_longitude],
+								icon    : "{url: 'img/Pindestino/Pindetsino3x.png.png', scaledSize: [48,48]}",
+								title: 'Origen'
+						}, {
+								position: [$scope.shipping.destiny_latitude, $scope.shipping.destiny_longitude],
+								icon    : "{url: 'img/PinOrigen/Origen3x.png.png', scaledSize: [48,48]}",
+								title: 'Destino'
+						}];
 
-            if (courier) {
-                markers.push({
-                    position: [courier.latitud, courier.longitud],
-                    icon    : "{url: 'img/PinOrigen/Origen3x.png.png', scaledSize: [48,48]}",
-                    title: 'Courier'
-                });
-            }
-            $timeout(function(){
-                $scope.markers = markers;
-            }, 0);
-        }
+						if (courier) {
+								markers.push({
+										position: [courier.latitud, courier.longitud],
+										icon    : "{url: 'img/PinOrigen/Origen3x.png.png', scaledSize: [48,48]}",
+										title: 'Courier'
+								});
+						}
+						$timeout(function(){
+								$scope.markers = markers;
+						}, 0);
+				}
 
-        function loadHistory () {
-            Logger.displayProgressBar();
-            Shipping.history($rootScope.user.id).then(function (history) {
-                var tempHistory = history.data.remitent.concat(history.data.receptor);
-                tempHistory.forEach(function (item) {
-                    if (item.currier) {
-                        item.currier.fullName = item.currier.name + ' ' + item.currier.last;
-                    }
-                    item.status = findStatusText(item.status);
-                });
-                $scope.history = tempHistory;
+				function loadHistory () {
+						/*Logger.displayProgressBar();*/
+						Shipping.history($rootScope.user.id).then(function (history) {
+								var tempHistory = history.data.remitent.concat(history.data.receptor);
+								tempHistory.forEach(function (item) {
+										if (item.currier) {
+												item.currier.fullName = item.currier.name + ' ' + item.currier.last;
+										}
+										item.status = findStatusText(item.status);
+								});
+								$scope.history = tempHistory;
 
-                // Detailed history
-                $scope.shipping = $scope.history.filter(function (item) {
-                    return item.shipping_id == parseInt($state.params.shippingId);
-                }).pop();
-                loadMarkers();
-                loadCourierPosition();
-            }, function () {
-                Logger.hideProgressBar();
-            });
-        }
+								// Detailed history
+								$scope.shipping = $scope.history.filter(function (item) {
+										return item.shipping_id == parseInt($state.params.shippingId);
+								}).pop();
+								loadMarkers();
+								loadCourierPosition();
+						}, function () {
+								/*Logger.hideProgressBar();*/
+						});
+				}
 
-        function activate () {
-            loadHistory();
-        }
-    }
+				function activate () {
+						loadHistory();
+				}
+		}
 })();

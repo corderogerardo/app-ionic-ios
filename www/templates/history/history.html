@@ -2,9 +2,9 @@
 	<h3 class="title">Historial</h3>
 </div>
 <ion-view view-title="Historial">
-	<ion-content scroll="false" >
-        <div class="space-views"></div>
-
+	<ion-content scroll="false" delegate-handle="mainScroll">
+				<div class="space-errands"></div>
+		<ion-scroll class="history-scroll" zooming="false" direction="y" delegate-handle="vertical" vertical-scroll-fix="mainScroll">
 		<ion-list class="history-lists">
 				<div ng-repeat="item in history">
 
@@ -19,23 +19,25 @@
 					<ion-item class="item-accordion item-icon-right" ng-click="toggleShipping(item.shipping_id)" ng-show="isShippingShown(item.shipping_id)">
 						<div class="item-text-center item-text-wrap">
 							<div class="historial-data">
-                                <p><b>Tipo de solicitud:</b> {{item.service}}</p>
-                                <p><b>Destinatario:</b> {{item.addressee}}</p>
-                                <p><b>Mensajero:</b> {{item.currier.fullName || 'No Asignado'}}</p>
-                                <p><b>Distancia KM:</b> {{item.distance/1000 | number:2}} KM</p>
+																<p><b>Tipo de solicitud:</b> {{item.service}}</p>
+																<p><b>Destinatario:</b> {{item.addressee}}</p>
+																<p><b>Mensajero:</b> {{item.currier.fullName || 'No Asignado'}}</p>
+																<p><b>Distancia KM:</b> {{item.distance/1000 | number:2}} KM</p>
 								<p><b>Valor:</b> ${{item.amount}} COP</p>
 
 							</div>
 							<div class="historial-button">
 								<a title="" ui-sref="app.tracking({shippingId: item.shipping_id})" ng-if="item.status.value == 1 || item.status.value == 2">Ver recorrido</a>
-								<a ui-sref="app.tracking({shippingId: item.shipping_id})" ng-if="item.status.value == 3">Calificar</a>
+								<a ui-sref="app.rating({shippingId: item.shipping_id})" ng-if="item.status.value == 3">Calificar</a>
 							</div>
 						</div>
 					</ion-item>
 
 				</div>
-
+				<div>
+				<ion-item class="item-avatar item-icon-right"></ion-item>
+				</div>
 			</ion-list>
-
+</ion-scroll>
 	</ion-content>
 </ion-view>
