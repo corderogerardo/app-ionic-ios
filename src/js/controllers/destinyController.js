@@ -3,11 +3,13 @@
         .controller('DestinyController', DocumentDestinyController);
 
     DocumentDestinyController.$inject = ['$rootScope', '$scope', '$state', 'Location', 'NgMap',
-        '$timeout', 'GoogleMapGeocoder', 'constants', 'Logger'];
+        '$timeout', 'GoogleMapGeocoder', 'constants', 'Logger', 'Util'];
 
     function DocumentDestinyController($rootScope, $scope, $state, Location, NgMap,
-                                       $timeout, GoogleMapGeocoder, constants, Logger) {
-        activate();
+                                       $timeout, GoogleMapGeocoder, constants, Logger, Util) {
+        $timeout(function() {
+            activate();
+        }, 0, false);
 
         $scope.placeChanged = function(place) {
             $scope.place = (typeof place == "object" ? place : this.getPlace());
@@ -65,10 +67,10 @@
             resetTempData();
             $scope.buttonState = false;
             if ( $scope.extraData.navigateTo ) {
-                $state.go($scope.extraData.navigateTo, {}, {reload: true});
+                Util.stateGoAndReload($scope.extraData.navigateTo);
                 delete $scope.extraData.navigateTo;
             } else {
-                $state.go($scope.extraData.destinyNext);
+                Util.stateGoAndReload($scope.extraData.destinyNext);
             }
         };
 
@@ -163,6 +165,11 @@
             $scope.maxDestinies = constants.diligencesMaxDestinies;
             NgMap.getMap().then(function(map) {
                 $scope.map = map;
+                if ( $scope.data.destinyLatitude && $scope.data.destinyLongitude )
+                    setExistingAddress();
+                $timeout(function() {
+                    google.maps.event.trigger(map, 'resize');
+                }, 0, false);
             });
             if ( Array.isArray($scope.data.destiniesData) && $scope.data.destiniesData.length > 0 ) {
                 var index = $scope.data.editStopIndex;
@@ -188,9 +195,6 @@
                     draggable: true
                 });
             }
-
-            if ( $scope.data.destinyLatitude && $scope.data.destinyLongitude )
-                setExistingAddress();
         }
     }
 

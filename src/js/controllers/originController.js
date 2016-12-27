@@ -3,11 +3,13 @@
         .controller('OriginController', DocumentOriginController);
 
     DocumentOriginController.$inject = ['$rootScope', '$scope', '$state', 'Location', 'NgMap',
-        '$timeout', 'GoogleMapGeocoder', 'Logger'];
+        '$timeout', 'GoogleMapGeocoder', 'Logger', 'Util'];
 
     function DocumentOriginController($rootScope, $scope, $state, Location, NgMap,
-                                      $timeout, GoogleMapGeocoder, Logger) {
-        activate();
+                                      $timeout, GoogleMapGeocoder, Logger, Util) {
+        $timeout(function() {
+            activate();
+        }, 0, false);
 
         $scope.placeChanged = function(place) {
             $scope.place = (typeof place == "object" ? place : this.getPlace());
@@ -31,10 +33,10 @@
             $scope.data.originLongitude = $scope.place.geometry.location.lng();
             $scope.data.originPlace = $scope.place;
             if ( $scope.extraData.navigateTo ) {
-                $state.go($scope.extraData.navigateTo, {}, {reload: true});
+                Util.stateGoAndReload($scope.extraData.navigateTo);
                 delete $scope.extraData.navigateTo;
             } else {
-                $state.go($scope.extraData.originNext);
+                Util.stateGoAndReload($scope.extraData.originNext);
             }
         };
 
@@ -98,12 +100,14 @@
                 icon     : "{url: 'img/PinOrigen/Origen3x.png.png', scaledSize: [28,38]}",
                 draggable: true
             }];
-            if ( $scope.data.originAddress )
-                setExistingAddress();
             NgMap.getMap().then(function(map) {
                 $scope.map = map;
+                if ( $scope.data.originAddress )
+                    setExistingAddress();
+                $timeout(function() {
+                    google.maps.event.trigger(map, 'resize');
+                }, 0, false);
             });
-
         }
     }
 })();

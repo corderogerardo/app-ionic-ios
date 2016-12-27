@@ -1,20 +1,20 @@
 (function() {
     angular.module('axpress')
         .controller('StopsController', StopsController);
-    StopsController.$inject = ['$rootScope', '$scope', '$state', 'Logger'];
+    StopsController.$inject = ['$rootScope', '$scope', '$state', 'Util'];
 
-    function StopsController($rootScope, $scope, $state) {
+    function StopsController($rootScope, $scope, $state, Util) {
         activate();
 
         $scope.editDestiny = function(valux) {
             $scope.data.editStopIndex = valux;
             $scope.data.editing = true;
             $scope.extraData.navigateTo = $scope.extraData.flow + '.stops';
-            $state.go($scope.extraData.flow + '.destiny');
+            Util.stateGoAndReload($scope.extraData.flow + '.destiny');
         };
 
         $scope.goBack = function() {
-            $state.go($scope.extraData.flow + '.resume');
+            Util.stateGoAndReload($scope.extraData.flow + '.resume');
         };
 
         function activate() {

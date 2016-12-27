@@ -2,9 +2,9 @@
     angular.module('axpress')
         .controller('PhotoController', PhotoController);
 
-    PhotoController.$inject = ['$rootScope', '$scope', '$state', 'Logger'];
+    PhotoController.$inject = ['$rootScope', '$scope', '$state', 'Logger', 'Util'];
 
-    function PhotoController($rootScope, $scope, $state, Logger) {
+    function PhotoController($rootScope, $scope, $state, Logger, Util) {
         var preBase64 = "data:image/jpeg;base64,";
         activate();
 
@@ -20,7 +20,7 @@
 
         $scope.confirmImagePhoto = function() {
             if (!hasCompletedFeatures()) return;
-            $state.go($scope.extraData.photoNext);
+            Util.stateGoAndReload($scope.extraData.photoNext);
         };
 
         function hasCompletedFeatures () {

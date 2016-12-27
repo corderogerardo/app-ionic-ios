@@ -2,9 +2,9 @@
     angular.module('axpress')
         .controller('PaymentMethodsController', PaymentMethodsController);
 
-    PaymentMethodsController.$inject = ['$rootScope', '$scope', '$state', 'constants', 'Logger', 'Shipping', 'Diligence'];
+    PaymentMethodsController.$inject = ['$rootScope', '$scope', '$state', 'constants', 'Logger', 'Shipping', 'Diligence', 'Util'];
 
-    function PaymentMethodsController($rootScope, $scope, $state, constants, Logger, Shipping, Diligence) {
+    function PaymentMethodsController($rootScope, $scope, $state, constants, Logger, Shipping, Diligence, Util) {
         activate();
 
         $scope.confirmPaymentMethod = function() {
@@ -52,7 +52,7 @@
             $scope.data = {};
             $state.current.data.data = {};
             Logger.hideProgressBar();
-            $state.go("app.main");
+            Util.stateGoAndReload("app.main");
             Logger.toast("Solicitud registrada correctamente");
         }
 

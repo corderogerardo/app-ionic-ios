@@ -2,9 +2,9 @@
 		angular.module('axpress')
 				.controller('RatingController', RatingController);
 
-		RatingController.$inject = ['$rootScope', '$scope', '$state', 'constants', 'Rating', '$timeout', 'Shipping'];
+		RatingController.$inject = ['$rootScope', '$scope', '$state', 'constants', 'Rating', '$timeout', 'Shipping', 'Util'];
 
-		function RatingController($rootScope, $scope, $state, constants, Rating, $timeout, Shipping) {
+		function RatingController($rootScope, $scope, $state, constants, Rating, $timeout, Shipping, Util) {
 				activate();
 
 				$scope.rateService = rateService;
@@ -13,18 +13,18 @@
 						$scope.rating = 3;
 						var shippingId = $scope.shipping.shipping_id,
 								rating = $scope.rating;
-						/*Logger.displayProgressBar();*/
+						Logger.displayProgressBar();
 						Rating.post(shippingId, rating).then(function (response) {
-							 /* Logger.hideProgressBar();*/
-								$state.go('app.main');
-								Logger.toast("Se ha guardado su calificación correctamente.");
+							Logger.hideProgressBar();
+							Util.stateGoAndReload('app.main');
+							Logger.toast("Se ha guardado su calificación correctamente.");
 						}, function () {
-								/*Logger.hideProgressBar();*/
+								Logger.hideProgressBar();
 						});
 				}
 
 				function loadHistory () {
-						/*Logger.displayProgressBar();*/
+						Logger.displayProgressBar();
 						Shipping.history($rootScope.user.id).then(function (history) {
 								var tempHistory = history.data.remitent.concat(history.data.receptor);
 								tempHistory.forEach(function (item) {
@@ -39,7 +39,7 @@
 										return item.shipping_id == parseInt($state.params.shippingId);
 								}).pop();
 						}, function () {
-								/*Logger.hideProgressBar();*/
+								Logger.hideProgressBar();
 						});
 				}
 

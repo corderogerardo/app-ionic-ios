@@ -1,74 +1,76 @@
 (function() {
-		angular.module('axpress')
-				.controller("AccountController", AccountController);
+    angular.module('axpress')
+        .controller("AccountController", AccountController);
 
-		AccountController.$inject = ['$scope', '$rootScope', 'Client', 'Logger', '$state'];
+    AccountController.$inject = ['$scope', '$rootScope', 'Client', 'Logger', '$state', 'Util'];
 
-		function AccountController($scope, $rootScope, Client, Logger, $state) {
-				var preBase64 = "data:image/jpeg;base64,";
-				activate();
+    function AccountController($scope, $rootScope, Client, Logger, $state, Util) {
+        var preBase64 = "data:image/jpeg;base64,";
+        activate();
 
-				function activate() {
-						$scope.user = $rootScope.user;
-						$rootScope.$watch('user', function(newValue, oldValue) {
-								if (newValue !== oldValue) {
-										$scope.user = $rootScope.user;
-								}
-						}, true);
-				}
+        function activate() {
+            $scope.user = $rootScope.user;
+            $rootScope.$watch('user', function(newValue, oldValue) {
+                if (newValue !== oldValue) {
+                    $scope.user = $rootScope.user;
+                }
+            }, true);
+        }
 
-				$scope.doAccountUpdate = function(accountForm) {
-						if (hasFilledCurrentPassword() && accountForm.$valid) {
-								Logger.displayProgressBar();
-								$scope.user.isSocialAccount = $scope.isSocialAccount();
-								Client.edit($scope.user)
-										.then(function(response) {
-												if (response.return && response.status == 200)
-														successfullyUpdatedAccount();
-												else {
-														Logger.hideProgressBar();
-														Logger.toast(response.message);
-												}
-										}, function(error) {
-												Logger.hideProgressBar();
-												Logger.toast("Ha ocurrido un problema actualizando su información.");
-										});
-						}
-				};
+        $scope.doAccountUpdate = function(accountForm) {
+            if (hasFilledCurrentPassword() && accountForm.$valid) {
+                Logger.displayProgressBar();
+                $scope.user.isSocialAccount = $scope.isSocialAccount();
+                Client.edit($scope.user)
+                    .then(function(response) {
+                        if (response.return && response.status == 200)
+                            successfullyUpdatedAccount();
+                        else {
+                            Logger.hideProgressBar();
+                            Logger.toast(response.message);
+                        }
+                    }, function(error) {
+                        Logger.hideProgressBar();
+                        Logger.toast("Ha ocurrido un problema actualizando su información.");
+                    });
+            }
+        };
 
-				function hasFilledCurrentPassword() {
-						if (!$scope.user.access_token && !$scope.user.pass) {
-								Logger.toast("Debe colocar su contraseña actual para actualizar sus datos");
-								return false;
-						}
-						return true;
-				}
+        function hasFilledCurrentPassword() {
+            if (!$scope.user.access_token && !$scope.user.pass) {
+                Logger.toast("Debe colocar su contraseña actual para actualizar sus datos");
+                return false;
+            }
+            return true;
+        }
 
-				$scope.isSocialAccount = function () {
-						return ($scope.user.access_token != undefined && $scope.user.social_id != undefined);
-				};
+        $scope.isSocialAccount = function() {
+            return ($scope.user.access_token != undefined);
+        };
 
-				/**
-				 * Receives the user updated data from the server
-				 */
-				function successfullyUpdatedAccount() {
-						localStorage.setItem('axpress.user', JSON.stringify($scope.user));
-						Logger.hideProgressBar();
-						$state.go('app.main');
-						Logger.toast("Su información se ha actualizado correctamente.");
-				}
+        /**
+         * Receives the user updated data from the server
+         */
+        function successfullyUpdatedAccount() {
+            delete $scope.user.pass;
+            delete $scope.user.newPass;
+            localStorage.setItem('axpress.user', JSON.stringify($scope.user));
+            Logger.hideProgressBar();
+            Util.stateGoAndReload('app.main');
+            Logger.toast("Su información se ha actualizado correctamente.");
+        }
 
-				/**
-				 * Gets and saves to localStorage a profile image selected by the user
-				 *
-				 * @param      {<type>}  imageData  The image data
-				 */
-				$scope.imageSelected = function(imageData) {
-						$scope.user.selectedPhoto = preBase64 + imageData;
-						localStorage.setItem('axpress.user', JSON.stringify($scope.user));
-						$state.reload();
-				};
-		}
+        /**
+         * Gets and saves to localStorage a profile image selected by the user
+         *
+         * @param      {<type>}  imageData  The image data
+         */
+        $scope.imageSelected = function(imageData) {
+            $scope.user.selectedPhoto = preBase64 + imageData;
+            localStorage.setItem('axpress.user', JSON.stringify($scope.user));
+            $state.reload();
+        };
+    }
 })();
 ;
 
@@ -422,11 +424,13 @@
         .controller('DestinyController', DocumentDestinyController);
 
     DocumentDestinyController.$inject = ['$rootScope', '$scope', '$state', 'Location', 'NgMap',
-        '$timeout', 'GoogleMapGeocoder', 'constants', 'Logger'];
+        '$timeout', 'GoogleMapGeocoder', 'constants', 'Logger', 'Util'];
 
     function DocumentDestinyController($rootScope, $scope, $state, Location, NgMap,
-                                       $timeout, GoogleMapGeocoder, constants, Logger) {
-        activate();
+                                       $timeout, GoogleMapGeocoder, constants, Logger, Util) {
+        $timeout(function() {
+            activate();
+        }, 0, false);
 
         $scope.placeChanged = function(place) {
             $scope.place = (typeof place == "object" ? place : this.getPlace());
@@ -484,10 +488,10 @@
             resetTempData();
             $scope.buttonState = false;
             if ( $scope.extraData.navigateTo ) {
-                $state.go($scope.extraData.navigateTo, {}, {reload: true});
+                Util.stateGoAndReload($scope.extraData.navigateTo);
                 delete $scope.extraData.navigateTo;
             } else {
-                $state.go($scope.extraData.destinyNext);
+                Util.stateGoAndReload($scope.extraData.destinyNext);
             }
         };
 
@@ -582,6 +586,11 @@
             $scope.maxDestinies = constants.diligencesMaxDestinies;
             NgMap.getMap().then(function(map) {
                 $scope.map = map;
+                if ( $scope.data.destinyLatitude && $scope.data.destinyLongitude )
+                    setExistingAddress();
+                $timeout(function() {
+                    google.maps.event.trigger(map, 'resize');
+                }, 0, false);
             });
             if ( Array.isArray($scope.data.destiniesData) && $scope.data.destiniesData.length > 0 ) {
                 var index = $scope.data.editStopIndex;
@@ -607,9 +616,6 @@
                     draggable: true
                 });
             }
-
-            if ( $scope.data.destinyLatitude && $scope.data.destinyLongitude )
-                setExistingAddress();
         }
     }
 
@@ -620,9 +626,9 @@
     angular.module('axpress')
         .controller('FeaturesController', FeaturesController);
 
-    FeaturesController.$inject = ['$rootScope', '$scope', '$state','Location','NgMap','$timeout','GoogleMapGeocoder', 'Logger'];
+    FeaturesController.$inject = ['$rootScope', '$scope', '$state','Location','NgMap','$timeout','GoogleMapGeocoder', 'Logger', 'Util'];
 
-    function FeaturesController($rootScope, $scope, $state,Location, NgMap,$timeout,GoogleMapGeocoder, Logger) {
+    function FeaturesController($rootScope, $scope, $state,Location, NgMap,$timeout,GoogleMapGeocoder, Logger, Util) {
         activate();
 
         $scope.confirmServiceType = function() {
@@ -632,10 +638,10 @@
             $scope.data.bagId = $scope.choice.bag.shipping_bag_id;
             $scope.data.bagTitle = $scope.choice.bag.title;
             if ($scope.extraData.navigateTo) {
-                $state.go($scope.extraData.navigateTo);
+                Util.stateGoAndReload($scope.extraData.navigateTo);
                 delete $scope.extraData.navigateTo;
             } else {
-                $state.go($scope.extraData.featuresNext);
+                Util.stateGoAndReload($scope.extraData.featuresNext);
             }
         };
 
@@ -656,10 +662,10 @@
             if (!hasFilledPackage()) return;
 
             if ($scope.extraData.navigateTo) {
-                $state.go($scope.extraData.navigateTo, {}, {reload: true});
+                Util.stateGoAndReload($scope.extraData.navigateTo);
                 delete $scope.extraData.navigateTo;
             } else {
-                $state.go($scope.extraData.packageNext);
+                Util.stateGoAndReload($scope.extraData.packageNext);
             }
         };
 
@@ -667,16 +673,16 @@
             if (!hasFilledDescription()) return;
 
             if ($scope.extraData.navigateTo) {
-                $state.go($scope.extraData.navigateTo);
+                Util.stateGoAndReload($scope.extraData.navigateTo);
                 delete $scope.extraData.navigateTo;
             } else {
-                $state.go($scope.extraData.clientNext);
+                Util.stateGoAndReload($scope.extraData.clientNext);
             }
         };
 
         $scope.selectShippingType = function (bag) {
             $scope.choice.bag = bag;
-        }
+        };
 
         function hasSelectedTypeService () {
             if (!$scope.choice.bag) {
@@ -751,6 +757,7 @@
             $scope.address = "";
             NgMap.getMap().then(function(map) {
                 $scope.map = map;
+                google.maps.event.trigger(map, 'resize');
             });
             if ( Array.isArray($scope.data.destiniesData) && $scope.data.destiniesData.length > 0 ) {
                 var index = $scope.data.editStopIndex;
@@ -845,9 +852,9 @@
     angular.module('axpress')
         .controller('MenuController', MenuController);
 
-    MenuController.$inject = ['$rootScope', '$scope', '$state'];
+    MenuController.$inject = ['$rootScope', '$scope', '$state', 'Util'];
 
-    function MenuController($rootScope, $scope, $state) {
+    function MenuController($rootScope, $scope, $state, Util) {
         $scope.menuoptions = $rootScope.menu.filter(function (item) {
             var serviceId = item.service_provider_id;
             return (serviceId == 43 || serviceId == 44 || serviceId == 45);
@@ -860,7 +867,7 @@
         };
 
         $scope.moveTo = function(option) {
-            $state.go(urlsPerServiceType[option.service_provider_id], { serviceType: option.service_provider_id });
+            Util.stateGoAndReload(urlsPerServiceType[option.service_provider_id], { serviceType: option.service_provider_id });
         };
     }
 })();
@@ -871,11 +878,13 @@
         .controller('OriginController', DocumentOriginController);
 
     DocumentOriginController.$inject = ['$rootScope', '$scope', '$state', 'Location', 'NgMap',
-        '$timeout', 'GoogleMapGeocoder', 'Logger'];
+        '$timeout', 'GoogleMapGeocoder', 'Logger', 'Util'];
 
     function DocumentOriginController($rootScope, $scope, $state, Location, NgMap,
-                                      $timeout, GoogleMapGeocoder, Logger) {
-        activate();
+                                      $timeout, GoogleMapGeocoder, Logger, Util) {
+        $timeout(function() {
+            activate();
+        }, 0, false);
 
         $scope.placeChanged = function(place) {
             $scope.place = (typeof place == "object" ? place : this.getPlace());
@@ -899,10 +908,10 @@
             $scope.data.originLongitude = $scope.place.geometry.location.lng();
             $scope.data.originPlace = $scope.place;
             if ( $scope.extraData.navigateTo ) {
-                $state.go($scope.extraData.navigateTo, {}, {reload: true});
+                Util.stateGoAndReload($scope.extraData.navigateTo);
                 delete $scope.extraData.navigateTo;
             } else {
-                $state.go($scope.extraData.originNext);
+                Util.stateGoAndReload($scope.extraData.originNext);
             }
         };
 
@@ -966,12 +975,14 @@
                 icon     : "{url: 'img/PinOrigen/Origen3x.png.png', scaledSize: [28,38]}",
                 draggable: true
             }];
-            if ( $scope.data.originAddress )
-                setExistingAddress();
             NgMap.getMap().then(function(map) {
                 $scope.map = map;
+                if ( $scope.data.originAddress )
+                    setExistingAddress();
+                $timeout(function() {
+                    google.maps.event.trigger(map, 'resize');
+                }, 0, false);
             });
-
         }
     }
 })();
@@ -981,9 +992,9 @@
     angular.module('axpress')
         .controller('PaymentMethodsController', PaymentMethodsController);
 
-    PaymentMethodsController.$inject = ['$rootScope', '$scope', '$state', 'constants', 'Logger', 'Shipping', 'Diligence'];
+    PaymentMethodsController.$inject = ['$rootScope', '$scope', '$state', 'constants', 'Logger', 'Shipping', 'Diligence', 'Util'];
 
-    function PaymentMethodsController($rootScope, $scope, $state, constants, Logger, Shipping, Diligence) {
+    function PaymentMethodsController($rootScope, $scope, $state, constants, Logger, Shipping, Diligence, Util) {
         activate();
 
         $scope.confirmPaymentMethod = function() {
@@ -1031,7 +1042,7 @@
             $scope.data = {};
             $state.current.data.data = {};
             Logger.hideProgressBar();
-            $state.go("app.main");
+            Util.stateGoAndReload("app.main");
             Logger.toast("Solicitud registrada correctamente");
         }
 
@@ -1049,9 +1060,9 @@
     angular.module('axpress')
         .controller('PhotoController', PhotoController);
 
-    PhotoController.$inject = ['$rootScope', '$scope', '$state', 'Logger'];
+    PhotoController.$inject = ['$rootScope', '$scope', '$state', 'Logger', 'Util'];
 
-    function PhotoController($rootScope, $scope, $state, Logger) {
+    function PhotoController($rootScope, $scope, $state, Logger, Util) {
         var preBase64 = "data:image/jpeg;base64,";
         activate();
 
@@ -1067,7 +1078,7 @@
 
         $scope.confirmImagePhoto = function() {
             if (!hasCompletedFeatures()) return;
-            $state.go($scope.extraData.photoNext);
+            Util.stateGoAndReload($scope.extraData.photoNext);
         };
 
         function hasCompletedFeatures () {
@@ -1090,9 +1101,9 @@
 		angular.module('axpress')
 				.controller('RatingController', RatingController);
 
-		RatingController.$inject = ['$rootScope', '$scope', '$state', 'constants', 'Rating', '$timeout', 'Shipping'];
+		RatingController.$inject = ['$rootScope', '$scope', '$state', 'constants', 'Rating', '$timeout', 'Shipping', 'Util'];
 
-		function RatingController($rootScope, $scope, $state, constants, Rating, $timeout, Shipping) {
+		function RatingController($rootScope, $scope, $state, constants, Rating, $timeout, Shipping, Util) {
 				activate();
 
 				$scope.rateService = rateService;
@@ -1101,18 +1112,18 @@
 						$scope.rating = 3;
 						var shippingId = $scope.shipping.shipping_id,
 								rating = $scope.rating;
-						/*Logger.displayProgressBar();*/
+						Logger.displayProgressBar();
 						Rating.post(shippingId, rating).then(function (response) {
-							 /* Logger.hideProgressBar();*/
-								$state.go('app.main');
-								Logger.toast("Se ha guardado su calificación correctamente.");
+							Logger.hideProgressBar();
+							Util.stateGoAndReload('app.main');
+							Logger.toast("Se ha guardado su calificación correctamente.");
 						}, function () {
-								/*Logger.hideProgressBar();*/
+								Logger.hideProgressBar();
 						});
 				}
 
 				function loadHistory () {
-						/*Logger.displayProgressBar();*/
+						Logger.displayProgressBar();
 						Shipping.history($rootScope.user.id).then(function (history) {
 								var tempHistory = history.data.remitent.concat(history.data.receptor);
 								tempHistory.forEach(function (item) {
@@ -1127,7 +1138,7 @@
 										return item.shipping_id == parseInt($state.params.shippingId);
 								}).pop();
 						}, function () {
-								/*Logger.hideProgressBar();*/
+								Logger.hideProgressBar();
 						});
 				}
 
@@ -1149,18 +1160,18 @@
     angular.module('axpress')
         .controller('ReceiverController', ReceiverController);
 
-    ReceiverController.$inject = ['$rootScope', '$scope', '$state', 'Logger'];
+    ReceiverController.$inject = ['$rootScope', '$scope', '$state', 'Logger', 'Util'];
 
-    function ReceiverController($rootScope, $scope, $state, Logger) {
+    function ReceiverController($rootScope, $scope, $state, Logger, Util) {
         activate();
 
         $scope.saveCaracteristics = function() {
             if (isFormValid()) {
                 if ($scope.extraData.navigateTo) {
-                    $state.go($scope.extraData.navigateTo);
+                    Util.stateGoAndReload($scope.extraData.navigateTo);
                     delete $scope.extraData.navigateTo;
                 } else {
-                    $state.go($scope.extraData.receiverNext);
+                    Util.stateGoAndReload($scope.extraData.receiverNext);
                 }
             }
         };
@@ -1201,55 +1212,55 @@
     angular.module('axpress')
         .controller('ResumeController', ResumeController);
 
-    ResumeController.$inject = ['$rootScope', '$scope', '$state', 'Logger', 'Shipping', 'Diligence'];
+    ResumeController.$inject = ['$rootScope', '$scope', '$state', 'Logger', 'Shipping', 'Diligence', 'Util'];
 
-    function ResumeController($rootScope, $scope, $state, Logger, Shipping, Diligence) {
+    function ResumeController($rootScope, $scope, $state, Logger, Shipping, Diligence, Util) {
 
         activate();
 
         $scope.editOrigin = function() {
             $scope.extraData.navigateTo = $scope.extraData.flow + '.resume';
-            $state.go($scope.extraData.flow + '.origin', {}, {reload: true});
+            Util.stateGoAndReload($scope.extraData.flow + '.origin');
         };
 
         $scope.editDestiny = function() {
             if ( $state.params.serviceType == 45 ) {
                 //Its a diligence
                 $scope.extraData.navigateTo = $scope.extraData.flow + '.resume';
-                $state.go($scope.extraData.flow + '.stops');
+                Util.stateGoAndReload($scope.extraData.flow + '.stops');
             } else {
                 $scope.extraData.navigateTo = $scope.extraData.flow + '.resume';
-                $state.go($scope.extraData.flow + '.destiny', {}, {reload: true});
+                Util.stateGoAndReload($scope.extraData.flow + '.destiny');
             }
         };
         $scope.editSentType = function() {
             if ( $state.params.serviceType == 45 ) {
                 //Its a diligence
                 $scope.extraData.navigateTo = $scope.extraData.flow + '.resume';
-                $state.go($scope.extraData.flow + '.features');
+                Util.stateGoAndReload($scope.extraData.flow + '.features');
             } else {
                 $scope.extraData.navigateTo = $scope.extraData.flow + '.resume';
-                $state.go($scope.extraData.flow + '.features');
+                Util.stateGoAndReload($scope.extraData.flow + '.features');
             }
         };
         $scope.editPackages = function() {
             if ( $state.params.serviceType == 45 ) {
                 //Its a diligence
                 $scope.extraData.navigateTo = $scope.extraData.flow + '.resume';
-                $state.go($scope.extraData.flow + '.package');
+                Util.stateGoAndReload($scope.extraData.flow + '.package');
             } else {
                 $scope.extraData.navigateTo = $scope.extraData.flow + '.resume';
-                $state.go($scope.extraData.flow + '.package');
+                Util.stateGoAndReload($scope.extraData.flow + '.package');
             }
         };
         $scope.editPhoto = function() {
             if ( $state.params.serviceType == 45 ) {
                 //Its a diligence
                 $scope.extraData.navigateTo = $scope.extraData.flow + '.resume';
-                $state.go($scope.extraData.flow + '.photo');
+                Util.stateGoAndReload($scope.extraData.flow + '.photo');
             } else {
                 $scope.extraData.navigateTo = $scope.extraData.flow + '.resume';
-                $state.go($scope.extraData.flow + '.photo');
+                Util.stateGoAndReload($scope.extraData.flow + '.photo');
             }
         };
 
@@ -1257,20 +1268,20 @@
             if ( $state.params.serviceType == 45 ) {
                 //Its a diligence
                 $scope.extraData.navigateTo = $scope.extraData.flow + '.resume';
-                $state.go($scope.extraData.flow + '.clientfeatures');
+                Util.stateGoAndReload($scope.extraData.flow + '.clientfeatures');
             } else {
                 $scope.extraData.navigateTo = $scope.extraData.flow + '.resume';
-                $state.go($scope.extraData.flow + '.features', {}, {reload: true});
+                Util.stateGoAndReload($scope.extraData.flow + '.features');
             }
         };
 
         $scope.editDestinatary = function() {
             $scope.extraData.navigateTo = $scope.extraData.flow + '.resume';
-            $state.go($scope.extraData.flow + '.receiver');
+            Util.stateGoAndReload($scope.extraData.flow + '.receiver');
         };
 
         $scope.confirmResume = function() {
-            $state.go($scope.extraData.resumeNext);
+            Util.stateGoAndReload($scope.extraData.resumeNext);
         };
 
         function requestQuotation() {
@@ -1325,20 +1336,20 @@
 (function() {
     angular.module('axpress')
         .controller('StopsController', StopsController);
-    StopsController.$inject = ['$rootScope', '$scope', '$state', 'Logger'];
+    StopsController.$inject = ['$rootScope', '$scope', '$state', 'Util'];
 
-    function StopsController($rootScope, $scope, $state) {
+    function StopsController($rootScope, $scope, $state, Util) {
         activate();
 
         $scope.editDestiny = function(valux) {
             $scope.data.editStopIndex = valux;
             $scope.data.editing = true;
             $scope.extraData.navigateTo = $scope.extraData.flow + '.stops';
-            $state.go($scope.extraData.flow + '.destiny');
+            Util.stateGoAndReload($scope.extraData.flow + '.destiny');
         };
 
         $scope.goBack = function() {
-            $state.go($scope.extraData.flow + '.resume');
+            Util.stateGoAndReload($scope.extraData.flow + '.resume');
         };
 
         function activate() {
@@ -1350,82 +1361,82 @@
 ;
 
 (function() {
-		angular.module('axpress')
-				.controller('TrackingController', TrackingController);
+    angular.module('axpress')
+        .controller('TrackingController', TrackingController);
 
-		TrackingController.$inject = ['$rootScope', '$scope', '$state', 'constants', 'logisticResource', '$timeout', 'Shipping' ];
+    TrackingController.$inject = ['$rootScope', '$scope', '$state', 'constants', 'logisticResource', '$timeout', 'Shipping'];
 
-		function TrackingController($rootScope, $scope, $state, constants, logisticResource, $timeout, Shipping) {
-				activate();
+    function TrackingController($rootScope, $scope, $state, constants, logisticResource, $timeout, Shipping) {
+        activate();
 
-				$scope.loadCourierPosition = loadCourierPosition;
+        $scope.loadCourierPosition = loadCourierPosition;
 
-				$scope.goToCall = function() {
-						console.log("Call phone number...");
-				};
+        $scope.goToCall = function() {
+            console.log("Call phone number...");
+        };
 
-				function findStatusText (status) {
-						return constants.shipmentStatuses.find(function (statusType) {
-								return status == statusType.value;
-						});
-				}
+        function findStatusText(status) {
+            return constants.shipmentStatuses.find(function(statusType) {
+                return status == statusType.value;
+            });
+        }
 
-				function loadCourierPosition () {
-						logisticResource.getLocation($scope.shipping.currier.currier_id).then(function (data) {
-								if (data.return && data.status == 200) {
-										loadMarkers(data.data);
-								}
-						});
-				}
+        function loadCourierPosition() {
+            logisticResource.getLocation($scope.shipping.currier.currier_id).then(function(data) {
+                if (data.return && data.status == 200) {
+                    loadMarkers(data.data);
+                }
+            });
+        }
 
-				function loadMarkers (courier) {
-						var markers = [{
-								position: [$scope.shipping.origin_latitude, $scope.shipping.origin_longitude],
-								icon    : "{url: 'img/Pindestino/Pindetsino3x.png.png', scaledSize: [48,48]}",
-								title: 'Origen'
-						}, {
-								position: [$scope.shipping.destiny_latitude, $scope.shipping.destiny_longitude],
-								icon    : "{url: 'img/PinOrigen/Origen3x.png.png', scaledSize: [48,48]}",
-								title: 'Destino'
-						}];
+        function loadMarkers(courier) {
+            var markers = [{
+                position: [$scope.shipping.origin_latitude, $scope.shipping.origin_longitude],
+                icon: "{url: 'img/Pindestino/Pindetsino3x.png.png', scaledSize: [48,48]}",
+                title: 'Origen'
+            }, {
+                position: [$scope.shipping.destiny_latitude, $scope.shipping.destiny_longitude],
+                icon: "{url: 'img/PinOrigen/Origen3x.png.png', scaledSize: [48,48]}",
+                title: 'Destino'
+            }];
 
-						if (courier) {
-								markers.push({
-										position: [courier.latitud, courier.longitud],
-										icon    : "{url: 'img/PinOrigen/Origen3x.png.png', scaledSize: [48,48]}",
-										title: 'Courier'
-								});
-						}
-						$timeout(function(){
-								$scope.markers = markers;
-						}, 0);
-				}
+            if (courier) {
+                markers.push({
+                    position: [courier.latitud, courier.longitud],
+                    icon: "{url: 'img/PinOrigen/Origen3x.png.png', scaledSize: [48,48]}",
+                    title: 'Courier'
+                });
+            }
+            $timeout(function() {
+                $scope.markers = markers;
+            }, 0);
+        }
 
-				function loadHistory () {
-						/*Logger.displayProgressBar();*/
-						Shipping.history($rootScope.user.id).then(function (history) {
-								var tempHistory = history.data.remitent.concat(history.data.receptor);
-								tempHistory.forEach(function (item) {
-										if (item.currier) {
-												item.currier.fullName = item.currier.name + ' ' + item.currier.last;
-										}
-										item.status = findStatusText(item.status);
-								});
-								$scope.history = tempHistory;
+        function loadHistory() {
+            /*Logger.displayProgressBar();*/
+            Shipping.history($rootScope.user.id).then(function(history) {
+                var tempHistory = history.data.remitent.concat(history.data.receptor);
+                tempHistory.forEach(function(item) {
+                    if (item.currier) {
+                        item.currier.fullName = item.currier.name + ' ' + item.currier.last;
+                    }
+                    item.status = findStatusText(item.status);
+                });
+                $scope.history = tempHistory;
 
-								// Detailed history
-								$scope.shipping = $scope.history.filter(function (item) {
-										return item.shipping_id == parseInt($state.params.shippingId);
-								}).pop();
-								loadMarkers();
-								loadCourierPosition();
-						}, function () {
-								/*Logger.hideProgressBar();*/
-						});
-				}
+                // Detailed history
+                $scope.shipping = $scope.history.filter(function(item) {
+                    return item.shipping_id == parseInt($state.params.shippingId);
+                }).pop();
+                loadMarkers();
+                loadCourierPosition();
+            }, function() {
+                /*Logger.hideProgressBar();*/
+            });
+        }
 
-				function activate () {
-						loadHistory();
-				}
-		}
+        function activate() {
+            loadHistory();
+        }
+    }
 })();

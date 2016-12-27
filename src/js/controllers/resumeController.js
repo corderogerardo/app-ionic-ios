@@ -2,55 +2,55 @@
     angular.module('axpress')
         .controller('ResumeController', ResumeController);
 
-    ResumeController.$inject = ['$rootScope', '$scope', '$state', 'Logger', 'Shipping', 'Diligence'];
+    ResumeController.$inject = ['$rootScope', '$scope', '$state', 'Logger', 'Shipping', 'Diligence', 'Util'];
 
-    function ResumeController($rootScope, $scope, $state, Logger, Shipping, Diligence) {
+    function ResumeController($rootScope, $scope, $state, Logger, Shipping, Diligence, Util) {
 
         activate();
 
         $scope.editOrigin = function() {
             $scope.extraData.navigateTo = $scope.extraData.flow + '.resume';
-            $state.go($scope.extraData.flow + '.origin', {}, {reload: true});
+            Util.stateGoAndReload($scope.extraData.flow + '.origin');
         };
 
         $scope.editDestiny = function() {
             if ( $state.params.serviceType == 45 ) {
                 //Its a diligence
                 $scope.extraData.navigateTo = $scope.extraData.flow + '.resume';
-                $state.go($scope.extraData.flow + '.stops');
+                Util.stateGoAndReload($scope.extraData.flow + '.stops');
             } else {
                 $scope.extraData.navigateTo = $scope.extraData.flow + '.resume';
-                $state.go($scope.extraData.flow + '.destiny', {}, {reload: true});
+                Util.stateGoAndReload($scope.extraData.flow + '.destiny');
             }
         };
         $scope.editSentType = function() {
             if ( $state.params.serviceType == 45 ) {
                 //Its a diligence
                 $scope.extraData.navigateTo = $scope.extraData.flow + '.resume';
-                $state.go($scope.extraData.flow + '.features');
+                Util.stateGoAndReload($scope.extraData.flow + '.features');
             } else {
                 $scope.extraData.navigateTo = $scope.extraData.flow + '.resume';
-                $state.go($scope.extraData.flow + '.features');
+                Util.stateGoAndReload($scope.extraData.flow + '.features');
             }
         };
         $scope.editPackages = function() {
             if ( $state.params.serviceType == 45 ) {
                 //Its a diligence
                 $scope.extraData.navigateTo = $scope.extraData.flow + '.resume';
-                $state.go($scope.extraData.flow + '.package');
+                Util.stateGoAndReload($scope.extraData.flow + '.package');
             } else {
                 $scope.extraData.navigateTo = $scope.extraData.flow + '.resume';
-                $state.go($scope.extraData.flow + '.package');
+                Util.stateGoAndReload($scope.extraData.flow + '.package');
             }
         };
         $scope.editPhoto = function() {
             if ( $state.params.serviceType == 45 ) {
                 //Its a diligence
                 $scope.extraData.navigateTo = $scope.extraData.flow + '.resume';
-                $state.go($scope.extraData.flow + '.photo');
+                Util.stateGoAndReload($scope.extraData.flow + '.photo');
             } else {
                 $scope.extraData.navigateTo = $scope.extraData.flow + '.resume';
-                $state.go($scope.extraData.flow + '.photo');
+                Util.stateGoAndReload($scope.extraData.flow + '.photo');
             }
         };
 
@@ -58,20 +58,20 @@
             if ( $state.params.serviceType == 45 ) {
                 //Its a diligence
                 $scope.extraData.navigateTo = $scope.extraData.flow + '.resume';
-                $state.go($scope.extraData.flow + '.clientfeatures');
+                Util.stateGoAndReload($scope.extraData.flow + '.clientfeatures');
             } else {
                 $scope.extraData.navigateTo = $scope.extraData.flow + '.resume';
-                $state.go($scope.extraData.flow + '.features', {}, {reload: true});
+                Util.stateGoAndReload($scope.extraData.flow + '.features');
             }
         };
 
         $scope.editDestinatary = function() {
             $scope.extraData.navigateTo = $scope.extraData.flow + '.resume';
-            $state.go($scope.extraData.flow + '.receiver');
+            Util.stateGoAndReload($scope.extraData.flow + '.receiver');
         };
 
         $scope.confirmResume = function() {
-            $state.go($scope.extraData.resumeNext);
+            Util.stateGoAndReload($scope.extraData.resumeNext);
         };
 
         function requestQuotation() {

@@ -2,9 +2,9 @@
     angular.module('axpress')
         .controller('FeaturesController', FeaturesController);
 
-    FeaturesController.$inject = ['$rootScope', '$scope', '$state','Location','NgMap','$timeout','GoogleMapGeocoder', 'Logger'];
+    FeaturesController.$inject = ['$rootScope', '$scope', '$state','Location','NgMap','$timeout','GoogleMapGeocoder', 'Logger', 'Util'];
 
-    function FeaturesController($rootScope, $scope, $state,Location, NgMap,$timeout,GoogleMapGeocoder, Logger) {
+    function FeaturesController($rootScope, $scope, $state,Location, NgMap,$timeout,GoogleMapGeocoder, Logger, Util) {
         activate();
 
         $scope.confirmServiceType = function() {
@@ -14,10 +14,10 @@
             $scope.data.bagId = $scope.choice.bag.shipping_bag_id;
             $scope.data.bagTitle = $scope.choice.bag.title;
             if ($scope.extraData.navigateTo) {
-                $state.go($scope.extraData.navigateTo);
+                Util.stateGoAndReload($scope.extraData.navigateTo);
                 delete $scope.extraData.navigateTo;
             } else {
-                $state.go($scope.extraData.featuresNext);
+                Util.stateGoAndReload($scope.extraData.featuresNext);
             }
         };
 
@@ -38,10 +38,10 @@
             if (!hasFilledPackage()) return;
 
             if ($scope.extraData.navigateTo) {
-                $state.go($scope.extraData.navigateTo, {}, {reload: true});
+                Util.stateGoAndReload($scope.extraData.navigateTo);
                 delete $scope.extraData.navigateTo;
             } else {
-                $state.go($scope.extraData.packageNext);
+                Util.stateGoAndReload($scope.extraData.packageNext);
             }
         };
 
@@ -49,16 +49,16 @@
             if (!hasFilledDescription()) return;
 
             if ($scope.extraData.navigateTo) {
-                $state.go($scope.extraData.navigateTo);
+                Util.stateGoAndReload($scope.extraData.navigateTo);
                 delete $scope.extraData.navigateTo;
             } else {
-                $state.go($scope.extraData.clientNext);
+                Util.stateGoAndReload($scope.extraData.clientNext);
             }
         };
 
         $scope.selectShippingType = function (bag) {
             $scope.choice.bag = bag;
-        }
+        };
 
         function hasSelectedTypeService () {
             if (!$scope.choice.bag) {
@@ -133,6 +133,7 @@
             $scope.address = "";
             NgMap.getMap().then(function(map) {
                 $scope.map = map;
+                google.maps.event.trigger(map, 'resize');
             });
             if ( Array.isArray($scope.data.destiniesData) && $scope.data.destiniesData.length > 0 ) {
                 var index = $scope.data.editStopIndex;
