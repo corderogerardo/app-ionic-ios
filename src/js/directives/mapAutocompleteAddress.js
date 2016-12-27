@@ -6,8 +6,9 @@
     angular.module('axpress')
         .directive('mapAutocompleteAddress', mapAutocompleteAddress);
 
+    mapAutocompleteAddress.$inject = ['$timeout'];
 
-    function mapAutocompleteAddress() {
+    function mapAutocompleteAddress($timeout) {
         return {
             restrict: 'EA',
             scope: {
@@ -48,6 +49,13 @@
                         input.blur();
                     });
                 };
+            },
+            link: function (scope, element, attributes, controller) {
+                scope.$watch('address', function(newValue, oldValue, scope) {
+                    $timeout(function () {
+                        scope.$apply();
+                    }, 0);
+                }, true);
             }
         };
     }

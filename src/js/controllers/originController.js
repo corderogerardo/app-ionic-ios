@@ -9,7 +9,7 @@
                                       $timeout, GoogleMapGeocoder, Logger, Util) {
         $timeout(function() {
             activate();
-        }, 0, false);
+        }, 0);
 
         $scope.placeChanged = function(place) {
             $scope.place = (typeof place == "object" ? place : this.getPlace());
@@ -93,6 +93,7 @@
         }
 
         function activate() {
+            $scope.place = {};
             $scope.data = $state.current.data.data;
             $scope.extraData = $state.current.data.extraData;
             $scope.markers = [{
