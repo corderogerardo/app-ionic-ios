@@ -35,8 +35,8 @@
 						@include align-items(center);
 						@include justify-content(center);
 						border:none !important;
-						@include widheigh(90%,90%,70%,70%);
-						@include responsivewidthheight(90%,90%,70%,70%,90%,90%,75%,75%,90%,90%,75%,75%,90%,90%,75%,75%);
+						@include widheigh(90%,90%,65%,65%);
+						@include responsivewidthheight(90%,90%,65%,65%,90%,90%,70%,70%,90%,90%,75%,75%,90%,90%,75%,75%);
 						@include media-icons-ios("../img/Documentos/Documentos.png","../img/DocumentosTAP/DocuemtosTAP.png","../img/Documentos/Documentos2x.png.png","../img/DocumentosTAP/DocuemtosTAP2x.png.png","../img/Documentos/Documentos3x.png.png","../img/DocumentosTAP/DocuemtosTAP3x.png.png");
 				}
 				.img-1{
@@ -45,8 +45,8 @@
 						@include align-items(center);
 						@include justify-content(center);
 						border:none !important;
-						@include widheigh(90%,90%,70%,70%);
-						@include responsivewidthheight(90%,90%,70%,70%,90%,90%,75%,75%,90%,90%,75%,75%,90%,90%,75%,75%);
+						@include widheigh(90%,90%,65%,65%);
+						@include responsivewidthheight(90%,90%,65%,65%,90%,90%,70%,70%,90%,90%,75%,75%,90%,90%,75%,75%);
 						@include media-icons-ios("../img/Paquetes/Paquetes.png","../img/PaquetesTAP/PaquetesTAP.png","../img/Paquetes/Paquetes2x.png.png","../img/PaquetesTAP/PaquetesTAP2x.png.png","../img/Paquetes/Paquetes3x.png.png","../img/PaquetesTAP/PaquetesTAP3x.png.png");
 				}
 				.img-2{
@@ -55,8 +55,8 @@
 						@include align-items(center);
 						@include justify-content(center);
 						border:none !important;
-						@include widheigh(90%,90%,70%,70%);
-						@include responsivewidthheight(90%,90%,70%,70%,90%,90%,75%,75%,90%,90%,75%,75%,90%,90%,75%,75%);
+						@include widheigh(90%,90%,65%,65%);
+						@include responsivewidthheight(90%,90%,65%,65%,90%,90%,70%,70%,90%,90%,75%,75%,90%,90%,75%,75%);
 						@include media-icons-ios("../img/Diligencias/Diligencias.png","../img/DiligenciasTAP/DiligenciasTAP.png","../img/Diligencias/Diligencias2x.png.png","../img/DiligenciasTAP/DiligenciasTAP2x.png.png","../img/Diligencias/Diligencias3x.png.png","../img/DiligenciasTAP/DiligenciasTAP3x.png.png");
 				}
 		}

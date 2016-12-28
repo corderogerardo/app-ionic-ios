@@ -10945,46 +10945,46 @@ ion-content {
         background-position: center; } }
   @media screen and (max-height: 2560px) {
     .facebook-icon {
-      min-height: 60px;
-      height: 60px;
-      min-width: 59px;
-      width: 59px; } }
+      min-height: 50px;
+      height: 50px;
+      min-width: 49px;
+      width: 49px; } }
   @media screen and (max-height: 1920px) {
-    .facebook-icon {
-      min-height: 60px;
-      height: 60px;
-      min-width: 59px;
-      width: 59px; } }
-  @media screen and (max-height: 1280px) {
-    .facebook-icon {
-      min-height: 60px;
-      height: 60px;
-      min-width: 59px;
-      width: 59px; } }
-  @media screen and (max-height: 960px) {
-    .facebook-icon {
-      min-height: 60px;
-      height: 60px;
-      min-width: 59px;
-      width: 59px; } }
-  @media screen and (max-height: 736px) {
-    .facebook-icon {
-      min-height: 60px;
-      height: 60px;
-      min-width: 59px;
-      width: 59px; } }
-  @media screen and (max-height: 667px) {
-    .facebook-icon {
-      min-height: 60px;
-      height: 60px;
-      min-width: 59px;
-      width: 59px; } }
-  @media screen and (max-height: 568px) {
     .facebook-icon {
       min-height: 50px;
       height: 50px;
       min-width: 49px;
       width: 49px; } }
+  @media screen and (max-height: 1280px) {
+    .facebook-icon {
+      min-height: 50px;
+      height: 50px;
+      min-width: 49px;
+      width: 49px; } }
+  @media screen and (max-height: 960px) {
+    .facebook-icon {
+      min-height: 50px;
+      height: 50px;
+      min-width: 49px;
+      width: 49px; } }
+  @media screen and (max-height: 736px) {
+    .facebook-icon {
+      min-height: 50px;
+      height: 50px;
+      min-width: 49px;
+      width: 49px; } }
+  @media screen and (max-height: 667px) {
+    .facebook-icon {
+      min-height: 50px;
+      height: 50px;
+      min-width: 49px;
+      width: 49px; } }
+  @media screen and (max-height: 568px) {
+    .facebook-icon {
+      min-height: 40px;
+      height: 40px;
+      min-width: 39px;
+      width: 39px; } }
   @media screen and (max-height: 480px) {
     .facebook-icon {
       min-height: 40px;
@@ -11162,46 +11162,46 @@ ion-content {
         background-position: center; } }
   @media screen and (max-height: 2560px) {
     .google-icon {
-      min-height: 60px;
-      height: 60px;
-      min-width: 59px;
-      width: 59px; } }
+      min-height: 50px;
+      height: 50px;
+      min-width: 49px;
+      width: 49px; } }
   @media screen and (max-height: 1920px) {
-    .google-icon {
-      min-height: 60px;
-      height: 60px;
-      min-width: 59px;
-      width: 59px; } }
-  @media screen and (max-height: 1280px) {
-    .google-icon {
-      min-height: 60px;
-      height: 60px;
-      min-width: 59px;
-      width: 59px; } }
-  @media screen and (max-height: 960px) {
-    .google-icon {
-      min-height: 60px;
-      height: 60px;
-      min-width: 59px;
-      width: 59px; } }
-  @media screen and (max-height: 736px) {
-    .google-icon {
-      min-height: 60px;
-      height: 60px;
-      min-width: 59px;
-      width: 59px; } }
-  @media screen and (max-height: 667px) {
-    .google-icon {
-      min-height: 60px;
-      height: 60px;
-      min-width: 59px;
-      width: 59px; } }
-  @media screen and (max-height: 568px) {
     .google-icon {
       min-height: 50px;
       height: 50px;
       min-width: 49px;
       width: 49px; } }
+  @media screen and (max-height: 1280px) {
+    .google-icon {
+      min-height: 50px;
+      height: 50px;
+      min-width: 49px;
+      width: 49px; } }
+  @media screen and (max-height: 960px) {
+    .google-icon {
+      min-height: 50px;
+      height: 50px;
+      min-width: 49px;
+      width: 49px; } }
+  @media screen and (max-height: 736px) {
+    .google-icon {
+      min-height: 50px;
+      height: 50px;
+      min-width: 49px;
+      width: 49px; } }
+  @media screen and (max-height: 667px) {
+    .google-icon {
+      min-height: 50px;
+      height: 50px;
+      min-width: 49px;
+      width: 49px; } }
+  @media screen and (max-height: 568px) {
+    .google-icon {
+      min-height: 40px;
+      height: 40px;
+      min-width: 39px;
+      width: 39px; } }
   @media screen and (max-height: 480px) {
     .google-icon {
       min-height: 40px;
@@ -12787,8 +12787,8 @@ ion-slide {
       border: none !important;
       min-height: 90%;
       height: 90%;
-      min-width: 70%;
-      width: 70%;
+      min-width: 65%;
+      width: 65%;
       border: none !important;
       background-color: transparent;
       background-image: url("../img/Documentos/Documentos.png") !important;
@@ -12835,20 +12835,20 @@ ion-slide {
         .main-menu a .img-0 {
           min-height: 90%;
           height: 90%;
-          min-width: 75%;
-          width: 75%; } }
+          min-width: 70%;
+          width: 70%; } }
       @media screen and (max-height: 480px) {
         .main-menu a .img-0 {
           min-height: 90%;
           height: 90%;
-          min-width: 70%;
-          width: 70%; } }
+          min-width: 65%;
+          width: 65%; } }
       @media screen and (max-height: 320px) {
         .main-menu a .img-0 {
           min-height: 90%;
           height: 90%;
-          min-width: 70%;
-          width: 70%; } }
+          min-width: 65%;
+          width: 65%; } }
       @media screen and (max-height: 2560px) {
         .main-menu a .img-0 {
           border: none !important;
@@ -13026,8 +13026,8 @@ ion-slide {
       border: none !important;
       min-height: 90%;
       height: 90%;
-      min-width: 70%;
-      width: 70%;
+      min-width: 65%;
+      width: 65%;
       border: none !important;
       background-color: transparent;
       background-image: url("../img/Paquetes/Paquetes.png") !important;
@@ -13074,20 +13074,20 @@ ion-slide {
         .main-menu a .img-1 {
           min-height: 90%;
           height: 90%;
-          min-width: 75%;
-          width: 75%; } }
+          min-width: 70%;
+          width: 70%; } }
       @media screen and (max-height: 480px) {
         .main-menu a .img-1 {
           min-height: 90%;
           height: 90%;
-          min-width: 70%;
-          width: 70%; } }
+          min-width: 65%;
+          width: 65%; } }
       @media screen and (max-height: 320px) {
         .main-menu a .img-1 {
           min-height: 90%;
           height: 90%;
-          min-width: 70%;
-          width: 70%; } }
+          min-width: 65%;
+          width: 65%; } }
       @media screen and (max-height: 2560px) {
         .main-menu a .img-1 {
           border: none !important;
@@ -13265,8 +13265,8 @@ ion-slide {
       border: none !important;
       min-height: 90%;
       height: 90%;
-      min-width: 70%;
-      width: 70%;
+      min-width: 65%;
+      width: 65%;
       border: none !important;
       background-color: transparent;
       background-image: url("../img/Diligencias/Diligencias.png") !important;
@@ -13313,20 +13313,20 @@ ion-slide {
         .main-menu a .img-2 {
           min-height: 90%;
           height: 90%;
-          min-width: 75%;
-          width: 75%; } }
+          min-width: 70%;
+          width: 70%; } }
       @media screen and (max-height: 480px) {
         .main-menu a .img-2 {
           min-height: 90%;
           height: 90%;
-          min-width: 70%;
-          width: 70%; } }
+          min-width: 65%;
+          width: 65%; } }
       @media screen and (max-height: 320px) {
         .main-menu a .img-2 {
           min-height: 90%;
           height: 90%;
-          min-width: 70%;
-          width: 70%; } }
+          min-width: 65%;
+          width: 65%; } }
       @media screen and (max-height: 2560px) {
         .main-menu a .img-2 {
           border: none !important;
@@ -18019,6 +18019,34 @@ ion-slide {
 .checkbox-icon:after {
   position: relative !important; }
 
+.receiver-scroll {
+  min-height: 100%;
+  height: 100%;
+  min-width: 100%;
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-direction: normal;
+  -webkit-box-orient: vertical;
+  -webkit-flex-direction: column;
+  -moz-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  justify-content: center; }
+
 .caracteristics-container {
   display: -webkit-box;
   display: -webkit-flex;
@@ -18044,8 +18072,8 @@ ion-slide {
   justify-content: center;
   min-width: 100%;
   width: 100%;
-  height: 85%;
-  min-height: 85%; }
+  height: 75%;
+  min-height: 75%; }
 
 .caracteristics-title {
   display: -webkit-box;
@@ -24418,38 +24446,38 @@ ion-slide {
     .history-lists {
       min-height: 250px;
       height: 250px;
-      min-width: auto;
-      width: auto; } }
+      min-width: 100%;
+      width: 100%; } }
   @media screen and (max-height: 1920px) {
     .history-lists {
       min-height: 250px;
       height: 250px;
-      min-width: auto;
-      width: auto; } }
+      min-width: 100%;
+      width: 100%; } }
   @media screen and (max-height: 1280px) {
     .history-lists {
       min-height: 250px;
       height: 250px;
-      min-width: auto;
-      width: auto; } }
+      min-width: 100%;
+      width: 100%; } }
   @media screen and (max-height: 960px) {
     .history-lists {
       min-height: 250px;
       height: 250px;
-      min-width: auto;
-      width: auto; } }
+      min-width: 100%;
+      width: 100%; } }
   @media screen and (max-height: 736px) {
     .history-lists {
       min-height: 250px;
       height: 250px;
-      min-width: auto;
-      width: auto; } }
+      min-width: 100%;
+      width: 100%; } }
   @media screen and (max-height: 667px) {
     .history-lists {
       min-height: 250px;
       height: 250px;
-      min-width: auto;
-      width: auto; } }
+      min-width: 100%;
+      width: 100%; } }
   @media screen and (max-height: 568px) {
     .history-lists {
       min-height: 200px;
@@ -24499,8 +24527,9 @@ ion-slide {
       min-width: 100%; } }
   @media screen and (max-height: 736px) {
     .item-avatar {
-      width: 100%;
-      min-width: 100%; } }
+      width: 92% !important;
+      min-width: 92% !important;
+      margin-left: 4% !important; } }
   @media screen and (max-height: 667px) {
     .item-avatar {
       width: 100%;

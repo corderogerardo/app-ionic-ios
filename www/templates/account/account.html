@@ -1,26 +1,26 @@
 <div class="bar bar-header bar-balanced bar-sendtype">
-    <h1 class="title">Editar cuenta</h1>
+		<h1 class="title">Editar cuenta</h1>
 </div>
 <ion-view view-title="Your Account">
-    <ion-content scroll="false">
-        <div class="account-container-user">
-            <div class="account-photo">
-                <img ng-src="{{user.social_picture || user.selectedPhoto || 'img/Anadirfoto/Anadirfoto3x.png.png'}}" height="60px" width="60px" alt="">
-                </div><div class="account-user">
-                <select-photo on-photo-selected="imageSelected" ng-if="!user.social_picture"></select-photo>
-            </div>
-        </div>
-        <form class="list list-inset account-container" keyboard-attach id="accountForm" name="accountForm" accept-charset="utf-8" novalidate>
-            <input class="item item-input inputs-general input-user-dest" type="text" name="name" ng-model="user.name" placeholder="Nombre" required>
-            <input class="item item-input inputs-general input-email-dest" type="email" name="email" ng-model="user.email" placeholder="Correo Electrónico" required>
-            <input class="item item-input inputs-general input-phone-dest" type="tel" name="mobilephone" ng-model="user.phone" placeholder="Teléfono Móvil">
-            <input class="item item-input inputs-general input-dni-dest" type="password" name="pass" ng-model="user.pass" placeholder="Contraseña actual" ng-disabled="isSocialAccount()">
-            <input class="item item-input inputs-general input-dni-dest" type="password" name="pass" ng-model="user.newPass" placeholder="Nueva contraseña" ng-disabled="isSocialAccount()">
-        </form>
-        <div class="hide-on-keyboard-open row button-bottom-two button-confirm-position">
-            <a class="button button-block button-default-two button-continue" title="Guardar Cambios" ng-click="doAccountUpdate(accountForm)">
-                Guardar
-            </a>
-        </div>
-    </ion-content>
+		<ion-content scroll="false" overflow-scroll="true">
+				<div class="account-container-user">
+						<div class="account-photo">
+								<img ng-src="{{user.social_picture || user.selectedPhoto || 'img/Anadirfoto/Anadirfoto3x.png.png'}}" height="60px" width="60px" alt="">
+								</div><div class="account-user">
+								<select-photo on-photo-selected="imageSelected" ng-if="!user.social_picture"></select-photo>
+						</div>
+				</div>
+				<form class="list list-inset account-container" id="accountForm" name="accountForm" accept-charset="utf-8" novalidate>
+						<input class="item item-input inputs-general input-user-dest" type="text" name="name" ng-model="user.name" placeholder="Nombre" required>
+						<input class="item item-input inputs-general input-email-dest" type="email" name="email" ng-model="user.email" placeholder="Correo Electrónico" required>
+						<input class="item item-input inputs-general input-phone-dest" type="tel" name="mobilephone" ng-model="user.phone" placeholder="Teléfono Móvil">
+						<input class="item item-input inputs-general input-dni-dest" type="password" name="pass" ng-model="user.pass" placeholder="Contraseña actual" ng-disabled="isSocialAccount()">
+						<input class="item item-input inputs-general input-dni-dest" type="password" name="pass" ng-model="user.newPass" placeholder="Nueva contraseña" ng-disabled="isSocialAccount()">
+				</form>
+				<div class="hide-on-keyboard-open row button-bottom-two button-confirm-position">
+						<a class="button button-block button-default-two button-continue" title="Guardar Cambios" ng-click="doAccountUpdate(accountForm)">
+								Guardar
+						</a>
+				</div>
+		</ion-content>
 </ion-view>
