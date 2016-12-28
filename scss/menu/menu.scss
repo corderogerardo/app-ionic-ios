@@ -1,219 +1,219 @@
 .main-menu{
-    @include display-flex;
-    @include flex-direction(column);
-    @include align-items(center);
-    @include justify-content(center);
-    min-height:100%;
-    height:100%;
-    min-width:100%;
-    width:100%;
-    a{
-        @include display-flex;
-        @include flex-direction(column);
-        @include align-items(center);
-        @include justify-content(center);
-        background-color: transparent;
-        border:none !important;
-        height:25%;
-        min-height:25%;
-        color:white;
-        @include font-mediaqueries(20px,22px,26px,28px);
-        margin-bottom: 7%;
-        font-weight: bold;
-        text-align: center;
-        text-decoration: none;
-        width:40%;
-        &:hover{
-            border:none !important;
-            background-color: transparent;
-            color:#ca7530;
-            text-decoration: none;
-        }
-        .img-0{
-            @include display-flex;
-            @include flex-direction(column);
-            @include align-items(center);
-            @include justify-content(center);
-            border:none !important;
-            @include widheigh(90%,90%,70%,70%);
-            @include responsivewidthheight(90%,90%,70%,70%,90%,90%,75%,75%,90%,90%,75%,75%,90%,90%,75%,75%);
-            @include media-icons-ios("../img/Documentos/Documentos.png","../img/DocumentosTAP/DocuemtosTAP.png","../img/Documentos/Documentos2x.png.png","../img/DocumentosTAP/DocuemtosTAP2x.png.png","../img/Documentos/Documentos3x.png.png","../img/DocumentosTAP/DocuemtosTAP3x.png.png");
-        }
-        .img-1{
-            @include display-flex;
-            @include flex-direction(column);
-            @include align-items(center);
-            @include justify-content(center);
-            border:none !important;
-            @include widheigh(90%,90%,70%,70%);
-            @include responsivewidthheight(90%,90%,70%,70%,90%,90%,75%,75%,90%,90%,75%,75%,90%,90%,75%,75%);
-            @include media-icons-ios("../img/Paquetes/Paquetes.png","../img/PaquetesTAP/PaquetesTAP.png","../img/Paquetes/Paquetes2x.png.png","../img/PaquetesTAP/PaquetesTAP2x.png.png","../img/Paquetes/Paquetes3x.png.png","../img/PaquetesTAP/PaquetesTAP3x.png.png");
-        }
-        .img-2{
-            @include display-flex;
-            @include flex-direction(column);
-            @include align-items(center);
-            @include justify-content(center);
-            border:none !important;
-            @include widheigh(90%,90%,70%,70%);
-            @include responsivewidthheight(90%,90%,70%,70%,90%,90%,75%,75%,90%,90%,75%,75%,90%,90%,75%,75%);
-            @include media-icons-ios("../img/Diligencias/Diligencias.png","../img/DiligenciasTAP/DiligenciasTAP.png","../img/Diligencias/Diligencias2x.png.png","../img/DiligenciasTAP/DiligenciasTAP2x.png.png","../img/Diligencias/Diligencias3x.png.png","../img/DiligenciasTAP/DiligenciasTAP3x.png.png");
-        }
-    }
+		@include display-flex;
+		@include flex-direction(column);
+		@include align-items(center);
+		@include justify-content(center);
+		min-height:100%;
+		height:100%;
+		min-width:100%;
+		width:100%;
+		a{
+				@include display-flex;
+				@include flex-direction(column);
+				@include align-items(center);
+				@include justify-content(center);
+				background-color: transparent;
+				border:none !important;
+				height:25%;
+				min-height:25%;
+				color:white;
+				@include font-mediaqueries(20px,22px,26px,28px);
+				margin-bottom: 7%;
+				font-weight: bold;
+				text-align: center;
+				text-decoration: none;
+				width:40%;
+				&:hover{
+						border:none !important;
+						background-color: transparent;
+						color:#ca7530;
+						text-decoration: none;
+				}
+				.img-0{
+						@include display-flex;
+						@include flex-direction(column);
+						@include align-items(center);
+						@include justify-content(center);
+						border:none !important;
+						@include widheigh(90%,90%,70%,70%);
+						@include responsivewidthheight(90%,90%,70%,70%,90%,90%,75%,75%,90%,90%,75%,75%,90%,90%,75%,75%);
+						@include media-icons-ios("../img/Documentos/Documentos.png","../img/DocumentosTAP/DocuemtosTAP.png","../img/Documentos/Documentos2x.png.png","../img/DocumentosTAP/DocuemtosTAP2x.png.png","../img/Documentos/Documentos3x.png.png","../img/DocumentosTAP/DocuemtosTAP3x.png.png");
+				}
+				.img-1{
+						@include display-flex;
+						@include flex-direction(column);
+						@include align-items(center);
+						@include justify-content(center);
+						border:none !important;
+						@include widheigh(90%,90%,70%,70%);
+						@include responsivewidthheight(90%,90%,70%,70%,90%,90%,75%,75%,90%,90%,75%,75%,90%,90%,75%,75%);
+						@include media-icons-ios("../img/Paquetes/Paquetes.png","../img/PaquetesTAP/PaquetesTAP.png","../img/Paquetes/Paquetes2x.png.png","../img/PaquetesTAP/PaquetesTAP2x.png.png","../img/Paquetes/Paquetes3x.png.png","../img/PaquetesTAP/PaquetesTAP3x.png.png");
+				}
+				.img-2{
+						@include display-flex;
+						@include flex-direction(column);
+						@include align-items(center);
+						@include justify-content(center);
+						border:none !important;
+						@include widheigh(90%,90%,70%,70%);
+						@include responsivewidthheight(90%,90%,70%,70%,90%,90%,75%,75%,90%,90%,75%,75%,90%,90%,75%,75%);
+						@include media-icons-ios("../img/Diligencias/Diligencias.png","../img/DiligenciasTAP/DiligenciasTAP.png","../img/Diligencias/Diligencias2x.png.png","../img/DiligenciasTAP/DiligenciasTAP2x.png.png","../img/Diligencias/Diligencias3x.png.png","../img/DiligenciasTAP/DiligenciasTAP3x.png.png");
+				}
+		}
 }
 .menu-bg{
-    background-color: transparent !important;
-    border: none !important;
+		background-color: transparent !important;
+		border: none !important;
 }
 .bar,
 .bar-header{
-    border-color: transparent !important;
-    background-image: none !important;
+		border-color: transparent !important;
+		background-image: none !important;
 }
 .bar.bar-positive {
-      border-color: transparent !important;
-      background-image: none !important;
-     color: #fff;
+			border-color: transparent !important;
+			background-image: none !important;
+		 color: #fff;
  }
 .side-menu-title{
-    @include display-flex;
-    @include flex-direction(row);
-    @include align-items(center);
-    @include justify-content(center);
-    @include widheigh(30%,30%,100%,100%);
-    background-color: $calm !important;
-    .side-menu-container-user{
-        @include display-flex;
-        @include flex-direction(column);
-        @include align-items(center);
-        @include justify-content(center);
-        @include widheigh(40%,40%,100%,100%);
-        .side-menu-photo{
-            @include display-flex;
-            @include flex-direction(row);
-            @include align-items(center);
-            @include justify-content(center);
-            @include widheigh(100%,100%,50%,50%);
-            margin-bottom: 5%;
-        }
-        .side-menu-user{
-            @include display-flex;
-            @include flex-direction(column);
-            @include align-items(center);
-            @include justify-content(center);
-            @include widheigh(40%,40%,50%,50%);
-        }
-    }
+		@include display-flex;
+		@include flex-direction(row);
+		@include align-items(center);
+		@include justify-content(center);
+		@include widheigh(30%,30%,100%,100%);
+		background-color: $calm !important;
+		.side-menu-container-user{
+				@include display-flex;
+				@include flex-direction(column);
+				@include align-items(center);
+				@include justify-content(center);
+				@include widheigh(40%,40%,100%,100%);
+				.side-menu-photo{
+						@include display-flex;
+						@include flex-direction(row);
+						@include align-items(center);
+						@include justify-content(center);
+						@include widheigh(100%,100%,50%,50%);
+						margin-bottom: 5%;
+				}
+				.side-menu-user{
+						@include display-flex;
+						@include flex-direction(column);
+						@include align-items(center);
+						@include justify-content(center);
+						@include widheigh(40%,40%,50%,50%);
+				}
+		}
 }
 .side-menu-content{
-    @include display-flex;
-    @include flex-direction(column);
-    @include align-items(flex-start);
-    @include justify-content(center);
-    @include widheigh(100%,100%,100%,100%);
-    background-color: $positive;
-    ion-list{
-        @include display-flex;
-        @include flex-direction(column);
-        @include align-items(flex-start);
-        @include justify-content(center);
-        @include widheigh(100%,100%,100%,100%);
-        background-color: $positive !important;
-        a{
-            @include display-flex;
-            @include flex-direction(row);
-            @include align-items(center);
-            @include justify-content(flex-start);
-            color:white !important;
-            font-weight: bold;
-            background-color: $positive !important;
-            font-size: 3.5vh;
-            &:hover{
-                color:$energized !important;
-                font-weight: bold;
-                font-size: 3.5vh;
-            }
-            i{
-                margin-right: 20px;
-                @include widheigh(18px,18px,18px,18px);
-            }
-        }
-    }
-    ion-item{
-        @include display-flex;
-        @include flex-direction(row);
-        @include align-items(center);
-        @include justify-content(flex-start);
-        color:white !important;
-        font-weight: bold;
-        background-color: $positive !important;
-        i{
-            margin-right: 20px;
-            @include widheigh(18px,18px,18px,18px);
-        }
-        }
+		@include display-flex;
+		@include flex-direction(column);
+		@include align-items(flex-start);
+		@include justify-content(center);
+		@include widheigh(100%,100%,100%,100%);
+		background-color: $positive;
+		ion-list{
+				@include display-flex;
+				@include flex-direction(column);
+				@include align-items(flex-start);
+				@include justify-content(center);
+				@include widheigh(100%,100%,100%,100%);
+				background-color: $positive !important;
+				a{
+						@include display-flex;
+						@include flex-direction(row);
+						@include align-items(center);
+						@include justify-content(flex-start);
+						color:white !important;
+						font-weight: bold;
+						background-color: $positive !important;
+						font-size: 3.5vh;
+						&:hover{
+								color:$energized !important;
+								font-weight: bold;
+								font-size: 3.5vh;
+						}
+						i{
+								margin-right: 20px;
+								@include widheigh(18px,18px,18px,18px);
+						}
+				}
+		}
+		ion-item{
+				@include display-flex;
+				@include flex-direction(row);
+				@include align-items(center);
+				@include justify-content(flex-start);
+				color:white !important;
+				font-weight: bold;
+				background-color: $positive !important;
+				i{
+						margin-right: 20px;
+						@include widheigh(18px,18px,18px,18px);
+				}
+				}
 }
 .item-content{
-    color:white !important;
-    @include font-mediaqueries(18px,20px,20px,22px);
-    @include widheigh(100%,100%,100% !important,100% !important);
-    &:hover{
-        color:$energized !important;
-        font-weight: bold;
-        @include font-mediaqueries(18px,20px,20px,22px);
-        @include widheigh(100%,100%,100% !important,100% !important);
-    }
+		color:white !important;
+		@include font-mediaqueries(18px,20px,20px,22px);
+		@include widheigh(100%,100%,100% !important,100% !important);
+		&:hover{
+				color:$energized !important;
+				font-weight: bold;
+				@include font-mediaqueries(18px,20px,20px,22px);
+				@include widheigh(100%,100%,100% !important,100% !important);
+		}
 }
 .has-header{
-    @include display-flex;
-    @include flex-direction(column);
-    @include align-items(flex-start);
-    @include justify-content(center);
-    @include widheigh(100%,100%,100%,100%);
-    margin-top: 0 !important;
+		@include display-flex;
+		@include flex-direction(column);
+		@include align-items(flex-start);
+		@include justify-content(center);
+		@include widheigh(100%,100%,100%,100%);
+		margin-top: 0 !important;
 }
 .side-menu-home{
-    @include display-flex;
-    @include flex-direction(column);
-    @include align-items(center);
-    @include justify-content(center);
-    @include widheigh(20px !important,20px !important,20px !important,20px );
-    @include media-icons-ios("../img/Iniciomenulateral/Iniciomenu.png","../img/IniciomenulateralTAP/Iniciomenu.png","../img/Iniciomenulateral/Iniciomenu2x.png.png","../img/IniciomenulateralTAP/Iniciomenu2x.png.png","../img/Iniciomenulateral/Iniciomenu3x.png.png","../img/IniciomenulateralTAP/Iniciomenu3x.png.png");
+		@include display-flex;
+		@include flex-direction(column);
+		@include align-items(center);
+		@include justify-content(center);
+		@include widheigh(20px !important,20px !important,20px !important,20px );
+		@include media-icons-ios("../img/Iniciomenulateral/Iniciomenu.png","../img/IniciomenulateralTAP/Iniciomenu.png","../img/Iniciomenulateral/Iniciomenu2x.png.png","../img/IniciomenulateralTAP/Iniciomenu2x.png.png","../img/Iniciomenulateral/Iniciomenu3x.png.png","../img/IniciomenulateralTAP/Iniciomenu3x.png.png");
 }
 .side-menu-edit{
-    @include display-flex;
-    @include flex-direction(column);
-    @include align-items(center);
-    @include justify-content(center);
-    @include widheigh(20px !important,20px !important,20px !important,20px );
+		@include display-flex;
+		@include flex-direction(column);
+		@include align-items(center);
+		@include justify-content(center);
+		@include widheigh(20px !important,20px !important,20px !important,20px );
 
-    @include media-icons-ios("../img/Editarcuentamenu/Editarcuenta.png","../img/EditarcuentamenuTAP/Editarcuenta.png","../img/Editarcuentamenu/Editarcuenta2x.png.png","../img/EditarcuentamenuTAP/Editarcuenta2x.png.png","../img/Editarcuentamenu/Editarcuenta3x.png.png","../img/EditarcuentamenuTAP/Editarcuenta3x.png.png");
+		@include media-icons-ios("../img/Editarcuentamenu/Editarcuenta.png","../img/EditarcuentamenuTAP/Editarcuenta.png","../img/Editarcuentamenu/Editarcuenta2x.png.png","../img/EditarcuentamenuTAP/Editarcuenta2x.png.png","../img/Editarcuentamenu/Editarcuenta3x.png.png","../img/EditarcuentamenuTAP/Editarcuenta3x.png.png");
 }
 .side-menu-history{
-    @include display-flex;
-    @include flex-direction(column);
-    @include align-items(center);
-    @include justify-content(center);
-    @include widheigh(20px !important,20px !important,20px !important,20px );
+		@include display-flex;
+		@include flex-direction(column);
+		@include align-items(center);
+		@include justify-content(center);
+		@include widheigh(20px !important,20px !important,20px !important,20px );
 
-    @include media-icons-ios("../img/Historial/Historial.png","../img/HistorialTAP/Historial.png","../img/Historial/Historial2x.png.png","../img/HistorialTAP/Historial2x.png.png","../img/Historial/Historial3x.png.png","../img/HistorialTAP/Historial3x.png.png");
+		@include media-icons-ios("../img/Historial/Historial.png","../img/HistorialTAP/Historial.png","../img/Historial/Historial2x.png.png","../img/HistorialTAP/Historial2x.png.png","../img/Historial/Historial3x.png.png","../img/HistorialTAP/Historial3x.png.png");
 }
 .side-menu-cancel-service {
-    @include display-flex;
-    @include flex-direction(column);
-    @include align-items(center);
-    @include justify-content(center);
-    @include widheigh(20px !important,20px !important,20px !important,20px );
-    @include media-icons-ios("../img/Cancelarmenu/Cancelar.png","../img/CancelarmenuTAP/Cancelar.png","../img/Cancelarmenu/Cancelar2x.png.png","../img/CancelarmenuTAP/Cancelar2x.png.png","../img/Cancelarmenu/Cancelar3x.png.png","../img/CancelarmenuTAP/Cancelar3x.png.png");
+		@include display-flex;
+		@include flex-direction(column);
+		@include align-items(center);
+		@include justify-content(center);
+		@include widheigh(20px !important,20px !important,20px !important,20px );
+		@include media-icons-ios("../img/Cancelarmenu/Cancelar.png","../img/CancelarmenuTAP/Cancelar.png","../img/Cancelarmenu/Cancelar2x.png.png","../img/CancelarmenuTAP/Cancelar2x.png.png","../img/Cancelarmenu/Cancelar3x.png.png","../img/CancelarmenuTAP/Cancelar3x.png.png");
 }
 .side-menu-logout{
-    @include display-flex;
-    @include flex-direction(column);
-    @include align-items(center);
-    @include justify-content(center);
-    @include widheigh(20px !important,20px !important,20px !important,20px );
-    @include media-icons-ios("../img/Cerrarsesion/Cerrarsesion.png","../img/CerrarsesionTAP/Cerrarsesion.png","../img/Cerrarsesion/Cerrarsesion2x.png.png","../img/CerrarsesionTAP/Cerrarsesion2x.png.png","../img/Cerrarsesion/Cerrarsesion3x.png.png","../img/CerrarsesionTAP/Cerrarsesion3x.png.png");
+		@include display-flex;
+		@include flex-direction(column);
+		@include align-items(center);
+		@include justify-content(center);
+		@include widheigh(20px !important,20px !important,20px !important,20px );
+		@include media-icons-ios("../img/Cerrarsesion/Cerrarsesion.png","../img/CerrarsesionTAP/Cerrarsesion.png","../img/Cerrarsesion/Cerrarsesion2x.png.png","../img/CerrarsesionTAP/Cerrarsesion2x.png.png","../img/Cerrarsesion/Cerrarsesion3x.png.png","../img/CerrarsesionTAP/Cerrarsesion3x.png.png");
 }
 .side-menu-logout-title{
-    @include font-mediaqueries(12px,14px,16px,16px);
+		@include font-mediaqueries(18px,20px,20px,22px);
 }

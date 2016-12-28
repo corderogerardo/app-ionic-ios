@@ -2,7 +2,7 @@
     angular.module('axpress')
         .controller('MenuController', MenuController);
 
-    MenuController.$inject = ['$rootScope', '$scope', '$state'];
+    MenuController.$inject = ['$rootScope', '$scope', '$state', 'Util'];
 
     function MenuController($rootScope, $scope, $state) {
         $scope.menuoptions = $rootScope.menu.filter(function (item) {
@@ -17,7 +17,7 @@
         };
 
         $scope.moveTo = function(option) {
-            $state.go(urlsPerServiceType[option.service_provider_id], { serviceType: option.service_provider_id });
+            Util.stateGoAndReload(urlsPerServiceType[option.service_provider_id], { serviceType: option.service_provider_id });
         };
     }
 })();

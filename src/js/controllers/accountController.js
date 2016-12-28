@@ -2,9 +2,9 @@
     angular.module('axpress')
         .controller("AccountController", AccountController);
 
-    AccountController.$inject = ['$scope', '$rootScope', 'Client', 'Logger', '$state'];
+    AccountController.$inject = ['$scope', '$rootScope', 'Client', 'Logger', '$state', 'Util'];
 
-    function AccountController($scope, $rootScope, Client, Logger, $state) {
+    function AccountController($scope, $rootScope, Client, Logger, $state, Util) {
         var preBase64 = "data:image/jpeg;base64,";
         activate();
 
@@ -44,6 +44,18 @@
             return true;
         }
 
+        $scope.isSocialAccount = function() {
+            return ($scope.user.access_token != undefined);
+        };
+
+        function hasFilledCurrentPassword() {
+            if (!$scope.user.access_token && !$scope.user.pass) {
+                Logger.toast("Debe colocar su contraseña actual para actualizar sus datos");
+                return false;
+            }
+            return true;
+        }
+
         $scope.isSocialAccount = function () {
             return ($scope.user.access_token != undefined && $scope.user.social_id != undefined);
         };
@@ -52,9 +64,11 @@
          * Receives the user updated data from the server
          */
         function successfullyUpdatedAccount() {
+            delete $scope.user.pass;
+            delete $scope.user.newPass;
             localStorage.setItem('axpress.user', JSON.stringify($scope.user));
             Logger.hideProgressBar();
-            $state.go('app.main');
+            Util.stateGoAndReload('app.main');
             Logger.toast("Su información se ha actualizado correctamente.");
         }
 

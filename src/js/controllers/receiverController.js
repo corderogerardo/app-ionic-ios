@@ -2,18 +2,18 @@
     angular.module('axpress')
         .controller('ReceiverController', ReceiverController);
 
-    ReceiverController.$inject = ['$rootScope', '$scope', '$state', 'Logger'];
+    ReceiverController.$inject = ['$rootScope', '$scope', '$state', 'Logger', 'Util'];
 
-    function ReceiverController($rootScope, $scope, $state, Logger) {
+    function ReceiverController($rootScope, $scope, $state, Logger, Util) {
         activate();
 
         $scope.saveCaracteristics = function() {
             if (isFormValid()) {
                 if ($scope.extraData.navigateTo) {
-                    $state.go($scope.extraData.navigateTo);
+                    Util.stateGoAndReload($scope.extraData.navigateTo);
                     delete $scope.extraData.navigateTo;
                 } else {
-                    $state.go($scope.extraData.receiverNext);
+                    Util.stateGoAndReload($scope.extraData.receiverNext);
                 }
             }
         };

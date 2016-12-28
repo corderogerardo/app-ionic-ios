@@ -3,11 +3,13 @@
         .controller('DestinyController', DocumentDestinyController);
 
     DocumentDestinyController.$inject = ['$rootScope', '$scope', '$state', 'Location', 'NgMap',
-        '$timeout', 'GoogleMapGeocoder', 'constants', 'Logger'];
+        '$timeout', 'GoogleMapGeocoder', 'constants', 'Logger', 'Util'];
 
     function DocumentDestinyController($rootScope, $scope, $state, Location, NgMap,
-                                       $timeout, GoogleMapGeocoder, constants, Logger) {
-        activate();
+                                       $timeout, GoogleMapGeocoder, constants, Logger, Util) {
+        $timeout(function() {
+            activate();
+        }, 0);
 
         $scope.placeChanged = function(place) {
             $scope.place = (typeof place == "object" ? place : this.getPlace());
@@ -18,8 +20,7 @@
                 $scope.markers[index].position = $scope.place.geometry.location;
             }, 0);
             if ( typeof place == "object" )
-                $scope.tempData.address = GoogleMapGeocoder.removeStateAndCountry($scope.place.formatted_address);
-            $scope.focused = true;
+                $scope.address = GoogleMapGeocoder.removeStateAndCountry($scope.place.formatted_address);
         };
 
         $scope.pickHere = function() {
@@ -56,19 +57,19 @@
                     //Adding a new stop
                     $scope.data.destiniesData.push(getStopElement($scope.tempData));
                 }
+                resetTempData();
             } else {
                 $scope.data.destinyAddress = GoogleMapGeocoder.removeStateAndCountry($scope.place.formatted_address);
                 $scope.data.destinyLatitude = $scope.place.geometry.location.lat();
                 $scope.data.destinyLongitude = $scope.place.geometry.location.lng();
                 $scope.data.destinyPlace = $scope.place;
             }
-            resetTempData();
-            $scope.buttonState = false;
+            
             if ( $scope.extraData.navigateTo ) {
-                $state.go($scope.extraData.navigateTo, {}, {reload: true});
+                Util.stateGoAndReload($scope.extraData.navigateTo);
                 delete $scope.extraData.navigateTo;
             } else {
-                $state.go($scope.extraData.destinyNext);
+                Util.stateGoAndReload($scope.extraData.destinyNext);
             }
         };
 
@@ -163,6 +164,11 @@
             $scope.maxDestinies = constants.diligencesMaxDestinies;
             NgMap.getMap().then(function(map) {
                 $scope.map = map;
+                if ( $scope.data.destinyLatitude && $scope.data.destinyLongitude )
+                    setExistingAddress();
+                $timeout(function() {
+                    google.maps.event.trigger(map, 'resize');
+                }, 0, false);
             });
             if ( Array.isArray($scope.data.destiniesData) && $scope.data.destiniesData.length > 0 ) {
                 var index = $scope.data.editStopIndex;
@@ -176,7 +182,7 @@
                 if ( typeof index != "undefined" ) {
                     var destiny = $scope.data.destiniesData[index];
                     $scope.tempData.phone = destiny.phone;
-                    $scope.tempData.address = destiny.address;
+                    $scope.address = destiny.address;
                     $scope.tempData.name = destiny.name;
                     GoogleMapGeocoder.reverseGeocode({ lat: destiny.latitude, lng: destiny.longitude })
                         .then(geocoderCallback);
@@ -187,10 +193,18 @@
                     icon     : "{url: 'img/Pindestino/Pindetsino3x.png.png', scaledSize: [28,38]}",
                     draggable: true
                 });
+                $scope.place = $scope.data.destinyPlace;
+                $scope.address = $scope.data.destinyAddress;
             }
 
-            if ( $scope.data.destinyLatitude && $scope.data.destinyLongitude )
-                setExistingAddress();
+            NgMap.getMap().then(function(map) {
+                $scope.map = map;
+                if ( $scope.data.destinyPlace )
+                    $scope.placeChanged($scope.data.destinyPlace);
+                $timeout(function() {
+                    google.maps.event.trigger(map, 'resize');
+                }, 0);
+            });
         }
     }
 

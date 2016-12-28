@@ -1,40 +1,43 @@
 <div class="bar bar-header bar-balanced bar-sendtype">
 	 <h1 class="title">Chat</h1>
 </div>
-<ion-view view-title="Chat">
-	<ion-content scroll="false" overflow-scroll="false" class="axpress-bg">
+<ion-view view-title="Chat" >
+	<ion-content scroll="false" delegate-handle="mainScroll" class="axpress-bg">
+			<ion-scroll class="history-scroll" zooming="false" direction="y" delegate-handle="vertical" vertical-scroll-fix="mainScroll">
 			<div class="chat-container">
 				<div ng-repeat="message in history" ng-class="{'message-courier': (message.rol == 0), 'message-client': (message.rol == 1)}">
-                    <div>
-                        <div class="chat-from" ng-if="message.rol == 0">
-                        Axpress
-                        </div>
-                       <!-- <div class="chat-from" ng-if="message.rol == 1">
-                        Cliente
-                        </div>-->
-                        <div class="chat-message-hour">
-                            <div class="chat-message">
-                            {{message.conversacion}}
-                            </div>
-                            <div class="chat-hour">
-                            {{message.fecha_registro}}
-                            </div>
+										<div>
+												<div class="chat-from" ng-if="message.rol == 0">
+												Axpress
+												</div>
+											 <!-- <div class="chat-from" ng-if="message.rol == 1">
+												Cliente
+												</div>-->
+												<div class="chat-message-hour">
+														<div class="chat-message">
+														{{message.conversacion}}
+														</div>
+														<div class="chat-hour">
+														{{message.fecha_registro}}
+														</div>
 
-                        </div>
-                    </div>
+												</div>
+										</div>
 				</div>
 
 			</div>
-			<div class="chat-container-input">
-			<div class="chat-camera">
-				<a href="" class="ion-camera"></a>
-			</div>
-			<div class="chat-input">
-				<input  class="item item-input inputs-general" ng-model="chat.message" type="text" placeholder="Mensaje">
-			</div>
-			<div class="chat-button">
-			<a ng-click="sendMessage()" title=""></a>
-			</div>
+
+			</ion-scroll>
+			<div class="chat-container-input" keyboard-attach>
+				<div class="chat-camera">
+					<a href="" class="ion-camera"></a>
+				</div>
+				<div class="chat-input">
+					<input  class="item item-input inputs-general" ng-model="chat.message" type="text" placeholder="Mensaje">
+				</div>
+				<div class="chat-button">
+				<a ng-click="sendMessage()" title=""></a>
+				</div>
 
 			</div>
 	</ion-content>

@@ -1,44 +1,46 @@
 .rating-container{
-    @include display-flex;
-    @include flex-direction(column);
-    @include align-items(center);
-    @include justify-content(flex-start);
-    @include widheigh(90%,90%,100%,100%);
-    padding-top: 25% !important;
+		@include display-flex;
+		@include flex-direction(column);
+		@include align-items(center);
+		@include justify-content(flex-start);
+		@include widheigh(90%,90%,100%,100%);
+		padding-top: 25% !important;
 }
 .container-img{
-    @include display-flex;
-    @include flex-direction(column);
-    @include align-items(center);
-    @include justify-content(center);
-    @include widheigh(50%,50%,100%,100%);
-    div{
-        @include display-flex;
-        @include flex-direction(row);
-        @include align-items(center);
-        @include justify-content(center);
-        @include widheigh(40%,40%,100%,100%);
-        text-align: center;
-        color: $balanced;
-        font-size: 22px;
-    }
+		@include display-flex;
+		@include flex-direction(column);
+		@include align-items(center);
+		@include justify-content(center);
+		@include widheigh(50%,50%,100%,100%);
+		div{
+				@include display-flex;
+				@include flex-direction(row);
+				@include align-items(center);
+				@include justify-content(center);
+				@include widheigh(40%,40%,100%,100%);
+				text-align: center;
+				color: $balanced;
+				font-size: 22px;
+		}
 }
 .rating-starts{
-    @include display-flex;
-    @include flex-direction(column);
-    @include align-items(center);
-    @include justify-content(center);
-    @include widheigh(50%,50%,100%,100%);
-    color:$balanced;
-    font-size: 18px;
+		@include display-flex;
+		@include flex-direction(column);
+		@include align-items(center);
+		@include justify-content(center);
+		@include widheigh(50%,50%,100%,100%);
+		color:$balanced;
+		font-size: 18px;
 }
-.ionic_rating_icon_on,
+.ionic_rating_icon_on{
+	color:$energized !important;
+}
 .ion-ios-star{
-    @include media-icons-ios("../img/Estrelladecalificacion/1x.png","../img/Estrelladecalificacion/1x.png","../img/Estrelladecalificacion/2x.png","../img/Estrelladecalificacion/2x.png","../img/Estrelladecalificacion/3x.png","../img/Estrelladecalificacion/3x.png");
-    color:transparent !important;
+	@include media-icons-ios("../img/Estrelladecalificacionselected/1x.pngg","../img/Estrelladecalificacionselected/1x.png","../img/Estrelladecalificacionselected/2x.png","../img/Estrelladecalificacionselected/2x.png","../img/Estrelladecalificacionselected/3x.png","../img/Estrelladecalificacionselected/3x.png");
 }
-.ionic_rating_icon_off,
+.ionic_rating_icon_off{
+		@include media-icons-ios("../img/Estrelladecalificacion/1x.png","../img/Estrelladecalificacion/1x.png","../img/Estrelladecalificacion/2x.png","../img/Estrelladecalificacion/2x.png","../img/Estrelladecalificacion/3x.png","../img/Estrelladecalificacion/3x.png");
+}
 .ion-ios-star-outline{
-    @include media-icons-ios("../img/Estrelladecalificacionselected/1x.pngg","../img/Estrelladecalificacionselected/1x.png","../img/Estrelladecalificacionselected/2x.png","../img/Estrelladecalificacionselected/2x.png","../img/Estrelladecalificacionselected/3x.png","../img/Estrelladecalificacionselected/3x.png");
-    color:transparent !important;
+		color:transparent !important;
 }

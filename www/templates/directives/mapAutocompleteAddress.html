@@ -6,4 +6,5 @@
 	placeholder="Escribe la dirección aquí..."
 	on-place-changed="onPlaceChanged()"
     ng-focus="disableTap($event)"
+    data-address="{{address | json}}"
 />

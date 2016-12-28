@@ -2,9 +2,9 @@
     angular.module('axpress')
         .controller('PaymentMethodsController', PaymentMethodsController);
 
-    PaymentMethodsController.$inject = ['$rootScope', '$scope', '$state', 'constants', 'Logger', 'Shipping', 'Diligence'];
+    PaymentMethodsController.$inject = ['$rootScope', '$scope', '$state', 'constants', 'Logger', 'Shipping', 'Diligence', 'Util'];
 
-    function PaymentMethodsController($rootScope, $scope, $state, constants, Logger, Shipping, Diligence) {
+    function PaymentMethodsController($rootScope, $scope, $state, constants, Logger, Shipping, Diligence, Util) {
         activate();
 
         $scope.confirmPaymentMethod = function() {
@@ -17,7 +17,8 @@
                                 successfullyRegisteredRequest();
                             }
                         }, function(error) {
-                            Logger.toast("Ha ocurrido un error registrando su solicitud, por favor intente de nuevo.")
+                            Logger.hideProgressBar();
+                            Logger.toast("Ha ocurrido un error registrando su documento, por favor intente de nuevo.")
                         });
                     break;
                 case 44: //Packages
@@ -27,7 +28,8 @@
                                 successfullyRegisteredRequest();
                             }
                         }, function(error) {
-                            Logger.toast("Ha ocurrido un error registrando su solicitud, por favor intente de nuevo.")
+                            Logger.hideProgressBar();
+                            Logger.toast("Ha ocurrido un error registrando su paquete, por favor intente de nuevo.")
                         });
                     break;
                 case 45: //Diligence
@@ -36,16 +38,21 @@
                             successfullyRegisteredRequest();
                         }
                     }, function(error) {
-                        Logger.toast("Ha ocurrido un error registrando su solicitud, por favor intente de nuevo.")
+                        Logger.hideProgressBar();
+                        Logger.toast("Ha ocurrido un error registrando su diligencia, por favor intente de nuevo.")
                     });
             }
         };
+
+        $scope.selectPaymentMethod = function (method) {
+            $scope.data.pay = method.value;
+        }
 
         function successfullyRegisteredRequest() {
             $scope.data = {};
             $state.current.data.data = {};
             Logger.hideProgressBar();
-            $state.go("app.main");
+            Util.stateGoAndReload("app.main");
             Logger.toast("Solicitud registrada correctamente");
         }
 

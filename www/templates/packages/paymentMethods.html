@@ -13,7 +13,7 @@
             </div>
             <div class="send-type-options">
                 <div class="" ng-repeat="option in paymentMethods">
-                    <input type="radio" class="item item-input checkbox-icon inputs-checkbox-axpress"   ng-model="data.pay" title="option.name" ng-value="option.value"/> {{option.name}}</div>
+                    <input type="radio" class="item item-input checkbox-icon inputs-checkbox-axpress"   ng-model="data.pay" title="option.name" ng-value="option.value"/> <b ng-click="selectPaymentMethod(option)">{{option.name}}</b></div>
             </div>
         </div>
         <div class="hide-on-keyboard-open row button-bottom-two button-confirm-position">
