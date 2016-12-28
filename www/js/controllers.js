@@ -876,7 +876,7 @@
 
     MenuController.$inject = ['$rootScope', '$scope', '$state', 'Util'];
 
-    function MenuController($rootScope, $scope, $state) {
+    function MenuController($rootScope, $scope, $state, Util) {
         $scope.menuoptions = $rootScope.menu.filter(function (item) {
             var serviceId = item.service_provider_id;
             return (serviceId == 43 || serviceId == 44 || serviceId == 45);
@@ -1121,61 +1121,61 @@
 ;
 
 (function() {
-		angular.module('axpress')
-				.controller('RatingController', RatingController);
+    angular.module('axpress')
+        .controller('RatingController', RatingController);
 
-		RatingController.$inject = ['$rootScope', '$scope', '$state', 'constants', 'Rating', '$timeout', 'Shipping', 'Util'];
+    RatingController.$inject = ['$rootScope', '$scope', '$state', 'constants', 'Rating', '$timeout', 'Shipping', 'Util', 'Logger'];
 
-		function RatingController($rootScope, $scope, $state, constants, Rating, $timeout, Shipping, Util) {
-				activate();
+    function RatingController($rootScope, $scope, $state, constants, Rating, $timeout, Shipping, Util, Logger) {
+        activate();
 
-				$scope.rateService = rateService;
+        $scope.rateService = rateService;
 
-				function rateService () {
-						$scope.rating = 3;
-						var shippingId = $scope.shipping.shipping_id,
-								rating = $scope.rating;
-						Logger.displayProgressBar();
-						Rating.post(shippingId, rating).then(function (response) {
-							Logger.hideProgressBar();
-							Util.stateGoAndReload('app.main');
-							Logger.toast("Se ha guardado su calificación correctamente.");
-						}, function () {
-								Logger.hideProgressBar();
-						});
-				}
+        function rateService() {
+            $scope.rating = 3;
+            var shippingId = $scope.shipping.shipping_id,
+                rating = $scope.rating;
+            Logger.displayProgressBar();
+            Rating.post(shippingId, rating).then(function(response) {
+                Logger.hideProgressBar();
+                Util.stateGoAndReload('app.main');
+                Logger.toast("Se ha guardado su calificación correctamente.");
+            }, function() {
+                Logger.hideProgressBar();
+            });
+        }
 
-				function loadHistory () {
-						Logger.displayProgressBar();
-						Shipping.history($rootScope.user.id).then(function (history) {
-								var tempHistory = history.data.remitent.concat(history.data.receptor);
-								tempHistory.forEach(function (item) {
-										if (item.currier) {
-												item.currier.fullName = item.currier.name + ' ' + item.currier.last;
-										}
-								});
-								$scope.history = tempHistory;
+        function loadHistory() {
+            Logger.displayProgressBar();
+            Shipping.history($rootScope.user.id).then(function(history) {
+                var tempHistory = history.data.remitent.concat(history.data.receptor);
+                tempHistory.forEach(function(item) {
+                    if (item.currier) {
+                        item.currier.fullName = item.currier.name + ' ' + item.currier.last;
+                    }
+                });
+                $scope.history = tempHistory;
 
-								// Specific shipping
-								$scope.shipping = $scope.history.filter(function (item) {
-										return item.shipping_id == parseInt($state.params.shippingId);
-								}).pop();
-						}, function () {
-								Logger.hideProgressBar();
-						});
-				}
+                // Specific shipping
+                $scope.shipping = $scope.history.filter(function(item) {
+                    return item.shipping_id == parseInt($state.params.shippingId);
+                }).pop();
+            }, function() {
+                Logger.hideProgressBar();
+            });
+        }
 
-				function activate () {
-						$scope.ratingsObject = {
-								iconOn : 'ion-ios-star',
-								iconOff : 'ion-ios-star-outline',
-								iconOnColor: 'rgb(200, 200, 100)',
-								rating:  2,
-								minRating:1
-						};
-						loadHistory();
-				}
-		}
+        function activate() {
+            $scope.ratingsObject = {
+                iconOn: 'ion-ios-star',
+                iconOff: 'ion-ios-star-outline',
+                iconOnColor: 'rgb(200, 200, 100)',
+                rating: 2,
+                minRating: 1
+            };
+            loadHistory();
+        }
+    }
 })();
 ;
 
@@ -1387,9 +1387,9 @@
     angular.module('axpress')
         .controller('TrackingController', TrackingController);
 
-    TrackingController.$inject = ['$rootScope', '$scope', '$state', 'constants', 'logisticResource', '$timeout', 'Shipping'];
+    TrackingController.$inject = ['$rootScope', '$scope', '$state', 'constants', 'logisticResource', '$timeout', 'Shipping', 'Logger'];
 
-    function TrackingController($rootScope, $scope, $state, constants, logisticResource, $timeout, Shipping) {
+    function TrackingController($rootScope, $scope, $state, constants, logisticResource, $timeout, Shipping, Logger) {
         activate();
 
         $scope.loadCourierPosition = loadCourierPosition;
@@ -1436,7 +1436,7 @@
         }
 
         function loadHistory() {
-            /*Logger.displayProgressBar();*/
+            Logger.displayProgressBar();
             Shipping.history($rootScope.user.id).then(function(history) {
                 var tempHistory = history.data.remitent.concat(history.data.receptor);
                 tempHistory.forEach(function(item) {
@@ -1454,7 +1454,7 @@
                 loadMarkers();
                 loadCourierPosition();
             }, function() {
-                /*Logger.hideProgressBar();*/
+                Logger.hideProgressBar();
             });
         }
 

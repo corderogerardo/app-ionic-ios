@@ -2,9 +2,9 @@
     angular.module('axpress')
         .controller('TrackingController', TrackingController);
 
-    TrackingController.$inject = ['$rootScope', '$scope', '$state', 'constants', 'logisticResource', '$timeout', 'Shipping'];
+    TrackingController.$inject = ['$rootScope', '$scope', '$state', 'constants', 'logisticResource', '$timeout', 'Shipping', 'Logger'];
 
-    function TrackingController($rootScope, $scope, $state, constants, logisticResource, $timeout, Shipping) {
+    function TrackingController($rootScope, $scope, $state, constants, logisticResource, $timeout, Shipping, Logger) {
         activate();
 
         $scope.loadCourierPosition = loadCourierPosition;
@@ -51,7 +51,7 @@
         }
 
         function loadHistory() {
-            /*Logger.displayProgressBar();*/
+            Logger.displayProgressBar();
             Shipping.history($rootScope.user.id).then(function(history) {
                 var tempHistory = history.data.remitent.concat(history.data.receptor);
                 tempHistory.forEach(function(item) {
@@ -69,7 +69,7 @@
                 loadMarkers();
                 loadCourierPosition();
             }, function() {
-                /*Logger.hideProgressBar();*/
+                Logger.hideProgressBar();
             });
         }
 

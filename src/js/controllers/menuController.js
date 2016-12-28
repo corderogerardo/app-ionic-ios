@@ -4,7 +4,7 @@
 
     MenuController.$inject = ['$rootScope', '$scope', '$state', 'Util'];
 
-    function MenuController($rootScope, $scope, $state) {
+    function MenuController($rootScope, $scope, $state, Util) {
         $scope.menuoptions = $rootScope.menu.filter(function (item) {
             var serviceId = item.service_provider_id;
             return (serviceId == 43 || serviceId == 44 || serviceId == 45);
