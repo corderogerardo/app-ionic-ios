@@ -2,14 +2,14 @@
 	background-image: url("../img/maps.png");
 	background-size: cover;
 	justify-content: center;
-    @include display-flex;
-    @include flex-direction(row);
-    @include align-items(center);
-    @include justify-content(center);
+		@include display-flex;
+		@include flex-direction(row);
+		@include align-items(center);
+		@include justify-content(center);
 
 }
 .button-reload{
-   /* @include media-icons-ios($x1,$hoverx1,$x2,$hoverx2,$x3,$hoverx3);*/
+	 /* @include media-icons-ios($x1,$hoverx1,$x2,$hoverx2,$x3,$hoverx3);*/
 }
 .shipementtracking-button{
 	width:100%;
@@ -35,7 +35,7 @@
 	transition: all 0.5s linear;
 	position: fixed;
 	z-index: 99;
-    left: 0;
+		left: 0;
 	bottom: -180px;/* Height of the .navbar_content */
 	width: 100%;
 }
@@ -45,145 +45,145 @@
 	-o-transform: translate3d(0, 0, 0);
 	transform: translate3d(0, 0, 0);
 	bottom: 0;
-    .deliver-see{
-        @include widheigh(20px,20px,20px,20px);
-        @include responsivewidthheight(20px,20px,20px,20px,20px,20px,20px,20px,20px,20px,20px,20px,20px,20px,20px,20px);
-        border:1px solid yellow;
-        margin-left: 5% !important;
-        @include media-inputs-ios("../img/Vermenosinfomensajero/VermenosCopy.png","../img/Vermenosinfomensajero/VermenosCopy.png","../img/Vermenosinfomensajero/VermenosCopy2x.png.png","../img/Vermenosinfomensajero/VermenosCopy2x.png.png","../img/Vermenosinfomensajero/VermenosCopy3x.png.png","../img/Vermenosinfomensajero/VermenosCopy3x.png.png");
-    }
+		.deliver-see{
+				@include widheigh(20px,20px,20px,20px);
+				@include responsivewidthheight(20px,20px,20px,20px,20px,20px,20px,20px,20px,20px,20px,20px,20px,20px,20px,20px);
+				border:1px solid yellow;
+				margin-left: 5% !important;
+				@include media-inputs-ios("../img/Vermenosinfomensajero/VermenosCopy.png","../img/Vermenosinfomensajero/VermenosCopy.png","../img/Vermenosinfomensajero/VermenosCopy2x.png.png","../img/Vermenosinfomensajero/VermenosCopy2x.png.png","../img/Vermenosinfomensajero/VermenosCopy3x.png.png","../img/Vermenosinfomensajero/VermenosCopy3x.png.png");
+		}
 }
 #menu .navbar_top {
 	background-color: $balanced;
 	text-align: center;
 	color: #fff;
-    @include display-flex;
-    @include flex-direction(row);
-    @include align-items(center);
-    @include justify-content(center);
-    @include widheigh(40px,40px,50%,50%);
-    @include responsivewidthheight(40px,40px,100%,100%,50px,50px,100%,100%,60px,60px,100%,100%,60px,60px,100%,100%);
+		@include display-flex;
+		@include flex-direction(row);
+		@include align-items(center);
+		@include justify-content(center);
+		@include widheigh(40px,40px,50%,50%);
+		@include responsivewidthheight(40px,40px,100%,100%,50px,50px,100%,100%,60px,60px,100%,100%,60px,60px,100%,100%);
 }
 #menu .navbar_content {
-    background-color:white;
-    @include display-flex;
-    @include flex-direction(column);
-    @include align-items(center);
-    @include justify-content(space-around);
-    @include widheigh(180px,180px,100%,100%);
-    @include responsivewidthheight(180px,180px,100%,100%,180px,180px,100%,100%,180px,180px,100%,100%,180px,180px,100%,100%);
+		background-color:white;
+		@include display-flex;
+		@include flex-direction(column);
+		@include align-items(center);
+		@include justify-content(space-around);
+		@include widheigh(180px,180px,100%,100%);
+		@include responsivewidthheight(180px,180px,100%,100%,180px,180px,100%,100%,180px,180px,100%,100%,180px,180px,100%,100%);
 }
 .deliverboy-info{
 	background-color:white;
-    @include display-flex;
-    @include flex-direction(row);
-    @include align-items(center);
-    @include justify-content(space-around);
-    @include widheigh(100px,100px,100%,100%);
-    @include responsivewidthheight(100px,100px,100%,100%,100px,100px,100%,100%,100px,100px,100%,100%,100px,100px,100%,100%);
+		@include display-flex;
+		@include flex-direction(row);
+		@include align-items(center);
+		@include justify-content(space-around);
+		@include widheigh(100px,100px,100%,100%);
+		@include responsivewidthheight(100px,100px,100%,100%,100px,100px,100%,100%,100px,100px,100%,100%,100px,100px,100%,100%);
 }
 .deliverboy-photo{
-    @include display-flex;
-    @include flex-direction(row);
-    @include align-items(center);
-    @include justify-content(center);
-    @include widheigh(100%,100%,40%,40%);
-    @include responsivewidthheight(100%,100%,40%,40%,100%,100%,40%,40%,100%,100%,40%,40%,100%,100%,40%,40%);
+		@include display-flex;
+		@include flex-direction(row);
+		@include align-items(center);
+		@include justify-content(center);
+		@include widheigh(100%,100%,40%,40%);
+		@include responsivewidthheight(100%,100%,40%,40%,100%,100%,40%,40%,100%,100%,40%,40%,100%,100%,40%,40%);
 	i{
 		font-size: 72px;
 	}
 }
 .deliverboy-data{
-    @include display-flex;
-    @include flex-direction(column);
-    @include align-items(center);
-    @include justify-content(center);
-    @include widheigh(100%,100%,60%,60%);
-    @include responsivewidthheight(100%,100%,60%,60%,100%,100%,60%,60%,100%,100%,60%,60%,100%,100%,60%,60%);
+		@include display-flex;
+		@include flex-direction(column);
+		@include align-items(center);
+		@include justify-content(center);
+		@include widheigh(100%,100%,60%,60%);
+		@include responsivewidthheight(100%,100%,60%,60%,100%,100%,60%,60%,100%,100%,60%,60%,100%,100%,60%,60%);
 	display:flex;
 	flex-direction: column;
 	width:60%;
 }
 .deliverboy-data-text{
-    @include display-flex;
-    @include flex-direction(column);
-    @include align-items(flex-start);
-    @include justify-content(center);
+		@include display-flex;
+		@include flex-direction(column);
+		@include align-items(flex-start);
+		@include justify-content(center);
 	height:70%;
 	color:$balanced;
 	width:100%;
 	p{
-        @include display-flex;
-        @include flex-direction(row);
-        @include align-items(flex-start);
-        @include justify-content(center);
+				@include display-flex;
+				@include flex-direction(row);
+				@include align-items(flex-start);
+				@include justify-content(center);
 		white-space: nowrap;
-        i{
-            @include display-flex;
-            @include flex-direction(column);
-            @include align-items(center);
-            @include justify-content(center);
-            margin-bottom: 5px !important;
-            @include widheigh(20px,20px,20px,20px);
-            @include responsivewidthheight(20px,20px,20px,20px,20px,20px,20px,20px,20px,20px,20px,20px,20px,20px,20px,20px);
-            border:1px solid yellow;
-        }
+				i{
+						@include display-flex;
+						@include flex-direction(column);
+						@include align-items(center);
+						@include justify-content(center);
+						margin-bottom: 5px !important;
+						@include widheigh(20px,20px,20px,20px);
+						@include responsivewidthheight(20px,20px,20px,20px,20px,20px,20px,20px,20px,20px,20px,20px,20px,20px,20px,20px);
+						border:1px solid yellow;
+				}
 	}
 }
 .deliverboy-data-buttons{
-    @include display-flex;
-    @include flex-direction(row);
-    @include align-items(center);
-    @include justify-content(center);
-    @include widheigh(30%,30%,100%,100%);
-    @include responsivewidthheight(30%,30%,100%,100%,30%,30%,100%,100%,30%,30%,100%,100%,30%,30%,100%,100%);
+		@include display-flex;
+		@include flex-direction(row);
+		@include align-items(center);
+		@include justify-content(center);
+		@include widheigh(30%,30%,100%,100%);
+		@include responsivewidthheight(30%,30%,100%,100%,30%,30%,100%,100%,30%,30%,100%,100%,30%,30%,100%,100%);
 }
 .deliverboy-chat{
-    @include display-flex;
-    @include flex-direction(row);
-    @include align-items(center);
-    @include justify-content(center);
-    @include widheigh(65%,65%,35%,35%);
-    @include responsivewidthheight(65%,65%,35%,35%,65%,65%,35%,35%,65%,65%,35%,35%,65%,65%,35%,35%);
-    background-color:$positive;
+		@include display-flex;
+		@include flex-direction(row);
+		@include align-items(center);
+		@include justify-content(center);
+		@include widheigh(65%,65%,35%,35%);
+		@include responsivewidthheight(65%,65%,35%,35%,65%,65%,35%,35%,65%,65%,35%,35%,65%,65%,35%,35%);
+		background-color:$positive;
 	cursor: pointer;
 	color:white;
 	text-decoration:none;
-    @include borderradiusmixin(25px,25px,25px)
+		@include borderradiusmixin(25px,25px,25px)
 }
 .deliverboy-call{
-    @include display-flex;
-    @include flex-direction(row);
-    @include align-items(center);
-    @include justify-content(center);
-    @include widheigh(65%,65%,35%,35%);
-    @include responsivewidthheight(65%,65%,35%,35%,65%,65%,35%,35%,65%,65%,35%,35%,65%,65%,35%,35%);
-    background-color:$positive;
-    cursor: pointer;
-    color:white;
-    text-decoration:none;
-    margin-left: 5%;
-    @include borderradiusmixin(25px,25px,25px)
+		@include display-flex;
+		@include flex-direction(row);
+		@include align-items(center);
+		@include justify-content(center);
+		@include widheigh(65%,65%,35%,35%);
+		@include responsivewidthheight(65%,65%,35%,35%,65%,65%,35%,35%,65%,65%,35%,35%,65%,65%,35%,35%);
+		background-color:$positive;
+		cursor: pointer;
+		color:white;
+		text-decoration:none;
+		margin-left: 5%;
+		@include borderradiusmixin(25px,25px,25px)
 }
 .icon-deliver-name{
-    @include media-icons-ios("../img/Nombremensajero/Nombremensajero.png","../img/Nombremensajero/Nombremensajero.png","../img/Nombremensajero/Nombremensajero2x.png.png","../img/Nombremensajero/Nombremensajero2x.png.png","../img/Nombremensajero/Nombremensajero3x.png.png","../img/Nombremensajero/Nombremensajero3x.png.png");
-    background-size: 70% !important;
-    margin-right: 5% !important;
+		@include media-icons-ios("../img/Nombremensajero/Nombremensajero.png","../img/Nombremensajero/Nombremensajero.png","../img/Nombremensajero/Nombremensajero2x.png.png","../img/Nombremensajero/Nombremensajero2x.png.png","../img/Nombremensajero/Nombremensajero3x.png.png","../img/Nombremensajero/Nombremensajero3x.png.png");
+		background-size: 70% !important;
+		margin-right: 5% !important;
 }
 .icon-deliver-id{
-    @include media-icons-ios("../img/Cedulamensajero/Cedulamensajero.png","../img/Cedulamensajero/Cedulamensajero.png","../img/Cedulamensajero/Cedulamensajero2x.png.png","../img/Cedulamensajero/Cedulamensajero2x.png.png","../img/Cedulamensajero/Cedulamensajero3x.png.png","../img/Cedulamensajero/Cedulamensajero3x.png.png");
-    background-size: 70% !important;
-    margin-right: 5% !important;
+		@include media-icons-ios("../img/Cedulamensajero/Cedulamensajero.png","../img/Cedulamensajero/Cedulamensajero.png","../img/Cedulamensajero/Cedulamensajero2x.png.png","../img/Cedulamensajero/Cedulamensajero2x.png.png","../img/Cedulamensajero/Cedulamensajero3x.png.png","../img/Cedulamensajero/Cedulamensajero3x.png.png");
+		background-size: 70% !important;
+		margin-right: 5% !important;
 }
 .icon-deliver-phone{
-    @include media-icons-ios("../img/Telefonomensajero/Telefonomensajero.png","../img/Telefonomensajero/Telefonomensajero.png","../img/Telefonomensajero/Telefonomensajero2x.png.png","../img/Telefonomensajero/Telefonomensajero2x.png.png","../img/Telefonomensajero/Telefonomensajero3x.png.png","../img/Telefonomensajero/Telefonomensajero3x.png.png");
-    background-size:50% !important;
-    margin-right: 5% !important;
+		@include media-icons-ios("../img/Telefonomensajero/Telefonomensajero.png","../img/Telefonomensajero/Telefonomensajero.png","../img/Telefonomensajero/Telefonomensajero2x.png.png","../img/Telefonomensajero/Telefonomensajero2x.png.png","../img/Telefonomensajero/Telefonomensajero3x.png.png","../img/Telefonomensajero/Telefonomensajero3x.png.png");
+		background-size:50% !important;
+		margin-right: 5% !important;
 }
 .deliver-see{
-    @include widheigh(20px,20px,20px,20px);
-    @include responsivewidthheight(20px,20px,20px,20px,20px,20px,20px,20px,20px,20px,20px,20px,20px,20px,20px,20px);
-    border:1px solid yellow;
-    margin-left: 5% !important;
-    @include media-inputs-ios("../img/Vermasinfomensajero/Vermas.png","../img/Vermasinfomensajero/Vermas.png","../img/Vermasinfomensajero/Vermas2x.png.png","../img/Vermasinfomensajero/Vermas2x.png.png","../img/Vermasinfomensajero/Vermas3x.png.png","../img/Vermasinfomensajero/Vermas3x.png.png");
+		@include widheigh(20px,20px,20px,20px);
+		@include responsivewidthheight(20px,20px,20px,20px,20px,20px,20px,20px,20px,20px,20px,20px,20px,20px,20px,20px);
+		border:1px solid yellow;
+		margin-left: 5% !important;
+		@include media-inputs-ios("../img/Vermasinfomensajero/Vermas.png","../img/Vermasinfomensajero/Vermas.png","../img/Vermasinfomensajero/Vermas2x.png.png","../img/Vermasinfomensajero/Vermas2x.png.png","../img/Vermasinfomensajero/Vermas3x.png.png","../img/Vermasinfomensajero/Vermas3x.png.png");
 }

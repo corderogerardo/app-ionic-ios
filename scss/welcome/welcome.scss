@@ -1,41 +1,41 @@
 ion-slide{
-    @include display-flex;
-    @include flex-direction(row);
-    @include align-items(center);
-    @include justify-content(center);
-    @include widheigh(180px,180px,auto,auto);
-    @include responsivewidthheight(175px,175px,auto,auto,190px,190px,auto,auto,200px,200px,auto,auto,205px,205px,auto,auto);
+		@include display-flex;
+		@include flex-direction(row);
+		@include align-items(center);
+		@include justify-content(center);
+		@include widheigh(180px,180px,auto,auto);
+		@include responsivewidthheight(175px,175px,auto,auto,190px,190px,auto,auto,200px,200px,auto,auto,205px,205px,auto,auto);
 }
 .space-welcome{
-    @include display-flex;
-    @include flex-direction(row);
-    @include align-items(center);
-    @include justify-content(center);
-    @include widheigh(27%,27%,100%,100%);
-    @include responsivewidthheight(27%,27%,100%,100%,31%,31%,100%,100%,32%,32%,100%,100%,34%,34%,100%,100%);
+		@include display-flex;
+		@include flex-direction(row);
+		@include align-items(center);
+		@include justify-content(center);
+		@include widheigh(27%,27%,100%,100%);
+		@include responsivewidthheight(27%,27%,100%,100%,31%,31%,100%,100%,32%,32%,100%,100%,34%,34%,100%,100%);
 }
 .space-views{
-    @include display-flex;
-    @include flex-direction(row);
-    @include align-items(center);
-    @include justify-content(center);
-    @include widheigh(10%,10%,100%,100%);
-    @include responsivewidthheight(10%,10%,100%,100%,7%,7%,100%,100%,7%,7%,100%,100%,7%,7%,100%,100%);
+		@include display-flex;
+		@include flex-direction(row);
+		@include align-items(center);
+		@include justify-content(center);
+		@include widheigh(10%,10%,100%,100%);
+		@include responsivewidthheight(10%,10%,100%,100%,7%,7%,100%,100%,7%,7%,100%,100%,7%,7%,100%,100%);
 }
 .welcome-title{
-    margin-bottom: 20px;
-    color:white;
-    @include font-mediaqueries(30px,34px,36px,40px);
+		margin-bottom: 20px;
+		color:white;
+		@include font-mediaqueries(30px,34px,36px,40px);
 }
 .welcome-info{
-    @include font-mediaqueries(12px,14px,16px,18px);
-    color:white;
+		@include font-mediaqueries(12px,14px,16px,18px);
+		color:white;
 }
 .slider-pager-page{
-    color: white !important;
+		color: white !important;
 }
 .active{
-    color: $energized !important;
+		color: $energized !important;
 }
 .welcome-buttons{
 	align-items:center;

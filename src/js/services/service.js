@@ -1,98 +1,98 @@
 (function() {
-    angular.module('axpress')
-        .factory('Service', Service);
+		angular.module('axpress')
+				.factory('Service', Service);
 
-    Service.$inject = ['$http', 'constants', '$q', '$httpParamSerializerJQLike'];
+		Service.$inject = ['$http', 'constants', '$q', '$httpParamSerializerJQLike'];
 
-    function Service($http, constants, $q, $httpParamSerializerJQLike) {
+		function Service($http, constants, $q, $httpParamSerializerJQLike) {
 
-        /**
-         * Class to be instantiated as a base service with common configurations
-         *
-         * @class      Service (name)
-         * @param      {String}  urlSufix  The url sufix of the service
-         */
-        var Service = function(urlSufix) {
-            this.url = constants.apiBaseUrl;
-            this.urlSufix = urlSufix || '';
-            this.key = constants.key;
-            this.platform = constants.platform;
+				/**
+				 * Class to be instantiated as a base service with common configurations
+				 *
+				 * @class      Service (name)
+				 * @param      {String}  urlSufix  The url sufix of the service
+				 */
+				var Service = function(urlSufix) {
+						this.url = constants.apiBaseUrl;
+						this.urlSufix = urlSufix || '';
+						this.key = constants.key;
+						this.platform = constants.platform;
 
-            /**
-             * Returns full base path url, useful when using services with common api path
-             * Just needs to add remaining part of api path for specific service query
-             *
-             * @return     {String}  Full base path to service
-             */
-            this.urlBase = function() {
-                return this.url + this.urlSufix;
-            };
+						/**
+						 * Returns full base path url, useful when using services with common api path
+						 * Just needs to add remaining part of api path for specific service query
+						 *
+						 * @return     {String}  Full base path to service
+						 */
+						this.urlBase = function() {
+								return this.url + this.urlSufix;
+						};
 
-            /**
-             * Reusable function to make POST queries and consume POST services
-             *
-             * @param      {String}  path     The path specific to the service
-             * @param      {Object}  data     The data to be sent using the service (Optional)
-             * @param      {Object}  options  The $http options for the service (Optional)
-             * @return     {Promise}  Returns the $http promise to be resolved on success or error
-             */
-            this.httpPost = function(path, data, options) {
-                data = data || {};
-                options = options || {};
-                var deferred = $q.defer();
-                $http.post(path, data, options)
-                    .then(function(response) {
-                        deferred.resolve(response.data);
-                    }, function(error) {
-                        deferred.reject(error);
-                    });
-                return deferred.promise;
-            };
+						/**
+						 * Reusable function to make POST queries and consume POST services
+						 *
+						 * @param      {String}  path     The path specific to the service
+						 * @param      {Object}  data     The data to be sent using the service (Optional)
+						 * @param      {Object}  options  The $http options for the service (Optional)
+						 * @return     {Promise}  Returns the $http promise to be resolved on success or error
+						 */
+						this.httpPost = function(path, data, options) {
+								data = data || {};
+								options = options || {};
+								var deferred = $q.defer();
+								$http.post(path, data, options)
+										.then(function(response) {
+												deferred.resolve(response.data);
+										}, function(error) {
+												deferred.reject(error);
+										});
+								return deferred.promise;
+						};
 
-            /**
-             * Function that wraps Service.httpPost to consume the backend api
-             *
-             * @param      {String}  path     The path specific to the api service (/client/login)
-             * @param      {Object}  data     The data to be sent using the service (Optional)
-             * @param      {Object}  options  The $http options for the service (Optional)
-             * @return     {Promise}  Returns the $http promise to be resolved on success or error
-             */
-            this.apiPost = function(path, data, options) {
-                data = data || {};
-                options = options || {};
-                data.key = this.key;
-                data.platform = this.platform;
-                options.headers = {
-                    'Content-Type': 'application/x-www-form-urlencoded'
-                };
-                path = this.urlBase() + path;
-                data = this.formEncodeParams(data);
-                return this.httpPost(path, data, options);
-            };
+						/**
+						 * Function that wraps Service.httpPost to consume the backend api
+						 *
+						 * @param      {String}  path     The path specific to the api service (/client/login)
+						 * @param      {Object}  data     The data to be sent using the service (Optional)
+						 * @param      {Object}  options  The $http options for the service (Optional)
+						 * @return     {Promise}  Returns the $http promise to be resolved on success or error
+						 */
+						this.apiPost = function(path, data, options) {
+								data = data || {};
+								options = options || {};
+								data.key = this.key;
+								data.platform = this.platform;
+								options.headers = {
+										'Content-Type': 'application/x-www-form-urlencoded'
+								};
+								path = this.urlBase() + path;
+								data = this.formEncodeParams(data);
+								return this.httpPost(path, data, options);
+						};
 
-            /**
-             * Reusable function to make GET queries and consume GET services
-             *
-             * @param      {String}   path     The path specific to the service
-             * @param      {Object}   options  The $http options for the service
-             *                                 (Optional)
-             * @return     {Promise}  Returns the $http promise to be resolved on
-             *                        success or error
-             */
-            this.get = function(path, options) {
-                var deferred = $q.defer();
-                $http.get(path, options || {}).then(function(response) {
-                    deferred.resolve(response.data);
-                }, function(error) {
-                    deferred.reject(error);
-                });
-                return deferred.promise;
-            };
+						/**
+						 * Reusable function to make GET queries and consume GET services
+						 *
+						 * @param      {String}   path     The path specific to the service
+						 * @param      {Object}   options  The $http options for the service
+						 *                                 (Optional)
+						 * @return     {Promise}  Returns the $http promise to be resolved on
+						 *                        success or error
+						 */
+						this.get = function(path, options) {
+								var deferred = $q.defer();
+								$http.get(path, options || {}).then(function(response) {
+										deferred.resolve(response.data);
+								}, function(error) {
+										deferred.reject(error);
+								});
+								return deferred.promise;
+						};
 
-            this.formEncodeParams = function (params) {
-                return $httpParamSerializerJQLike(params);
-            };
-        };
-        return Service;
-    }
+						this.formEncodeParams = function (params) {
+								return $httpParamSerializerJQLike(params);
+						};
+				};
+				return Service;
+		}
 })();

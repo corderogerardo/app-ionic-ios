@@ -1,25 +1,25 @@
 <div class="bar bar-header bar-balanced bar-sendtype">
-    <h3 class="title">Medio de pago</h3>
+		<h3 class="title">Medio de pago</h3>
 </div>
 <ion-view view-title="PaymentMethod">
-    <ion-content scroll="false" overflow-scroll="false" class="axpress-bg">
-        <div class="container-senttype">
-            <div class="send-type-todo">
-                <div>
-                    <span><br></span>
-                    <span>Elige un medio de pago</span>
-                    <span><br></span>
-                </div>
-            </div>
-            <div class="send-type-options">
-                <div class="" ng-repeat="option in paymentMethods">
-                    <input type="radio" class="item item-input checkbox-icon inputs-checkbox-axpress"   ng-model="data.pay" title="option.name" ng-value="option.value"/> <b ng-click="selectPaymentMethod(option)">{{option.name}}</b></div>
-            </div>
-        </div>
-        <div class="hide-on-keyboard-open row button-bottom-two button-confirm-position">
-            <a class="button button-block button-default-two button-continue" ng-click="confirmPaymentMethod()">
-                Continuar
-            </a>
-        </div>
-    </ion-content>
+		<ion-content scroll="false" overflow-scroll="true" class="axpress-bg">
+				<div class="container-senttype">
+						<div class="send-type-todo">
+								<div>
+										<span><br></span>
+										<span>Elige un medio de pago</span>
+										<span><br></span>
+								</div>
+						</div>
+						<div class="send-type-options">
+								<div class="" ng-repeat="option in paymentMethods">
+										<input type="radio" class="item item-input checkbox-icon inputs-checkbox-axpress"   ng-model="data.pay" title="option.name" ng-value="option.value"/> <b ng-click="selectPaymentMethod(option)">{{option.name}}</b></div>
+						</div>
+				</div>
+				<div class="row button-bottom-two button-confirm-position">
+						<a class="button button-block button-default-two button-continue" ng-click="confirmPaymentMethod()">
+								Continuar
+						</a>
+				</div>
+		</ion-content>
 </ion-view>

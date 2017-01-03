@@ -1,40 +1,40 @@
 <ion-view view-title="Login">
-	<ion-content scroll="false" overflow-scroll="false" class="axpress-bg">
-    <section class="register-container">
+	<ion-content scroll="false" overflow-scroll="true" class="axpress-bg">
+		<section class="register-container">
 
-    <div class="list list-inset ">
-        <input class="item item-input inputs-general input-email" ng-model="user.email" type="email" placeholder="Correo Electrónico">
-        <input class="item item-input inputs-general input-pass" ng-model="user.password" type="password" placeholder="Contraseña">
-        <a class="item item-input button button-block button-default button-createaccount" ng-click="login()" title="">Iniciar sesión</a>
-        <a class="item item-input button button-block register-term text-center" ui-sref="auth.forgotpassword">¿Olvidaste tu Contraseña?</a>
+		<div class="list list-inset ">
+				<input class="item item-input inputs-general input-email" ng-model="user.email" type="email" placeholder="Correo Electrónico">
+				<input class="item item-input inputs-general input-pass" ng-model="user.password" type="password" placeholder="Contraseña">
+				<a class="item item-input button button-block button-default button-createaccount" ng-click="login()" title="">Iniciar sesión</a>
+				<a class="item item-input button button-block register-term text-center" ui-sref="auth.forgotpassword">¿Olvidaste tu Contraseña?</a>
 
-    </div>
-    </section>
-        <div class="hide-on-keyboard-open register-container-bottom">
-            <section class="row">
-                <div class="col col-25 register-line"></div>
-                <div class="col register-create">o inicia sesión con</div>
-                <div class="col col-25 register-line"></div>
-            </section>
-            <section class="row ">
-                <div class="col col-50 col-offset-25">
-                    <div class="row register-social-buttons">
-                        <a ng-click="loginWithFacebook()" class="button button-block facebook-icon">
-                        </a>
-                        <a ng-click="loginWithGoogle()" class="button button-block google-icon">
-                        </a>
-                    </div>
-                </div>
-            </section>
+		</div>
+		</section>
+				<div class="register-container-bottom">
+						<section class="row">
+								<div class="col col-25 register-line"></div>
+								<div class="col register-create">o inicia sesión con</div>
+								<div class="col col-25 register-line"></div>
+						</section>
+						<section class="row ">
+								<div class="col col-50 col-offset-25">
+										<div class="row register-social-buttons">
+												<a ng-click="loginWithFacebook()" class="button button-block facebook-icon">
+												</a>
+												<a ng-click="loginWithGoogle()" class="button button-block google-icon">
+												</a>
+										</div>
+								</div>
+						</section>
 
-        </div>
-        <section class="hide-on-keyboard-open row">
-            <div class="col text-center register-login">
-                <span>¿Eres Nuevo?</span>
-                <a ui-sref="auth.register" class="">
-                    ¡Regístrate ahora!
-                </a>
-            </div>
-        </section>
-    </ion-content>
+				</div>
+				<section class="row">
+						<div class="col text-center register-login">
+								<span>¿Eres Nuevo?</span>
+								<a ui-sref="auth.register" class="">
+										¡Regístrate ahora!
+								</a>
+						</div>
+				</section>
+		</ion-content>
 </ion-view>

@@ -32,15 +32,19 @@
 		color:$balanced;
 		font-size: 18px;
 }
-.ionic_rating_icon_on{
-	color:$energized !important;
-}
-.ion-ios-star{
-	@include media-icons-ios("../img/Estrelladecalificacionselected/1x.pngg","../img/Estrelladecalificacionselected/1x.png","../img/Estrelladecalificacionselected/2x.png","../img/Estrelladecalificacionselected/2x.png","../img/Estrelladecalificacionselected/3x.png","../img/Estrelladecalificacionselected/3x.png");
-}
-.ionic_rating_icon_off{
-		@include media-icons-ios("../img/Estrelladecalificacion/1x.png","../img/Estrelladecalificacion/1x.png","../img/Estrelladecalificacion/2x.png","../img/Estrelladecalificacion/2x.png","../img/Estrelladecalificacion/3x.png","../img/Estrelladecalificacion/3x.png");
+.ionic_rating_icon_on,
+.ion-ios-star,
+.iconOnColor{
+	color:transparent !important;
+	@include media-icons-ios("../img/Estrelladecalificacionselected/1x.png","../img/Estrelladecalificacionselected/1x.png","../img/Estrelladecalificacionselected/2x.png","../img/Estrelladecalificacionselected/2x.png","../img/Estrelladecalificacionselected/3x.png","../img/Estrelladecalificacionselected/3x.png");
+	@include widheigh(40px,40px,40px,40px);
+	@include responsivewidthheight(40px,40px,40px,40px,40px,40px,40px,40px,50px,50px,50px,50px,55px,55px,55px,55px);
+	@include font-mediaqueries(40px,40px,50px,55px);
 }
 .ion-ios-star-outline{
-		color:transparent !important;
+	color:transparent !important;
+	@include media-icons-ios("../img/Estrelladecalificacion/1x.png","../img/Estrelladecalificacion/1x.png","../img/Estrelladecalificacion/2x.png","../img/Estrelladecalificacion/2x.png","../img/Estrelladecalificacion/3x.png","../img/Estrelladecalificacion/3x.png");
+		@include widheigh(40px,40px,40px,40px);
+		@include responsivewidthheight(40px,40px,40px,40px,40px,40px,40px,40px,50px,50px,50px,50px,55px,55px,55px,55px);
+		@include font-mediaqueries(40px,40px,50px,55px);
 }

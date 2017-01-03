@@ -24497,6 +24497,66 @@ ion-slide {
       min-width: 100%;
       width: 100%; } }
 
+.space-history {
+  min-height: 40px;
+  height: 40px;
+  min-width: 100%;
+  width: 100%; }
+  @media screen and (max-height: 2560px) {
+    .space-history {
+      min-height: 70px;
+      height: 70px;
+      min-width: 100%;
+      width: 100%; } }
+  @media screen and (max-height: 1920px) {
+    .space-history {
+      min-height: 70px;
+      height: 70px;
+      min-width: 100%;
+      width: 100%; } }
+  @media screen and (max-height: 1280px) {
+    .space-history {
+      min-height: 70px;
+      height: 70px;
+      min-width: 100%;
+      width: 100%; } }
+  @media screen and (max-height: 960px) {
+    .space-history {
+      min-height: 70px;
+      height: 70px;
+      min-width: 100%;
+      width: 100%; } }
+  @media screen and (max-height: 736px) {
+    .space-history {
+      min-height: 75px;
+      height: 75px;
+      min-width: 100%;
+      width: 100%; } }
+  @media screen and (max-height: 667px) {
+    .space-history {
+      min-height: 70px;
+      height: 70px;
+      min-width: 100%;
+      width: 100%; } }
+  @media screen and (max-height: 568px) {
+    .space-history {
+      min-height: 65px;
+      height: 65px;
+      min-width: 100%;
+      width: 100%; } }
+  @media screen and (max-height: 480px) {
+    .space-history {
+      min-height: 60px;
+      height: 60px;
+      min-width: 100%;
+      width: 100%; } }
+  @media screen and (max-height: 320px) {
+    .space-history {
+      min-height: 60px;
+      height: 60px;
+      min-width: 100%;
+      width: 100%; } }
+
 .history-scroll {
   min-height: 100%;
   height: 100%;
@@ -24536,8 +24596,8 @@ ion-slide {
       min-width: 100%; } }
   @media screen and (max-height: 568px) {
     .item-avatar {
-      width: 90%;
-      min-width: 90%;
+      width: 90% !important;
+      min-width: 90% !important;
       margin-left: 5% !important; } }
   @media screen and (max-height: 480px) {
     .item-avatar {
@@ -25359,18 +25419,25 @@ ion-slide {
   color: #065599;
   font-size: 18px; }
 
-.ionic_rating_icon_on {
-  color: #ca7530 !important; }
-
-.ion-ios-star {
+.ionic_rating_icon_on,
+.ion-ios-star,
+.iconOnColor {
+  color: transparent !important;
   border: none !important;
   background-color: transparent;
-  background-image: url("../img/Estrelladecalificacionselected/1x.pngg") !important;
+  background-image: url("../img/Estrelladecalificacionselected/1x.png") !important;
   background-size: 100%;
   background-repeat: no-repeat;
-  background-position: center; }
+  background-position: center;
+  min-height: 40px;
+  height: 40px;
+  min-width: 40px;
+  width: 40px;
+  font-size: 40px !important; }
   @media screen and (max-height: 2560px) {
-    .ion-ios-star {
+    .ionic_rating_icon_on,
+    .ion-ios-star,
+    .iconOnColor {
       border: none !important;
       background-color: transparent;
       background-image: url("../img/Estrelladecalificacionselected/3x.png") !important;
@@ -25378,7 +25445,9 @@ ion-slide {
       background-repeat: no-repeat;
       background-position: center; } }
   @media screen and (max-height: 1920px) {
-    .ion-ios-star {
+    .ionic_rating_icon_on,
+    .ion-ios-star,
+    .iconOnColor {
       border: none !important;
       background-color: transparent;
       background-image: url("../img/Estrelladecalificacionselected/3x.png") !important;
@@ -25386,7 +25455,9 @@ ion-slide {
       background-repeat: no-repeat;
       background-position: center; } }
   @media screen and (max-height: 1280px) {
-    .ion-ios-star {
+    .ionic_rating_icon_on,
+    .ion-ios-star,
+    .iconOnColor {
       border: none !important;
       background-color: transparent;
       background-image: url("../img/Estrelladecalificacionselected/2x.png") !important;
@@ -25394,7 +25465,9 @@ ion-slide {
       background-repeat: no-repeat;
       background-position: center; } }
   @media screen and (max-height: 960px) {
-    .ion-ios-star {
+    .ionic_rating_icon_on,
+    .ion-ios-star,
+    .iconOnColor {
       border: none !important;
       background-color: transparent;
       background-image: url("../img/Estrelladecalificacionselected/2x.png") !important;
@@ -25402,7 +25475,9 @@ ion-slide {
       background-repeat: no-repeat;
       background-position: center; } }
   @media screen and (max-height: 736px) {
-    .ion-ios-star {
+    .ionic_rating_icon_on,
+    .ion-ios-star,
+    .iconOnColor {
       border: none !important;
       background-color: transparent;
       background-image: url("../img/Estrelladecalificacionselected/2x.png") !important;
@@ -25410,7 +25485,9 @@ ion-slide {
       background-repeat: no-repeat;
       background-position: center; } }
   @media screen and (max-height: 667px) {
-    .ion-ios-star {
+    .ionic_rating_icon_on,
+    .ion-ios-star,
+    .iconOnColor {
       border: none !important;
       background-color: transparent;
       background-image: url("../img/Estrelladecalificacionselected/2x.png") !important;
@@ -25418,30 +25495,38 @@ ion-slide {
       background-repeat: no-repeat;
       background-position: center; } }
   @media screen and (max-height: 568px) {
-    .ion-ios-star {
+    .ionic_rating_icon_on,
+    .ion-ios-star,
+    .iconOnColor {
       border: none !important;
       background-color: transparent;
-      background-image: url("../img/Estrelladecalificacionselected/1x.pngg") !important;
+      background-image: url("../img/Estrelladecalificacionselected/1x.png") !important;
       background-size: 100%;
       background-repeat: no-repeat;
       background-position: center; } }
   @media screen and (max-height: 480px) {
-    .ion-ios-star {
+    .ionic_rating_icon_on,
+    .ion-ios-star,
+    .iconOnColor {
       border: none !important;
       background-color: transparent;
-      background-image: url("../img/Estrelladecalificacionselected/1x.pngg") !important;
+      background-image: url("../img/Estrelladecalificacionselected/1x.png") !important;
       background-size: 100%;
       background-repeat: no-repeat;
       background-position: center; } }
   @media screen and (max-height: 320px) {
-    .ion-ios-star {
+    .ionic_rating_icon_on,
+    .ion-ios-star,
+    .iconOnColor {
       border: none !important;
       background-color: transparent;
-      background-image: url("../img/Estrelladecalificacionselected/1x.pngg") !important;
+      background-image: url("../img/Estrelladecalificacionselected/1x.png") !important;
       background-size: 100%;
       background-repeat: no-repeat;
       background-position: center; } }
-  .ion-ios-star:hover {
+  .ionic_rating_icon_on:hover,
+  .ion-ios-star:hover,
+  .iconOnColor:hover {
     border: none !important;
     background-color: transparent;
     background-image: url("../img/Estrelladecalificacionselected/1x.png") !important;
@@ -25449,7 +25534,9 @@ ion-slide {
     background-repeat: no-repeat;
     background-position: center; }
     @media screen and (max-height: 2560px) {
-      .ion-ios-star:hover {
+      .ionic_rating_icon_on:hover,
+      .ion-ios-star:hover,
+      .iconOnColor:hover {
         border: none !important;
         background-color: transparent;
         background-image: url("../img/Estrelladecalificacionselected/3x.png") !important;
@@ -25457,7 +25544,9 @@ ion-slide {
         background-repeat: no-repeat;
         background-position: center; } }
     @media screen and (max-height: 1920px) {
-      .ion-ios-star:hover {
+      .ionic_rating_icon_on:hover,
+      .ion-ios-star:hover,
+      .iconOnColor:hover {
         border: none !important;
         background-color: transparent;
         background-image: url("../img/Estrelladecalificacionselected/3x.png") !important;
@@ -25465,7 +25554,9 @@ ion-slide {
         background-repeat: no-repeat;
         background-position: center; } }
     @media screen and (max-height: 1280px) {
-      .ion-ios-star:hover {
+      .ionic_rating_icon_on:hover,
+      .ion-ios-star:hover,
+      .iconOnColor:hover {
         border: none !important;
         background-color: transparent;
         background-image: url("../img/Estrelladecalificacionselected/2x.png") !important;
@@ -25473,7 +25564,9 @@ ion-slide {
         background-repeat: no-repeat;
         background-position: center; } }
     @media screen and (max-height: 960px) {
-      .ion-ios-star:hover {
+      .ionic_rating_icon_on:hover,
+      .ion-ios-star:hover,
+      .iconOnColor:hover {
         border: none !important;
         background-color: transparent;
         background-image: url("../img/Estrelladecalificacionselected/2x.png") !important;
@@ -25481,7 +25574,9 @@ ion-slide {
         background-repeat: no-repeat;
         background-position: center; } }
     @media screen and (max-height: 736px) {
-      .ion-ios-star:hover {
+      .ionic_rating_icon_on:hover,
+      .ion-ios-star:hover,
+      .iconOnColor:hover {
         border: none !important;
         background-color: transparent;
         background-image: url("../img/Estrelladecalificacionselected/2x.png") !important;
@@ -25489,7 +25584,9 @@ ion-slide {
         background-repeat: no-repeat;
         background-position: center; } }
     @media screen and (max-height: 667px) {
-      .ion-ios-star:hover {
+      .ionic_rating_icon_on:hover,
+      .ion-ios-star:hover,
+      .iconOnColor:hover {
         border: none !important;
         background-color: transparent;
         background-image: url("../img/Estrelladecalificacionselected/2x.png") !important;
@@ -25497,7 +25594,9 @@ ion-slide {
         background-repeat: no-repeat;
         background-position: center; } }
     @media screen and (max-height: 568px) {
-      .ion-ios-star:hover {
+      .ionic_rating_icon_on:hover,
+      .ion-ios-star:hover,
+      .iconOnColor:hover {
         border: none !important;
         background-color: transparent;
         background-image: url("../img/Estrelladecalificacionselected/2x.png") !important;
@@ -25505,7 +25604,9 @@ ion-slide {
         background-repeat: no-repeat;
         background-position: center; } }
     @media screen and (max-height: 480px) {
-      .ion-ios-star:hover {
+      .ionic_rating_icon_on:hover,
+      .ion-ios-star:hover,
+      .iconOnColor:hover {
         border: none !important;
         background-color: transparent;
         background-image: url("../img/Estrelladecalificacionselected/1x.png") !important;
@@ -25513,23 +25614,148 @@ ion-slide {
         background-repeat: no-repeat;
         background-position: center; } }
     @media screen and (max-height: 320px) {
-      .ion-ios-star:hover {
+      .ionic_rating_icon_on:hover,
+      .ion-ios-star:hover,
+      .iconOnColor:hover {
         border: none !important;
         background-color: transparent;
         background-image: url("../img/Estrelladecalificacionselected/1x.png") !important;
         background-size: 100%;
         background-repeat: no-repeat;
         background-position: center; } }
+  @media screen and (max-height: 2560px) {
+    .ionic_rating_icon_on,
+    .ion-ios-star,
+    .iconOnColor {
+      min-height: 50px;
+      height: 50px;
+      min-width: 50px;
+      width: 50px; } }
+  @media screen and (max-height: 1920px) {
+    .ionic_rating_icon_on,
+    .ion-ios-star,
+    .iconOnColor {
+      min-height: 50px;
+      height: 50px;
+      min-width: 50px;
+      width: 50px; } }
+  @media screen and (max-height: 1280px) {
+    .ionic_rating_icon_on,
+    .ion-ios-star,
+    .iconOnColor {
+      min-height: 50px;
+      height: 50px;
+      min-width: 50px;
+      width: 50px; } }
+  @media screen and (max-height: 960px) {
+    .ionic_rating_icon_on,
+    .ion-ios-star,
+    .iconOnColor {
+      min-height: 50px;
+      height: 50px;
+      min-width: 50px;
+      width: 50px; } }
+  @media screen and (max-height: 736px) {
+    .ionic_rating_icon_on,
+    .ion-ios-star,
+    .iconOnColor {
+      min-height: 55px;
+      height: 55px;
+      min-width: 55px;
+      width: 55px; } }
+  @media screen and (max-height: 667px) {
+    .ionic_rating_icon_on,
+    .ion-ios-star,
+    .iconOnColor {
+      min-height: 50px;
+      height: 50px;
+      min-width: 50px;
+      width: 50px; } }
+  @media screen and (max-height: 568px) {
+    .ionic_rating_icon_on,
+    .ion-ios-star,
+    .iconOnColor {
+      min-height: 40px;
+      height: 40px;
+      min-width: 40px;
+      width: 40px; } }
+  @media screen and (max-height: 480px) {
+    .ionic_rating_icon_on,
+    .ion-ios-star,
+    .iconOnColor {
+      min-height: 40px;
+      height: 40px;
+      min-width: 40px;
+      width: 40px; } }
+  @media screen and (max-height: 320px) {
+    .ionic_rating_icon_on,
+    .ion-ios-star,
+    .iconOnColor {
+      min-height: 40px;
+      height: 40px;
+      min-width: 40px;
+      width: 40px; } }
+  @media screen and (max-height: 2560px) {
+    .ionic_rating_icon_on,
+    .ion-ios-star,
+    .iconOnColor {
+      font-size: 55px !important; } }
+  @media screen and (max-height: 1920px) {
+    .ionic_rating_icon_on,
+    .ion-ios-star,
+    .iconOnColor {
+      font-size: 55px !important; } }
+  @media screen and (max-height: 1280px) {
+    .ionic_rating_icon_on,
+    .ion-ios-star,
+    .iconOnColor {
+      font-size: 55px !important; } }
+  @media screen and (max-height: 960px) {
+    .ionic_rating_icon_on,
+    .ion-ios-star,
+    .iconOnColor {
+      font-size: 55px !important; } }
+  @media screen and (max-height: 736px) {
+    .ionic_rating_icon_on,
+    .ion-ios-star,
+    .iconOnColor {
+      font-size: 55px !important; } }
+  @media screen and (max-height: 667px) {
+    .ionic_rating_icon_on,
+    .ion-ios-star,
+    .iconOnColor {
+      font-size: 50px !important; } }
+  @media screen and (max-height: 568px) {
+    .ionic_rating_icon_on,
+    .ion-ios-star,
+    .iconOnColor {
+      font-size: 40px !important; } }
+  @media screen and (max-height: 480px) {
+    .ionic_rating_icon_on,
+    .ion-ios-star,
+    .iconOnColor {
+      font-size: 40px !important; } }
+  @media screen and (max-height: 320px) {
+    .ionic_rating_icon_on,
+    .ion-ios-star,
+    .iconOnColor {
+      font-size: 40px !important; } }
 
-.ionic_rating_icon_off {
+.ion-ios-star-outline {
+  color: transparent !important;
   border: none !important;
   background-color: transparent;
   background-image: url("../img/Estrelladecalificacion/1x.png") !important;
   background-size: 100%;
   background-repeat: no-repeat;
-  background-position: center; }
+  background-position: center;
+  min-height: 40px;
+  height: 40px;
+  min-width: 40px;
+  width: 40px;
+  font-size: 40px !important; }
   @media screen and (max-height: 2560px) {
-    .ionic_rating_icon_off {
+    .ion-ios-star-outline {
       border: none !important;
       background-color: transparent;
       background-image: url("../img/Estrelladecalificacion/3x.png") !important;
@@ -25537,7 +25763,7 @@ ion-slide {
       background-repeat: no-repeat;
       background-position: center; } }
   @media screen and (max-height: 1920px) {
-    .ionic_rating_icon_off {
+    .ion-ios-star-outline {
       border: none !important;
       background-color: transparent;
       background-image: url("../img/Estrelladecalificacion/3x.png") !important;
@@ -25545,7 +25771,7 @@ ion-slide {
       background-repeat: no-repeat;
       background-position: center; } }
   @media screen and (max-height: 1280px) {
-    .ionic_rating_icon_off {
+    .ion-ios-star-outline {
       border: none !important;
       background-color: transparent;
       background-image: url("../img/Estrelladecalificacion/2x.png") !important;
@@ -25553,7 +25779,7 @@ ion-slide {
       background-repeat: no-repeat;
       background-position: center; } }
   @media screen and (max-height: 960px) {
-    .ionic_rating_icon_off {
+    .ion-ios-star-outline {
       border: none !important;
       background-color: transparent;
       background-image: url("../img/Estrelladecalificacion/2x.png") !important;
@@ -25561,7 +25787,7 @@ ion-slide {
       background-repeat: no-repeat;
       background-position: center; } }
   @media screen and (max-height: 736px) {
-    .ionic_rating_icon_off {
+    .ion-ios-star-outline {
       border: none !important;
       background-color: transparent;
       background-image: url("../img/Estrelladecalificacion/2x.png") !important;
@@ -25569,7 +25795,7 @@ ion-slide {
       background-repeat: no-repeat;
       background-position: center; } }
   @media screen and (max-height: 667px) {
-    .ionic_rating_icon_off {
+    .ion-ios-star-outline {
       border: none !important;
       background-color: transparent;
       background-image: url("../img/Estrelladecalificacion/2x.png") !important;
@@ -25577,7 +25803,7 @@ ion-slide {
       background-repeat: no-repeat;
       background-position: center; } }
   @media screen and (max-height: 568px) {
-    .ionic_rating_icon_off {
+    .ion-ios-star-outline {
       border: none !important;
       background-color: transparent;
       background-image: url("../img/Estrelladecalificacion/1x.png") !important;
@@ -25585,7 +25811,7 @@ ion-slide {
       background-repeat: no-repeat;
       background-position: center; } }
   @media screen and (max-height: 480px) {
-    .ionic_rating_icon_off {
+    .ion-ios-star-outline {
       border: none !important;
       background-color: transparent;
       background-image: url("../img/Estrelladecalificacion/1x.png") !important;
@@ -25593,14 +25819,14 @@ ion-slide {
       background-repeat: no-repeat;
       background-position: center; } }
   @media screen and (max-height: 320px) {
-    .ionic_rating_icon_off {
+    .ion-ios-star-outline {
       border: none !important;
       background-color: transparent;
       background-image: url("../img/Estrelladecalificacion/1x.png") !important;
       background-size: 100%;
       background-repeat: no-repeat;
       background-position: center; } }
-  .ionic_rating_icon_off:hover {
+  .ion-ios-star-outline:hover {
     border: none !important;
     background-color: transparent;
     background-image: url("../img/Estrelladecalificacion/1x.png") !important;
@@ -25608,7 +25834,7 @@ ion-slide {
     background-repeat: no-repeat;
     background-position: center; }
     @media screen and (max-height: 2560px) {
-      .ionic_rating_icon_off:hover {
+      .ion-ios-star-outline:hover {
         border: none !important;
         background-color: transparent;
         background-image: url("../img/Estrelladecalificacion/3x.png") !important;
@@ -25616,7 +25842,7 @@ ion-slide {
         background-repeat: no-repeat;
         background-position: center; } }
     @media screen and (max-height: 1920px) {
-      .ionic_rating_icon_off:hover {
+      .ion-ios-star-outline:hover {
         border: none !important;
         background-color: transparent;
         background-image: url("../img/Estrelladecalificacion/3x.png") !important;
@@ -25624,7 +25850,7 @@ ion-slide {
         background-repeat: no-repeat;
         background-position: center; } }
     @media screen and (max-height: 1280px) {
-      .ionic_rating_icon_off:hover {
+      .ion-ios-star-outline:hover {
         border: none !important;
         background-color: transparent;
         background-image: url("../img/Estrelladecalificacion/2x.png") !important;
@@ -25632,7 +25858,7 @@ ion-slide {
         background-repeat: no-repeat;
         background-position: center; } }
     @media screen and (max-height: 960px) {
-      .ionic_rating_icon_off:hover {
+      .ion-ios-star-outline:hover {
         border: none !important;
         background-color: transparent;
         background-image: url("../img/Estrelladecalificacion/2x.png") !important;
@@ -25640,7 +25866,7 @@ ion-slide {
         background-repeat: no-repeat;
         background-position: center; } }
     @media screen and (max-height: 736px) {
-      .ionic_rating_icon_off:hover {
+      .ion-ios-star-outline:hover {
         border: none !important;
         background-color: transparent;
         background-image: url("../img/Estrelladecalificacion/2x.png") !important;
@@ -25648,7 +25874,7 @@ ion-slide {
         background-repeat: no-repeat;
         background-position: center; } }
     @media screen and (max-height: 667px) {
-      .ionic_rating_icon_off:hover {
+      .ion-ios-star-outline:hover {
         border: none !important;
         background-color: transparent;
         background-image: url("../img/Estrelladecalificacion/2x.png") !important;
@@ -25656,7 +25882,7 @@ ion-slide {
         background-repeat: no-repeat;
         background-position: center; } }
     @media screen and (max-height: 568px) {
-      .ionic_rating_icon_off:hover {
+      .ion-ios-star-outline:hover {
         border: none !important;
         background-color: transparent;
         background-image: url("../img/Estrelladecalificacion/2x.png") !important;
@@ -25664,7 +25890,7 @@ ion-slide {
         background-repeat: no-repeat;
         background-position: center; } }
     @media screen and (max-height: 480px) {
-      .ionic_rating_icon_off:hover {
+      .ion-ios-star-outline:hover {
         border: none !important;
         background-color: transparent;
         background-image: url("../img/Estrelladecalificacion/1x.png") !important;
@@ -25672,13 +25898,91 @@ ion-slide {
         background-repeat: no-repeat;
         background-position: center; } }
     @media screen and (max-height: 320px) {
-      .ionic_rating_icon_off:hover {
+      .ion-ios-star-outline:hover {
         border: none !important;
         background-color: transparent;
         background-image: url("../img/Estrelladecalificacion/1x.png") !important;
         background-size: 100%;
         background-repeat: no-repeat;
         background-position: center; } }
-
-.ion-ios-star-outline {
-  color: transparent !important; }
+  @media screen and (max-height: 2560px) {
+    .ion-ios-star-outline {
+      min-height: 50px;
+      height: 50px;
+      min-width: 50px;
+      width: 50px; } }
+  @media screen and (max-height: 1920px) {
+    .ion-ios-star-outline {
+      min-height: 50px;
+      height: 50px;
+      min-width: 50px;
+      width: 50px; } }
+  @media screen and (max-height: 1280px) {
+    .ion-ios-star-outline {
+      min-height: 50px;
+      height: 50px;
+      min-width: 50px;
+      width: 50px; } }
+  @media screen and (max-height: 960px) {
+    .ion-ios-star-outline {
+      min-height: 50px;
+      height: 50px;
+      min-width: 50px;
+      width: 50px; } }
+  @media screen and (max-height: 736px) {
+    .ion-ios-star-outline {
+      min-height: 55px;
+      height: 55px;
+      min-width: 55px;
+      width: 55px; } }
+  @media screen and (max-height: 667px) {
+    .ion-ios-star-outline {
+      min-height: 50px;
+      height: 50px;
+      min-width: 50px;
+      width: 50px; } }
+  @media screen and (max-height: 568px) {
+    .ion-ios-star-outline {
+      min-height: 40px;
+      height: 40px;
+      min-width: 40px;
+      width: 40px; } }
+  @media screen and (max-height: 480px) {
+    .ion-ios-star-outline {
+      min-height: 40px;
+      height: 40px;
+      min-width: 40px;
+      width: 40px; } }
+  @media screen and (max-height: 320px) {
+    .ion-ios-star-outline {
+      min-height: 40px;
+      height: 40px;
+      min-width: 40px;
+      width: 40px; } }
+  @media screen and (max-height: 2560px) {
+    .ion-ios-star-outline {
+      font-size: 55px !important; } }
+  @media screen and (max-height: 1920px) {
+    .ion-ios-star-outline {
+      font-size: 55px !important; } }
+  @media screen and (max-height: 1280px) {
+    .ion-ios-star-outline {
+      font-size: 55px !important; } }
+  @media screen and (max-height: 960px) {
+    .ion-ios-star-outline {
+      font-size: 55px !important; } }
+  @media screen and (max-height: 736px) {
+    .ion-ios-star-outline {
+      font-size: 55px !important; } }
+  @media screen and (max-height: 667px) {
+    .ion-ios-star-outline {
+      font-size: 50px !important; } }
+  @media screen and (max-height: 568px) {
+    .ion-ios-star-outline {
+      font-size: 40px !important; } }
+  @media screen and (max-height: 480px) {
+    .ion-ios-star-outline {
+      font-size: 40px !important; } }
+  @media screen and (max-height: 320px) {
+    .ion-ios-star-outline {
+      font-size: 40px !important; } }

@@ -1,118 +1,118 @@
 .register-container{
-    @include display-flex;
-    @include flex-direction(column);
-    @include align-items(center);
-    @include justify-content(center);
+		@include display-flex;
+		@include flex-direction(column);
+		@include align-items(center);
+		@include justify-content(center);
 	height:70%;
-    min-height: 70%;
-    width:100%;
-    min-width: 100%;
+		min-height: 70%;
+		width:100%;
+		min-width: 100%;
 }
 .register-container-bottom{
-    @include display-flex;
-    @include flex-direction(column);
-    @include align-items(center);
-    @include justify-content(center);
-    height:15%;
-    min-height: 15%;
-    margin-bottom: 10%;
-    width:100%;
-    min-width: 100%;
+		@include display-flex;
+		@include flex-direction(column);
+		@include align-items(center);
+		@include justify-content(center);
+		height:15%;
+		min-height: 15%;
+		margin-bottom: 10%;
+		width:100%;
+		min-width: 100%;
 }
 .list-inset{
-    @include display-flex;
-    @include flex-direction(column);
-    @include align-items(center);
-    @include justify-content(center);
-    padding-left: 0;
-    margin-left: 0;
-    margin-right: 0;
-    background-color: transparent;
-    width: 100%;
-    min-width: 100%;
+		@include display-flex;
+		@include flex-direction(column);
+		@include align-items(center);
+		@include justify-content(center);
+		padding-left: 0;
+		margin-left: 0;
+		margin-right: 0;
+		background-color: transparent;
+		width: 100%;
+		min-width: 100%;
 }
 .item{
-    border:none;
+		border:none;
 }
 .item-input{
-    background-color: transparent;
-    margin-bottom: 2%;
-    @include responsivewidthheight(46px !important,46px !important,80%,80%,47px !important,47px !important,80%,80%,53px !important,53px !important,80%,80%,59px !important,59px !important,80%,80%);
+		background-color: transparent;
+		margin-bottom: 2%;
+		@include responsivewidthheight(46px !important,46px !important,80%,80%,47px !important,47px !important,80%,80%,53px !important,53px !important,80%,80%,59px !important,59px !important,80%,80%);
 }
 .register-line{
-    border-bottom:1px solid white;
-    min-height: 1px;
-    padding-top: 10px;
-    height: 1px;
+		border-bottom:1px solid white;
+		min-height: 1px;
+		padding-top: 10px;
+		height: 1px;
 }
 .register-create{
-    text-align: center;
-    @include font-mediaqueries(14px,15px,16px,17px);
-    color:white;
+		text-align: center;
+		@include font-mediaqueries(14px,15px,16px,17px);
+		color:white;
 }
 .register-social-buttons{
-    @include display-flex;
-    @include align-items(center);
-    @include justify-content(space-between);
-    width:100%;
-    a{
-        background-color: transparent;
-        color:white;
-    }
+		@include display-flex;
+		@include align-items(center);
+		@include justify-content(space-between);
+		width:100%;
+		a{
+				background-color: transparent;
+				color:white;
+		}
 }
 .register-term{
-    @include display-flex;
-    @include flex-direction(row);
-    @include align-items(center);
-    @include justify-content(center);
-    border:none !important;
-    background-color: transparent !important;
-    padding-left: 0;
+		@include display-flex;
+		@include flex-direction(row);
+		@include align-items(center);
+		@include justify-content(center);
+		border:none !important;
+		background-color: transparent !important;
+		padding-left: 0;
 	color:white !important;
-    @include font-mediaqueries(11px,11px,12px,14px);
-    font-weight: 200;
+		@include font-mediaqueries(11px,11px,12px,14px);
+		font-weight: 200;
 	text-decoration: none;
-    height: 20px !important;
-    min-height: 20px !important;
-    min-width:80% !important;
-    width: 80%;
-    span{
-        color:$createAccauntTap;
-    }
+		height: 20px !important;
+		min-height: 20px !important;
+		min-width:80% !important;
+		width: 80%;
+		span{
+				color:$createAccauntTap;
+		}
 }
 .forgot-pass{
-    @include display-flex;
-    @include flex-direction(row);
-    @include align-items(center);
-    @include justify-content(center);
-    border:none !important;
-    background-color: transparent !important;
-    padding-left: 0;
-    color:white !important;
-    @include font-mediaqueries(11px,11px,12px,14px);
-    font-weight: 200;
-    text-decoration: none;
-    height: 20px !important;
-    min-height: 20px !important;
-    min-width:80% !important;
-    width: 80%;
-    span{
-        color:$createAccauntTap;
-    }
+		@include display-flex;
+		@include flex-direction(row);
+		@include align-items(center);
+		@include justify-content(center);
+		border:none !important;
+		background-color: transparent !important;
+		padding-left: 0;
+		color:white !important;
+		@include font-mediaqueries(11px,11px,12px,14px);
+		font-weight: 200;
+		text-decoration: none;
+		height: 20px !important;
+		min-height: 20px !important;
+		min-width:80% !important;
+		width: 80%;
+		span{
+				color:$createAccauntTap;
+		}
 }
 .register-login{
-    @include font-mediaqueries(12px,13px,16px,16px);
-    span{
-        color:$createAccaunt;
-    }
-    a{
-        color:$createAccauntTap;
-        font-weight: bold;
-        text-decoration: none;
-    }
+		@include font-mediaqueries(12px,13px,16px,16px);
+		span{
+				color:$createAccaunt;
+		}
+		a{
+				color:$createAccauntTap;
+				font-weight: bold;
+				text-decoration: none;
+		}
 }
 .container-button{
-    min-width: 80%;
-    height: 35px;
-    min-height: 35px;
+		min-width: 80%;
+		height: 35px;
+		min-height: 35px;
 }

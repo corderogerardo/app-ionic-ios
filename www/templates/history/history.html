@@ -3,7 +3,7 @@
 </div>
 <ion-view view-title="Historial">
 	<ion-content scroll="false" delegate-handle="mainScroll">
-				<div class="space-errands"></div>
+				<div class="space-history"></div>
 		<ion-scroll class="history-scroll" zooming="false" direction="y" delegate-handle="vertical" vertical-scroll-fix="mainScroll">
 		<ion-list class="history-lists">
 				<div ng-repeat="item in history">
@@ -35,7 +35,7 @@
 
 				</div>
 				<div>
-				<ion-item class="item-avatar item-icon-right"></ion-item>
+				<ion-item ng-if="history.length >=9" class="item-avatar item-icon-right"></ion-item>
 				</div>
 			</ion-list>
 </ion-scroll>
