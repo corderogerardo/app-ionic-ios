@@ -1,11 +1,11 @@
 .facebook-icon{
-		@include media-icons-ios("../img/Facebook/Page1.png","../img/FacebookTAP/Facebook.png","../img/Facebook/Page12x.png.png","../img/FacebookTAP/Facebook2x.png.png","../img/Facebook/Page13x.png.png","../img/FacebookTAP/Facebook3x.png.png");
-		@include widheigh(40px,40px,39px,39px);
-		@include responsivewidthheight(40px,40px,39px,39px,40px,40px,39px,39px,50px,50px,49px,49px,50px,50px,49px,49px);
+	@include media-icons-ios("../img/Facebook/Page1.png","../img/FacebookTAP/Facebook.png","../img/Facebook/Page12x.png.png","../img/FacebookTAP/Facebook2x.png.png","../img/Facebook/Page13x.png.png","../img/FacebookTAP/Facebook3x.png.png");
+	@include widheigh(40px,40px,39px,39px);
+	@include responsivewidthheight(40px,40px,39px,39px,40px,40px,39px,39px,50px,50px,49px,49px,50px,50px,49px,49px);
 }
 .google-icon{
-		@include media-icons-ios("../img/Google/Google.png","../img/GoogleTAP/Google.png","../img/Google/Google2x.png.png","../img/GoogleTAP/Google2x.png.png","../img/Google/Google3x.png.png","../img/GoogleTAP/Google3x.png.png");
-		@include widheigh(40px,40px,39px,39px);
-		@include responsivewidthheight(40px,40px,39px,39px,40px,40px,39px,39px,50px,50px,49px,49px,50px,50px,49px,49px);
+	@include media-icons-ios("../img/Google/Google.png","../img/GoogleTAP/Google.png","../img/Google/Google2x.png.png","../img/GoogleTAP/Google2x.png.png","../img/Google/Google3x.png.png","../img/GoogleTAP/Google3x.png.png");
+	@include widheigh(40px,40px,39px,39px);
+	@include responsivewidthheight(40px,40px,39px,39px,40px,40px,39px,39px,50px,50px,49px,49px,50px,50px,49px,49px);
 }
 
