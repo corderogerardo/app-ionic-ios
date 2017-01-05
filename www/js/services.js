@@ -50,268 +50,272 @@
 ;
 
 (function() {
-		angular.module('axpress')
-				.factory('Client', Client);
+    angular.module('axpress')
+        .factory('Client', Client);
 
-		Client.$inject = ['$rootScope', '$q', '$timeout', 'Service', 'Facebook', 'Google', '$filter'];
+    Client.$inject = ['$rootScope', '$q', '$timeout', 'Service', 'Facebook', 'Google', '$filter'];
 
-		function Client($rootScope, $q, $timeout, Service, Facebook, Google, $filter) {
-				var service = new Service('/client');
-				service.user = {
-						isLoged: false
-				};
+    function Client($rootScope, $q, $timeout, Service, Facebook, Google, $filter) {
+        var service = new Service('/client');
+        service.user = {
+            isLoged: false
+        };
 
-				/**
-				 * Logins a user in the system using email and password
-				 *
-				 * @param      {String}  email  The user email
-				 * @param      {String}  password  The user password
-				 * @return     {Promise}  A promise to resolve server response
-				 */
-				service.login = function(email, password) {
-						var data = {
-								email: email,
-								pass: password,
-								uuid: localStorage.getItem('axpress.push.registrationID')
-						};
-						return service.apiPost('/login', data);
-				};
+        /**
+         * Logins a user in the system using email and password
+         *
+         * @param      {String}  email  The user email
+         * @param      {String}  password  The user password
+         * @return     {Promise}  A promise to resolve server response
+         */
+        service.login = function(email, password) {
+            var data = {
+                email: email,
+                pass: password,
+                uuid: localStorage.getItem('axpress.push.registrationID')
+            };
+            return service.apiPost('/login', data);
+        };
 
-				/**
-				 * Logs out the user from the system
-				 */
-				service.logout = function () {
-						localStorage.removeItem('axpress.user');
-						localStorage.removeItem('axpress.menu');
-						localStorage.removeItem('facebookAccessToken');
-						localStorage.removeItem('googleCredentials');
-						$rootScope.user = {};
-						$rootScope.menu = {};
-				};
+        /**
+         * Logs out the user from the system
+         */
+        service.logout = function() {
+            localStorage.removeItem('axpress.user');
+            localStorage.removeItem('axpress.menu');
+            localStorage.removeItem('facebookAccessToken');
+            localStorage.removeItem('googleCredentials');
+            $rootScope.user = {};
+            $rootScope.menu = {};
+        };
 
-				/**
-				 * Registers a user account in the system
-				 *
-				 * @param      {String}  name    The user name
-				 * @param      {String}  pass    The user password
-				 * @param      {String}  email   The user email
-				 * @return     {Promise}  A promise to resolve server response
-				 */
-				service.register = function(name, pass, email) {
-						var data = {
-								email: email,
-								pass: pass,
-								name: name,
-								uuid: localStorage.getItem('axpress.push.registrationID')
-						};
-						return service.apiPost('/register', data);
-				};
+        /**
+         * Registers a user account in the system
+         *
+         * @param      {String}   name        The user name
+         * @param      {String}   pass        The user password
+         * @param      {String}   email       The user email
+         * @param      {String}   cellphone   The cellphone
+         * @param      {String}   localphone  The localphone
+         * @return     {Promise}  A promise to resolve server response
+         */
+        service.register = function(name, pass, email, cellphone, localphone) {
+            var data = {
+                email: email,
+                pass: pass,
+                name: name,
+                cellphone: cellphone,
+                localphone: localphone,
+                uuid: localStorage.getItem('axpress.push.registrationID')
+            };
+            return service.apiPost('/register', data);
+        };
 
-				/**
-				 * Resets a user password
-				 *
-				 * @param      {String}  email   The user email
-				 * @return     {Promise}  A promise to resolve server response
-				 */
-				service.forgotPassword = function(email) {
-						var data = {
-								email: email
-						};
-						return service.apiPost('/forgotpassword', data);
-				};
+        /**
+         * Resets a user password
+         *
+         * @param      {String}  email   The user email
+         * @return     {Promise}  A promise to resolve server response
+         */
+        service.forgotPassword = function(email) {
+            var data = {
+                email: email
+            };
+            return service.apiPost('/forgotpassword', data);
+        };
 
-				/**
-				 * Updates user data in the system
-				 *
-				 * @param      {String}   client  The user object
-				 * @return     {Promise}  A promise to resolve server response
-				 */
-				service.edit = function(client) {
+        /**
+         * Updates user data in the system
+         *
+         * @param      {String}   client  The user object
+         * @return     {Promise}  A promise to resolve server response
+         */
+        service.edit = function(client) {
 
-						var data = {
-								client_id: client.id,
-								email: client.email,
-								name: client.name,
-								pass: service.socialPassword(client.pass),
-								new_pass: service.socialPassword(client.newPass),
-								movil_phone: client.phone,
-								local_phone: client.localPhone,
-								identify: client.identify,
-						};
-						if (client.isSocialAccount) {
-								delete data.pass;
-								delete data.new_pass;
-								data.access_token = client.access_token;
-						}
-						return service.apiPost('/edit', data);
-				};
+            var data = {
+                client_id: client.id,
+                email: client.email,
+                name: client.name,
+                pass: service.socialPassword(client.pass),
+                new_pass: service.socialPassword(client.newPass),
+                movil_phone: client.phone,
+                local_phone: client.localPhone,
+                identify: client.identify,
+            };
+            if (client.isSocialAccount) {
+                delete data.pass;
+                delete data.new_pass;
+                data.access_token = client.access_token;
+            }
+            return service.apiPost('/edit', data);
+        };
 
-				/**
-				 * Starts the login process with Facebook to obtain an Access Token
-				 *
-				 * @return     {Promise}  A promise to resolve server response
-				 */
-				service.loginWithFacebook = function() {
-						var deferred = $q.defer();
-						Facebook.login().then(function(response) {
-								deferred.resolve(response);
-						}, function(error) {
-								deferred.reject(error);
-						});
-						return deferred.promise;
-				};
+        /**
+         * Starts the login process with Facebook to obtain an Access Token
+         *
+         * @return     {Promise}  A promise to resolve server response
+         */
+        service.loginWithFacebook = function() {
+            var deferred = $q.defer();
+            Facebook.login().then(function(response) {
+                deferred.resolve(response);
+            }, function(error) {
+                deferred.reject(error);
+            });
+            return deferred.promise;
+        };
 
-				/**
-				 * Fetchs user basic info such as userFacebookID, email and name
-				 *
-				 * @return     {Promise}  A promise to resolve server response
-				 */
-				service.facebookGetUserInfo = function() {
-						var deferred = $q.defer();
-						Facebook.getUserInfo().then(function(response) {
-								$timeout(function() {
-										$rootScope.user = service.user = response;
-								}, 0);
-								deferred.resolve(response);
-						}, function(error) {
-								//Clean user's facebook credentials
-								Facebook.logout();
-								deferred.reject(error);
-						});
-						return deferred.promise;
-				};
+        /**
+         * Fetchs user basic info such as userFacebookID, email and name
+         *
+         * @return     {Promise}  A promise to resolve server response
+         */
+        service.facebookGetUserInfo = function() {
+            var deferred = $q.defer();
+            Facebook.getUserInfo().then(function(response) {
+                $timeout(function() {
+                    $rootScope.user = service.user = response;
+                }, 0);
+                deferred.resolve(response);
+            }, function(error) {
+                //Clean user's facebook credentials
+                Facebook.logout();
+                deferred.reject(error);
+            });
+            return deferred.promise;
+        };
 
-				/**
-				 * Logouts user from Facebook, cleaning session.
-				 */
-				service.facebookLogout = function() {
-						Facebook.logout();
-						$rootScope.user = service.user = {};
-				};
+        /**
+         * Logouts user from Facebook, cleaning session.
+         */
+        service.facebookLogout = function() {
+            Facebook.logout();
+            $rootScope.user = service.user = {};
+        };
 
-				/**
-				 * Starts the login process with Google to obtain an Access Token
-				 *
-				 * @return     {Promise}  A promise to resolve server response
-				 */
-				service.loginWithGoogle = function() {
-						var deferred = $q.defer();
-						Google.login().then(function(response) {
-								deferred.resolve(response);
-						}, function(error) {
-								deferred.reject(error);
-						});
-						return deferred.promise;
-				};
+        /**
+         * Starts the login process with Google to obtain an Access Token
+         *
+         * @return     {Promise}  A promise to resolve server response
+         */
+        service.loginWithGoogle = function() {
+            var deferred = $q.defer();
+            Google.login().then(function(response) {
+                deferred.resolve(response);
+            }, function(error) {
+                deferred.reject(error);
+            });
+            return deferred.promise;
+        };
 
-				/**
-				 * Fetchs user basic info such as user ID, email and name
-				 *
-				 * @return     {Promise}  A promise to resolve server response
-				 */
-				service.googleGetUserInfo = function() {
-						var deferred = $q.defer();
-						Google.getProfile().then(function(response) {
-								deferred.resolve(response);
-						}, function(error) {
-								//Clean user's facebook credentials
-								Google.logout();
-								deferred.reject(error);
-						});
-						return deferred.promise;
-				};
+        /**
+         * Fetchs user basic info such as user ID, email and name
+         *
+         * @return     {Promise}  A promise to resolve server response
+         */
+        service.googleGetUserInfo = function() {
+            var deferred = $q.defer();
+            Google.getProfile().then(function(response) {
+                deferred.resolve(response);
+            }, function(error) {
+                //Clean user's facebook credentials
+                Google.logout();
+                deferred.reject(error);
+            });
+            return deferred.promise;
+        };
 
-				/**
-				 * Creates a hash used to login user when using a social login
-				 *
-				 * @param      {String}  socialId  The user social ID (Google ID, Facebook ID, ...)
-				 * @return     {String}  The hashed password that will be used to login
-				 */
-				service.socialPassword = function(socialId) {
-						return $filter('MD5')( //MD5 Hashed
-								btoa(socialId) //Base64 Encoded
-								.split('').reverse().join('') //Reversed
-						);
-				};
+        /**
+         * Creates a hash used to login user when using a social login
+         *
+         * @param      {String}  socialId  The user social ID (Google ID, Facebook ID, ...)
+         * @return     {String}  The hashed password that will be used to login
+         */
+        service.socialPassword = function(socialId) {
+            return $filter('MD5')( //MD5 Hashed
+                btoa(socialId) //Base64 Encoded
+                .split('').reverse().join('') //Reversed
+            );
+        };
 
-				/**
-				 * Registers a user in the system using Google Login
-				 *
-				 * @param      {String}  name      The user name
-				 * @param      {String}  pass      The user password
-				 * @param      {String}  email     The user email
-				 * @param      {String}  googleId  The user Google ID
-				 * @return     {Promise}  A promise to resolve server response
-				 */
-				service.googleRegister = function(name, pass, email, googleId) {
-						var data = {
-								email: email,
-								pass: pass,
-								name: name,
-								google_id: googleId,
-								uuid: localStorage.getItem('axpress.push.registrationID')
-						};
-						return service.apiPost('/register', data);
-				};
+        /**
+         * Registers a user in the system using Google Login
+         *
+         * @param      {String}  name      The user name
+         * @param      {String}  pass      The user password
+         * @param      {String}  email     The user email
+         * @param      {String}  googleId  The user Google ID
+         * @return     {Promise}  A promise to resolve server response
+         */
+        service.googleRegister = function(name, pass, email, googleId) {
+            var data = {
+                email: email,
+                pass: pass,
+                name: name,
+                google_id: googleId,
+                uuid: localStorage.getItem('axpress.push.registrationID')
+            };
+            return service.apiPost('/register', data);
+        };
 
-				/**
-				 * Logins a user in the system using Google Login
-				 *
-				 * @param      {String}  email     The user email
-				 * @param      {String}  pass      The user password
-				 * @param      {String}  googleId  The user Google ID
-				 * @return     {Promise}  A promise to resolve server response
-				 */
-				service.googleLogin = function(email, pass, googleId) {
-						var data = {
-								email: email,
-								pass: pass,
-								google_id: googleId,
-								uuid: localStorage.getItem('axpress.push.registrationID')
-						};
-						return service.apiPost('/login', data);
-				};
+        /**
+         * Logins a user in the system using Google Login
+         *
+         * @param      {String}  email     The user email
+         * @param      {String}  pass      The user password
+         * @param      {String}  googleId  The user Google ID
+         * @return     {Promise}  A promise to resolve server response
+         */
+        service.googleLogin = function(email, pass, googleId) {
+            var data = {
+                email: email,
+                pass: pass,
+                google_id: googleId,
+                uuid: localStorage.getItem('axpress.push.registrationID')
+            };
+            return service.apiPost('/login', data);
+        };
 
-				/**
-				 * Registers a user in the system using Facebook Login
-				 *
-				 * @param      {String}  name        The user name
-				 * @param      {String}  pass        The user password
-				 * @param      {String}  email       The user email
-				 * @param      {String}  facebookId  The user Facebook ID
-				 * @return     {Promise}  A promise to resolve server response
-				 */
-				service.facebookRegister = function(name, pass, email, facebookId) {
-						var data = {
-								email: email,
-								pass: pass,
-								name: name,
-								facebook_id: facebookId,
-								uuid: localStorage.getItem('axpress.push.registrationID')
-						};
-						return service.apiPost('/register', data);
-				};
+        /**
+         * Registers a user in the system using Facebook Login
+         *
+         * @param      {String}  name        The user name
+         * @param      {String}  pass        The user password
+         * @param      {String}  email       The user email
+         * @param      {String}  facebookId  The user Facebook ID
+         * @return     {Promise}  A promise to resolve server response
+         */
+        service.facebookRegister = function(name, pass, email, facebookId) {
+            var data = {
+                email: email,
+                pass: pass,
+                name: name,
+                facebook_id: facebookId,
+                uuid: localStorage.getItem('axpress.push.registrationID')
+            };
+            return service.apiPost('/register', data);
+        };
 
-				/**
-				 * Logins a user in the system using Facebook Login
-				 *
-				 * @param      {String}  email       The user email
-				 * @param      {String}  pass        The user password
-				 * @param      {String}  facebookId  The user Facebook ID
-				 * @return     {Promise}  A promise to resolve server response
-				 */
-				service.facebookLogin = function(email, pass, facebookId) {
-						var data = {
-								email: email,
-								pass: pass,
-								facebook_id: facebookId,
-								uuid: localStorage.getItem('axpress.push.registrationID')
-						};
-						return service.apiPost('/login', data);
-				};
+        /**
+         * Logins a user in the system using Facebook Login
+         *
+         * @param      {String}  email       The user email
+         * @param      {String}  pass        The user password
+         * @param      {String}  facebookId  The user Facebook ID
+         * @return     {Promise}  A promise to resolve server response
+         */
+        service.facebookLogin = function(email, pass, facebookId) {
+            var data = {
+                email: email,
+                pass: pass,
+                facebook_id: facebookId,
+                uuid: localStorage.getItem('axpress.push.registrationID')
+            };
+            return service.apiPost('/login', data);
+        };
 
-				return service;
-		}
+        return service;
+    }
 })();
 ;
 
@@ -740,57 +744,57 @@
 ;
 
 (function() {
-		angular.module('axpress')
-				.service('Logger', Logger);
+    angular.module('axpress')
+        .service('Logger', Logger);
 
-		Logger.$inject = ['$ionicPopup', '$cordovaToast', '$cordovaProgress', '$cordovaDialogs'];
+    Logger.$inject = ['$ionicPopup', '$cordovaToast', '$cordovaProgress', '$cordovaDialogs'];
 
-		function Logger($ionicPopup, $cordovaToast, $cordovaProgress, $cordovaDialogs) {
-				return {
-						alert: alert,
-						error: error,
-						toast: toast,
-						confirm: confirm,
+    function Logger($ionicPopup, $cordovaToast, $cordovaProgress, $cordovaDialogs) {
+        return {
+            alert: alert,
+            error: error,
+            toast: toast,
+            confirm: confirm,
 
-						displayProgressBar: displayProgressBar,
-						hideProgressBar: hideProgressBar
-				};
+            displayProgressBar: displayProgressBar,
+            hideProgressBar: hideProgressBar
+        };
 
-				/**
-				 * $ionicPopup alert wrapper
-				 *
-				 * @param      {String}  title   The title
-				 * @param      {String}  body    The body (can be html tags)
-				 */
-				function alert(title, body) {
-						$ionicPopup.alert({ title: title, template: body });
-				}
+        /**
+         * $ionicPopup alert wrapper
+         *
+         * @param      {String}  title   The title
+         * @param      {String}  body    The body (can be html tags)
+         */
+        function alert(title, body) {
+            $ionicPopup.alert({ title: title, template: body });
+        }
 
-				/**
-				 * $ionicPopup alert wrapper with fixed title to send error messages
-				 *
-				 * @param      {String}  body    The body (can be html tags)
-				 */
-				function error(body) {
-						$ionicPopup.alert({ title: 'Ha ocurrido un error', template: body });
-				}
+        /**
+         * $ionicPopup alert wrapper with fixed title to send error messages
+         *
+         * @param      {String}  body    The body (can be html tags)
+         */
+        function error(body) {
+            $ionicPopup.alert({ title: 'Ha ocurrido un error', template: body });
+        }
 
-				function toast (message, duration, position) {
-						$cordovaToast.show(message, duration || 'short', position || 'bottom');
-				}
+        function toast(message, duration, position) {
+            $cordovaToast.show(message, duration || 'short', position || 'bottom');
+        }
 
-				function displayProgressBar () {
-						$cordovaProgress.showSimple(true);
-				}
+        function displayProgressBar() {
+            $cordovaProgress.showSimple(true);
+        }
 
-				function hideProgressBar () {
-						$cordovaProgress.hide();
-				}
+        function hideProgressBar() {
+            $cordovaProgress.hide();
+        }
 
-				function confirm (title, message, buttons, confirmCallback) {
-						navigator.notification.confirm(message, confirmCallback, title, buttons || ['Ok', 'Cancelar']);
-				}
-		}
+        function confirm(title, message, buttons, confirmCallback) {
+            navigator.notification.confirm(message, confirmCallback, title, buttons || ['Ok', 'Cancelar']);
+        }
+    }
 })();
 ;
 
@@ -875,139 +879,139 @@
 ;
 
 (function() {
-		angular.module('axpress')
-				.factory('Push', PushService);
+    angular.module('axpress')
+        .factory('Push', PushService);
 
-		PushService.$inject = ['$rootScope', '$q', 'constants', 'Logger'];
+    PushService.$inject = ['$rootScope', '$q', 'constants', 'Logger'];
 
-		function PushService($rootScope, $q, constants, Logger) {
-				var service = {
-						initialize: initialize,
-						clearAllNotifications: clearAllNotifications,
-						unsubscribe: unsubscribe
-				};
+    function PushService($rootScope, $q, constants, Logger) {
+        var service = {
+            initialize: initialize,
+            clearAllNotifications: clearAllNotifications,
+            unsubscribe: unsubscribe
+        };
 
-				var push;
+        var push;
 
-				return service;
+        return service;
 
-				function notificationReceived (data) {
-						//The app started by clicking the notification
-						if (data.additionalData.coldstart) {
-								switch(data.additionalData.type) {
-										//Courier assigned
-										case '1':
-												onCourierAssigned(data.additionalData.data.shipping_id);
-												break;
-										//Package Picked
-										case '2':
-												onPackagePicked(data.additionalData.data.shipping_id);
-												break;
-										//Package Delivered
-										case '3':
-												onPackageDelivered(data.additionalData.data.shipping_id);
-												break;
-										//Chat Message Received
-										case '5':
-												onChatMessageReceived(data.additionalData.data.shipping_id);
-												break;
-										//Default case
-										default:
-												console.log("sandbox push");
-												//onCourierAssigned(1289);
-												break;
+        function notificationReceived(data) {
+            //The app started by clicking the notification
+            if (data.additionalData.coldstart) {
+                switch (data.additionalData.type) {
+                    //Courier assigned
+                    case '1':
+                        onCourierAssigned(data.additionalData.data.shipping_id);
+                        break;
+                        //Package Picked
+                    case '2':
+                        onPackagePicked(data.additionalData.data.shipping_id);
+                        break;
+                        //Package Delivered
+                    case '3':
+                        onPackageDelivered(data.additionalData.data.shipping_id);
+                        break;
+                        //Chat Message Received
+                    case '5':
+                        onChatMessageReceived(data.additionalData.data.shipping_id);
+                        break;
+                        //Default case
+                    default:
+                        console.log("sandbox push");
+                        //onCourierAssigned(1289);
+                        break;
 
-								}
-						}
+                }
+            }
 
-						//The app was already running when the notification was received
-						if (data.additionalData.foreground) {
-								var iosButtonIndex = 0;
-								switch(data.additionalData.type) {
-										//Courier Assigned
-										case '1':
-												Logger.confirm("¡Mensajero Asignado!", "Ha sido asignado un mensajero para tu envío", ['Seguir Paquete', 'Cancelar'], function (buttonIndex) {
-														if (buttonIndex == iosButtonIndex)
-																onCourierAssigned(data.additionalData.data.shipping_id);
-												});
-												break;
-										//Package Picked
-										case '2':
-												Logger.confirm("Paquete Recogido", "El mensajero ha recogido tu paquete", ['Seguir Paquete', 'Cancelar'], function (buttonIndex) {
-														if (buttonIndex == iosButtonIndex)
-																onPackagePicked(data.additionalData.data.shipping_id);
-												});
-												break;
-										//Package Delivered
-										case '3':
-												Logger.confirm("Paquete Entregado", "El mensajero ha entregado tu paquete", ['Calificar Envío', 'Cancelar'], function (buttonIndex) {
-														if (buttonIndex == iosButtonIndex)
-																onPackageDelivered(data.additionalData.data.shipping_id);
-												});
-												break;
-										//Chat Message Delivered
-										case '5':
-												Logger.confirm("Mensaje de Chat", "Tienes un nuevo mensaje", ['Ver', 'Cancelar'], function (buttonIndex) {
-														if (buttonIndex == iosButtonIndex)
-																onChatMessageReceived(data.additionalData.data.shipping_id);
-												});
-												break;
-										default:
-												Logger.confirm("¡Mensaje Consola!", data.message, ['Ok'], function (buttonIndex) {});
-												break;
-								}
-						}
-				}
+            //The app was already running when the notification was received
+            if (data.additionalData.foreground) {
+                var iosButtonIndex = 0;
+                switch (data.additionalData.type) {
+                    //Courier Assigned
+                    case '1':
+                        Logger.confirm("¡Mensajero Asignado!", "Ha sido asignado un mensajero para tu envío", ['Seguir Paquete', 'Cancelar'], function(buttonIndex) {
+                            if (buttonIndex == iosButtonIndex)
+                                onCourierAssigned(data.additionalData.data.shipping_id);
+                        });
+                        break;
+                        //Package Picked
+                    case '2':
+                        Logger.confirm("Paquete Recogido", "El mensajero ha recogido tu paquete", ['Seguir Paquete', 'Cancelar'], function(buttonIndex) {
+                            if (buttonIndex == iosButtonIndex)
+                                onPackagePicked(data.additionalData.data.shipping_id);
+                        });
+                        break;
+                        //Package Delivered
+                    case '3':
+                        Logger.confirm("Paquete Entregado", "El mensajero ha entregado tu paquete", ['Calificar Envío', 'Cancelar'], function(buttonIndex) {
+                            if (buttonIndex == iosButtonIndex)
+                                onPackageDelivered(data.additionalData.data.shipping_id);
+                        });
+                        break;
+                        //Chat Message Delivered
+                    case '5':
+                        Logger.confirm("Mensaje de Chat", "Tienes un nuevo mensaje", ['Ver', 'Cancelar'], function(buttonIndex) {
+                            if (buttonIndex == iosButtonIndex)
+                                onChatMessageReceived(data.additionalData.data.shipping_id);
+                        });
+                        break;
+                    default:
+                        Logger.confirm("¡Mensaje Consola!", data.message, ['Ok'], function(buttonIndex) {});
+                        break;
+                }
+            }
+        }
 
-				function onCourierAssigned (shippingId) {
-						$rootScope.$state.go('app.tracking', {shippingId: shippingId});
-				}
+        function onCourierAssigned(shippingId) {
+            $rootScope.$state.go('app.tracking', { shippingId: shippingId });
+        }
 
-				function onPackagePicked (shippingId) {
-						$rootScope.$state.go('app.tracking', {shippingId: shippingId});
-				}
+        function onPackagePicked(shippingId) {
+            $rootScope.$state.go('app.tracking', { shippingId: shippingId });
+        }
 
-				function onPackageDelivered (shippingId) {
-						$rootScope.$state.go('app.rating', {shippingId: shippingId});
-				}
+        function onPackageDelivered(shippingId) {
+            $rootScope.$state.go('app.rating', { shippingId: shippingId });
+        }
 
-				function onChatMessageReceived (shippingId) {
-						$rootScope.$state.go('app.chat', {shippingId: shippingId});
-				}
+        function onChatMessageReceived(shippingId) {
+            $rootScope.$state.go('app.chat', { shippingId: shippingId });
+        }
 
-				function clearAllNotifications () {
-						push.clearAllNotifications(function() {}, function() {});
-				}
+        function clearAllNotifications() {
+            push.clearAllNotifications(function() {}, function() {});
+        }
 
-				function onInit(data) {
-						localStorage.setItem('axpress.push.registrationID', data.registrationId);
-						push.on('notification', notificationReceived);
-				}
+        function onInit(data) {
+            localStorage.setItem('axpress.push.registrationID', data.registrationId);
+            push.on('notification', notificationReceived);
+        }
 
-				function initialize () {
-						//Configure Push Notifications
-						var pushOptions = {
-								android: {
-										senderID: constants.pushSenderID
-								},
-								ios: {
-										alert: true,
-										badge: true,
-										sound: true,
-										senderID: constants.pushSenderID,
-								}
-						};
+        function initialize() {
+            //Configure Push Notifications
+            var pushOptions = {
+                android: {
+                    senderID: constants.pushSenderID
+                },
+                ios: {
+                    alert: true,
+                    badge: true,
+                    sound: true,
+                    senderID: constants.pushSenderID,
+                }
+            };
 
-						document.addEventListener("deviceready", function() {
-								push = PushNotification.init(pushOptions);
-								push.on('registration', onInit);
-						}, false);
-				}
+            document.addEventListener("deviceready", function() {
+                push = PushNotification.init(pushOptions);
+                push.on('registration', onInit);
+            }, false);
+        }
 
-				function unsubscribe () {
-						push.unsubscribe(function () {}, function () {});
-				}
-		}
+        function unsubscribe() {
+            push.unsubscribe(function() {}, function() {});
+        }
+    }
 })();
 ;
 
