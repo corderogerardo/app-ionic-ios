@@ -189,9 +189,9 @@
         };
     }
 
-    sidebarMenuController.$inject = ['$rootScope', '$scope', 'Client', '$ionicSideMenuDelegate', 'Push'];
+    sidebarMenuController.$inject = ['$rootScope', '$scope', 'Client', '$ionicSideMenuDelegate', 'Push', 'Logger'];
 
-    function sidebarMenuController($rootScope, $scope, Client, $ionicSideMenuDelegate, Push) {
+    function sidebarMenuController($rootScope, $scope, Client, $ionicSideMenuDelegate, Push, Logger) {
 
         activate();
 
@@ -204,8 +204,10 @@
         $scope.user = $rootScope.user;
 
         function logout() {
-            Client.logout();
-            $rootScope.$state.go('root');
+            Logger.confirm('Cerrar Sesión', '¿Estás seguro de que quieres cerrar tu sesión?', function() {
+                Client.logout();
+                $rootScope.$state.go('root');
+            }, 'Cerrar Sesión', 'Cancelar');
         }
 
         function isHome() {

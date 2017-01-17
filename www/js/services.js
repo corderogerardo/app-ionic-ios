@@ -747,9 +747,9 @@
     angular.module('axpress')
         .service('Logger', Logger);
 
-    Logger.$inject = ['$ionicPopup', '$cordovaToast', '$cordovaProgress', '$cordovaDialogs'];
+    Logger.$inject = ['$ionicPopup', '$cordovaToast', '$cordovaProgress', '$cordovaDialogs', '$ionicPopup'];
 
-    function Logger($ionicPopup, $cordovaToast, $cordovaProgress, $cordovaDialogs) {
+    function Logger($ionicPopup, $cordovaToast, $cordovaProgress, $cordovaDialogs, $ionicPopup) {
         return {
             alert: alert,
             error: error,
@@ -791,8 +791,17 @@
             $cordovaProgress.hide();
         }
 
-        function confirm(title, message, buttons, confirmCallback) {
-            navigator.notification.confirm(message, confirmCallback, title, buttons || ['Ok', 'Cancelar']);
+        function confirm(title, message, confirmCallback, okText, cancelText) {
+            $ionicPopup.confirm({
+                    title: title,
+                    template: message,
+                    cancelText: cancelText,
+                    okText: okText
+                }).then(function(res) {
+                    if (res)
+                        confirmCallback();
+                })
+                //navigator.notification.confirm(message, confirmCallback, title, buttons || ['Ok', 'Cancelar']);
         }
     }
 })();

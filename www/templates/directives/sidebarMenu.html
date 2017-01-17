@@ -1,25 +1,27 @@
 <ion-header-bar class="bar-positive side-menu-title">
     <div class="side-menu-container-user">
-        <div class="side-menu-photo"><img ng-src="{{user.social_picture || user.selectedPhoto || 'img/Fotomenulateral/Fotomenulateral.png'}}" height="60px" width="60px" alt=""></div><div class="side-menu-user"><div>{{user.name}} {{user.id}}</div></div>
+        <div class="side-menu-photo"><img ng-src="{{user.social_picture || user.selectedPhoto || 'img/Fotomenulateral/Fotomenulateral.png'}}" height="60px" width="60px" alt=""></div>
+        <div class="side-menu-user">
+            <div>{{user.name}}</div>
+        </div>
     </div>
 </ion-header-bar>
 <ion-content class="side-menu-content">
-<ion-list>
-    <ion-item menu-close ui-sref="app.main">
-       <i class="side-menu-home"></i>  Inicio
-    </ion-item>
-    <ion-item menu-close ui-sref="app.account" ng-if="!isOnService()">
-       <i class="side-menu-edit"></i>  Editar cuenta
-    </ion-item>
-    <ion-item menu-close ui-sref="app.history" ng-if="!isOnService()">
-        <i class="side-menu-history"></i>  Historial
-    </ion-item>
-    <ion-item menu-close ui-sref="menu" ng-if="isOnService() || isServiceActive()" ng-click="cancelService()">
-        <i class="side-menu-cancel-service"></i>  Cancelar servicio
-    </ion-item>
-    <ion-item menu-close ng-click="logout()" class="side-menu-logout-title">
-        <i class="side-menu-logout"></i>  Cerrar sesión
-    </ion-item>
-</ion-list>
+    <ion-list>
+        <ion-item menu-close ui-sref="app.main">
+            <i class="side-menu-home"></i> Inicio
+        </ion-item>
+        <ion-item menu-close ui-sref="app.account">
+            <i class="side-menu-edit"></i> Editar cuenta
+        </ion-item>
+        <ion-item menu-close ui-sref="app.history">
+            <i class="side-menu-history"></i> Historial
+        </ion-item>
+        <ion-item menu-close ui-sref="menu" ng-if="isOnService() || isServiceActive()" ng-click="cancelService()">
+            <i class="side-menu-cancel-service"></i> Cancelar servicio
+        </ion-item>
+        <ion-item menu-close ng-click="logout()" class="side-menu-logout-title">
+            <i class="side-menu-logout"></i> Cerrar sesión
+        </ion-item>
+    </ion-list>
 </ion-content>
-

@@ -48,6 +48,12 @@ angular.module('axpress', [
 
     //Initialize Push Service
     Push.initialize();
+
+    if (localStorage.getItem('axpress.user') && localStorage.getItem('axpress.menu')) {
+        $rootScope.user = JSON.parse(localStorage.getItem('axpress.user'));
+        $rootScope.menu = JSON.parse(localStorage.getItem('axpress.menu'));
+        $state.go('app.main');
+    }
 }])
 
 .config(['$stateProvider', '$urlRouterProvider', '$ionicCloudProvider', function($stateProvider, $urlRouterProvider, $ionicCloudProvider) {
