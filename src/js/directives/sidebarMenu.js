@@ -28,7 +28,7 @@
         function logout() {
             Logger.confirm('Cerrar Sesión', '¿Estás seguro de que quieres cerrar tu sesión?', function() {
                 Client.logout();
-                $rootScope.$state.go('root');
+                $rootScope.$state.go('auth.login');
             }, 'Cerrar Sesión', 'Cancelar');
         }
 
