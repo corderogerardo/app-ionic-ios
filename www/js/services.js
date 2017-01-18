@@ -357,44 +357,44 @@
 ;
 
 (function() {
-		angular.module('axpress')
-				.constant('constants', {
-						//API base Url
-						apiBaseUrl: 'http://52.43.247.174/api_devel',
+    angular.module('axpress')
+        .constant('constants', {
+            //API base Url
+            apiBaseUrl: 'http://52.43.247.174/api_devel',
 
-						//App specific client token/key
-						key: '21569d3e6977ae51178544f5dcdd508652799af3.IVadPml3rlEXhUT13N1QhlJ5mvM=',
+            //App specific client token/key
+            key: '21569d3e6977ae51178544f5dcdd508652799af3.IVadPml3rlEXhUT13N1QhlJ5mvM=',
 
-						//String to identify the App on the Admin Console
-						platform: 'ios',
+            //String to identify the App on the Admin Console
+            platform: 'ios',
 
-						//Facebook App ID
-						fbAppId: '320049998373400',
+            //Facebook App ID
+            fbAppId: '320049998373400',
 
-						//Google App ID
-						googleOAuthClientID: '96059222512-4vm97bgjdolu5i0fe0sg8tl35e85gjdm.apps.googleusercontent.com',
+            //Google App ID
+            googleOAuthClientID: '96059222512-4vm97bgjdolu5i0fe0sg8tl35e85gjdm.apps.googleusercontent.com',
 
-						//Push Sender ID
-						pushSenderID: '1068552996185',
+            //Push Sender ID
+            pushSenderID: '1068552996185',
 
-						//Payment Methods
-						paymentMethods: [
-								{ name: 'Tarjeta de Crédito', value: 1 },
-								{ name: 'Contra-Recogida (Efectivo)', value: 2 },
-								{ name: 'Contra-Entrega (Efectivo)', value: 3 },
-						],
+            //Payment Methods
+            paymentMethods: [
+                { name: 'Tarjeta de Crédito', value: 1 },
+                { name: 'Contra-Recogida (Efectivo)', value: 2 },
+                { name: 'Contra-Entrega (Efectivo)', value: 3 },
+            ],
 
-						//Shipment Statuses
-						shipmentStatuses: [
-								{ name: 'No Asignado', value: 10 },
-								{ name: 'Asignado', value: 1 },
-								{ name: 'Recogido', value: 2 },
-								{ name: 'Entregado', value: 3 },
-								{ name: 'Cancelado', value: 4 }
-						],
-						//Deligences destinies' address maximum
-						diligencesMaxDestinies: 5
-				});
+            //Shipment Statuses
+            shipmentStatuses: [
+                { name: 'No Asignado', value: 10 },
+                { name: 'Asignado', value: 1 },
+                { name: 'Recogido', value: 2 },
+                { name: 'Entregado', value: 3 },
+                { name: 'Cancelado', value: 4 }
+            ],
+            //Deligences destinies' address maximum
+            diligencesMaxDestinies: 5
+        });
 })();
 ;
 
@@ -597,42 +597,42 @@
 ;
 
 (function() {
-		angular.module('axpress')
-				.factory('GoogleMapGeocoder', GoogleMapGeocoder);
+    angular.module('axpress')
+        .factory('GoogleMapGeocoder', GoogleMapGeocoder);
 
-		GoogleMapGeocoder.$inject = ['$rootScope', '$q'];
+    GoogleMapGeocoder.$inject = ['$rootScope', '$q'];
 
-		function GoogleMapGeocoder($rootScope, $q) {
-				var service = {};
-				service.geocoder = new google.maps.Geocoder;
+    function GoogleMapGeocoder($rootScope, $q) {
+        var service = {};
+        service.geocoder = new google.maps.Geocoder;
 
-				service.reverseGeocode = reverseGeocode;
-				service.removeStateAndCountry = removeStateAndCountry;
+        service.reverseGeocode = reverseGeocode;
+        service.removeStateAndCountry = removeStateAndCountry;
 
-				return service;
+        return service;
 
-				/**
-				 * Executes the reverse geocoding proccess using Google Maps Geocoder
-				 * @param latlng {Object] an object containing lat and lng values to proccess
-				 * @return {Promise} a promise that will resolve the results given by geocoder.
-				 */
-				function reverseGeocode(latlng) {
-						var deferred = $q.defer();
+        /**
+         * Executes the reverse geocoding proccess using Google Maps Geocoder
+         * @param latlng {Object] an object containing lat and lng values to proccess
+         * @return {Promise} a promise that will resolve the results given by geocoder.
+         */
+        function reverseGeocode(latlng) {
+            var deferred = $q.defer();
 
-						service.geocoder.geocode({location:latlng, region: 'co'}, function(results, status) {
-								if (status === google.maps.GeocoderStatus.OK) {
-										deferred.resolve(results);
-								} else {
-										deferred.reject();
-								}
-						});
-						return deferred.promise;
-				}
+            service.geocoder.geocode({ location: latlng, region: 'co' }, function(results, status) {
+                if (status === google.maps.GeocoderStatus.OK) {
+                    deferred.resolve(results);
+                } else {
+                    deferred.reject();
+                }
+            });
+            return deferred.promise;
+        }
 
-				function removeStateAndCountry (formattedAddress) {
-						return formattedAddress.replace(/, [A-zÀ-ÿ]+, [Cc]olombia$/, "");
-				}
-		}
+        function removeStateAndCountry(formattedAddress) {
+            return formattedAddress ? formattedAddress.replace(/, [A-zÀ-ÿ]+, [Cc]olombia$/, "") : "";
+        }
+    }
 })();
 ;
 
@@ -747,9 +747,9 @@
     angular.module('axpress')
         .service('Logger', Logger);
 
-    Logger.$inject = ['$ionicPopup', '$cordovaToast', '$cordovaProgress', '$cordovaDialogs', '$ionicPopup'];
+    Logger.$inject = ['$rootScope', '$ionicPopup', '$cordovaDialogs', 'ionicToast'];
 
-    function Logger($ionicPopup, $cordovaToast, $cordovaProgress, $cordovaDialogs, $ionicPopup) {
+    function Logger($rootScope, $ionicPopup, $cordovaDialogs, ionicToast) {
         return {
             alert: alert,
             error: error,
@@ -779,16 +779,16 @@
             $ionicPopup.alert({ title: 'Ha ocurrido un error', template: body });
         }
 
-        function toast(message, duration, position) {
-            $cordovaToast.show(message, duration || 'short', position || 'bottom');
+        function toast(message, duration, position, stick) {
+            ionicToast.show(message, position || 'bottom', false || stick, duration || 4000);
         }
 
         function displayProgressBar() {
-            $cordovaProgress.showSimple(true);
+            $rootScope.showSpinner = true;
         }
 
         function hideProgressBar() {
-            $cordovaProgress.hide();
+            $rootScope.showSpinner = false;
         }
 
         function confirm(title, message, confirmCallback, okText, cancelText) {
@@ -1316,21 +1316,21 @@
 
 ;
 
-(function () {
-		angular.module('axpress')
-				.service('Util', Util);
+(function() {
+    angular.module('axpress')
+        .service('Util', Util);
 
-		Util.$inject = ['$rootScope'];
+    Util.$inject = ['$rootScope'];
 
-		function Util ($rootScope) {
-				return {
-						stateGoAndReload: stateGoAndReload
-				};
+    function Util($rootScope) {
+        return {
+            stateGoAndReload: stateGoAndReload
+        };
 
-				function stateGoAndReload (state, params) {
-						$rootScope.$state.go(state || 'app.main', params || {}).then(function () {
-								$rootScope.$state.reload();
-						});
-				}
-		}
+        function stateGoAndReload(state, params) {
+            $rootScope.$state.go(state || 'app.main', params || {}).then(function() {
+                $rootScope.$state.reload();
+            });
+        }
+    }
 })();

@@ -20,8 +20,7 @@
   },
   "cordovaPlugins": [
     "ionic-plugin-deploy",
-    "cordova-plugin-screen-orientation",
-    {
+    "cordova-plugin-screen-orientation", {
       "locator": "https://git-wip-us.apache.org/repos/asf/cordova-plugin-inappbrowser.git",
       "id": "cordova-plugin-inappbrowser"
     },
@@ -32,23 +31,14 @@
     "cordova-plugin-statusbar",
     "ionic-plugin-keyboard",
     "cordova-plugin-camera",
-    "cordova-plugin-compat",
-    {
+    "cordova-plugin-compat", {
       "id": "phonegap-plugin-push",
       "locator": "phonegap-plugin-push",
       "variables": {
         "SENDER_ID": "1068552996185"
       }
     },
-    "cordova-plugin-geolocation",
-    {
-      "locator": "https://github.com/EddyVerbruggen/Toast-PhoneGap-Plugin.git",
-      "id": "cordova-plugin-x-toast"
-    },
-    {
-      "locator": "https://github.com/pbernasconi/cordova-progressIndicator.git",
-      "id": "org.pbernasconi.progressindicator"
-    }
+    "cordova-plugin-geolocation"
   ],
   "cordovaPlatforms": []
 }
