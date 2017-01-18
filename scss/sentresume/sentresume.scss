@@ -166,6 +166,7 @@
 		@include font-mediaqueries(12px,13px,14px,16px);
 		@include widheigh(20px,20px,100%,100%);
 		@include responsivewidthheight(20px,20px,100%,100%,20px,20px,100%,100%,30px,30px,100%,100%,35px,35px,100%,100%);
+        font-family: "Playbold", sans-serif !important;
 	}
 	p{
 		@include display-flex;
@@ -179,6 +180,19 @@
 		@include responsivewidthheight(20px,20px,100%,100%,20px,20px,100%,100%,30px,30px,100%,100%,35px,35px,100%,100%);
 		text-align: left;
 	}
+    span{
+        @include display-flex;
+        @include flex-direction(column);
+        @include align-items(flex-start);
+        @include justify-content(center);
+        margin-top: 0;
+        margin-bottom:0;
+        @include font-mediaqueries(12px,13px,14px,16px);
+        @include widheigh(20px,20px,100%,100%);
+        @include responsivewidthheight(20px,20px,100%,100%,20px,20px,100%,100%,30px,30px,100%,100%,35px,35px,100%,100%);
+        text-align: left;
+        font-family: "Ubuntuitalic", sans-serif !important;
+    }
 }
 .sentresume-content-noborder{
 	display:flex;
@@ -192,9 +206,9 @@
 	@include align-items(center);
 	@include justify-content(center);
 	@include widheigh(10%,10%,100%,100%);
-	color:$balanced;
+	color:$positive;
 	@include font-mediaqueries(16px,17px,20px,24px);
-	font-weight: bold;
+    font-family: "Playbold", sans-serif !important;
 	position: absolute !important;
 	bottom: 8%;
 }

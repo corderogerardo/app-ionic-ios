@@ -17,7 +17,8 @@
 		height:25%;
 		min-height:25%;
 		color:white;
-		@include font-mediaqueries(20px,22px,26px,28px);
+        font-family: "Playregular", sans-serif !important;
+		@include font-mediaqueries(18px,20px,24px,26px);
 		margin-bottom: 7%;
 		font-weight: bold;
 		text-align: center;

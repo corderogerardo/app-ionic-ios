@@ -124,6 +124,10 @@ angular.module('axpress', [
             url: '/forgotpassword',
             templateUrl: 'templates/auth/forgotpassword.html'
         })
+        .state('auth.termconditions', {
+            url: '/termconditions',
+            templateUrl: 'templates/auth/termconditions.html'
+        })
         /**
          * Document States
          */

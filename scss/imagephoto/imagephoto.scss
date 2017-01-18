@@ -3,7 +3,7 @@
 	@include flex-direction(row);
 	@include align-items(flex-end);
 	@include justify-content(center);
-	@include widheigh(60%,60%,100%,100%);
+	@include widheigh(50%,50%,100%,100%);
 	div {
 		@include display-flex;
 		@include flex-direction(row);
@@ -28,7 +28,7 @@
 	}
 }
 .no-margin-top{
-	margin-top: 0 !important;
+	margin-top: 10% !important;
 }
 .photo-container-takeselect{
 	@include widheigh(10%, 10%, 100%, 100%);
@@ -37,10 +37,9 @@
 	@include align-items(center);
 	@include justify-content(center);
 	color: $balanced;
-	font-weight: bold;
 	div{
 		background-color: $balanced;
-		@include widheigh(60%,60%,2px,2px);
+		@include widheigh(60%,60%,1px,1px);
 		margin-left: 4%;
 		margin-right: 4%;
 	}
@@ -49,4 +48,5 @@
 	color:$balanced !important;
 	padding-left: 10% !important;
 	@include media-inputs-ios("../img/TextBox/TextBox.png","../img/TextBox/TextBox.png","../img/TextBox/TextBox2x.png.png","../img/TextBox/TextBox2x.png.png","../img/TextBox/TextBox3x.png.png","../img/TextBox/TextBox3x.png.png");
+    @include placeholder($gray);
 }

@@ -22,7 +22,6 @@
 	@include justify-content(center);
 	color:$positive;
 	@include font-mediaqueries(14px,15px,16px,18px);
-	font-weight: bold;
 	height: 15%;
 	width: 100%;
 	min-height: 15%;
@@ -185,21 +184,25 @@
 	color:$balanced !important;
 	padding-left: 15% !important;
 	@include media-inputs-ios("../img/Nombredestinatario/NombreDesttinatario.png","../img/NombredestinatarioTAP/NombreDesttinatario.png","../img/Nombredestinatario/NombreDesttinatario2x.png.png","../img/NombredestinatarioTAP/NombreDesttinatario2x.png.png","../img/Nombredestinatario/NombreDesttinatario3x.png.png","../img/NombredestinatarioTAP/NombreDesttinatario3x.png.png");
+    @include placeholder($gray);
 }
 .input-email-dest{
 	color:$balanced !important;
 	padding-left: 15% !important;
 	@include media-inputs-ios("../img/Correoelectronicodestinatario/Correoelectronicodest.png","../img/CooreoelectronicoTAP/Correoelectronicodest.png","../img/Correoelectronicodestinatario/Correoelectronicodest2x.png.png","../img/CooreoelectronicoTAP/Correoelectronicodest2x.png.png","../img/Correoelectronicodestinatario/Correoelectronicodest3x.png.png","../img/CooreoelectronicoTAP/Correoelectronicodest3x.png.png");
+    @include placeholder($gray);
 }
 .input-phone-dest{
 	color:$balanced !important;
 	padding-left: 15% !important;
 	@include media-inputs-ios("../img/Telefonodestinatario/Telefonodestinatario.png","../img/TelefonodestinatarioTAP/Telefonodestinatario.png","../img/Telefonodestinatario/Telefonodestinatario2x.png.png","../img/TelefonodestinatarioTAP/Telefonodestinatario2x.png.png","../img/Telefonodestinatario/Telefonodestinatario3x.png.png","../img/TelefonodestinatarioTAP/Telefonodestinatario3x.png.png");
+    @include placeholder($gray);
 }
 .input-dni-dest{
 	color:$balanced !important;
 	padding-left: 15% !important;
 	@include media-inputs-ios("../img/Ceduladestinatario/Ceduladestinatario.png","../img/CeduladestinatarioTAP/Ceduladestinatario.png","../img/Ceduladestinatario/Ceduladestinatario2x.png.png","../img/CeduladestinatarioTAP/Ceduladestinatario2x.png.png","../img/Ceduladestinatario/Ceduladestinatario3x.png.png","../img/CeduladestinatarioTAP/Ceduladestinatario3x.png.png");
+    @include placeholder($gray);
 }
 .input-lock{
 	color:$balanced !important;
