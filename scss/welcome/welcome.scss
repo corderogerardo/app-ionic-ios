@@ -26,6 +26,7 @@ ion-slide{
 	margin-bottom: 20px;
 	color:white;
 	@include font-mediaqueries(30px,34px,36px,40px);
+    font-family: "Playregular", sans-serif !important;
 }
 .welcome-info{
 	@include font-mediaqueries(12px,14px,16px,18px);

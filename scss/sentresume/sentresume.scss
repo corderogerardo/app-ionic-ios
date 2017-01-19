@@ -17,10 +17,10 @@
 	padding-bottom: 1%;
 	a{
 		@include display-flex;
-		@include flex-direction(row);
+		@include flex-direction(column);
 		@include align-items(flex-start);
-		@include justify-content(center);
-		@include widheigh(100%,100%,25%,25%);
+        @include justify-content(flex-start);
+		@include widheigh(60%,60%,25%,25%);
 		color: $energized;
 	}
 }
@@ -36,8 +36,8 @@
 		@include display-flex;
 		@include flex-direction(row);
 		@include align-items(flex-start);
-		@include justify-content(center);
-		@include widheigh(100%,100%,25%,25%);
+        @include justify-content(flex-start);
+		@include widheigh(60%,60%,25%,25%);
 		color: $energized;
 	}
 }
@@ -53,8 +53,8 @@
 		@include display-flex;
 		@include flex-direction(row);
 		@include align-items(flex-start);
-		@include justify-content(center);
-		@include widheigh(100%,100%,25%,25%);
+        @include justify-content(flex-start);
+        @include widheigh(70%,70%,25%,25%);
 		color: $energized;
 	}
 }
@@ -68,7 +68,7 @@
 		@include display-flex;
 		@include flex-direction(row);
 		@include align-items(flex-start);
-		@include justify-content(center);
+        @include justify-content(flex-start);
 		@include widheigh(100%,100%,25%,25%);
 		color: $energized;
 	}
@@ -85,7 +85,7 @@
 		@include display-flex;
 		@include flex-direction(row);
 		@include align-items(flex-start);
-		@include justify-content(center);
+        @include justify-content(flex-start);
 		@include widheigh(100%,100%,25%,25%);
 		color: $energized;
 	}
@@ -102,25 +102,8 @@
 		@include display-flex;
 		@include flex-direction(row);
 		@include align-items(flex-start);
-		@include justify-content(center);
-		@include widheigh(100%,100%,25%,25%);
-		color: $energized;
-	}
-}
-.sentresume-content-three{
-	@include display-flex;
-	@include flex-direction(row);
-	@include align-items(flex-start);
-	@include justify-content(center);
-	@include widheigh(22%,22%,80%,80%);
-	padding-top: 1%;
-	padding-bottom: 1%;
-	a{
-		@include display-flex;
-		@include flex-direction(row);
-		@include align-items(flex-start);
-		@include justify-content(center);
-		@include widheigh(100%,100%,25%,25%);
+		@include justify-content(flex-start);
+        @include widheigh(50%,50%,25%,25%);
 		color: $energized;
 	}
 }
@@ -134,8 +117,8 @@
 		@include display-flex;
 		@include flex-direction(row);
 		@include align-items(flex-start);
-		@include justify-content(center);
-		@include widheigh(100%,100%,25%,25%);
+		@include justify-content(flex-start);
+		@include widheigh(60%,60%,25%,25%);
 		color: $energized;
 	}
 }
@@ -163,22 +146,53 @@
 		@include flex-direction(column);
 		@include align-items(flex-start);
 		@include justify-content(center);
-		@include font-mediaqueries(12px,13px,14px,16px);
+		@include font-mediaqueries(12px,13px,16px,18px);
 		@include widheigh(20px,20px,100%,100%);
-		@include responsivewidthheight(20px,20px,100%,100%,20px,20px,100%,100%,30px,30px,100%,100%,35px,35px,100%,100%);
+		@include responsivewidthheight(20px,20px,100%,100%,20px,20px,100%,100%,20px,20px,100%,100%,20px,20px,100%,100%);
+        font-family: "Playbold", sans-serif !important;
+        margin-bottom: 2%;
+        @media screen and (max-height: 736px){
+            margin-bottom: 2%;
+        }
+        @media screen and (max-height: 667px){
+            margin-bottom: 2%;
+        }
+        @media screen and (max-height: 568px){
+            margin-bottom: 1%;
+        }
+        @media screen and (max-height: 480px){
+            margin-bottom: 1%;
+        }
 	}
 	p{
 		@include display-flex;
 		@include flex-direction(column);
 		@include align-items(flex-start);
 		@include justify-content(center);
-		margin-top: 0;
-		margin-bottom:0;
+		margin-top: 0 !important;
+		margin-bottom:0 !important;
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
 		@include font-mediaqueries(12px,13px,14px,16px);
 		@include widheigh(20px,20px,100%,100%);
-		@include responsivewidthheight(20px,20px,100%,100%,20px,20px,100%,100%,30px,30px,100%,100%,35px,35px,100%,100%);
+		@include responsivewidthheight(20px,20px,100%,100%,20px,20px,100%,100%,20px,20px,100%,100%,20px,20px,100%,100%);
 		text-align: left;
 	}
+    span{
+        @include display-flex;
+        @include flex-direction(column);
+        @include align-items(flex-start);
+        @include justify-content(center);
+        margin-top: 0;
+        margin-bottom:0;
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+        @include font-mediaqueries(12px,13px,14px,16px);
+        @include widheigh(20px,20px,100%,100%);
+        @include responsivewidthheight(20px,20px,100%,100%,20px,20px,100%,100%,20px,20px,100%,100%,20px,20px,100%,100%);
+        text-align: left;
+        font-family: "Ubuntuitalic", sans-serif !important;
+    }
 }
 .sentresume-content-noborder{
 	display:flex;
@@ -192,9 +206,9 @@
 	@include align-items(center);
 	@include justify-content(center);
 	@include widheigh(10%,10%,100%,100%);
-	color:$balanced;
+	color:$positive;
 	@include font-mediaqueries(16px,17px,20px,24px);
-	font-weight: bold;
+    font-family: "Playbold", sans-serif !important;
 	position: absolute !important;
 	bottom: 8%;
 }
@@ -233,5 +247,13 @@
 	@include widheigh(50%,50%,80%,80%);
 	@include responsivewidthheight(50%,50%,80%,80%,60%,60%,90%,90%,60%,60%,80%,80%,60%,60%,80%,80%);
 	@include media-icons-ios("../img/Editar/Editar1x.png" !important,"../img/EditarTAP/Editar1x.png" !important,"../img/Editar/Editar2x.png","../img/EditarTAP/Editar2x.png","../img/Editar/Editar3x.png","../img/EditarTAP/Editar3x.png");
-	border:1px solid black !important;
+}
+.ion-edit-eye{
+    @include display-flex;
+    @include flex-direction(row);
+    @include align-items(center);
+    @include justify-content(center);
+    @include widheigh(50%,50%,80%,80%);
+    @include responsivewidthheight(50%,50%,80%,80%,60%,60%,90%,90%,60%,60%,80%,80%,60%,60%,80%,80%);
+    @include media-icons-ios("../img/Ver/Ver.png" !important,"../img/Ver/Ver.png" !important,"../img/Ver/Ver2x.png.png","../img/Ver/Ver2x.png.png","../img/Ver/Ver3x.png.png","../img/Ver/Ver3x.png.png");
 }

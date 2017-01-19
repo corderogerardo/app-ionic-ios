@@ -58,6 +58,16 @@
 		color: white;
 	}
 }
+.button-loginform{
+    @include media-icons-ios("../img/IniciarsesionCrearcuenta/IniciarsesionCrearcuenta.png","../img/IniciarsesionCrearcuentaTAP/IniciarsesionCrearcuenta.png","../img/IniciarsesionCrearcuenta/IniciarsesionCrearcuenta2x.png.png","../img/IniciarsesionCrearcuentaTAP/IniciarsesionCrearcuenta2x.png.png","../img/IniciarsesionCrearcuenta/IniciarsesionCrearcuenta3x.png.png","../img/IniciarsesionCrearcuentaTAP/IniciarsesionCrearcuenta3x.png.png");
+    @include font-mediaqueries(18px,20px,22px,24px);
+    font-weight: 100 !important;
+    color: rgba(white,.4) !important;
+    font-family: "Playregular", sans-serif !important;
+    &:hover{
+        color: white;
+    }
+}
 
 .button-default-two{
 	border:none !important;
@@ -86,7 +96,7 @@
 	@include absolutebottom(13%,13%,14%);
 }
 .button-bottom-two{
-	@include absolutebottom(3%,4%,4%);
+	@include absolutebottom(3%,2%,3%);
 }
 .button-bottom-welcome{
 	@include absolutebottom(15%,15%,17%);
@@ -105,9 +115,12 @@
 	width: 12%;
 }
 .button-continue{
-	color: white !important;
-	&:hover{
-		color: white;
-	}
+    @include font-mediaqueries(15px,16px,18px,18px);
+    font-weight: 100 !important;
+    color: rgba(white,.7) !important;
+    font-family: "Playregular", sans-serif !important;
+    &:hover{
+        color: white;
+    }
 	@include media-icons-ios("../img/BotonContinuar/Continuar.png","../img/BotonContinuarTAP/ContinuarTAP.png","../img/BotonContinuar/Continuar2x.png.png","../img/BotonContinuarTAP/ContinuarTAP2x.png.png","../img/BotonContinuar/Continuar3x.png.png","../img/BotonContinuarTAP/ContinuarTAP3x.png.png");
 }

@@ -13,9 +13,9 @@
 	@include flex-direction(column);
 	@include align-items(center);
 	@include justify-content(flex-end);
-	@include widheigh(auto,150px,100%,100%);
-	@include responsivewidthheight(150px,150px,100%,100%,150px,150px,100%,100%,160px,160px,100%,100%,175px,175px,100%,100%);
-	background-color: rgba($balanced,.7) !important;
+	@include widheigh(140px,140px,100%,100%);
+	@include responsivewidthheight(140px,140px,100%,100%,140px,140px,100%,100%,150px,150px,100%,100%,160px,160px,100%,100%);
+	background-color: rgba($balanced,.85) !important;
 	margin:0;
 	padding: 0;
 	h3{
@@ -23,33 +23,47 @@
 		margin:0;
 		padding: 0;
 		min-width: 100%;
-		@include font-mediaqueries(20px,20px,22px,24px);
+		@include font-mediaqueries(16px,18px,20px,22px);
 		margin-bottom:10px !important;
-	}
+        font-family: "Playregular", sans-serif !important;
+    }
 }
 .input-direction{
 	@include display-flex;
 	@include flex-direction(column);
 	@include align-items(center);
 	@include justify-content(flex-end);
-	@include responsivewidthheight(90px,90px,100%,100%,90px,90px,100%,100%,100px,100px,100%,100%,115px,115px,100%,100%);
-	margin-bottom: 0 !important;
+    @include widheigh(85px,85px,100%,100%);
+	@include responsivewidthheight(85px,85px,100%,100%,95px,95px,100%,100%,100px,100px,100%,100%,100px,100px,100%,100%);
+	margin-bottom: 5px !important;
 	map-autocomplete-address{
 		@include widheigh(40px !important,40px !important,90%,90%);
 		@include responsivewidthheight(40px !important,40px !important,90%,90%,40px !important,40px !important,90%,90%,55px !important,55px !important,90%,90%,60px !important,60px !important,90%,90%);
 		margin-top: 10px !important;
 		margin: 0;
 		padding: 0;
-	}
+        @include placeholder(rgba($gray,.6));
+        font-weight:500;
+    }
+    map-autocomplete-address-destiny{
+        @include widheigh(40px !important,40px !important,90%,90%);
+        @include responsivewidthheight(40px !important,40px !important,90%,90%,40px !important,40px !important,90%,90%,55px !important,55px !important,90%,90%,60px !important,60px !important,90%,90%);
+        margin-top: 10px !important;
+        margin: 0;
+        padding: 0;
+        @include placeholder(rgba($gray,.6));
+        font-weight:500;
+    }
 	input{
 		@include widheigh(40px !important,40px !important,90%,90%);
-		@include responsivewidthheight(40px !important,40px !important,90%,90%,50px !important,50px !important,90%,90%,55px !important,55px !important,90%,90%,60px !important,60px !important,90%,90%);
+		@include responsivewidthheight(40px !important,40px !important,90%,90%,40px !important,40px !important,90%,90%,40px !important,40px !important,90%,90%,45px !important,45px !important,90%,90%);
 		margin: 0;
 		padding: 0;
 		@include font-mediaqueries(10px,12px,13px,15px);
-		color:$balanced !important;
-		font-weight: bold;
-	}
+        @include placeholder(rgba($gray,.6));
+        color: $dark !important;
+        font-weight:500;
+    }
 }
 
 .direction-marker{
@@ -90,8 +104,20 @@
 	background-color: transparent !important;
 	margin: 0 !important;
 	padding: 0 !important;
-	bottom: 8%;
+	bottom: 7%;
 	position: absolute;
+    @media screen and (max-height: 736px){
+        bottom: 5%;
+    }
+    @media screen and (max-height: 667px){
+        bottom: 6%;
+    }
+    @media screen and (max-height: 568px){
+        bottom: 7%;
+    }
+    @media screen and (max-height: 480px){
+        bottom: 7%;
+    }
 }
 .button-confirm-position-two{
 	@include display-flex;
@@ -139,22 +165,22 @@
 	width:80%;
 }
 .input-origin{
-	color: $dark !important;
 	padding-left: 6% !important;
 	@include media-inputs-ios("../img/TextBoxOrigen/Origen.png","../img/TextBoxOrigen/Origen.png","../img/TextBoxOrigen/Origen2x.png.png","../img/TextBoxOrigen/Origen2x.png.png","../img/TextBoxOrigen/Origen3x.png.png","../img/TextBoxOrigen/Origen3x.png.png");
-	font-size: 2.5vh !important;
+    @include placeholder(rgba(white,.6));
+    font-family: "Ubuntu", sans-serif !important;
 }
 .input-destinies{
-	color: $dark !important;
 	padding-left: 6% !important;
 	@include media-inputs-ios("../img/Destino/Destino.png","../img/Destino/Destino.png","../img/Destino/Destino2x.png.png","../img/Destino/Destino2x.png.png","../img/Destino/Destino3x.png.png","../img/Destino/Destino3x.png.png");
-	font-size: 2.5vh !important;
+    @include placeholder(rgba(white,.6));
+    font-family: "Ubuntu", sans-serif !important;
 }
 .input-originDetail{
-	color: $dark !important;
 	padding-left: 10% !important;
-	@include media-inputs-ios("../img/TextBoxdetalles/Detalles.png","../img/TextBoxdetalles/Detalles.png","../img/TextBoxdetalles/Detalles2x.png.png","../img/TextBoxdetalles/Detalles2x.png.png","../img/TextBoxdetalles/Detalles3x.png.png","..img/TextBoxdetalles/Detalles3x.png.png");
-	font-size: 2.5vh !important;
+	@include media-inputs-ios("../img/TextBoxdetalles/Detalles.png","../img/TextBoxdetalles/Detalles.png","../img/TextBoxdetalles/Detalles2x.png.png","../img/TextBoxdetalles/Detalles2x.png.png","../img/TextBoxdetalles/Detalles3x.png.png","../img/TextBoxdetalles/Detalles3x.png.png");
+    font-family: "Ubuntu", sans-serif !important;
+    font-weight: 400 !important;
 }
 .button-gps{
 	@include media-icons-ios("../img/Ubicacion/Ubicacion.png","../img/Ubicacion/Ubicacion.png","../img/Ubicacion/Ubicacion2x.png.png","../img/Ubicacion/Ubicacion2x.png.png","../img/Ubicacion/Ubicacion3x.png.png","../img/Ubicacion/Ubicacion3x.png.png");

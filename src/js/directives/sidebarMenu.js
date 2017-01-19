@@ -11,9 +11,9 @@
         };
     }
 
-    sidebarMenuController.$inject = ['$rootScope', '$scope', 'Client', '$ionicSideMenuDelegate', 'Push'];
+    sidebarMenuController.$inject = ['$rootScope', '$scope', 'Client', '$ionicSideMenuDelegate', 'Push', 'Logger'];
 
-    function sidebarMenuController($rootScope, $scope, Client, $ionicSideMenuDelegate, Push) {
+    function sidebarMenuController($rootScope, $scope, Client, $ionicSideMenuDelegate, Push, Logger) {
 
         activate();
 
@@ -26,8 +26,10 @@
         $scope.user = $rootScope.user;
 
         function logout() {
-            Client.logout();
-            $rootScope.$state.go('root');
+            Logger.confirm('Cerrar Sesión', '¿Estás seguro de que quieres cerrar tu sesión?', function() {
+                Client.logout();
+                $rootScope.$state.go('auth.login');
+            }, 'Cerrar Sesión', 'Cancelar');
         }
 
         function isHome() {
@@ -35,9 +37,9 @@
         }
 
         function cancelService() {
-            $rootScope.$state.get('app.document').data.data = {};
-            $rootScope.$state.get('app.package').data.data = {};
-            $rootScope.$state.get('app.diligence').data.data = {};
+            angular.copy({}, $rootScope.$state.get('app.document').data.data);
+            angular.copy({}, $rootScope.$state.get('app.package').data.data);
+            angular.copy({}, $rootScope.$state.get('app.diligence').data.data);
             if ($rootScope.$state.current.name != "app.main") {
                 $rootScope.$state.go('app.main');
                 $ionicSideMenuDelegate.toggleLeft();

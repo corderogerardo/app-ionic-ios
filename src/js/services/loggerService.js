@@ -2,9 +2,9 @@
     angular.module('axpress')
         .service('Logger', Logger);
 
-    Logger.$inject = ['$ionicPopup', '$cordovaToast', '$cordovaProgress', '$cordovaDialogs'];
+    Logger.$inject = ['$rootScope', '$ionicPopup', '$cordovaDialogs', 'ionicToast'];
 
-    function Logger($ionicPopup, $cordovaToast, $cordovaProgress, $cordovaDialogs) {
+    function Logger($rootScope, $ionicPopup, $cordovaDialogs, ionicToast) {
         return {
             alert: alert,
             error: error,
@@ -34,20 +34,29 @@
             $ionicPopup.alert({ title: 'Ha ocurrido un error', template: body });
         }
 
-        function toast(message, duration, position) {
-            $cordovaToast.show(message, duration || 'short', position || 'bottom');
+        function toast(message, duration, position, stick) {
+            ionicToast.show(message, position || 'bottom', false || stick, duration || 4000);
         }
 
         function displayProgressBar() {
-            $cordovaProgress.showSimple(true);
+            $rootScope.showSpinner = true;
         }
 
         function hideProgressBar() {
-            $cordovaProgress.hide();
+            $rootScope.showSpinner = false;
         }
 
-        function confirm(title, message, buttons, confirmCallback) {
-            navigator.notification.confirm(message, confirmCallback, title, buttons || ['Ok', 'Cancelar']);
+        function confirm(title, message, confirmCallback, okText, cancelText) {
+            $ionicPopup.confirm({
+                    title: title,
+                    template: message,
+                    cancelText: cancelText,
+                    okText: okText
+                }).then(function(res) {
+                    if (res)
+                        confirmCallback();
+                })
+                //navigator.notification.confirm(message, confirmCallback, title, buttons || ['Ok', 'Cancelar']);
         }
     }
 })();

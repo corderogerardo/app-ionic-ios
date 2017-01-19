@@ -3,10 +3,10 @@
 		<section class="register-container">
 
 		<div class="list list-inset ">
-				<input class="item item-input inputs-general input-email" ng-model="user.email" type="email" placeholder="Correo Electrónico">
+				<input class="item item-input inputs-general input-email" ng-model="user.email" type="email" placeholder="Correo electrónico">
 				<input class="item item-input inputs-general input-pass" ng-model="user.password" type="password" placeholder="Contraseña">
-				<a class="item item-input button button-block button-default button-createaccount" ng-click="login()" title="">Iniciar sesión</a>
-				<a class="item item-input button button-block register-term text-center" ui-sref="auth.forgotpassword">¿Olvidaste tu Contraseña?</a>
+				<a class="item item-input button button-block button-default button-loginform" ng-click="login()" title="">Iniciar sesión</a>
+				<a class="item item-input button button-block forgot-pass text-center" ui-sref="auth.forgotpassword">¿Olvidaste tu Contraseña?</a>
 
 		</div>
 		</section>
@@ -29,12 +29,12 @@
 
 				</div>
 				<section class="row">
-						<div class="col text-center register-login">
-								<span>¿Eres Nuevo?</span>
-								<a ui-sref="auth.register" class="">
-										¡Regístrate ahora!
-								</a>
-						</div>
+						<a class="col text-center register-login" ui-sref="auth.register">
+								¿Eres Nuevo?
+								<span>
+										Crea tu cuenta
+								</span>
+						</a>
 				</section>
 		</ion-content>
 </ion-view>

@@ -1,211 +1,198 @@
 (function() {
-		angular.module('axpress')
-				.controller('DestinyController', DocumentDestinyController);
+    angular.module('axpress')
+        .controller('DestinyController', DocumentDestinyController);
 
-		DocumentDestinyController.$inject = ['$rootScope', '$scope', '$state', 'Location', 'NgMap',
-				'$timeout', 'GoogleMapGeocoder', 'constants', 'Logger', 'Util'];
+    DocumentDestinyController.$inject = ['$rootScope', '$scope', '$state', 'Location', 'NgMap',
+        '$timeout', 'GoogleMapGeocoder', 'constants', 'Logger', 'Util'
+    ];
 
-		function DocumentDestinyController($rootScope, $scope, $state, Location, NgMap,
-																			 $timeout, GoogleMapGeocoder, constants, Logger, Util) {
-				$timeout(function() {
-						activate();
-				}, 0);
+    function DocumentDestinyController($rootScope, $scope, $state, Location, NgMap,
+        $timeout, GoogleMapGeocoder, constants, Logger, Util) {
+        activate();
 
-				$scope.placeChanged = function(place) {
-						$scope.place = (typeof place == "object" ? place : this.getPlace());
-						$timeout(function() {
-								// If editing a previously added stop, edit that index plus one (because of the origin),
-								// If adding a destiny/stop, edit last
-								var index = ($scope.data.editStopIndex >= 0 ? ($scope.data.editStopIndex + 1) : ($scope.markers.length - 1));
-								$scope.markers[index].position = $scope.place.geometry.location;
-						}, 0);
-						if ( typeof place == "object" )
-								$scope.address = GoogleMapGeocoder.removeStateAndCountry($scope.place.formatted_address);
-				};
+        $scope.placeChanged = function(place) {
+            $scope.place = (typeof place == "object" ? place : this.getPlace());
+            $timeout(function() {
+                // If editing a previously added stop, edit that index plus one (because of the origin),
+                // If adding a destiny/stop, edit last
+                var index = ($scope.data.editStopIndex >= 0 ? ($scope.data.editStopIndex + 1) : ($scope.markers.length - 1));
+                $scope.markers[index].position = $scope.place.geometry.location;
+            }, 0);
+            if (typeof place == "object")
+                $scope.address = GoogleMapGeocoder.removeStateAndCountry($scope.place.formatted_address);
+        };
 
-				$scope.pickHere = function() {
-						$scope.buttonState = true;
-						var marker = $scope.markers[$scope.markers.length - 1];
-						marker.icon = "{url: 'img/Pindestino/Pindetsino3x.png.png', scaledSize: [28,38]}";
-						marker.draggable = false;
-				};
+        $scope.pickHere = function() {
+            $scope.buttonState = true;
+            var marker = $scope.markers[$scope.markers.length - 1];
+            marker.icon = "{url: 'img/Pindestino/Pindetsino3x.png.png', scaledSize: [28,38]}";
+            marker.draggable = false;
+        };
 
-				$scope.addNewAddress = function() {
-						if (!hasAddressSelected()) return;
-						if (!hasAddedNameAndPhone()) return;
-						var lastMarker = $scope.markers[$scope.markers.length - 1];
-						lastMarker.draggable = false;
-						lastMarker.icon = "{url: 'img/Pindestino/Pindetsino3x.png.png', scaledSize: [28,38]}";
-						$scope.markers.push({
-								icon: "{url: 'img/Pindestino/Pindetsino3x.png.png', scaledSize: [28,38]}"
-						});
-						$scope.data.destiniesData.push(getStopElement($scope.tempData));
-						resetTempData();
-				};
+        $scope.addNewAddress = function() {
+            if (!hasAddressSelected()) return;
+            if (!hasAddedNameAndPhone()) return;
+            var lastMarker = $scope.markers[$scope.markers.length - 1];
+            lastMarker.draggable = false;
+            lastMarker.icon = "{url: 'img/Pindestino/Pindetsino3x.png.png', scaledSize: [28,38]}";
+            $scope.markers.push({
+                icon: "{url: 'img/Pindestino/Pindetsino3x.png.png', scaledSize: [28,38]}"
+            });
+            $scope.data.destiniesData.push(getStopElement($scope.tempData));
+            resetTempData();
+        };
 
-				$scope.confirmDestiny = function() {
-						if (!hasAddressSelected()) return;
-						if ( $state.params.serviceType == 45 ) {
-								if (!hasAddedNameAndPhone()) return;
+        $scope.confirmDestiny = function() {
+            if (!hasAddressSelected()) return;
+            if ($state.params.serviceType == 45) {
+                if (!hasAddedNameAndPhone()) return;
 
-								if ( $scope.data.editStopIndex >= 0 ) {
-										//Editing a previous added stop
-										var index = $scope.data.editStopIndex;
-										$scope.data.destiniesData[index] = getStopElement($scope.tempData);
-										delete $scope.data.editStopIndex;
-								} else {
-										//Adding a new stop
-										$scope.data.destiniesData.push(getStopElement($scope.tempData));
-								}
-								resetTempData();
-						} else {
-								$scope.data.destinyAddress = GoogleMapGeocoder.removeStateAndCountry($scope.place.formatted_address);
-								$scope.data.destinyLatitude = $scope.place.geometry.location.lat();
-								$scope.data.destinyLongitude = $scope.place.geometry.location.lng();
-								$scope.data.destinyPlace = $scope.place;
-						}
+                if ($scope.data.editStopIndex >= 0) {
+                    //Editing a previous added stop
+                    var index = $scope.data.editStopIndex;
+                    $scope.data.destiniesData[index] = getStopElement($scope.tempData);
+                    delete $scope.data.editStopIndex;
+                } else {
+                    //Adding a new stop
+                    $scope.data.destiniesData.push(getStopElement($scope.tempData));
+                }
+                resetTempData();
+            } else {
+                $scope.data.destinyAddress = GoogleMapGeocoder.removeStateAndCountry($scope.place.formatted_address);
+                $scope.data.destinyLatitude = $scope.place.geometry.location.lat();
+                $scope.data.destinyLongitude = $scope.place.geometry.location.lng();
+                $scope.data.destinyPlace = $scope.place;
+            }
 
-						if ( $scope.extraData.navigateTo ) {
-								Util.stateGoAndReload($scope.extraData.navigateTo);
-								delete $scope.extraData.navigateTo;
-						} else {
-								Util.stateGoAndReload($scope.extraData.destinyNext);
-						}
-				};
+            if ($scope.extraData.navigateTo) {
+                $state.go($scope.extraData.navigateTo);
+                delete $scope.extraData.navigateTo;
+            } else {
+                $state.go($scope.extraData.destinyNext);
+            }
+        };
 
-				function hasAddressSelected () {
-						if (!$scope.place) {
-								Logger.toast("Debe añadir una dirección");
-								return false;
-						}
+        function hasAddressSelected() {
+            if (!$scope.place) {
+                Logger.toast("Debe añadir una dirección");
+                return false;
+            }
 
-						return true;
-				}
+            return true;
+        }
 
-				function hasAddedNameAndPhone () {
-						if (!$scope.tempData.name || !$scope.tempData.phone) {
-								Logger.toast("Debe añadir nombre y teléfono de contacto");
-								return false;
-						}
-						return true;
-				}
+        function hasAddedNameAndPhone() {
+            if (!$scope.tempData.name || !$scope.tempData.phone) {
+                Logger.toast("Debe añadir nombre y teléfono de contacto");
+                return false;
+            }
+            return true;
+        }
 
-				/**
-				 * For GPS Geolocation
-				 **/
-				$scope.gpsHere = function() {
-						Location.getCurrentPosition()
-								.then(function(pos) {
-										GoogleMapGeocoder.reverseGeocode(pos)
-												.then(geocoderCallback);
-								});
-				};
+        /**
+         * For GPS Geolocation
+         **/
+        $scope.gpsHere = function() {
+            Location.getCurrentPosition()
+                .then(function(pos) {
+                    GoogleMapGeocoder.reverseGeocode(pos)
+                        .then(geocoderCallback);
+                });
+        };
 
-				$scope.mapCallbacks = {
-						mapTapped    : mapTap,
-						markerDragend: markerDraged
-				};
+        $scope.mapCallbacks = {
+            mapTapped: mapTap,
+            markerDragend: markerDraged
+        };
 
-				function geocoderCallback(results) {
-						$scope.placeChanged(results[0]);
-						setMapCenter(results[0].geometry.location);
-				}
+        function geocoderCallback(results) {
+            $scope.placeChanged(results[0]);
+            setMapCenter(results[0].geometry.location);
+        }
 
-				function markerDraged(marker) {
-						var latlng = { lat: marker.latLng.lat(), lng: marker.latLng.lng() };
-						GoogleMapGeocoder.reverseGeocode(latlng)
-								.then(geocoderCallback);
-				}
+        function markerDraged(marker) {
+            var latlng = { lat: marker.latLng.lat(), lng: marker.latLng.lng() };
+            GoogleMapGeocoder.reverseGeocode(latlng)
+                .then(geocoderCallback);
+        }
 
-				function setMapCenter(position) {
-						$scope.map.setCenter(position);
-				}
+        function setMapCenter(position) {
+            $scope.map.setCenter(position);
+        }
 
-				function mapTap(event) {
-						var latlng = { lat: event.latLng.lat(), lng: event.latLng.lng() };
-						GoogleMapGeocoder.reverseGeocode(latlng)
-								.then(geocoderCallback);
-				}
+        function mapTap(event) {
+            var latlng = { lat: event.latLng.lat(), lng: event.latLng.lng() };
+            GoogleMapGeocoder.reverseGeocode(latlng)
+                .then(geocoderCallback);
+        }
 
-				function setExistingAddress() {
-						var latlng = { lat: $scope.data.destinyLatitude, lng: $scope.data.destinyLongitude };
-						GoogleMapGeocoder.reverseGeocode(latlng)
-								.then(geocoderCallback);
-				}
+        function setExistingAddress() {
+            var latlng = { lat: $scope.data.destinyLatitude, lng: $scope.data.destinyLongitude };
+            GoogleMapGeocoder.reverseGeocode(latlng)
+                .then(geocoderCallback);
+        }
 
-				function getStopElement(data) {
-						return {
-								phone    : data.phone,
-								longitude: $scope.place.geometry.location.lng(),
-								latitude : $scope.place.geometry.location.lat(),
-								address  : GoogleMapGeocoder.removeStateAndCountry($scope.place.formatted_address),
-								name     : data.name
-						};
-				}
+        function getStopElement(data) {
+            return {
+                phone: data.phone,
+                longitude: $scope.place.geometry.location.lng(),
+                latitude: $scope.place.geometry.location.lat(),
+                address: GoogleMapGeocoder.removeStateAndCountry($scope.place.formatted_address),
+                name: data.name
+            };
+        }
 
-				function resetTempData() {
-						$scope.tempData = {
-								address: '',
-								phone  : '',
-								name   : ''
-						};
-				}
+        function resetTempData() {
+            $scope.tempData = {
+                address: '',
+                phone: '',
+                name: ''
+            };
+        }
 
-
-				function activate() {
-						$scope.data = $state.current.data.data;
-						$scope.extraData = $state.current.data.extraData;
-						$scope.markers = [{
-								icon    : "{url: 'img/PinOrigen/Origen3x.png.png', scaledSize: [28,38]}",
-								position: [$scope.data.originLatitude, $scope.data.originLongitude]
-						}];
-						$scope.tempData = {};
-						$scope.tempData.address = "";
-						$scope.maxDestinies = constants.diligencesMaxDestinies;
-						NgMap.getMap().then(function(map) {
-								$scope.map = map;
-								if ( $scope.data.destinyLatitude && $scope.data.destinyLongitude )
-										setExistingAddress();
-								$timeout(function() {
-										google.maps.event.trigger(map, 'resize');
-								}, 0, false);
-						});
-						if ( Array.isArray($scope.data.destiniesData) && $scope.data.destiniesData.length > 0 ) {
-								var index = $scope.data.editStopIndex;
-								$scope.data.destiniesData.forEach(function(destiny, destIndex) {
-										$scope.markers.push({
-												icon     : (destIndex == index ? "{url: 'img/Pindestino/Pindetsino3x.png.png', scaledSize: [28,38]}" : "{url: 'img/Pindestino/Pindetsino3x.png.png', scaledSize: [28,38]}"),
-												position : [destiny.latitude, destiny.longitude],
-												draggable: (destIndex == index)
-										});
-								});
-								if ( typeof index != "undefined" ) {
-										var destiny = $scope.data.destiniesData[index];
-										$scope.tempData.phone = destiny.phone;
-										$scope.address = destiny.address;
-										$scope.tempData.name = destiny.name;
-										GoogleMapGeocoder.reverseGeocode({ lat: destiny.latitude, lng: destiny.longitude })
-												.then(geocoderCallback);
-								}
-						} else {
-								$scope.data.destiniesData = [];
-								$scope.markers.push({
-										icon     : "{url: 'img/Pindestino/Pindetsino3x.png.png', scaledSize: [28,38]}",
-										draggable: true
-								});
-								$scope.place = $scope.data.destinyPlace;
-								$scope.address = $scope.data.destinyAddress;
-						}
-
-						NgMap.getMap().then(function(map) {
-								$scope.map = map;
-								if ( $scope.data.destinyPlace )
-										$scope.placeChanged($scope.data.destinyPlace);
-								$timeout(function() {
-										google.maps.event.trigger(map, 'resize');
-								}, 0);
-						});
-				}
-		}
+        function activate() {
+            $scope.data = $state.current.data.data;
+            $scope.extraData = $state.current.data.extraData;
+            $scope.markers = [{
+                icon: "{url: 'img/PinOrigen/Origen3x.png.png', scaledSize: [28,38]}",
+                position: [$scope.data.originLatitude, $scope.data.originLongitude]
+            }];
+            $scope.tempData = {};
+            $scope.tempData.address = "";
+            $scope.maxDestinies = constants.diligencesMaxDestinies;
+            NgMap.getMap().then(function(map) {
+                $scope.map = map;
+                if ($scope.data.destinyLatitude && $scope.data.destinyLongitude)
+                    setExistingAddress();
+                google.maps.event.trigger(map, 'resize');
+            });
+            if (Array.isArray($scope.data.destiniesData) && $scope.data.destiniesData.length > 0) {
+                var index = $scope.data.editStopIndex;
+                $scope.data.destiniesData.forEach(function(destiny, destIndex) {
+                    $scope.markers.push({
+                        icon: (destIndex == index ? "{url: 'img/Pindestino/Pindetsino3x.png.png', scaledSize: [28,38]}" : "{url: 'img/Pindestino/Pindetsino3x.png.png', scaledSize: [28,38]}"),
+                        position: [destiny.latitude, destiny.longitude],
+                        draggable: (destIndex == index)
+                    });
+                });
+                if (typeof index != "undefined") {
+                    var destiny = $scope.data.destiniesData[index];
+                    $scope.tempData.phone = destiny.phone;
+                    $scope.address = destiny.address;
+                    $scope.tempData.name = destiny.name;
+                    GoogleMapGeocoder.reverseGeocode({ lat: destiny.latitude, lng: destiny.longitude })
+                        .then(geocoderCallback);
+                }
+            } else {
+                $scope.data.destiniesData = [];
+                $scope.markers.push({
+                    icon: "{url: 'img/Pindestino/Pindetsino3x.png.png', scaledSize: [28,38]}",
+                    draggable: true
+                });
+                $scope.place = $scope.data.destinyPlace;
+                $scope.address = $scope.data.destinyAddress;
+            }
+        }
+    }
 
 })();
