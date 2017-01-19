@@ -26,10 +26,11 @@
         $scope.user = $rootScope.user;
 
         function logout() {
-            Logger.confirm('Cerrar Sesión', '¿Estás seguro de que quieres cerrar tu sesión?', function() {
-                Client.logout();
-                $rootScope.$state.go('auth.login');
-            }, 'Cerrar Sesión', 'Cancelar');
+            Client.logout();
+            $rootScope.$state.go('auth.login');
+            //Logger.confirm('Cerrar Sesión', '¿Estás seguro de que quieres cerrar tu sesión?', function() {
+            //    
+            //}, 'Cerrar Sesión', 'Cancelar');
         }
 
         function isHome() {
