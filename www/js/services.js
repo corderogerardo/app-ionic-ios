@@ -1213,7 +1213,7 @@
          * @param      {String}   emailDestinyClient      The destiny client email
          * @param      {Double}   width                   The width
          * @param      {Double}   height                  The height
-         * @param      {Double}   long               The long
+         * @param      {Double}   longitude               The longitude
          * @param      {String}   picture                 The picture
          * @param      {String}   contentPack             The content pack
          * @param      {String}   originDetail            The origin detail
@@ -1226,7 +1226,7 @@
             amount, amountDeclared, typeServices, pay, time, bagId, destinyClient, destinyName,
             cellphoneDestinyClient, emailDestinyClient,
             //Optional Parameters
-            width, height, long, picture, contentPack, originDetail, destinyDetail, tip) {
+            width, height, longitude, picture, contentPack, originDetail, destinyDetail, tip) {
 
             //We pack params in an object
             var data = {
@@ -1253,7 +1253,7 @@
                 //Optional Params
                 width: width,
                 height: height,
-                long: long,
+                longitude: longitude,
                 picture: picture,
                 content_pack: contentPack,
                 origin_detail: originDetail,
