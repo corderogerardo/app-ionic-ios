@@ -37,9 +37,9 @@
         }
 
         function cancelService() {
-            $rootScope.$state.get('app.document').data.data = {};
-            $rootScope.$state.get('app.package').data.data = {};
-            $rootScope.$state.get('app.diligence').data.data = {};
+            angular.copy({}, $rootScope.$state.get('app.document').data.data);
+            angular.copy({}, $rootScope.$state.get('app.package').data.data);
+            angular.copy({}, $rootScope.$state.get('app.diligence').data.data);
             if ($rootScope.$state.current.name != "app.main") {
                 $rootScope.$state.go('app.main');
                 $ionicSideMenuDelegate.toggleLeft();

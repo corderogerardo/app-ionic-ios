@@ -50,7 +50,8 @@
 
         function successfullyRegisteredRequest() {
             $scope.data = {};
-            $state.current.data.data = {};
+            angular.copy({}, $state.current.data.data);
+
             Logger.hideProgressBar();
             $state.go("app.main");
             Logger.toast("Solicitud registrada correctamente");
