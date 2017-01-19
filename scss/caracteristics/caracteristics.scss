@@ -115,30 +115,35 @@
 	@include media-inputs-ios("../img/Altocm/Altocm.png","../img/Altocm/Altocm.png","../img/Altocm/Altocm2x.png.png","../img/Altocm/Altocm2x.png.png","../img/Altocm/Altocm3x.png.png","../img/Altocm/Altocm3x.png.png");
 	color: $positive !important;
 	padding-left: 40% !important;
+    @include placeholder($gray);
 }
 .input-sizes-width{
 	@include widheigh(90%,90%,90%,90%);
 	@include media-inputs-ios("../img/Anchocm/Anchocm.png","../img/Anchocm/Anchocm.png","../img/Anchocm/Anchocm2x.png.png","../img/Anchocm/Anchocm2x.png.png","../img/Anchocm/Anchocm3x.png.png","../img/Anchocm/Anchocm3x.png.png");
 	color: $positive !important;
 	padding-left: 40% !important;
+    @include placeholder($gray);
 }
 .input-sizes-longitude{
 	@include widheigh(90%,90%,90%,90%);
 	@include media-inputs-ios("../img/Largocm/Largocm.png","../img/Largocm/Largocm.png","../img/Largocm/Largocm2x.png.png","../img/Largocm/Largocm2x.png.png","../img/Largocm/Largocm3x.png.png","../img/Largocm/Largocm3x.png.png");
 	color: $positive !important;
 	padding-left: 40% !important;
+    @include placeholder($gray);
 }
 .input-sizes-weight{
 	@include widheigh(90%,90%,90%,90%);
 	@include media-inputs-ios("../img/Pesokg/Pesokg.png","../img/Pesokg/Pesokg.png","../img/Pesokg/Pesokg2x.png.png","../img/Pesokg/Pesokg2x.png.png","../img/Pesokg/Pesokg3x.png.png","../img/Pesokg/Pesokg3x.png.png");
 	color: $positive !important;
 	padding-left: 40% !important;
+    @include placeholder($gray);
 }
 .input-sizes-quantity{
 	@include widheigh(90%,90%,90%,90%);
 	@include media-inputs-ios("../img/Cantidad/Cantidad.png","../img/Cantidad/Cantidad.png","../img/Cantidad/Cantidad2x.png.png","../img/Cantidad/Cantidad2x.png.png","../img/Cantidad/Cantidad3x.png.png","../img/Cantidad/Cantidad3x.png.png");
 	color: $positive !important;
 	padding-left: 40% !important;
+    @include placeholder($gray);
 }
 .errands-caracteristics{
 	align-items: center;

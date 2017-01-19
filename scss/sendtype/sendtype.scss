@@ -1,191 +1,227 @@
-.container-senttype{
-	background-color: white;
-	@include display-flex;
-	@include flex-direction(column);
-	@include align-items(center);
-	@include justify-content(flex-start);
-	position:absolute;
-	bottom: 0;
-	@include widheigh(auto,auto,100%,100%);
-	@include responsivewidthheight(auto,150px,100%,100%,auto,auto,100%,100%,auto,165px,100%,100%,auto,170px,100%,100%);
-	padding: 0 !important;
-	z-index: 0;
-	padding-bottom:65px !important;
-}
-.send-type-todo{
-	@include display-flex;
-	@include flex-direction(column);
-	@include align-items(center);
-	@include justify-content(center);
-	background-color:$positive;
-	@include widheigh(50px,auto,100%,100%);
-	@include responsivewidthheight(auto,50px,100%,100%,auto,55px,100%,100%,auto,55px,100%,100%,auto,55px,100%,100%);
-	top:0;
-	left: 0;
-	position:relative;
-	div{
-		@include display-flex;
-		@include flex-direction(column);
-		@include align-items(center);
-		@include justify-content(space-around);
-		@include widheigh(15%,15%,100%,100%);
-		@include responsivewidthheight(15%,15%,100%,100%,15%,15%,100%,100%,15%,15%,100%,100%,15%,15%,100%,100%);
-		text-align: center;
-		span{
-			position: relative;
-			@include display-flex;
-			@include flex-direction(row);
-			@include align-items(center);
-			@include justify-content(center);
-			@include widheigh(15%,15%,100%,100%);
-			@include responsivewidthheight(15%,15%,100%,100%,15%,15%,100%,100%,15%,15%,100%,100%,15%,15%,100%,100%);
-			color:white;
-			@include font-mediaqueries(12px,14px,16px,18px);
-		}
-	}
+.container-senttype {
+    background-color: white;
+    @include display-flex;
+    @include flex-direction(column);
+    @include align-items(center);
+    @include justify-content(flex-start);
+    position: absolute;
+    bottom: 0;
+    @include widheigh(auto, 140px, 100%, 100%);
+    @include responsivewidthheight(auto, 140px, 100%, 100%, auto, 140px, 100%, 100%, auto, 150px, 100%, 100%, auto, 170px, 100%, 100%);
+    padding: 0 !important;
+    z-index: 0;
+    padding-bottom: 55px !important;
+    @media screen and (max-height: 736px) {
+        padding-bottom: 75px !important;
+    }
+    @media screen and (max-height: 667px) {
+        padding-bottom: 65px !important;
+    }
+    @media screen and (max-height: 568px) {
+        padding-bottom: 55px !important;
+    }
+    @media screen and (max-height: 480px) {
+        padding-bottom: 50px !important;
 
-}
-.send-type-options{
-	@include display-flex;
-	@include flex-direction(column);
-	@include align-items(center);
-	@include justify-content(center);
-	@include widheigh(100px,auto,100%,100%);
-	@include responsivewidthheight(auto,100px,100%,100%,auto,100px,100%,100%,auto,115px,100%,100%,auto,115px,100%,100%);
-	color:black !important;
-	position:relative;
-	div{
-		@include display-flex;
-		@include flex-direction(row);
-		@include align-items(center);
-		@include justify-content(flex-start);
-		@include widheigh(60px,auto,80%,80%);
-		@include responsivewidthheight(auto,40px,80%,80%,auto,40px,80%,80%,auto,50px,80%,80%,auto,60px,80%,80%);
-		color:$balanced !important;
-		@include font-mediaqueries(13px,14px,16px,18px);
-		&:checked{
-			input{
-				@include widheigh(auto,auto,10%,10%);
-				@include responsivewidthheight(70px,70px,50% !important,50% !important,40px,40px,90%,90%,auto,60px,90%,90%,auto,60px,90%,90%);
-			}
-		}
-	}
-}
-.send-type-options-radio{
-	@include widheigh(auto,auto,90%,90%);
-	@include responsivewidthheight(auto,auto,90%,90%,auto,auto,90%,90%,auto,auto,90%,90%,auto,auto,90%,90%);
-	@include font-mediaqueries(20px,22px,26px,28px);
-	color:$balanced !important;
-	&:checked{
-		color:$balanced !important;
     }
 }
-.item-content{
-	@include widheigh(40px,40px,90%,90%);
-	@include responsivewidthheight(40px,40px,90%,90%,50px,50px,90%,90%,50px,50px,90%,90%,50px,50px,90%,90%);
-	color:$balanced !important;
-	background-color: transparent !important;
-	span{
-		color:$balanced !important;
-	}
-}
-.space-errands{
-	@include widheigh(40px,40px,100%,100%);
-	@include responsivewidthheight(60px,60px,100%,100%,80px,80px,100%,100%,70px,70px,100%,100%,75px,75px,100%,100%);
-}
-.container-senttype-errands-title{
-	background-color: white;
-	@include display-flex;
-	@include flex-direction(row);
-	@include align-items(center);
-	@include justify-content(center);
-	bottom: 0;
-	@include widheigh(auto,auto,100%,100%);
-	@include responsivewidthheight(auto,auto,100%,100%,auto,auto,100%,100%,auto,auto,100%,100%,auto,auto,100%,100%);
-	padding: 0 !important;
-	width: 100%;
-	z-index: 0;
-	@include font-mediaqueries(12px,14px,16px,16px);
-	font-weight:200;
-	color:$balanced !important;
-}
-.container-senttype-errands{
-	background-color: white;
-	@include display-flex;
-	@include flex-direction(row);
-	@include align-items(center);
-	@include justify-content(center);
-	min-height: 25%;
-	height: 25%;
-	min-width: 100%;
-	padding: 0 !important;
-	width: 100%;
-	margin-bottom: 20%;
-	.input-sizes{
-		color:$balanced !important;
-		@include font-mediaqueries(12px,14px,16px,16px);
-		@include widheigh(100% !important,100% !important,90%,90%);
-		@include media-inputs-ios("../img/TexBoxcaracteristicasdeladiligencia/TextBoxCaracteristicas.png","../img/TexBoxcaracteristicasdeladiligencia/TextBoxCaracteristicas.png","../img/TexBoxcaracteristicasdeladiligencia/TextBoxCaracteristicas2x.png.png","../img/TexBoxcaracteristicasdeladiligencia/TextBoxCaracteristicas2x.png.png","../img/TexBoxcaracteristicasdeladiligencia/TextBoxCaracteristicas3x.png.png","../img/TexBoxcaracteristicasdeladiligencia/TextBoxCaracteristicas3x.png.png");
-		text-align:start !important;
-		padding-left: 25px !important;
 
-	}
+.send-type-todo {
+    @include display-flex;
+    @include flex-direction(column);
+    @include align-items(center);
+    @include justify-content(center);
+    background-color: $positive;
+    @include widheigh(50px, auto, 100%, 100%);
+    @include responsivewidthheight(auto, 40px, 100%, 100%, auto, 50px, 100%, 100%, auto, 55px, 100%, 100%, auto, 55px, 100%, 100%);
+    top: 0;
+    left: 0;
+    position: relative;
+    div {
+        @include display-flex;
+        @include flex-direction(column);
+        @include align-items(center);
+        @include justify-content(space-around);
+        @include widheigh(15%, 15%, 100%, 100%);
+        @include responsivewidthheight(15%, 15%, 100%, 100%, 15%, 15%, 100%, 100%, 15%, 15%, 100%, 100%, 15%, 15%, 100%, 100%);
+        text-align: center;
+        span {
+            position: relative;
+            @include display-flex;
+            @include flex-direction(row);
+            @include align-items(center);
+            @include justify-content(center);
+            @include widheigh(50%, 50%, 100%, 100%);
+            @include responsivewidthheight(15%, 15%, 100%, 100%, 50%, 50%, 100%, 100%, 15%, 15%, 100%, 100%, 15%, 15%, 100%, 100%);
+            color: white;
+            @include font-mediaqueries(12px, 14px, 16px, 18px);
+        }
+    }
+
 }
-.container-senttype-errands-check{
-	background-color: white;
-	@include display-flex;
-	@include flex-direction(column);
-	@include align-items(center);
-	@include justify-content(center);
-	bottom: 0;
-	min-height: 20%;
-	height: 20%;
-	min-width: 100%;
-	padding: 0 !important;
-	width: 100%;
-	z-index: 0;
-	color:$positive;
-	@include font-mediaqueries(12px,14px,16px,16px);
-	p{
-		@include display-flex;
-		@include flex-direction(row);
-		@include align-items(center);
-		@include justify-content(center);
-		margin-bottom: 6% !important;
-		text-align: center;
-		color:$positive !important;
-		@include font-mediaqueries(12px,14px,16px,16px);
-	}
+
+.send-type-options {
+    @include display-flex;
+    @include flex-direction(column);
+    @include align-items(center);
+    @include justify-content(center);
+    @include widheigh(100px, auto, 100%, 100%);
+    @include responsivewidthheight(auto, 130px, 100%, 100%, auto, 140px, 100%, 100%, auto, 170px, 100%, 100%, auto, 190px, 100%, 100%);
+    color: black !important;
+    position: relative;
+    div {
+        @include display-flex;
+        @include flex-direction(row);
+        @include align-items(center);
+        @include justify-content(flex-start);
+        @include widheigh(60px, auto, 80%, 80%);
+        @include responsivewidthheight(35px, 35px, 80%, 80%, 35px, 35px, 80%, 80%, 45px, 45px, 80%, 80%, 45px, 45px, 80%, 80%);
+        color: $balanced !important;
+        @include font-mediaqueries(13px, 14px, 16px, 18px);
+        &:checked {
+            input {
+                @include widheigh(auto, auto, 10%, 10%);
+                @include responsivewidthheight(70px, 70px, 50% !important, 50% !important, 40px, 40px, 90%, 90%, auto, 60px, 90%, 90%, auto, 60px, 90%, 90%);
+            }
+        }
+    }
 }
-.bar-sendtype{
-	@include display-flex;
-	@include flex-direction(column);
-	@include align-items(center);
-	@include justify-content(flex-end);
-	background-color: rgba($balanced,.85) !important;
-	margin:0;
-	padding: 0;
-	padding-bottom: 5px !important;
-	h3{
-		@include widheigh(40px !important,40px !important,95%,95%);
-		margin:0;
-		padding: 0;
-		min-width: 100%;
-        @include font-mediaqueries(16px,18px,20px,22px);
+
+.send-type-options-radio {
+    @include widheigh(auto, auto, 90%, 90%);
+    @include responsivewidthheight(auto, auto, 90%, 90%, auto, auto, 90%, 90%, auto, auto, 90%, 90%, auto, auto, 90%, 90%);
+    @include font-mediaqueries(20px, 22px, 26px, 28px);
+    color: $balanced !important;
+    &:checked {
+        color: $balanced !important;
+    }
+}
+
+.item-content {
+    @include widheigh(40px, 40px, 90%, 90%);
+    @include responsivewidthheight(40px, 40px, 90%, 90%, 50px, 50px, 90%, 90%, 50px, 50px, 90%, 90%, 50px, 50px, 90%, 90%);
+    color: $balanced !important;
+    background-color: transparent !important;
+    span {
+        color: $balanced !important;
+    }
+}
+
+.space-errands {
+    @include widheigh(40px, 40px, 100%, 100%);
+    @include responsivewidthheight(80px, 80px, 100%, 100%, 90px, 90px, 100%, 100%, 100px, 100px, 100%, 100%, 115px, 115px, 100%, 100%);
+}
+
+.container-senttype-errands-title {
+    background-color: white;
+    @include display-flex;
+    @include flex-direction(row);
+    @include align-items(center);
+    @include justify-content(center);
+    bottom: 0;
+    @include widheigh(auto, auto, 100%, 100%);
+    @include responsivewidthheight(auto, auto, 100%, 100%, auto, auto, 100%, 100%, auto, auto, 100%, 100%, auto, auto, 100%, 100%);
+    padding: 0 !important;
+    width: 100%;
+    z-index: 0;
+    @include font-mediaqueries(14px, 15px, 17px, 19px);
+    font-weight: 200;
+    color: $dark !important;
+    @include placeholder($gray);
+}
+
+.container-senttype-errands {
+    background-color: white;
+    @include display-flex;
+    @include flex-direction(row);
+    @include align-items(center);
+    @include justify-content(center);
+    min-height: 25%;
+    height: 25%;
+    min-width: 100%;
+    padding: 0 !important;
+    width: 100%;
+    margin-bottom: 30%;
+    .input-sizes {
+        color: $balanced !important;
+        @include font-mediaqueries(14px, 15px, 17px, 19px);
+        @include widheigh(100% !important, 100% !important, 90%, 90%);
+        @include media-inputs-ios("../img/TexBoxcaracteristicasdeladiligencia/TextBoxCaracteristicas.png", "../img/TexBoxcaracteristicasdeladiligencia/TextBoxCaracteristicas.png", "../img/TexBoxcaracteristicasdeladiligencia/TextBoxCaracteristicas2x.png.png", "../img/TexBoxcaracteristicasdeladiligencia/TextBoxCaracteristicas2x.png.png", "../img/TexBoxcaracteristicasdeladiligencia/TextBoxCaracteristicas3x.png.png", "../img/TexBoxcaracteristicasdeladiligencia/TextBoxCaracteristicas3x.png.png");
+        text-align: start !important;
+        padding-left: 25px !important;
+        @include placeholder($gray);
+    }
+}
+
+.container-senttype-errands-check {
+    background-color: white;
+    @include display-flex;
+    @include flex-direction(column);
+    @include align-items(center);
+    @include justify-content(center);
+    bottom: 0;
+    min-height: 20%;
+    height: 20%;
+    min-width: 100%;
+    padding: 0 !important;
+    width: 100%;
+    z-index: 0;
+    color: $dark;
+    @include font-mediaqueries(14px, 15px, 17px, 19px);
+    p {
+        @include display-flex;
+        @include flex-direction(row);
+        @include align-items(center);
+        @include justify-content(center);
+        margin-bottom: 20px !important;
+        text-align: center;
+        color: $dark !important;
+        @include font-mediaqueries(12px, 14px, 16px, 16px);
+    }
+}
+
+.bar-sendtype {
+    @include display-flex;
+    @include flex-direction(column);
+    @include align-items(center);
+    @include justify-content(flex-end);
+    background-color: rgba($balanced, .85) !important;
+    margin: 0;
+    padding: 0;
+    padding-bottom: 5px !important;
+    h3 {
+        @include widheigh(40px !important, 40px !important, 95%, 95%);
+        margin: 0;
+        padding: 0;
+        min-width: 100%;
+        @include font-mediaqueries(16px, 18px, 20px, 22px);
         font-family: "Playregular", sans-serif !important;
-	}
+    }
 }
-.inputs-checkbox-axpress{
-	@include display-flex;
-	@include flex-direction(column);
-	@include align-items(center);
-	@include justify-content(center);
-	@include widheigh(20%,20%,17%,17%);
-	@include responsivewidthheight(20%,20%,12%,12%,20%,20%,14%,14%,20%,20%,15%,15%,20%,20%,16%,16%);
-	@include media-checkbox-ios("../img/Radiobutton/RadioButton.png","../img/RadioButtonSelected/RadioButtonSelected.png","../img/Radiobutton/RadioButton2x.png.png","../img/RadioButtonSelected/RadioButtonSelected2x.png.png","../img/Radiobutton/RadioButton3x.png.png","../img/RadioButtonSelected/RadioButtonSelected3x.png.png");
-	margin-right: 5% !important;
+
+.inputs-checkbox-axpress {
+    @include display-flex;
+    @include flex-direction(column);
+    @include align-items(center);
+    @include justify-content(center);
+    @include widheigh(20%, 20%, 17%, 17%);
+    @include responsivewidthheight(20%, 20%, 13%, 13%, 20%, 20%, 13%, 13%, 20%, 20%, 12%, 12%, 20%, 20%, 12%, 12%);
+    @include media-checkbox-ios("../img/Radiobutton/RadioButton.png", "../img/RadioButtonSelected/RadioButtonSelected.png", "../img/Radiobutton/RadioButton2x.png.png", "../img/RadioButtonSelected/RadioButtonSelected2x.png.png", "../img/Radiobutton/RadioButton3x.png.png", "../img/RadioButtonSelected/RadioButtonSelected3x.png.png");
+    margin-right: 5% !important;
     margin-top: 1% !important;
 }
-.checkbox-icon:after{
-	position: relative !important;
+.inputs-checkbox-axpress-diligences {
+    @include display-flex;
+    @include flex-direction(column);
+    @include align-items(center);
+    @include justify-content(center);
+    @include widheigh(20%, 20%, 17%, 17%);
+    @include responsivewidthheight(20%, 20%, 10%, 10%, 20%, 20%, 11%, 11%, 20%, 20%, 10%, 10%, 20%, 20%, 10%, 10%);
+    @include media-checkbox-ios("../img/Radiobutton/RadioButton.png", "../img/RadioButtonSelected/RadioButtonSelected.png", "../img/Radiobutton/RadioButton2x.png.png", "../img/RadioButtonSelected/RadioButtonSelected2x.png.png", "../img/Radiobutton/RadioButton3x.png.png", "../img/RadioButtonSelected/RadioButtonSelected3x.png.png");
+    margin-right: 3% !important;
+    margin-top: 1% !important;
+}
+
+.checkbox-icon:after {
+    position: relative !important;
 }
