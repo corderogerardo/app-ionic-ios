@@ -1,68 +1,68 @@
 <div class="bar bar-header bar-balanced bar-sendtype">
-		<h3 class="title">Resumen del envío</h3>
+    <h3 class="title">Resumen del envío</h3>
 </div>
 <ion-view view-title="Resumen del Envío">
-		<ion-content scroll="false">
-				<section class="sentresume-data">
-						<section class="sentresume-content-top">
-								<div class="data-origin">
-										<b>Origen del documento</b>
-										<p>{{ data.originAddress }}</p>
-										<p>{{ data.originDetail }}</p>
-								</div>
-								<a class="" ng-click="editOrigin()" title="">
-										<i class="ion-edit-resume"></i>
-								</a>
-						</section>
-						<section class="sentresume-content-top">
-								<div class="data-origin">
-										<b>Destino del documento</b>
-										<p>{{ data.destinyAddress }}</p>
-										<p>{{ data.destinyDetail }}</p>
-								</div>
-								<a class="" ng-click="editDestiny()" title="">
-										<i class="ion-edit-resume"></i>
-								</a>
-						</section>
-						<section class="sentresume-content-mid">
-								<div class="data-origin">
-										<b>Tipo de envío</b>
-										 <p>{{ data.bagTitle || "" }}</p>
-								</div>
-								<a class="" ng-click="editSentType()" title="">
-										<i class="ion-edit-resume"></i>
-								</a>
-						</section>
-						<section class="sentresume-content-top">
-								<div class="data-origin">
-										<b>Características</b>
-										<p>{{ data.descriptionText }}</p>
-										<p>Valor Declarado: {{ data.amountDeclared }}</p>
-								</div>
-								<a class="" ng-click="editPhoto()" title="">
-										<i class="ion-edit-resume"></i>
-								</a>
-						</section>
-						<section class="sentresume-content-three">
-								<div class="data-origin">
-										<b>Destinatario</b>
-										<p>{{ data.destinyName }}</p>
-												<p>{{ data.emailDestinyClient }}</p>
-												<p> {{ data.cellphoneDestinyClient }}</p>
-								</div>
-								<a class="" ng-click="editDestinatary()" title="">
-										<i class="ion-edit-resume"></i>
-								</a>
-						</section>
-				</section>
-				<section class="sentresume-cost">
-						Costo del envío:
-						<b>$ &nbsp;{{ data.amount || 0}} </b>
-				</section>
-				<div class="row button-bottom-two button-confirm-position">
-						<a class="button button-block button-default-two button-continue" ng-click="confirmResume()">
-								Confirmar envío
-						</a>
-				</div>
-		</ion-content>
+    <ion-content scroll="false">
+        <section class="sentresume-data">
+            <section class="sentresume-content-top">
+                <div class="data-origin">
+                    <b>Origen del documento</b>
+                    <p>{{ data.originAddress }}</p>
+                    <span>{{ data.originDetail }}</span>
+                </div>
+                <a class="" ng-click="editOrigin()" title="">
+                    <i class="ion-edit-resume"></i>
+                </a>
+            </section>
+            <section class="sentresume-content-top">
+                <div class="data-origin">
+                    <b>Destino del documento</b>
+                    <p>{{ data.destinyAddress }}</p>
+                    <span>{{ data.destinyDetail }}</span>
+                </div>
+                <a class="" ng-click="editDestiny()" title="">
+                    <i class="ion-edit-resume"></i>
+                </a>
+            </section>
+            <section class="sentresume-content-mid">
+                <div class="data-origin">
+                    <b>Tipo de envío</b>
+                    <p>{{ data.bagTitle || "" }}</p>
+                </div>
+                <a class="" ng-click="editSentType()" title="">
+                    <i class="ion-edit-resume"></i>
+                </a>
+            </section>
+            <section class="sentresume-content-top">
+                <div class="data-origin">
+                    <b>Características envío</b>
+                    <p>{{ data.descriptionText }}</p>
+                    <p>{{ data.amountDeclared }}</p>
+                </div>
+                <a class="" ng-click="editPhoto()" title="">
+                    <i class="ion-edit-resume"></i>
+                </a>
+            </section>
+            <section class="sentresume-content-three">
+                <div class="data-origin">
+                    <b>Destinatario</b>
+                    <p>{{ data.destinyName }}</p>
+                    <p>{{ data.emailDestinyClient }}</p>
+                    <p> {{ data.cellphoneDestinyClient }}</p>
+                </div>
+                <a class="" ng-click="editDestinatary()" title="">
+                    <i class="ion-edit-resume"></i>
+                </a>
+            </section>
+        </section>
+        <section class="sentresume-cost">
+            Costo del envío:
+            <b> $ &nbsp;{{ data.amount || 0}} </b>
+        </section>
+        <div class="row button-bottom-two">
+            <a class="button button-block button-default-two button-continue" ng-click="confirmResume()">
+                Confirmar envío
+            </a>
+        </div>
+    </ion-content>
 </ion-view>

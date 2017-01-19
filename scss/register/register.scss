@@ -68,48 +68,88 @@
 	border:none !important;
 	background-color: transparent !important;
 	padding-left: 0;
-	color:white !important;
-	@include font-mediaqueries(11px,11px,12px,14px);
-	font-weight: 200;
+	@include font-mediaqueries(12px,13px,14px,15px);
+	font-weight: 300;
+    color: white !important;
 	text-decoration: none;
 	height: 20px !important;
 	min-height: 20px !important;
-	min-width:80% !important;
-	width: 80%;
+	min-width:100% !important;
+	width: 100%;
 	span{
 		color:$createAccauntTap;
 	}
+    &:hover{
+        color: $energized !important;
+    }
 }
 .forgot-pass{
-	@include display-flex;
-	@include flex-direction(row);
-	@include align-items(center);
-	@include justify-content(center);
-	border:none !important;
-	background-color: transparent !important;
-	padding-left: 0;
-	color:white !important;
-	@include font-mediaqueries(11px,11px,12px,14px);
-	font-weight: 200;
-	text-decoration: none;
-	height: 20px !important;
-	min-height: 20px !important;
-	min-width:80% !important;
-	width: 80%;
-	span{
-		color:$createAccauntTap;
-	}
+    @include display-flex;
+    @include flex-direction(row);
+    @include align-items(center);
+    @include justify-content(center);
+    border:none !important;
+    background-color: transparent !important;
+    padding-left: 0;
+    @include font-mediaqueries(12px,13px,14px,15px);
+    font-weight: 300;
+    color: $createAccauntTap !important;
+    text-decoration: none;
+    height: 20px !important;
+    min-height: 20px !important;
+    min-width:100% !important;
+    width: 100%;
+    span{
+        color:$createAccauntTap;
+    }
+    &:hover{
+        color: $energized !important;
+    }
+}
+.forgot-pass-cont{
+    @include display-flex;
+    @include flex-direction(row);
+    @include align-items(center);
+    @include justify-content(center);
+    border:none !important;
+    background-color: transparent !important;
+    padding-left: 0;
+    @include font-mediaqueries(13px,14px,15px,16px);
+    font-weight: 300;
+    color: white !important;
+    text-decoration: none;
+    height: 14px !important;
+    min-height: 14px !important;
+    min-width:100% !important;
+    width: 100%;
+    span{
+        color:$createAccauntTap;
+    }
+}
+.termandconditions{
+    color: white !important;
+    padding: 0 10%;
+    @include font-mediaqueries(12px,12px,14px,16px);
 }
 .register-login{
 	@include font-mediaqueries(12px,13px,16px,16px);
+    color:$createAccauntTap !important;
+    font-weight: 200;
+    text-decoration: none;
 	span{
-		color:$createAccaunt;
-	}
-	a{
 		color:$createAccauntTap;
-		font-weight: bold;
-		text-decoration: none;
+        font-weight: bold;
+        text-decoration: none;
 	}
+    &:hover{
+        color:$energized !important;
+        text-decoration: none;
+        span{
+            color:$energized;
+            font-weight: bold;
+            text-decoration: none;
+        }
+    }
 }
 .container-button{
 	min-width: 80%;
