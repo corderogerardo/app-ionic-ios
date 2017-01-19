@@ -92,7 +92,6 @@
         }
 
         function activate() {
-            $scope.place = {};
             $scope.data = $state.current.data.data;
             $scope.extraData = $state.current.data.extraData;
             $scope.markers = [{
