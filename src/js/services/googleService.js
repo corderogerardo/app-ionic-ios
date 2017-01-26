@@ -20,11 +20,10 @@
         function login() {
             var deferred = $q.defer();
             document.addEventListener("deviceready", function() {
-                if (service.credentials || localStorage.getItem('googleCredentials')) {
+                if (localStorage.getItem('googleCredentials')) {
                     deferred.resolve(true);
                 } else {
                     $cordovaOauth.google(constants.googleOAuthClientID, service.scope).then(function(response) {
-                        service.credentials = response;
                         localStorage.setItem('googleCredentials', JSON.stringify(response));
                         deferred.resolve(response);
                     }, function(error) {
@@ -43,7 +42,7 @@
          */
         function getProfile() {
             var deferred = $q.defer();
-            var credentials = service.credentials || JSON.parse(localStorage.getItem('googleCredentials'));
+            var credentials = JSON.parse(localStorage.getItem('googleCredentials'));
             if (!credentials) {
                 deferred.reject();
             } else {
@@ -60,7 +59,6 @@
          * Removes the Google session data
          */
         function logout() {
-            delete service.credentials;
             localStorage.removeItem('googleCredentials');
         }
     }

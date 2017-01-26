@@ -32,8 +32,8 @@
         service.logout = function() {
             localStorage.removeItem('axpress.user');
             localStorage.removeItem('axpress.menu');
-            localStorage.removeItem('facebookAccessToken');
-            localStorage.removeItem('googleCredentials');
+            //localStorage.removeItem('facebookAccessToken');
+            //localStorage.removeItem('googleCredentials');
             $rootScope.user = {};
             $rootScope.menu = {};
         };
