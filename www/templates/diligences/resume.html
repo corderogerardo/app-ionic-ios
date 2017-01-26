@@ -18,8 +18,8 @@
             <section class="sentresume-content">
                 <div class="data-origin">
                     <b>Paradas # {{ data.destiniesData.length || ""}}</b>
-                    <p>{{ data.destiniesData[data.destiniesData.length-1].destinyAddress || ""}}</p>
-                    <span>{{ data.destiniesData[data.destiniesData.length-1].destinyDetail || ""}}</span>
+                    <p>{{ data.destiniesData[data.destiniesData.length-1].address || ""}}</p>
+                    <span>{{ data.destiniesData[data.destiniesData.length-1].details || ""}}</span>
                 </div>
                 <a class="" ng-click="editDestiny()" title="">
                     <i class="ion-edit-eye"></i>
