@@ -21,11 +21,10 @@
         function login() {
             var deferred = $q.defer();
             document.addEventListener("deviceready", function() {
-                if (service.access_token || localStorage.getItem('facebookAccessToken')) {
+                if (localStorage.getItem('facebookAccessToken')) {
                     deferred.resolve(true);
                 } else {
                     $cordovaOauth.facebook(constants.fbAppId, service.scope, { redirect_uri: "http://localhost/callback" }).then(function(response) {
-                        service.access_token = response.access_token;
                         localStorage.setItem('facebookAccessToken', response.access_token);
                         deferred.resolve(response);
                     }, function(error) {
@@ -44,7 +43,7 @@
          */
         function getUserInfo() {
             var deferred = $q.defer();
-            var access_token = service.access_token || localStorage.getItem('facebookAccessToken');
+            var access_token = localStorage.getItem('facebookAccessToken');
             if (!access_token) {
                 deferred.reject();
             } else {
@@ -68,7 +67,6 @@
          * Removes the Facebook session data
          */
         function logout() {
-            delete service.access_token;
             localStorage.removeItem('facebookAccessToken');
         }
     }

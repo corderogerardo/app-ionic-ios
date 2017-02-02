@@ -145,15 +145,7 @@
             Client.loginWithGoogle().then(function(response) {
                 Client.googleGetUserInfo().then(function(response) {
                     successCallback(response);
-                }, function(error) {
-                    // If there's an error fetching user details, credentials are removed
-                    // and we have to login again
-                    Client.loginWithGoogle().then(function(response) {
-                        Client.googleGetUserInfo().then(function(response) {
-                            successCallback(response);
-                        });
-                    });
-                });
+                }, canceledCallback);
             }, canceledCallback);
         }
 
@@ -499,7 +491,8 @@
             lastMarker.draggable = false;
             lastMarker.icon = "{url: 'img/Pindestino/Pindetsino3x.png.png', scaledSize: [28,38]}";
             $scope.markers.push({
-                icon: "{url: 'img/Pindestino/Pindetsino3x.png.png', scaledSize: [28,38]}"
+                icon: "{url: 'img/Pindestino/Pindetsino3x.png.png', scaledSize: [28,38]}",
+                draggable: true
             });
             $scope.data.destiniesData.push(getStopElement($scope.tempData));
             resetTempData();
@@ -601,7 +594,8 @@
                 longitude: $scope.place.geometry.location.lng(),
                 latitude: $scope.place.geometry.location.lat(),
                 address: GoogleMapGeocoder.removeStateAndCountry($scope.place.formatted_address),
-                name: data.name
+                name: data.name,
+                details: $scope.data.destinyDetail
             };
         }
 
@@ -611,6 +605,9 @@
                 phone: '',
                 name: ''
             };
+            $scope.address = '';
+            $scope.place = null;
+            $scope.destinyDetail = '';
         }
 
         function activate() {
@@ -643,6 +640,7 @@
                     $scope.tempData.phone = destiny.phone;
                     $scope.address = destiny.address;
                     $scope.tempData.name = destiny.name;
+                    $scope.data.destinyDetail = destiny.details;
                     GoogleMapGeocoder.reverseGeocode({ lat: destiny.latitude, lng: destiny.longitude })
                         .then(geocoderCallback);
                 }

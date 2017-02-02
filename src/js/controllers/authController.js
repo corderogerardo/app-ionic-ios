@@ -57,15 +57,7 @@
             Client.loginWithGoogle().then(function(response) {
                 Client.googleGetUserInfo().then(function(response) {
                     successCallback(response);
-                }, function(error) {
-                    // If there's an error fetching user details, credentials are removed
-                    // and we have to login again
-                    Client.loginWithGoogle().then(function(response) {
-                        Client.googleGetUserInfo().then(function(response) {
-                            successCallback(response);
-                        });
-                    });
-                });
+                }, canceledCallback);
             }, canceledCallback);
         }
 

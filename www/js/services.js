@@ -83,8 +83,8 @@
         service.logout = function() {
             localStorage.removeItem('axpress.user');
             localStorage.removeItem('axpress.menu');
-            localStorage.removeItem('facebookAccessToken');
-            localStorage.removeItem('googleCredentials');
+            //localStorage.removeItem('facebookAccessToken');
+            //localStorage.removeItem('googleCredentials');
             $rootScope.user = {};
             $rootScope.menu = {};
         };
@@ -542,11 +542,10 @@
         function login() {
             var deferred = $q.defer();
             document.addEventListener("deviceready", function() {
-                if (service.access_token || localStorage.getItem('facebookAccessToken')) {
+                if (localStorage.getItem('facebookAccessToken')) {
                     deferred.resolve(true);
                 } else {
                     $cordovaOauth.facebook(constants.fbAppId, service.scope, { redirect_uri: "http://localhost/callback" }).then(function(response) {
-                        service.access_token = response.access_token;
                         localStorage.setItem('facebookAccessToken', response.access_token);
                         deferred.resolve(response);
                     }, function(error) {
@@ -565,7 +564,7 @@
          */
         function getUserInfo() {
             var deferred = $q.defer();
-            var access_token = service.access_token || localStorage.getItem('facebookAccessToken');
+            var access_token = localStorage.getItem('facebookAccessToken');
             if (!access_token) {
                 deferred.reject();
             } else {
@@ -589,7 +588,6 @@
          * Removes the Facebook session data
          */
         function logout() {
-            delete service.access_token;
             localStorage.removeItem('facebookAccessToken');
         }
     }
@@ -658,11 +656,10 @@
         function login() {
             var deferred = $q.defer();
             document.addEventListener("deviceready", function() {
-                if (service.credentials || localStorage.getItem('googleCredentials')) {
+                if (localStorage.getItem('googleCredentials')) {
                     deferred.resolve(true);
                 } else {
                     $cordovaOauth.google(constants.googleOAuthClientID, service.scope).then(function(response) {
-                        service.credentials = response;
                         localStorage.setItem('googleCredentials', JSON.stringify(response));
                         deferred.resolve(response);
                     }, function(error) {
@@ -681,7 +678,7 @@
          */
         function getProfile() {
             var deferred = $q.defer();
-            var credentials = service.credentials || JSON.parse(localStorage.getItem('googleCredentials'));
+            var credentials = JSON.parse(localStorage.getItem('googleCredentials'));
             if (!credentials) {
                 deferred.reject();
             } else {
@@ -698,7 +695,6 @@
          * Removes the Google session data
          */
         function logout() {
-            delete service.credentials;
             localStorage.removeItem('googleCredentials');
         }
     }
